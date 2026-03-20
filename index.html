@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-03-20">
+<meta property="og:description" content="NVIDIA万亿预测 · AI列入顶级威胁 · 华尔街泡沫分歧 · Builder动态">
+<title>Daily Builders Digest · 2026-03-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 42s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MOBILE: collapse 2-col grid ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── PAST EPISODES ── */
+  .past-episodes {
+    margin-top: 16px;
+    border: 1px solid var(--light);
+  }
+  .past-ep-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--light);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background .12s;
+  }
+  .past-ep-item:last-child { border-bottom: none; }
+  .past-ep-item:hover { background: var(--card); }
+  .past-ep-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    flex-shrink: 0;
+    width: 90px;
+  }
+  .past-ep-title {
+    font-size: 13px;
+    flex: 1;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .past-ep-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    flex-shrink: 0;
+  }
+  #past-loading {
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: .1em;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    max-width: 680px;
+    margin-bottom: 28px;
+  }
+  .builders-intro a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+  }
+
+  .podcast-card {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 28px;
+    margin-bottom: 2px;
+  }
+  .podcast-card .pc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .podcast-card .pc-show {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 4px;
+  }
+  .podcast-card .pc-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+  .podcast-card .pc-summary {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .podcast-card a {
+    color: var(--red);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    margin-top: 14px;
+    display: inline-block;
+    border-bottom: 1px solid var(--red);
+  }
+
+  .builders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+  }
+  .builder-card {
+    background: var(--bg);
+    padding: 20px;
+  }
+  .builder-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .builder-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--bg);
+    flex-shrink: 0;
+  }
+  .builder-name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .builder-handle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+  .builder-tweet {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #333;
+    border-left: 2px solid var(--light);
+    padding-left: 10px;
+    margin-bottom: 8px;
+  }
+  .builder-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--mid);
+    letter-spacing: .06em;
+    display: flex;
+    gap: 14px;
+  }
+  .builder-meta a {
+    color: var(--red);
+    text-decoration: none;
+  }
+  .builder-likes { color: var(--mid); }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-03-20</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <div class="header-meta">
+    <span>📅 2026·03·20 周五</span>
+    <span>🏷 主题：AI 新闻快报</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 15 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>NVIDIA GTC 2026 落幕 — 万亿营收预测震撼全场</span>
+    <span class="ticker-item"><span class="dot">▶</span>美国情报报告将 AI 列为顶级全球威胁</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 通过 AWS 填补政府市场空缺</span>
+    <span class="ticker-item"><span class="dot">▶</span>彭博：AI 泡沫会破裂吗？华尔街内部分歧</span>
+    <span class="ticker-item"><span class="dot">▶</span>麦肯锡：12% 工作任务已被 AI 自动化</span>
+    <span class="ticker-item"><span class="dot">▶</span>NVIDIA GTC 2026 落幕 — 万亿营收预测震撼全场</span>
+    <span class="ticker-item"><span class="dot">▶</span>美国情报报告将 AI 列为顶级全球威胁</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 通过 AWS 填补政府市场空缺</span>
+    <span class="ticker-item"><span class="dot">▶</span>彭博：AI 泡沫会破裂吗？华尔街内部分歧</span>
+    <span class="ticker-item"><span class="dot">▶</span>麦肯锡：12% 工作任务已被 AI 自动化</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 15 分钟</span>
+  </div>
+  <audio controls preload="none" src="episodes/2026-03-20.mp3">
+    你的浏览器不支持音频播放。<a href="episodes/2026-03-20.mp3">下载音频</a>
+  </audio>
+</div>
+
+<!-- ─────────────────── NEWS ─────────────────── -->
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选五条</p>
+
+<div class="news-grid">
+
+  <!-- LEAD -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">NVIDIA GTC 2026 落幕：黄仁勋宣告万亿营收时代，Agentic AI 全面起势</h2>
+    <p class="news-body">
+      超过三万名开发者齐聚圣何塞，NVIDIA 预计 2025–2027 年仅凭 Blackwell 与 Vera Rubin 两条产品线，AI 基础设施累计收入将突破 <strong>1 万亿美元</strong>。主角之一是开源智能体操作系统 <em>OpenClaw</em>，NVIDIA 宣布全面支持，并发布企业安全版 NemoClaw。物理 AI 方向，NVIDIA 推出「开放物理 AI 数据工厂蓝图」，用 Cosmos 基础模型为机器人和自动驾驶生成合成训练数据，宣示「AI 的教材将由 AI 自己生成」。DLSS 5 带来 3D 引导神经渲染，医疗生命科学的 BioNeMo 平台同步亮相。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://blogs.nvidia.com/blog/gtc-2026-news/" target="_blank">NVIDIA GTC 2026 Live Updates — NVIDIA Blog</a>
+      &nbsp;·&nbsp;
+      <a href="https://deeperinsights.com/ai-blog/nvidia-gtc-2026-highlights/" target="_blank">GTC 2026 Highlights — Deeper Insights</a>
+    </p>
+  </div>
+
+  <!-- 02 -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">美国情报报告：AI 首次并列核武、气候变化成顶级全球威胁</h2>
+    <p class="news-body">
+      美国国家情报总监办公室本周三发布 2026 年度全球威胁评估报告，将 AI 定义为「21 世纪的决定性技术」，并<strong>首次正式将 AI 列为顶级威胁</strong>。报告指出 AI 已被用于实际军事冲突，点名中国为「最有能力的竞争者」，并警告 AI 在情报收集、网络攻击与信息操控领域构成新型安全挑战。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.defenseone.com/threats/2026/03/AI-intelligence-new-global-threat/412232/" target="_blank">US intelligence elevates AI as a top global threat — Defense One</a>
+    </p>
+  </div>
+
+  <!-- 03 -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">OpenAI 通过 AWS 进驻五角大楼，Anthropic 离场后抢位加速</h2>
+    <p class="news-body">
+      随着 Anthropic 被特朗普政府排除出联邦机构，OpenAI 宣布通过亚马逊云服务 AWS 向政府机构交付 AI 模型，迅速填补国防市场空缺。批评者指出，当 AI 实验室深度嵌入军事与情报体系时，「安全对齐」研究与商业利益之间的张力将极为复杂——很难同时向公众承诺「最安全的 AI」，又向政府承诺「支持一切合法使用」。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.wbn.digital/the-prompt-report-march-18-2026-ai-shifts-from-hype-to-execution/" target="_blank">The Prompt Report – March 18, 2026 — WBN Digital</a>
+    </p>
+  </div>
+
+  <!-- 04 -->
+  <div class="news-card">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">彭博：AI 泡沫会破裂吗？华尔街出现「太破坏性 vs 不够破坏性」内部分歧</h2>
+    <p class="news-body">
+      彭博 3 月 18 日深度分析揭示：华尔街内部在 AI 定价上出现根本性分裂。一派认为 AI 的破坏性「太大」，将引发系统性风险；另一派担心「还不够大」，当前投资规模已超出可变现场景。顶尖 AI 开发商快速扩张进入金融、法律服务市场，Bloomberg Terminal、LexisNexis 等传统软件巨头市值明显承压，行业进入「预期主导」估值阶段。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.bloomberg.com/news/articles/2026-03-18/is-an-ai-bubble-set-to-burst-navigating-the-artificial-intelligence-boom" target="_blank">Is an AI Bubble Set to Burst? — Bloomberg</a>
+    </p>
+  </div>
+
+  <!-- 05 -->
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">05</p>
+    <h2 class="news-hed">麦肯锡：AI 两年内自动化 12% 工作任务，但中间层就业面临「空洞化」风险</h2>
+    <p class="news-body">
+      麦肯锡全球研究院 3 月报告：过去两年全球有 12% 的工作任务被 AI 自动化，同期新增职业类别中有 8% 直接与 AI 相关。隐患在于分布极不均匀——被替代的 12% 集中于重复性、中等技能岗位（数据录入、客服、基础内容生产），新增 8% AI 岗位则要求较高技术门槛。若缺乏系统性再培训投入，中间层就业市场将出现危险的「空洞」，这在任何社会里都是政治上的雷区。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.insightfulpost.com/what-is-artificial-intelligence-news-2026/" target="_blank">Artificial Intelligence News 2026 — Insightful Post</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- INDEX TABLE -->
+<hr class="rule">
+<p class="section-label">◈ 新闻索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://blogs.nvidia.com/blog/gtc-2026-news/" target="_blank">NVIDIA GTC 2026 落幕：万亿营收预测 <span class="tag hot">头条</span></a></td>
+      <td>NVIDIA Blog</td>
+      <td>2026-03-19</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://www.defenseone.com/threats/2026/03/AI-intelligence-new-global-threat/412232/" target="_blank">美国情报报告：AI 列入顶级全球威胁 <span class="tag">政策</span></a></td>
+      <td>Defense One</td>
+      <td>2026-03-18</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.wbn.digital/the-prompt-report-march-18-2026-ai-shifts-from-hype-to-execution/" target="_blank">OpenAI 通过 AWS 进驻五角大楼 <span class="tag">商业</span></a></td>
+      <td>WBN Digital</td>
+      <td>2026-03-18</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.bloomberg.com/news/articles/2026-03-18/is-an-ai-bubble-set-to-burst-navigating-the-artificial-intelligence-boom" target="_blank">彭博：AI 泡沫会破裂吗？ <span class="tag">资本</span></a></td>
+      <td>Bloomberg</td>
+      <td>2026-03-18</td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td><a href="https://www.insightfulpost.com/what-is-artificial-intelligence-news-2026/" target="_blank">麦肯锡：12% 工作任务被 AI 自动化 <span class="tag">就业</span></a></td>
+      <td>Insightful Post</td>
+      <td>2026-03-20</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日 AI 建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 06:52。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Data Driven NYC · 2026-03-19</p>
+  <p class="pc-title">Benedict Evans: OpenAI's Moat Problem &amp; the Future of Software</p>
+  <p class="pc-summary">
+    Benedict Evans 与 Matt Turck 深度对谈：OpenAI 拥有巨大的心智占有率，却没有自己的基础设施，技术本身正在商品化。他提出「即兴软件」概念——AI 编程大幅降低了开发成本，让原本无法软件化的需求得以实现，软件总量将大幅增加，但护城河也因此变浅。Evans 认为 OpenAI 可能是「下一个 Netscape」：引爆了整个时代，却未必是最终赢家。对 AI 建造者和投资者而言，核心问题不是「AI 能不能做到」，而是「谁拥有客户关系和分发优势」。
+  </p>
+  <a href="https://youtube.com/watch?v=jH2ZIUKvazU" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AK</div>
+      <div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · Tesla AI / OpenAI / Stanford</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「《Project Hail Mary》电影版非常好——紧扣原著，Rocky 和那段友情的处理做到了。如果你读过书，会在电影里发现很多细节；没读过的话，电影来不及把所有科学深度呈现出来。强烈推荐先看书。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,835</span>
+      <a href="https://x.com/karpathy/status/2034865693544604001" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / Cognition / AI Engineer</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「致每一位与设计师合作的开发者：把你的 coding agent 给设计师用。这是命令。一个月之内你们的产品会兼具生产力和美感。然后你会意识到，一直以来是你在拖累他们。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 36</span>
+      <a href="https://x.com/swyx/status/2034802359470330249" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">JW</div>
+      <div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · VP Google Labs / Gemini</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「✅ 小 bug 修复：Android 上 Gemini 在你说话停顿时不再把你截断了。（iOS 版几周后跟上。）这种体验上的小细节，才是真正让 AI 助手好用的地方。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 746</span>
+      <a href="https://x.com/joshwoodward/status/2034797067344998862" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Product Strategy</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我觉得 OpenAI 的战略很清晰：① ChatGPT 装机量全球第一 ② 让 ChatGPT 成为首选 AI 入口 ③ 从入口向下渗透，抢走 Google、Apple、Microsoft 的蛋糕。这是一个流量→平台→生态的经典打法。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 188</span>
+      <a href="https://x.com/petergyang/status/2034786020160635031" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Amanda Askell</div>
+        <div class="builder-handle">@AmandaAskell · Anthropic — Alignment &amp; RLHF</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「也许我应该再结婚一次，这样媒体提到我的时候就有更近的男性可以引用了。」（讽刺媒体在报道女性 AI 研究者时总是拿周边男性的身份来定义她们。）</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,647</span>
+      <a href="https://x.com/AmandaAskell/status/2034690963696967822" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar" style="background:var(--red);">TH</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Anthropic — Claude Code</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「刚刚发布 Claude Code Channels——你可以通过指定 MCP 来控制 Claude Code 会话了，首批支持 Slack 和 Discord。这意味着你可以直接在 Slack 里触发、监控、管理你的 Claude Code 流程。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 17,162 🔥</span>
+      <a href="https://x.com/trq212/status/2034761016320696565" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「不说具体数字，但这个趋势非常真实。对任何面临 AI 替代的职业来说，核心问题不是"我的工作会消失吗"，而是"我能在 AI 做不到的维度上变得更有价值吗"。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 261</span>
+      <a href="https://x.com/levie/status/2034833274506281061" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">RL</div>
+      <div>
+        <div class="builder-name">Ryo Lu</div>
+        <div class="builder-handle">@ryolu_ · AI Products</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「前沿智能。极低成本。极快速度。Composer 2 发布——把顶级模型能力和工程上的极致效率做在了一起。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 351</span>
+      <a href="https://x.com/ryolu_/status/2034690837444272266" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MT</div>
+      <div>
+        <div class="builder-name">Matt Turck</div>
+        <div class="builder-handle">@mattturck · FirstMark Capital / Data Driven NYC</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「和 Benedict Evans 的最新对谈：OpenAI 的护城河问题、即兴软件的崛起、软件是否真的死了，以及这对 AI 建造者和投资者意味着什么。今天的播客精选就来自这期。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 201</span>
+      <a href="https://x.com/mattturck/status/2034661487445258382" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">ZZ</div>
+      <div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · follow-builders 作者</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「推出 MySay——一个通过语音向你提问的 AI，把你说的话转化成风格真实的推文和 LinkedIn 帖子。让每个人都能轻松拥有自己的声音。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 231</span>
+      <a href="https://x.com/zarazhangrui/status/2034699643104501958" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · Every / AI Writing</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们刚刚发布了用 AI 写好散文的终极指南。核心观点：AI 最大的风险不是代替你写作，而是让你的文字变得和所有人一样——如何保留你自己的声音，才是关键问题。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 848</span>
+      <a href="https://x.com/danshipper/status/2034723450644840606" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · CEO Y Combinator</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我在自己的 /office-hours skill 里偷偷放了一个 YC 彩蛋——有人找到了吗？」（Garry 正在用 Claude 的 skill 系统做 YC office hours 的 AI 版本。）</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 75</span>
+      <a href="https://x.com/garrytan/status/2034853668739252419" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOLLOW BUILDERS 说明 -->
+<div style="margin-top:16px; padding:16px 20px; background:var(--card); border-left:3px solid var(--red); font-size:12px; color:var(--mid); font-family:'JetBrains Mono',monospace; line-height:1.8;">
+  数据来源：<a href="https://github.com/zarazhangrui/follow-builders" target="_blank" style="color:var(--red);">github.com/zarazhangrui/follow-builders</a>
+  · 监测 25 位 AI 建造者 X 动态 + 精选播客
+  · 每日 UTC 07:00 自动更新
+  · 仅展示 24 小时内热度最高推文
+</div>
+
+<!-- PAST EPISODES -->
+<hr class="rule-heavy" style="margin-top:56px;">
+<p class="section-label">◈ 往期存档</p>
+<div class="past-episodes" id="past-episodes">
+  <div id="past-loading">正在加载往期内容…</div>
+</div>
+
+<!-- FOOTER -->
+<hr class="rule-heavy" style="margin-top:32px;">
+<footer>
+  <strong>免责声明</strong><br>
+  本页内容由 AI 自动生成，仅供参考，不构成投资、法律或医疗建议。新闻来源均标注原始链接，请以原文为准。Follow Builders 数据来自公开 API，版权归原作者所有。<br><br>
+  今日AI快报 · 大雨 × 小苇 · 2026-03-20 · 周五 · 🤖 AI 新闻快报
+</footer>
+
+
+<script>
+// Load past episodes from feed.json
+(async () => {
+  try {
+    const res = await fetch('feed.json?_=' + Date.now());
+    const feed = await res.json();
+    const past = feed.slice(1); // skip today (index 0)
+    const container = document.getElementById('past-episodes');
+    const DOW = ['','一','二','三','四','五','六','日'];
+    if (past.length === 0) {
+      container.innerHTML = '<div id="past-loading">暂无往期内容</div>';
+      return;
+    }
+    container.innerHTML = past.map(ep => `
+      <a class="past-ep-item" href="${ep.html}" target="_blank">
+        <span class="past-ep-date">${ep.date} 周${DOW[ep.dow]||''}</span>
+        <span class="past-ep-title">${ep.title}</span>
+        <span class="past-ep-tag">${ep.topic}</span>
+      </a>`).join('');
+  } catch(e) {
+    document.getElementById('past-loading').textContent = '往期内容加载失败';
+  }
+})();
+</script>
+</body>
+</html>

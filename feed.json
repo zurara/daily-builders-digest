@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-03-22",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "周日播客精选",
+    "title": "Karpathy 的循环时代 · AutoResearch · 700 次实验",
+    "html": "episodes/2026-03-22.html",
+    "mp3": "episodes/2026-03-22.mp3",
+    "headlines": [
+      "Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI",
+      "Latent Space: Felix Rieseberg on Claude Cowork",
+      "Lenny's Podcast: Comp Negotiation Playbook"
+    ]
+  },
+  {
     "date": "2026-03-21",
     "dow": 6,
     "topic": "Books",

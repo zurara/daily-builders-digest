@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-03-24",
+    "dow": 2,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Shopify押注\"AI代理是电商的新门面\" · OpenAI购物代理翻车，转向\"发现优先\"",
+    "html": "episodes/2026-03-24.html",
+    "mp3": "episodes/2026-03-24.mp3",
+    "headlines": [
+      "Shopify押注\"AI代理是电商的新门面\"",
+      "OpenAI购物代理翻车，转向\"发现优先\"",
+      "OpenAI退一步，Google UCP进两步",
+      "Manus把AI代理搬到你的桌面：My Computer"
+    ]
+  },
+  {
     "date": "2026-03-23",
     "dow": 1,
     "topic": "AI",

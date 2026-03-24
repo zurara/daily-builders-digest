@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-03-24 · 产品星期二">
-<meta property="og:description" content="Shopify代理门面 · OpenAI购物翻车 · Google UCP加码 · Manus本地代理">
-<title>Daily Builders Digest · 2026-03-24 · 产品星期二</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-03-24 · 机器人星期二">
+<meta property="og:description" content="NVIDIA GR00T N2 · Tesla Optimus量产 · Boston Dynamics已满单 · Claude电脑控制上线">
+<title>Daily Builders Digest · 2026-03-24 · 机器人星期二</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -36,350 +36,137 @@
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
 
-  /* ── HEADER ── */
-  .header {
-    padding: 48px 0 32px;
-    border-bottom: 1px solid var(--ink);
-  }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px;
   }
   .header-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(44px, 8vw, 88px);
-    line-height: .95;
-    letter-spacing: .02em;
-    color: var(--ink);
+    font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink);
   }
   .header-title span { color: var(--red); }
   .header-meta {
-    margin-top: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--mid);
-    text-transform: uppercase;
-    letter-spacing: .1em;
+    margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--mid); text-transform: uppercase; letter-spacing: .1em;
   }
 
-  /* ── TICKER ── */
   .ticker-wrap {
-    overflow: hidden;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding: 9px 0;
-    margin: 0;
-    background: var(--ink);
+    overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    padding: 9px 0; background: var(--ink);
   }
-  .ticker-track {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: ticker 44s linear infinite;
-  }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 48s linear infinite; }
   .ticker-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .08em;
-    color: var(--bg);
-    margin-right: 72px;
-    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase;
   }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ── AUDIO PLAYER ── */
   .audio-bar {
-    background: var(--ink);
-    padding: 16px 20px 14px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 2px solid var(--red);
+    background: var(--ink); padding: 16px 20px 14px;
+    position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red);
   }
   .audio-bar-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: .1em; text-transform: uppercase;
   }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio {
-    width: 100%;
-    height: 36px;
-    accent-color: var(--red);
-    display: block;
-  }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
 
-  /* ── MAIN FEATURE HERO ── */
   .feature-hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-bottom: 1px solid var(--light);
-    margin-top: 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border-bottom: 1px solid var(--light); margin-top: 40px;
   }
-  @media (max-width: 600px) {
-    .feature-hero { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
   .feature-left {
-    background: var(--ink);
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background: var(--ink); padding: 48px 40px;
+    display: flex; flex-direction: column; justify-content: center;
   }
   .feature-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px;
   }
   .feature-show-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 4vw, 50px);
-    line-height: 1;
-    color: var(--bg);
-    margin-bottom: 6px;
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px);
+    line-height: 1; color: var(--bg); margin-bottom: 6px;
   }
-  .feature-ep-title {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #aaa;
-    margin-bottom: 20px;
-  }
-  .feature-guest {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--red);
-    letter-spacing: .06em;
-  }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
   .feature-right {
-    padding: 40px;
-    background: var(--card);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
+    padding: 40px; background: var(--card);
+    display: flex; flex-direction: column; justify-content: center; gap: 20px;
   }
-  .feature-lede {
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.55;
-    color: var(--ink);
-  }
-  .feature-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid var(--light);
-    color: var(--mid);
-    background: var(--bg);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em;
+    text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light);
+    color: var(--mid); background: var(--bg);
   }
-  .feature-stats {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
   .stat-item { display: flex; flex-direction: column; gap: 4px; }
-  .stat-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: var(--mid);
-  }
-  .stat-value {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ink);
-  }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
 
-  /* ── SECTION LABEL ── */
   .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--mid);
-    padding: 28px 0 12px;
-    border-bottom: 1px solid var(--light);
-    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--mid);
+    padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px;
   }
 
-  /* ── STORY CARDS ── */
   .stories-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--light);
-    border: 1px solid var(--light);
-    margin-bottom: 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--light); border: 1px solid var(--light); margin-bottom: 40px;
   }
-  @media (max-width: 600px) {
-    .stories-grid { grid-template-columns: 1fr; }
-  }
-  .story-card {
-    background: var(--bg);
-    padding: 28px 28px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .story-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px;
-    color: var(--light);
-    line-height: 1;
-  }
-  .story-title {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--ink);
-  }
-  .story-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #444;
-  }
+  @media (max-width: 600px) { .stories-grid { grid-template-columns: 1fr; } }
+  .story-card { background: var(--bg); padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .story-number { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--light); line-height: 1; }
+  .story-title { font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--ink); }
+  .story-body { font-size: 14px; line-height: 1.65; color: #444; }
   .story-source {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .06em;
-    color: var(--mid);
-    text-decoration: none;
-    border-top: 1px solid var(--light);
-    padding-top: 10px;
-    margin-top: auto;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em;
+    color: var(--mid); text-decoration: none;
+    border-top: 1px solid var(--light); padding-top: 10px; margin-top: auto;
   }
   .story-source:hover { color: var(--red); }
 
-  /* ── TRANSCRIPT ── */
-  .transcript {
-    border: 1px solid var(--light);
-    margin-bottom: 40px;
-  }
+  .transcript { border: 1px solid var(--light); margin-bottom: 40px; }
   .transcript-header {
-    padding: 16px 24px;
-    background: var(--card);
-    border-bottom: 1px solid var(--light);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 16px 24px; background: var(--card); border-bottom: 1px solid var(--light);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--mid); cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
   }
-  .transcript-body {
-    padding: 24px 28px;
-    display: none;
-  }
+  .transcript-body { padding: 24px 28px; display: none; }
   .transcript-body.open { display: block; }
-  .line {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 12px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-  .speaker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .04em;
-    padding-top: 2px;
-  }
-  .speaker.dayu  { color: var(--red); }
+  .line { display: grid; grid-template-columns: 80px 1fr; gap: 12px; margin-bottom: 16px; font-size: 14px; line-height: 1.65; }
+  .speaker { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .04em; padding-top: 2px; }
+  .speaker.dayu { color: var(--red); }
   .speaker.xiaowei { color: var(--mid); }
   .speech { color: #333; }
 
-  /* ── BUILDER SIGNALS ── */
   .signals-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--light);
-    border: 1px solid var(--light);
-    margin-bottom: 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--light); border: 1px solid var(--light); margin-bottom: 40px;
   }
-  @media (max-width: 600px) {
-    .signals-grid { grid-template-columns: 1fr; }
-  }
-  .signal-card {
-    background: var(--bg);
-    padding: 24px 24px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .signal-type {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--red);
-  }
-  .signal-title {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--ink);
-  }
-  .signal-body {
-    font-size: 13px;
-    line-height: 1.6;
-    color: #555;
-  }
-  .signal-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--mid);
-    text-decoration: none;
-    margin-top: auto;
-  }
+  @media (max-width: 600px) { .signals-grid { grid-template-columns: 1fr; } }
+  .signal-card { background: var(--bg); padding: 24px 24px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .signal-type { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .signal-title { font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--ink); }
+  .signal-body { font-size: 13px; line-height: 1.6; color: #555; }
+  .signal-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); text-decoration: none; margin-top: auto; }
   .signal-link:hover { color: var(--red); }
 
-  /* ── FOOTER ── */
   .footer {
-    padding: 32px 0 24px;
-    border-top: 1px solid var(--light);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px 40px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--mid);
-    text-transform: uppercase;
-    letter-spacing: .08em;
+    padding: 32px 0 24px; border-top: 1px solid var(--light);
+    display: flex; flex-wrap: wrap; gap: 16px 40px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--mid); text-transform: uppercase; letter-spacing: .08em;
   }
   .footer a { color: var(--mid); text-decoration: none; }
   .footer a:hover { color: var(--red); }
@@ -389,29 +176,29 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">Daily Builders Digest · 产品星期二</p>
-  <h1 class="header-title">AI代理<br><span>重塑购物</span></h1>
+  <p class="header-eyebrow">Daily Builders Digest · 机器人星期二</p>
+  <h1 class="header-title">物理AI<br><span>落地周</span></h1>
   <div class="header-meta">
     <span>2026-03-24</span>
     <span>大雨 &amp; 小苇</span>
     <span>4 Stories</span>
-    <span>Product</span>
+    <span>Robotics</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">◆</span>Shopify Agentic Storefronts</span>
-    <span class="ticker-item"><span class="dot">◆</span>OpenAI放弃Instant Checkout</span>
-    <span class="ticker-item"><span class="dot">◆</span>Google UCP多商品购物车</span>
-    <span class="ticker-item"><span class="dot">◆</span>Manus My Computer桌面代理</span>
-    <span class="ticker-item"><span class="dot">◆</span>Lenny Rachitsky 100万订阅复盘</span>
-    <span class="ticker-item"><span class="dot">◆</span>Shopify Agentic Storefronts</span>
-    <span class="ticker-item"><span class="dot">◆</span>OpenAI放弃Instant Checkout</span>
-    <span class="ticker-item"><span class="dot">◆</span>Google UCP多商品购物车</span>
-    <span class="ticker-item"><span class="dot">◆</span>Manus My Computer桌面代理</span>
-    <span class="ticker-item"><span class="dot">◆</span>Lenny Rachitsky 100万订阅复盘</span>
+    <span class="ticker-item"><span class="dot">◆</span>NVIDIA GR00T N1.7商业授权</span>
+    <span class="ticker-item"><span class="dot">◆</span>Tesla Optimus Gen 3量产启动</span>
+    <span class="ticker-item"><span class="dot">◆</span>Boston Dynamics 2026订单已满</span>
+    <span class="ticker-item"><span class="dot">◆</span>Claude电脑控制Mac研究预览上线</span>
+    <span class="ticker-item"><span class="dot">◆</span>German Bionic被Archimedes收购</span>
+    <span class="ticker-item"><span class="dot">◆</span>NVIDIA GR00T N1.7商业授权</span>
+    <span class="ticker-item"><span class="dot">◆</span>Tesla Optimus Gen 3量产启动</span>
+    <span class="ticker-item"><span class="dot">◆</span>Boston Dynamics 2026订单已满</span>
+    <span class="ticker-item"><span class="dot">◆</span>Claude电脑控制Mac研究预览上线</span>
+    <span class="ticker-item"><span class="dot">◆</span>German Bionic被Archimedes收购</span>
   </div>
 </div>
 
@@ -420,7 +207,7 @@
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>今日播客</strong>
-    <span>· 产品星期二 · 2026-03-24</span>
+    <span>· 机器人星期二 · 2026-03-24</span>
   </div>
   <audio controls src="episodes/2026-03-24.mp3">
     Your browser does not support the audio element.
@@ -432,30 +219,30 @@
   <div class="feature-left">
     <p class="feature-eyebrow">今日焦点</p>
     <p class="feature-show-name">每日快报</p>
-    <p class="feature-ep-title">AI代理购物三方博弈：<br>Shopify全押 / OpenAI转向 / Google加速</p>
+    <p class="feature-ep-title">物理AI落地周：<br>工厂里的机器人上班了，屏幕前的AI也伸手了</p>
     <p class="feature-guest">大雨 &amp; 小苇 主持</p>
   </div>
   <div class="feature-right">
-    <p class="feature-lede">电商的入口正在从搜索框转移到AI对话框。Shopify说这是"新门面"，OpenAI发现直接结账转化率惨不忍睹，Google趁机把UCP标准推向全行业。谁想清楚用户愿意把哪些购物决策交给AI，谁就赢。</p>
+    <p class="feature-lede">NVIDIA GTC刚收官，黄仁勋说"每家工业企业都将成为机器人公司"。同周，Tesla Optimus Gen 3开始量产，Boston Dynamics 2026订单全满，Anthropic让Claude学会了控制Mac桌面。操作机械臂和操作像素，两件事正在融合。</p>
     <div class="feature-tags">
-      <span class="tag">Agentic Commerce</span>
-      <span class="tag">Shopify</span>
-      <span class="tag">OpenAI</span>
-      <span class="tag">Google UCP</span>
-      <span class="tag">Manus</span>
+      <span class="tag">Physical AI</span>
+      <span class="tag">NVIDIA GR00T</span>
+      <span class="tag">Tesla Optimus</span>
+      <span class="tag">Claude Computer Use</span>
+      <span class="tag">Exoskeleton</span>
     </div>
     <div class="feature-stats">
       <div class="stat-item">
         <span class="stat-label">今日话题</span>
-        <span class="stat-value">Product</span>
+        <span class="stat-value">Robotics</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label">故事数量</span>
-        <span class="stat-value">4</span>
+        <span class="stat-label">GR00T N2成功率提升</span>
+        <span class="stat-value">2×+</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label">Checkout转化差距</span>
-        <span class="stat-value">3×</span>
+        <span class="stat-label">Optimus手部自由度</span>
+        <span class="stat-value">22 DOF</span>
       </div>
     </div>
   </div>
@@ -467,30 +254,30 @@
 
   <div class="story-card">
     <span class="story-number">01</span>
-    <h2 class="story-title">Shopify押注"AI代理是电商的新门面"</h2>
-    <p class="story-body">Shopify总裁Harley Finkelstein在Upfront Summit上宣告，AI代理将成为电商的"new front door"。他们推出Agentic Storefronts，让品牌直接在ChatGPT、Perplexity、Microsoft Copilot里被发现。美国线上购物仅占零售18%——AI代理有望改写这个数字。</p>
-    <a class="story-source" href="https://www.pymnts.com/news/ecommerce/2026/shopify-bets-big-on-agentic-ai/" target="_blank">📎 PYMNTS → Shopify Bets Big on Agentic AI</a>
+    <h2 class="story-title">NVIDIA GTC收官：GR00T N2预览，"每家工业企业都将成为机器人公司"</h2>
+    <p class="story-body">GR00T N1.7开启商业授权，手部精细操作大幅提升。下一代N2采用"世界动作模型"架构，在陌生环境里完成新任务的成功率比最佳基线高出一倍以上。Isaac Lab 3.0配合Newton物理引擎大规模压缩仿真到现实的距离。ABB、FANUC、KUKA全部接入。</p>
+    <a class="story-source" href="https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots" target="_blank">📎 NVIDIA Newsroom → New Physical AI Models</a>
   </div>
 
   <div class="story-card">
     <span class="story-number">02</span>
-    <h2 class="story-title">OpenAI购物代理翻车，转向"发现优先"</h2>
-    <p class="story-body">OpenAI悄悄放弃了Instant Checkout功能。数据很残酷：ChatGPT内置结账的转化率比跳转到Walmart官网低整整三倍。他们现在改做产品发现与推荐，把支付环节交还给各家零售商App——第一个合作伙伴是Walmart的AI助手Sparky。</p>
-    <a class="story-source" href="https://www.cnbc.com/2026/03/20/open-ai-agentic-shopping-etsy-shopify-walmart-amazon.html" target="_blank">📎 CNBC → OpenAI's first try at agentic shopping stumbled</a>
+    <h2 class="story-title">Tesla Optimus Gen 3弗里蒙特量产；Boston Dynamics 2026全年订单已满</h2>
+    <p class="story-body">Optimus Gen 3配备22自由度、50执行器手部，在弗里蒙特正式量产。Boston Dynamics全电动Atlas今年全部订单已交付Hyundai和Google DeepMind。Figure 03同步进入物流和制造场景。2025年是"机器人能走路"，2026年是"机器人开始上班"。</p>
+    <a class="story-source" href="https://www.neware.net/news/tesla-optimus-gen-3-the-new-era-of-humanoid-robots/230/191.html" target="_blank">📎 Neware → Tesla Optimus Gen 3</a>
   </div>
 
   <div class="story-card">
     <span class="story-number">03</span>
-    <h2 class="story-title">OpenAI退一步，Google UCP进两步</h2>
-    <p class="story-body">Google升级Universal Commerce Protocol三大能力：多商品购物车、实时商品数据同步、忠诚度权益打通。会员折扣和免邮权益现在可以在AI代理购物时自动匹配——解决了很多人不敢用AI买东西的核心顾虑。中小商家入驻流程也将大幅简化。</p>
-    <a class="story-source" href="https://www.retailtouchpoints.com/news/google-adds-new-agentic-shopping-features-as-openai-pivots-amazon-enters-the-mix/618095/" target="_blank">📎 Retail TouchPoints → Google Adds New Agentic Shopping Features</a>
+    <h2 class="story-title">外骨骼大周：German Bionic被收购，Project MARCH XI亮相新设计</h2>
+    <p class="story-body">Archimedes Partners收购AI驱动外骨骼公司German Bionic，目标国际化扩张，聚焦物流和医疗重体力场景。Project MARCH公布第十一代外骨骼设计，目标双手解放的自平衡行走，7月公开演示。外骨骼路线：增强人而非替代人，近期落地可能更快。</p>
+    <a class="story-source" href="https://exoskeletonreport.com/2026/03/exoskeleton-news-march-21-2026-more-than-fourteen-major-developments-in-just-one-week/" target="_blank">📎 Exoskeleton Report → March 21, 2026</a>
   </div>
 
   <div class="story-card">
     <span class="story-number">04</span>
-    <h2 class="story-title">Manus把AI代理搬到你的桌面：My Computer</h2>
-    <p class="story-body">Meta旗下Manus推出"My Computer"桌面应用，让AI代理直接在本地Mac/Windows设备上操作文件、启动应用、管理工作流。每次操作前需用户明确授权。云端vs本地——这是AI代理产品化路线的根本分叉。</p>
-    <a class="story-source" href="https://9to5mac.com/2026/03/17/metas-manus-launches-my-computer-to-turn-your-mac-into-an-ai-agent/" target="_blank">📎 9to5Mac → Meta's Manus launches 'My Computer'</a>
+    <h2 class="story-title">Anthropic昨天发布：Claude学会控制你的Mac——数字世界的具身智能</h2>
+    <p class="story-body">Claude Code和Cowork现已支持电脑控制：无合适连接器时，Claude直接看屏幕、移鼠标、点按钮。配合上周发布的Dispatch，可在手机上发指令让Claude在Mac上自动完成任务。目前仅支持macOS，向Pro/Max用户开放研究预览。操作像素和操作机械臂，背后的挑战正在融合。</p>
+    <a class="story-source" href="https://claude.com/blog/dispatch-and-computer-use" target="_blank">📎 Anthropic Blog → Put Claude to work on your computer</a>
   </div>
 
 </div>
@@ -504,111 +291,38 @@
   </div>
   <div class="transcript-body">
 
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">大家好，欢迎来到每日快报，我是大雨。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">我是小苇。今天是产品星期二，我们聊聊最近这几天产品界发生的事儿——感觉电商领域要被重写了。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">对，本周有一个主题贯穿始终：AI代理购物。三个大玩家各自出招，方向却截然不同。我们一个一个来聊。</span>
-    </div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">大家好，欢迎来到每日快报，我是大雨。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">我是小苇。今天是机器人星期二，过去72小时里机器人圈非常热闹——NVIDIA GTC刚刚收官，Anthropic昨天也发了一个让所有建造者都很感兴趣的东西。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">对，今天我们聊四条故事：NVIDIA GTC机器人专场收官；特斯拉Optimus Gen 3开始量产；Boston Dynamics电动Atlas全球订单已满；还有Anthropic昨天发布的Claude电脑控制功能。我们一条一条来。</span></div>
 
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">先说Shopify。上周，Shopify总裁Harley Finkelstein在Upfront Summit上说了一句话，我觉得值得被反复咀嚼——他说AI代理将成为电商的"new front door"，新门面。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">这个比喻很有意思。以前门面是官网，是App，现在换成了AI对话界面？</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">对。Shopify的逻辑是：目前美国线上购物只占全部零售的18%，还有82%在线下。而AI代理可以帮你全程搞定，就像有个私人助理帮你买东西。他们推出了Agentic Storefronts，让品牌能在ChatGPT、Perplexity、Microsoft Copilot这些AI平台上被"发现"。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">这其实是在解决分发问题——流量入口从搜索引擎转移到了AI对话框。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">正是。而且Finkelstein说，他们对这个新时代的兴奋程度，是Shopify史上之最。不只是大商家，长尾小商家都能受益。</span>
-    </div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">NVIDIA GTC 2026本周在圣何塞落幕。黄仁勋说了一句话，我觉得会被反复引用很多年——"Physical AI已经到来，每一家工业企业都将成为机器人公司。"</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">这个判断很大胆。不是说"机器人公司会越来越多"，而是说"每家工业企业"都要变。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">而且NVIDIA这次不是在画饼——他们同步发布了一整套工具栈。GR00T N1.7开始对外提供商业授权，这是他们的人形机器人基础模型，支持更精细的手部操作控制。更让人关注的是下一代GR00T N2，架构换成了"世界动作模型"——让机器人能在全新环境里遇到没见过的任务时，成功率比现有最好的视觉语言动作模型高出超过一倍。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">这个"泛化能力"是物理AI最难啃的骨头。现在的机器人换个场景就懵了。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">没错。所以NVIDIA还同步发布了Isaac Lab 3.0，用全新的Newton物理引擎做强化学习训练，目标是大规模缩短从仿真到真实世界部署的距离。ABB、FANUC、KUKA这三家工业机器人巨头都宣布接入了这套系统。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">硬件巨头、仿真平台、基础模型全部打通，这个产业链的布局速度比我想象的快很多。</span></div>
 
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">说到在AI里买东西，OpenAI上周其实发生了一件挺有意思的事——他们悄悄放弃了"Instant Checkout"功能。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">对，这个值得深挖。CNBC报道说，ChatGPT内置结账的转化率，比让用户点链接跳转到Walmart官网低了整整三倍。商品数据不够准确，库存信息滞后，用户搜了半天发现买不到，体验挺差的。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">所以OpenAI怎么应对？</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">他们把策略转向了"发现而非交易"。现在ChatGPT变成推荐加跳转的角色，具体支付交给各家零售商的App来做。第一个合作伙伴是Walmart，他们会把自家的AI助手Sparky嵌入到ChatGPT里。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">这个转向其实很理性——做好分发，不强行做闭环。认清自己的边界是产品成熟的表现。</span>
-    </div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">说到人形机器人，特斯拉这周的消息也很重要——Optimus Gen 3已经在弗里蒙特工厂正式进入量产。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">对，这是机器人历史上一个很值得记录的时刻。Gen 3这次最大的硬件升级是手部——22个自由度、50个执行器，精细操作能力大幅提升。而且不只是特斯拉——Boston Dynamics的全新电动Atlas已经把2026年的全部订单交给了Hyundai的机器人工厂和Google DeepMind，单子满了。Figure AI的Figure 03也在密集部署到物流和制造场景。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">三家同时进入"工业部署"阶段，不是还在实验室里——这是今年和去年最大的不同。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">是的，2025年是"人形机器人能走路了"，2026年是"人形机器人开始上班了"。</span></div>
 
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">OpenAI在购物上收缩，Google反而趁机加码。他们升级了Universal Commerce Protocol，加了三大能力：多商品购物车、实时商品数据同步，以及最关键的——忠诚度权益打通。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">这解决了一个很实际的问题——用AI买东西，原来会丢失会员权益，很多人因为这个不敢用。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">对。而且Google还在简化入驻流程，让中小商家也能更容易接入。OpenAI在收缩，Google在提速，这场竞争还远没有结束。</span>
-    </div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">硬件这边还有一个很有意思的动态——外骨骼。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">对。这周Archimedes Partners宣布收购German Bionic，这家公司做的是AI驱动的外骨骼，主要用在物流和医疗等需要重体力劳动的场景。同一周，Project MARCH发布了他们第十一代外骨骼MARCH XI的设计方案，目标是做到双手解放的自平衡行走，计划今年7月公开演示。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">外骨骼和人形机器人思路不一样——不是替代人，而是增强人。这个路线有很多人觉得在近期更实用，因为它不需要解决"完全自主操作"的难题。</span></div>
 
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">我们换个话题，说说本周另一个有趣的产品动态。Manus——就是被Meta收购的那个AI代理——上周推出了桌面应用"My Computer"。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">以前AI代理基本都是云端跑，Manus这次是直接跑在你的本地机器上。可以读取本地文件，打开应用，管理工作流。Mac和Windows都支持。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">听起来权限很大，安全吗？</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">Manus的设计是每次执行操作前都要用户明确批准——你可以选"只允许一次"，也可以选"总是允许"，让用户掌握控制权。本地AI代理这个方向，我觉得是2026年产品领域最值得关注的趋势之一。</span>
-    </div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">现在说一个昨天刚发布的东西，虽然不是机械臂，但它本质上是AI学会了控制"数字世界的身体"——Anthropic昨天推出了Claude的电脑控制功能。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">这个我看了，是Claude Code和Cowork都支持，能点击屏幕、移动鼠标、键盘输入？</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">对。具体逻辑是：Claude先会尝试用已有的API连接器去完成任务；如果没有合适的连接器，它就直接像人一样控制你的屏幕——看画面、点按钮、打字。目前只支持Mac，是研究预览阶段，向Pro和Max用户开放。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">为什么说这和机器人有关系？</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">因为本质上，这就是在解决机器人领域最核心的问题之一——如何让AI感知环境并执行操作。只不过物理机器人操作的是现实世界，Claude操作的是屏幕上的像素。训练AI看屏幕然后做决策，和训练机器人看摄像头然后做决策，背后的挑战有很大的重叠。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">配合上周发布的Dispatch功能，你可以在手机上发一条消息，让Claude替你在Mac上完成一件事，相当于有了一个远程控制你电脑的AI助理。</span></div>
 
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">好，今天的产品星期二就到这里。三件事要记住：Shopify觉得AI代理是电商的新门面；OpenAI学会了放弃强闭环；Google在OpenAI犹豫的地方全力冲刺。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">说白了，AI代理购物这个赛道，产品思路比技术更重要——谁想清楚了用户真正愿意把哪些决策交给AI，谁就赢了。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">说得好。我是大雨。</span>
-    </div>
-    <div class="line">
-      <span class="speaker xiaowei">小苇</span>
-      <span class="speech">我是小苇。我们明天见。</span>
-    </div>
-    <div class="line">
-      <span class="speaker dayu">大雨</span>
-      <span class="speech">再见！</span>
-    </div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">好，今天的机器人星期二就到这里。总结一下：NVIDIA宣告物理AI时代正式到来；特斯拉、Boston Dynamics、Figure AI同步进入工业部署；外骨骼赛道悄悄在加速；Anthropic让Claude学会了控制屏幕——数字世界的具身智能也在同步推进。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">有一件事我觉得越来越明显——机器人和AI软件代理正在融合。操作像素和操作机械臂，背后的能力在收敛。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">说得很准。我是大雨。</span></div>
+    <div class="line"><span class="speaker xiaowei">小苇</span><span class="speech">我是小苇。明天见。</span></div>
+    <div class="line"><span class="speaker dayu">大雨</span><span class="speech">再见！</span></div>
 
   </div>
 </div>
@@ -618,17 +332,17 @@
 <div class="signals-grid">
 
   <div class="signal-card">
-    <span class="signal-type">🎙 Podcast</span>
-    <p class="signal-title">Lenny Rachitsky：如何把Newsletter做到100万订阅</p>
-    <p class="signal-body">Lenny首次坐上嘉宾位，被人采访。复盘从零写Newsletter到100万订阅、播客进科技类全球前十的全过程。讲他的质量标准、迭代方法，和事业中最惊恐的时刻。做内容产品必听。</p>
-    <a class="signal-link" href="https://podcasts.apple.com/us/podcast/lennys-podcast-product-career-growth/id1627920305" target="_blank">→ Lenny's Podcast · Apple Podcasts</a>
+    <span class="signal-type">🌐 Analysis</span>
+    <p class="signal-title">WEF专家：机器人下一步突破在"感知"和"触觉"</p>
+    <p class="signal-body">World Economic Forum本周发布专家分析，机器人关键突破高度集中在两点：情境感知理解（让机器人真正"看懂"环境）和触觉力感应（让手感知软硬轻重）。这两点恰好是GR00T N2和Optimus Gen 3都在攻坚的方向。</p>
+    <a class="signal-link" href="https://www.weforum.org/stories/2026/03/advances-in-autonomous-robotics-what-comes-next/" target="_blank">→ WEF → Next key advancements in robotics</a>
   </div>
 
   <div class="signal-card">
-    <span class="signal-type">📊 Analysis</span>
-    <p class="signal-title">Google vs OpenAI：两种agentic commerce哲学的分叉</p>
-    <p class="signal-body">retailgentic.com 的作者把这次分叉总结得很精准：Google全面加码UCP基础设施，OpenAI专注发现侧放弃交易闭环。这不只是产品决策，是两家公司对"AI代理在商业链路中应该扮演什么角色"的根本判断不同。</p>
-    <a class="signal-link" href="https://www.retailgentic.com/p/alert-google-quadruples-down-on-ucpagentic" target="_blank">→ retailgentic.com · Google Quadruples-down on UCP</a>
+    <span class="signal-type">📊 Builder Insight</span>
+    <p class="signal-title">仿真到现实的鸿沟正在变浅——创业公司进入门槛下降</p>
+    <p class="signal-body">TrendForce分析师指出：GR00T加上Isaac Lab 3.0之后，虚拟仿真与真实部署之间的"sim-to-real gap"在加速收窄。对机器人创业公司来说，意味着不需要先攒大量真实世界数据，可以在虚拟环境里先跑通模型再落地。进入门槛正在变低。</p>
+    <a class="signal-link" href="https://www.trendforce.com/news/2026/03/19/insights-nvidia-expands-robotics-ecosystem-at-gtc-as-physical-ai-moves-toward-large-scale-deployment/" target="_blank">→ TrendForce → NVIDIA Expands Robotics Ecosystem at GTC</a>
   </div>
 
 </div>

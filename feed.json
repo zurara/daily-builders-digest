@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-03-25",
+    "dow": 3,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "2026-03-25 今日快报",
+    "html": "episodes/2026-03-25.html",
+    "mp3": "episodes/2026-03-25.mp3",
+    "headlines": []
+  },
+  {
     "date": "2026-03-24",
     "dow": 2,
     "topic": "Product",

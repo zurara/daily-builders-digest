@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-03-26",
+    "dow": 4,
+    "topic": "Health",
+    "format": "健康播客快报",
+    "title": "Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说清楚 · The Drive #385：被遗忘二十年的 CETP 抑制剂，正悄悄连接心血管与阿尔茨海默症",
+    "html": "episodes/2026-03-26.html",
+    "mp3": "episodes/2026-03-26.mp3",
+    "headlines": [
+      "Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说清楚",
+      "The Drive #385：被遗忘二十年的 CETP 抑制剂，正悄悄连接心血管与阿尔茨海默症",
+      "FoundMyFitness：Rhonda Patrick 近期研究摘要——早晨光照与血流限制训练的双重证据",
+      "两个免费或低成本干预手段，正在改写女性健康管理的底层逻辑"
+    ]
+  },
+  {
     "date": "2026-03-25",
     "dow": 3,
     "topic": "Robotics",

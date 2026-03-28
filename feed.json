@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-03-28",
+    "dow": 6,
+    "topic": "Books",
+    "format": "周六书单",
+    "title": "The Silence In Between · Josie Ferguson · 1961年柏林墙",
+    "html": "episodes/2026-03-28.html",
+    "mp3": "episodes/2026-03-28.mp3",
+    "headlines": [
+      "The Silence In Between",
+      "Josie Ferguson",
+      "周六书籍介绍"
+    ]
+  },
+  {
     "date": "2026-03-27",
     "dow": 5,
     "topic": "AI",

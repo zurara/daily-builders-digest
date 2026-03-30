@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-03-30",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Jensen Huang宣告AGI已至：定义之争比声明本身更重要 · OpenAI Spud完成预训练：几周后见",
+    "html": "episodes/2026-03-30.html",
+    "mp3": "episodes/2026-03-30.mp3",
+    "headlines": [
+      "Jensen Huang宣告AGI已至：定义之争比声明本身更重要",
+      "OpenAI Spud完成预训练：几周后见",
+      "Waymo单周行程突破五十万次：机器人出租车进入规模化",
+      "华为950PR：中国AI芯片的最强一张牌，字节与阿里开始下单"
+    ]
+  },
+  {
     "date": "2026-03-29",
     "dow": 7,
     "topic": "Podcasts",

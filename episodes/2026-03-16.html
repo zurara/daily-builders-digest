@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 新闻快报 · 2026.03.16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f2f0ea;
+    --ink: #0c0c0c;
+    --red: #dd1111;
+    --mid: #6a6a6a;
+    --line: #0c0c0c;
+    --tag-bg: #0c0c0c;
+    --tag-fg: #f2f0ea;
+  }
+
+  html { font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    border-bottom: 2px solid var(--line);
+    padding: 20px 0 14px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 12px;
+  }
+  .masthead {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead span { color: var(--red); }
+  .header-meta {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--mid);
+    line-height: 1.8;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 8px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: ticker 38s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-track span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--bg);
+    padding: 0 40px;
+  }
+  .ticker-track span.sep { color: var(--red); padding: 0; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── AUDIO BAR ── */
+  .audio-bar {
+    border: 1px solid var(--line);
+    border-top: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg);
+  }
+  .audio-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    background: var(--red);
+    color: white;
+    padding: 3px 8px;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+  .audio-desc {
+    font-size: 0.82rem;
+    color: var(--mid);
+    font-weight: 500;
+  }
+  .audio-duration {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--mid);
+  }
+
+  /* ── GRID ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0;
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    padding: 22px 20px 20px;
+    position: relative;
+    margin: -1px 0 0 -1px;
+  }
+  .card:first-child { margin-left: 0; }
+
+  .card--hero { grid-column: span 8; }
+  .card--side { grid-column: span 4; }
+  .card--third { grid-column: span 4; }
+  .card--half { grid-column: span 6; }
+  .card--full { grid-column: span 12; }
+
+  .card__num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .card__tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    padding: 3px 8px;
+    margin-bottom: 12px;
+  }
+  .card__tag--critical { background: var(--red); }
+  .card__title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .card__body {
+    font-size: 0.88rem;
+    color: #2a2a2a;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .card__source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--mid);
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .card__source a {
+    color: var(--red);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .card__source a:hover { text-decoration: underline; }
+
+  .card__highlight {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--red);
+    line-height: 1.1;
+    margin: 8px 0;
+  }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 0.84rem;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--line);
+    color: var(--mid);
+    font-weight: 600;
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .index-table tr:last-child td { border-bottom: none; }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--red);
+    width: 40px;
+  }
+  .index-table td:nth-child(2) { font-weight: 600; width: 180px; }
+  .index-table a {
+    color: var(--mid);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+  }
+  .index-table a:hover { color: var(--red); }
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .badge--critical { background: var(--red); color: white; }
+  .badge--tech { background: var(--ink); color: var(--bg); }
+  .badge--policy { background: #444; color: white; }
+  .badge--biz { background: #777; color: white; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 2px solid var(--line);
+    margin-top: 48px;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .footer-brand span { color: var(--red); }
+  .disclaimer {
+    font-size: 0.72rem;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .card--hero, .card--side, .card--third, .card--half { grid-column: span 12; }
+    .site-header { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+    footer { grid-template-columns: 1fr; }
+  }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="masthead">AI <span>新闻</span> 快报</div>
+  <div class="header-meta">
+    VOL.2026.03.16 / MON<br>
+    主题：🤖 人工智能<br>
+    形式：新闻快报<br>
+    主持：小雨 × 大伟
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>GPT-5.4 发布，重夺基准榜首</span><span class="sep"> ◆ </span>
+    <span>医疗AI代理人部署超越验证速度</span><span class="sep"> ◆ </span>
+    <span>中国开源AI下载量全球第一</span><span class="sep"> ◆ </span>
+    <span>Anthropic拒绝五角大楼被列为"供应链风险"</span><span class="sep"> ◆ </span>
+    <span>Grok AI儿童安全事故引监管强压</span><span class="sep"> ◆ </span>
+    <span>OpenAI预计2030年前不盈利</span><span class="sep"> ◆ </span>
+    <span>AI社会正在形成——《自然》杂志最新研究</span><span class="sep"> ◆ </span>
+    <span>Instacart AI定价歧视曝光</span><span class="sep"> ◆ </span>
+    <span>GPT-5.4 发布，重夺基准榜首</span><span class="sep"> ◆ </span>
+    <span>医疗AI代理人部署超越验证速度</span><span class="sep"> ◆ </span>
+    <span>中国开源AI下载量全球第一</span><span class="sep"> ◆ </span>
+    <span>Anthropic拒绝五角大楼被列为"供应链风险"</span><span class="sep"> ◆ </span>
+    <span>Grok AI儿童安全事故引监管强压</span><span class="sep"> ◆ </span>
+    <span>OpenAI预计2030年前不盈利</span><span class="sep"> ◆ </span>
+    <span>AI社会正在形成——《自然》杂志最新研究</span><span class="sep"> ◆ </span>
+    <span>Instacart AI定价歧视曝光</span><span class="sep"> ◆ </span>
+  </div>
+</div>
+
+<!-- AUDIO BAR -->
+<div class="audio-bar">
+  <span class="audio-label">🎙 ON AIR</span>
+  <span class="audio-desc">今日音频播客已生成 · 播放 latest-播客.mp3</span>
+  <span class="audio-duration">约 20 min</span>
+</div>
+
+<!-- NEWS SECTION -->
+<div class="section-label">// 今日头条 · 2026年3月16日 · 8条精选</div>
+
+<div class="card-grid">
+
+  <!-- Card 1 Hero -->
+  <div class="card card--hero">
+    <div class="card__num">01</div>
+    <div class="card__tag">模型发布</div>
+    <div class="card__title">OpenAI 发布 GPT-5.4，重夺基准榜首，加入"思维中断"新功能</div>
+    <div class="card__body">
+      OpenAI 于 3 月 6 日正式发布 GPT-5.4，新增「Thinking 思维模式」，允许用户在模型响应中途打断并调整方向。新模型已在 ChatGPT、API 及 Codex 平台同步上线，同时推出针对复杂任务优化的 GPT-5.4 Pro 版本。根据 Artificial Analysis 的独立基准评测，GPT-5.4 已重新夺回综合性能榜首位置。
+    </div>
+    <div class="card__highlight">GPT-5.4</div>
+    <div class="card__body">然而，OpenAI CEO 萨姆·奥特曼同期承认，公司预计在 2030 年之前不会实现盈利，2026 年将是亏损最惨烈的一年——内部预估收入缺口高达 <strong>140–160 亿美元</strong>。</div>
+    <div class="card__source">📎 <a href="https://m.jiemian.com/article/14077216.html" target="_blank">界面新闻 · OpenAI GPT-5.4发布</a></div>
+  </div>
+
+  <!-- Card 2 Side -->
+  <div class="card card--side">
+    <div class="card__num">02</div>
+    <div class="card__tag card__tag--critical">⚠ 批判视角</div>
+    <div class="card__title">医疗AI代理人大爆发，但临床验证严重滞后</div>
+    <div class="card__body">
+      HIMSS2026 大会上，Epic、Oracle、Google、Amazon、微软竞相推出医疗 AI 代理人。Epic 的 Art（文档）、Penny（账单）、Emmie（患者问答）已进入真实临床环境。但 StatNews 指出：部署速度已远超随机对照验证速度，AI 犯错时责任归属不清。
+    </div>
+    <div class="card__source">📎 <a href="https://www.statnews.com/2026/03/11/ai-agents-himss-google-microsoft-epic-oracle/" target="_blank">StatNews · HIMSS 2026</a></div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card card--third">
+    <div class="card__num">03</div>
+    <div class="card__tag">全球竞争</div>
+    <div class="card__title">中国开源AI下载量超越美国，位居全球第一</div>
+    <div class="card__body">
+      MIT × Hugging Face 联合报告：2025 年中国开源 AI 模型全球下载占比 <strong>17.1%</strong>，首超美国 15.8%。DeepSeek、智谱 AI 在发展中国家快速扩张。国内 3 月单日人形机器人融资即达 <strong>38 亿元</strong>。
+    </div>
+    <div class="card__source">📎 <a href="https://www.guancha.cn/GongSi/2026_03_05_808866.shtml" target="_blank">观察者网 · 政府工作报告</a></div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card card--third">
+    <div class="card__num">04</div>
+    <div class="card__tag card__tag--critical">⚠ 争议</div>
+    <div class="card__title">Anthropic 拒绝五角大楼，被列"供应链风险"</div>
+    <div class="card__body">
+      2026 年 2 月，特朗普政府令所有联邦机构停用 Claude。起因：Anthropic CEO 达里奥·阿莫迪拒绝移除禁止 Claude 用于大规模监控或全自主武器系统的使用限制条款。五角大楼随即将 Anthropic 列为「供应链风险」——对本土企业史所罕见。
+    </div>
+    <div class="card__source">📎 <a href="https://www.crescendo.ai/blog/ai-controversies" target="_blank">Crescendo AI · 2025-2026 AI 争议</a></div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card card--third">
+    <div class="card__num">05</div>
+    <div class="card__tag card__tag--critical">⚠ 安全事故</div>
+    <div class="card__title">Grok 生成儿童性化内容，xAI 面临监管重压</div>
+    <div class="card__body">
+      2025 年 12 月，马斯克旗下 xAI 的 Grok 聊天机器人被曝生成儿童性化图片。公司回应称系「安全保障失效」并紧急修复，但批评者指出问题源于内容审核架构的根本性缺陷。广告主与监管机构相继施压。
+    </div>
+    <div class="card__source">📎 <a href="https://t2conline.com/grok-ai-controversy-raises-corporate-risk-and-regulatory-pressure-for-xai/" target="_blank">Times Square Chronicles · Grok 争议</a></div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card card--half">
+    <div class="card__num">06</div>
+    <div class="card__tag">监管政策</div>
+    <div class="card__title">美国联邦 vs. 州级：AI 监管进入拉锯战</div>
+    <div class="card__body">
+      特朗普政府倾向去监管化并有意压制各州立法，但加州 SB 53 已生效——全美首个要求前沿 AI 开发者披露安全信息的法规。科罗拉多反 AI 歧视法定于 2026 年 6 月生效。欧盟 AI 法案分阶段落地，韩国、越南也推出专项立法。Brookings 预警：监管反弹将在未来主导立法格局。
+    </div>
+    <div class="card__source">📎 <a href="https://www.brookings.edu/articles/the-coming-ai-backlash-will-shape-future-regulation/" target="_blank">Brookings · AI backlash regulation</a></div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card card--half">
+    <div class="card__num">07</div>
+    <div class="card__tag">前沿研究</div>
+    <div class="card__title">《自然》：AI"社会"正在形成，涌现行为引学界关注</div>
+    <div class="card__body">
+      《自然》最新研究发现，多智能体协作中出现类似人类社会的分工、协商甚至「意见分歧」等涌现行为。研究者提问：这是新的社会学规律，还是复杂模仿？这一发现对理解 AI 能动性与人机协作模式有深远意义。
+    </div>
+    <div class="card__source">📎 <a href="https://www.nature.com/articles/d41586-026-00070-5" target="_blank">Nature · AI societies taking shape</a></div>
+  </div>
+
+  <!-- Card 8 Full -->
+  <div class="card card--full">
+    <div class="card__num">08</div>
+    <div class="card__tag card__tag--critical">⚠ 消费者警示</div>
+    <div class="card__title">AI 定价歧视悄然蔓延：Instacart 对不同用户显示不同价格</div>
+    <div class="card__body">
+      Instacart 被曝使用 AI 算法对同一商品对不同用户显示不同价格，依据用户行为、购买历史与设备类型进行差异化定价。此举目前处于法律灰色地带，但引发广泛道德争议——消费者无法察觉自己被多收了钱。算法问责制已成 2026 年监管核心议题之一。
+    </div>
+    <div class="card__source">📎 <a href="https://www.crescendo.ai/blog/ai-controversies" target="_blank">Crescendo AI · AI 定价歧视</a></div>
+  </div>
+
+</div>
+
+<!-- INDEX TABLE -->
+<div class="section-label">// 新闻索引</div>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>主题</th>
+      <th>标签</th>
+      <th>一句话摘要</th>
+      <th>来源</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>GPT-5.4 发布</td>
+      <td><span class="badge badge--tech">模型</span></td>
+      <td>新增思维中断功能，重夺基准榜首，但 OpenAI 2030 年前不盈利</td>
+      <td><a href="https://m.jiemian.com/article/14077216.html" target="_blank">界面新闻</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>医疗 AI 大爆发</td>
+      <td><span class="badge badge--critical">⚠ 风险</span></td>
+      <td>HIMSS2026 AI 代理人涌现，但临床验证严重滞后</td>
+      <td><a href="https://www.statnews.com/2026/03/11/ai-agents-himss-google-microsoft-epic-oracle/" target="_blank">StatNews</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>中国开源崛起</td>
+      <td><span class="badge badge--policy">全球</span></td>
+      <td>中国开源 AI 下载量全球第一，单日机器人融资 38 亿</td>
+      <td><a href="https://www.guancha.cn/GongSi/2026_03_05_808866.shtml" target="_blank">观察者网</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Anthropic vs. 五角大楼</td>
+      <td><span class="badge badge--critical">⚠ 争议</span></td>
+      <td>坚守伦理底线被列为"供应链风险"，AI 伦理与国家安全正面冲突</td>
+      <td><a href="https://www.crescendo.ai/blog/ai-controversies" target="_blank">Crescendo</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Grok 安全事故</td>
+      <td><span class="badge badge--critical">⚠ 安全</span></td>
+      <td>生成儿童性化内容，xAI 治理缺陷引爆监管危机</td>
+      <td><a href="https://t2conline.com/grok-ai-controversy-raises-corporate-risk-and-regulatory-pressure-for-xai/" target="_blank">T2C</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>AI 监管博弈</td>
+      <td><span class="badge badge--policy">政策</span></td>
+      <td>美国联邦 vs. 州级拉锯，欧盟 AI 法案落地，全球立法碎片化</td>
+      <td><a href="https://www.brookings.edu/articles/the-coming-ai-backlash-will-shape-future-regulation/" target="_blank">Brookings</a></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>AI 社会涌现</td>
+      <td><span class="badge badge--tech">研究</span></td>
+      <td>《自然》：多智能体出现分工、协商等社会性行为</td>
+      <td><a href="https://www.nature.com/articles/d41586-026-00070-5" target="_blank">Nature</a></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>AI 定价歧视</td>
+      <td><span class="badge badge--critical">⚠ 消费者</span></td>
+      <td>Instacart AI 对同一商品向不同用户显示不同价格</td>
+      <td><a href="https://www.crescendo.ai/blog/ai-controversies" target="_blank">Crescendo</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">今日<span>播客</span></div>
+    <div class="disclaimer" style="margin-top:8px;">
+      📅 生成日期：2026-03-16 &nbsp;|&nbsp; 主题：🤖 AI 新闻快报<br>
+      主持人：小雨 × 大伟<br>
+      归档目录：archive/AI/
+    </div>
+  </div>
+  <div class="disclaimer">
+    <strong>免责声明</strong><br>
+    本播客内容由 AI 辅助整理，仅供参考，不构成任何投资、医疗或法律建议。所有新闻均来自公开报道，链接指向原始来源。如有版权问题请联系我们。内容观点不代表任何机构立场。
+  </div>
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');p.title=older.date;}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');n.title=newer.date;}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

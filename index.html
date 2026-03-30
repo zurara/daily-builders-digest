@@ -563,42 +563,120 @@
 
 <hr class="rule">
 
-<!-- PAST EPISODES -->
-<p class="section-label">◈ 往期回顾</p>
-<div class="past-episodes" id="past-container">
-  <div id="past-loading">正在加载往期节目…</div>
-</div>
 
-<script>
-(async () => {
-  try {
-    const res = await fetch('/feed.json');
-    if (!res.ok) throw new Error('fetch failed');
-    const feed = await res.json();
-    const container = document.getElementById('past-container');
-    container.innerHTML = '';
-    const episodes = (feed.episodes || [])
-      .filter(e => e.date !== '2026-03-30')
-      .slice(0, 6);
-    if (!episodes.length) { container.innerHTML = '<div id="past-loading">暂无往期节目</div>'; return; }
-    episodes.forEach(ep => {
-      const a = document.createElement('a');
-      a.className = 'past-ep-item';
-      a.href = `episodes/${ep.date}.html`;
-      a.innerHTML = `<span class="past-ep-date">${ep.date}</span><span class="past-ep-title">${ep.title || ep.date}</span><span class="past-ep-tag">${ep.topic || 'AI'}</span>`;
-      container.appendChild(a);
-    });
-  } catch {
-    document.getElementById('past-loading').textContent = '暂无往期节目';
-  }
-})();
-</script>
 
 <footer>
   <strong>Daily Builders Digest</strong> · 每日 10:00 自动发布<br>
   主播：大雨 × 小苇 · 由 <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a> 驱动<br>
   2026-03-30 · AI特辑
 </footer>
+
+<!-- ── PAST EPISODES GRID ── -->
+<hr class="rule-heavy" style="margin-top:56px">
+<p class="section-label">◈ 往期回顾 · 近两周节目</p>
+<div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-03-29.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-29</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-03-29 · Podcasts</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-28.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-28</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">The Silence In Between</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-27.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-27</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-03-27 · AI</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-26.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-26</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说…</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-25.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-25</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">2026-03-25 · Robotics</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-24.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-24</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">NVIDIA GTC收官：GR00T N2预览，"每家工业企业都将成为机器人公司"</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-23.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-23</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-03-23 · AI</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-22.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-22</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er…</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-21.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-21</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">My Stroke of Insight</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-20.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-20</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">NVIDIA GTC 2026 落幕，万亿营收预测震撼全场</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-18.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-18</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">2026-03-18 · Robotics</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-17.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-17</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">2026-03-17 · Product</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-16.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-16</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-03-16 · AI</span>
+  </a>
+</div>
+<style>
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}
+.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}
+.ep-card:hover{background:var(--card);}
+.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
+.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
+.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}
+@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}
+</style>
 
 </body>
 </html>

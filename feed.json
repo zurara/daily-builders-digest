@@ -19,7 +19,7 @@
     "dow": 7,
     "topic": "Podcasts",
     "format": "新闻快报",
-    "title": "2026-03-29 今日快报",
+    "title": "2026-03-29 · Podcasts",
     "html": "episodes/2026-03-29.html",
     "mp3": "episodes/2026-03-29.mp3",
     "headlines": []
@@ -43,7 +43,7 @@
     "dow": 5,
     "topic": "AI",
     "format": "新闻快报",
-    "title": "2026-03-27 今日快报",
+    "title": "2026-03-27 · AI",
     "html": "episodes/2026-03-27.html",
     "mp3": "episodes/2026-03-27.mp3",
     "headlines": []
@@ -66,9 +66,9 @@
   {
     "date": "2026-03-25",
     "dow": 3,
-    "topic": "Robotics",
+    "topic": "Product",
     "format": "新闻快报",
-    "title": "2026-03-25 今日快报",
+    "title": "2026-03-25 · Robotics",
     "html": "episodes/2026-03-25.html",
     "mp3": "episodes/2026-03-25.mp3",
     "headlines": []
@@ -76,7 +76,7 @@
   {
     "date": "2026-03-24",
     "dow": 2,
-    "topic": "Product",
+    "topic": "Robotics",
     "format": "新闻快报",
     "title": "NVIDIA GTC收官：GR00T N2预览，\"每家工业企业都将成为机器人公司\" · Tesla Optimus Gen 3弗里蒙特量产；Boston Dynamics 2026全年订单已满",
     "html": "episodes/2026-03-24.html",
@@ -93,7 +93,7 @@
     "dow": 1,
     "topic": "AI",
     "format": "新闻快报",
-    "title": "2026-03-23 今日快报",
+    "title": "2026-03-23 · AI",
     "html": "episodes/2026-03-23.html",
     "mp3": "episodes/2026-03-23.mp3",
     "headlines": []
@@ -141,5 +141,35 @@
       "彭博：华尔街对 AI 泡沫出现内部分歧",
       "麦肯锡：12% 工作任务已被 AI 自动化"
     ]
+  },
+  {
+    "date": "2026-03-18",
+    "dow": 3,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "2026-03-18 · Robotics",
+    "html": "episodes/2026-03-18.html",
+    "mp3": "episodes/2026-03-18.mp3",
+    "headlines": []
+  },
+  {
+    "date": "2026-03-17",
+    "dow": 2,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "2026-03-17 · Product",
+    "html": "episodes/2026-03-17.html",
+    "mp3": "episodes/2026-03-17.mp3",
+    "headlines": []
+  },
+  {
+    "date": "2026-03-16",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "2026-03-16 · AI",
+    "html": "episodes/2026-03-16.html",
+    "mp3": "episodes/2026-03-16.mp3",
+    "headlines": []
   }
 ]

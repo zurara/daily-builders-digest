@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-03-31",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来了？ · NVIDIA GTC 2026：Cosmos 3 + GR00T N2 重构物理 AI 基础设施",
+    "html": "episodes/2026-03-31.html",
+    "mp3": "episodes/2026-03-31.mp3",
+    "headlines": [
+      "Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来了？",
+      "NVIDIA GTC 2026：Cosmos 3 + GR00T N2 重构物理 AI 基础设施",
+      "Google Gemini Robotics 双线出击：Atlas 工业部署 + Agile Robots 欧洲合作",
+      "西北大学：会进化、拒绝死亡的模块化机器人来了"
+    ]
+  },
+  {
     "date": "2026-03-30",
     "dow": 1,
     "topic": "AI",

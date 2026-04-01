@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta property="og:title" content="Daily Builders Digest · 2026-04-01">
-<meta property="og:description" content="苹果封禁 vibe coding · Cursor $2B ARR 的隐忧 · 全自动工程部门来了 · 谁来管 Agent？">
+<meta property="og:description" content="苹果封禁 vibe coding · Cursor $2B ARR 的隐忧 · Claude Code 源码泄露 · 全自动工程部门来了 · 谁来管 Agent？">
 <title>Daily Builders Digest · 2026-04-01</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -304,10 +304,12 @@
   <div class="ticker-track">
     <span class="ticker-item"><span class="dot">▶</span>苹果封禁 vibe coding 应用 — App Store 审核体系面临 AI 原生冲击</span>
     <span class="ticker-item"><span class="dot">▶</span>Cursor 达 $2B ARR 但《财富》直指护城河危机</span>
+    <span class="ticker-item"><span class="dot">▶</span>Claude Code 源码泄露 — KAIROS 潜行模式反蒸馏工具全曝光</span>
     <span class="ticker-item"><span class="dot">▶</span>General Intelligence 发布全自动工程部门产品</span>
     <span class="ticker-item"><span class="dot">▶</span>Aaron Levie：企业 agent 治理才是效率的真正天花板</span>
     <span class="ticker-item"><span class="dot">▶</span>苹果封禁 vibe coding 应用 — App Store 审核体系面临 AI 原生冲击</span>
     <span class="ticker-item"><span class="dot">▶</span>Cursor 达 $2B ARR 但《财富》直指护城河危机</span>
+    <span class="ticker-item"><span class="dot">▶</span>Claude Code 源码泄露 — KAIROS 潜行模式反蒸馏工具全曝光</span>
     <span class="ticker-item"><span class="dot">▶</span>General Intelligence 发布全自动工程部门产品</span>
     <span class="ticker-item"><span class="dot">▶</span>Aaron Levie：企业 agent 治理才是效率的真正天花板</span>
   </div>
@@ -326,7 +328,7 @@
 </div>
 
 <!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 产品 · 精选四条</p>
+<p class="section-label">◈ 今日焦点 · 产品 · 精选五条</p>
 
 <div class="news-grid">
 
@@ -374,7 +376,26 @@
 
   <!-- 04 -->
   <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
+    <p class="news-num">04 · 昨日大事</p>
+    <h2 class="news-hed">Anthropic 把 Claude Code 源码泄出去了：KAIROS、潜行模式、反蒸馏工具全曝光</h2>
+    <p class="news-body">
+      3月31日，Anthropic 在发布 Claude Code v2.1.88 时意外打包了内部 source map 文件，暴露约 <strong>2000 个 TypeScript 文件、51 万行代码</strong>。安全研究员 Chaofan Shou 第一时间在 X 上公开，帖子数小时内几百万浏览，代码被 fork 超过 <strong>4 万次</strong>，随后 Anthropic 发出 DMCA 下架请求。
+      泄露内容中最受关注的有三点：<strong>KAIROS</strong> 是一个未发布的后台自主 agent 模式，每5分钟心跳询问 Claude "有什么值得做的吗"，可在无人操作时自主修复 bug；<strong>潜行模式</strong>在贡献开源代码时自动抹去 Anthropic 内部代号；<strong>反蒸馏工具</strong>会向竞争对手的爬虫注入假工具定义投毒训练数据。此外还有一条让人忍俊不禁的发现——用正则表达式检测用户的挫败感（匹配词：wtf、omfg……），Anthropic 造了最先进的语言模型，却用最原始的 regex 侦测骂声。
+      Claude Code 创始工程师 Boris Cherny 在 X 直接回应：「这是人工错误，不是工具链的 bug。我们的发布流程有几个手动步骤，其中一步没有正确执行。出错时重要的是认识到，这从来不是某一个人的责任，是流程、文化、或者基础设施的问题。」团队已发布修复版本并补充了自动化校验步骤。
+      更棘手的是：泄露当天 axios npm 包同时遭供应链攻击，3月31日特定时段内安装或更新 Claude Code 的用户，可能拿到了含远程访问木马的版本。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/" target="_blank">Anthropic accidentally exposes Claude Code source code — The Register</a>
+      &nbsp;·&nbsp;
+      <a href="https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html" target="_blank">Claude Code Leaked via npm Packaging Error — The Hacker News</a>
+      &nbsp;·&nbsp;
+      <a href="https://alex000kim.com/posts/2026-03-31-claude-code-source-leak/" target="_blank">Fake tools, frustration regexes, undercover mode — Alex Kim's blog</a>
+    </p>
+  </div>
+
+  <!-- 05 -->
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">05</p>
     <h2 class="news-hed">Aaron Levie 的清醒：Agent 效率的上限不是算力，是治理</h2>
     <p class="news-body">
       Box CEO Aaron Levie 一针见血：「对 agents 提升效率的终极限制，不在于技术，而在于安全、合规、治理。企业不可能让 agents 在任何时候对任何数据做任何事。我们一直活在某种幻觉里。」
@@ -422,6 +443,12 @@
     </tr>
     <tr>
       <td>04</td>
+      <td><a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/" target="_blank">Claude Code 源码泄露：KAIROS、潜行模式、Boris Cherny 回应 <span class="tag hot">昨日</span></a></td>
+      <td>The Register</td>
+      <td>2026-03-31</td>
+    </tr>
+    <tr>
+      <td>05</td>
       <td><a href="https://x.com/levie/status/2039216522028257549" target="_blank">Agent 效率的上限是治理 <span class="tag">洞察</span></a></td>
       <td>X / Aaron Levie</td>
       <td>2026-04-01</td>
@@ -501,16 +528,16 @@
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar" style="background:var(--red);">KW</div>
+      <div class="builder-avatar" style="background:var(--red);">PS</div>
       <div>
-        <div class="builder-name">Kevin Weil</div>
-        <div class="builder-handle">@kevinweil · VP Science · OpenAI</div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · iOS 开发者 · PSPDFKit 创始人</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI 不只是在解决更多开放性问题——随着模型进步，它给出的证明也越来越优雅。」OpenAI 科学副总裁转发了一项 AI 数学进展，暗示模型已不只在追求答案正确，而是追求数学之美。</p>
+    <p class="builder-tweet">「他们是不是也在 vibe coding 那份 DMCA 下架请求？」——Anthropic 向 GitHub 发出版权下架通知的同一天，steipete 一句话把「vibe coding」和「DMCA takedown」串在一起，直击这场泄露的荒诞感。300 赞，最佳评论奖。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 116</span>
-      <a href="https://x.com/kevinweil/status/2039200605672284572" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 300</span>
+      <a href="https://x.com/steipete/status/2039156882041123035" target="_blank">查看推文 →</a>
     </div>
   </div>
 

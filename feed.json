@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-02",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么\"标准剂量\"对女性可能根本不标准 · The Drive #385 AMA：真实世界里的长寿工具箱——DEXA、mTOR、稳定性训练全拆解",
+    "html": "episodes/2026-04-02.html",
+    "mp3": "episodes/2026-04-02.mp3",
+    "headlines": [
+      "Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么\"标准剂量\"对女性可能根本不标准",
+      "The Drive #385 AMA：真实世界里的长寿工具箱——DEXA、mTOR、稳定性训练全拆解",
+      "FoundMyFitness：NR 补剂的最新证据、内脏脂肪的代谢真相，以及性别特异性健康的研究盲区",
+      "同样的补剂、同样的断食方案——对女性的效果和风险，可能完全不同"
+    ]
+  },
+  {
     "date": "2026-04-01",
     "dow": 3,
     "topic": "Product",

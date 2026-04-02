@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-04-02">
+<meta property="og:description" content="健康星期四 · 荷尔蒙与大脑 · Peter Attia 长寿工具箱 · 女性健康专题：性别特异性研究盲区">
+<title>Daily Builders Digest · 2026-04-02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 48s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
+
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
+
+  /* ── DIVIDERS ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-04-02</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
+  <div class="header-meta">
+    <span>📅 2026·04·02 周四</span>
+    <span>🏷 主题：健康 · 长寿 · 认知</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 20 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Marc Breedlove — 产前荷尔蒙如何永久塑造大脑神经回路</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #385 — DEXA 扫描 · mTOR 激活 · 稳定性训练：长寿工具箱实战指南</span>
+    <span class="ticker-item"><span class="dot">▶</span>Rhonda Patrick — NR · 内脏脂肪代谢 · 性别特异性健康研究盲区全解析</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康专题 — 咖啡因代谢 · 肌酸响应 · 断食方案的性别差异</span>
+    <span class="ticker-item"><span class="dot">▶</span>大脑清洁新研究 — 睡眠中脑脊液循环的非侵入式测量突破</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Marc Breedlove — 产前荷尔蒙如何永久塑造大脑神经回路</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #385 — DEXA 扫描 · mTOR 激活 · 稳定性训练：长寿工具箱实战指南</span>
+    <span class="ticker-item"><span class="dot">▶</span>Rhonda Patrick — NR · 内脏脂肪代谢 · 性别特异性健康研究盲区全解析</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康专题 — 咖啡因代谢 · 肌酸响应 · 断食方案的性别差异</span>
+    <span class="ticker-item"><span class="dot">▶</span>大脑清洁新研究 — 睡眠中脑脊液循环的非侵入式测量突破</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 20 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-04-02.mp3">
+    你的浏览器不支持音频播放。<a href="2026-04-02.mp3">下载音频</a>
+  </audio>
+</div>
+
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 精选三档</p>
+
+<div class="news-grid">
+
+  <!-- LEAD: Huberman x Marc Breedlove -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量"对女性可能根本不标准</h2>
+    <p class="news-body">
+      三月三十日，Andrew Huberman 请来密歇根州立大学神经科学家 Marc Breedlove 博士，深谈产前荷尔蒙对大脑结构的永久影响。核心结论有三：<br><br>
+      <strong>① 神经回路在子宫里就被定型</strong>——胎儿期暴露于雄激素和雌激素的时机和剂量，会永久改变特定神经回路的结构，这种改变在出生后极难逆转。认知风格、风险偏好、情绪调节的男女统计差异，不只是后天养育的产物。<br><br>
+      <strong>② 整个医学体系存在系统性盲区</strong>——大量药理学和神经科学研究至今以雄性动物为主要实验对象，忽视了性激素对药物代谢、神经回路调节的深刻影响。从麻醉到精神科药物，"标准剂量"往往是基于男性数据制定的。<br><br>
+      <strong>③ 精准医疗的真正含义</strong>——理解这些差异，不是为了强化刻板印象，而是为了让每个人得到更合适的医疗干预。这一期是理解"为什么男女健康建议不该一刀切"的必听集。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.hubermanlab.com/all-episodes" target="_blank">How Hormones Shape Sexual Orientation &amp; Behavior — Huberman Lab</a>
+    </p>
+  </div>
+
+  <!-- Peter Attia -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">The Drive #385 AMA：真实世界里的长寿工具箱——DEXA、mTOR、稳定性训练全拆解</h2>
+    <p class="news-body">
+      Peter Attia 最新 AMA 直击"如何在真实生活中落地长寿工具"，三个要点值得记住：<br><br>
+      <strong>DEXA 扫描</strong>——40岁以上建议每年一次，核心不是体重而是肌肉量变化趋势，肌少症发展缓慢但危害深远，须早于症状出现就开始干预。<br><br>
+      <strong>mTOR 激活窗口</strong>——力量训练后两小时内摄入40克以上高质量蛋白质（乳清蛋白、鸡蛋、牛肉优先），是肌肉蛋白合成效率最高的时间窗。<br><br>
+      <strong>稳定性训练被严重低估</strong>——中老年跌倒并发症致死率极高，根本原因是本体感觉退化和核心稳定性不足，而非力量不足，DNS和Pilates是他推荐的具体工具。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/podcast/" target="_blank">The Drive Podcast #385 AMA — Peter Attia MD</a>
+    </p>
+  </div>
+
+  <!-- FoundMyFitness -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">FoundMyFitness：NR 补剂的最新证据、内脏脂肪的代谢真相，以及性别特异性健康的研究盲区</h2>
+    <p class="news-body">
+      Rhonda Patrick 三月中旬的密集更新，覆盖三个主题：<br><br>
+      <strong>NR 与 NAD⁺</strong>——最新临床数据确认 NR 可提升血液 NAD⁺ 水平，证据链比五年前显著增强，但组织层面转化效果仍有争议，对有代谢健康基础问题的人群更有意义。<br><br>
+      <strong>内脏脂肪</strong>——不只是"占地方"，而是通过门静脉向肝脏输送游离脂肪酸、分泌 IL-6 和 TNF-α 的代谢活跃炎症器官。有氧运动+热量限制+睡眠改善三管齐下效果最显著，睡眠剥夺→皮质醇升高→内脏脂肪堆积是被忽视的恶性循环。<br><br>
+      <strong>性别特异性健康</strong>——见今日女性健康专题深度解析。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/" target="_blank">FoundMyFitness — Dr. Rhonda Patrick PhD</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- ─────────────────── WOMEN'S HEALTH SPOTLIGHT ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 女性健康专题 · 性别特异性健康的研究盲区</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🔬 深度聚焦 · Women's Health Spotlight</p>
+  <h2 class="spotlight-hed">同样的补剂、同样的断食方案——对女性的效果和风险，可能完全不同</h2>
+  <p class="spotlight-body">
+    Rhonda Patrick 在最新播客中系统拆解了"性别特异性健康"这一长期被忽视的议题。大多数营养建议和补剂剂量，是以男性数据为基准制定的——而这对女性可能产生系统性误差。<br><br>
+    <strong>咖啡因代谢：女性更慢，黄体期更慢。</strong> 雌激素会抑制 CYP1A2 酶活性，这一酶正是代谢咖啡因的主要途径。在月经周期后半段（黄体期），雌激素变化会进一步延长咖啡因半衰期——同一杯咖啡，对女性睡眠的干扰可能远大于男性。<br><br>
+    <strong>肌酸：女性响应更显著。</strong> 女性自身合成肌酸的能力较弱，补充后的边际收益更大——研究显示女性对肌酸的响应比男性更强，但几乎所有的剂量建议都来自男性运动员数据。<br><br>
+    <strong>间歇性断食：激进方案有风险。</strong> 流行的 16:8 断食，对处于生育年龄的女性可能干扰下丘脑-垂体-卵巢轴（HPO 轴），导致月经不规律乃至停经。Rhonda Patrick 建议女性从 12:12 开始，循序渐进。<br><br>
+    <strong>如何应对这一系统性问题？</strong> 对"以男性为默认基准"的任何健康建议，主动追问：这个研究有没有包含女性受试者？有没有按月经周期阶段进行分层分析？没有的话，结论对你的适用性需要打问号。Rhonda Patrick 认为，专门针对女性的营养和运动科学研究，将是未来十年最重要的增长方向之一。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 健康新闻索引 · 近三日</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab × Marc Breedlove — 产前荷尔蒙与大脑性别差异 <span class="tag hot">头条</span></a></td>
+      <td>Huberman Lab</td>
+      <td>2026-03-30</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://peterattiamd.com/podcast/" target="_blank">The Drive #385 AMA — 长寿工具箱实战：DEXA · mTOR · 稳定性训练 <span class="tag">长寿</span></a></td>
+      <td>Peter Attia MD</td>
+      <td>2026-03-23</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.foundmyfitness.com/" target="_blank">FoundMyFitness — NR · 内脏脂肪 · 性别特异性健康 <span class="tag">女性健康</span></a></td>
+      <td>Rhonda Patrick PhD</td>
+      <td>2026-03-17</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://medicalxpress.com/news/2026-03-brain-fast-invasive.html" target="_blank">睡眠中脑脊液循环的非侵入式测量新突破——奥卢大学研究 <span class="tag">神经科学</span></a></td>
+      <td>Medical Xpress</td>
+      <td>2026-03-31</td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td><a href="https://www.wrdw.com/2026/04/02/inside-90-study-what-it-reveals-about-living-longer/" target="_blank">90+ 研究最新发现：超越百岁者的共同习惯 <span class="tag">长寿</span></a></td>
+      <td>WRDW / UCI</td>
+      <td>2026-04-02</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 08:02。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Huberman Lab · 2026-03-30</p>
+  <p class="pc-title">How Hormones Shape Sexual Orientation &amp; Behavior | Dr. Marc Breedlove</p>
+  <p class="pc-summary">
+    神经科学家 Marc Breedlove 博士与 Huberman 深度对谈：产前荷尔蒙如何在子宫中永久塑造大脑神经回路，解释了认知风格、情绪调节等特征的男女差异的生物基础。最重要的洞察：整个医学体系以雄性动物和男性数据为默认基准，这一系统性偏差影响了从麻醉到精神科药物的几乎所有剂量建议。精准医疗的未来，必须认真对待性别差异。
+  </p>
+  <a href="https://www.hubermanlab.com/all-episodes" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Creator Science</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「移动端和短视频的组合，可能正在损害整整一代孩子的大脑。我见过太多孩子像僵尸一样盯着 TikTok 和 YouTube Shorts——这不是夸张，而是认知神经科学层面的真实问题。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 24</span>
+      <a href="https://x.com/petergyang/status/2039563521885901091" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space · AI Engineer</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「"我们选择去月球，不是因为它容易，而是因为它艰难。"——健康和 AI 都一样：所有真正有效的东西，都不容易。这正是它们有效的原因。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 68</span>
+      <a href="https://x.com/swyx/status/2039472186600427903" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · Every · AI product strategy</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「SaaS 并没有死，它只是需要变得 agent-native。Linear 是最好的例子——把产品改造成人类和 AI agent 都能使用的形态，让他们成为了最早进入这个新时代的产品之一。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 88</span>
+      <a href="https://x.com/danshipper/status/2039357127903350960" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<hr class="rule-heavy">
+<footer>
+  <strong>每日建造者快报</strong> · 健康星期四 · 2026-04-02<br>
+  主持：大雨 × 小苇 · 脚本与制作由 AI 辅助生成<br>
+  来源：Huberman Lab · The Drive (Peter Attia) · FoundMyFitness (Rhonda Patrick) · follow-builders<br>
+  今日健康行动：力量训练后两小时内，摄入至少40克高质量蛋白质。
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

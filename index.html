@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-04-01">
-<meta property="og:description" content="苹果封禁 vibe coding · Cursor $2B ARR 的隐忧 · Claude Code 源码泄露 · 全自动工程部门来了 · 谁来管 Agent？">
-<title>Daily Builders Digest · 2026-04-01</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-04-02">
+<meta property="og:description" content="健康星期四 · 荷尔蒙与大脑 · Peter Attia 长寿工具箱 · 女性健康专题：性别特异性研究盲区">
+<title>Daily Builders Digest · 2026-04-02</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -132,8 +132,6 @@
     .news-card.lead,
     .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
   }
@@ -203,6 +201,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +277,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,9 +293,8 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
 
@@ -289,29 +315,29 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-04-01</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-04-02</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·04·01 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·04·02 周四</span>
+    <span>🏷 主题：健康 · 长寿 · 认知</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>⏱ 约 20 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>苹果封禁 vibe coding 应用 — App Store 审核体系面临 AI 原生冲击</span>
-    <span class="ticker-item"><span class="dot">▶</span>Cursor 达 $2B ARR 但《财富》直指护城河危机</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Code 源码泄露 — KAIROS 潜行模式反蒸馏工具全曝光</span>
-    <span class="ticker-item"><span class="dot">▶</span>General Intelligence 发布全自动工程部门产品</span>
-    <span class="ticker-item"><span class="dot">▶</span>Aaron Levie：企业 agent 治理才是效率的真正天花板</span>
-    <span class="ticker-item"><span class="dot">▶</span>苹果封禁 vibe coding 应用 — App Store 审核体系面临 AI 原生冲击</span>
-    <span class="ticker-item"><span class="dot">▶</span>Cursor 达 $2B ARR 但《财富》直指护城河危机</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Code 源码泄露 — KAIROS 潜行模式反蒸馏工具全曝光</span>
-    <span class="ticker-item"><span class="dot">▶</span>General Intelligence 发布全自动工程部门产品</span>
-    <span class="ticker-item"><span class="dot">▶</span>Aaron Levie：企业 agent 治理才是效率的真正天花板</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Marc Breedlove — 产前荷尔蒙如何永久塑造大脑神经回路</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #385 — DEXA 扫描 · mTOR 激活 · 稳定性训练：长寿工具箱实战指南</span>
+    <span class="ticker-item"><span class="dot">▶</span>Rhonda Patrick — NR · 内脏脂肪代谢 · 性别特异性健康研究盲区全解析</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康专题 — 咖啡因代谢 · 肌酸响应 · 断食方案的性别差异</span>
+    <span class="ticker-item"><span class="dot">▶</span>大脑清洁新研究 — 睡眠中脑脊液循环的非侵入式测量突破</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Marc Breedlove — 产前荷尔蒙如何永久塑造大脑神经回路</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #385 — DEXA 扫描 · mTOR 激活 · 稳定性训练：长寿工具箱实战指南</span>
+    <span class="ticker-item"><span class="dot">▶</span>Rhonda Patrick — NR · 内脏脂肪代谢 · 性别特异性健康研究盲区全解析</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康专题 — 咖啡因代谢 · 肌酸响应 · 断食方案的性别差异</span>
+    <span class="ticker-item"><span class="dot">▶</span>大脑清洁新研究 — 睡眠中脑脊液循环的非侵入式测量突破</span>
   </div>
 </div>
 
@@ -320,99 +346,84 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <span>大雨 × 小苇 · 健康星期四 · 约 20 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-04-01.mp3">
-    你的浏览器不支持音频播放。<a href="2026-04-01.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-04-02.mp3">
+    你的浏览器不支持音频播放。<a href="2026-04-02.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 产品 · 精选五条</p>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 精选三档</p>
 
 <div class="news-grid">
 
-  <!-- LEAD -->
+  <!-- LEAD: Huberman x Marc Breedlove -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">苹果正面怼 Vibe Coding：App Store 审核体系遭遇 AI 原生冲击</h2>
+    <h2 class="news-hed">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量"对女性可能根本不标准</h2>
     <p class="news-body">
-      苹果本周对 vibe coding 应用出手——Replit、Vibecode 被封禁更新，「Anything」直接从 App Store 下架。理由是违反 2.5.2 条款：不允许应用在审核通过后改变核心功能。
-      这背后是一场产品哲学的正面碰撞：苹果的平台治理建立在「静态审核」假设上，但 AI 原生应用是动态的、有状态的，每次运行结果都不同。审核队列已从24小时扩展到一周，传统人工审核体系被 AI 生成应用的洪水冲垮。
-      出路可能是：给成熟开发者设快速通道，或对 AI 生成内容做专门沙箱——但这意味着苹果要翻整个地基，而不只是打补丁。
+      三月三十日，Andrew Huberman 请来密歇根州立大学神经科学家 Marc Breedlove 博士，深谈产前荷尔蒙对大脑结构的永久影响。核心结论有三：<br><br>
+      <strong>① 神经回路在子宫里就被定型</strong>——胎儿期暴露于雄激素和雌激素的时机和剂量，会永久改变特定神经回路的结构，这种改变在出生后极难逆转。认知风格、风险偏好、情绪调节的男女统计差异，不只是后天养育的产物。<br><br>
+      <strong>② 整个医学体系存在系统性盲区</strong>——大量药理学和神经科学研究至今以雄性动物为主要实验对象，忽视了性激素对药物代谢、神经回路调节的深刻影响。从麻醉到精神科药物，"标准剂量"往往是基于男性数据制定的。<br><br>
+      <strong>③ 精准医疗的真正含义</strong>——理解这些差异，不是为了强化刻板印象，而是为了让每个人得到更合适的医疗干预。这一期是理解"为什么男女健康建议不该一刀切"的必听集。
     </p>
     <p class="news-source">
-      📎 <a href="https://9to5mac.com/2026/03/30/apple-steps-up-crackdown-on-vibe-coding-apps-pulls-anything-from-the-app-store/" target="_blank">Apple steps up crackdown on vibe coding apps — 9to5Mac</a>
-      &nbsp;·&nbsp;
-      <a href="https://startupnews.fyi/2026/03/30/vibe-coding-could-mark-the-end-of-the-app-store-review-process-as-we-know-it/" target="_blank">Vibe coding could mark the end of the App Store review process — StartupNews</a>
+      📎 <a href="https://www.hubermanlab.com/all-episodes" target="_blank">How Hormones Shape Sexual Orientation &amp; Behavior — Huberman Lab</a>
     </p>
   </div>
 
-  <!-- 02 -->
+  <!-- Peter Attia -->
   <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">Cursor 的十字路口：$2B ARR，护城河在哪？</h2>
+    <h2 class="news-hed">The Drive #385 AMA：真实世界里的长寿工具箱——DEXA、mTOR、稳定性训练全拆解</h2>
     <p class="news-body">
-      《财富》杂志深度报道《the rapid rise, and very uncertain future, of a $30 billion AI startup》直指核心：Cursor 超过70%的推理跑在 Claude 上，而 Anthropic 既是供应商，也是最直接的竞争对手。
-      Cursor CEO 的答案是更快的迭代——每五小时更新一个模型 checkpoint，自建 RL。但 Claude Code 三月加了电脑控制、自动模式，Anthropic 直接向用户收费。依赖基础模型的应用，护城河只有两条路：数据飞轮，或极致的分发与体验。Cursor 两条路都在走，但问号还在。
+      Peter Attia 最新 AMA 直击"如何在真实生活中落地长寿工具"，三个要点值得记住：<br><br>
+      <strong>DEXA 扫描</strong>——40岁以上建议每年一次，核心不是体重而是肌肉量变化趋势，肌少症发展缓慢但危害深远，须早于症状出现就开始干预。<br><br>
+      <strong>mTOR 激活窗口</strong>——力量训练后两小时内摄入40克以上高质量蛋白质（乳清蛋白、鸡蛋、牛肉优先），是肌肉蛋白合成效率最高的时间窗。<br><br>
+      <strong>稳定性训练被严重低估</strong>——中老年跌倒并发症致死率极高，根本原因是本体感觉退化和核心稳定性不足，而非力量不足，DNS和Pilates是他推荐的具体工具。
     </p>
     <p class="news-source">
-      📎 <a href="https://fortune.com/2026/03/21/cursor-ceo-michael-truell-ai-coding-claude-anthropic-venture-capital/" target="_blank">Cursor's crossroads — Fortune</a>
+      📎 <a href="https://peterattiamd.com/podcast/" target="_blank">The Drive Podcast #385 AMA — Peter Attia MD</a>
     </p>
   </div>
 
-  <!-- 03 -->
+  <!-- FoundMyFitness -->
   <div class="news-card">
     <p class="news-num">03</p>
-    <h2 class="news-hed">全自动工程部门：General Intelligence 发布 co-founder CTO</h2>
+    <h2 class="news-hed">FoundMyFitness：NR 补剂的最新证据、内脏脂肪的代谢真相，以及性别特异性健康的研究盲区</h2>
     <p class="news-body">
-      纽约 General Intelligence Company 在 Data Driven NYC 发布「co-founder CTO」——全云端、无本地开发、全自动工程部门。新任务触发后，系统在云上起预览环境、调用 Claude Code 写代码、起浏览器 agent 做 QA，通过即自动合并，部署失败自动修复。
-      内部数据：平均每工程师每天25个 PR 合并；AI tokens 开支有时超过员工薪资。这是一个成本结构的根本转变——资本正在从人力转向算力。
+      Rhonda Patrick 三月中旬的密集更新，覆盖三个主题：<br><br>
+      <strong>NR 与 NAD⁺</strong>——最新临床数据确认 NR 可提升血液 NAD⁺ 水平，证据链比五年前显著增强，但组织层面转化效果仍有争议，对有代谢健康基础问题的人群更有意义。<br><br>
+      <strong>内脏脂肪</strong>——不只是"占地方"，而是通过门静脉向肝脏输送游离脂肪酸、分泌 IL-6 和 TNF-α 的代谢活跃炎症器官。有氧运动+热量限制+睡眠改善三管齐下效果最显著，睡眠剥夺→皮质醇升高→内脏脂肪堆积是被忽视的恶性循环。<br><br>
+      <strong>性别特异性健康</strong>——见今日女性健康专题深度解析。
     </p>
     <p class="news-source">
-      📎 <a href="https://youtube.com/watch?v=rX3CxlGm-00" target="_blank">Can One Person Build a Billion-Dollar Startup? — Data Driven NYC</a>
-    </p>
-  </div>
-
-  <!-- 04 -->
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04 · 昨日大事</p>
-    <h2 class="news-hed">Anthropic 把 Claude Code 源码泄出去了：KAIROS、潜行模式、反蒸馏工具全曝光</h2>
-    <p class="news-body">
-      3月31日，Anthropic 在发布 Claude Code v2.1.88 时意外打包了内部 source map 文件，暴露约 <strong>2000 个 TypeScript 文件、51 万行代码</strong>。安全研究员 Chaofan Shou 第一时间在 X 上公开，帖子数小时内几百万浏览，代码被 fork 超过 <strong>4 万次</strong>，随后 Anthropic 发出 DMCA 下架请求。
-      泄露内容中最受关注的有三点：<strong>KAIROS</strong> 是一个未发布的后台自主 agent 模式，每5分钟心跳询问 Claude "有什么值得做的吗"，可在无人操作时自主修复 bug；<strong>潜行模式</strong>在贡献开源代码时自动抹去 Anthropic 内部代号；<strong>反蒸馏工具</strong>会向竞争对手的爬虫注入假工具定义投毒训练数据。此外还有一条让人忍俊不禁的发现——用正则表达式检测用户的挫败感（匹配词：wtf、omfg……），Anthropic 造了最先进的语言模型，却用最原始的 regex 侦测骂声。
-      Claude Code 创始工程师 Boris Cherny 在 X 直接回应：「这是人工错误，不是工具链的 bug。我们的发布流程有几个手动步骤，其中一步没有正确执行。出错时重要的是认识到，这从来不是某一个人的责任，是流程、文化、或者基础设施的问题。」团队已发布修复版本并补充了自动化校验步骤。
-      更棘手的是：泄露当天 axios npm 包同时遭供应链攻击，3月31日特定时段内安装或更新 Claude Code 的用户，可能拿到了含远程访问木马的版本。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/" target="_blank">Anthropic accidentally exposes Claude Code source code — The Register</a>
-      &nbsp;·&nbsp;
-      <a href="https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html" target="_blank">Claude Code Leaked via npm Packaging Error — The Hacker News</a>
-      &nbsp;·&nbsp;
-      <a href="https://alex000kim.com/posts/2026-03-31-claude-code-source-leak/" target="_blank">Fake tools, frustration regexes, undercover mode — Alex Kim's blog</a>
-    </p>
-  </div>
-
-  <!-- 05 -->
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">05</p>
-    <h2 class="news-hed">Aaron Levie 的清醒：Agent 效率的上限不是算力，是治理</h2>
-    <p class="news-body">
-      Box CEO Aaron Levie 一针见血：「对 agents 提升效率的终极限制，不在于技术，而在于安全、合规、治理。企业不可能让 agents 在任何时候对任何数据做任何事。我们一直活在某种幻觉里。」
-      过去48小时正是印证——苹果封禁 vibe coding 应用，各种合规问题集中爆发。Microsoft Agent 365（每月15美元）作为企业所有 AI agent 的「控制平面」同步推出，Perplexity Computer for Enterprise 接入 Slack 和 Snowflake。产品机会正在从「agent 能做什么」转向「谁来管 agent」。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://x.com/levie/status/2039216522028257549" target="_blank">Aaron Levie on X</a>
-      &nbsp;·&nbsp;
-      <a href="https://venturebeat.com/technology/microsoft-says-ungoverned-ai-agents-could-become-corporate-double-agents-its" target="_blank">Microsoft Agent 365 — VentureBeat</a>
+      📎 <a href="https://www.foundmyfitness.com/" target="_blank">FoundMyFitness — Dr. Rhonda Patrick PhD</a>
     </p>
   </div>
 
 </div>
 
-<!-- INDEX TABLE -->
+<!-- ─────────────────── WOMEN'S HEALTH SPOTLIGHT ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
+<p class="section-label">◈ 女性健康专题 · 性别特异性健康的研究盲区</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🔬 深度聚焦 · Women's Health Spotlight</p>
+  <h2 class="spotlight-hed">同样的补剂、同样的断食方案——对女性的效果和风险，可能完全不同</h2>
+  <p class="spotlight-body">
+    Rhonda Patrick 在最新播客中系统拆解了"性别特异性健康"这一长期被忽视的议题。大多数营养建议和补剂剂量，是以男性数据为基准制定的——而这对女性可能产生系统性误差。<br><br>
+    <strong>咖啡因代谢：女性更慢，黄体期更慢。</strong> 雌激素会抑制 CYP1A2 酶活性，这一酶正是代谢咖啡因的主要途径。在月经周期后半段（黄体期），雌激素变化会进一步延长咖啡因半衰期——同一杯咖啡，对女性睡眠的干扰可能远大于男性。<br><br>
+    <strong>肌酸：女性响应更显著。</strong> 女性自身合成肌酸的能力较弱，补充后的边际收益更大——研究显示女性对肌酸的响应比男性更强，但几乎所有的剂量建议都来自男性运动员数据。<br><br>
+    <strong>间歇性断食：激进方案有风险。</strong> 流行的 16:8 断食，对处于生育年龄的女性可能干扰下丘脑-垂体-卵巢轴（HPO 轴），导致月经不规律乃至停经。Rhonda Patrick 建议女性从 12:12 开始，循序渐进。<br><br>
+    <strong>如何应对这一系统性问题？</strong> 对"以男性为默认基准"的任何健康建议，主动追问：这个研究有没有包含女性受试者？有没有按月经周期阶段进行分层分析？没有的话，结论对你的适用性需要打问号。Rhonda Patrick 认为，专门针对女性的营养和运动科学研究，将是未来十年最重要的增长方向之一。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 健康新闻索引 · 近三日</p>
 <table class="index-table">
   <thead>
     <tr>
@@ -425,33 +436,33 @@
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://9to5mac.com/2026/03/30/apple-steps-up-crackdown-on-vibe-coding-apps-pulls-anything-from-the-app-store/" target="_blank">苹果封禁 vibe coding 应用 <span class="tag hot">头条</span></a></td>
-      <td>9to5Mac</td>
+      <td><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab × Marc Breedlove — 产前荷尔蒙与大脑性别差异 <span class="tag hot">头条</span></a></td>
+      <td>Huberman Lab</td>
       <td>2026-03-30</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://fortune.com/2026/03/21/cursor-ceo-michael-truell-ai-coding-claude-anthropic-venture-capital/" target="_blank">Cursor 的十字路口：$2B ARR 的隐忧 <span class="tag">产品</span></a></td>
-      <td>Fortune</td>
-      <td>2026-03-21</td>
+      <td><a href="https://peterattiamd.com/podcast/" target="_blank">The Drive #385 AMA — 长寿工具箱实战：DEXA · mTOR · 稳定性训练 <span class="tag">长寿</span></a></td>
+      <td>Peter Attia MD</td>
+      <td>2026-03-23</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://youtube.com/watch?v=rX3CxlGm-00" target="_blank">全自动工程部门：co-founder CTO <span class="tag">发布</span></a></td>
-      <td>Data Driven NYC</td>
-      <td>2026-03-31</td>
+      <td><a href="https://www.foundmyfitness.com/" target="_blank">FoundMyFitness — NR · 内脏脂肪 · 性别特异性健康 <span class="tag">女性健康</span></a></td>
+      <td>Rhonda Patrick PhD</td>
+      <td>2026-03-17</td>
     </tr>
     <tr>
       <td>04</td>
-      <td><a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/" target="_blank">Claude Code 源码泄露：KAIROS、潜行模式、Boris Cherny 回应 <span class="tag hot">昨日</span></a></td>
-      <td>The Register</td>
+      <td><a href="https://medicalxpress.com/news/2026-03-brain-fast-invasive.html" target="_blank">睡眠中脑脊液循环的非侵入式测量新突破——奥卢大学研究 <span class="tag">神经科学</span></a></td>
+      <td>Medical Xpress</td>
       <td>2026-03-31</td>
     </tr>
     <tr>
       <td>05</td>
-      <td><a href="https://x.com/levie/status/2039216522028257549" target="_blank">Agent 效率的上限是治理 <span class="tag">洞察</span></a></td>
-      <td>X / Aaron Levie</td>
-      <td>2026-04-01</td>
+      <td><a href="https://www.wrdw.com/2026/04/02/inside-90-study-what-it-reveals-about-living-longer/" target="_blank">90+ 研究最新发现：超越百岁者的共同习惯 <span class="tag">长寿</span></a></td>
+      <td>WRDW / UCI</td>
+      <td>2026-04-02</td>
     </tr>
   </tbody>
 </table>
@@ -464,18 +475,18 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 08:04。
+  数据截至今日 UTC 08:02。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Data Driven NYC · 2026-03-31</p>
-  <p class="pc-title">Can One Person Build a Billion-Dollar Startup? — The General Intelligence Company of New York</p>
+  <p class="pc-show">Huberman Lab · 2026-03-30</p>
+  <p class="pc-title">How Hormones Shape Sexual Orientation &amp; Behavior | Dr. Marc Breedlove</p>
   <p class="pc-summary">
-    Andrew 介绍了 General Intelligence Company 的使命：打造「一人十亿美元公司」。他们的新产品 co-founder CTO 是一个全云端、全自动的工程部门——任务下达后，AI 负责写代码、QA 测试、自动合并，直到监控基础设施。团队平均每工程师每天合并25个 PR，AI token 开支有时已超过薪资总额。核心洞察：agents 的「管理层」比 agents 本身更关键——谁构建了协调层，谁就拥有了一人公司的时代入口。
+    神经科学家 Marc Breedlove 博士与 Huberman 深度对谈：产前荷尔蒙如何在子宫中永久塑造大脑神经回路，解释了认知风格、情绪调节等特征的男女差异的生物基础。最重要的洞察：整个医学体系以雄性动物和男性数据为默认基准，这一系统性偏差影响了从麻醉到精神科药物的几乎所有剂量建议。精准医疗的未来，必须认真对待性别差异。
   </p>
-  <a href="https://youtube.com/watch?v=rX3CxlGm-00" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://www.hubermanlab.com/all-episodes" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
@@ -483,94 +494,71 @@
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">PY</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO Box</div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Creator Science</div>
       </div>
     </div>
-    <p class="builder-tweet">「对 agents 提升效率的终极限制，在于安全、合规、治理——企业不可能让 agents 随时对任何数据做任何事。关于企业要自己 vibe code 多少软件，我们一直有些过于乐观了。AI 生产力没有免费午餐，公司必须建立系统、流程和管控体系。」</p>
+    <p class="builder-tweet">「移动端和短视频的组合，可能正在损害整整一代孩子的大脑。我见过太多孩子像僵尸一样盯着 TikTok 和 YouTube Shorts——这不是夸张，而是认知神经科学层面的真实问题。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 96</span>
-      <a href="https://x.com/levie/status/2039216522028257549" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 24</span>
+      <a href="https://x.com/petergyang/status/2039563521885901091" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">NY</div>
+      <div class="builder-avatar">SW</div>
       <div>
-        <div class="builder-name">Nan Yu</div>
-        <div class="builder-handle">@thenanyu · Head of Product · Linear</div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space · AI Engineer</div>
       </div>
     </div>
-    <p class="builder-tweet">「所有人都去向 DHH 道歉吧。」——Linear 产品负责人转发了一条推文，暗示 DHH 多年前的某个判断又被时间证明是正确的——可能关于浏览器、框架，或是大型科技公司的软件文化。</p>
+    <p class="builder-tweet">「"我们选择去月球，不是因为它容易，而是因为它艰难。"——健康和 AI 都一样：所有真正有效的东西，都不容易。这正是它们有效的原因。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 38</span>
-      <a href="https://x.com/thenanyu/status/2039167941225111754" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 68</span>
+      <a href="https://x.com/swyx/status/2039472186600427903" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AA</div>
+      <div class="builder-avatar">DS</div>
       <div>
-        <div class="builder-name">Aditya Agarwal</div>
-        <div class="builder-handle">@adityaag · 前 CTO · Dropbox</div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · Every · AI product strategy</div>
       </div>
     </div>
-    <p class="builder-tweet">「回头看，早期 Facebook「直接在生产修 bug」的哲学，当年听起来很疯狂。也许现代版是：直接让源码公开。如果软件如此动态，也许这没那么不可思议——或者也许真的完全疯了。」</p>
+    <p class="builder-tweet">「SaaS 并没有死，它只是需要变得 agent-native。Linear 是最好的例子——把产品改造成人类和 AI agent 都能使用的形态，让他们成为了最早进入这个新时代的产品之一。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 15</span>
-      <a href="https://x.com/adityaag/status/2039198010681565665" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar" style="background:var(--red);">PS</div>
-      <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · iOS 开发者 · PSPDFKit 创始人</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「他们是不是也在 vibe coding 那份 DMCA 下架请求？」——Anthropic 向 GitHub 发出版权下架通知的同一天，steipete 一句话把「vibe coding」和「DMCA takedown」串在一起，直击这场泄露的荒诞感。300 赞，最佳评论奖。</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 300</span>
-      <a href="https://x.com/steipete/status/2039156882041123035" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">BC</div>
-      <div>
-        <div class="builder-name">Boris Cherny</div>
-        <div class="builder-handle">@bcherny · Claude Code 创始人 · Anthropic</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Claude Code 上线 Code Review：一个 agent 团队对每一个 PR 做深度审查。我们先在内部用，今年 Anthropic 工程师的代码产出已提升 200%，而 review 环节一直是瓶颈。我自己用了几周，它会发现我本来会忽略的问题。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 1,243</span>
-      <a href="https://x.com/bcherny/status/2031089411820228645" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 88</span>
+      <a href="https://x.com/danshipper/status/2039357127903350960" target="_blank">查看推文 →</a>
     </div>
   </div>
 
 </div>
 
-<hr class="rule">
-
 <!-- FOOTER -->
+<hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-04-01<br>
-  主持：大雨 × 小苇 · 由 <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a> 驱动<br>
-  每天10点，关注建造者，不关注 influencer。
+  <strong>每日建造者快报</strong> · 健康星期四 · 2026-04-02<br>
+  主持：大雨 × 小苇 · 脚本与制作由 AI 辅助生成<br>
+  来源：Huberman Lab · The Drive (Peter Attia) · FoundMyFitness (Rhonda Patrick) · follow-builders<br>
+  今日健康行动：力量训练后两小时内，摄入至少40克高质量蛋白质。
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-04-01.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-01</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">苹果正面怼 Vibe Coding：App Store 审核体系遭遇 AI 原生冲击</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-03-31.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-03-31</span>

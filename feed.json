@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-03",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Claude Mythos泄露内测：Anthropic称其为\"能力质变\"，但警告网络攻击风险 · Sora关停：日烧$15M、总收仅$2.1M，AI视频生成的经济现实",
+    "html": "episodes/2026-04-03.html",
+    "mp3": "episodes/2026-04-03.mp3",
+    "headlines": [
+      "Claude Mythos泄露内测：Anthropic称其为\"能力质变\"，但警告网络攻击风险",
+      "Sora关停：日烧$15M、总收仅$2.1M，AI视频生成的经济现实",
+      "Cursor 3发布：从\"黑盒\"到\"玻璃盒\"的AI编程新哲学",
+      "GPT-5.4在GDPVal中超越83%专业人士：知识工作的底线被重新定义",
+      "AI安全报告暴增：开源维护者面临不可承受之重"
+    ]
+  },
+  {
     "date": "2026-04-02",
     "dow": 4,
     "topic": "Health",

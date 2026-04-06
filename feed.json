@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-06",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Google Gemma 4 发布——开源模型首次 Apache 2.0，边缘端到服务器全覆盖 · DeepSeek V4 即将登场：万亿参数、Apache 2.0、训练成本仅 $5.2M",
+    "html": "episodes/2026-04-06.html",
+    "mp3": "episodes/2026-04-06.mp3",
+    "headlines": [
+      "Google Gemma 4 发布——开源模型首次 Apache 2.0，边缘端到服务器全覆盖",
+      "DeepSeek V4 即将登场：万亿参数、Apache 2.0、训练成本仅 $5.2M",
+      "TurboQuant：Google 的\"Pied Piper\"算法，6倍压缩、8倍加速",
+      "SpaceX $250B 收购 xAI——Musk AI 帝国完成拼图",
+      "Meta 全面部署 MTIA 自研芯片——\"去 Nvidia 化\"进入实战阶段"
+    ]
+  },
+  {
     "date": "2026-04-05",
     "dow": 7,
     "topic": "Podcasts",

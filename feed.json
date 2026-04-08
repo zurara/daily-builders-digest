@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-08",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Figma AI Agent 进驻画布：MCP Server + Skills 系统重新定义设计工作流 · Softr AI Co-Builder：一句话，一套 Production-Ready 系统",
+    "html": "episodes/2026-04-08.html",
+    "mp3": "episodes/2026-04-08.mp3",
+    "headlines": [
+      "Figma AI Agent 进驻画布：MCP Server + Skills 系统重新定义设计工作流",
+      "Softr AI Co-Builder：一句话，一套 Production-Ready 系统",
+      "Rocket「Vibe 麦肯锡」：$250 一份 AI 策略报告",
+      "Codex 周活突破 300 万：构建者的引力场正在形成"
+    ]
+  },
+  {
     "date": "2026-04-07",
     "dow": 2,
     "topic": "Robotics",

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-10",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Meta 发布 Muse Spark——告别 Llama 开源路线，闭源模型首秀 · Anthropic Advisor 工具——让 Sonnet \"打电话给\" Opus",
+    "html": "episodes/2026-04-10.html",
+    "mp3": "episodes/2026-04-10.mp3",
+    "headlines": [
+      "Meta 发布 Muse Spark——告别 Llama 开源路线，闭源模型首秀",
+      "Anthropic Advisor 工具——让 Sonnet \"打电话给\" Opus",
+      "AI 助力量子突破——加密体系可能比预想更早失效",
+      "Tufts 大学：神经符号 AI，能耗降低 100 倍且更准确",
+      "Sam Altman 宣布 $100 ChatGPT Pro——Codex 需求推动高端定价"
+    ]
+  },
+  {
     "date": "2026-04-09",
     "dow": 4,
     "topic": "Health",

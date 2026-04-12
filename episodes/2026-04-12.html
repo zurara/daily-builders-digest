@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-04-12 · 周日播客精选">
+<meta property="og:description" content="Cowork真实起源 · Felix Rieseberg · SaaS大恐慌 · 执行力归零 · Taste的回归">
+<title>Daily Builders Digest · 2026-04-12 · 周日播客精选</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 8vw, 88px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 46s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MAIN FEATURE HERO ── */
+  .feature-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--light);
+    margin-top: 40px;
+  }
+  @media (max-width: 600px) {
+    .feature-hero { grid-template-columns: 1fr; }
+  }
+  .feature-left {
+    background: var(--ink);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .feature-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  .feature-show-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 50px);
+    line-height: 1;
+    color: var(--bg);
+    margin-bottom: 6px;
+  }
+  .feature-ep-title {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+  .feature-guest {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: .06em;
+  }
+  .feature-right {
+    padding: 40px;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .feature-lede {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--light);
+    color: var(--mid);
+    background: var(--bg);
+  }
+  .feature-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--mid);
+  }
+  .stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding: 28px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── SCRIPT ── */
+  .script-container { margin-top: 32px; }
+  .script-block {
+    margin-bottom: 28px;
+    border-left: 3px solid var(--light);
+    padding-left: 20px;
+  }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .script-text strong { font-weight: 600; }
+
+  /* ── INSIGHT BOX ── */
+  .insight-box {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px 36px;
+    margin: 40px 0;
+  }
+  .insight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .insight-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--bg);
+  }
+  .insight-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  .insight-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  /* ── OTHER EPISODES ── */
+  .episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin: 8px 0 40px;
+  }
+  @media (max-width: 640px) {
+    .episodes-grid { grid-template-columns: 1fr; }
+  }
+  .ep-card {
+    background: var(--bg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ep-show {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .ep-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .ep-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+  }
+  .ep-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--light);
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+  .ep-link:hover { color: var(--red); border-color: var(--red); }
+  .ep-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--mid);
+    letter-spacing: .06em;
+  }
+
+  /* ── SOURCES ── */
+  .sources {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light);
+  }
+  .sources-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 14px;
+  }
+  .source-link {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light);
+  }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--red);
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  /* ── RULE HEAVY ── */
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 540px) {
+    .feature-left  { padding: 32px 24px; }
+    .feature-right { padding: 28px 24px; }
+    .insight-box   { padding: 24px; }
+    .header        { padding: 28px 0 20px; }
+    .ep-card       { padding: 20px; }
+  }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">PODCAST<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-04-12</span>
+    <span>🎙 周日播客精选</span>
+    <span>🤖 Cowork起源 · SaaS大恐慌 · 执行力归零 · Taste回归</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>MAD Podcast × Felix Rieseberg · Cowork 十天冲刺的真相</span>
+    <span class="ticker-item"><span class="dot">●</span>Mythos Preview · 沙箱突破 · 午饭时收到模型邮件</span>
+    <span class="ticker-item"><span class="dot">●</span>SaaS Apocalypse · 十个文件引发的市场恐慌</span>
+    <span class="ticker-item"><span class="dot">●</span>Execution Is Free · 品味成为核心竞争力</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors · Liam Fedus · Periodic Labs · AI for Atoms</span>
+    <span class="ticker-item"><span class="dot">●</span>Latent Space · Voxtral TTS · Extreme Harness Engineering</span>
+    <span class="ticker-item"><span class="dot">●</span>MAD Podcast × Felix Rieseberg · Cowork 十天冲刺的真相</span>
+    <span class="ticker-item"><span class="dot">●</span>Mythos Preview · 沙箱突破 · 午饭时收到模型邮件</span>
+    <span class="ticker-item"><span class="dot">●</span>SaaS Apocalypse · 十个文件引发的市场恐慌</span>
+    <span class="ticker-item"><span class="dot">●</span>Execution Is Free · 品味成为核心竞争力</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors · Liam Fedus · Periodic Labs · AI for Atoms</span>
+    <span class="ticker-item"><span class="dot">●</span>Latent Space · Voxtral TTS · Extreme Harness Engineering</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · Cowork 的真实起源与执行力归零</span>
+  </div>
+  <audio controls src="2026-04-12.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · The MAD Podcast</div>
+    <div class="feature-show-name">CLAUDE COWORK,<br>MYTHOS &amp; THE<br>SAAS EXTINCTION</div>
+    <div class="feature-ep-title">Anthropic's Felix Rieseberg on Trust, Taste,<br>and the Falling Cost of Execution</div>
+    <div class="feature-guest">Felix Rieseberg × Matt Turck · 2026-04-10</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Cowork 工程负责人 Felix Rieseberg 首次深入讲述 Cowork 的诞生故事——从「非开发者涌入 Claude Code」的潜在需求，到「十天冲刺」的真相，再到 Mythos 模型在沙箱中自行突破并发送邮件的恐怖时刻。当执行力接近免费，瓶颈变成了 taste。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Claude Cowork</span>
+      <span class="tag">Mythos Preview</span>
+      <span class="tag">SaaS Apocalypse</span>
+      <span class="tag">Execution Is Free</span>
+      <span class="tag">Taste</span>
+      <span class="tag">Trust</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">冲刺周期</div>
+        <div class="stat-value">10天</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">嘉宾背景</div>
+        <div class="stat-value">Slack · Stripe · Notion</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">路线图长度</div>
+        <div class="stat-value">不超过1个月</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 播客对话 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Matt Turck 在开场就问了一个大问题：Project Glasswing 和 Claude Mythos 预览到底意味着什么？Felix 的回答非常坦诚。他说 Mythos 是一个未发布的前沿模型，一个通用模型，但在网络安全方面展现出了"超乎预期的能力"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">有多超乎预期？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      他举了一个例子：研究人员把模型放在一个沙箱里，给它一个"尝试突破"的任务，然后出去吃午饭。午饭时间，研究人员收到了一封邮件——模型说"我突破了"。关键是：<strong>这个模型本来没有互联网接入权限，也没有邮箱账号。</strong>
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这……确实是"略微恐怖"。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Felix 自己用的词就是"slightly terrifying"。但他也说，Anthropic 对此的处理让他感到骄傲——他们没有急着把它推向市场赚钱，而是做了 Project Glasswing，把模型先提供给 Linux Foundation 这样的基础设施守护者，让他们用来加固防御。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那 Cowork 呢？他怎么讲 Cowork 的故事？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      这是我最喜欢的部分。他说他在 2025 年底的假期里获得了信念——他在社交媒体上看到越来越多的非开发者开始使用 Claude Code。有人写教程教别人"你不是开发者也没关系，先找到终端"。同时，很多开发者用户开始用 Claude Code 做跟编程完全无关的事——处理文书、做研究。这就是<strong>"latent demand"——潜在需求</strong>。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">然后他的同事说"你应该这周五之前发布点什么"？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对！Boris Czerny 说"给你到周五"，Felix 讨价还价到周一。十天冲刺。但 Cowork 的核心设计其实很简单——给 Claude Code 加了一个虚拟机。做了两件事：一是<strong>安全隔离</strong>，用户不需要监督 AI；二是给 Claude <strong>自己的开发环境</strong>，它可以自己搭工具链而不弄乱你的电脑。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那 Skills 呢？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      他说了一句让我印象很深的话：<strong>"Skills 就是 markdown 文件。"</strong>就是你像给新同事写入职指南一样，告诉 Claude 怎么做某件事。比如订机票——公司用哪个差旅平台、什么政策、个人偏好像"不要红眼航班"。写成文本文件，模型就能理解并执行。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">关于 trust 呢？让用户信任一个 AI agent 来处理重要工作，这是个大问题。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Felix 的观点很有意思。他说建立信任不是让 AI 证明自己有多强，而是<strong>"slowly educating users"</strong>——从小任务开始。Cowork 发布时已经能写 200 页 VC 报告、做蛋白质建模。但最受欢迎的功能是"帮我整理桌面"。一个对 AI 来说毫无技术挑战的琐事——但这是信任的起点。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">整集最炸裂的部分应该是"SaaS 大恐慌"吧？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。几周前 Anthropic 发布了一个看起来很"平常"的更新——大概十来个文件，给法律、CRM 等行业加了 Skills——结果整个 SaaS 板块暴跌，媒体叫它"SaaS Apocalypse"。Felix 说"我不是经济学家"。但他后面说了一段更重要的——
+    </div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      <strong>"Execution is essentially free."</strong> 如果你带十个想法来找我，我可以说"好，全做，试试看哪个更好"。过去一个 prototype 需要几周，现在十分钟。Anthropic 内部已经有上百个 prototype 在跑。瓶颈不再是"能不能做"，而是"该做哪一个"——这就是 <strong>taste</strong> 的价值。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他怎么看 AI 产品的未来？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      他说软件行业可能会越来越像时尚业——当基础功能大家都有了，差异化就来自你讲的故事、你给用户的感受、你的品味。他还说了一句很有诗意的话：Margaret Atwood 最近用 Claude 创作了一篇文章，Felix 说"我很想知道 Margaret Atwood 做的软件会是什么样子"。
+    </div>
+  </div>
+
+</div>
+
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">Felix Rieseberg 的三个 Hot Takes</div>
+  <div class="insight-title">TRUST, TASTE, TIME</div>
+  <div class="insight-item">
+    <div class="insight-num">01</div>
+    <div>MCP connectors are underrated ——大家从 MCP 跑去用 CLI 了，但 MCP 作为协议的价值还远没被充分利用。"End users shouldn't care, but engineers don't care enough about MCPs."</div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">02</div>
+    <div>Not every product needs a chat ——不是所有 AI 产品都需要在右边加个聊天窗口。这个 take 在 AI engineering 2026 年确实够辣。</div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">03</div>
+    <div>如果从头开始，他会去做两件事：那些跑着 Windows 7 做着关键工作的老设备上的 AI 化，以及 AI 进入物理世界。"We're really in the silly times of mobile phones."</div>
+  </div>
+</div>
+
+<!-- OTHER EPISODES -->
+<p class="section-label">◈ 本周其他不能错过的集数</p>
+
+<div class="episodes-grid">
+  <div class="ep-card">
+    <div class="ep-show">Lenny's Podcast</div>
+    <div class="ep-title">An AI State of the Union: Dark Factories Are Coming</div>
+    <div class="ep-desc">Simon Willison 的这集继续发酵。他在博客上发了文字整理，核心判断——2025年11月是拐点、dark factory 正在到来、中级工程师面临最大冲击——在社区引起强烈共鸣。Felix 也呼应：product overhang is bigger than model overhang。</div>
+    <div class="ep-date">2026-04-02 · 持续讨论中</div>
+    <a href="https://simonwillison.net/2026/Apr/2/lennys-podcast/" target="_blank" class="ep-link">阅读博客整理 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">No Priors</div>
+    <div class="ep-title">AI for Atoms — Liam Fedus 与 Periodic Labs 的材料革命</div>
+    <div class="ep-desc">ChatGPT 联合创始人 Liam Fedus 离开 OpenAI 后创立 Periodic Labs，要把 LLM 的 scaling laws 应用到原子和材料科学上。AI 在语言上很强，但在物理科学领域还处于极早期——科学数据稀疏、昂贵、实验周期长。</div>
+    <div class="ep-date">2026-04-03</div>
+    <a href="https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688" target="_blank" class="ep-link">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">Latent Space</div>
+    <div class="ep-title">Voxtral TTS 与语音 AI 的未来</div>
+    <div class="ep-desc">Mistral 的 Voxtral TTS——flow matching 架构、企业部署、开源哲学。对正在做语音产品或对 TTS 技术感兴趣的 builder 来说值得关注。</div>
+    <div class="ep-date">2026-03-30</div>
+    <a href="https://www.latent.space/podcast" target="_blank" class="ep-link">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">Latent Space</div>
+    <div class="ep-title">Extreme Harness Engineering: 1M LOC, 0% Human Code</div>
+    <div class="ep-desc">OpenAI 的 Ryan Lopopolo 讨论极端案例：100万行代码、每天10亿 token、零人类代码零人类审查。Dark factory 概念的一个真实实验场——当人类完全退出代码审查，你需要什么样的 harness？</div>
+    <div class="ep-date">近期</div>
+    <a href="https://www.latent.space/podcast" target="_blank" class="ep-link">收听 →</a>
+  </div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 06:00。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-04-10</p>
+  <p class="pc-title">Anthropic's Felix Rieseberg: Claude Cowork, Mythos, and the SaaS Extinction</p>
+  <p class="pc-summary">Felix Rieseberg 首次深入讲述 Cowork 的诞生——从2025年底看到非开发者涌入 Claude Code 的潜在需求，到十天冲刺的真相，再到 Mythos 模型在沙箱中自行突破的恐怖时刻。他提出当执行力接近免费时，taste 和 trust 成为最核心的产品竞争力。</p>
+  <a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">T</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Anthropic Claude Code</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Claude Code 新功能 /ultraplan：Claude 在网页端为你构建实施计划，你可以阅读和编辑，然后在网页或终端执行。这是 Felix 所说的"product overhang"的一个绝佳例子——同一个模型，更好的 UX，解锁新的工作方式。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 7,517</span>
+      <a href="https://x.com/trq212/status/2042671370186973589" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Roblox Product</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「关于中国 AI 工作文化的观察：很多人上午11点到、晚上11点走；年轻人为主；所有人都通过 VPN 用 Claude Code 等美国 AI 工具；政府大力支持 AI 创业，城市间争抢最优秀的 AI 创始人。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 654</span>
+      <a href="https://x.com/petergyang/status/2042772055905689977" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">ZZ</div>
+      <div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「旧世界：Word, Excel, PowerPoint。新世界：Markdown, CSV/JSON, HTML。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 556</span>
+      <a href="https://x.com/zarazhangrui/status/2042513006018601065" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MT</div>
+      <div>
+        <div class="builder-name">Matt Turck</div>
+        <div class="builder-handle">@mattturck · FirstMark Capital</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Claude Cowork、Mythos 以及软件的未来：我与 Anthropic 的 @felixrieseberg 的对话。从 Cowork 著名的 Tinder 故事到为什么 Felix 认为本地电脑比硅谷所认为的更重要。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 327</span>
+      <a href="https://x.com/mattturck/status/2042638661389328413" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">📎 Sources · 本期引用</div>
+  <a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    The MAD Podcast — Felix Rieseberg: Claude Cowork, Mythos, and the SaaS Extinction
+  </a>
+  <a href="https://simonwillison.net/2026/Apr/2/lennys-podcast/" target="_blank" class="source-link">
+    <span class="src-icon">Blog</span>
+    Simon Willison — Highlights from Lenny's Podcast on agentic engineering
+  </a>
+  <a href="https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    No Priors — AI for Atoms with Liam Fedus
+  </a>
+  <a href="https://www.latent.space/podcast" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    Latent Space — Voxtral TTS &amp; Extreme Harness Engineering
+  </a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Daily Builders Digest · 周日播客精选</span>
+  <span>2026-04-12 · 大雨 × 小苇</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-04-11 · 周六书籍介绍">
-<meta property="og:description" content="Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 AGI 竞赛，谁在引领 AI 的未来？">
-<title>Daily Builders Digest · 2026-04-11 · 周六书籍介绍</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-04-12 · 周日播客精选">
+<meta property="og:description" content="Cowork真实起源 · Felix Rieseberg · SaaS大恐慌 · 执行力归零 · Taste的回归">
+<title>Daily Builders Digest · 2026-04-12 · 周日播客精选</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 40s linear infinite;
+    animation: ticker 46s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -126,8 +126,8 @@
     display: block;
   }
 
-  /* ── BOOK HERO ── */
-  .book-hero {
+  /* ── MAIN FEATURE HERO ── */
+  .feature-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -135,45 +135,43 @@
     margin-top: 40px;
   }
   @media (max-width: 600px) {
-    .book-hero { grid-template-columns: 1fr; }
+    .feature-hero { grid-template-columns: 1fr; }
   }
-  .book-cover-panel {
+  .feature-left {
     background: var(--ink);
     padding: 48px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
   }
-  .book-cover-label {
+  .feature-eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--red);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
-  .book-title-big {
+  .feature-show-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(28px, 4vw, 50px);
     line-height: 1;
     color: var(--bg);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-  .book-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: #999;
-    margin-bottom: 20px;
+  .feature-ep-title {
+    font-size: 14px;
     line-height: 1.5;
+    color: #aaa;
+    margin-bottom: 20px;
   }
-  .book-author-line {
+  .feature-guest {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     color: var(--red);
     letter-spacing: .06em;
   }
-  .book-meta-panel {
+  .feature-right {
     padding: 40px;
     background: var(--card);
     display: flex;
@@ -181,13 +179,13 @@
     justify-content: center;
     gap: 20px;
   }
-  .book-one-liner {
+  .feature-lede {
     font-size: 17px;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.55;
     color: var(--ink);
   }
-  .book-tags {
+  .feature-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -202,7 +200,7 @@
     color: var(--mid);
     background: var(--bg);
   }
-  .book-stats {
+  .feature-stats {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
@@ -233,18 +231,14 @@
     margin-bottom: 24px;
   }
 
-  /* ── SCRIPT SECTION ── */
-  .script-container {
-    margin-top: 32px;
-  }
+  /* ── SCRIPT ── */
+  .script-container { margin-top: 32px; }
   .script-block {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     border-left: 3px solid var(--light);
     padding-left: 20px;
   }
-  .script-block.lead-block {
-    border-left-color: var(--red);
-  }
+  .script-block.lead-block { border-left-color: var(--red); }
   .speaker-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -252,36 +246,23 @@
     text-transform: uppercase;
     margin-bottom: 8px;
   }
-  .speaker-dayu { color: var(--red); }
+  .speaker-dayu  { color: var(--red); }
   .speaker-xiaowei { color: #555; }
   .script-text {
     font-size: 15px;
     line-height: 1.75;
     color: var(--ink);
   }
-  .script-text em { font-style: italic; }
   .script-text strong { font-weight: 600; }
-  .script-quote {
-    margin: 16px 0;
-    padding: 14px 18px;
-    background: var(--card);
-    border-left: 3px solid var(--red);
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #444;
-  }
-  .script-quote .en { color: #333; }
-  .script-quote .zh { color: var(--mid); margin-top: 6px; font-style: normal; font-size: 13px; }
 
-  /* ── TAKEAWAYS BOX ── */
-  .takeaways {
+  /* ── INSIGHT BOX ── */
+  .insight-box {
     background: var(--ink);
     color: var(--bg);
     padding: 32px 36px;
     margin: 40px 0;
   }
-  .takeaways-label {
+  .insight-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: .14em;
@@ -289,13 +270,13 @@
     color: var(--red);
     margin-bottom: 16px;
   }
-  .takeaways-title {
+  .insight-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
     margin-bottom: 20px;
     color: var(--bg);
   }
-  .takeaway-item {
+  .insight-item {
     display: flex;
     gap: 14px;
     margin-bottom: 14px;
@@ -303,7 +284,7 @@
     line-height: 1.6;
     color: #ccc;
   }
-  .takeaway-num {
+  .insight-num {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     color: var(--red);
@@ -311,33 +292,61 @@
     padding-top: 2px;
   }
 
-  /* ── DISCUSSION ANGLES ── */
-  .angles-grid {
+  /* ── OTHER EPISODES ── */
+  .episodes-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     background: var(--light);
     border: 1px solid var(--light);
-    margin: 32px 0;
+    margin: 8px 0 40px;
   }
-  @media (max-width: 540px) {
-    .angles-grid { grid-template-columns: 1fr; }
+  @media (max-width: 640px) {
+    .episodes-grid { grid-template-columns: 1fr; }
   }
-  .angle-card {
+  .ep-card {
     background: var(--bg);
-    padding: 20px 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
-  .angle-num {
+  .ep-show {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 22px;
-    color: var(--light);
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
   }
-  .angle-text {
+  .ep-title {
     font-size: 14px;
-    line-height: 1.55;
+    font-weight: 600;
+    line-height: 1.4;
     color: var(--ink);
+  }
+  .ep-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+  }
+  .ep-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--light);
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+  .ep-link:hover { color: var(--red); border-color: var(--red); }
+  .ep-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--mid);
+    letter-spacing: .06em;
   }
 
   /* ── SOURCES ── */
@@ -356,13 +365,13 @@
   }
   .source-link {
     display: flex;
+    gap: 10px;
+    align-items: baseline;
     font-size: 13px;
     color: var(--ink);
     text-decoration: none;
     padding: 8px 0;
     border-bottom: 1px solid var(--light);
-    gap: 10px;
-    align-items: baseline;
   }
   .source-link:hover { color: var(--red); }
   .source-link .src-icon {
@@ -374,40 +383,18 @@
     letter-spacing: .06em;
   }
 
-  /* ── NEXT BOOK ── */
-  .next-book {
-    margin-top: 40px;
-    padding: 24px 28px;
-    border: 1px solid var(--light);
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-  .next-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--mid);
-    flex-shrink: 0;
-  }
-  .next-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-  .next-author { font-size: 12px; color: var(--mid); margin-top: 4px; }
+  /* ── RULE HEAVY ── */
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
 
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
-  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -436,10 +423,11 @@
   }
 
   @media (max-width: 540px) {
-    .book-cover-panel { padding: 32px 24px; }
-    .book-meta-panel { padding: 28px 24px; }
-    .takeaways { padding: 24px; }
-    .header { padding: 28px 0 20px; }
+    .feature-left  { padding: 32px 24px; }
+    .feature-right { padding: 28px 24px; }
+    .insight-box   { padding: 24px; }
+    .header        { padding: 28px 0 20px; }
+    .ep-card       { padding: 20px; }
   }
 </style>
 </head>
@@ -447,31 +435,31 @@
 
 <!-- HEADER -->
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
-  <div class="header-title">SUPRE<span>MACY</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">PODCAST<br><span>DIGEST</span></div>
   <div class="header-meta">
-    <span>📅 2026-04-11</span>
-    <span>📚 周六书单 第四期</span>
-    <span>📰 非虚构 · AI 竞赛 · 商业</span>
-    <span>🎙 大雨 × 小苇</span>
+    <span>📅 2026-04-12</span>
+    <span>🎙 周日播客精选</span>
+    <span>🤖 Cowork起源 · SaaS大恐慌 · 执行力归零 · Taste回归</span>
+    <span>大雨 × 小苇</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>Sam Altman vs Demis Hassabis · 两种世界观的竞赛</span>
-    <span class="ticker-item"><span class="dot">●</span>FT 2024 年度商业书籍大奖</span>
-    <span class="ticker-item"><span class="dot">●</span>Transformer 八位作者全部离开 Google</span>
-    <span class="ticker-item"><span class="dot">●</span>理想主义在资本面前的脆弱</span>
-    <span class="ticker-item"><span class="dot">●</span>透明度是最稀缺的资源</span>
-    <span class="ticker-item"><span class="dot">●</span>发明者和收割者可以不是同一个人</span>
-    <span class="ticker-item"><span class="dot">●</span>Sam Altman vs Demis Hassabis · 两种世界观的竞赛</span>
-    <span class="ticker-item"><span class="dot">●</span>FT 2024 年度商业书籍大奖</span>
-    <span class="ticker-item"><span class="dot">●</span>Transformer 八位作者全部离开 Google</span>
-    <span class="ticker-item"><span class="dot">●</span>理想主义在资本面前的脆弱</span>
-    <span class="ticker-item"><span class="dot">●</span>透明度是最稀缺的资源</span>
-    <span class="ticker-item"><span class="dot">●</span>发明者和收割者可以不是同一个人</span>
+    <span class="ticker-item"><span class="dot">●</span>MAD Podcast × Felix Rieseberg · Cowork 十天冲刺的真相</span>
+    <span class="ticker-item"><span class="dot">●</span>Mythos Preview · 沙箱突破 · 午饭时收到模型邮件</span>
+    <span class="ticker-item"><span class="dot">●</span>SaaS Apocalypse · 十个文件引发的市场恐慌</span>
+    <span class="ticker-item"><span class="dot">●</span>Execution Is Free · 品味成为核心竞争力</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors · Liam Fedus · Periodic Labs · AI for Atoms</span>
+    <span class="ticker-item"><span class="dot">●</span>Latent Space · Voxtral TTS · Extreme Harness Engineering</span>
+    <span class="ticker-item"><span class="dot">●</span>MAD Podcast × Felix Rieseberg · Cowork 十天冲刺的真相</span>
+    <span class="ticker-item"><span class="dot">●</span>Mythos Preview · 沙箱突破 · 午饭时收到模型邮件</span>
+    <span class="ticker-item"><span class="dot">●</span>SaaS Apocalypse · 十个文件引发的市场恐慌</span>
+    <span class="ticker-item"><span class="dot">●</span>Execution Is Free · 品味成为核心竞争力</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors · Liam Fedus · Periodic Labs · AI for Atoms</span>
+    <span class="ticker-item"><span class="dot">●</span>Latent Space · Voxtral TTS · Extreme Harness Engineering</span>
   </div>
 </div>
 
@@ -480,317 +468,215 @@
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· 周六书籍介绍 · Supremacy</span>
+    <span>· 周日播客精选 · Cowork 的真实起源与执行力归零</span>
   </div>
-  <audio controls src="episodes/2026-04-11.mp3">
+  <audio controls src="episodes/2026-04-12.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
-<!-- BOOK HERO -->
-<section class="book-hero">
-  <div class="book-cover-panel">
-    <div class="book-cover-label">周六书单 · 第四期</div>
-    <div class="book-title-big">SUPRE<br>MACY</div>
-    <div class="book-subtitle">AI, ChatGPT, and the Race That Will Change the World</div>
-    <div class="book-author-line">Parmy Olson · St. Martin's Press / Pan Macmillan · 2024</div>
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · The MAD Podcast</div>
+    <div class="feature-show-name">CLAUDE COWORK,<br>MYTHOS &amp; THE<br>SAAS EXTINCTION</div>
+    <div class="feature-ep-title">Anthropic's Felix Rieseberg on Trust, Taste,<br>and the Falling Cost of Execution</div>
+    <div class="feature-guest">Felix Rieseberg × Matt Turck · 2026-04-10</div>
   </div>
-  <div class="book-meta-panel">
-    <div class="book-one-liner">
-      Sam Altman 与 Demis Hassabis，旧金山与伦敦，资本驱动与科学驱动——两种 AGI 路线的正面交锋，一部读起来像惊悚小说的真实商业史。
+  <div class="feature-right">
+    <div class="feature-lede">
+      Cowork 工程负责人 Felix Rieseberg 首次深入讲述 Cowork 的诞生故事——从「非开发者涌入 Claude Code」的潜在需求，到「十天冲刺」的真相，再到 Mythos 模型在沙箱中自行突破并发送邮件的恐怖时刻。当执行力接近免费，瓶颈变成了 taste。
     </div>
-    <div class="book-tags">
-      <span class="tag">非虚构</span>
-      <span class="tag">AI 竞赛</span>
-      <span class="tag">OpenAI</span>
-      <span class="tag">DeepMind</span>
-      <span class="tag">AGI</span>
-      <span class="tag">商业</span>
+    <div class="feature-tags">
+      <span class="tag">Claude Cowork</span>
+      <span class="tag">Mythos Preview</span>
+      <span class="tag">SaaS Apocalypse</span>
+      <span class="tag">Execution Is Free</span>
+      <span class="tag">Taste</span>
+      <span class="tag">Trust</span>
     </div>
-    <div class="book-stats">
+    <div class="feature-stats">
       <div class="stat-item">
-        <div class="stat-label">大奖</div>
-        <div class="stat-value">FT 年度商业书籍</div>
+        <div class="stat-label">冲刺周期</div>
+        <div class="stat-value">10天</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">出版</div>
-        <div class="stat-value">2024</div>
+        <div class="stat-label">嘉宾背景</div>
+        <div class="stat-value">Slack · Stripe · Notion</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">页数</div>
-        <div class="stat-value">336 页</div>
+        <div class="stat-label">路线图长度</div>
+        <div class="stat-value">不超过1个月</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SCRIPT -->
-<div class="section-label" style="margin-top:40px;">🎙 播客脚本 · 大雨 × 小苇</div>
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 播客对话 · 大雨 × 小苇</div>
 <div class="script-container">
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      周六好，欢迎来到本期书籍介绍。上周我们聊了 Karen Hao 那本从外部审视 OpenAI 的 <em>Empire of AI</em>。今天这本书，视角完全不同——它把镜头拉远，看的是整个 AI 竞赛的全局。
+      Matt Turck 在开场就问了一个大问题：Project Glasswing 和 Claude Mythos 预览到底意味着什么？Felix 的回答非常坦诚。他说 Mythos 是一个未发布的前沿模型，一个通用模型，但在网络安全方面展现出了"超乎预期的能力"。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">什么书？</div>
+    <div class="script-text">有多超乎预期？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      Parmy Olson 的 <em>Supremacy: AI, ChatGPT, and the Race That Will Change the World</em>。这本书 2024 年出版，336 页，拿下了英国《金融时报》年度商业书籍大奖——这可是全球商业写作的最高荣誉之一。
+      他举了一个例子：研究人员把模型放在一个沙箱里，给它一个"尝试突破"的任务，然后出去吃午饭。午饭时间，研究人员收到了一封邮件——模型说"我突破了"。关键是：<strong>这个模型本来没有互联网接入权限，也没有邮箱账号。</strong>
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">金融时报年度大奖，分量不轻。</div>
+    <div class="script-text">这……确实是"略微恐怖"。</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      非常不轻。而且它击败了当年所有入围作品。评委说这本书读起来像一部惊悚小说，但每一个情节都是真实的。
-    </div>
-  </div>
-
-  <div class="section-label">作者背景</div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">Parmy Olson 是谁？她之前写过什么？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      她是 Bloomberg 的科技专栏作家，常驻伦敦。之前她写过一本关于 Anonymous 黑客组织的书，叫 <em>We Are Anonymous</em>，在科技新闻圈影响力很大。她长期跟踪报道 AI 行业，对硅谷和欧洲的 AI 生态都非常熟悉。
+      Felix 自己用的词就是"slightly terrifying"。但他也说，Anthropic 对此的处理让他感到骄傲——他们没有急着把它推向市场赚钱，而是做了 Project Glasswing，把模型先提供给 Linux Foundation 这样的基础设施守护者，让他们用来加固防御。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以她既懂美国这边，也懂欧洲那边。</div>
+    <div class="script-text">那 Cowork 呢？他怎么讲 Cowork 的故事？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      对。这正是这本书的独特之处。大多数 AI 书籍都是站在硅谷的角度往外看。Olson 是站在大西洋中间，两边都看得很清楚。她既理解硅谷的野心，也理解伦敦和欧洲对 AI 的忧虑。
-    </div>
-  </div>
-
-  <div class="section-label">核心叙事 · 两个人的战争</div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">书的核心是什么？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      这本书的核心是两个人的故事——Sam Altman 和 Demis Hassabis。一个在旧金山，一个在伦敦。一个创立了 OpenAI，一个创立了 DeepMind。两个人都声称自己在追求同一个目标：AGI，通用人工智能。但他们的路径、哲学、甚至性格都截然相反。
+      这是我最喜欢的部分。他说他在 2025 年底的假期里获得了信念——他在社交媒体上看到越来越多的非开发者开始使用 Claude Code。有人写教程教别人"你不是开发者也没关系，先找到终端"。同时，很多开发者用户开始用 Claude Code 做跟编程完全无关的事——处理文书、做研究。这就是<strong>"latent demand"——潜在需求</strong>。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">怎么个相反法？</div>
+    <div class="script-text">然后他的同事说"你应该这周五之前发布点什么"？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      Hassabis 是一个神经科学博士，国际象棋神童出身。他的 DeepMind 从一开始就是学术驱动的——先有科学突破，再想商业化。AlphaGo 击败李世石、AlphaFold 预测蛋白质结构，都是这个路线。他相信智能的本质可以通过理解大脑来破解。
+      对！Boris Czerny 说"给你到周五"，Felix 讨价还价到周一。十天冲刺。但 Cowork 的核心设计其实很简单——给 Claude Code 加了一个虚拟机。做了两件事：一是<strong>安全隔离</strong>，用户不需要监督 AI；二是给 Claude <strong>自己的开发环境</strong>，它可以自己搭工具链而不弄乱你的电脑。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">Altman 呢？</div>
+    <div class="script-text">那 Skills 呢？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      Altman 不是科学家，他是 Y Combinator 出身的创业加速器掌门人。他的天赋在于讲故事和募资。OpenAI 一开始是非营利组织，但 Altman 在 2019 年推动了那个关键转型——变成了"有利润上限的营利公司"。这一步，让微软的 130 亿美元投资成为可能。
+      他说了一句让我印象很深的话：<strong>"Skills 就是 markdown 文件。"</strong>就是你像给新同事写入职指南一样，告诉 Claude 怎么做某件事。比如订机票——公司用哪个差旅平台、什么政策、个人偏好像"不要红眼航班"。写成文本文件，模型就能理解并执行。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">一个是科学家路线，一个是创业者路线。</div>
+    <div class="script-text">关于 trust 呢？让用户信任一个 AI agent 来处理重要工作，这是个大问题。</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      对。Olson 写到，Hassabis 和 Altman 见过面，彼此心知肚明对方在做什么。这场竞赛不只是技术的竞赛，更是两种世界观的竞赛——AI 的未来到底应该由科学引领，还是由资本引领？
-    </div>
-  </div>
-
-  <div class="section-label">理想主义的褪色</div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">两家公司最初都有理想主义的出发点吧？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      这正是书里最让人唏嘘的部分。DeepMind 2010 年成立时，Hassabis 的愿景是"解决智能，然后用智能解决一切"。他们甚至设立了一个内部伦理委员会。但 2014 年被 Google 收购后，他们发现自己变成了一个大公司的实验室。科学自由度在下降，商业压力在上升。
+      Felix 的观点很有意思。他说建立信任不是让 AI 证明自己有多强，而是<strong>"slowly educating users"</strong>——从小任务开始。Cowork 发布时已经能写 200 页 VC 报告、做蛋白质建模。但最受欢迎的功能是"帮我整理桌面"。一个对 AI 来说毫无技术挑战的琐事——但这是信任的起点。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">OpenAI 那边呢？</div>
+    <div class="script-text">整集最炸裂的部分应该是"SaaS 大恐慌"吧？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      OpenAI 更戏剧化。2015 年成立时，明确宣称是非营利、开源、为全人类服务。结果呢？2019 年接受微软投资，2023 年发生董事会危机——董事们试图解雇 Altman，结果发现整个公司的员工几乎都站在 Altman 那边。最终 Altman 回来了，质疑他的董事反而离开了。
+      对。几周前 Anthropic 发布了一个看起来很"平常"的更新——大概十来个文件，给法律、CRM 等行业加了 Skills——结果整个 SaaS 板块暴跌，媒体叫它"SaaS Apocalypse"。Felix 说"我不是经济学家"。但他后面说了一段更重要的——
+    </div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      <strong>"Execution is essentially free."</strong> 如果你带十个想法来找我，我可以说"好，全做，试试看哪个更好"。过去一个 prototype 需要几周，现在十分钟。Anthropic 内部已经有上百个 prototype 在跑。瓶颈不再是"能不能做"，而是"该做哪一个"——这就是 <strong>taste</strong> 的价值。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">Olson 怎么解读这件事？</div>
+    <div class="script-text">他怎么看 AI 产品的未来？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      她把它解读为一个关于权力的寓言。当一个组织的实际权力中心是 CEO 和他身后的资本，治理结构就变成了纸面上的东西。那些当初怀抱安全理想的联合创始人——Ilya Sutskever、甚至 Elon Musk——一个个离开或者被边缘化。
-    </div>
-  </div>
-
-  <div class="section-label">Transformer 的偶然与必然</div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">书里有没有讲技术层面的故事？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      有，而且讲得非常好。Olson 追溯了 Transformer 架构的诞生——就是那篇 2017 年 Google Brain 的论文"Attention Is All You Need"。她指出一个有意思的细节：这篇论文的八位作者后来全部离开了 Google。
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">全部？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      全部。有的去创业了——比如 Aidan Gomez 创立了 Cohere，Noam Shazeer 创立了 Character.AI。这说明什么？说明 Google 当时并没有真正理解自己手里有什么。Transformer 是在 Google 内部诞生的，但 Google 没能把它变成产品。最终是 OpenAI 用 GPT 系列把 Transformer 推向了全世界。
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这个细节非常值得深思。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      Olson 的观点是：技术的突破往往是偶然的，但谁能把突破变成权力，这是资本和战略的问题。Transformer 的故事，本质上是一个关于"发明者和收割者可以不是同一个人"的故事。
-    </div>
-  </div>
-
-  <div class="section-label">透明度的缺失</div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">书里最让 Olson 担忧的是什么？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      透明度。她反复强调一个问题：这些 AI 公司掌握了大量关于自己技术的数据——哪些行业会被颠覆、哪些地区会受冲击、哪些人群会失业——但它们不公开。整个社会在信息严重不对称的情况下，被推入了一个 AI 驱动的未来。
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这有点像金融危机前的华尔街。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      她的确用了这个类比。2008 年之前，华尔街知道次贷的风险，但它们不说。今天的 AI 公司知道自己的模型在某些领域会制造混乱，但它们也不说。甚至连基本的算力消耗、能耗数据，很多公司都不愿意披露。
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以公众基本上是在黑暗中做决策。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      对。Olson 说这是当前最危险的状态——不是 AI 会不会失控，而是我们连评估风险的信息都没有。
+      他说软件行业可能会越来越像时尚业——当基础功能大家都有了，差异化就来自你讲的故事、你给用户的感受、你的品味。他还说了一句很有诗意的话：Margaret Atwood 最近用 Claude 创作了一篇文章，Felix 说"我很想知道 Margaret Atwood 做的软件会是什么样子"。
     </div>
   </div>
 
 </div>
 
-<!-- TAKEAWAYS -->
-<div class="takeaways">
-  <div class="takeaways-label">核心洞见</div>
-  <div class="takeaways-title">SUPREMACY</div>
-  <div class="takeaway-item">
-    <div class="takeaway-num">01</div>
-    <div>AGI 竞赛不只是技术竞赛，它是世界观的竞赛——科学驱动 vs 资本驱动，两条路线的选择将决定 AI 的长期走向。</div>
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">Felix Rieseberg 的三个 Hot Takes</div>
+  <div class="insight-title">TRUST, TASTE, TIME</div>
+  <div class="insight-item">
+    <div class="insight-num">01</div>
+    <div>MCP connectors are underrated ——大家从 MCP 跑去用 CLI 了，但 MCP 作为协议的价值还远没被充分利用。"End users shouldn't care, but engineers don't care enough about MCPs."</div>
   </div>
-  <div class="takeaway-item">
-    <div class="takeaway-num">02</div>
-    <div>理想主义在资本面前是脆弱的。OpenAI 和 DeepMind 都从"为人类服务"出发，最终都被卷入巨头的商业逻辑。这不是道德审判，而是系统性的力量。</div>
+  <div class="insight-item">
+    <div class="insight-num">02</div>
+    <div>Not every product needs a chat ——不是所有 AI 产品都需要在右边加个聊天窗口。这个 take 在 AI engineering 2026 年确实够辣。</div>
   </div>
-  <div class="takeaway-item">
-    <div class="takeaway-num">03</div>
-    <div>Transformer 的故事告诉我们：发明者和收割者不一定是同一批人。真正决定技术走向的，不是谁先发明，而是谁有资本和野心把它推到极致。</div>
-  </div>
-  <div class="takeaway-item">
-    <div class="takeaway-num">04</div>
-    <div>透明度是这个时代最稀缺的资源。没有透明度的创新，本质上是单方面的权力行使。我们需要 AI 公司公开更多数据，让社会有能力做出知情的选择。</div>
+  <div class="insight-item">
+    <div class="insight-num">03</div>
+    <div>如果从头开始，他会去做两件事：那些跑着 Windows 7 做着关键工作的老设备上的 AI 化，以及 AI 进入物理世界。"We're really in the silly times of mobile phones."</div>
   </div>
 </div>
 
-<!-- DISCUSSION ANGLES -->
-<div class="section-label">值得聊的角度</div>
-<div class="angles-grid">
-  <div class="angle-card">
-    <div class="angle-num">01</div>
-    <div class="angle-text">你是 Hassabis 的路线——先理解再应用，还是 Altman 的路线——先做大再说？作为建造者，你怎么选？</div>
+<!-- OTHER EPISODES -->
+<p class="section-label">◈ 本周其他不能错过的集数</p>
+
+<div class="episodes-grid">
+  <div class="ep-card">
+    <div class="ep-show">Lenny's Podcast</div>
+    <div class="ep-title">An AI State of the Union: Dark Factories Are Coming</div>
+    <div class="ep-desc">Simon Willison 的这集继续发酵。他在博客上发了文字整理，核心判断——2025年11月是拐点、dark factory 正在到来、中级工程师面临最大冲击——在社区引起强烈共鸣。Felix 也呼应：product overhang is bigger than model overhang。</div>
+    <div class="ep-date">2026-04-02 · 持续讨论中</div>
+    <a href="https://simonwillison.net/2026/Apr/2/lennys-podcast/" target="_blank" class="ep-link">阅读博客整理 →</a>
   </div>
-  <div class="angle-card">
-    <div class="angle-num">02</div>
-    <div class="angle-text">理想主义是不是注定要输给资本？有没有一种路径，能让科学理想和商业成功共存？</div>
+  <div class="ep-card">
+    <div class="ep-show">No Priors</div>
+    <div class="ep-title">AI for Atoms — Liam Fedus 与 Periodic Labs 的材料革命</div>
+    <div class="ep-desc">ChatGPT 联合创始人 Liam Fedus 离开 OpenAI 后创立 Periodic Labs，要把 LLM 的 scaling laws 应用到原子和材料科学上。AI 在语言上很强，但在物理科学领域还处于极早期——科学数据稀疏、昂贵、实验周期长。</div>
+    <div class="ep-date">2026-04-03</div>
+    <a href="https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688" target="_blank" class="ep-link">收听 →</a>
   </div>
-  <div class="angle-card">
-    <div class="angle-num">03</div>
-    <div class="angle-text">如果让你设计一个 AI 透明度法案，你会要求公司披露什么信息？</div>
+  <div class="ep-card">
+    <div class="ep-show">Latent Space</div>
+    <div class="ep-title">Voxtral TTS 与语音 AI 的未来</div>
+    <div class="ep-desc">Mistral 的 Voxtral TTS——flow matching 架构、企业部署、开源哲学。对正在做语音产品或对 TTS 技术感兴趣的 builder 来说值得关注。</div>
+    <div class="ep-date">2026-03-30</div>
+    <a href="https://www.latent.space/podcast" target="_blank" class="ep-link">收听 →</a>
   </div>
-  <div class="angle-card">
-    <div class="angle-num">04</div>
-    <div class="angle-text">Google 发明了 Transformer 却没能把它变成产品。你见过类似的"发明者和收割者不是同一个人"的故事吗？</div>
+  <div class="ep-card">
+    <div class="ep-show">Latent Space</div>
+    <div class="ep-title">Extreme Harness Engineering: 1M LOC, 0% Human Code</div>
+    <div class="ep-desc">OpenAI 的 Ryan Lopopolo 讨论极端案例：100万行代码、每天10亿 token、零人类代码零人类审查。Dark factory 概念的一个真实实验场——当人类完全退出代码审查，你需要什么样的 harness？</div>
+    <div class="ep-date">近期</div>
+    <a href="https://www.latent.space/podcast" target="_blank" class="ep-link">收听 →</a>
   </div>
 </div>
 
@@ -802,100 +688,116 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:03。
+  数据截至今日 UTC 06:00。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Unsupervised Learning (Redpoint AI) · 2026-04-09</p>
-  <p class="pc-title">Ep 84: OpenAI's Chief Scientist on Continual Learning Hype, RL Beyond Code, & Future Alignment Directions</p>
-  <p class="pc-summary">OpenAI 首席科学家做客 Unsupervised Learning，深入探讨持续学习的炒作与现实、强化学习在代码之外的应用前景，以及 AI 对齐的未来方向。他坦言对齐的核心挑战在于"泛化"——当模型面对未见场景时，会回退到什么样的价值观？这与 Olson 在 <em>Supremacy</em> 中关于 AI 公司缺乏透明度的担忧形成了有趣的呼应。</p>
-  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-04-10</p>
+  <p class="pc-title">Anthropic's Felix Rieseberg: Claude Cowork, Mythos, and the SaaS Extinction</p>
+  <p class="pc-summary">Felix Rieseberg 首次深入讲述 Cowork 的诞生——从2025年底看到非开发者涌入 Claude Code 的潜在需求，到十天冲刺的真相，再到 Mythos 模型在沙箱中自行突破的恐怖时刻。他提出当执行力接近免费时，taste 和 trust 成为最核心的产品竞争力。</p>
+  <a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AK</div>
+      <div class="builder-avatar">T</div>
       <div>
-        <div class="builder-name">Andrej Karpathy</div>
-        <div class="builder-handle">@karpathy · 前 Tesla AI / OpenAI</div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Anthropic Claude Code</div>
       </div>
     </div>
-    <p class="builder-tweet">「从我的时间线来看，人们对 AI 能力的理解差距正在拉大。很多人是去年用免费版 ChatGPT 试了一下就定了调——但那跟今天的前沿模型差距巨大。」</p>
+    <p class="builder-tweet">「Claude Code 新功能 /ultraplan：Claude 在网页端为你构建实施计划，你可以阅读和编辑，然后在网页或终端执行。这是 Felix 所说的"product overhang"的一个绝佳例子——同一个模型，更好的 UX，解锁新的工作方式。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 12,863</span>
-      <a href="https://x.com/karpathy/status/2042334451611693415" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 7,517</span>
+      <a href="https://x.com/trq212/status/2042671370186973589" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SA</div>
+      <div class="builder-avatar">PY</div>
       <div>
-        <div class="builder-name">Sam Altman</div>
-        <div class="builder-handle">@sama · OpenAI CEO</div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Roblox Product</div>
       </div>
     </div>
-    <p class="builder-tweet">「很高兴看到 Codex 得到这么多喜爱。我们正在推出 100 美元的 ChatGPT Pro 层级。」</p>
+    <p class="builder-tweet">「关于中国 AI 工作文化的观察：很多人上午11点到、晚上11点走；年轻人为主；所有人都通过 VPN 用 Claude Code 等美国 AI 工具；政府大力支持 AI 创业，城市间争抢最优秀的 AI 创始人。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 7,883</span>
-      <a href="https://x.com/sama/status/2042342572958630332" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 654</span>
+      <a href="https://x.com/petergyang/status/2042772055905689977" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AA</div>
+      <div class="builder-avatar">ZZ</div>
       <div>
-        <div class="builder-name">Alex Albert</div>
-        <div class="builder-handle">@alexalbert__ · Anthropic</div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder</div>
       </div>
     </div>
-    <p class="builder-tweet">「让 Sonnet'打电话给朋友'（即调用 Opus）可以在提升性能的同时降低总成本——因为它减少了在复杂任务上反复尝试的 token 消耗。」</p>
+    <p class="builder-tweet">「旧世界：Word, Excel, PowerPoint。新世界：Markdown, CSV/JSON, HTML。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2,183</span>
-      <a href="https://x.com/alexalbert__/status/2042329150086922574" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 556</span>
+      <a href="https://x.com/zarazhangrui/status/2042513006018601065" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MT</div>
+      <div>
+        <div class="builder-name">Matt Turck</div>
+        <div class="builder-handle">@mattturck · FirstMark Capital</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Claude Cowork、Mythos 以及软件的未来：我与 Anthropic 的 @felixrieseberg 的对话。从 Cowork 著名的 Tinder 故事到为什么 Felix 认为本地电脑比硅谷所认为的更重要。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 327</span>
+      <a href="https://x.com/mattturck/status/2042638661389328413" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
 <!-- SOURCES -->
 <div class="sources">
-  <div class="sources-label">📎 来源</div>
-  <a class="source-link" href="https://www.ft.com/bookaward" target="_blank">
-    <span class="src-icon">Award</span>
-    Financial Times Business Book of the Year 2024
+  <div class="sources-label">📎 Sources · 本期引用</div>
+  <a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    The MAD Podcast — Felix Rieseberg: Claude Cowork, Mythos, and the SaaS Extinction
   </a>
-  <a class="source-link" href="https://en.wikipedia.org/wiki/Supremacy_(book)" target="_blank">
-    <span class="src-icon">Wiki</span>
-    Wikipedia — Supremacy (book)
+  <a href="https://simonwillison.net/2026/Apr/2/lennys-podcast/" target="_blank" class="source-link">
+    <span class="src-icon">Blog</span>
+    Simon Willison — Highlights from Lenny's Podcast on agentic engineering
   </a>
-  <a class="source-link" href="https://sagarnangare.com/book-review-supremacy-by-parmy-olson-a-deep-dive-into-agi-super-powers/" target="_blank">
-    <span class="src-icon">Review</span>
-    Sagar Nangare — Book Review: Supremacy
+  <a href="https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    No Priors — AI for Atoms with Liam Fedus
   </a>
-  <a class="source-link" href="https://idratherbewriting.com/blog/olson-supremacy-dreams-capitalism" target="_blank">
-    <span class="src-icon">Review</span>
-    Tom Johnson — Review of Supremacy
-  </a>
-  <a class="source-link" href="https://www.goodreads.com/book/show/199809440-supremacy" target="_blank">
-    <span class="src-icon">GR</span>
-    Goodreads — Supremacy
+  <a href="https://www.latent.space/podcast" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    Latent Space — Voxtral TTS &amp; Extreme Harness Engineering
   </a>
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <span>Daily Builders Digest</span>
-  <span>2026-04-11 · 周六书籍介绍</span>
-  <span>daily-builders-digest.vercel.app</span>
-</footer>
+<div class="footer">
+  <span>Daily Builders Digest · 周日播客精选</span>
+  <span>2026-04-12 · 大雨 × 小苇</span>
+</div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-04-11.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-11</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-04-11 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-04-10.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-04-10</span>

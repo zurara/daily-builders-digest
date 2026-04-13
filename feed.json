@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-13",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Anthropic 发布 Project Glasswing——AI 安全的\"复仇者联盟\" · OpenAI 经济蓝图——机器人税、财富基金、32h 工作制",
+    "html": "episodes/2026-04-13.html",
+    "mp3": "episodes/2026-04-13.mp3",
+    "headlines": [
+      "Anthropic 发布 Project Glasswing——AI 安全的\"复仇者联盟\"",
+      "OpenAI 经济蓝图——机器人税、财富基金、32h 工作制",
+      "Google Gemma 4——开源 AI 的新标杆",
+      "三巨头联手——打击未授权模型蒸馏",
+      "AI 基准测试饱和——当所有模型都拿满分"
+    ]
+  },
+  {
     "date": "2026-04-12",
     "dow": 7,
     "topic": "Podcasts",

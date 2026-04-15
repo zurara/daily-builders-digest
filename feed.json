@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-15",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Cursor 3：Agent-First IDE，开发者从写代码变成了指挥 Agent · Vercel 开源 Open Agents：云端编码 Agent 平台，人人可用",
+    "html": "episodes/2026-04-15.html",
+    "mp3": "episodes/2026-04-15.mp3",
+    "headlines": [
+      "Cursor 3：Agent-First IDE，开发者从写代码变成了指挥 Agent",
+      "Vercel 开源 Open Agents：云端编码 Agent 平台，人人可用",
+      "OpenAI 收购 Hiro Finance：从通用平台走向垂直产品",
+      "SaaS 行业变天：从卖座位到卖结果，Agent Deployer 新工种诞生"
+    ]
+  },
+  {
     "date": "2026-04-14",
     "dow": 2,
     "topic": "Robotics",

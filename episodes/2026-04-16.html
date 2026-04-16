@@ -310,6 +310,18 @@
   }
   footer strong { color: var(--ink); }
 </style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
 </head>
 <body>
 
@@ -348,7 +360,7 @@
     <strong>今日播客</strong>
     <span>大雨 × 小苇 · 健康星期四 · 约 20 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-04-16.mp3">
+  <audio controls preload="none" src="2026-04-16.mp3">
     你的浏览器不支持音频播放。<a href="2026-04-16.mp3">下载音频</a>
   </audio>
 </div>
@@ -553,231 +565,28 @@
   今日健康行动：了解 AMH——无论你是否有生育计划，它都是你内分泌健康的第一个基线指标。
 </footer>
 
-<!-- ── PAST EPISODES GRID ── -->
-<hr class="rule-heavy" style="margin-top:56px">
-<p class="section-label">◈ 往期回顾 · 近两周节目</p>
-<div class="ep-grid">
-  <a class="ep-card" href="/episodes/2026-04-15.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-15</span>
-      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
-    </div>
-    <span class="ep-card-hl">Cursor 3：Agent-First IDE，开发者从写代码变成了指挥 Agent</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-14.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-14</span>
-      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
-    </div>
-    <span class="ep-card-hl">北京人形机器人半马正式试跑：70 支队伍星夜竞速，正式赛 4 月 19 日</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-13.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-13</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">Anthropic 发布 Project Glasswing——AI 安全的"复仇者联盟"</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-12.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-12</span>
-      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
-    </div>
-    <span class="ep-card-hl">2026-04-12 今日快报</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-11.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-11</span>
-      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
-    </div>
-    <span class="ep-card-hl">2026-04-11 今日快报</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-10.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-10</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">Meta 发布 Muse Spark——告别 Llama 开源路线，闭源模型首秀</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-09.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-09</span>
-      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
-    </div>
-    <span class="ep-card-hl">Huberman Lab × Dacher Keltner：敬畏——一种被低估的"免疫增强剂"</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-08.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-08</span>
-      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
-    </div>
-    <span class="ep-card-hl">Figma AI Agent 进驻画布：MCP Server + Skills 系统重新定义设计工作流</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-07.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-07</span>
-      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
-    </div>
-    <span class="ep-card-hl">旧金山变身「机器人之都」：十年 VC 融资从 2.72 亿飙到 206 亿美元</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-06.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-06</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">Google Gemma 4 发布——开源模型首次 Apache 2.0，边缘端到服务器全覆盖</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-05.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-05</span>
-      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
-    </div>
-    <span class="ep-card-hl">2026-04-05 今日快报</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-04.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-04</span>
-      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
-    </div>
-    <span class="ep-card-hl">2026-04-04 今日快报</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-03.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-03</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">Claude Mythos泄露内测：Anthropic称其为"能力质变"，但警告网络攻击风险</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-02.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-02</span>
-      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
-    </div>
-    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量...</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-04-01.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-04-01</span>
-      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
-    </div>
-    <span class="ep-card-hl">苹果正面怼 Vibe Coding：App Store 审核体系遭遇 AI 原生冲击</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-31.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-31</span>
-      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
-    </div>
-    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来...</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-30.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-30</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">Jensen Huang宣告AGI已至：定义之争比声明本身更重要</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-29.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-29</span>
-      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
-    </div>
-    <span class="ep-card-hl">2026-03-29 · Podcasts</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-28.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-28</span>
-      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
-    </div>
-    <span class="ep-card-hl">The Silence In Between</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-27.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-27</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">2026-03-27 · AI</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-26.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-26</span>
-      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
-    </div>
-    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说...</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-25.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-25</span>
-      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
-    </div>
-    <span class="ep-card-hl">2026-03-25 · Robotics</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-24.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-24</span>
-      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
-    </div>
-    <span class="ep-card-hl">NVIDIA GTC收官：GR00T N2预览，"每家工业企业都将成为机器人公司"</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-23.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-23</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">2026-03-23 · AI</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-22.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-22</span>
-      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
-    </div>
-    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er...</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-21.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-21</span>
-      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
-    </div>
-    <span class="ep-card-hl">My Stroke of Insight</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-20.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-20</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">NVIDIA GTC 2026 落幕，万亿营收预测震撼全场</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-18.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-18</span>
-      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
-    </div>
-    <span class="ep-card-hl">2026-03-18 · Robotics</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-17.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-17</span>
-      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
-    </div>
-    <span class="ep-card-hl">2026-03-17 · Product</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-03-16.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-03-16</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">2026-03-16 · AI</span>
-  </a>
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
 </div>
-<style>
-.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}
-.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}
-.ep-card:hover{background:var(--card);}
-.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
-.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
-.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}
-@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}
-</style>
-
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
 </body>
 </html>

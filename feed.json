@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-17",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "OpenAI 发布 GPT-Rosalind——AI 正式进入药物发现 · Google TurboQuant——推理成本即将腰斩",
+    "html": "episodes/2026-04-17.html",
+    "mp3": "episodes/2026-04-17.mp3",
+    "headlines": [
+      "OpenAI 发布 GPT-Rosalind——AI 正式进入药物发现",
+      "Google TurboQuant——推理成本即将腰斩",
+      "Gemini 登陆 Mac——原生 Swift 桌面体验",
+      "Mythos 之后的安全对话——自动化漏洞发现改变了什么"
+    ]
+  },
+  {
     "date": "2026-04-16",
     "dow": 4,
     "topic": "Health",

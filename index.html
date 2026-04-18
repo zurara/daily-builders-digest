@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-04-17">
-<meta property="og:description" content="OpenAI GPT-Rosalind 进军药物发现 · Google TurboQuant 推理成本腰斩 · Gemini 登陆 Mac · Mythos 引发安全新对话">
-<title>Daily Builders Digest · 2026-04-17</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-04-18 · 周六书籍介绍">
+<meta property="og:description" content="The Technology Trap · Carl Benedikt Frey · 从工业革命到 AI 时代，谁在为进步买单？">
+<title>Daily Builders Digest · 2026-04-18 · 周六书籍介绍</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -51,7 +51,7 @@
   }
   .header-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 96px);
+    font-size: clamp(44px, 8vw, 88px);
     line-height: .95;
     letter-spacing: .02em;
     color: var(--ink);
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 42s linear infinite;
+    animation: ticker 40s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -126,189 +126,288 @@
     display: block;
   }
 
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
-  }
-
-  /* ── PAST EPISODES ── */
-  .past-episodes {
-    margin-top: 16px;
-    border: 1px solid var(--light);
-  }
-  .past-ep-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
+  /* ── BOOK HERO ── */
+  .book-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
     border-bottom: 1px solid var(--light);
-    text-decoration: none;
-    color: var(--ink);
-    transition: background .12s;
+    margin-top: 40px;
   }
-  .past-ep-item:last-child { border-bottom: none; }
-  .past-ep-item:hover { background: var(--card); }
-  .past-ep-date {
+  @media (max-width: 600px) {
+    .book-hero { grid-template-columns: 1fr; }
+  }
+  .book-cover-panel {
+    background: var(--ink);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .book-cover-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--mid);
-    flex-shrink: 0;
-    width: 90px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
   }
-  .past-ep-title {
+  .book-title-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .book-subtitle {
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
-    flex: 1;
-    line-height: 1.4;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.5;
   }
-  .past-ep-tag {
+  .book-author-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: .06em;
+  }
+  .book-meta-panel {
+    padding: 40px;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .book-one-liner {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .book-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--light);
+    color: var(--mid);
+    background: var(--bg);
+  }
+  .book-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    flex-shrink: 0;
-  }
-  #past-loading {
-    padding: 14px 16px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--mid);
+    text-transform: uppercase;
     letter-spacing: .1em;
+    color: var(--mid);
+  }
+  .stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
   }
 
   /* ── SECTION LABEL ── */
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: .18em;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--red);
-    padding: 36px 0 12px;
+    color: var(--mid);
+    padding: 28px 0 12px;
     border-bottom: 1px solid var(--light);
     margin-bottom: 24px;
   }
 
-  /* ── NEWS GRID ── */
-  .news-grid {
+  /* ── SCRIPT SECTION ── */
+  .script-container {
+    margin-top: 32px;
+  }
+  .script-block {
+    margin-bottom: 32px;
+    border-left: 3px solid var(--light);
+    padding-left: 20px;
+  }
+  .script-block.lead-block {
+    border-left-color: var(--red);
+  }
+  .speaker-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .script-text em { font-style: italic; }
+  .script-text strong { font-weight: 600; }
+  .script-quote {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: var(--card);
+    border-left: 3px solid var(--red);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .script-quote .en { color: #333; }
+  .script-quote .zh { color: var(--mid); margin-top: 6px; font-style: normal; font-size: 13px; }
+
+  /* ── TAKEAWAYS BOX ── */
+  .takeaways {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px 36px;
+    margin: 40px 0;
+  }
+  .takeaways-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .takeaways-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--bg);
+  }
+  .takeaway-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  .takeaway-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  /* ── DISCUSSION ANGLES ── */
+  .angles-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     background: var(--light);
     border: 1px solid var(--light);
-    margin-bottom: 2px;
+    margin: 32px 0;
   }
-  .news-card {
+  @media (max-width: 540px) {
+    .angles-grid { grid-template-columns: 1fr; }
+  }
+  .angle-card {
     background: var(--bg);
-    padding: 24px;
+    padding: 20px 24px;
   }
-  .news-card.lead {
-    grid-column: 1 / -1;
-    padding: 32px;
-    border-bottom: 1px solid var(--light);
-  }
-  .news-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    color: var(--red);
-    letter-spacing: .08em;
+  .angle-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--light);
+    font-weight: 600;
     margin-bottom: 8px;
   }
-  .news-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  .news-card.lead .news-hed { font-size: 24px; }
-  .news-body {
+  .angle-text {
     font-size: 14px;
-    line-height: 1.65;
-    color: #333;
+    line-height: 1.55;
+    color: var(--ink);
   }
-  .news-source {
-    margin-top: 14px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .06em;
-    color: var(--mid);
-  }
-  .news-source a {
-    color: var(--red);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color .15s;
-  }
-  .news-source a:hover { border-color: var(--red); }
 
-  /* ── INDEX TABLE ── */
-  .index-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin-bottom: 48px;
+  /* ── SOURCES ── */
+  .sources {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light);
   }
-  .index-table th {
+  .sources-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: .12em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--mid);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--ink);
+    margin-bottom: 14px;
   }
-  .index-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--light);
-    vertical-align: top;
-  }
-  .index-table td:first-child {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--red);
-    width: 48px;
-  }
-  .index-table td a {
+  .source-link {
+    display: flex;
+    font-size: 13px;
     color: var(--ink);
     text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light);
+    gap: 10px;
+    align-items: baseline;
   }
-  .index-table td a:hover { text-decoration: underline; }
-  .tag {
-    display: inline-block;
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon {
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
-    letter-spacing: .1em;
+    color: var(--red);
+    flex-shrink: 0;
     text-transform: uppercase;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    margin-left: 8px;
-    vertical-align: middle;
+    letter-spacing: .06em;
   }
-  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── NEXT BOOK ── */
+  .next-book {
+    margin-top: 40px;
+    padding: 24px 28px;
+    border: 1px solid var(--light);
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .next-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--mid);
+    flex-shrink: 0;
+  }
+  .next-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .next-author { font-size: 12px; color: var(--mid); margin-top: 4px; }
 
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
-
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -320,163 +419,418 @@
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
-  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
-  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-
   /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--ink);
-    padding-top: 24px;
-    font-size: 12px;
-    color: var(--mid);
+  .footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light);
     font-family: 'JetBrains Mono', monospace;
-    line-height: 1.8;
-    letter-spacing: .04em;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  footer strong { color: var(--ink); }
+
+  @media (max-width: 540px) {
+    .book-cover-panel { padding: 32px 24px; }
+    .book-meta-panel { padding: 28px 24px; }
+    .takeaways { padding: 24px; }
+    .header { padding: 28px 0 20px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-04-17</p>
-  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">THE TECH<span>NOLOGY</span> TRAP</div>
   <div class="header-meta">
-    <span>📅 2026·04·17 周五</span>
-    <span>🏷 主题：AI 新闻快报</span>
-    <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 15 分钟</span>
+    <span>📅 2026-04-18</span>
+    <span>📚 周六书单 第五期</span>
+    <span>📰 非虚构 · 技术史 · 劳动经济学 · AI</span>
+    <span>🎙 大雨 × 小苇</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI GPT-Rosalind · AI 进入药物发现</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google TurboQuant · KV缓存压缩6倍 推理成本腰斩</span>
-    <span class="ticker-item"><span class="dot">▶</span>Gemini 登陆 Mac · 100% Swift 原生体验</span>
-    <span class="ticker-item"><span class="dot">▶</span>Mythos 安全对话 · 自动化漏洞发现改变规则</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI GPT-Rosalind · AI 进入药物发现</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google TurboQuant · KV缓存压缩6倍 推理成本腰斩</span>
-    <span class="ticker-item"><span class="dot">▶</span>Gemini 登陆 Mac · 100% Swift 原生体验</span>
-    <span class="ticker-item"><span class="dot">▶</span>Mythos 安全对话 · 自动化漏洞发现改变规则</span>
+    <span class="ticker-item"><span class="dot">●</span>47% 的美国工作面临自动化高风险</span>
+    <span class="ticker-item"><span class="dot">●</span>赋能技术 vs 替代技术</span>
+    <span class="ticker-item"><span class="dot">●</span>工业革命的五十年恩格斯停顿</span>
+    <span class="ticker-item"><span class="dot">●</span>卢德主义者的理性</span>
+    <span class="ticker-item"><span class="dot">●</span>制度设计比技术本身更重要</span>
+    <span class="ticker-item"><span class="dot">●</span>简化是自动化的前奏</span>
+    <span class="ticker-item"><span class="dot">●</span>47% 的美国工作面临自动化高风险</span>
+    <span class="ticker-item"><span class="dot">●</span>赋能技术 vs 替代技术</span>
+    <span class="ticker-item"><span class="dot">●</span>工业革命的五十年恩格斯停顿</span>
+    <span class="ticker-item"><span class="dot">●</span>卢德主义者的理性</span>
+    <span class="ticker-item"><span class="dot">●</span>制度设计比技术本身更重要</span>
+    <span class="ticker-item"><span class="dot">●</span>简化是自动化的前奏</span>
   </div>
 </div>
 
-<!-- AUDIO PLAYER (sticky) -->
+<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 15 分钟</span>
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周六书籍介绍 · The Technology Trap</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-04-17.mp3">
-    你的浏览器不支持音频播放。<a href="2026-04-17.mp3">下载音频</a>
+  <audio controls src="episodes/2026-04-18.mp3">
+    Your browser does not support the audio element.
   </audio>
 </div>
 
-<!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
+<!-- BOOK HERO -->
+<section class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">周六书单 · 第五期</div>
+    <div class="book-title-big">THE<br>TECHNOLOGY<br>TRAP</div>
+    <div class="book-subtitle">Capital, Labor, and Power in the Age of Automation</div>
+    <div class="book-author-line">Carl Benedikt Frey · Princeton University Press · 2019</div>
+  </div>
+  <div class="book-meta-panel">
+    <div class="book-one-liner">
+      从纽约灯夫到英国纺织工到今天的知识劳动者——技术进步的时候，谁受益、谁受害？一部横跨几百年的自动化政治经济史，直指 AI 时代最核心的问题。
+    </div>
+    <div class="book-tags">
+      <span class="tag">非虚构</span>
+      <span class="tag">技术史</span>
+      <span class="tag">劳动经济学</span>
+      <span class="tag">自动化</span>
+      <span class="tag">AI</span>
+      <span class="tag">工业革命</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item">
+        <div class="stat-label">作者</div>
+        <div class="stat-value">Carl Benedikt Frey</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">出版</div>
+        <div class="stat-value">2019 / 繁中 2020</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">机构</div>
+        <div class="stat-value">牛津大学</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="news-grid">
+<!-- SCRIPT -->
+<div class="section-label" style="margin-top:40px;">🎙 播客脚本 · 大雨 × 小苇</div>
+<div class="script-container">
 
-  <!-- LEAD -->
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">OpenAI 发布 GPT-Rosalind——AI 正式进入药物发现</h2>
-    <p class="news-body">
-      OpenAI 发布首个生命科学专用前沿推理模型 GPT-Rosalind，以 DNA 双螺旋发现者 Rosalind Franklin 命名。模型能直接查询专业数据库、解析科学文献、与计算工具交互并建议实验路径——为多步骤科学研究工作流而设计。在 BixBench 和 LABBench2 基准上超越所有前代模型。首批合作伙伴包括 Amgen、Moderna、Allen Institute、Thermo Fisher Scientific。目前通过受信任访问计划提供，仅面向审核通过的企业客户——与 Anthropic 对 Mythos 的"受控发布"策略一脉相承。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.marktechpost.com/2026/04/16/openai-launches-gpt-rosalind-life-sciences-ai/" target="_blank">MarkTechPost</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.axios.com/2026/04/16/openai-models-life-sciences-drugs" target="_blank">Axios</a>
-    </p>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      周六好，欢迎来到本期书籍介绍。上周我们聊了 Parmy Olson 的 <em>Supremacy</em>，讲的是 AI 竞赛的前线。今天我想往后退一步，退到一个更大的时间尺度上——几百年的时间尺度。
+    </div>
   </div>
 
-  <!-- 02 -->
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Google TurboQuant——推理成本即将腰斩</h2>
-    <p class="news-body">
-      Google Research 发布 TurboQuant 压缩算法，将 KV 缓存从 16 位压至 3 位，内存需求降低 6 倍。在 4 位精度下，H100 注意力计算速度提升 8 倍。零精度损失的纯软件方案，企业推理成本可削减超 50%。消息出后内存芯片股应声下跌。论文将于下周 ICLR 大会正式发表。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/" target="_blank">Google Research</a>
-      &nbsp;·&nbsp;
-      <a href="https://techcrunch.com/2026/03/25/google-turboquant-ai-memory-compression-silicon-valley-pied-piper/" target="_blank">TechCrunch</a>
-    </p>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">听起来是一本历史书？</div>
   </div>
 
-  <!-- 03 -->
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">Gemini 登陆 Mac——原生 Swift 桌面体验</h2>
-    <p class="news-body">
-      Google Josh Woodward 宣布 Gemini Mac 应用上线：100% 原生 Swift 开发，100+ 功能，不到 100 天完成。推文获近 6000 赞。AI 助手战场正从浏览器扩展到操作系统级——谁能更深入融入工作流，谁就赢得留存。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://x.com/joshwoodward/status/2044452201947627709" target="_blank">Josh Woodward on X</a>
-    </p>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      是的，也不完全是。这本书叫 <em>The Technology Trap</em>，作者是 Carl Benedikt Frey，牛津大学的经济学家。2019 年由普林斯顿大学出版社出版，繁体中文版《技術陷阱》2020 年出版。它讲的是一个我们今天每个人都在经历的问题——技术进步的时候，谁受益、谁受害？
+    </div>
   </div>
 
-  <!-- 04 -->
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">Mythos 之后的安全对话——自动化漏洞发现改变了什么</h2>
-    <p class="news-body">
-      Claude Mythos 发现数千零日漏洞后，安全社区持续消化其影响。Replit CEO Amjad Masad 提议 GitHub 应新增"安全审计算力"指标，将安全从二元概念变为可量化连续指标。OpenClaw 社区同步推进 Docker 沙箱、审计防火墙等方案，Y Combinator 的 Garry Tan 宣称安全问题已基本解决。建造者社区正在认真回应这个挑战。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://x.com/amasad/status/2044437437141909609" target="_blank">Amjad Masad on X</a>
-      &nbsp;·&nbsp;
-      <a href="https://x.com/garrytan/status/2044512730087072000" target="_blank">Garry Tan on X</a>
-    </p>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">Carl Benedikt Frey 这个名字好像很熟悉。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      你一定听过那个数字——"47% 的美国工作将因自动化而面临高风险"。2013 年 Frey 和他的牛津同事 Michael Osborne 发表了那篇论文，引爆了全球关于 AI 取代工作的大讨论。奥巴马的经济顾问委员会引用过，英国央行引用过，世界银行引用过。到现在被引用超过两万次。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以这本书是那篇论文的延伸？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      可以这么说。但 Frey 做了一件更了不起的事——他没有只盯着未来，而是回到了过去。他把整个技术创新的历史，从古希腊到工业革命到今天的 AI 时代，全部梳理了一遍，然后问了一个问题：为什么有些技术进步让所有人受益，有些却制造了几十年的痛苦？
+    </div>
+  </div>
+
+  <div class="section-label">作者背景</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他是什么背景？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Frey 是瑞典人，现在是牛津大学牛津互联网研究所的人工智能与工作方向副教授。他也是牛津马丁学院的研究员。今年一月他还受邀在达沃斯世界经济论坛上做了演讲，主题就是 AI、就业和未来的工作。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">达沃斯的常客了。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。而且 2025 年他又出了一本新书叫 <em>How Progress Ends</em>，入围了英国《金融时报》年度商业书籍大奖。可以说他是当下全球范围内研究"技术与工作"这个交叉领域最有影响力的学者之一。
+    </div>
+  </div>
+
+  <div class="section-label">核心论点 · 赋能技术与替代技术</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这本书的核心论点是什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Frey 提出了一对非常精确的概念——"赋能技术"和"替代技术"。赋能技术，英文叫 enabling technology，是让人类能做以前做不到的事情的技术。比如望远镜，让天文学家第一次看到了木星的卫星。它没有取代任何人，而是创造了全新的可能性。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">替代技术呢？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      替代技术，replacing technology，是直接取代现有工作的技术。比如动力织布机取代了手工纺织工。纺织工的技能一夜之间就变得不值钱了。Frey 的核心洞察是：人们对技术的态度，本质上取决于这个技术对他们的收入有什么影响。赋能技术受欢迎，替代技术引发抵抗——这不是情绪问题，是经济利益问题。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个框架挺简洁的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      简洁但有力。他用这个框架重新审视了几千年的技术史，发现了一个令人不安的模式。
+    </div>
+  </div>
+
+  <div class="section-label">纽约灯夫的故事</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">什么模式？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      让我先讲一个书里的故事。1900 年的纽约，每天晚上有 600 名灯夫爬上爬下，点亮全城两万五千盏煤气灯。这是一份体面的工作，灯夫跟警察、邮差一样，是社区的一部分。然后电灯来了。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">灯夫们怎么反应？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      1907 年他们罢工了。那天晚上曼哈顿一片漆黑。警察被派去点灯，但很多人胖得爬不上灯柱。哈林区的孩子们还发明了新游戏——警察刚点亮一盏灯，他们就爬上去吹灭。非常混乱。但历史不会停下来。到了 1927 年，电力垄断了纽约的照明，最后两位灯夫退休了，灯夫工会也随之解散。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">从灯夫的角度看，这是一个悲伤的故事。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。Frey 的重点不是说电灯不好——当然电灯更好。他的重点是：对当时的灯夫来说，他们的技能就是他们的资本。当技术让这份资本贬值为零，你不能简单地说"这是进步的代价"，然后期待他们欣然接受。每一个人对进步的态度，取决于进步对他们意味着什么。
+    </div>
+  </div>
+
+  <div class="section-label">工业革命的半个世纪阵痛</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个逻辑放到更大的尺度上呢？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      这就是这本书最有力量的部分。Frey 详细考证了工业革命的真实过程。我们今天总把工业革命当成一个好事——它带来了前所未有的经济增长。1750 年以前，全球人均收入每六千年翻一倍。工业革命之后，每五十年就翻一倍。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这听起来确实是好事。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对后代来说，当然是好事。但问题是：当下那一代人呢？Frey 用大量经济史数据证明了一件事——工业革命开始后，整整半个世纪，普通工人的生活水平不但没有改善，反而在恶化。中等收入的手工匠人被工厂取代，工资停滞，收入差距急剧拉大。他把这段时期叫做"恩格斯停顿"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">恩格斯？就是写《资本论》那个恩格斯？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对，弗里德里希·恩格斯。他在 1845 年写了《英国工人阶级状况》，亲眼目睹了工业化早期的人间惨状。Frey 的论点是：工业革命的长期利益是不可否认的，但短期代价是真实的、巨大的。而且这个"短期"不是一两年，是半个世纪。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">五十年，对一个人来说就是大半辈子。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。如果你是一个 1790 年出生的纺织工匠，你亲眼看着工厂摧毁了你的职业，然后你在贫困中度过余生，到死都没有等到经济学家后来所说的"长期繁荣"。对你来说，工业革命不是好事——它是灾难。
+    </div>
+  </div>
+
+  <div class="section-label">卢德主义者的理性</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以书里对卢德主义者的态度不是简单的批判？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完全不是。这是这本书最反直觉的部分。我们今天把"卢德主义者"当成一个贬义词，用来形容那些害怕技术、反对进步的人。但 Frey 说，从当时工人的角度来看，砸毁机器是完全理性的行为。他们不是不懂技术——他们太懂了。他们清楚地知道，这些机器会让他们一无所有。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他们不是反对进步本身，而是反对自己成为进步的代价。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      正是如此。Frey 引用了一个精确的表述：进步不是必然的，有些人甚至不欢迎进步。没有什么根本理由要求这些新技术必须蓬勃发展——只是我们已经习以为常。这个观点放在 2026 年的今天，尤其值得深思。
+    </div>
+  </div>
+
+  <div class="section-label">对接当下 · AI 时代的技术陷阱</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那这个框架怎么对接到今天的 AI 时代？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Frey 在书的最后几章直接讨论了 1980 年代以来的计算机革命和 AI。他的诊断是：我们正在经历的自动化时代，和工业革命早期有惊人的相似之处——中等收入工作正在消失，工资两极分化在加剧，经济利益正在集中到拥有资本和技术的少数人手中。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">又是一个"恩格斯停顿"？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      他不确定，但他担心。尤其是他在 2025 年和 Osborne 一起重新审视了 2013 年的研究——这次纳入了生成式 AI 的影响。他们发现，生成式 AI 扩大了自动化的范围，但它的主要效果不是直接取代工作，而是"民主化专业知识"——让更多人可以用更少的训练做知识工作。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这听起来反而不那么可怕？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      短期内可能不可怕，但 Frey 的警告是：简化往往只是自动化的前奏。就像电灯先让灯夫的工作更简单——只要按个开关就行——然后变电站取消了灯夫这个职业。从"简化"到"消除"，往往只有一步之遥。
+    </div>
   </div>
 
 </div>
 
-<!-- INDEX TABLE -->
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
-<table class="index-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>标题</th>
-      <th>来源</th>
-      <th>日期</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://www.marktechpost.com/2026/04/16/openai-launches-gpt-rosalind-life-sciences-ai/" target="_blank">OpenAI GPT-Rosalind：AI 进入药物发现 <span class="tag hot">头条</span></a></td>
-      <td>MarkTechPost</td>
-      <td>2026-04-16</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/" target="_blank">Google TurboQuant：推理成本腰斩 <span class="tag">基础设施</span></a></td>
-      <td>Google Research</td>
-      <td>2026-03-25</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://x.com/joshwoodward/status/2044452201947627709" target="_blank">Gemini 登陆 Mac <span class="tag">产品</span></a></td>
-      <td>Josh Woodward</td>
-      <td>2026-04-15</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://x.com/amasad/status/2044437437141909609" target="_blank">Mythos 后的安全对话 <span class="tag">安全</span></a></td>
-      <td>Amjad Masad</td>
-      <td>2026-04-15</td>
-    </tr>
-  </tbody>
-</table>
+<!-- TAKEAWAYS -->
+<div class="takeaways">
+  <div class="takeaways-label">核心洞见</div>
+  <div class="takeaways-title">THE TECHNOLOGY TRAP</div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">01</div>
+    <div>技术不是中性的。赋能技术和替代技术对社会的影响截然不同。评价任何新技术，首先要问"它赋能了谁、替代了谁"。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">02</div>
+    <div>进步的代价是真实的、具体的、长期的。工业革命用了五十年才让普通人受益。如果 AI 的"恩格斯停顿"也持续这么久，我们这代人可能等不到回报。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">03</div>
+    <div>抵抗不是愚蠢的。卢德主义者有他们的道理。把一切反对声音都贴上"反进步"的标签，是危险的，也是傲慢的。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">04</div>
+    <div>制度设计比技术本身更重要。同样的技术在不同的制度环境下可以产生完全不同的结果。技术不能决定命运，制度可以。</div>
+  </div>
+</div>
+
+<!-- DISCUSSION ANGLES -->
+<div class="section-label">值得聊的角度</div>
+<div class="angles-grid">
+  <div class="angle-card">
+    <div class="angle-num">01</div>
+    <div class="angle-text">今天的 AI 对你个人来说，是赋能技术还是替代技术？你的工作正在被增强，还是被取代？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">02</div>
+    <div class="angle-text">如果我们处在又一个"恩格斯停顿"的开端，社会应该放任市场，还是用制度缓冲冲击？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">03</div>
+    <div class="angle-text">当技术的长期利益不可否认，但短期代价由少数人承担，我们凭什么要求他们为"进步"牺牲？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">04</div>
+    <div class="angle-text">简化是自动化的前奏——你现在用 AI 简化的哪些工作，最终可能被 AI 完全取代？</div>
+  </div>
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -486,129 +840,107 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:03。
+  数据截至今日 UTC 06:02。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">AI & I by Every · 2026-04-15</p>
-  <p class="pc-title">The AI Model Built for What LLMs Can't Do</p>
-  <p class="pc-summary">
-    Logical Intelligence 创始人兼 CEO Eve 深度解读能量基础模型（EBM）。核心观点：LLM 是自回归的"单向导航"——一旦走错就回不了头；EBM 则拥有"鸟瞰视角"，能在全局评估后选择最优路径。这是一种根本不同的 AI 架构，专注于软件和硬件的正确性验证，可能成为 LLM 的重要补充。
-  </p>
-  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Latent Space · 2026-04-15</p>
+  <p class="pc-title">Notion's Token Town: 5 Rebuilds, 100+ Tools, MCP vs CLIs and the Software Factory Future</p>
+  <p class="pc-summary">Notion 工程负责人 Simon Last 和 Sarah Sachs 做客 Latent Space，讨论 Notion 五次重建、100+ 内部工具的演进，以及 MCP 与 CLI 在 AI 代理时代的各自定位。核心观点：MCP 的权限模型天然严格——"你能做的只有调用工具"——这恰好是轻量级代理场景所需要的。在自动化吞噬软件工厂的时代，工具的边界在哪里？</p>
+  <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
-
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · OpenAI CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Codex 迎来重大更新！Computer use 是真正有感的升级——它可以并行使用 Mac 上的所有应用，而且不干扰你的工作。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 7,700</span>
+      <a href="https://x.com/sama/status/2044858862042591378" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">KW</div>
+      <div>
+        <div class="builder-name">Kevin Weil</div>
+        <div class="builder-handle">@kevinweil · OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「非常兴奋推出 GPT-Rosalind——我们首个面向科学研究的前沿模型，覆盖生物学、药物发现和转化医学。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 772</span>
+      <a href="https://x.com/kevinweil/status/2044862783947448611" target="_blank">查看推文 →</a>
+    </div>
+  </div>
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">GR</div>
       <div>
         <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「这就是设计的未来。不是某个具体工具，而是世界上每个团队现在都有能力建造自己的'设计工厂'。Shader Lab 就是用 Claude Code、Three.js、Next.js 和 Vercel 构建的。」</p>
+    <p class="builder-tweet">「代理和后端最难的部分是持久性。你调用的 LLM 终会宕机，服务终会限流，数据库终会变慢。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,705</span>
-      <a href="https://x.com/rauchg/status/2044445445636972578" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 405</span>
+      <a href="https://x.com/rauchg/status/2044858872842826102" target="_blank">查看推文 →</a>
     </div>
   </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">RL</div>
-      <div>
-        <div class="builder-name">Ryo Lu</div>
-        <div class="builder-handle">@ryolu_ · Cursor</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「未来一瞥——在 Cursor 里用 /canvas 为你的 AI agent 构建自定义界面。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 273</span>
-      <a href="https://x.com/ryolu_/status/2044493859821129992" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">AL</div>
-      <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「AI 为什么会在很多行业创造更多工作？因为当你用 AI 加速了某个环节的产出，最终会遇到流程中其他地方的新瓶颈——而这些瓶颈仍然需要人来解决。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 156</span>
-      <a href="https://x.com/levie/status/2044621545348481285" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">TQ</div>
-      <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · Anthropic</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「100 万 token 上下文窗口是把双刃剑。它让 Claude 能处理更复杂的任务，但如果你不管理好 session，上下文污染问题会更严重。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 375</span>
-      <a href="https://x.com/trq212/status/2044653083817660431" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
 </div>
 
-<hr class="rule">
-
-<!-- PAST EPISODES -->
-<p class="section-label">◈ 往期回顾</p>
-<div class="past-episodes" id="past-container">
-  <div id="past-loading">正在加载往期节目…</div>
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">📎 来源</div>
+  <a class="source-link" href="https://press.princeton.edu/books/hardcover/9780691172798/the-technology-trap" target="_blank">
+    <span class="src-icon">Book</span>
+    Princeton University Press — The Technology Trap
+  </a>
+  <a class="source-link" href="https://www.oxfordmartin.ox.ac.uk/publications/the-technology-trap-capital-labor-and-power-in-the-age-of-automation" target="_blank">
+    <span class="src-icon">Oxford</span>
+    Oxford Martin School — The Technology Trap
+  </a>
+  <a class="source-link" href="https://www.businesstoday.in/wef-2026/video/btdavos-2026-live-oxfords-carl-benedikt-frey-on-ai-jobs-and-the-future-of-work-512182-2026-01-21" target="_blank">
+    <span class="src-icon">Davos</span>
+    BTDavos 2026 — Carl Benedikt Frey on AI, Jobs and the Future of Work
+  </a>
+  <a class="source-link" href="https://en.wikipedia.org/wiki/Carl_Benedikt_Frey" target="_blank">
+    <span class="src-icon">Wiki</span>
+    Wikipedia — Carl Benedikt Frey
+  </a>
+  <a class="source-link" href="https://blogs.lse.ac.uk/lsereviewofbooks/2019/09/04/book-review-the-technology-trap-capital-labour-and-power-in-the-age-of-automation-by-carl-frey/" target="_blank">
+    <span class="src-icon">Review</span>
+    LSE Review of Books — The Technology Trap
+  </a>
 </div>
 
-<script>
-(async () => {
-  try {
-    const r = await fetch('feed.json');
-    if (!r.ok) throw new Error('no feed');
-    const eps = await r.json();
-    const c = document.getElementById('past-container');
-    c.innerHTML = '';
-    eps.slice(0, 12).forEach(e => {
-      const a = document.createElement('a');
-      a.className = 'past-ep-item';
-      a.href = e.url || ('episodes/' + e.date + '.html');
-      a.innerHTML =
-        '<span class="past-ep-date">' + e.date + '</span>' +
-        '<span class="past-ep-title">' + (e.title || '') + '</span>' +
-        '<span class="past-ep-tag">' + (e.tag || '') + '</span>';
-      c.appendChild(a);
-    });
-  } catch(e) {
-    document.getElementById('past-loading').textContent = '暂无往期节目数据';
-  }
-})();
-</script>
-
-<hr class="rule">
-
-<footer>
-  <strong>Daily Builders Digest</strong> · 大雨 × 小苇<br>
-  关注建造者，不要关注 influencer。<br>
-  © 2026 · 由 AI 辅助制作
+<!-- FOOTER -->
+<footer class="footer">
+  <span>Daily Builders Digest</span>
+  <span>2026-04-18 · 周六书籍介绍</span>
+  <span>daily-builders-digest.vercel.app</span>
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-04-17.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-17</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">OpenAI 发布 GPT-Rosalind——AI 正式进入药物发现</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-04-16.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-04-16</span>

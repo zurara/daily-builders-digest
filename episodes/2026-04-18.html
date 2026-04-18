@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-04-18 · 周六书籍介绍">
+<meta property="og:description" content="The Technology Trap · Carl Benedikt Frey · 从工业革命到 AI 时代，谁在为进步买单？">
+<title>Daily Builders Digest · 2026-04-18 · 周六书籍介绍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 8vw, 88px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 40s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── BOOK HERO ── */
+  .book-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--light);
+    margin-top: 40px;
+  }
+  @media (max-width: 600px) {
+    .book-hero { grid-template-columns: 1fr; }
+  }
+  .book-cover-panel {
+    background: var(--ink);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .book-cover-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+  .book-title-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .book-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .book-author-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: .06em;
+  }
+  .book-meta-panel {
+    padding: 40px;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .book-one-liner {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .book-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--light);
+    color: var(--mid);
+    background: var(--bg);
+  }
+  .book-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--mid);
+  }
+  .stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding: 28px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── SCRIPT SECTION ── */
+  .script-container {
+    margin-top: 32px;
+  }
+  .script-block {
+    margin-bottom: 32px;
+    border-left: 3px solid var(--light);
+    padding-left: 20px;
+  }
+  .script-block.lead-block {
+    border-left-color: var(--red);
+  }
+  .speaker-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .script-text em { font-style: italic; }
+  .script-text strong { font-weight: 600; }
+  .script-quote {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: var(--card);
+    border-left: 3px solid var(--red);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .script-quote .en { color: #333; }
+  .script-quote .zh { color: var(--mid); margin-top: 6px; font-style: normal; font-size: 13px; }
+
+  /* ── TAKEAWAYS BOX ── */
+  .takeaways {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px 36px;
+    margin: 40px 0;
+  }
+  .takeaways-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .takeaways-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--bg);
+  }
+  .takeaway-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  .takeaway-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  /* ── DISCUSSION ANGLES ── */
+  .angles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin: 32px 0;
+  }
+  @media (max-width: 540px) {
+    .angles-grid { grid-template-columns: 1fr; }
+  }
+  .angle-card {
+    background: var(--bg);
+    padding: 20px 24px;
+  }
+  .angle-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--light);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .angle-text {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  /* ── SOURCES ── */
+  .sources {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light);
+  }
+  .sources-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 14px;
+  }
+  .source-link {
+    display: flex;
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light);
+    gap: 10px;
+    align-items: baseline;
+  }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--red);
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  /* ── NEXT BOOK ── */
+  .next-book {
+    margin-top: 40px;
+    padding: 24px 28px;
+    border: 1px solid var(--light);
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .next-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--mid);
+    flex-shrink: 0;
+  }
+  .next-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .next-author { font-size: 12px; color: var(--mid); margin-top: 4px; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 540px) {
+    .book-cover-panel { padding: 32px 24px; }
+    .book-meta-panel { padding: 28px 24px; }
+    .takeaways { padding: 24px; }
+    .header { padding: 28px 0 20px; }
+  }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">THE TECH<span>NOLOGY</span> TRAP</div>
+  <div class="header-meta">
+    <span>📅 2026-04-18</span>
+    <span>📚 周六书单 第五期</span>
+    <span>📰 非虚构 · 技术史 · 劳动经济学 · AI</span>
+    <span>🎙 大雨 × 小苇</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>47% 的美国工作面临自动化高风险</span>
+    <span class="ticker-item"><span class="dot">●</span>赋能技术 vs 替代技术</span>
+    <span class="ticker-item"><span class="dot">●</span>工业革命的五十年恩格斯停顿</span>
+    <span class="ticker-item"><span class="dot">●</span>卢德主义者的理性</span>
+    <span class="ticker-item"><span class="dot">●</span>制度设计比技术本身更重要</span>
+    <span class="ticker-item"><span class="dot">●</span>简化是自动化的前奏</span>
+    <span class="ticker-item"><span class="dot">●</span>47% 的美国工作面临自动化高风险</span>
+    <span class="ticker-item"><span class="dot">●</span>赋能技术 vs 替代技术</span>
+    <span class="ticker-item"><span class="dot">●</span>工业革命的五十年恩格斯停顿</span>
+    <span class="ticker-item"><span class="dot">●</span>卢德主义者的理性</span>
+    <span class="ticker-item"><span class="dot">●</span>制度设计比技术本身更重要</span>
+    <span class="ticker-item"><span class="dot">●</span>简化是自动化的前奏</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周六书籍介绍 · The Technology Trap</span>
+  </div>
+  <audio controls src="2026-04-18.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- BOOK HERO -->
+<section class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">周六书单 · 第五期</div>
+    <div class="book-title-big">THE<br>TECHNOLOGY<br>TRAP</div>
+    <div class="book-subtitle">Capital, Labor, and Power in the Age of Automation</div>
+    <div class="book-author-line">Carl Benedikt Frey · Princeton University Press · 2019</div>
+  </div>
+  <div class="book-meta-panel">
+    <div class="book-one-liner">
+      从纽约灯夫到英国纺织工到今天的知识劳动者——技术进步的时候，谁受益、谁受害？一部横跨几百年的自动化政治经济史，直指 AI 时代最核心的问题。
+    </div>
+    <div class="book-tags">
+      <span class="tag">非虚构</span>
+      <span class="tag">技术史</span>
+      <span class="tag">劳动经济学</span>
+      <span class="tag">自动化</span>
+      <span class="tag">AI</span>
+      <span class="tag">工业革命</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item">
+        <div class="stat-label">作者</div>
+        <div class="stat-value">Carl Benedikt Frey</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">出版</div>
+        <div class="stat-value">2019 / 繁中 2020</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">机构</div>
+        <div class="stat-value">牛津大学</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<div class="section-label" style="margin-top:40px;">🎙 播客脚本 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      周六好，欢迎来到本期书籍介绍。上周我们聊了 Parmy Olson 的 <em>Supremacy</em>，讲的是 AI 竞赛的前线。今天我想往后退一步，退到一个更大的时间尺度上——几百年的时间尺度。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">听起来是一本历史书？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      是的，也不完全是。这本书叫 <em>The Technology Trap</em>，作者是 Carl Benedikt Frey，牛津大学的经济学家。2019 年由普林斯顿大学出版社出版，繁体中文版《技術陷阱》2020 年出版。它讲的是一个我们今天每个人都在经历的问题——技术进步的时候，谁受益、谁受害？
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">Carl Benedikt Frey 这个名字好像很熟悉。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      你一定听过那个数字——"47% 的美国工作将因自动化而面临高风险"。2013 年 Frey 和他的牛津同事 Michael Osborne 发表了那篇论文，引爆了全球关于 AI 取代工作的大讨论。奥巴马的经济顾问委员会引用过，英国央行引用过，世界银行引用过。到现在被引用超过两万次。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以这本书是那篇论文的延伸？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      可以这么说。但 Frey 做了一件更了不起的事——他没有只盯着未来，而是回到了过去。他把整个技术创新的历史，从古希腊到工业革命到今天的 AI 时代，全部梳理了一遍，然后问了一个问题：为什么有些技术进步让所有人受益，有些却制造了几十年的痛苦？
+    </div>
+  </div>
+
+  <div class="section-label">作者背景</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他是什么背景？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Frey 是瑞典人，现在是牛津大学牛津互联网研究所的人工智能与工作方向副教授。他也是牛津马丁学院的研究员。今年一月他还受邀在达沃斯世界经济论坛上做了演讲，主题就是 AI、就业和未来的工作。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">达沃斯的常客了。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。而且 2025 年他又出了一本新书叫 <em>How Progress Ends</em>，入围了英国《金融时报》年度商业书籍大奖。可以说他是当下全球范围内研究"技术与工作"这个交叉领域最有影响力的学者之一。
+    </div>
+  </div>
+
+  <div class="section-label">核心论点 · 赋能技术与替代技术</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这本书的核心论点是什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Frey 提出了一对非常精确的概念——"赋能技术"和"替代技术"。赋能技术，英文叫 enabling technology，是让人类能做以前做不到的事情的技术。比如望远镜，让天文学家第一次看到了木星的卫星。它没有取代任何人，而是创造了全新的可能性。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">替代技术呢？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      替代技术，replacing technology，是直接取代现有工作的技术。比如动力织布机取代了手工纺织工。纺织工的技能一夜之间就变得不值钱了。Frey 的核心洞察是：人们对技术的态度，本质上取决于这个技术对他们的收入有什么影响。赋能技术受欢迎，替代技术引发抵抗——这不是情绪问题，是经济利益问题。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个框架挺简洁的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      简洁但有力。他用这个框架重新审视了几千年的技术史，发现了一个令人不安的模式。
+    </div>
+  </div>
+
+  <div class="section-label">纽约灯夫的故事</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">什么模式？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      让我先讲一个书里的故事。1900 年的纽约，每天晚上有 600 名灯夫爬上爬下，点亮全城两万五千盏煤气灯。这是一份体面的工作，灯夫跟警察、邮差一样，是社区的一部分。然后电灯来了。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">灯夫们怎么反应？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      1907 年他们罢工了。那天晚上曼哈顿一片漆黑。警察被派去点灯，但很多人胖得爬不上灯柱。哈林区的孩子们还发明了新游戏——警察刚点亮一盏灯，他们就爬上去吹灭。非常混乱。但历史不会停下来。到了 1927 年，电力垄断了纽约的照明，最后两位灯夫退休了，灯夫工会也随之解散。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">从灯夫的角度看，这是一个悲伤的故事。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。Frey 的重点不是说电灯不好——当然电灯更好。他的重点是：对当时的灯夫来说，他们的技能就是他们的资本。当技术让这份资本贬值为零，你不能简单地说"这是进步的代价"，然后期待他们欣然接受。每一个人对进步的态度，取决于进步对他们意味着什么。
+    </div>
+  </div>
+
+  <div class="section-label">工业革命的半个世纪阵痛</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个逻辑放到更大的尺度上呢？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      这就是这本书最有力量的部分。Frey 详细考证了工业革命的真实过程。我们今天总把工业革命当成一个好事——它带来了前所未有的经济增长。1750 年以前，全球人均收入每六千年翻一倍。工业革命之后，每五十年就翻一倍。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这听起来确实是好事。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对后代来说，当然是好事。但问题是：当下那一代人呢？Frey 用大量经济史数据证明了一件事——工业革命开始后，整整半个世纪，普通工人的生活水平不但没有改善，反而在恶化。中等收入的手工匠人被工厂取代，工资停滞，收入差距急剧拉大。他把这段时期叫做"恩格斯停顿"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">恩格斯？就是写《资本论》那个恩格斯？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对，弗里德里希·恩格斯。他在 1845 年写了《英国工人阶级状况》，亲眼目睹了工业化早期的人间惨状。Frey 的论点是：工业革命的长期利益是不可否认的，但短期代价是真实的、巨大的。而且这个"短期"不是一两年，是半个世纪。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">五十年，对一个人来说就是大半辈子。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。如果你是一个 1790 年出生的纺织工匠，你亲眼看着工厂摧毁了你的职业，然后你在贫困中度过余生，到死都没有等到经济学家后来所说的"长期繁荣"。对你来说，工业革命不是好事——它是灾难。
+    </div>
+  </div>
+
+  <div class="section-label">卢德主义者的理性</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以书里对卢德主义者的态度不是简单的批判？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完全不是。这是这本书最反直觉的部分。我们今天把"卢德主义者"当成一个贬义词，用来形容那些害怕技术、反对进步的人。但 Frey 说，从当时工人的角度来看，砸毁机器是完全理性的行为。他们不是不懂技术——他们太懂了。他们清楚地知道，这些机器会让他们一无所有。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他们不是反对进步本身，而是反对自己成为进步的代价。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      正是如此。Frey 引用了一个精确的表述：进步不是必然的，有些人甚至不欢迎进步。没有什么根本理由要求这些新技术必须蓬勃发展——只是我们已经习以为常。这个观点放在 2026 年的今天，尤其值得深思。
+    </div>
+  </div>
+
+  <div class="section-label">对接当下 · AI 时代的技术陷阱</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那这个框架怎么对接到今天的 AI 时代？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Frey 在书的最后几章直接讨论了 1980 年代以来的计算机革命和 AI。他的诊断是：我们正在经历的自动化时代，和工业革命早期有惊人的相似之处——中等收入工作正在消失，工资两极分化在加剧，经济利益正在集中到拥有资本和技术的少数人手中。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">又是一个"恩格斯停顿"？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      他不确定，但他担心。尤其是他在 2025 年和 Osborne 一起重新审视了 2013 年的研究——这次纳入了生成式 AI 的影响。他们发现，生成式 AI 扩大了自动化的范围，但它的主要效果不是直接取代工作，而是"民主化专业知识"——让更多人可以用更少的训练做知识工作。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这听起来反而不那么可怕？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      短期内可能不可怕，但 Frey 的警告是：简化往往只是自动化的前奏。就像电灯先让灯夫的工作更简单——只要按个开关就行——然后变电站取消了灯夫这个职业。从"简化"到"消除"，往往只有一步之遥。
+    </div>
+  </div>
+
+</div>
+
+<!-- TAKEAWAYS -->
+<div class="takeaways">
+  <div class="takeaways-label">核心洞见</div>
+  <div class="takeaways-title">THE TECHNOLOGY TRAP</div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">01</div>
+    <div>技术不是中性的。赋能技术和替代技术对社会的影响截然不同。评价任何新技术，首先要问"它赋能了谁、替代了谁"。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">02</div>
+    <div>进步的代价是真实的、具体的、长期的。工业革命用了五十年才让普通人受益。如果 AI 的"恩格斯停顿"也持续这么久，我们这代人可能等不到回报。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">03</div>
+    <div>抵抗不是愚蠢的。卢德主义者有他们的道理。把一切反对声音都贴上"反进步"的标签，是危险的，也是傲慢的。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">04</div>
+    <div>制度设计比技术本身更重要。同样的技术在不同的制度环境下可以产生完全不同的结果。技术不能决定命运，制度可以。</div>
+  </div>
+</div>
+
+<!-- DISCUSSION ANGLES -->
+<div class="section-label">值得聊的角度</div>
+<div class="angles-grid">
+  <div class="angle-card">
+    <div class="angle-num">01</div>
+    <div class="angle-text">今天的 AI 对你个人来说，是赋能技术还是替代技术？你的工作正在被增强，还是被取代？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">02</div>
+    <div class="angle-text">如果我们处在又一个"恩格斯停顿"的开端，社会应该放任市场，还是用制度缓冲冲击？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">03</div>
+    <div class="angle-text">当技术的长期利益不可否认，但短期代价由少数人承担，我们凭什么要求他们为"进步"牺牲？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">04</div>
+    <div class="angle-text">简化是自动化的前奏——你现在用 AI 简化的哪些工作，最终可能被 AI 完全取代？</div>
+  </div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 06:02。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Latent Space · 2026-04-15</p>
+  <p class="pc-title">Notion's Token Town: 5 Rebuilds, 100+ Tools, MCP vs CLIs and the Software Factory Future</p>
+  <p class="pc-summary">Notion 工程负责人 Simon Last 和 Sarah Sachs 做客 Latent Space，讨论 Notion 五次重建、100+ 内部工具的演进，以及 MCP 与 CLI 在 AI 代理时代的各自定位。核心观点：MCP 的权限模型天然严格——"你能做的只有调用工具"——这恰好是轻量级代理场景所需要的。在自动化吞噬软件工厂的时代，工具的边界在哪里？</p>
+  <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · OpenAI CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Codex 迎来重大更新！Computer use 是真正有感的升级——它可以并行使用 Mac 上的所有应用，而且不干扰你的工作。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 7,700</span>
+      <a href="https://x.com/sama/status/2044858862042591378" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">KW</div>
+      <div>
+        <div class="builder-name">Kevin Weil</div>
+        <div class="builder-handle">@kevinweil · OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「非常兴奋推出 GPT-Rosalind——我们首个面向科学研究的前沿模型，覆盖生物学、药物发现和转化医学。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 772</span>
+      <a href="https://x.com/kevinweil/status/2044862783947448611" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「代理和后端最难的部分是持久性。你调用的 LLM 终会宕机，服务终会限流，数据库终会变慢。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 405</span>
+      <a href="https://x.com/rauchg/status/2044858872842826102" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">📎 来源</div>
+  <a class="source-link" href="https://press.princeton.edu/books/hardcover/9780691172798/the-technology-trap" target="_blank">
+    <span class="src-icon">Book</span>
+    Princeton University Press — The Technology Trap
+  </a>
+  <a class="source-link" href="https://www.oxfordmartin.ox.ac.uk/publications/the-technology-trap-capital-labor-and-power-in-the-age-of-automation" target="_blank">
+    <span class="src-icon">Oxford</span>
+    Oxford Martin School — The Technology Trap
+  </a>
+  <a class="source-link" href="https://www.businesstoday.in/wef-2026/video/btdavos-2026-live-oxfords-carl-benedikt-frey-on-ai-jobs-and-the-future-of-work-512182-2026-01-21" target="_blank">
+    <span class="src-icon">Davos</span>
+    BTDavos 2026 — Carl Benedikt Frey on AI, Jobs and the Future of Work
+  </a>
+  <a class="source-link" href="https://en.wikipedia.org/wiki/Carl_Benedikt_Frey" target="_blank">
+    <span class="src-icon">Wiki</span>
+    Wikipedia — Carl Benedikt Frey
+  </a>
+  <a class="source-link" href="https://blogs.lse.ac.uk/lsereviewofbooks/2019/09/04/book-review-the-technology-trap-capital-labour-and-power-in-the-age-of-automation-by-carl-frey/" target="_blank">
+    <span class="src-icon">Review</span>
+    LSE Review of Books — The Technology Trap
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span>Daily Builders Digest</span>
+  <span>2026-04-18 · 周六书籍介绍</span>
+  <span>daily-builders-digest.vercel.app</span>
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

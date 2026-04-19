@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta property="og:title" content="Daily Builders Digest · 2026-04-19 · 周日播客精选">
-<meta property="og:description" content="ServiceNow的AI赌注 · SaaSpocalypse辩论 · AI增长新范式 · 语音革命">
+<meta property="og:description" content="ServiceNow的AI赌注 · Logical Intelligence · 能量基推理模型 · LLM之后的世界">
 <title>Daily Builders Digest · 2026-04-19 · 周日播客精选</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -36,7 +36,6 @@
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
 
-  /* ── HEADER ── */
   .header {
     padding: 48px 0 32px;
     border-bottom: 1px solid var(--ink);
@@ -69,7 +68,6 @@
     letter-spacing: .1em;
   }
 
-  /* ── TICKER ── */
   .ticker-wrap {
     overflow: hidden;
     border-top: 1px solid var(--ink);
@@ -81,7 +79,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 46s linear infinite;
+    animation: ticker 52s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -97,7 +95,6 @@
     to   { transform: translateX(-50%); }
   }
 
-  /* ── AUDIO PLAYER ── */
   .audio-bar {
     background: var(--ink);
     padding: 16px 20px 14px;
@@ -126,7 +123,6 @@
     display: block;
   }
 
-  /* ── MAIN FEATURE HERO ── */
   .feature-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -219,7 +215,6 @@
     color: var(--ink);
   }
 
-  /* ── SECTION LABEL ── */
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -231,7 +226,6 @@
     margin-bottom: 24px;
   }
 
-  /* ── SCRIPT ── */
   .script-container { margin-top: 32px; }
   .script-block {
     margin-bottom: 28px;
@@ -255,7 +249,6 @@
   }
   .script-text strong { font-weight: 600; }
 
-  /* ── INSIGHT BOX ── */
   .insight-box {
     background: var(--ink);
     color: var(--bg);
@@ -292,7 +285,6 @@
     padding-top: 2px;
   }
 
-  /* ── OTHER EPISODES ── */
   .episodes-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -349,7 +341,6 @@
     letter-spacing: .06em;
   }
 
-  /* ── SOURCES ── */
   .sources {
     margin-top: 48px;
     padding-top: 24px;
@@ -383,10 +374,8 @@
     letter-spacing: .06em;
   }
 
-  /* ── RULE HEAVY ── */
   .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
 
-  /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -406,7 +395,6 @@
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── FOOTER ── */
   .footer {
     margin-top: 60px;
     padding-top: 20px;
@@ -440,7 +428,7 @@
   <div class="header-meta">
     <span>📅 2026-04-19</span>
     <span>🎙 周日播客精选</span>
-    <span>🤖 ServiceNow的AI赌注 · SaaSpocalypse辩论 · AI增长新范式 · 语音革命</span>
+    <span>🤖 ServiceNow的AI赌注 · Logical Intelligence · 能量基推理 · LLM之后的世界</span>
     <span>大雨 × 小苇</span>
   </div>
 </header>
@@ -448,18 +436,18 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>No Priors × Bill McDermott · 16岁熟食店到企业AI巨头</span>
-    <span class="ticker-item"><span class="dot">●</span>SaaSpocalypse · AI thinks, workflow acts</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors × Bill McDermott · AI thinks, workflow acts</span>
+    <span class="ticker-item"><span class="dot">●</span>Logical Intelligence · Eve Bodnia · 能量基推理模型</span>
+    <span class="ticker-item"><span class="dot">●</span>SaaSpocalypse · 替换企业平台成本10倍</span>
+    <span class="ticker-item"><span class="dot">●</span>Kona · PutnamBench 接近满分 · 非自回归推理</span>
     <span class="ticker-item"><span class="dot">●</span>Lovable · 一年$200M ARR · 三个月一次PMF</span>
     <span class="ticker-item"><span class="dot">●</span>Voxtral TTS · 开源语音模型 · 68.4%胜率</span>
-    <span class="ticker-item"><span class="dot">●</span>Kevin Weil 离开 OpenAI · Opus 4.7 上线</span>
-    <span class="ticker-item"><span class="dot">●</span>Aaron Levie · Agent用软件100X多于人类</span>
-    <span class="ticker-item"><span class="dot">●</span>No Priors × Bill McDermott · 16岁熟食店到企业AI巨头</span>
-    <span class="ticker-item"><span class="dot">●</span>SaaSpocalypse · AI thinks, workflow acts</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors × Bill McDermott · AI thinks, workflow acts</span>
+    <span class="ticker-item"><span class="dot">●</span>Logical Intelligence · Eve Bodnia · 能量基推理模型</span>
+    <span class="ticker-item"><span class="dot">●</span>SaaSpocalypse · 替换企业平台成本10倍</span>
+    <span class="ticker-item"><span class="dot">●</span>Kona · PutnamBench 接近满分 · 非自回归推理</span>
     <span class="ticker-item"><span class="dot">●</span>Lovable · 一年$200M ARR · 三个月一次PMF</span>
     <span class="ticker-item"><span class="dot">●</span>Voxtral TTS · 开源语音模型 · 68.4%胜率</span>
-    <span class="ticker-item"><span class="dot">●</span>Kevin Weil 离开 OpenAI · Opus 4.7 上线</span>
-    <span class="ticker-item"><span class="dot">●</span>Aaron Levie · Agent用软件100X多于人类</span>
   </div>
 </div>
 
@@ -468,17 +456,17 @@
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· 周日播客精选 · ServiceNow 的 AI 赌注与 SaaSpocalypse 辩论</span>
+    <span>· 周日播客精选 · ServiceNow AI 赌注 × Logical Intelligence 能量基推理</span>
   </div>
   <audio controls src="episodes/2026-04-19.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
-<!-- MAIN FEATURE HERO -->
+<!-- MAIN FEATURE HERO #1 -->
 <section class="feature-hero">
   <div class="feature-left">
-    <div class="feature-eyebrow">本周主推 · No Priors</div>
+    <div class="feature-eyebrow">主推之一 · No Priors</div>
     <div class="feature-show-name">SCALING GLOBAL<br>ORGANIZATIONS<br>IN THE AGE OF AI</div>
     <div class="feature-ep-title">ServiceNow CEO Bill McDermott on Leadership,<br>Customers, and the SaaSpocalypse Debate</div>
     <div class="feature-guest">Bill McDermott × Sarah Guo · 2026-04-17</div>
@@ -492,8 +480,6 @@
       <span class="tag">SaaSpocalypse</span>
       <span class="tag">Enterprise AI</span>
       <span class="tag">Leadership</span>
-      <span class="tag">Agentic Business</span>
-      <span class="tag">Customer First</span>
     </div>
     <div class="feature-stats">
       <div class="stat-item">
@@ -512,50 +498,38 @@
   </div>
 </section>
 
-<!-- SCRIPT SECTION -->
-<div class="section-label" style="margin-top:40px;">🎙 播客对话 · 大雨 × 小苇</div>
+<!-- SCRIPT: NO PRIORS -->
+<div class="section-label" style="margin-top:40px;">🎙 播客对话 · No Priors × Bill McDermott</div>
 <div class="script-container">
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      Sarah 开场就聊到了 McDermott 的传奇起点——16 岁时他在纽约长岛买下了一家熟食店，花了 5500 美元，分期付款，错过一期就全部收回。他当时同时打三份工：加油站、超市理货、餐厅收台。买下这家店等于把三份工合并成一份。
+      Sarah 开场聊到了 McDermott 的传奇起点——16 岁时他在纽约长岛买下了一家熟食店，花了 5500 美元，分期付款，错过一期就全部收回。他当时同时打三份工。买下这家店等于把三份工合并成一份。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">16 岁就有这种商业直觉，确实不一般。</div>
+    <div class="script-text">16 岁就有这种商业直觉。</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      他说了一句话我印象很深——他的核心哲学从那时就定型了：<strong>一切取决于客户。客户决定你是赢还是输。</strong>他把自己的客户分成三类：像他父亲那样"周五有钱、周日破产"的蓝领工人、不愿出门需要送货上门的老人、以及需要用街机游戏把他们从 7-Eleven 吸引过来的孩子。一个小熟食店的客户分层策略，放到今天看就是最朴素的 PMF 思维。
+      他的核心哲学从那时就定型了：<strong>一切取决于客户。</strong>他把客户分成三类：蓝领工人、不愿出门的老人、需要用街机游戏吸引过来的孩子。一个小熟食店的客户分层策略，放到今天看就是最朴素的 PMF 思维。
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">那他怎么把这种思维带到 ServiceNow 的？</div>
+    <div class="script-text">那他怎么把这种思维带到 ServiceNow？</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      这就是这集的核心。McDermott 直面了一个大家都在讨论的话题——所谓的"SaaSpocalypse"，也就是"SaaS 末日论"。很多人认为大语言模型会直接替代传统 SaaS 平台——为什么还需要付费订阅 ServiceNow 的工作流系统，AI 不是什么都能做了吗？
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">他的反驳是什么？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      他的论证非常扎实。他说，你算三笔账。第一，替换一个企业级平台的实际成本——迁移数据、重建集成、培训团队。第二，替换期间的人力成本——你的团队不再做有价值的工作，而是在重建基础设施。第三，GPU 工厂和 token 消耗的成本——<strong>用大语言模型去复刻 ServiceNow 上一个简单的应用，成本是原来的十倍。</strong>
+      McDermott 直面了"SaaSpocalypse"——很多人认为 LLM 会直接替代 SaaS 平台。他的反驳：你算三笔账——迁移成本、人力成本、GPU 和 token 消耗。<strong>用 LLM 复刻 ServiceNow 上一个简单应用，成本是原来的十倍。</strong>
     </div>
   </div>
 
@@ -567,75 +541,191 @@
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      他的核心论点是：语言模型擅长"思考"——你问它一个薪酬问题，它毫秒级给你答案，步骤一二三，非常清晰。但它不能"关闭"这个案子。在真实企业里，一个薪酬问题涉及 HR、财务、法务、合规、风控多个部门，需要跨系统的数据流和工作流才能把事情从发现到解决走完一整条路。这就是他说的：<strong>"AI thinks, but workflow acts."</strong>
+      他的核心论点：LLM 擅长"思考"——毫秒级给你步骤一二三。但它不能"关闭"案子。一个薪酬问题涉及 HR、财务、法务、合规多个部门，需要跨系统工作流走完全程。<strong>"AI thinks, but workflow acts."</strong>
     </div>
   </div>
 
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">AI 负责思考，工作流负责行动。这个划分很清晰。</div>
+    <div class="script-text">AI 负责思考，工作流负责行动。</div>
   </div>
 
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
     <div class="script-text">
-      而且他不是在贬低 AI。他特别强调两者是互补的——语言模型让平台更强，平台让语言模型有了真正的"手和脚"。ServiceNow 已经在内部部署了大量 AI agent，他说今年 AI 帮公司提升了 20% 的生产力，预计明年到 50%。
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">他怎么看领导力在 AI 时代的变化？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      这是最触动我的部分。Sarah 问他"AI 时代的领导力有什么不同"，他的第一反应不是恐惧，而是兴奋。他写了一份"agentic business 蓝图"白皮书，发给了所有团队，解释语言模型和企业平台各自的边界在哪里。他说有 CEO 读完后告诉他：<strong>"这让我第一次真正看清了这个世界。"</strong>
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">他日常怎么保持这种地气？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      这一点太有说服力了——他说他这个月安排了 <strong>72 通</strong>和一线销售代表的一对一电话。昨天一天就打了 17 通。有一位女销售跟他分享了客户健康检查的成绩，他听得热血沸腾。然后晚上他又跟 800 位巴西高管做了一场线上演讲。
-    </div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">从 16 岁的熟食店到一天内跟 800 位高管对话——线索一直是同一条：直接面对客户。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">
-      他最后说了一句很有力量的话：<strong>"当水面变得汹涌，我们才看得出谁是真正的领导者。当潮水退去时，你最好已经穿戴整齐。"</strong> 这句话送给所有在 AI 焦虑中挣扎的建造者——与其找逃生舱，不如武装自己。
+      他不贬低 AI——两者互补。ServiceNow 今年 AI 提升了 20% 的生产力，预计明年 50%。关于领导力他说：<strong>"当水面变得汹涌，我们才看得出谁是真正的领导者。当潮水退去时，你最好已经穿戴整齐。"</strong> 他这个月安排了 72 通和一线销售的一对一电话。
     </div>
   </div>
 
 </div>
 
-<!-- INSIGHT BOX -->
+<!-- INSIGHT BOX #1 -->
 <div class="insight-box">
   <div class="insight-label">McDermott 的三个核心论点</div>
   <div class="insight-title">CUSTOMER, COST, CULTURE</div>
   <div class="insight-item">
     <div class="insight-num">01</div>
-    <div>客户决定一切 —— 从熟食店到千亿企业，McDermott 半个世纪的核心哲学没变过：谁离客户最近，谁就赢。他每月跟 72 位一线销售通话，不是管理仪式，而是获取真实信号。</div>
+    <div>客户决定一切 —— 从熟食店到千亿企业，核心哲学没变。每月 72 通一线电话不是管理仪式，是获取真实信号。</div>
   </div>
   <div class="insight-item">
     <div class="insight-num">02</div>
-    <div>替换成本被严重低估 —— 用 LLM 替代企业平台的真实成本是 10 倍。算上迁移、人力、GPU 消耗，"SaaSpocalypse" 更像是一场认知恐慌而非技术必然。AI thinks, but workflow acts.</div>
+    <div>替换成本被严重低估 —— 用 LLM 替代企业平台的真实成本是 10 倍。"SaaSpocalypse" 更像认知恐慌而非技术必然。</div>
   </div>
   <div class="insight-item">
     <div class="insight-num">03</div>
-    <div>领导力 = 拥抱而非恐惧 —— 变化来了，不要找逃生舱。写一份白皮书让你的团队看清边界；跟前线保持对话；当潮水退去时，你要已经穿戴整齐。</div>
+    <div>领导力 = 拥抱而非恐惧 —— 写白皮书让团队看清边界；跟前线保持对话；当潮水退去时穿戴整齐。</div>
+  </div>
+</div>
+
+<!-- MAIN FEATURE HERO #2 -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">主推之二 · AI &amp; I (Every)</div>
+    <div class="feature-show-name">WHAT COMES<br>AFTER LLMS</div>
+    <div class="feature-ep-title">Eve Bodnia on Energy-Based Reasoning Models,<br>Kona, and Why LLMs Have Structural Flaws</div>
+    <div class="feature-guest">Eve Bodnia × AI &amp; I · Logical Intelligence</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      量子物理学家 Eve Bodnia 创立了一家16人公司，团队有 Yann LeCun、菲尔兹奖得主 Michael Freedman、ICPC 世界冠军。她的论点：LLM 是自回归、局部评分、离散的——对于关键系统，我们需要能量基推理模型（EBRM）来做数学验证级的可靠推理。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Logical Intelligence</span>
+      <span class="tag">EBRM</span>
+      <span class="tag">Kona</span>
+      <span class="tag">Aleph</span>
+      <span class="tag">Energy-Based Model</span>
+      <span class="tag">Beyond LLMs</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">团队规模</div>
+        <div class="stat-value">~16 人</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">PutnamBench</div>
+        <div class="stat-value">接近满分</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">顾问委员会</div>
+        <div class="stat-value">LeCun · Freedman</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT: LOGICAL INTELLIGENCE -->
+<div class="section-label" style="margin-top:40px;">🎙 播客对话 · Logical Intelligence × Eve Bodnia</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      Eve Bodnia 是 Logical Intelligence 的创始人兼 CEO。量子物理学家，加州大学圣芭芭拉分校博士，发表了 22 篇暗物质论文，博士导师是 2025 年诺贝尔物理学奖得主。她选择离开学术界，创办了一家16人的公司，去挑战整个 LLM 范式。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">挑战 LLM 范式？这是个大胆的赌注。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      她的核心论点有三层。第一，<strong>LLM 是自回归的</strong>——逐个 token 生成推理链，想修改前面的步骤必须重新生成整个前缀。就像规划一条路线，走到终点才知道对不对。第二，<strong>LLM 是局部评分的</strong>——预训练优化"下一个 token 预测"，而非长推理链的全局正确性。第三，<strong>LLM 是离散的</strong>——推理链是离散 token 序列，基于梯度的精细编辑很别扭。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">她的替代方案是什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      能量基推理模型，简称 EBRM。核心思想来自物理学：给每个候选状态分配一个标量分数——"能量"。低能量代表与约束一致，高能量代表有问题。最关键的优势：<strong>能量可以在部分推理链上评估</strong>，不需要等到最后。系统可以精确定位"具体这一步出了问题"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这跟我们日常用 Claude 或 ChatGPT 有什么关系？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      想象让 AI 设计一个芯片。LLM 逐步生成方案，但无法在过程中检查热约束是否违反了结构约束。EBRM 理论上可以对整个系统状态评分，在过程中就告诉你哪里出了问题。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他们的模型叫什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      旗舰模型叫 <strong>Kona</strong>。非自回归——同时生成完整推理链。全局评分，在连续空间中推理，允许基于梯度的可控局部编辑。简单说：把推理变成<strong>优化问题</strong>而不是采样问题。编排层叫 <strong>Aleph</strong>，协调 Kona 和 LLM 的调用，在 PutnamBench 形式化数学证明基准上取得了接近满分的成绩。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">团队怎么样？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      技术研究委员会创始主席是 <strong>Yann LeCun</strong>，数学首席是菲尔兹奖得主 <strong>Michael Freedman</strong>，AI 首席 Vlad Isenbaev 是 ICPC 世界编程冠军。16人的公司能聚齐这样的阵容，说明这个方向吸引了最顶尖的人。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">但要保持清醒——Sudoku 演示和真正的多物理系统之间有数量级的复杂度差距。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完全同意。Kona 1.0 正在进入试点阶段，目标领域包括半导体验证、能源基础设施、机器人和自动驾驶。Eve 自己说，她本来打算留在学术界研究能量模型，但被人说服"这些系统需要被建造，而不仅仅是被研究"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这跟 McDermott 的话形成了一个三角关系——McDermott 说 AI 需要工作流平台才能行动；Eve 说 LLM 的推理方式本身可能就不对。也许未来的答案是：LLM 做接口和协调，EBRM 做推理和验证，工作流平台做执行。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      三层结构。这可能正是让 AI 在关键系统中真正可信的关键架构。
+    </div>
+  </div>
+
+</div>
+
+<!-- INSIGHT BOX #2 -->
+<div class="insight-box">
+  <div class="insight-label">Logical Intelligence 的三层论证</div>
+  <div class="insight-title">AUTOREGRESSIVE, LOCAL, DISCRETE → ENERGY</div>
+  <div class="insight-item">
+    <div class="insight-num">01</div>
+    <div>LLM 的三大结构性缺陷 —— 自回归（无法回溯）、局部评分（链越长质量越差）、离散（无法梯度微调）。对于关键系统，这不是"够不够好"的问题，而是架构本身不适配。</div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">02</div>
+    <div>能量基模型的核心优势 —— 在部分推理链上就能评分、精确定位问题步骤、连续空间允许梯度优化。从"失败了"到"具体这里出了问题"的范式跳跃。</div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">03</div>
+    <div>复合架构可能是答案 —— LLM 负责接口和协调，EBRM 负责推理和验证，工作流平台负责执行。不是替代 LLM，而是在最关键的环节补上 LLM 的盲区。</div>
   </div>
 </div>
 
@@ -646,7 +736,7 @@
   <div class="ep-card">
     <div class="ep-show">Lenny's Podcast</div>
     <div class="ep-title">The New AI Growth Playbook for 2026: How Lovable Hit $200M ARR in One Year</div>
-    <div class="ep-desc">Elena Verna 分享 Lovable 的增长奇迹——100人团队，不到一年做到$200M ARR。核心洞察：60-70%的传统增长手段已失效，每三个月需要重新寻找 PMF，"Minimum Lovable Product" 取代 MVP，免费是最好的增长引擎。</div>
+    <div class="ep-desc">Elena Verna 分享 Lovable 的增长奇迹——100人团队，不到一年做到$200M ARR。60-70%的传统增长手段已失效，每三个月需要重新寻找 PMF，"Minimum Lovable Product" 取代 MVP，免费是最好的增长引擎。</div>
     <div class="ep-date">2025-12-18 · 持续讨论中</div>
     <a href="https://open.spotify.com/episode/2tjRRxdTXpTl2vki4HTczP" target="_blank" class="ep-link">收听 →</a>
   </div>
@@ -660,7 +750,7 @@
   <div class="ep-card">
     <div class="ep-show">Lenny's Podcast</div>
     <div class="ep-title">Agentic Engineering: Dark Factories &amp; the Inflection Point</div>
-    <div class="ep-desc">Simon Willison 的这集仍在发酵——2025年11月是拐点、dark factory 正在到来、中级工程师面临最大冲击。McDermott 和 Willison 的视角形成有趣对照：一个说平台不可替代，一个说执行正在自动化。</div>
+    <div class="ep-desc">Simon Willison 的这集仍在发酵——2025年11月是拐点、dark factory 正在到来。McDermott 说平台不可替代，Willison 说执行正在自动化——有趣的对照。</div>
     <div class="ep-date">2026-04-02 · 持续讨论中</div>
     <a href="https://simonwillison.net/2026/Apr/2/lennys-podcast/" target="_blank" class="ep-link">阅读博客整理 →</a>
   </div>
@@ -682,7 +772,7 @@
   <p class="pc-label">🎙 今日播客精选</p>
   <p class="pc-show">No Priors · 2026-04-17</p>
   <p class="pc-title">Scaling Global Organizations in the Age of AI with ServiceNow CEO Bill McDermott</p>
-  <p class="pc-summary">ServiceNow CEO Bill McDermott 回应 SaaSpocalypse 恐慌：用 LLM 替代企业平台成本高 10 倍。语言模型擅长思考，但关闭一个涉及 HR、财务、法务的跨部门案子需要真正的工作流平台。AI 让平台更强，平台让 AI 有了手和脚。</p>
+  <p class="pc-summary">ServiceNow CEO Bill McDermott 回应 SaaSpocalypse 恐慌：用 LLM 替代企业平台成本高 10 倍。语言模型擅长思考，但关闭跨部门案子需要真正的工作流平台。AI 让平台更强，平台让 AI 有了手和脚。</p>
   <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
@@ -724,7 +814,7 @@
         <div class="builder-handle">@claudeai · Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「Claude for Word 现已面向 Pro 和 Max 用户开放，支持 Opus 4.7。Claude Code Hackathon 回归——世界各地的建造者一起用 Claude Code 构建，奖金池开放。」</p>
+    <p class="builder-tweet">「Claude for Word 现已面向 Pro 和 Max 用户开放，支持 Opus 4.7。Claude Code Hackathon 回归——世界各地的建造者一起构建，奖金池开放。」</p>
     <div class="builder-meta">
       <span class="builder-likes">❤ 7,816</span>
       <a href="https://x.com/claudeai/status/2045222254699511855" target="_blank">查看推文 →</a>
@@ -753,17 +843,25 @@
     <span class="src-icon">Pod</span>
     No Priors — Scaling Global Organizations in the Age of AI with Bill McDermott
   </a>
+  <a href="https://www.youtube.com/watch?v=Q-i8ZSUCtIc" target="_blank" class="source-link">
+    <span class="src-icon">Pod</span>
+    AI &amp; I (Every) — What Comes After LLMs with Eve Bodnia
+  </a>
+  <a href="https://logicalintelligence.com/" target="_blank" class="source-link">
+    <span class="src-icon">Web</span>
+    Logical Intelligence — Official Website
+  </a>
   <a href="https://open.spotify.com/episode/2tjRRxdTXpTl2vki4HTczP" target="_blank" class="source-link">
     <span class="src-icon">Pod</span>
-    Lenny's Podcast — The New AI Growth Playbook for 2026: Lovable &amp; Elena Verna
+    Lenny's Podcast — The New AI Growth Playbook for 2026
   </a>
   <a href="https://www.latent.space/p/voxtral" target="_blank" class="source-link">
     <span class="src-icon">Pod</span>
     Latent Space — Mistral: Voxtral TTS, Forge, Leanstral &amp; What's Next
   </a>
-  <a href="https://simonwillison.net/2026/Apr/2/lennys-podcast/" target="_blank" class="source-link">
-    <span class="src-icon">Blog</span>
-    Simon Willison — Highlights from Lenny's Podcast on agentic engineering
+  <a href="https://sudoku.logicalintelligence.com/" target="_blank" class="source-link">
+    <span class="src-icon">Demo</span>
+    Kona vs LLM — Sudoku 实时对比演示
   </a>
 </div>
 

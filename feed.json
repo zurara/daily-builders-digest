@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-04-19",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "新闻快报",
+    "title": "2026-04-19 今日快报",
+    "html": "episodes/2026-04-19.html",
+    "mp3": "episodes/2026-04-19.mp3",
+    "headlines": []
+  },
+  {
     "date": "2026-04-18",
     "dow": 6,
     "topic": "Books",

@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-20",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "DeepSeek V4 蓄势待发——万亿参数开源模型即将登场 · TurboQuant 本周登上 ICLR——6 倍压缩改写推理经济学",
+    "html": "episodes/2026-04-20.html",
+    "mp3": "episodes/2026-04-20.mp3",
+    "headlines": [
+      "DeepSeek V4 蓄势待发——万亿参数开源模型即将登场",
+      "TurboQuant 本周登上 ICLR——6 倍压缩改写推理经济学",
+      "Visa 向 AI Agent 开放支付——Agentic Commerce 时代来了",
+      "PwC 报告：AI 的经济红利正在被少数人独占"
+    ]
+  },
+  {
     "date": "2026-04-19",
     "dow": 7,
     "topic": "Podcasts",

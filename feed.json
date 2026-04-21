@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-21",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "「闪电」跑赢人类：机器人 50 分 26 秒完成半马，打破人类世界纪录 · Google DeepMind 发布 Gemini Robotics-ER 1.6：具身推理大幅升级",
+    "html": "episodes/2026-04-21.html",
+    "mp3": "episodes/2026-04-21.mp3",
+    "headlines": [
+      "「闪电」跑赢人类：机器人 50 分 26 秒完成半马，打破人类世界纪录",
+      "Google DeepMind 发布 Gemini Robotics-ER 1.6：具身推理大幅升级",
+      "RobCo 发布 Autonomous Alfie：Level 4 自主人形机器人进工厂",
+      "NVIDIA Newton 1.0 正式发布 + NemoClaw 用自然语言控制机器人",
+      "神经网络 + 符号推理：AI 能耗降低 100 倍，精度反升"
+    ]
+  },
+  {
     "date": "2026-04-20",
     "dow": 1,
     "topic": "AI",

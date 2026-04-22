@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-22",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 Mac · Claude Cowork GA + Managed Agents：Anthropic 的企业 Agent 基础设施",
+    "html": "episodes/2026-04-22.html",
+    "mp3": "episodes/2026-04-22.mp3",
+    "headlines": [
+      "OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 Mac",
+      "Claude Cowork GA + Managed Agents：Anthropic 的企业 Agent 基础设施",
+      "Adobe × NVIDIA：CX Enterprise Coworker，营销人的 AI 同事",
+      "Aaron Levie：从聊天到执行，企业需要 Agent Deployer"
+    ]
+  },
+  {
     "date": "2026-04-21",
     "dow": 2,
     "topic": "Robotics",

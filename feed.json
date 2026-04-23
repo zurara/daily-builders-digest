@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-23",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Dr. Marc Brackett：情绪调节不是鸡汤——它是你身心健康的基础设施 · Peter Attia 听众问答：DEXA、蛋白质 vs mTOR、可穿戴设备的正确姿势",
+    "html": "episodes/2026-04-23.html",
+    "mp3": "episodes/2026-04-23.mp3",
+    "headlines": [
+      "Huberman Lab × Dr. Marc Brackett：情绪调节不是鸡汤——它是你身心健康的基础设施",
+      "Peter Attia 听众问答：DEXA、蛋白质 vs mTOR、可穿戴设备的正确姿势",
+      "FoundMyFitness Q&A：性别差异、NR 新证据、南非醉茄的甲状腺风险",
+      "如果研究受试者 70% 是男性，你得到的可能是 70% 适合你的建议",
+      "自我认知是最被低估的健康干预"
+    ]
+  },
+  {
     "date": "2026-04-22",
     "dow": 3,
     "topic": "Product",

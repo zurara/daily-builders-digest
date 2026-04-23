@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-04-22">
-<meta property="og:description" content="Codex 桌面控制你的 Mac · Claude Cowork GA + Managed Agents · Adobe × NVIDIA CX Coworker · Agent Deployer 新职位">
-<title>Daily Builders Digest · 2026-04-22</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-04-23">
+<meta property="og:description" content="健康星期四 · 情绪调节 · 长寿实操问答 · 性别差异与补剂安全">
+<title>Daily Builders Digest · 2026-04-23</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -132,8 +132,6 @@
     .news-card.lead,
     .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
   }
@@ -203,6 +201,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +277,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,9 +293,8 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
 
@@ -289,27 +315,29 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-04-22</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-04-23</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·04·22 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·04·23 周四</span>
+    <span>🏷 主题：情绪调节 · 长寿实操 · 性别差异与补剂</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 14 分钟</span>
+    <span>⏱ 约 20 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI Codex 桌面大更新 — AI 直接操控你的 Mac</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Cowork GA + Managed Agents — 企业 Agent 基础设施到位</span>
-    <span class="ticker-item"><span class="dot">▶</span>Adobe × NVIDIA CX Enterprise Coworker — 营销人的 AI 同事</span>
-    <span class="ticker-item"><span class="dot">▶</span>Aaron Levie：企业需要 Agent Deployer 新角色</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI Codex 桌面大更新 — AI 直接操控你的 Mac</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Cowork GA + Managed Agents — 企业 Agent 基础设施到位</span>
-    <span class="ticker-item"><span class="dot">▶</span>Adobe × NVIDIA CX Enterprise Coworker — 营销人的 AI 同事</span>
-    <span class="ticker-item"><span class="dot">▶</span>Aaron Levie：企业需要 Agent Deployer 新角色</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Marc Brackett — RULER 情绪智力框架：识别、理解、标注、表达、调节</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia 听众问答 — DEXA 怎么看？蛋白质 vs mTOR？可穿戴焦虑？</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A — 健康干预的性别差异 · 南非醉茄与甲状腺 · NR 临床新证据</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 — 研究数据的性别偏差 · 运动周期化 · 药物代谢差异</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 情绪仪表盘：30 秒定位你的能量 × 愉悦度</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Marc Brackett — RULER 情绪智力框架：识别、理解、标注、表达、调节</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia 听众问答 — DEXA 怎么看？蛋白质 vs mTOR？可穿戴焦虑？</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A — 健康干预的性别差异 · 南非醉茄与甲状腺 · NR 临床新证据</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 — 研究数据的性别偏差 · 运动周期化 · 药物代谢差异</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 情绪仪表盘：30 秒定位你的能量 × 愉悦度</span>
   </div>
 </div>
 
@@ -318,76 +346,100 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 14 分钟</span>
+    <span>大雨 × 小苇 · 健康星期四 · 约 20 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-04-22.mp3">
-    你的浏览器不支持音频播放。<a href="2026-04-22.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-04-23.mp3">
+    你的浏览器不支持音频播放。<a href="2026-04-23.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 产品 · 精选四条</p>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 三个来源</p>
 
 <div class="news-grid">
 
-  <!-- LEAD -->
+  <!-- LEAD: Huberman x Brackett -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 Mac</h2>
+    <h2 class="news-hed">Huberman Lab × Dr. Marc Brackett：情绪调节不是鸡汤——它是你身心健康的基础设施</h2>
     <p class="news-body">
-      4 月 16 日，OpenAI 发布 Codex 桌面应用的重大更新。全新 Background Computer Use 功能让 Codex 可以看到屏幕、移动光标、点击和输入——直接操控 macOS 上的任何应用。多个 Agent 可在后台并行工作，不干扰用户前台操作。
-      配套发布 90+ 新插件（Atlassian、CircleCI、GitLab、Microsoft Suite 等）、记忆功能（从过去操作学习偏好）、内置浏览器和 SSH 远程开发支持。AI 助手的战场从对话框扩展到整个桌面——桌面应用的产品形态即将被重新定义。
+      四月二十日，Andrew Huberman 请来耶鲁大学情绪智力中心创始主任 Dr. Marc Brackett，用近两个半小时深入探讨情绪调节与健康的关系。核心框架：<br><br>
+      <strong>① RULER 五步法</strong>——Recognizing（识别当下情绪）、Understanding（理解触发因素）、Labeling（用精确词汇标注）、Expressing（在适当环境中表达）、Regulating（选择匹配的调节策略）。这不是自助理论，而是在数千所学校和组织中验证过的系统方法。<br><br>
+      <strong>② 情绪颗粒度决定心理韧性</strong>——只会说"我不开心"的人，大脑无法精准应对。能区分"失望""委屈""被忽视"的人，调节策略更精准，心理恢复更快。情绪词汇量越大，韧性越强。<br><br>
+      <strong>③ 情绪压抑的健康代价</strong>——长期情绪压抑与慢性炎症、心血管疾病、免疫功能下降直接关联。情绪压抑导致的过度唤醒是失眠的主要原因之一。Brackett 特别指出男性的社会化模式——"男孩不哭"的教育让很多成年男性丧失了识别和表达情绪的能力。
     </p>
     <p class="news-source">
-      📎 <a href="https://openai.com/index/codex-for-almost-everything/" target="_blank">Codex for (almost) everything — OpenAI</a>
-      &nbsp;·&nbsp;
-      <a href="https://smartscope.blog/en/generative-ai/chatgpt/codex-desktop-major-update-april-2026/" target="_blank">Codex Desktop Major Update — SmartScope</a>
+      📎 <a href="https://www.hubermanlab.com/episode/how-to-better-regulate-your-emotions-marc-brackett" target="_blank">How to Better Regulate Your Emotions | Dr. Marc Brackett — Huberman Lab</a>
     </p>
   </div>
 
-  <!-- 02 -->
+  <!-- Peter Attia -->
   <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">Claude Cowork GA + Managed Agents：Anthropic 的企业 Agent 基础设施</h2>
+    <h2 class="news-hed">Peter Attia 听众问答：DEXA、蛋白质 vs mTOR、可穿戴设备的正确姿势</h2>
     <p class="news-body">
-      4 月 8 日，Anthropic 三连发：Opus 4.7 模型、Cowork 面向所有付费用户开放、以及 Managed Agents 公测。Managed Agents 提供沙盒执行、状态存档、权限管理和全链路追踪——从原型到生产"天而非月"。定价 $0.08/session-hour + token 费。Notion、Asana、Sentry 为首批采用者。OpenAI 从桌面入手，Anthropic 从云端入手——都在抢 Agent 时代的操作系统位。
+      Attia 拆解了长寿工具的实操难题：<br><br>
+      <strong>DEXA 三个关键数字</strong>——内脏脂肪面积、四肢骨骼肌质量、骨密度 T 值。体脂率 22% 但内脏脂肪高的人，比体脂 28% 但内脏脂肪低的人风险更大。<br><br>
+      <strong>蛋白质不用怕</strong>——40 岁以上人群肌少症风险远大于 mTOR 的理论危害。建议每公斤体重 1.6–2.2g 蛋白质。<br><br>
+      <strong>可穿戴设备</strong>——用两周建立基线，之后只在感觉异常时检查。不要让数据代替你的自我感知。
     </p>
     <p class="news-source">
-      📎 <a href="https://siliconangle.com/2026/04/08/anthropic-launches-claude-managed-agents-speed-ai-agent-development/" target="_blank">Anthropic launches Managed Agents — SiliconANGLE</a>
+      📎 <a href="https://peterattiamd.com/podcast/" target="_blank">The Peter Attia Drive — 听众问答</a>
     </p>
   </div>
 
-  <!-- 03 -->
+  <!-- FoundMyFitness -->
   <div class="news-card">
     <p class="news-num">03</p>
-    <h2 class="news-hed">Adobe × NVIDIA：CX Enterprise Coworker，营销人的 AI 同事</h2>
+    <h2 class="news-hed">FoundMyFitness Q&A：性别差异、NR 新证据、南非醉茄的甲状腺风险</h2>
     <p class="news-body">
-      Adobe Summit 2026 发布 CX Enterprise 及与 NVIDIA 合作的 CX Enterprise Coworker——不叫"助手"叫"同事"，自主处理内容创作、客户体验编排、跨渠道投放。NVIDIA 提供 Nemotron 模型和安全运行时，Adobe 提供 CX 治理层。Jensen Huang 与 Shantanu Narayen 同台 Keynote。Agent 的命名策略正变得重要：Coworker 暗示更高自主性，垂直 Agent 时代到来。
+      Rhonda Patrick 这期 Q&A 聚焦几个实用话题：<br><br>
+      <strong>性别差异被严重低估</strong>——70% 临床研究以男性为受试者。女性心脏病前兆不是胸痛，而是极度疲劳、恶心和背痛。<br><br>
+      <strong>南非醉茄的风险</strong>——降皮质醇有效，但影响甲状腺功能。女性甲状腺疾病发生率是男性的 5–8 倍。<br><br>
+      <strong>NR 临床新证据</strong>——NR-SAFE 试验显示帕金森患者中 NR 降低炎症标志物、可能有神经保护作用。
     </p>
     <p class="news-source">
-      📎 <a href="https://news.adobe.com/news/2026/04/adobe-unveils-cx-enterprise-coworker" target="_blank">Adobe Unveils CX Enterprise Coworker — Adobe Newsroom</a>
-    </p>
-  </div>
-
-  <!-- 04 -->
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">Aaron Levie：从聊天到执行，企业需要 Agent Deployer</h2>
-    <p class="news-body">
-      Box CEO Aaron Levie 在 Fast Company 采访中指出：企业 AI 正从"聊天时代"走向"Agent 执行时代"。Box 四月初发布 Box Agent 和更新的 AI Studio，同时 Levie 定义了全新企业角色"Agent Deployer"——专门识别团队中 ROI 最高的工作流，用 Agent 加速 100 倍。不是开发者，不是 PM，而是一个全新运营职能。当 Agent 能处理线索、审合同、客户上手，产品经理的价值在于判断和决策。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.fastcompany.com/91512532/aaron-levie-on-what-enterprise-ai-adoption-actually-looks-like" target="_blank">Aaron Levie on enterprise AI — Fast Company</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.businesswire.com/news/home/20260402112577/en/Box-Unveils-the-Box-Agent-to-Transform-How-Enterprises-Work-With-Content" target="_blank">Box Unveils Box Agent — BusinessWire</a>
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">FoundMyFitness Q&A — Dr. Rhonda Patrick</a>
     </p>
   </div>
 
 </div>
 
-<!-- INDEX TABLE -->
+<!-- ─────────────────── SPOTLIGHT: 女性健康 ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
+<p class="section-label">◈ 女性健康聚焦 · 当研究数据不代表你的身体</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🔬 深度聚焦 · Women's Health Spotlight</p>
+  <h2 class="spotlight-hed">如果研究受试者 70% 是男性，你得到的可能是 70% 适合你的建议</h2>
+  <p class="spotlight-body">
+    Rhonda Patrick 在这期 Q&A 中点出了一个被长期忽视的结构性问题：<br><br>
+    <strong>心血管领域：</strong>教科书上的心脏病症状——胸痛、左臂放射痛——是典型的男性表现。女性最常见的前兆是极度疲劳、恶心、背痛和下颌痛。这个认知差距可能导致女性心脏病被延迟诊断。<br><br>
+    <strong>运动科学：</strong>训练频率、恢复时间、蛋白质摄入窗口的研究大多基于男性数据。但女性的激素周期意味着训练反应因阶段而异——卵泡期更适合高强度，黄体期更适合恢复性训练。<br><br>
+    <strong>药物代谢：</strong>女性和男性对同一药物的代谢速度可能完全不同。FDA 在 2013 年因女性代谢更慢而调低了唑吡坦（安眠药）的女性推荐剂量——但大多数药物从未做过类似的性别分层分析。<br><br>
+    <strong>对建造者的启示：</strong>如果你在做健康科技产品或健康 AI 系统——你的数据集里男女比例是多少？你的算法考虑了激素周期吗？<strong>这不只是公平问题，这是准确性问题。</strong>
+  </p>
+</div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 三个来源的交汇点</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">自我认知是最被低估的健康干预</h2>
+  <p class="spotlight-body">
+    今天三个来源从不同角度指向同一个结论：<strong>了解自己比优化自己更重要。</strong><br><br>
+    Brackett 说：了解你的情绪——不只是"我不开心"，而是精确地知道你正在经历什么。情绪仪表盘是第一步。<br><br>
+    Attia 说：了解你的数据——但不要被数据绑架。用两周建立基线，之后相信自己的感觉。<br><br>
+    Patrick 说：了解你的身体——它可能跟教科书上写的不一样，尤其如果你是女性。<br><br>
+    三者的交集：<strong>不是任何补剂，不是任何设备，而是你对自己身体和情绪的精确感知。</strong>情绪仪表盘、DEXA 基线、性别差异提醒——它们都在说同一件事：在优化之前，先理解。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
 <table class="index-table">
   <thead>
     <tr>
@@ -400,27 +452,21 @@
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://openai.com/index/codex-for-almost-everything/" target="_blank">Codex 桌面 Computer Use <span class="tag hot">头条</span></a></td>
-      <td>OpenAI</td>
-      <td>2026-04-16</td>
+      <td><a href="https://www.hubermanlab.com/episode/how-to-better-regulate-your-emotions-marc-brackett" target="_blank">Huberman Lab × Marc Brackett — 情绪调节与 RULER 框架 <span class="tag hot">头条</span></a></td>
+      <td>Huberman Lab</td>
+      <td>2026-04-20</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://siliconangle.com/2026/04/08/anthropic-launches-claude-managed-agents-speed-ai-agent-development/" target="_blank">Claude Cowork GA + Managed Agents <span class="tag">平台</span></a></td>
-      <td>SiliconANGLE</td>
-      <td>2026-04-08</td>
+      <td><a href="https://peterattiamd.com/podcast/" target="_blank">Peter Attia 听众问答 — 长寿工具实操指南 <span class="tag">实操</span></a></td>
+      <td>The Drive</td>
+      <td>2026-03-23</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://news.adobe.com/news/2026/04/adobe-unveils-cx-enterprise-coworker" target="_blank">Adobe × NVIDIA CX Coworker <span class="tag">合作</span></a></td>
-      <td>Adobe Newsroom</td>
-      <td>2026-04</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://www.fastcompany.com/91512532/aaron-levie-on-what-enterprise-ai-adoption-actually-looks-like" target="_blank">Agent Deployer 新角色 <span class="tag">趋势</span></a></td>
-      <td>Fast Company</td>
-      <td>2026-04</td>
+      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">FoundMyFitness Q&A — 性别差异 · NR · 补剂安全 <span class="tag">女性</span></a></td>
+      <td>Rhonda Patrick PhD</td>
+      <td>2026-03-17</td>
     </tr>
   </tbody>
 </table>
@@ -433,18 +479,18 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:03。
+  数据截至今日 UTC 06:02。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">No Priors · 2026-04-09</p>
-  <p class="pc-title">The Agentic Economy: How AI Agents Will Transform the Financial System with Circle Co-Founder Jeremy Allaire</p>
+  <p class="pc-show">AI & I by Every · 2026-04-08</p>
+  <p class="pc-title">We Gave Every Employee an AI Agent. Here's What Happened.</p>
   <p class="pc-summary">
-    Circle 联合创始人兼 CEO Jeremy Allaire 深度探讨 AI Agent 如何重塑金融系统。核心观点：当 AI Agent 需要自主交易和支付时，传统银行系统太慢了——稳定币和区块链是 Agent 经济的原生支付层。Allaire 预测"Agent-to-Agent"支付将在 2027 年前成为主流。对产品人来说，这意味着你的产品可能需要支持 Agent 作为"用户"来付款和接收付款。
+    当团队里每个人都有了自己的 AI agent，工作方式会发生什么变化？Every 的 COO 和平台负责人分享了全员配备 OpenClaw agent 两个月后的真实体验：agent 不是工具，而是一个能学习你的风格、继承你的信任的数字延伸。对于关注认知健康和工作效率的建造者来说，这是"减少认知负荷"的一个新范式。
   </p>
-  <a href="https://www.youtube.com/watch?v=eyobeqMdbeI" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://www.youtube.com/watch?v=SRlTgIhESjw" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
@@ -452,79 +498,71 @@
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar" style="background:var(--red);">C</div>
+      <div class="builder-avatar">AA</div>
       <div>
-        <div class="builder-name">Claude</div>
-        <div class="builder-handle">@claudeai · Anthropic</div>
+        <div class="builder-name">Amanda Askell</div>
+        <div class="builder-handle">@AmandaAskell · Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「在 Cowork 中，Claude 现在可以构建实时 artifact：连接你的应用和文件的 dashboard 和 tracker。随时打开，数据自动刷新为最新状态。」</p>
+    <p class="builder-tweet">「当你在一段倦怠或抑郁之后重新找回意志力的时候。」——与今天 Brackett 的情绪调节话题直接呼应：识别情绪低谷、允许它存在、然后感知恢复的力量。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 13018</span>
-      <a href="https://x.com/claudeai/status/2046328619249684989" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 774</span>
+      <a href="https://x.com/AmandaAskell/status/2046741661599092830" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">JW</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · CEO · Vercel</div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · Google</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们的团队和行业伙伴在保护互联网安全方面展现了令人鼓舞的行动力。Dashboard 和 CLI 已上线超过 20 项产品改进来提升安全性。」</p>
+    <p class="builder-tweet">「DESIGN.md 是 Stitch 正在做的我最喜欢的功能之一！如果你知道，你就知道。」——对工具细节的热情，是建造者最核心的品质。健康也是一样：关注细节，从 DEXA 的三个关键数字开始。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 647</span>
-      <a href="https://x.com/rauchg/status/2046406894269747668" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 207</span>
+      <a href="https://x.com/joshwoodward/status/2046754179499356594" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">PY</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO · Box</div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Product</div>
       </div>
     </div>
-    <p class="builder-tweet">「从聊天机器人到能真正自动化流程的 Agent，中间需要大量工作。大多数公司需要有专人负责这件事。」</p>
+    <p class="builder-tweet">「用 ChatGPT 给快满八岁的孩子做生日派对邀请函网站——太酷了。」——用 AI 创造生活中温暖的时刻，这本身就是情绪健康的一种实践。技术为人服务，而非反过来。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 499</span>
-      <a href="https://x.com/levie/status/2046397816755634340" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">S</div>
-      <div>
-        <div class="builder-name">Swyx</div>
-        <div class="builder-handle">@swyx · AI Engineer</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Codex 收购 Sky by Software 可能是 OpenAI 过去一年做的最好的交易。我从 ChatGPT 4o Vision 演示以来就一直在等真正的 Computer Use 落地。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 93</span>
-      <a href="https://x.com/swyx/status/2046362691606855700" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 17</span>
+      <a href="https://x.com/petergyang/status/2046778557528170824" target="_blank">查看推文 →</a>
     </div>
   </div>
 
 </div>
 
-<hr class="rule">
-
 <!-- FOOTER -->
+<hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-04-22<br>
-  主持：大雨 × 小苇 · 由 <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a> 驱动<br>
-  每天10点，关注建造者，不关注 influencer。
+  <strong>每日建造者快报</strong> · 健康星期四 · 2026-04-23<br>
+  主持：大雨 × 小苇 · 脚本与制作由 AI 辅助生成<br>
+  来源：Huberman Lab · The Peter Attia Drive · FoundMyFitness · follow-builders<br>
+  今日健康行动：用 Brackett 的情绪仪表盘给自己定个位——能量高还是低？愉悦高还是低？用一个精确的词描述你的状态。30 秒，最小的健康投资。
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-04-22.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-22</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 ...</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-04-21.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-04-21</span>

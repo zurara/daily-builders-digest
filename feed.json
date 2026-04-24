@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-24",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Google 宣布 75% 新代码由 AI 生成——工程师角色正在重新定义 · OpenAI 发布 ChatGPT Workspace Agents——自主工作的 AI 时代到来",
+    "html": "episodes/2026-04-24.html",
+    "mp3": "episodes/2026-04-24.mp3",
+    "headlines": [
+      "Google 宣布 75% 新代码由 AI 生成——工程师角色正在重新定义",
+      "OpenAI 发布 ChatGPT Workspace Agents——自主工作的 AI 时代到来",
+      "Vercel 遭供应链攻击——起因竟是 Roblox 作弊工具",
+      "Replit 白皮书：静态分析 + LLM 混合方案将代码安全性能提升 90%+"
+    ]
+  },
+  {
     "date": "2026-04-23",
     "dow": 4,
     "topic": "Health",

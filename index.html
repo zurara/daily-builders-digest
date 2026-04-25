@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-04-24">
-<meta property="og:description" content="Google 75% 代码 AI 生成 · OpenAI 发布 Workspace Agents · Vercel 供应链攻击 · Replit 混合安全白皮书">
-<title>Daily Builders Digest · 2026-04-24</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-04-25 · 周六书籍介绍">
+<meta property="og:description" content="Curation策展的时代 · 佐佐木俊尚 · 在信息洪流中，我们怎么找到意义？">
+<title>Daily Builders Digest · 2026-04-25 · 周六书籍介绍</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -51,7 +51,7 @@
   }
   .header-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 96px);
+    font-size: clamp(44px, 8vw, 88px);
     line-height: .95;
     letter-spacing: .02em;
     color: var(--ink);
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 42s linear infinite;
+    animation: ticker 40s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -126,189 +126,282 @@
     display: block;
   }
 
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
-  }
-
-  /* ── PAST EPISODES ── */
-  .past-episodes {
-    margin-top: 16px;
-    border: 1px solid var(--light);
-  }
-  .past-ep-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
+  /* ── BOOK HERO ── */
+  .book-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
     border-bottom: 1px solid var(--light);
-    text-decoration: none;
-    color: var(--ink);
-    transition: background .12s;
+    margin-top: 40px;
   }
-  .past-ep-item:last-child { border-bottom: none; }
-  .past-ep-item:hover { background: var(--card); }
-  .past-ep-date {
+  @media (max-width: 600px) {
+    .book-hero { grid-template-columns: 1fr; }
+  }
+  .book-cover-panel {
+    background: var(--ink);
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .book-cover-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--mid);
-    flex-shrink: 0;
-    width: 90px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
   }
-  .past-ep-title {
+  .book-title-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .book-subtitle {
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
-    flex: 1;
-    line-height: 1.4;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.5;
   }
-  .past-ep-tag {
+  .book-author-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: .06em;
+  }
+  .book-meta-panel {
+    padding: 40px;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .book-one-liner {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .book-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--light);
+    color: var(--mid);
+    background: var(--bg);
+  }
+  .book-stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    flex-shrink: 0;
-  }
-  #past-loading {
-    padding: 14px 16px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--mid);
+    text-transform: uppercase;
     letter-spacing: .1em;
+    color: var(--mid);
+  }
+  .stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
   }
 
   /* ── SECTION LABEL ── */
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: .18em;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--red);
-    padding: 36px 0 12px;
+    color: var(--mid);
+    padding: 28px 0 12px;
     border-bottom: 1px solid var(--light);
     margin-bottom: 24px;
   }
 
-  /* ── NEWS GRID ── */
-  .news-grid {
+  /* ── SCRIPT SECTION ── */
+  .script-container { margin-top: 32px; }
+  .script-block {
+    margin-bottom: 32px;
+    border-left: 3px solid var(--light);
+    padding-left: 20px;
+  }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .script-text em { font-style: italic; }
+  .script-text strong { font-weight: 600; }
+  .script-quote {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: var(--card);
+    border-left: 3px solid var(--red);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  /* ── TAKEAWAYS BOX ── */
+  .takeaways {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px 36px;
+    margin: 40px 0;
+  }
+  .takeaways-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .takeaways-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--bg);
+  }
+  .takeaway-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  .takeaway-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  /* ── DISCUSSION ANGLES ── */
+  .angles-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     background: var(--light);
     border: 1px solid var(--light);
-    margin-bottom: 2px;
+    margin: 32px 0;
   }
-  .news-card {
+  @media (max-width: 540px) {
+    .angles-grid { grid-template-columns: 1fr; }
+  }
+  .angle-card {
     background: var(--bg);
-    padding: 24px;
+    padding: 20px 24px;
   }
-  .news-card.lead {
-    grid-column: 1 / -1;
-    padding: 32px;
-    border-bottom: 1px solid var(--light);
-  }
-  .news-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    color: var(--red);
-    letter-spacing: .08em;
+  .angle-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--light);
+    font-weight: 600;
     margin-bottom: 8px;
   }
-  .news-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  .news-card.lead .news-hed { font-size: 24px; }
-  .news-body {
+  .angle-text {
     font-size: 14px;
-    line-height: 1.65;
-    color: #333;
+    line-height: 1.55;
+    color: var(--ink);
   }
-  .news-source {
-    margin-top: 14px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .06em;
-    color: var(--mid);
-  }
-  .news-source a {
-    color: var(--red);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color .15s;
-  }
-  .news-source a:hover { border-color: var(--red); }
 
-  /* ── INDEX TABLE ── */
-  .index-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin-bottom: 48px;
+  /* ── SOURCES ── */
+  .sources {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light);
   }
-  .index-table th {
+  .sources-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: .12em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--mid);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--ink);
+    margin-bottom: 14px;
   }
-  .index-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--light);
-    vertical-align: top;
-  }
-  .index-table td:first-child {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--red);
-    width: 48px;
-  }
-  .index-table td a {
+  .source-link {
+    display: flex;
+    font-size: 13px;
     color: var(--ink);
     text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light);
+    gap: 10px;
+    align-items: baseline;
   }
-  .index-table td a:hover { text-decoration: underline; }
-  .tag {
-    display: inline-block;
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon {
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
-    letter-spacing: .1em;
+    color: var(--red);
+    flex-shrink: 0;
     text-transform: uppercase;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    margin-left: 8px;
-    vertical-align: middle;
+    letter-spacing: .06em;
   }
-  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── NEXT BOOK ── */
+  .next-book {
+    margin-top: 40px;
+    padding: 24px 28px;
+    border: 1px solid var(--light);
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .next-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--mid);
+    flex-shrink: 0;
+  }
+  .next-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .next-author { font-size: 12px; color: var(--mid); margin-top: 4px; }
 
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
-
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -320,163 +413,427 @@
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
-  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
-  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-
   /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--ink);
-    padding-top: 24px;
-    font-size: 12px;
-    color: var(--mid);
+  .footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light);
     font-family: 'JetBrains Mono', monospace;
-    line-height: 1.8;
-    letter-spacing: .04em;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  footer strong { color: var(--ink); }
+
+  @media (max-width: 540px) {
+    .book-cover-panel { padding: 32px 24px; }
+    .book-meta-panel { padding: 28px 24px; }
+    .takeaways { padding: 24px; }
+    .header { padding: 28px 0 20px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-04-24</p>
-  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">THE AGE OF<br><span>CURATION</span></div>
   <div class="header-meta">
-    <span>📅 2026·04·24 周五</span>
-    <span>🏷 主题：AI 新闻快报</span>
-    <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 15 分钟</span>
+    <span>📅 2026-04-25</span>
+    <span>📚 周六书单 第六期</span>
+    <span>📰 非虚构 · 资讯策展 · 媒体 · 互联网文化</span>
+    <span>🎙 大雨 × 小苇</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Google 75% 新代码由 AI 生成 · Cloud Next 2026</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 发布 ChatGPT Workspace Agents · MCP 全面支持</span>
-    <span class="ticker-item"><span class="dot">▶</span>Vercel 供应链攻击 · Context.ai 入侵事件详解</span>
-    <span class="ticker-item"><span class="dot">▶</span>Replit 白皮书 · 静态分析 + LLM 混合方案性能提升 90%+</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google 75% 新代码由 AI 生成 · Cloud Next 2026</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 发布 ChatGPT Workspace Agents · MCP 全面支持</span>
-    <span class="ticker-item"><span class="dot">▶</span>Vercel 供应链攻击 · Context.ai 入侵事件详解</span>
-    <span class="ticker-item"><span class="dot">▶</span>Replit 白皮书 · 静态分析 + LLM 混合方案性能提升 90%+</span>
+    <span class="ticker-item"><span class="dot">●</span>一亿总策展</span>
+    <span class="ticker-item"><span class="dot">●</span>内容不等于价值，脉络才是</span>
+    <span class="ticker-item"><span class="dot">●</span>信息生态池 Biotope</span>
+    <span class="ticker-item"><span class="dot">●</span>Serendipity 偶然的发现</span>
+    <span class="ticker-item"><span class="dot">●</span>策展是一种权力</span>
+    <span class="ticker-item"><span class="dot">●</span>AI时代策展价值不降反升</span>
+    <span class="ticker-item"><span class="dot">●</span>一亿总策展</span>
+    <span class="ticker-item"><span class="dot">●</span>内容不等于价值，脉络才是</span>
+    <span class="ticker-item"><span class="dot">●</span>信息生态池 Biotope</span>
+    <span class="ticker-item"><span class="dot">●</span>Serendipity 偶然的发现</span>
+    <span class="ticker-item"><span class="dot">●</span>策展是一种权力</span>
+    <span class="ticker-item"><span class="dot">●</span>AI时代策展价值不降反升</span>
   </div>
 </div>
 
-<!-- AUDIO PLAYER (sticky) -->
+<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 15 分钟</span>
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周六书籍介绍 · Curation策展的时代</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-04-24.mp3">
-    你的浏览器不支持音频播放。<a href="2026-04-24.mp3">下载音频</a>
+  <audio controls src="episodes/2026-04-25.mp3">
+    Your browser does not support the audio element.
   </audio>
 </div>
 
-<!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
+<!-- BOOK HERO -->
+<section class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">周六书单 · 第六期</div>
+    <div class="book-title-big">CURATION<br>策展的<br>时代</div>
+    <div class="book-subtitle">キュレーションの時代——「つながり」の情報革命が始まる</div>
+    <div class="book-author-line">佐佐木俊尚 · ちくま新書 · 2011</div>
+  </div>
+  <div class="book-meta-panel">
+    <div class="book-one-liner">
+      在信息洪流中，真正稀缺的不是内容，而是选择的眼光和连结的脉络。一位从传统新闻出走的日本记者，用"策展"重新定义了我们与信息的关系。
+    </div>
+    <div class="book-tags">
+      <span class="tag">非虚构</span>
+      <span class="tag">资讯策展</span>
+      <span class="tag">媒体</span>
+      <span class="tag">互联网文化</span>
+      <span class="tag">信息过载</span>
+      <span class="tag">社交网络</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item">
+        <div class="stat-label">作者</div>
+        <div class="stat-value">佐佐木俊尚</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">出版</div>
+        <div class="stat-value">2011 / 繁中 2012</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">出版社</div>
+        <div class="stat-value">筑摩书房 / 经济新潮社</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="news-grid">
+<!-- SCRIPT -->
+<div class="section-label" style="margin-top:40px;">🎙 播客脚本 · 大雨 × 小苇</div>
+<div class="script-container">
 
-  <!-- LEAD -->
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Google 宣布 75% 新代码由 AI 生成——工程师角色正在重新定义</h2>
-    <p class="news-body">
-      Google CEO Sundar Pichai 在 Cloud Next 2026 上宣布：Google 目前 75% 的新代码由 AI 生成，由工程师审核后提交。去年四月这个数字还只是"超过 30%"，去年秋天接近 50%。AI Agent 完成复杂代码迁移的速度是人类的 6 倍。Pichai 强调这不是替代工程师，而是让他们专注于更高层次的创造和判断——从"写代码的人"变成"审代码的人"。工程师的价值正在从执行力转向品味和架构判断力。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.fastcompany.com/91531519/google-ceo-says-75-of-the-companys-code-is-ai-generated" target="_blank">Fast Company</a>
-      &nbsp;·&nbsp;
-      <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/" target="_blank">Google Blog</a>
-    </p>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      周六好，欢迎来到本期书籍介绍。今天我们聊一本来自日本的书——《Curation策展的时代：为碎片化资讯找到连结》，作者是佐佐木俊尚。
+    </div>
   </div>
 
-  <!-- 02 -->
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">OpenAI 发布 ChatGPT Workspace Agents——自主工作的 AI 时代到来</h2>
-    <p class="news-body">
-      OpenAI 正式推出 Workspace Agents，面向 Business、Enterprise 和 Edu 用户。它们不再是对话机器人，而是真正自主执行任务的 Agent：可接入 MCP 服务器、操作文件、定时运行、连接 Slack。背后由 Codex 驱动，支持 GPT-5.5。完整 MCP 写操作意味着 Agent 可以更新工单、触发工作流、回写数据库。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://openai.com/index/introducing-chatgpt-agent/" target="_blank">OpenAI</a>
-      &nbsp;·&nbsp;
-      <a href="https://aitoolly.com/ai-news/article/2026-04-23-openai-launches-workspace-agents-for-chatgpt-to-automate-complex-business-tasks-for-teams" target="_blank">AIToolly</a>
-    </p>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">一本日本作者的书？之前我们一直在聊英文世界的科技和经济类作品，这次换了一个视角。</div>
   </div>
 
-  <!-- 03 -->
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">Vercel 遭供应链攻击——起因竟是 Roblox 作弊工具</h2>
-    <p class="news-body">
-      Vercel 确认通过第三方 AI 工具 Context.ai 被入侵。攻击链令人惊讶：Context.ai 一名员工搜索 Roblox 作弊工具时感染 Lumma Stealer 恶意软件 → 攻击者利用被盗凭证接管 Vercel 员工 Google Workspace 账号 → 进入内部系统。Guillermo Rauch 称已分析近 1PB 日志，npm 供应链未被篡改。行业联动安全响应正在展开。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://techcrunch.com/2026/04/20/app-host-vercel-confirms-security-incident-says-customer-data-was-stolen-via-breach-at-context-ai/" target="_blank">TechCrunch</a>
-      &nbsp;·&nbsp;
-      <a href="https://vercel.com/kb/bulletin/vercel-april-2026-security-incident" target="_blank">Vercel Bulletin</a>
-    </p>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对，而且这本书2011年在日本出版的时候就引起了很大反响，繁体中文版2012年由经济新潮社出版。原书名叫《キュレーションの時代》，翻译过来就是"策展的时代——'连结'的信息革命已经开始"。
+    </div>
   </div>
 
-  <!-- 04 -->
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">Replit 白皮书：静态分析 + LLM 混合方案将代码安全性能提升 90%+</h2>
-    <p class="news-body">
-      Replit 发布研究白皮书，证明将传统静态分析工具与 LLM 推理结合使用，代码安全检测性能可提升超过 90%。纯 AI 扫描存在致命缺陷——功能等价但语法不同的代码会得到不同安全评估，硬编码密钥可能被遗漏，依赖级漏洞几乎不可见。规则引擎提供确定性基线，LLM 提供灵活推理。CEO Amjad Masad 强调：不必等待最强模型，用好现有工具组合就能获得显著提升。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://blog.replit.com/securing-ai-generated-code" target="_blank">Replit Blog</a>
-    </p>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">策展？这个词我更多联想到美术馆、博物馆，和信息革命有什么关系？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      这正是这本书最精妙的地方。佐佐木俊尚把"策展"这个概念从美术馆搬到了信息世界。他的定义是：在无数信息的海洋中，基于自己的价值观和世界观来挑选信息，赋予它新的意义，然后与众人分享。这就是信息时代的策展。
+    </div>
+  </div>
+
+  <div class="section-label">作者背景</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">佐佐木俊尚是什么背景？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      他1961年出生在日本兵库县，早稻田大学政治经济学部毕业后，进了《每日新闻》做记者，专跑刑事调查条线——凶杀案、国际恐怖主义、计算机犯罪，都是他的守备范围。1999年转到月刊杂志《ASCII》做编辑，2003年独立成为自由记者。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">从传统媒体出来的人。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对，这一点非常重要。他是亲眼看着传统媒体从高峰走向衰落的人。他后来为CNET Japan写专栏，也是Nippon.com的编辑委员，长期关注互联网媒体和信息流通的变化。可以说他既有传统新闻的训练，又有深厚的互联网观察经验。2011年写这本书的时候，正是Twitter和Facebook在全球爆发的年份，也是传统媒体面临最大冲击的时刻。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以他写这本书有一种"前线观察者"的视角。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完全是的。而且他不是那种哀悼旧时代的人——他是在试图理解新时代的逻辑。
+    </div>
+  </div>
+
+  <div class="section-label">核心概念 · 什么是信息策展</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那他说的"策展"具体是怎么运作的？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      佐佐木俊尚用了一个很生动的框架。他说在传统媒体时代，信息的流动是单向的——媒体选择什么报道，受众就看什么。但到了社交网络时代，每个人都同时是信息的接收者和传播者。关键不再是"谁生产了内容"，而是"谁选择了这个内容、为什么选择、怎么呈现给其他人"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以策展人不一定是创作者？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。这是他一个很重要的观察——在信息过载的时代，原创内容当然重要，但"选择"和"连结"同样重要，甚至更重要。一个好的策展人能从海量信息中挑出真正有价值的东西，给它上下文，给它视角，然后在对的时机、对的场景、对的人面前呈现。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这让我想到今天的newsletter作者、播客主持人，甚至是社交媒体上那些做信息整理的人。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      没错。佐佐木俊尚在2011年就预言了这种趋势——他把它叫做"一亿总策展"。意思是每个人都在做策展，每个人都在用自己的价值观过滤信息、赋予意义、分享给自己的圈子。
+    </div>
+  </div>
+
+  <div class="section-label">生态池 · Biotope 的概念</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">书里还有什么特别的概念？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      有一个我特别喜欢的概念叫"Biotope"，日文写作ビオトープ，就是"生态池"的意思。原本是生态学的术语，指一个小型的生态系统。佐佐木俊尚把它借用到信息领域——他说互联网上正在诞生无数个小型的"信息生态池"，每个池子里聚集着有共同兴趣和价值观的人。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">有点像今天说的"社群"或者"圈子"？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对，但他用"生态池"这个比喻更精确。因为生态池不是一个封闭的容器——它和外界是有交流的，但它有自己的内部生态。池子里有什么物种、什么养分、什么循环，都是独特的。他的意思是：在主流文化衰落的时代，人们不再共享同一个文化叙事。取而代之的是无数个小的生态池，每个人在不同的池子里找到归属。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这就解释了为什么今天大家看到的互联网内容差异那么大——因为我们根本不在同一个池子里。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      正是如此。而策展人的价值就在于——他能帮你发现新的池子，或者在不同的池子之间架起桥梁。
+    </div>
+  </div>
+
+  <div class="section-label">偶然的相遇 · Serendipity</div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      这就引出了他另一个核心概念——Serendipity，偶然的发现。佐佐木俊尚说，好的策展不只是找到你已经知道想要的东西，更重要的是让你遇到你不知道自己需要的东西。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">就像逛书店的时候偶然翻到一本改变你想法的书。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完美的比喻。他认为互联网最大的价值不是"效率"，而是"连结"——把原本不相关的人、想法、知识串联起来，制造意想不到的相遇。但这需要好的策展。如果每个人都只待在自己的信息茧房里，Serendipity就消失了。
+    </div>
+  </div>
+
+  <div class="section-label">内容不够，脉络才是关键</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他对"内容"本身有什么看法？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      这可能是整本书最反直觉的论点。他说：在信息过载的时代，"内容"本身是不够的。因为太多的内容可以被复制、被转发、被检索到。真正稀缺的不是内容，而是脉络——context。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">怎么理解？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      同样一首歌，在Spotify的推荐列表里听到，和在一个你信任的朋友的播放清单里听到，感受是完全不同的。因为后者有脉络——你知道这个朋友的品味，你信任他的判断，所以这首歌自动获得了一层意义。策展就是创造这种脉络。不只是"这里有一个好东西"，而是"这个好东西为什么好、对谁好、在什么语境下好"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这对今天做内容创作的人来说太重要了。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      对。特别是在AI能大量生成内容的时代——内容的边际成本趋近于零，但策展的价值反而在上升。谁能帮你在信息洪流中找到真正重要的东西，谁就拥有了注意力。
+    </div>
+  </div>
+
+  <div class="section-label">对接当下 · 2026年的策展</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这本书2011年写的，放到2026年的今天还成立吗？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      不仅成立，而且比2011年更紧迫。今天我们面对的是AI生成内容的海啸——GPT可以一秒钟写出十篇文章，Midjourney可以一秒钟生成十张图。内容的供给已经从"过载"变成了"泛滥"。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以策展的价值反而更高了？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完全正确。策展的本质是"基于价值观的选择"。如果算法只是基于点击率来推荐，那就不是策展——那是投喂。真正的策展需要判断力、品味和价值观。AI可以生产无限的内容，但它不能替你决定什么是重要的、什么值得关注。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">AI越强大，人类策展的价值越高？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      是的。佐佐木俊尚说"一亿总策展"——今天可能更准确的说法是"一亿总策展 vs 十亿个AI内容生成器"。在这场比赛中，人类策展人的角色不是被取代，而是被放大。
+    </div>
+  </div>
+
+  <div class="section-label">反思 · 策展的阴暗面</div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这本书有没有讨论策展可能带来的问题？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      佐佐木俊尚后来公开反思过这个问题。他承认策展有阴暗面——当一个策展人带着负面的意图去选择和呈现信息，比如"这个人很坏，大家可以去攻击他"，这种策展就变成了网络暴力的催化剂。
+    </div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这不就是今天我们看到的很多网络舆论风暴的模式吗？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">
+      完全是。策展是一种权力。任何权力都可以被善用，也可以被滥用。在一个人人都是策展人的时代，我们需要的不仅是策展能力，还有策展伦理。
+    </div>
   </div>
 
 </div>
 
-<!-- INDEX TABLE -->
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
-<table class="index-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>标题</th>
-      <th>来源</th>
-      <th>日期</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://www.fastcompany.com/91531519/google-ceo-says-75-of-the-companys-code-is-ai-generated" target="_blank">Google 75% 新代码 AI 生成 <span class="tag hot">头条</span></a></td>
-      <td>Fast Company</td>
-      <td>2026-04-23</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://openai.com/index/introducing-chatgpt-agent/" target="_blank">ChatGPT Workspace Agents <span class="tag">产品</span></a></td>
-      <td>OpenAI</td>
-      <td>2026-04-23</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://techcrunch.com/2026/04/20/app-host-vercel-confirms-security-incident-says-customer-data-was-stolen-via-breach-at-context-ai/" target="_blank">Vercel 供应链攻击事件 <span class="tag">安全</span></a></td>
-      <td>TechCrunch</td>
-      <td>2026-04-20</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://blog.replit.com/securing-ai-generated-code" target="_blank">Replit 混合安全白皮书 <span class="tag">研究</span></a></td>
-      <td>Replit</td>
-      <td>2026-04</td>
-    </tr>
-  </tbody>
-</table>
+<!-- TAKEAWAYS -->
+<div class="takeaways">
+  <div class="takeaways-label">核心洞见</div>
+  <div class="takeaways-title">THE AGE OF CURATION</div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">01</div>
+    <div>内容不等于价值，脉络才是。在信息过载的时代，选择和连结的能力比创作本身更稀缺。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">02</div>
+    <div>"生态池"是新的社会结构。我们不再活在一个共享叙事的大水池里，而是分布在无数个小生态池中。理解这一点，就能理解今天互联网上大部分的分歧。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">03</div>
+    <div>Serendipity是策展的最高境界。好的策展不只是帮你确认已知，更是帮你发现未知。</div>
+  </div>
+  <div class="takeaway-item">
+    <div class="takeaway-num">04</div>
+    <div>AI时代让策展的价值不降反升。当内容的生产成本趋近于零，"什么值得看"就成了最有价值的问题。</div>
+  </div>
+</div>
+
+<!-- DISCUSSION ANGLES -->
+<div class="section-label">值得聊的角度</div>
+<div class="angles-grid">
+  <div class="angle-card">
+    <div class="angle-num">01</div>
+    <div class="angle-text">你日常获取信息的方式中，有多少是"策展"的结果——朋友推荐、newsletter、播客——而非算法推送？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">02</div>
+    <div class="angle-text">当AI能生成无限内容，"信息策展人"是一个新职业方向吗？还是每个人的必修技能？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">03</div>
+    <div class="angle-text">你属于哪些"信息生态池"？这些池子之间是否有交流，还是越来越封闭？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">04</div>
+    <div class="angle-text">策展即权力——当人人都能策展信息，我们需要什么样的"策展伦理"？</div>
+  </div>
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -486,129 +843,107 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 07:28。
+  数据截至今日 UTC 06:03。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">AI & I by Every · 2026-04-22</p>
-  <p class="pc-title">The AI Sandwich: Where Humans Excel in an AI World</p>
-  <p class="pc-summary">
-    Quora GM、Compound Engineering 创始人 Kieran 与 Dan Shipper 深度对话。核心比喻："人类是面包，AI 是夹心"——在 AI 辅助工作流中，人类最需要出现在开头（构思与定义问题）和结尾（品味打磨与交付），中间的执行可以交给 AI。Kieran 用古典作曲的经历类比：创作旋律和最终演出是最特别的时刻，中间的反复练习可以被优化。Dan 补充：语言模型被困在盒子里，输出天然偏通用——而真正解决问题需要在不同层次间灵活切换思考框架，这是人类独有的能力。
-  </p>
-  <a href="https://www.youtube.com/watch?v=G0LTv8hQ5Cs" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Unsupervised Learning · 2026-04-23</p>
+  <p class="pc-title">Ep 85: Has AI Infra Stabilized, FM Vibe Shift, & What's Next for Coding Agents</p>
+  <p class="pc-summary">Redpoint 的 Jacob Efron 与 Latent Space 的 Swyx 年度交叉对话。核心观点：2026 年是编程代理"破圈"的一年——从写代码到做一切。Anthropic 仅 Claude Code 就带来约 25 亿美元 ARR，OpenAI 和 Cursor 各约 20 亿。Swyx 认为"AI 基础设施已趋于稳定——skills 就是最小可行格式：一个 markdown 文件加脚本"。同时，开源模型市场份额正在回升，自定义芯片（Cerebras、Thalas）带来的推理加速可能解锁全新用例。</p>
+  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
-
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Amanda Askell</div>
+        <div class="builder-handle">@AmandaAskell · Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们正在经历人类历史上最关键的时期之一，而从内部感受到这一切的重量，是一种奇特的体验。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,115</span>
+      <a href="https://x.com/AmandaAskell/status/2047429629263454377" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「当美国政客和游说者在散布'中国蒸馏'的恐慌时，中国科学家正在公开分享真正的AI突破。这类进展与数据无关，惠及所有人——包括美国小型（甚至大型）实验室。DeepSeek v4 刚刚发布。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 875</span>
+      <a href="https://x.com/amasad/status/2047547275682214384" target="_blank">查看推文 →</a>
+    </div>
+  </div>
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「这可能是软件走向无头化最大的新闻。ChatGPT 新 Agent 可以使用你选择的任何工具和数据，具备完整的编码和工具使用能力。这正是知识工作 Agent 的未来。你可以在前台或后台启动它们来增强工作。对无头平台和企业 Agent 的新建造者来说，这是巨大的机会。」</p>
+    <p class="builder-tweet">「抱歉让以为AI会让我们少干活的人失望了。AI让探索变得容易，于是你开始做更多事情。工作不是静态的——大多数公司能做的远比现在多，只是以前启动成本太高。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 987</span>
-      <a href="https://x.com/levie/status/2047028112626749645" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 300</span>
+      <a href="https://x.com/levie/status/2047540230694350958" target="_blank">查看推文 →</a>
     </div>
   </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">SW</div>
-      <div>
-        <div class="builder-name">Swyx</div>
-        <div class="builder-handle">@swyx · AI Engineer</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「关于 GPT-Image-2-Thinking 最好的理解框架：Image-2 是新的图像模型，Image-2-Thinking 是新的图像 Agent——它拥有搜索和 Photoshop 作为工具，在 Agent 循环中搜索、合成、审查自己的输出。就像 Gemini Flash Vision 通过 Agent 循环颠覆了图像理解，现在 Image-2-Thinking 对文生图做了同样的事。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 56</span>
-      <a href="https://x.com/swyx/status/2047140362771132544" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">GR</div>
-      <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「安全调查最新进展：我们分析了近 1PB 日志。攻击者活动范围超出 Context.ai 事件本身，威胁情报指向恶意软件分发以窃取各平台 token。我们已与 Microsoft、AWS、Wiz 深化合作，并通知了其他可疑受害者。npm 包未被篡改，供应链安全。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 762</span>
-      <a href="https://x.com/rauchg/status/2047150411170320808" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PY</div>
-      <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · Roblox</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Craft 大于 slop。用 AI 生成东西很爽，但真正的匠心在最后那 10%——你手动把品味注入进去，让它成为你能引以为豪的作品。很多人从来不做这一步。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 39</span>
-      <a href="https://x.com/petergyang/status/2047124883071816189" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
 </div>
 
-<hr class="rule">
-
-<!-- PAST EPISODES -->
-<p class="section-label">◈ 往期回顾</p>
-<div class="past-episodes" id="past-container">
-  <div id="past-loading">正在加载往期节目…</div>
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">📎 来源</div>
+  <a class="source-link" href="https://www.goodreads.com/book/show/10368123" target="_blank">
+    <span class="src-icon">Book</span>
+    Goodreads — キュレーションの時代
+  </a>
+  <a class="source-link" href="https://www.books.com.tw/products/0010971729" target="_blank">
+    <span class="src-icon">博客來</span>
+    Curation策展的時代：為碎片化資訊找到連結
+  </a>
+  <a class="source-link" href="https://www.nippon.com/en/authordata/sasaki-toshinao/" target="_blank">
+    <span class="src-icon">Nippon</span>
+    Nippon.com — Sasaki Toshinao Author Profile
+  </a>
+  <a class="source-link" href="https://en.wikipedia.org/wiki/Toshinao_Sasaki" target="_blank">
+    <span class="src-icon">Wiki</span>
+    Wikipedia — Toshinao Sasaki
+  </a>
+  <a class="source-link" href="https://www.nippon.com/en/in-depth/d01021/net-negativity-thinking-about-online-brutality-and-ways-to-fix-it.html" target="_blank">
+    <span class="src-icon">Essay</span>
+    Net Negativity: Thinking About Online Brutality — Nippon.com
+  </a>
 </div>
 
-<script>
-(async () => {
-  try {
-    const r = await fetch('feed.json');
-    if (!r.ok) throw new Error('no feed');
-    const eps = await r.json();
-    const c = document.getElementById('past-container');
-    c.innerHTML = '';
-    eps.slice(0, 12).forEach(e => {
-      const a = document.createElement('a');
-      a.className = 'past-ep-item';
-      a.href = e.url || ('episodes/' + e.date + '.html');
-      a.innerHTML =
-        '<span class="past-ep-date">' + e.date + '</span>' +
-        '<span class="past-ep-title">' + (e.title || '') + '</span>' +
-        '<span class="past-ep-tag">' + (e.tag || '') + '</span>';
-      c.appendChild(a);
-    });
-  } catch(e) {
-    document.getElementById('past-loading').textContent = '暂无往期节目数据';
-  }
-})();
-</script>
-
-<hr class="rule">
-
-<footer>
-  <strong>Daily Builders Digest</strong> · 大雨 × 小苇<br>
-  关注建造者，不要关注 influencer。<br>
-  © 2026 · 由 AI 辅助制作
+<!-- FOOTER -->
+<footer class="footer">
+  <span>Daily Builders Digest</span>
+  <span>2026-04-25 · 周六书籍介绍</span>
+  <span>daily-builders-digest.vercel.app</span>
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-04-24.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-24</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Google 宣布 75% 新代码由 AI 生成——工程师角色正在重新定义</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-04-23.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-04-23</span>

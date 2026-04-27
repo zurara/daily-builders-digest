@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-27",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "DeepSeek 发布 V4 旗舰模型——百万 token 上下文窗口，编码能力达顶级水平 · Google 发布 AI Agent 工具，Brin 亲建 DeepMind 突击队追赶 Anthropic",
+    "html": "episodes/2026-04-27.html",
+    "mp3": "episodes/2026-04-27.mp3",
+    "headlines": [
+      "DeepSeek 发布 V4 旗舰模型——百万 token 上下文窗口，编码能力达顶级水平",
+      "Google 发布 AI Agent 工具，Brin 亲建 DeepMind 突击队追赶 Anthropic",
+      "Meta 裁 10%、Microsoft 首推买断——2026 科技裁员已超 9.2 万人",
+      "Neuro-Symbolic AI：能耗降 100 倍，准确率反升——边缘 AI 的曙光"
+    ]
+  },
+  {
     "date": "2026-04-26",
     "dow": 7,
     "topic": "Podcasts",

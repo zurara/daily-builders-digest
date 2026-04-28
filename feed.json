@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-04-28",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "\"自感知\"机器人来了——瑞士 EPFL 让机器人看一眼就学会复杂任务 · NVIDIA GR00T N1.7 发布——Physical AI 正式进入商用阶段",
+    "html": "episodes/2026-04-28.html",
+    "mp3": "episodes/2026-04-28.mp3",
+    "headlines": [
+      "\"自感知\"机器人来了——瑞士 EPFL 让机器人看一眼就学会复杂任务",
+      "NVIDIA GR00T N1.7 发布——Physical AI 正式进入商用阶段",
+      "Sereact 融资 $110M——教会 BMW 机器人听懂人话的\"大脑\"",
+      "人形机器人狂飙：Lightning 跑赢人类半马，Atlas 年产目标三万台"
+    ]
+  },
+  {
     "date": "2026-04-27",
     "dow": 1,
     "topic": "AI",

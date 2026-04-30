@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-04-30",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Peter Attia #389：科学思维的目标不是证明自己是对的，而是让自己随时间变得更少出错 · Huberman Lab × Scott Galloway：男性心理健康的被忽视危机",
+    "html": "episodes/2026-04-30.html",
+    "mp3": "episodes/2026-04-30.mp3",
+    "headlines": [
+      "Peter Attia #389：科学思维的目标不是证明自己是对的，而是让自己随时间变得更少出错",
+      "Huberman Lab × Scott Galloway：男性心理健康的被忽视危机",
+      "FoundMyFitness：燕麦排毒永远化学物、纳豆激酶的真相、APOE4 与 HRT",
+      "每天 2000 IU 维生素 D 让乳腺癌化疗完全缓解率提升 79%",
+      "健康素养的底层操作系统：科学思维 + 个体差异意识"
+    ]
+  },
+  {
     "date": "2026-04-29",
     "dow": 3,
     "topic": "Product",

@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-01",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "OpenAI 营收与用户增长双双失速——CFO 警告六千亿美元算力承诺面临压力 · Ineffable Intelligence 完成 $11 亿种子轮——AlphaGo 之父 David Silver 押注\"无人类数据\"超级学习者",
+    "html": "episodes/2026-05-01.html",
+    "mp3": "episodes/2026-05-01.mp3",
+    "headlines": [
+      "OpenAI 营收与用户增长双双失速——CFO 警告六千亿美元算力承诺面临压力",
+      "Ineffable Intelligence 完成 $11 亿种子轮——AlphaGo 之父 David Silver 押注\"无人类数据\"超级学习者",
+      "Musk 亲自出庭作证——诉 OpenAI 索赔 $1300 亿，要求恢复非营利地位",
+      "Gemini 文件生成全球上线——从 Docs 到 Slides、Excel 到 LaTeX，一句话导出成品文件"
+    ]
+  },
+  {
     "date": "2026-04-30",
     "dow": 4,
     "topic": "Health",

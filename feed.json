@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-05-03",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "新闻快报",
+    "title": "Baseten CEO Tuhin Srivastava：AI 推理危机、定制模型与推理云的未来",
+    "html": "episodes/2026-05-03.html",
+    "mp3": "episodes/2026-05-03.mp3",
+    "headlines": [
+      "Baseten CEO Tuhin Srivastava：AI 推理危机、定制模型与推理云的未来"
+    ]
+  },
+  {
     "date": "2026-05-02",
     "dow": 6,
     "topic": "Books",

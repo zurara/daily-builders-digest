@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-04",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "五角大楼与八家科技公司签署 AI 合同——Anthropic 因拒绝军方使用条款被排除在外 · Anthropic 估值冲击 $9000 亿——拒绝五角大楼后，资本市场反而更看好它",
+    "html": "episodes/2026-05-04.html",
+    "mp3": "episodes/2026-05-04.mp3",
+    "headlines": [
+      "五角大楼与八家科技公司签署 AI 合同——Anthropic 因拒绝军方使用条款被排除在外",
+      "Anthropic 估值冲击 $9000 亿——拒绝五角大楼后，资本市场反而更看好它",
+      "Greg Brockman：「人类注意力是 AI 时代的新瓶颈」——OpenAI 发布 Chronicle 上下文记忆插件",
+      "Mistral AI 发布 128B 旗舰模型——异步编码 + Agent 工作模式，欧洲 AI 再出牌"
+    ]
+  },
+  {
     "date": "2026-05-03",
     "dow": 7,
     "topic": "Podcasts",

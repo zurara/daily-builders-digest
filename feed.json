@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-05",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "Meta 收购人形机器人创业公司 ARI——大厂争夺 Physical AI 人才 · 羽田机场开始人形机器人试验——日本航空应对劳动力短缺",
+    "html": "episodes/2026-05-05.html",
+    "mp3": "episodes/2026-05-05.mp3",
+    "headlines": [
+      "Meta 收购人形机器人创业公司 ARI——大厂争夺 Physical AI 人才",
+      "羽田机场开始人形机器人试验——日本航空应对劳动力短缺",
+      "Antioch 融资 $8.5M——让每个机器人团队用上仿真测试",
+      "NVIDIA Physical AI 持续扩张——NemoClaw 让你用自然语言指挥机器人"
+    ]
+  },
+  {
     "date": "2026-05-04",
     "dow": 1,
     "topic": "AI",

@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-06",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Vercel deepsec：开源 AI Agent 安全审查工具，用千个 Agent 并行扫描代码库 · 企业 Agent 全面起飞：OpenAI Frontier + ServiceNow Project Arc",
+    "html": "episodes/2026-05-06.html",
+    "mp3": "episodes/2026-05-06.mp3",
+    "headlines": [
+      "Vercel deepsec：开源 AI Agent 安全审查工具，用千个 Agent 并行扫描代码库",
+      "企业 Agent 全面起飞：OpenAI Frontier + ServiceNow Project Arc",
+      "留存危机：2023–2025 AI 创业公司的清算时刻",
+      "Generative UI：界面不再是画出来的，是实时生成出来的"
+    ]
+  },
+  {
     "date": "2026-05-05",
     "dow": 2,
     "topic": "Robotics",

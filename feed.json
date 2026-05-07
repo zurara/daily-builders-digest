@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-05-07",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Dr. Paul Conti：从优势出发的心理健康工具——用好奇心替代自我批判 · Peter Attia #390 AMA：家族健康史、力量训练最低有效剂量与痴呆预防",
+    "html": "episodes/2026-05-07.html",
+    "mp3": "episodes/2026-05-07.mp3",
+    "headlines": [
+      "Huberman Lab × Dr. Paul Conti：从优势出发的心理健康工具——用好奇心替代自我批判",
+      "Peter Attia #390 AMA：家族健康史、力量训练最低有效剂量与痴呆预防",
+      "FoundMyFitness × Kelly Starrett：打造一个耐用的身体——健身房外的 23 小时才是关键",
+      "APOE4 携带者考虑激素替代疗法（HRT）需要特别谨慎",
+      "你的身体、你的心理、你的数据——三位一体的健康操作系统"
+    ]
+  },
+  {
     "date": "2026-05-06",
     "dow": 3,
     "topic": "Product",

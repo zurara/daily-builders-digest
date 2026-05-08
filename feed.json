@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-08",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes 配质检员，多智能体编排处理复杂任务 · Boris Cherny：编程正在经历\"印刷术时刻\"——手机写代码，一天 150 PR",
+    "html": "episodes/2026-05-08.html",
+    "mp3": "episodes/2026-05-08.mp3",
+    "headlines": [
+      "Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes 配质检员，多智能体编排处理复杂任务",
+      "Boris Cherny：编程正在经历\"印刷术时刻\"——手机写代码，一天 150 PR",
+      "DeepSeek V4 Flash：284B 参数仅激活 13B，MIT 开源，价格不到主流模型零头",
+      "Dario Amodei：Anthropic Q1 增长 80 倍——\"我们要买下所有能买到的算力\""
+    ]
+  },
+  {
     "date": "2026-05-07",
     "dow": 4,
     "topic": "Health",

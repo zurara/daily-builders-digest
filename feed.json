@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-05-10",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "播客精选",
+    "title": "Claude 平台的秘密：Anthropic 产品 + 工程负责人首次公开设计哲学",
+    "html": "episodes/2026-05-10.html",
+    "mp3": "episodes/2026-05-10.mp3",
+    "headlines": [
+      "Claude 平台的秘密：Anthropic 产品 + 工程负责人首次公开设计哲学"
+    ]
+  },
+  {
     "date": "2026-05-09",
     "dow": 6,
     "topic": "Books",

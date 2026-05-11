@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-05-11">
+<meta property="og:description" content="Anthropic 营收超越 OpenAI · 英伟达 400 亿 AI 投资 · Cohere×Aleph Alpha 主权 AI · GPT-5.5 Cyber">
+<title>Daily Builders Digest · 2026-05-11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 42s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-11</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <div class="header-meta">
+    <span>📅 2026·05·11 周一</span>
+    <span>🏷 主题：AI 新闻快报</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 14 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic 营收超越 OpenAI · 300 亿年化收入 · 80 倍增长</span>
+    <span class="ticker-item"><span class="dot">▶</span>英伟达 400 亿 AI 投资 · 从芯片霸主到生态银行家</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cohere × Aleph Alpha · 200 亿估值 · 主权 AI 欧洲反击</span>
+    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 Cyber · 网络安全专用模型 · 对标 Mythos</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic 营收超越 OpenAI · 300 亿年化收入 · 80 倍增长</span>
+    <span class="ticker-item"><span class="dot">▶</span>英伟达 400 亿 AI 投资 · 从芯片霸主到生态银行家</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cohere × Aleph Alpha · 200 亿估值 · 主权 AI 欧洲反击</span>
+    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 Cyber · 网络安全专用模型 · 对标 Mythos</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 14 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-05-11.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-11.mp3">下载音频</a>
+  </audio>
+</div>
+
+<!-- ─────────────────── NEWS ─────────────────── -->
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
+
+<div class="news-grid">
+
+  <!-- LEAD -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估值融资</h2>
+    <p class="news-body">
+      几乎所有人预测要到八月才会发生的里程碑提前到了——Anthropic 年化收入达到 300 亿美元，正式超越 OpenAI 的 240 亿。Counterpoint Research 数据显示 Q1 全球 LLM 收入市场份额 Anthropic 占 31.4%，OpenAI 29%。增长轨迹惊人：2024 年初 8700 万，年底 10 亿，2025 年底 90 亿，2026 年四月飙至 300 亿。主要驱动力是 Claude Code 和 Agent 工作流的企业深度采用。更关键的是，Anthropic 训练模型的支出仅为 OpenAI 的四分之一。目前传言公司正以 9000 亿估值寻求 500 亿美元融资，若成功将成为全球最有价值的私营公司。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" target="_blank">VentureBeat</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.theregister.com/2026/04/30/openai_anthropic_top_lines_research_counterpoint/" target="_blank">The Register</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.saastr.com/anthropic-just-passed-openai-in-revenue-while-spending-4x-less-to-train-their-models/" target="_blank">SaaStr</a>
+    </p>
+  </div>
+
+  <!-- 02 -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">英伟达化身 AI 投资巨头——2026 年已下注超 400 亿美元</h2>
+    <p class="news-body">
+      英伟达今年前四个月股权投资总额突破 400 亿美元。最大一笔是二月对 OpenAI 的 300 亿。其余包括对光纤供应商 Corning 的 32 亿、数据中心运营商 IREN 的 21 亿，以及约二十几个私营公司融资轮。批评者说资本在同一批公司间循环，但英伟达的逻辑很清晰——用股权投资锁定整条 AI 供应链，确保所有新建计算能力都运行在自家硬件上。从芯片霸主到 AI 基础设施的中央银行。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html" target="_blank">CNBC</a>
+      &nbsp;·&nbsp;
+      <a href="https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year/" target="_blank">TechCrunch</a>
+    </p>
+  </div>
+
+  <!-- 03 -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Cohere 合并 Aleph Alpha——200 亿估值，主权 AI 的欧洲反击</h2>
+    <p class="news-body">
+      加拿大 Cohere 与德国 Aleph Alpha 宣布合并，估值 200 亿美元，得到两国政府直接支持。核心定位"主权 AI"——企业和政府完全掌控数据，不经过美国科技巨头。Schwarz 集团提供五亿欧元融资。Cohere 擅长大模型，Aleph Alpha 深耕欧洲多语言小模型，互补性极强。这是美国 AI 三强格局下，欧洲第一次真正的反击。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/" target="_blank">TechCrunch</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html" target="_blank">CNBC</a>
+    </p>
+  </div>
+
+  <!-- 04 -->
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">OpenAI 发布 GPT-5.5 Cyber——专攻网络安全，对标 Anthropic Mythos</h2>
+    <p class="news-body">
+      OpenAI 上周推出 GPT-5.5 Cyber，专为网络安全场景调优，向审核通过的安全团队开放。普通版本会拒绝的漏洞分析和渗透测试请求，Cyber 版可以执行。测评显示其发现和利用软件漏洞的能力接近 Anthropic 的 Mythos Preview。GPT-5.5（代号 Spud）四月底发布，五月初给免费用户开放了 Instant 版本。Sam Altman 评价 5.5 是"有着奇怪命名品味的自闭天才"。AI 安全市场正在成为下一个战场。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.axios.com/2026/05/07/openai-gpt-55-cybersecurity-model" target="_blank">Axios</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.cnbc.com/2026/05/07/openai-rolls-out-new-gpt-5point5-cyber-to-vetted-cybersecurity-teams.html" target="_blank">CNBC</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- INDEX TABLE -->
+<hr class="rule">
+<p class="section-label">◈ 新闻索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" target="_blank">Anthropic 营收超越 OpenAI · 300 亿年化 <span class="tag hot">头条</span></a></td>
+      <td>VentureBeat</td>
+      <td>2026-04-30</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html" target="_blank">英伟达 400 亿 AI 投资 <span class="tag">投资</span></a></td>
+      <td>CNBC</td>
+      <td>2026-05-09</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/" target="_blank">Cohere × Aleph Alpha · 主权 AI <span class="tag">合并</span></a></td>
+      <td>TechCrunch</td>
+      <td>2026-04-25</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.axios.com/2026/05/07/openai-gpt-55-cybersecurity-model" target="_blank">GPT-5.5 Cyber · 网络安全专用 <span class="tag">模型</span></a></td>
+      <td>Axios</td>
+      <td>2026-05-07</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 06:02。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Training Data · 2026-05-08</p>
+  <p class="pc-title">ElevenLabs' Mati Staniszewski: How Voice Becomes the Interface for Everything</p>
+  <p class="pc-summary">
+    ElevenLabs CEO Mati Staniszewski 分享了公司的创业故事——灵感来自波兰看外国电影时所有角色由同一个男声平淡念出的奇特体验。如今 ElevenLabs 已超过 4 亿美元收入、400 人规模，但每个团队严格控制在 10 人以内。最具启发性的管理实践：每个非技术团队（法务、人事、市场）都嵌入一名工程师，帮助全员用 AI 提效。Mati 认为语音将成为与机器人和智能设备交互的主要界面，而信任验证将成为语音 AI 时代的核心基础设施。
+  </p>
+  <a href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · CEO, OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「5.5 是一个有着奇怪命名品味的自闭天才。很震惊我们居然做出了这样的东西。」——GPT-5.5 发布后的自评，获得超六千赞，引发社区对模型"性格"的热议。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 6188</span>
+      <a href="https://x.com/sama/status/2053192407664259251" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「AI 让更多人进入以前极度复杂的领域，但有经验的人占据巨大优势——他们知道 Agent 什么时候犯灾难性错误，能给 Agent 正确的上下文。民主化和专家价值并行上升，工作不会消失。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 321</span>
+      <a href="https://x.com/levie/status/2053267097493573921" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Roblox Product</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「AI 使用陷阱：你偷懒不编辑 AI 生成的 markdown，5% 的 slop 变成 10%、然后更多。新内容参考旧内容，最终你面对一堆无法理解的 AI 生成 slop。」——对 AI 内容退化的精准观察，获近千赞。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 961</span>
+      <a href="https://x.com/petergyang/status/2053170264121450616" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · CEO, Y Combinator</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「GBrain v0.31.1 发布真正的 MCP thin client 支持。你可以运行一个'家庭 GBrain 服务器'，其他设备全部通过 MCP 连接。GBrain 刚刚变成了 client-server 架构。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 256</span>
+      <a href="https://x.com/garrytan/status/2053306243704410460" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────────────── FOOTER ─────────────────── -->
+<hr class="rule-heavy">
+<footer>
+  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
+  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
+  © 2026 Daily Builders Digest
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

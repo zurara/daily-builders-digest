@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-11",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估值融资 · 英伟达化身 AI 投资巨头——2026 年已下注超 400 亿美元",
+    "html": "episodes/2026-05-11.html",
+    "mp3": "episodes/2026-05-11.mp3",
+    "headlines": [
+      "Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估值融资",
+      "英伟达化身 AI 投资巨头——2026 年已下注超 400 亿美元",
+      "Cohere 合并 Aleph Alpha——200 亿估值，主权 AI 的欧洲反击",
+      "OpenAI 发布 GPT-5.5 Cyber——专攻网络安全，对标 Anthropic Mythos"
+    ]
+  },
+  {
     "date": "2026-05-10",
     "dow": 7,
     "topic": "Podcasts",

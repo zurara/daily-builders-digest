@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-11">
-<meta property="og:description" content="Anthropic 营收超越 OpenAI · 英伟达 400 亿 AI 投资 · Cohere×Aleph Alpha 主权 AI · GPT-5.5 Cyber">
-<title>Daily Builders Digest · 2026-05-11</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-13">
+<meta property="og:description" content="Karpathy 宣告 HTML 时代 · Cursor SDK 公测 · Figma Make Skills · 63 亿 AI Take-Private">
+<title>Daily Builders Digest · 2026-05-13</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 42s linear infinite;
+    animation: ticker 44s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -124,6 +124,18 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -219,10 +231,7 @@
     color: var(--red);
     width: 48px;
   }
-  .index-table td a {
-    color: var(--ink);
-    text-decoration: none;
-  }
+  .index-table td a { color: var(--ink); text-decoration: none; }
   .index-table td a:hover { text-decoration: underline; }
   .tag {
     display: inline-block;
@@ -241,14 +250,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
   .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
   .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
   .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
   .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
   .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
-
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -258,23 +265,12 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
   /* ── DIVIDER ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
-  }
 
   /* ── FOOTER ── */
   footer {
@@ -293,27 +289,27 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-11</p>
-  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-05-13</p>
+  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
   <div class="header-meta">
-    <span>📅 2026·05·11 周一</span>
-    <span>🏷 主题：AI 新闻快报</span>
+    <span>📅 2026·05·13 周三</span>
+    <span>🏷 主题：产品 Product</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 14 分钟</span>
+    <span>⏱ 约 15 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Anthropic 营收超越 OpenAI · 300 亿年化收入 · 80 倍增长</span>
-    <span class="ticker-item"><span class="dot">▶</span>英伟达 400 亿 AI 投资 · 从芯片霸主到生态银行家</span>
-    <span class="ticker-item"><span class="dot">▶</span>Cohere × Aleph Alpha · 200 亿估值 · 主权 AI 欧洲反击</span>
-    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 Cyber · 网络安全专用模型 · 对标 Mythos</span>
-    <span class="ticker-item"><span class="dot">▶</span>Anthropic 营收超越 OpenAI · 300 亿年化收入 · 80 倍增长</span>
-    <span class="ticker-item"><span class="dot">▶</span>英伟达 400 亿 AI 投资 · 从芯片霸主到生态银行家</span>
-    <span class="ticker-item"><span class="dot">▶</span>Cohere × Aleph Alpha · 200 亿估值 · 主权 AI 欧洲反击</span>
-    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 Cyber · 网络安全专用模型 · 对标 Mythos</span>
+    <span class="ticker-item"><span class="dot">▶</span>Karpathy：HTML 才是 AI 的默认输出格式</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cursor SDK 公测 — 编程 Agent 变可编程基础设施</span>
+    <span class="ticker-item"><span class="dot">▶</span>Figma Make Skills — 设计系统 × AI Agent 直接握手</span>
+    <span class="ticker-item"><span class="dot">▶</span>Long Lake 63 亿美元 AI Take-Private — 世界首笔</span>
+    <span class="ticker-item"><span class="dot">▶</span>Karpathy：HTML 才是 AI 的默认输出格式</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cursor SDK 公测 — 编程 Agent 变可编程基础设施</span>
+    <span class="ticker-item"><span class="dot">▶</span>Figma Make Skills — 设计系统 × AI Agent 直接握手</span>
+    <span class="ticker-item"><span class="dot">▶</span>Long Lake 63 亿美元 AI Take-Private — 世界首笔</span>
   </div>
 </div>
 
@@ -322,73 +318,69 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 14 分钟</span>
+    <span>大雨 × 小苇 · 约 15 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-11.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-11.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-05-13.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-13.mp3">下载音频</a>
   </audio>
 </div>
 
 <!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
+<p class="section-label">◈ 今日焦点 · 产品 · 精选四条</p>
 
 <div class="news-grid">
 
   <!-- LEAD -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估值融资</h2>
+    <h2 class="news-hed">Karpathy 宣告：HTML 才是 AI 的默认输出格式，Markdown 时代该结束了</h2>
     <p class="news-body">
-      几乎所有人预测要到八月才会发生的里程碑提前到了——Anthropic 年化收入达到 300 亿美元，正式超越 OpenAI 的 240 亿。Counterpoint Research 数据显示 Q1 全球 LLM 收入市场份额 Anthropic 占 31.4%，OpenAI 29%。增长轨迹惊人：2024 年初 8700 万，年底 10 亿，2025 年底 90 亿，2026 年四月飙至 300 亿。主要驱动力是 Claude Code 和 Agent 工作流的企业深度采用。更关键的是，Anthropic 训练模型的支出仅为 OpenAI 的四分之一。目前传言公司正以 9000 亿估值寻求 500 亿美元融资，若成功将成为全球最有价值的私营公司。
+      Andrej Karpathy 在 X 上发帖——一万三千赞——提出 AI 输出格式的进化路线：纯文本 → Markdown → HTML → 交互式神经视频。人类大脑有三分之一是视觉处理器，是信息进入大脑的「十车道高速公路」。HTML 能做表格布局、SVG 图表、JavaScript 交互，而 Markdown 只是略好的纯文本。Anthropic 工程师 Thariq Shihipar 同期发文「HTML 的不合理有效性」，宣布完全弃用 Markdown。Salesforce Agentforce 已用「自适应响应格式」将 LLM 输出自动转成轮播卡片和富按钮——未来产品的竞争力在于答案以什么形态到达用户。
     </p>
     <p class="news-source">
-      📎 <a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" target="_blank">VentureBeat</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.theregister.com/2026/04/30/openai_anthropic_top_lines_research_counterpoint/" target="_blank">The Register</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.saastr.com/anthropic-just-passed-openai-in-revenue-while-spending-4x-less-to-train-their-models/" target="_blank">SaaStr</a>
+      📎 <a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">Andrej Karpathy — X</a>
     </p>
   </div>
 
   <!-- 02 -->
   <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">英伟达化身 AI 投资巨头——2026 年已下注超 400 亿美元</h2>
+    <h2 class="news-hed">Cursor SDK 公测：编程 Agent 变成可编程基础设施</h2>
     <p class="news-body">
-      英伟达今年前四个月股权投资总额突破 400 亿美元。最大一笔是二月对 OpenAI 的 300 亿。其余包括对光纤供应商 Corning 的 32 亿、数据中心运营商 IREN 的 21 亿，以及约二十几个私营公司融资轮。批评者说资本在同一批公司间循环，但英伟达的逻辑很清晰——用股权投资锁定整条 AI 供应链，确保所有新建计算能力都运行在自家硬件上。从芯片霸主到 AI 基础设施的中央银行。
+      Cursor 将 SDK 推进公测——一个 TypeScript API，让开发者用几行代码创建、运行和管理编程 Agent。支持本地或云端 VM 运行，按 token 消耗计费。早期用户已在用它自动修 bug、做代码摘要、故障根因分析。开发者工具的终局不是更好的 IDE，而是 Agent 基础设施——就像 Stripe 不是支付页面，而是支付基础设施。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html" target="_blank">CNBC</a>
+      📎 <a href="https://cursor.com/blog/typescript-sdk" target="_blank">Build programmatic agents — Cursor Blog</a>
       &nbsp;·&nbsp;
-      <a href="https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year/" target="_blank">TechCrunch</a>
+      <a href="https://devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/" target="_blank">DevOps.com</a>
     </p>
   </div>
 
   <!-- 03 -->
   <div class="news-card">
     <p class="news-num">03</p>
-    <h2 class="news-hed">Cohere 合并 Aleph Alpha——200 亿估值，主权 AI 的欧洲反击</h2>
+    <h2 class="news-hed">Figma Make Skills：设计系统和 AI Agent 直接握手</h2>
     <p class="news-body">
-      加拿大 Cohere 与德国 Aleph Alpha 宣布合并，估值 200 亿美元，得到两国政府直接支持。核心定位"主权 AI"——企业和政府完全掌控数据，不经过美国科技巨头。Schwarz 集团提供五亿欧元融资。Cohere 擅长大模型，Aleph Alpha 深耕欧洲多语言小模型，互补性极强。这是美国 AI 三强格局下，欧洲第一次真正的反击。
+      Figma 五月更新发布 Make Skills——用 Markdown 文件定义可复用的设计规范，斜杠命令调用即自动遵守设计系统。MCP 服务器支持 Claude Code、Cursor 等十多个客户端，/prototype-to-figma 可将本地原型搬到 Figma 画布并关联设计系统组件。Make 还登陆 iOS/Android，真实手势预览。原型验证从「天」降到「分钟」。
     </p>
     <p class="news-source">
-      📎 <a href="https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/" target="_blank">TechCrunch</a>
+      📎 <a href="https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026" target="_blank">Figma Release Notes — May 2026</a>
       &nbsp;·&nbsp;
-      <a href="https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html" target="_blank">CNBC</a>
+      <a href="https://uxdesign.cc/how-to-make-claude-code-follow-your-design-system-in-figma-559618cffaa9" target="_blank">UX Collective</a>
     </p>
   </div>
 
   <!-- 04 -->
   <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
     <p class="news-num">04</p>
-    <h2 class="news-hed">OpenAI 发布 GPT-5.5 Cyber——专攻网络安全，对标 Anthropic Mythos</h2>
+    <h2 class="news-hed">Long Lake 63 亿美元收购 Amex GBT：世界首笔 AI Take-Private</h2>
     <p class="news-body">
-      OpenAI 上周推出 GPT-5.5 Cyber，专为网络安全场景调优，向审核通过的安全团队开放。普通版本会拒绝的漏洞分析和渗透测试请求，Cyber 版可以执行。测评显示其发现和利用软件漏洞的能力接近 Anthropic 的 Mythos Preview。GPT-5.5（代号 Spud）四月底发布，五月初给免费用户开放了 Instant 版本。Sam Altman 评价 5.5 是"有着奇怪命名品味的自闭天才"。AI 安全市场正在成为下一个战场。
+      Long Lake Management 以 63 亿美元收购美国运通全球商务旅行——世界首笔 AI 驱动的 take-private 交易。其横向 AI 平台 Nexus 80% 基础设施跨行业共享，针对每家公司定制部署。创始人 Taubman 说，过去部署要一年，现在几天见效。收购后不裁员而驱动增长——HOA 业务年增长从 0-5% 跃升到 20%+。AI 产品的价值不在于好用的工具，而在于更好的业务结果。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.axios.com/2026/05/07/openai-gpt-55-cybersecurity-model" target="_blank">Axios</a>
+      📎 <a href="https://www.businesswire.com/news/home/20260504231235/en/" target="_blank">Long Lake Acquires Amex GBT — BusinessWire</a>
       &nbsp;·&nbsp;
-      <a href="https://www.cnbc.com/2026/05/07/openai-rolls-out-new-gpt-5point5-cyber-to-vetted-cybersecurity-teams.html" target="_blank">CNBC</a>
+      <a href="https://www.youtube.com/watch?v=g5TWnUjbeFM" target="_blank">No Priors Podcast</a>
     </p>
   </div>
 
@@ -409,27 +401,27 @@
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" target="_blank">Anthropic 营收超越 OpenAI · 300 亿年化 <span class="tag hot">头条</span></a></td>
-      <td>VentureBeat</td>
-      <td>2026-04-30</td>
+      <td><a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">HTML 是 AI 默认输出格式 <span class="tag hot">头条</span></a></td>
+      <td>Karpathy / X</td>
+      <td>2026-05-11</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html" target="_blank">英伟达 400 亿 AI 投资 <span class="tag">投资</span></a></td>
-      <td>CNBC</td>
-      <td>2026-05-09</td>
+      <td><a href="https://cursor.com/blog/typescript-sdk" target="_blank">Cursor SDK 公测 <span class="tag">工具</span></a></td>
+      <td>Cursor</td>
+      <td>2026-05</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/" target="_blank">Cohere × Aleph Alpha · 主权 AI <span class="tag">合并</span></a></td>
-      <td>TechCrunch</td>
-      <td>2026-04-25</td>
+      <td><a href="https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026" target="_blank">Figma Make Skills <span class="tag">设计</span></a></td>
+      <td>Figma</td>
+      <td>2026-05</td>
     </tr>
     <tr>
       <td>04</td>
-      <td><a href="https://www.axios.com/2026/05/07/openai-gpt-55-cybersecurity-model" target="_blank">GPT-5.5 Cyber · 网络安全专用 <span class="tag">模型</span></a></td>
-      <td>Axios</td>
-      <td>2026-05-07</td>
+      <td><a href="https://www.businesswire.com/news/home/20260504231235/en/" target="_blank">63 亿 AI Take-Private <span class="tag">并购</span></a></td>
+      <td>Long Lake / Amex GBT</td>
+      <td>2026-05-04</td>
     </tr>
   </tbody>
 </table>
@@ -442,97 +434,84 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:02。
+  数据截至今日 UTC 06:03。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Training Data · 2026-05-08</p>
-  <p class="pc-title">ElevenLabs' Mati Staniszewski: How Voice Becomes the Interface for Everything</p>
-  <p class="pc-summary">
-    ElevenLabs CEO Mati Staniszewski 分享了公司的创业故事——灵感来自波兰看外国电影时所有角色由同一个男声平淡念出的奇特体验。如今 ElevenLabs 已超过 4 亿美元收入、400 人规模，但每个团队严格控制在 10 人以内。最具启发性的管理实践：每个非技术团队（法务、人事、市场）都嵌入一名工程师，帮助全员用 AI 提效。Mati 认为语音将成为与机器人和智能设备交互的主要界面，而信任验证将成为语音 AI 时代的核心基础设施。
-  </p>
-  <a href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">No Priors · 2026-05-11</p>
+  <p class="pc-title">Amex Global Business Travel: The World's First AI Take Private with Long Lake CEO Alexander Taubman</p>
+  <p class="pc-summary">Long Lake 创始人 Alex Taubman 深度解读世界首笔 AI 驱动 take-private 交易的逻辑：通过横向 AI 平台 Nexus 赋能收购企业的一线员工，实现「不裁员、纯增长」的 AI 转型模式。核心洞察：AI 让员工变得更高效后，他们不愿再去没有 AI 工具的公司——这才是真正的人才留存壁垒。</p>
+  <a href="https://www.youtube.com/watch?v=g5TWnUjbeFM" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
-
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SA</div>
+      <div class="builder-avatar">AK</div>
       <div>
-        <div class="builder-name">Sam Altman</div>
-        <div class="builder-handle">@sama · CEO, OpenAI</div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · ex-Tesla AI / OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「5.5 是一个有着奇怪命名品味的自闭天才。很震惊我们居然做出了这样的东西。」——GPT-5.5 发布后的自评，获得超六千赞，引发社区对模型"性格"的热议。</p>
+    <p class="builder-tweet">「让 LLM 输出 HTML 而不是 Markdown，然后在浏览器里看——效果好得离谱。人类大脑三分之一是视觉处理器，AI 输出正在从纯文本→Markdown→HTML→交互式神经视频方向进化。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 6188</span>
-      <a href="https://x.com/sama/status/2053192407664259251" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 13,038</span>
+      <a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">CW</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-name">Cat Wu</div>
+        <div class="builder-handle">@_catwu · Anthropic (Claude Code + Cowork)</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI 让更多人进入以前极度复杂的领域，但有经验的人占据巨大优势——他们知道 Agent 什么时候犯灾难性错误，能给 Agent 正确的上下文。民主化和专家价值并行上升，工作不会消失。」</p>
+    <p class="builder-tweet">「在终端运行 claude agents 可以开启一个控制面板，统一管理所有 Claude Code agent 会话。我个人喜欢从项目根目录运行，在一个地方管理所有 agent。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 321</span>
-      <a href="https://x.com/levie/status/2053267097493573921" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 327</span>
+      <a href="https://x.com/_catwu/status/2053999857799672111" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PY</div>
+      <div class="builder-avatar">AA</div>
       <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · Roblox Product</div>
+        <div class="builder-name">Amanda Askell</div>
+        <div class="builder-handle">@AmandaAskell · Anthropic (Philosophy & Ethics)</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI 使用陷阱：你偷懒不编辑 AI 生成的 markdown，5% 的 slop 变成 10%、然后更多。新内容参考旧内容，最终你面对一堆无法理解的 AI 生成 slop。」——对 AI 内容退化的精准观察，获近千赞。</p>
+    <p class="builder-tweet">「现在你可以听我和 Joe 朗读 Claude 的 constitution 有声书了。正在加快语速模式 :) AI 的宪法也有了自己的产品形态。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 961</span>
-      <a href="https://x.com/petergyang/status/2053170264121450616" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 416</span>
+      <a href="https://x.com/AmandaAskell/status/2054010971765805486" target="_blank">查看推文 →</a>
     </div>
   </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">GT</div>
-      <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · CEO, Y Combinator</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「GBrain v0.31.1 发布真正的 MCP thin client 支持。你可以运行一个'家庭 GBrain 服务器'，其他设备全部通过 MCP 连接。GBrain 刚刚变成了 client-server 架构。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 256</span>
-      <a href="https://x.com/garrytan/status/2053306243704410460" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
 </div>
 
-<!-- ─────────────────── FOOTER ─────────────────── -->
-<hr class="rule-heavy">
+<!-- FOOTER -->
 <footer>
-  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
-  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
-  © 2026 Daily Builders Digest
+  <strong>Daily Builders Digest</strong> · 产品星期三<br>
+  主持：大雨 × 小苇 · 2026-05-13<br>
+  「关注建造者，不要关注 influencer。」
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-11.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-11</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估...</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-10.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-10</span>

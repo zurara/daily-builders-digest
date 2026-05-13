@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-05-13">
+<meta property="og:description" content="Karpathy 宣告 HTML 时代 · Cursor SDK 公测 · Figma Make Skills · 63 亿 AI Take-Private">
+<title>Daily Builders Digest · 2026-05-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 44s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-05-13</p>
+  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <div class="header-meta">
+    <span>📅 2026·05·13 周三</span>
+    <span>🏷 主题：产品 Product</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 15 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>Karpathy：HTML 才是 AI 的默认输出格式</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cursor SDK 公测 — 编程 Agent 变可编程基础设施</span>
+    <span class="ticker-item"><span class="dot">▶</span>Figma Make Skills — 设计系统 × AI Agent 直接握手</span>
+    <span class="ticker-item"><span class="dot">▶</span>Long Lake 63 亿美元 AI Take-Private — 世界首笔</span>
+    <span class="ticker-item"><span class="dot">▶</span>Karpathy：HTML 才是 AI 的默认输出格式</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cursor SDK 公测 — 编程 Agent 变可编程基础设施</span>
+    <span class="ticker-item"><span class="dot">▶</span>Figma Make Skills — 设计系统 × AI Agent 直接握手</span>
+    <span class="ticker-item"><span class="dot">▶</span>Long Lake 63 亿美元 AI Take-Private — 世界首笔</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 15 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-05-13.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-13.mp3">下载音频</a>
+  </audio>
+</div>
+
+<!-- ─────────────────── NEWS ─────────────────── -->
+<p class="section-label">◈ 今日焦点 · 产品 · 精选四条</p>
+
+<div class="news-grid">
+
+  <!-- LEAD -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Karpathy 宣告：HTML 才是 AI 的默认输出格式，Markdown 时代该结束了</h2>
+    <p class="news-body">
+      Andrej Karpathy 在 X 上发帖——一万三千赞——提出 AI 输出格式的进化路线：纯文本 → Markdown → HTML → 交互式神经视频。人类大脑有三分之一是视觉处理器，是信息进入大脑的「十车道高速公路」。HTML 能做表格布局、SVG 图表、JavaScript 交互，而 Markdown 只是略好的纯文本。Anthropic 工程师 Thariq Shihipar 同期发文「HTML 的不合理有效性」，宣布完全弃用 Markdown。Salesforce Agentforce 已用「自适应响应格式」将 LLM 输出自动转成轮播卡片和富按钮——未来产品的竞争力在于答案以什么形态到达用户。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">Andrej Karpathy — X</a>
+    </p>
+  </div>
+
+  <!-- 02 -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">Cursor SDK 公测：编程 Agent 变成可编程基础设施</h2>
+    <p class="news-body">
+      Cursor 将 SDK 推进公测——一个 TypeScript API，让开发者用几行代码创建、运行和管理编程 Agent。支持本地或云端 VM 运行，按 token 消耗计费。早期用户已在用它自动修 bug、做代码摘要、故障根因分析。开发者工具的终局不是更好的 IDE，而是 Agent 基础设施——就像 Stripe 不是支付页面，而是支付基础设施。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://cursor.com/blog/typescript-sdk" target="_blank">Build programmatic agents — Cursor Blog</a>
+      &nbsp;·&nbsp;
+      <a href="https://devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/" target="_blank">DevOps.com</a>
+    </p>
+  </div>
+
+  <!-- 03 -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Figma Make Skills：设计系统和 AI Agent 直接握手</h2>
+    <p class="news-body">
+      Figma 五月更新发布 Make Skills——用 Markdown 文件定义可复用的设计规范，斜杠命令调用即自动遵守设计系统。MCP 服务器支持 Claude Code、Cursor 等十多个客户端，/prototype-to-figma 可将本地原型搬到 Figma 画布并关联设计系统组件。Make 还登陆 iOS/Android，真实手势预览。原型验证从「天」降到「分钟」。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026" target="_blank">Figma Release Notes — May 2026</a>
+      &nbsp;·&nbsp;
+      <a href="https://uxdesign.cc/how-to-make-claude-code-follow-your-design-system-in-figma-559618cffaa9" target="_blank">UX Collective</a>
+    </p>
+  </div>
+
+  <!-- 04 -->
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">Long Lake 63 亿美元收购 Amex GBT：世界首笔 AI Take-Private</h2>
+    <p class="news-body">
+      Long Lake Management 以 63 亿美元收购美国运通全球商务旅行——世界首笔 AI 驱动的 take-private 交易。其横向 AI 平台 Nexus 80% 基础设施跨行业共享，针对每家公司定制部署。创始人 Taubman 说，过去部署要一年，现在几天见效。收购后不裁员而驱动增长——HOA 业务年增长从 0-5% 跃升到 20%+。AI 产品的价值不在于好用的工具，而在于更好的业务结果。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.businesswire.com/news/home/20260504231235/en/" target="_blank">Long Lake Acquires Amex GBT — BusinessWire</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.youtube.com/watch?v=g5TWnUjbeFM" target="_blank">No Priors Podcast</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- INDEX TABLE -->
+<hr class="rule">
+<p class="section-label">◈ 新闻索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">HTML 是 AI 默认输出格式 <span class="tag hot">头条</span></a></td>
+      <td>Karpathy / X</td>
+      <td>2026-05-11</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://cursor.com/blog/typescript-sdk" target="_blank">Cursor SDK 公测 <span class="tag">工具</span></a></td>
+      <td>Cursor</td>
+      <td>2026-05</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026" target="_blank">Figma Make Skills <span class="tag">设计</span></a></td>
+      <td>Figma</td>
+      <td>2026-05</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.businesswire.com/news/home/20260504231235/en/" target="_blank">63 亿 AI Take-Private <span class="tag">并购</span></a></td>
+      <td>Long Lake / Amex GBT</td>
+      <td>2026-05-04</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 06:03。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · 2026-05-11</p>
+  <p class="pc-title">Amex Global Business Travel: The World's First AI Take Private with Long Lake CEO Alexander Taubman</p>
+  <p class="pc-summary">Long Lake 创始人 Alex Taubman 深度解读世界首笔 AI 驱动 take-private 交易的逻辑：通过横向 AI 平台 Nexus 赋能收购企业的一线员工，实现「不裁员、纯增长」的 AI 转型模式。核心洞察：AI 让员工变得更高效后，他们不愿再去没有 AI 工具的公司——这才是真正的人才留存壁垒。</p>
+  <a href="https://www.youtube.com/watch?v=g5TWnUjbeFM" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AK</div>
+      <div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · ex-Tesla AI / OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「让 LLM 输出 HTML 而不是 Markdown，然后在浏览器里看——效果好得离谱。人类大脑三分之一是视觉处理器，AI 输出正在从纯文本→Markdown→HTML→交互式神经视频方向进化。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 13,038</span>
+      <a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">CW</div>
+      <div>
+        <div class="builder-name">Cat Wu</div>
+        <div class="builder-handle">@_catwu · Anthropic (Claude Code + Cowork)</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「在终端运行 claude agents 可以开启一个控制面板，统一管理所有 Claude Code agent 会话。我个人喜欢从项目根目录运行，在一个地方管理所有 agent。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 327</span>
+      <a href="https://x.com/_catwu/status/2053999857799672111" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Amanda Askell</div>
+        <div class="builder-handle">@AmandaAskell · Anthropic (Philosophy & Ethics)</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「现在你可以听我和 Joe 朗读 Claude 的 constitution 有声书了。正在加快语速模式 :) AI 的宪法也有了自己的产品形态。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 416</span>
+      <a href="https://x.com/AmandaAskell/status/2054010971765805486" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Daily Builders Digest</strong> · 产品星期三<br>
+  主持：大雨 × 小苇 · 2026-05-13<br>
+  「关注建造者，不要关注 influencer。」
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-13",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Karpathy 宣告：HTML 才是 AI 的默认输出格式，Markdown 时代该结束了 · Cursor SDK 公测：编程 Agent 变成可编程基础设施",
+    "html": "episodes/2026-05-13.html",
+    "mp3": "episodes/2026-05-13.mp3",
+    "headlines": [
+      "Karpathy 宣告：HTML 才是 AI 的默认输出格式，Markdown 时代该结束了",
+      "Cursor SDK 公测：编程 Agent 变成可编程基础设施",
+      "Figma Make Skills：设计系统和 AI Agent 直接握手",
+      "Long Lake 63 亿美元收购 Amex GBT：世界首笔 AI Take-Private"
+    ]
+  },
+  {
     "date": "2026-05-11",
     "dow": 1,
     "topic": "AI",

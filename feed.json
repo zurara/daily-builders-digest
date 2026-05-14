@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-05-14",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Dr. Kentaro Fujita：自控力不是意志力——你需要一整套工具箱 · Peter Attia #391：结直肠癌筛查——最可预防的癌症，40 岁就该做结肠镜",
+    "html": "episodes/2026-05-14.html",
+    "mp3": "episodes/2026-05-14.mp3",
+    "headlines": [
+      "Huberman Lab × Dr. Kentaro Fujita：自控力不是意志力——你需要一整套工具箱",
+      "Peter Attia #391：结直肠癌筛查——最可预防的癌症，40 岁就该做结肠镜",
+      "FoundMyFitness Q&A #80：纳豆激酶、燕麦排 PFAS、APOE4 与 HRT",
+      "APOE4 携带者的 HRT 抉择：不存在\"一刀切\"的答案",
+      "了解自己，选择工具，持续执行——2026 年最务实的健康思维"
+    ]
+  },
+  {
     "date": "2026-05-13",
     "dow": 3,
     "topic": "Product",

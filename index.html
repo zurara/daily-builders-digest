@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-14">
-<meta property="og:description" content="健康星期四 · 自控力工具箱 · 结直肠癌筛查 · PFAS 排毒 · APOE4 与 HRT">
-<title>Daily Builders Digest · 2026-05-14</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-15">
+<meta property="og:description" content="Ai2 MolmoAct 2 开源机器人模型 · Google Gemma 4 Apache 2.0 · 美国政府 AI 预发布审查 · Physical Intelligence π0.7">
+<title>Daily Builders Digest · 2026-05-15</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 48s linear infinite;
+    animation: ticker 42s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -191,35 +191,6 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
-  /* ── SPOTLIGHT BLOCK ── */
-  .spotlight {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 32px;
-    margin-bottom: 2px;
-  }
-  .spotlight-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 10px;
-  }
-  .spotlight-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 14px;
-  }
-  .spotlight-body {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #ccc;
-  }
-  .spotlight-body strong { color: var(--bg); }
-
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -248,7 +219,10 @@
     color: var(--red);
     width: 48px;
   }
-  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a {
+    color: var(--ink);
+    text-decoration: none;
+  }
   .index-table td a:hover { text-decoration: underline; }
   .tag {
     display: inline-block;
@@ -267,12 +241,14 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
+
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -282,9 +258,9 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
-  .builder-likes { color: var(--mid); }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDERS ── */
+  /* ── DIVIDER ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
 
@@ -294,6 +270,8 @@
     .news-card.lead,
     .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
   }
@@ -315,29 +293,27 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-05-14</p>
-  <h1 class="header-title">健康<span>星期四</span></h1>
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-15</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
   <div class="header-meta">
-    <span>📅 2026·05·14 周四</span>
-    <span>🏷 主题：自控力工具箱 · 结直肠癌筛查 · PFAS 排毒 · APOE4</span>
+    <span>📅 2026·05·15 周五</span>
+    <span>🏷 主题：AI 新闻快报</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 18 分钟</span>
+    <span>⏱ 约 12 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Kentaro Fujita — 自控力不是意志力，而是一整套可学习的工具箱</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #391 — 结直肠癌：最可预防的癌症之一，40 岁就该做结肠镜</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A #80 — 纳豆激酶证据不足；燕麦 beta-glucan 或能帮助排出 PFAS</span>
-    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 — APOE4 携带者的 HRT 决策需要高度个性化</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 用"Why vs How"替代"咬牙忍住"：问自己为什么，而不是怎么忍</span>
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Kentaro Fujita — 自控力不是意志力，而是一整套可学习的工具箱</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #391 — 结直肠癌：最可预防的癌症之一，40 岁就该做结肠镜</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A #80 — 纳豆激酶证据不足；燕麦 beta-glucan 或能帮助排出 PFAS</span>
-    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 — APOE4 携带者的 HRT 决策需要高度个性化</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 用"Why vs How"替代"咬牙忍住"：问自己为什么，而不是怎么忍</span>
+    <span class="ticker-item"><span class="dot">▶</span>Ai2 MolmoAct 2 · 开源机器人基础模型 · 速度快 37 倍</span>
+    <span class="ticker-item"><span class="dot">▶</span>Google Gemma 4 · Apache 2.0 · 全球开源第三</span>
+    <span class="ticker-item"><span class="dot">▶</span>美国政府 AI 预发布审查 · 微软 Google xAI 签约</span>
+    <span class="ticker-item"><span class="dot">▶</span>Physical Intelligence π0.7 · 机器人零样本组合技能</span>
+    <span class="ticker-item"><span class="dot">▶</span>Ai2 MolmoAct 2 · 开源机器人基础模型 · 速度快 37 倍</span>
+    <span class="ticker-item"><span class="dot">▶</span>Google Gemma 4 · Apache 2.0 · 全球开源第三</span>
+    <span class="ticker-item"><span class="dot">▶</span>美国政府 AI 预发布审查 · 微软 Google xAI 签约</span>
+    <span class="ticker-item"><span class="dot">▶</span>Physical Intelligence π0.7 · 机器人零样本组合技能</span>
   </div>
 </div>
 
@@ -346,101 +322,77 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 健康星期四 · 约 18 分钟</span>
+    <span>大雨 × 小苇 · 约 12 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-14.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-14.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-05-15.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-15.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── 播客焦点 ─────────────────── -->
-<p class="section-label">◈ 本周健康播客 · 三个来源</p>
+<!-- ─────────────────── NEWS ─────────────────── -->
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
 
 <div class="news-grid">
 
-  <!-- LEAD: Huberman Lab -->
+  <!-- LEAD -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Huberman Lab × Dr. Kentaro Fujita：自控力不是意志力——你需要一整套工具箱</h2>
+    <h2 class="news-hed">Ai2 发布 MolmoAct 2——开源机器人基础模型走出实验室，速度快 37 倍</h2>
     <p class="news-body">
-      5 月 11 日发布的这期 Huberman Lab 请到了俄亥俄州立大学心理学教授 Kentaro Fujita 博士，他是自控力与动机科学的顶级专家。<br><br>
-      <strong>① 棉花糖实验的真相</strong>——经典棉花糖实验长期被误读为"天生意志力测试"。后续研究揭示，孩子能否等待取决于对环境的信任度，而非纯粹的自控力天赋。自控力是可以学习的。<br><br>
-      <strong>② Why vs How</strong>——面对诱惑时，问自己"为什么要做这件事"比"怎么忍住"更有效。抽象层面的思考会让你看到长期目标，削弱短期诱惑的吸引力。这是 Fujita 教授"构建层次理论"的核心：视角拉远，自控力自然提升。<br><br>
-      <strong>③ 蝙蝠侠效应</strong>——用第三人称跟自己对话，或者想象一个英雄角色会怎么做，能显著提升坚持力。心理距离是自控力最被低估的工具。<br><br>
-      <strong>④ 内在动机 &gt; 外在奖励</strong>——如果你本来就喜欢做某件事，给自己设奖励反而会降低兴趣（"过度理由效应"）。长期目标的最佳策略：找到任务本身让你享受的部分。他还引入了日本概念"ikigai"——在日常中找意义。
+      Allen Institute for AI 昨日正式发布 MolmoAct 2，一个完全开源的机器人基础模型。核心突破：推理速度从前代的 6700ms 降至 180ms（基础版），快了 37 倍；在行业标准测试上击败闭源竞品；无需逐任务微调，拿来即用。同步发布的 MolmoAct 2-Bimanual YAM 数据集包含超过 720 小时双臂操作训练数据，是目前最大的开源机器人操作数据集。斯坦福医学院已将其应用于 CRISPR 基因编辑实验的实验室操作自动化。目前限制：按批次规划动作，不支持实时连续调整；需在训练过的机器人平台上运行。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.hubermanlab.com/episode/master-self-control-overcome-procrastination-kentaro-fujita" target="_blank">Master Self Control & Overcome Procrastination | Dr. Kentaro Fujita — Huberman Lab</a>
+      📎 <a href="https://allenai.org/blog/molmoact2" target="_blank">Ai2 Blog</a>
+      &nbsp;·&nbsp;
+      <a href="https://roboticsandautomationnews.com/2026/05/14/ai2-releases-open-robotics-model-designed-for-real-world-ai-automation/101553/" target="_blank">Robotics & Automation News</a>
     </p>
   </div>
 
-  <!-- Peter Attia -->
+  <!-- 02 -->
   <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">Peter Attia #391：结直肠癌筛查——最可预防的癌症，40 岁就该做结肠镜</h2>
+    <h2 class="news-hed">Google Gemma 4 发布——Apache 2.0 许可，全球开源模型第三</h2>
     <p class="news-body">
-      Attia 的这期深度独讲聚焦结直肠癌（CRC）筛查。<br><br>
-      <strong>为什么重要</strong>——结肠镜既是诊断工具也是治疗工具：发现息肉当场切除，从源头阻断癌变路径。Attia 认为积极筛查理论上可以将 CRC 死亡率降低接近 100%。<br><br>
-      <strong>提前筛查</strong>——标准指南建议 45 岁开始，Attia 建议 40 岁。原因：年轻成年人中 CRC 发病率正在上升，而结肠镜风险极低、收益极高。<br><br>
-      <strong>质量把关</strong>——关键指标"腺瘤检出率"需 ≥25%。肠道准备质量直接影响检查效果。非侵入性检测（粪便 DNA、FIT）有用但不能替代结肠镜。
+      Google 发布 Gemma 4 系列，共四个尺寸（2B/4B/26B MoE/31B Dense）。31B 版本在 Arena AI 排行榜全球开源模型中排名第三。全系原生支持视频和图片，上下文窗口最高 256K。采用 Apache 2.0 许可，完全商业可用。专为高级推理和 agentic 工作流设计，是目前最强的免费可商用开源模型家族。
     </p>
     <p class="news-source">
-      📎 <a href="https://peterattiamd.com/colorectalcancerscreening/" target="_blank">#391 — Colorectal Cancer Screening — The Peter Attia Drive</a>
+      📎 <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank">Google Blog</a>
+      &nbsp;·&nbsp;
+      <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank">Google DeepMind</a>
     </p>
   </div>
 
-  <!-- FoundMyFitness -->
+  <!-- 03 -->
   <div class="news-card">
     <p class="news-num">03</p>
-    <h2 class="news-hed">FoundMyFitness Q&A #80：纳豆激酶、燕麦排 PFAS、APOE4 与 HRT</h2>
+    <h2 class="news-hed">美国政府介入 AI 预发布审查——微软、Google、xAI 签约 CAISI</h2>
     <p class="news-body">
-      Rhonda Patrick 在 4 月 20 日的 Q&A 中讨论了三个热门话题。<br><br>
-      <strong>纳豆激酶</strong>——体外和动物实验显示纤溶活性，但高质量人体 RCT 不足。如果你已服用处方血液稀释剂，不要自行加纳豆激酶。<br><br>
-      <strong>燕麦 beta-glucan 排 PFAS</strong>——小鼠研究显示燕麦 beta-glucan 可在肠道结合 PFAS 和甲基汞、促进排泄。早期信号，值得关注。如果你本来就吃燕麦，这是额外好消息。<br><br>
-      <strong>APOE4 与 HRT</strong>——详见下方女性健康聚焦。
+      NIST 下属 CAISI 宣布与 Google、微软、xAI 达成协议，在前沿 AI 模型公开发布前进行安全评估。开发者需提交去除安全护栏的模型版本供政府探测国安风险。此前 OpenAI 和 Anthropic 已于 2024 年参与。直接触发因素：Anthropic Mythos Preview 自主发现数千个零日漏洞，引发政府和金融机构的高度警觉。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.foundmyfitness.com/episodes/qa-80-dr-rhonda-patrick" target="_blank">Q&A #80 with Dr. Rhonda Patrick — FoundMyFitness</a>
+      📎 <a href="https://www.cnn.com/2026/05/05/tech/microsoft-google-xai-government-test-ai-models" target="_blank">CNN Business</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html" target="_blank">CNBC</a>
+    </p>
+  </div>
+
+  <!-- 04 -->
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">Physical Intelligence π0.7——第一个能零样本组合技能的机器人基础模型</h2>
+    <p class="news-body">
+      Physical Intelligence 发布 π0.7，首个在咖啡制作和洗衣等实际任务上匹配甚至超越专门 RL 策略的机器人基础模型。关键突破：能将已学技能零样本组合，完成从未训练过的多步骤厨房工作流程。与 Ai2 的 MolmoAct 2 并列，标志着机器人基础模型赛道正在快速成形。企业应用方面，Ramp 的采购 agent 已实现 3 倍加速和 16% 成本削减。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://press.airstreet.com/p/state-of-ai-may-2026" target="_blank">Air Street Press</a>
     </p>
   </div>
 
 </div>
 
-<!-- ─────────────────── SPOTLIGHT: 女性健康 ─────────────────── -->
+<!-- INDEX TABLE -->
 <hr class="rule">
-<p class="section-label">◈ 女性健康聚焦 · APOE4 携带者与激素替代疗法</p>
-
-<div class="spotlight">
-  <p class="spotlight-label">🔬 深度聚焦 · Women's Health Spotlight</p>
-  <h2 class="spotlight-hed">APOE4 携带者的 HRT 抉择：不存在"一刀切"的答案</h2>
-  <p class="spotlight-body">
-    Rhonda Patrick 在 Q&A #80 中深入讨论了 APOE4 基因与激素替代疗法的交叉地带。<br><br>
-    <strong>背景：</strong>约 25% 的人携带至少一个 APOE4 等位基因——这是阿尔茨海默病最主要的遗传风险因子。对围绝经期和绝经期女性来说，HRT 能缓解潮热、骨质流失等症状，但对认知的影响因人而异。<br><br>
-    <strong>关键发现：</strong>携带 APOE4 的女性在 HRT 的获益-风险平衡上，与非携带者可能存在显著差异。HRT 的认知保护效果可能在 APOE4 携带者身上打折扣，甚至在某些情况下可能不利。<br><br>
-    <strong>与 Attia 的呼应：</strong>这正好印证了 Attia 一贯强调的理念——<strong>健康决策高度个性化。家族史和基因信息不是"额外加分"，而是决策的基础。</strong><br><br>
-    <strong>实际建议：</strong>如果你是围绝经期女性，或者家族中有阿尔茨海默病史——考虑做 APOE 基因检测，并与了解这个领域的医生制定个性化 HRT 方案。了解自己的风险因子本身就是最好的第一步。
-  </p>
-</div>
-
-<!-- ─────────────────── 编辑洞察 ─────────────────── -->
-<hr class="rule">
-<p class="section-label">◈ 编辑洞察 · 三个来源的交汇点</p>
-
-<div class="spotlight">
-  <p class="spotlight-label">🧭 Editor's Insight</p>
-  <h2 class="spotlight-hed">了解自己，选择工具，持续执行——2026 年最务实的健康思维</h2>
-  <p class="spotlight-body">
-    今天三个播客从完全不同的角度指向了一个相似的底层逻辑：<strong>最好的健康策略不是某一个维度的极端优化，而是一个系统。</strong><br><br>
-    Fujita 给了心理层——自控力是一个可以学习的工具箱，不是天赋。"Why vs How"、"蝙蝠侠效应"、内在动机——用聪明的策略替代蛮力。<br><br>
-    Attia 给了策略层——结直肠癌筛查告诉我们：主动筛查比被动等待强一百倍，筛查策略需要个性化，质量把关不能含糊。<br><br>
-    Patrick 给了分子层——从纳豆激酶到 PFAS 到 APOE4，每个人的生物化学背景不同，同样的干预效果也不同。<br><br>
-    <strong>交集：了解自己，选择适合自己的工具，然后持续执行。这就是 2026 年最务实的健康思维。</strong>
-  </p>
-</div>
-
-<!-- ─────────────────── INDEX ─────────────────── -->
-<hr class="rule">
-<p class="section-label">◈ 本周健康来源索引</p>
+<p class="section-label">◈ 新闻索引</p>
 <table class="index-table">
   <thead>
     <tr>
@@ -453,21 +405,27 @@
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://www.hubermanlab.com/episode/master-self-control-overcome-procrastination-kentaro-fujita" target="_blank">Master Self Control & Overcome Procrastination | Dr. Kentaro Fujita</a> <span class="tag hot">New</span></td>
-      <td>Huberman Lab</td>
-      <td>2026-05-11</td>
+      <td><a href="https://allenai.org/blog/molmoact2" target="_blank">Ai2 MolmoAct 2 · 开源机器人模型 <span class="tag hot">头条</span></a></td>
+      <td>Ai2</td>
+      <td>2026-05-14</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://peterattiamd.com/colorectalcancerscreening/" target="_blank">#391 — Colorectal Cancer Screening</a> <span class="tag hot">New</span></td>
-      <td>The Peter Attia Drive</td>
-      <td>2026-05</td>
+      <td><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank">Google Gemma 4 · Apache 2.0 <span class="tag">开源</span></a></td>
+      <td>Google</td>
+      <td>2026-05-05</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://www.foundmyfitness.com/episodes/qa-80-dr-rhonda-patrick" target="_blank">Q&A #80 — Nattokinase, PFAS, APOE4 & HRT</a></td>
-      <td>FoundMyFitness</td>
-      <td>2026-04-20</td>
+      <td><a href="https://www.cnn.com/2026/05/05/tech/microsoft-google-xai-government-test-ai-models" target="_blank">美国 AI 预发布审查 · CAISI <span class="tag">监管</span></a></td>
+      <td>CNN</td>
+      <td>2026-05-05</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://press.airstreet.com/p/state-of-ai-may-2026" target="_blank">Physical Intelligence π0.7 <span class="tag">机器人</span></a></td>
+      <td>Air Street</td>
+      <td>2026-05</td>
     </tr>
   </tbody>
 </table>
@@ -480,82 +438,74 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-05-14T06:00。
+  数据截至今日 UTC 06:03。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Huberman Lab · 2026-05-11</p>
-  <p class="pc-title">Master Self Control & Overcome Procrastination | Dr. Kentaro Fujita</p>
-  <p class="pc-summary">俄亥俄州立大学心理学教授 Kentaro Fujita 带来了一套完整的自控力工具箱。核心洞见：自控力不等于意志力，硬撑是最低效的策略。更好的方法包括抽象思考（Why vs How）、心理距离（蝙蝠侠效应）、培养内在动机、以及用"侘寂"哲学接纳不完美。这是把认知心理学变成日常工具的一期节目。</p>
-  <a href="https://www.hubermanlab.com/episode/master-self-control-overcome-procrastination-kentaro-fujita" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Training Data · 2026-05-13</p>
+  <p class="pc-title">Suno's Mikey Shulman: Everyone Can Make Music Now</p>
+  <p class="pc-summary">
+    Suno 创始人 Mikey Shulman 从哈佛量子物理博士转身建造了全球最大的 AI 音乐平台，年化收入 3 亿美元。核心洞察：Suno 上 90% 的用户每天都在创作，创作本身就是娱乐——他称之为 creative entertainment。技术上，团队故意不教模型任何音乐理论（十二平均律、乐器种类），而是让模型从原始声波开始学习，从而创造出全新的声音和跨流派融合。他认为音乐模型与 LLM 本质不同：模型不大、scale 帮助有限，真正的突破来自研究和用户偏好数据的飞轮。
+  </p>
+  <a href="https://www.youtube.com/watch?v=Jq3BIGz4vXQ" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
+
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AH</div>
+      <div class="builder-avatar">PY</div>
       <div>
-        <div class="builder-name">Andrew Huberman</div>
-        <div class="builder-handle">@hubermanlab · Stanford / Huberman Lab</div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Roblox Product</div>
       </div>
     </div>
-    <p class="builder-tweet">「新一期 Huberman Lab 上线：Master Self Control & Overcome Procrastination，嘉宾 Dr. Kentaro Fujita。涵盖棉花糖实验真相、自控力工具箱、动机类型、内在动机与 ikigai。」</p>
+    <p class="builder-tweet">「2026 年 Q1 超过 8 万名科技员工被裁，是 2022-23 年以来最高水平。很多公司把裁员归咎于 AI，但真相是零利率时代过度招人，AI 只是一个方便的借口。」——附长文分析裁员真实原因和 6 个员工自救策略。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ —</span>
-      <a href="https://x.com/hubermanlab/status/2053837530022457738" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 60</span>
+      <a href="https://x.com/petergyang/status/2054569893060809151" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">BJ</div>
+      <div class="builder-avatar">NK</div>
       <div>
-        <div class="builder-name">Bryan Johnson</div>
-        <div class="builder-handle">@bryan_johnson · Blueprint / 逆龄先驱</div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner, FPV Ventures</div>
       </div>
     </div>
-    <p class="builder-tweet">「想在 2026 年优先健康、或者跟我一起玩'2039 年永生'游戏的人——Blueprint 正在打造全球最全面的抗衰老协议和基础设施：生物标志物、营养、处方药、头发、皮肤、社交……」</p>
+    <p class="builder-tweet">「VC 已经完全成了共识资本。如果你是为了创业而创业的创始人，你需要资本来运营业务。但如果你是真正痴迷于问题的人，你会把每次被拒绝当作学习——而不是放弃创业的理由。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ —</span>
-      <a href="https://x.com/bryan_johnson/status/2006797599786049637" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 159</span>
+      <a href="https://x.com/nikunj/status/2054599845214650442" target="_blank">查看推文 →</a>
     </div>
   </div>
 
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PA</div>
-      <div>
-        <div class="builder-name">Peter Attia</div>
-        <div class="builder-handle">@PeterAttiaMD · The Drive / 长寿医学</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「结直肠癌筛查——早期发现结肠癌是延缓死亡路径上最容易摘到的果实之一。做肠道准备不是最愉快的一天，但值得。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ —</span>
-      <a href="https://x.com/PeterAttiaMD/status/1521521075779211265" target="_blank">查看推文 →</a>
-    </div>
-  </div>
 </div>
 
 <!-- ─────────────────── FOOTER ─────────────────── -->
 <hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 每日建造者快报<br>
-  由 AI 辅助生成 · 人类编辑审核<br>
-  主持：大雨 × 小苇<br>
-  📬 反馈与建议：zurara@orthogonal.dev<br><br>
-  「关注建造者，不要关注 influencer。」<br>
-  数据来源：<a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a>
-  · Huberman Lab · The Peter Attia Drive · FoundMyFitness
+  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
+  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
+  © 2026 Daily Builders Digest
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-14.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-14</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Kentaro Fujita：自控力不是意志力——你需要一整套工具箱</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-13.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-13</span>

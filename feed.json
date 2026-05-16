@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-05-16",
+    "title": "周六书籍介绍 · I Am Not a Robot · Joanna Stern",
+    "description": "一位科技记者用一整年的时间让AI接管生活，发现了什么？",
+    "html": "episodes/2026-05-16.html",
+    "mp3": "episodes/2026-05-16.mp3"
+  },
+  {
     "date": "2026-05-15",
     "dow": 5,
     "topic": "AI",

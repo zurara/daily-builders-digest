@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-18",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型 · OpenAI-Microsoft 合作重构——非独家许可、AGI 条款删除、多云开放",
+    "html": "episodes/2026-05-18.html",
+    "mp3": "episodes/2026-05-18.mp3",
+    "headlines": [
+      "Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型",
+      "OpenAI-Microsoft 合作重构——非独家许可、AGI 条款删除、多云开放",
+      "Cloudflare 裁员 1100 人——AI 使用增长 600%，营收创历史新高",
+      "Garry Tan 开源 GBrain——给 AI Agent 装上长期记忆的八层知识系统"
+    ]
+  },
+  {
     "date": "2026-05-17",
     "dow": 7,
     "topic": "Podcasts",

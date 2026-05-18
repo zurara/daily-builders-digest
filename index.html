@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-17">
-<meta property="og:description" content="周日播客精选 · Yann LeCun 反 LLM 宣言 · 精益创业 AI 版 · Tokenmaxxing">
-<title>Daily Builders Digest · 2026-05-17</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-18">
+<meta property="og:description" content="Apple Intelligence 开放第三方 AI · OpenAI-Microsoft 合作重构 · Cloudflare AI 裁员 1100 人 · Garry Tan 开源 GBrain">
+<title>Daily Builders Digest · 2026-05-18</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -138,96 +138,110 @@
     margin-bottom: 24px;
   }
 
-  /* ── PODCAST DEEP DIVE ── */
-  .deep-dive {
-    margin-bottom: 48px;
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
   }
-  .deep-dive-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
     color: var(--red);
+    letter-spacing: .08em;
     margin-bottom: 8px;
   }
-  .deep-dive h2 {
+  .news-hed {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.3;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
-  .deep-dive .meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--mid);
-    margin-bottom: 18px;
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
   }
-  .deep-dive .body {
-    font-size: 15px;
-    line-height: 1.75;
-    color: #222;
-  }
-  .deep-dive .body p { margin-bottom: 14px; }
-  .deep-dive .body strong { color: var(--ink); }
-  .deep-dive .source {
-    margin-top: 18px;
+  .news-source {
+    margin-top: 14px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: .06em;
     color: var(--mid);
   }
-  .deep-dive .source a { color: var(--red); text-decoration: none; }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
 
-  /* ── BRIEF CARDS ── */
-  .briefs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1px;
-    background: var(--light);
-    border: 1px solid var(--light);
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
     margin-bottom: 48px;
   }
-  .brief-card {
-    background: var(--bg);
-    padding: 24px;
-  }
-  .brief-card .brief-show {
+  .index-table th {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 6px;
-  }
-  .brief-card h3 {
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
-  .brief-card .brief-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    padding: 2px 6px;
+    background: var(--light);
     color: var(--mid);
-    margin-bottom: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
   }
-  .brief-card .brief-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #333;
-  }
-  .brief-card .brief-source {
-    margin-top: 12px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--mid);
-  }
-  .brief-card .brief-source a { color: var(--red); text-decoration: none; }
+  .tag.hot { background: var(--red); color: #fff; }
 
-  /* ── BUILDERS ── */
+  /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
+
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
   .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
   .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
@@ -252,9 +266,14 @@
 
   /* ── MOBILE ── */
   @media (max-width: 540px) {
-    .header { padding: 28px 0 20px; }
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
-    .deep-dive h2 { font-size: 20px; }
+    .header { padding: 28px 0 20px; }
   }
 
   /* ── FOOTER ── */
@@ -274,11 +293,11 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">周日播客精选 · 每日播客 · Vol.2026-05-17</p>
-  <h1 class="header-title">周日<span>播客</span><br>精选</h1>
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-18</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
   <div class="header-meta">
-    <span>📅 2026·05·17 周日</span>
-    <span>🏷 主题：播客精选</span>
+    <span>📅 2026·05·18 周一</span>
+    <span>🏷 主题：AI 新闻快报</span>
     <span>🎙 主持：大雨 × 小苇</span>
     <span>⏱ 约 12 分钟</span>
   </div>
@@ -287,14 +306,14 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Yann LeCun 反 LLM 宣言 · V-JEPA 架构 · 离开 Meta 创业</span>
-    <span class="ticker-item"><span class="dot">▶</span>Eric Ries 精益创业 AI 版 · Build-Measure-Learn 加速</span>
-    <span class="ticker-item"><span class="dot">▶</span>Tokenmaxxing · 亚马逊开发者疯狂消耗 Token · 企业资源管理</span>
-    <span class="ticker-item"><span class="dot">▶</span>100 个 Codex 实例 · Agent-Native 开发 · Headless Software</span>
-    <span class="ticker-item"><span class="dot">▶</span>Yann LeCun 反 LLM 宣言 · V-JEPA 架构 · 离开 Meta 创业</span>
-    <span class="ticker-item"><span class="dot">▶</span>Eric Ries 精益创业 AI 版 · Build-Measure-Learn 加速</span>
-    <span class="ticker-item"><span class="dot">▶</span>Tokenmaxxing · 亚马逊开发者疯狂消耗 Token · 企业资源管理</span>
-    <span class="ticker-item"><span class="dot">▶</span>100 个 Codex 实例 · Agent-Native 开发 · Headless Software</span>
+    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · Claude / Gemini 接入 iOS 27</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI-Microsoft 合作重构 · 非独家许可 · AGI 条款删除</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cloudflare 裁员 1100 人 · AI 使用增长 600% · 营收创新高</span>
+    <span class="ticker-item"><span class="dot">▶</span>Garry Tan 开源 GBrain · AI agent 记忆系统 · MIT 许可</span>
+    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · Claude / Gemini 接入 iOS 27</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI-Microsoft 合作重构 · 非独家许可 · AGI 条款删除</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cloudflare 裁员 1100 人 · AI 使用增长 600% · 营收创新高</span>
+    <span class="ticker-item"><span class="dot">▶</span>Garry Tan 开源 GBrain · AI agent 记忆系统 · MIT 许可</span>
   </div>
 </div>
 
@@ -305,60 +324,113 @@
     <strong>今日播客</strong>
     <span>大雨 × 小苇 · 约 12 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-17.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-17.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-05-18.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-18.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── MAIN PICK ─────────────────── -->
-<p class="section-label">◈ 本周主打 · Deep Dive</p>
+<!-- ─────────────────── NEWS ─────────────────── -->
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
 
-<div class="deep-dive">
-  <p class="deep-dive-label">🎧 Unsupervised Learning (Redpoint) · 2026-05-15</p>
-  <h2>Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton 的根本分歧</h2>
-  <p class="meta">嘉宾：Yann LeCun · 图灵奖得主 / 前 Meta 首席 AI 科学家 · Ep 86</p>
+<div class="news-grid">
 
-  <div class="body">
-    <p>这期节目是 LeCun 离开 Meta 后最深入的一次公开对话。核心论点非常明确：<strong>大语言模型的自回归范式走不远，LLM 只是在做 token 级别的模式匹配，缺乏真正的世界模型。</strong></p>
-
-    <p><strong>V-JEPA：在表征空间而非 token 空间做预测。</strong> LeCun 在 Meta 开发的联合嵌入预测架构（V-JEPA）是他创业的核心。类比来说——你看到苹果从桌子滚下去，大脑不需要逐帧渲染画面，而是在更高层的抽象空间里预测结果。V-JEPA 就是要教会机器做同样的事情。他创办了自己的 AI 公司，要把这个研究项目变成产品。</p>
-
-    <p><strong>与 Hinton 的世界观分歧。</strong> 这是全期最精彩的部分。Hinton 认为当前的深度学习路径——包括 LLM 和 Transformer——已经在通向通用智能的正确道路上，他担心的是安全和控制问题。而 LeCun 认为方向本身就错了。Hinton 担心走得太快会出事，LeCun 担心走错了路。</p>
-
-    <p><strong>这个分歧有非常实际的影响。</strong> 如果 LeCun 是对的，所有在 LLM 上重注投入的公司——从 OpenAI 到 Anthropic 到 Google——都需要在某个时间点做范式切换。如果 Hinton 是对的，scaling law 会继续 work，推理能力随规模提升。最可能的未来或许是混合架构：LLM 的语言理解加上 JEPA 的世界模型。</p>
-
-    <p><strong>不管你站哪一边，他提出的问题是行业需要直面的：我们是在正确的道路上跑得更快，还是根本就需要一条新路？</strong></p>
+  <!-- LEAD -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型</h2>
+    <p class="news-body">
+      据彭博社报道，Apple 正在内部测试 Google Gemini 和 Anthropic Claude 的集成，计划今秋在 iOS 27、iPadOS 27 和 macOS 27 中推出"Extensions"功能。用户将可以在设置中自由选择 AI 模型来驱动 Siri、写作工具、Image Playground 等所有 Apple Intelligence 功能。这标志着 Apple 从 AI 供应商角色转向 AI 分发平台。OpenAI 据报道对此不满，可能考虑法律行动。此举意味着 Anthropic 和 Google 将获得直达十几亿 iPhone 用户的通道。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Bloomberg</a>
+      &nbsp;·&nbsp;
+      <a href="https://9to5mac.com/2026/05/05/ios-27-will-let-you-choose-between-gemini-claude-and-more-for-ai-features-report/" target="_blank">9to5Mac</a>
+    </p>
   </div>
-  <p class="source">📎 <a href="https://www.youtube.com/@RedpointAI" target="_blank">Unsupervised Learning — YouTube</a></p>
+
+  <!-- 02 -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">OpenAI-Microsoft 合作重构——非独家许可、AGI 条款删除、多云开放</h2>
+    <p class="news-body">
+      4 月底公布的新协议中，Microsoft 对 OpenAI IP 的许可变为非独家（延续至 2032 年），OpenAI 可在 AWS、Google Cloud、Oracle 等任何云平台提供服务。AGI 条款被删除，收入分成设上限。双方从"深度绑定"走向"战略合作但各自独立"，标志着 AI 产业格局从独家联盟转向多方竞争。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.cnbc.com/2026/04/27/openai-microsoft-partnership-revenue-cap.html" target="_blank">CNBC</a>
+      &nbsp;·&nbsp;
+      <a href="https://openai.com/index/next-phase-of-microsoft-partnership/" target="_blank">OpenAI Blog</a>
+    </p>
+  </div>
+
+  <!-- 03 -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Cloudflare 裁员 1100 人——AI 使用增长 600%，营收创历史新高</h2>
+    <p class="news-body">
+      Cloudflare 裁掉约 20% 员工（1100 人），CEO Matthew Prince 将原因直指 AI：内部 AI 使用量三个月增 600%，AI agent 已深入 HR、市场、财务等部门。同周 Upwork 裁 24%（145 人），Coinbase 等也在裁。特殊之处在于：企业在盈利状态下裁员。斯坦福 AI Index 报告称生成式 AI 三年达 53% 渗透率，超过 PC 和互联网。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/" target="_blank">TechCrunch</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.fastcompany.com/91538995/tech-layoffs-due-to-ai-this-week-cloudflare-paypal-coinbase-upwork" target="_blank">Fast Company</a>
+    </p>
+  </div>
+
+  <!-- 04 -->
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">Garry Tan 开源 GBrain——给 AI Agent 装上长期记忆的八层知识系统</h2>
+    <p class="news-body">
+      Y Combinator 掌门人 Garry Tan 开源了 GBrain，一个给 AI agent 提供长期记忆的知识图谱系统。八层架构将 Markdown 笔记变为自动连线的知识网络，底层用 Git + PostgreSQL/pgvector 做混合搜索。最酷的"dream cycles"功能让 agent 在用户睡觉时自动整理知识库。MIT 许可，发布首日 5400 星，目前超 14000。社区争议：核心功能是 Markdown 指令文档而非可执行代码——但这本身或许正是 AI 编程的新范式。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://x.com/garrytan/status/2055670533451366479" target="_blank">Garry Tan on X</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/garrytan/gstack" target="_blank">GitHub</a>
+    </p>
+  </div>
+
 </div>
 
-<!-- ─────────────────── OTHER PICKS ─────────────────── -->
+<!-- INDEX TABLE -->
 <hr class="rule">
-<p class="section-label">◈ 本周其他精选 · Quick Picks</p>
-
-<div class="briefs-grid">
-
-  <div class="brief-card">
-    <p class="brief-show">Lenny's Podcast · 2026-05-10</p>
-    <h3>精益创业之父 Eric Ries：AI 时代，如何建造一家能经受任何时代考验的公司</h3>
-    <p class="brief-meta">嘉宾：Eric Ries · 《精益创业》作者</p>
-    <div class="brief-body">
-      AI 让构建东西变得极其便宜，build-measure-learn 循环可以转得更快。但危险在于——人们因为构建太容易而跳过了"measure"和"learn"。Vibe coding 让每个人都能盖房子，但大多数人盖出来的是没有地基的房子。能经受任何时代考验的公司，核心能力不是技术，而是持续学习和适应的系统。
-    </div>
-    <p class="brief-source">📎 <a href="https://www.lennysnewsletter.com/p/how-to-build-a-company-that-withstands" target="_blank">Lenny's Podcast</a></p>
-  </div>
-
-  <div class="brief-card">
-    <p class="brief-show">No Priors · 2026-05-12</p>
-    <h3>亚马逊开发者在 "Tokenmaxxing"，SpaceX × Google 合作，Anthropic 法律挑战</h3>
-    <p class="brief-meta">Ep 461 · Elad Gil & Sarah Guo</p>
-    <div class="brief-body">
-      亚马逊开发者疯狂使用 AI 编码工具，token 消耗巨大，管理层被迫思考 token 资源分配——"tokenmaxxing"成为新词。同时讨论了 SpaceX 与 Google 的连接与 AI 基础设施合作，以及 AI 公司在训练和部署模型上面临的日益清晰的法律边界。
-    </div>
-    <p class="brief-source">📎 <a href="https://podcasts.apple.com/us/podcast/amazon-devs-tokenmaxxing-spacex-google-collab-anthropic/id1669990482?i=1000767470802" target="_blank">Apple Podcasts</a></p>
-  </div>
-
-</div>
+<p class="section-label">◈ 新闻索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Apple Intelligence 开放第三方 AI <span class="tag hot">头条</span></a></td>
+      <td>Bloomberg</td>
+      <td>2026-05-05</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://www.cnbc.com/2026/04/27/openai-microsoft-partnership-revenue-cap.html" target="_blank">OpenAI-Microsoft 合作重构 <span class="tag">合作</span></a></td>
+      <td>CNBC</td>
+      <td>2026-04-27</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/" target="_blank">Cloudflare AI 裁员 1100 人 <span class="tag">裁员</span></a></td>
+      <td>TechCrunch</td>
+      <td>2026-05-08</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://x.com/garrytan/status/2055670533451366479" target="_blank">Garry Tan 开源 GBrain <span class="tag">开源</span></a></td>
+      <td>X / GitHub</td>
+      <td>2026-05-16</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -368,18 +440,18 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 10:00。
+  数据截至今日 UTC 06:04。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
-  <p class="pc-label">🎙 本周播客主打</p>
-  <p class="pc-show">Unsupervised Learning (Redpoint) · 2026-05-15</p>
-  <p class="pc-title">Ep 86: Yann LeCun on Leaving Meta, Breaking The LLM Paradigm, & Why Hinton is Wrong</p>
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · 2026-05-14</p>
+  <p class="pc-title">Pax Silica: Inside the Trump Administration's Tech Strategy with Jacob Helberg</p>
   <p class="pc-summary">
-    图灵奖得主 LeCun 离开 Meta 后首次深度访谈。核心论点：LLM 的自回归范式缺乏世界模型，V-JEPA 才是通向通用智能的正确路径。与 Hinton 的根本分歧——一个担心走得太快，一个担心走错了路。
+    美国国务院副国务卿 Jacob Helberg 详谈 Pax Silica——一个由 14 国组成的经济安全联盟，目标是确保 AI 供应链安全。最亮眼的细节：美国在菲律宾获得 4000 英亩土地（曼哈顿面积的三分之一）建设"前沿部署工业基地"，重点关注机器人供应链脱中。Helberg 对比了中国"一带一路"的教训，强调美国版本以私营企业主导、正和博弈为核心逻辑。
   </p>
-  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://www.youtube.com/watch?v=xjlYpGaxIPA" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
@@ -387,84 +459,501 @@
 
   <div class="builder-card">
     <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「GBrain 是什么？它不是 RAG-in-a-box，而是一个知识系统。八层结构协同工作，让你的 AI agent 对你了如指掌。个人 AI 由此成为可能。」——开源发布，MIT 许可，14000+ GitHub 星标。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1231</span>
+      <a href="https://x.com/garrytan/status/2055670533451366479" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
       <div class="builder-avatar">PS</div>
       <div>
         <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · OpenClaw 创始人</div>
+        <div class="builder-handle">@steipete · OpenClaw / OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们同时运行大约 100 个 Codex 实例——审查 PR、检查安全漏洞、关闭陈旧 issue、在会议中自动创建 PR。我要回答的问题是：如果 token 不再是稀缺资源，我们该怎么构建软件？」</p>
+    <p class="builder-tweet">「去掉你 Claude Code 里的 slop，如果你还没切换到 Codex 的话。」——呼吁开发者注重 AI 生成代码的质量，而不是只追求速度。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 3,727</span>
-      <a href="https://x.com/steipete/status/2055405041843052792" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 344</span>
+      <a href="https://x.com/steipete/status/2055747016727167035" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">ZZ</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel CEO</div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder</div>
       </div>
     </div>
-    <p class="builder-tweet">「如果你在管理 agent 方面很出色，同时又对基本功有深度理解，你就不可阻挡。我们都更愿意和真正精通自己领域的人共事。新变化是：你不能再忽视 agent 对产出的放大效应。」</p>
+    <p class="builder-tweet">「AI psychosis：每天在两种心理状态间循环——用了 coding agent 后觉得自己无所不能；刷完推特后觉得自己彻底落后。」——精准描述了当下建造者的日常心理。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,863</span>
-      <a href="https://x.com/rauchg/status/2055278852931530784" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">AL</div>
-      <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Headless software is the future。AI 不是传统软件——交付了就完了。模型在不断进化，最佳实践在不断变化。Forward deployed engineering 在 AI 时代将成为核心竞争力。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 251 + 220</span>
-      <a href="https://x.com/levie/status/2055357619888595271" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">DS</div>
-      <div>
-        <div class="builder-name">Dan Shipper</div>
-        <div class="builder-handle">@danshipper · Every CEO</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Codex-native apps are the future.」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 284</span>
-      <a href="https://x.com/danshipper/status/2055451869841965154" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 136</span>
+      <a href="https://x.com/zarazhangrui/status/2055728641913536762" target="_blank">查看推文 →</a>
     </div>
   </div>
 
 </div>
 
-<!-- ─────────────────── CLOSING ─────────────────── -->
-<hr class="rule">
-<p class="section-label">◈ 这周你打算听哪一集？</p>
-<p style="font-size:15px; line-height:1.75; color:#222; margin-bottom:32px;">
-  本周的播客主线聚焦在一个根本问题上：<strong>我们是在正确的道路上跑得更快，还是需要一条全新的路？</strong> LeCun 用自己的创业押注"需要新路"，Eric Ries 提醒我们无论走哪条路都需要好的学习循环，而 tokenmaxxing 现象则说明——不管范式之争如何收场，开发者已经在用脚投票了。
-  <br><br>
-  LeCun 那期必听。不管你同不同意他，这种 skin in the game 的人说的话，分量不一样。
-  <br><br>
-  欢迎在评论区告诉我们，你最想完整听哪一集。我们下期见——关注建造者，周一不见不散。
-</p>
-
+<!-- ─────────────────── FOOTER ─────────────────── -->
+<hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · 周日播客精选<br>
-  「关注建造者，不要关注 influencer。」<br>
-  数据来源：follow-builders · Unsupervised Learning · Lenny's Podcast · No Priors · X/Twitter<br>
+  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
+  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
   © 2026 Daily Builders Digest
 </footer>
 
-<hr class="rule-heavy" style="margin-top:56px"><p class="section-label">◈ 往期回顾 · 近两周节目</p><div class="ep-grid"><a class="ep-card" href="/episodes/2026-05-16.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-16</span><span class="ep-card-badge" style="color:#888;border-color:#888"></span></div><span class="ep-card-hl">周六书籍介绍 · I Am Not a Robot · Joanna Stern</span></a><a class="ep-card" href="/episodes/2026-05-15.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-15</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Ai2 发布 MolmoAct 2——开源机器人基础模型走出实验室，速度快 37 倍</span></a><a class="ep-card" href="/episodes/2026-05-14.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-14</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Dr. Kentaro Fujita：自控力不是意志力——你需要一整套工具箱</span></a><a class="ep-card" href="/episodes/2026-05-13.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-13</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">Karpathy 宣告：HTML 才是 AI 的默认输出格式，Markdown 时代该结束了</span></a><a class="ep-card" href="/episodes/2026-05-11.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-11</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估...</span></a><a class="ep-card" href="/episodes/2026-05-10.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-10</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">Claude 平台的秘密：Anthropic 产品 + 工程负责人首次公开设计哲学</span></a><a class="ep-card" href="/episodes/2026-05-09.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-09</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">2026-05-09 今日快报</span></a><a class="ep-card" href="/episodes/2026-05-08.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-08</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes...</span></a><a class="ep-card" href="/episodes/2026-05-07.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-07</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Dr. Paul Conti：从优势出发的心理健康工具——用好奇心替代自我批判</span></a><a class="ep-card" href="/episodes/2026-05-06.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-06</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">Vercel deepsec：开源 AI Agent 安全审查工具，用千个 Agent 并行扫描代码库</span></a><a class="ep-card" href="/episodes/2026-05-05.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-05</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">Meta 收购人形机器人创业公司 ARI——大厂争夺 Physical AI 人才</span></a><a class="ep-card" href="/episodes/2026-05-04.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-04</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">五角大楼与八家科技公司签署 AI 合同——Anthropic 因拒绝军方使用条款被排除在外</span></a><a class="ep-card" href="/episodes/2026-05-03.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-03</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">Baseten CEO Tuhin Srivastava：AI 推理危机、定制模型与推理云的未来</span></a><a class="ep-card" href="/episodes/2026-05-02.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-02</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">2026-05-02 今日快报</span></a><a class="ep-card" href="/episodes/2026-05-01.html"><div class="ep-card-top"><span class="ep-card-date">2026-05-01</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">OpenAI 营收与用户增长双双失速——CFO 警告六千亿美元算力承诺面临压力</span></a><a class="ep-card" href="/episodes/2026-04-30.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-30</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Peter Attia #389：科学思维的目标不是证明自己是对的，而是让自己随时间变得更少出错</span></a><a class="ep-card" href="/episodes/2026-04-29.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-29</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">Figma Weave + Make Mobile：产品设计工具全面迎接 AI 原生工作流</span></a><a class="ep-card" href="/episodes/2026-04-28.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-28</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">"自感知"机器人来了——瑞士 EPFL 让机器人看一眼就学会复杂任务</span></a><a class="ep-card" href="/episodes/2026-04-27.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-27</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">DeepSeek 发布 V4 旗舰模型——百万 token 上下文窗口，编码能力达顶级水平</span></a><a class="ep-card" href="/episodes/2026-04-26.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-26</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E...</span></a><a class="ep-card" href="/episodes/2026-04-25.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-25</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">2026-04-25 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-24.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-24</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Google 宣布 75% 新代码由 AI 生成——工程师角色正在重新定义</span></a><a class="ep-card" href="/episodes/2026-04-23.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-23</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Dr. Marc Brackett：情绪调节不是鸡汤——它是你身心健康的基础设施</span></a><a class="ep-card" href="/episodes/2026-04-22.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-22</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 ...</span></a><a class="ep-card" href="/episodes/2026-04-21.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-21</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">「闪电」跑赢人类：机器人 50 分 26 秒完成半马，打破人类世界纪录</span></a><a class="ep-card" href="/episodes/2026-04-20.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-20</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">DeepSeek V4 蓄势待发——万亿参数开源模型即将登场</span></a><a class="ep-card" href="/episodes/2026-04-19.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-19</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">2026-04-19 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-18.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-18</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">2026-04-18 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-17.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-17</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">OpenAI 发布 GPT-Rosalind——AI 正式进入药物发现</span></a><a class="ep-card" href="/episodes/2026-04-16.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-16</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康...</span></a><a class="ep-card" href="/episodes/2026-04-15.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-15</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">Cursor 3：Agent-First IDE，开发者从写代码变成了指挥 Agent</span></a><a class="ep-card" href="/episodes/2026-04-14.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-14</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">北京人形机器人半马正式试跑：70 支队伍星夜竞速，正式赛 4 月 19 日</span></a><a class="ep-card" href="/episodes/2026-04-13.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-13</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Anthropic 发布 Project Glasswing——AI 安全的"复仇者联盟"</span></a><a class="ep-card" href="/episodes/2026-04-12.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-12</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">2026-04-12 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-11.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-11</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">2026-04-11 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-10.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-10</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Meta 发布 Muse Spark——告别 Llama 开源路线，闭源模型首秀</span></a><a class="ep-card" href="/episodes/2026-04-09.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-09</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Dacher Keltner：敬畏——一种被低估的"免疫增强剂"</span></a><a class="ep-card" href="/episodes/2026-04-08.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-08</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">Figma AI Agent 进驻画布：MCP Server + Skills 系统重新定义设计工作流</span></a><a class="ep-card" href="/episodes/2026-04-07.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-07</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">旧金山变身「机器人之都」：十年 VC 融资从 2.72 亿飙到 206 亿美元</span></a><a class="ep-card" href="/episodes/2026-04-06.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-06</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Google Gemma 4 发布——开源模型首次 Apache 2.0，边缘端到服务器全覆盖</span></a><a class="ep-card" href="/episodes/2026-04-05.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-05</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">2026-04-05 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-04.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-04</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">2026-04-04 今日快报</span></a><a class="ep-card" href="/episodes/2026-04-03.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-03</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Claude Mythos泄露内测：Anthropic称其为"能力质变"，但警告网络攻击风险</span></a><a class="ep-card" href="/episodes/2026-04-02.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-02</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量...</span></a><a class="ep-card" href="/episodes/2026-04-01.html"><div class="ep-card-top"><span class="ep-card-date">2026-04-01</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">苹果正面怼 Vibe Coding：App Store 审核体系遭遇 AI 原生冲击</span></a><a class="ep-card" href="/episodes/2026-03-31.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-31</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来...</span></a><a class="ep-card" href="/episodes/2026-03-30.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-30</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">Jensen Huang宣告AGI已至：定义之争比声明本身更重要</span></a><a class="ep-card" href="/episodes/2026-03-29.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-29</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">2026-03-29 · Podcasts</span></a><a class="ep-card" href="/episodes/2026-03-28.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-28</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">The Silence In Between</span></a><a class="ep-card" href="/episodes/2026-03-27.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-27</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">2026-03-27 · AI</span></a><a class="ep-card" href="/episodes/2026-03-26.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-26</span><span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span></div><span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说...</span></a><a class="ep-card" href="/episodes/2026-03-25.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-25</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">2026-03-25 · Robotics</span></a><a class="ep-card" href="/episodes/2026-03-24.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-24</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">NVIDIA GTC收官：GR00T N2预览，"每家工业企业都将成为机器人公司"</span></a><a class="ep-card" href="/episodes/2026-03-23.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-23</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">2026-03-23 · AI</span></a><a class="ep-card" href="/episodes/2026-03-22.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-22</span><span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span></div><span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er...</span></a><a class="ep-card" href="/episodes/2026-03-21.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-21</span><span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span></div><span class="ep-card-hl">My Stroke of Insight</span></a><a class="ep-card" href="/episodes/2026-03-20.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-20</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">NVIDIA GTC 2026 落幕，万亿营收预测震撼全场</span></a><a class="ep-card" href="/episodes/2026-03-18.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-18</span><span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span></div><span class="ep-card-hl">2026-03-18 · Robotics</span></a><a class="ep-card" href="/episodes/2026-03-17.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-17</span><span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span></div><span class="ep-card-hl">2026-03-17 · Product</span></a><a class="ep-card" href="/episodes/2026-03-16.html"><div class="ep-card-top"><span class="ep-card-date">2026-03-16</span><span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span></div><span class="ep-card-hl">2026-03-16 · AI</span></a></div><style>.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}.ep-card:hover{background:var(--card);}.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}.ep-card-date{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}.ep-card-badge{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}</style>
+<!-- ── PAST EPISODES GRID ── -->
+<hr class="rule-heavy" style="margin-top:56px">
+<p class="section-label">◈ 往期回顾 · 近两周节目</p>
+<div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-17.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-17</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton ...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-16.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-16</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">周六书籍介绍 · I Am Not a Robot · Joanna Stern</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-15.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-15</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Ai2 发布 MolmoAct 2——开源机器人基础模型走出实验室，速度快 37 倍</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-14.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-14</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Kentaro Fujita：自控力不是意志力——你需要一整套工具箱</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-13.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-13</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Karpathy 宣告：HTML 才是 AI 的默认输出格式，Markdown 时代该结束了</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-11.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-11</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-10.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-10</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">Claude 平台的秘密：Anthropic 产品 + 工程负责人首次公开设计哲学</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-09.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-09</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-05-09 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-08.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-08</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-07.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-07</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Paul Conti：从优势出发的心理健康工具——用好奇心替代自我批判</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-06.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-06</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Vercel deepsec：开源 AI Agent 安全审查工具，用千个 Agent 并行扫描代码库</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-05.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-05</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">Meta 收购人形机器人创业公司 ARI——大厂争夺 Physical AI 人才</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-04.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-04</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">五角大楼与八家科技公司签署 AI 合同——Anthropic 因拒绝军方使用条款被排除在外</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-03.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-03</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">Baseten CEO Tuhin Srivastava：AI 推理危机、定制模型与推理云的未来</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-02.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-02</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-05-02 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-05-01.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-01</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">OpenAI 营收与用户增长双双失速——CFO 警告六千亿美元算力承诺面临压力</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-30.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-30</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Peter Attia #389：科学思维的目标不是证明自己是对的，而是让自己随时间变得更少出错</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-29.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-29</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Figma Weave + Make Mobile：产品设计工具全面迎接 AI 原生工作流</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-28.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-28</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">"自感知"机器人来了——瑞士 EPFL 让机器人看一眼就学会复杂任务</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-27.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-27</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">DeepSeek 发布 V4 旗舰模型——百万 token 上下文窗口，编码能力达顶级水平</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-26.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-26</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-25.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-25</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-04-25 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-24.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-24</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Google 宣布 75% 新代码由 AI 生成——工程师角色正在重新定义</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-23.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-23</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Marc Brackett：情绪调节不是鸡汤——它是你身心健康的基础设施</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-22.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-22</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 ...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-21.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-21</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">「闪电」跑赢人类：机器人 50 分 26 秒完成半马，打破人类世界纪录</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-20.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-20</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">DeepSeek V4 蓄势待发——万亿参数开源模型即将登场</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-19.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-19</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-04-19 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-18.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-18</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-04-18 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-17.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-17</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">OpenAI 发布 GPT-Rosalind——AI 正式进入药物发现</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-16.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-16</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-15.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-15</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Cursor 3：Agent-First IDE，开发者从写代码变成了指挥 Agent</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-14.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-14</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">北京人形机器人半马正式试跑：70 支队伍星夜竞速，正式赛 4 月 19 日</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-13.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-13</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Anthropic 发布 Project Glasswing——AI 安全的"复仇者联盟"</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-12.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-12</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-04-12 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-11.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-11</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-04-11 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-10.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-10</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Meta 发布 Muse Spark——告别 Llama 开源路线，闭源模型首秀</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-09.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-09</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dacher Keltner：敬畏——一种被低估的"免疫增强剂"</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-08.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-08</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Figma AI Agent 进驻画布：MCP Server + Skills 系统重新定义设计工作流</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-07.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-07</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">旧金山变身「机器人之都」：十年 VC 融资从 2.72 亿飙到 206 亿美元</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-06.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-06</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Google Gemma 4 发布——开源模型首次 Apache 2.0，边缘端到服务器全覆盖</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-05.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-05</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-04-05 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-04.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-04</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-04-04 今日快报</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-03.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-03</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Claude Mythos泄露内测：Anthropic称其为"能力质变"，但警告网络攻击风险</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-02.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-02</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-04-01.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-04-01</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">苹果正面怼 Vibe Coding：App Store 审核体系遭遇 AI 原生冲击</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-31.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-31</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-30.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-30</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Jensen Huang宣告AGI已至：定义之争比声明本身更重要</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-29.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-29</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-03-29 · Podcasts</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-28.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-28</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">The Silence In Between</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-27.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-27</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-03-27 · AI</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-26.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-26</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-25.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-25</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">2026-03-25 · Robotics</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-24.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-24</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">NVIDIA GTC收官：GR00T N2预览，"每家工业企业都将成为机器人公司"</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-23.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-23</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-03-23 · AI</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-22.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-22</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er...</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-21.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-21</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">My Stroke of Insight</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-20.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-20</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">NVIDIA GTC 2026 落幕，万亿营收预测震撼全场</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-18.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-18</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">2026-03-18 · Robotics</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-17.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-17</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">2026-03-17 · Product</span>
+  </a>
+  <a class="ep-card" href="/episodes/2026-03-16.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-03-16</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-03-16 · AI</span>
+  </a>
+</div>
+<style>
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}
+.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}
+.ep-card:hover{background:var(--card);}
+.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.ep-card-date{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
+.ep-card-badge{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
+.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}
+@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}
+</style>
+
 </body>
 </html>

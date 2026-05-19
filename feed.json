@@ -46,7 +46,12 @@
     "title": "周六书籍介绍 · I Am Not a Robot · Joanna Stern",
     "description": "一位科技记者用一整年的时间让AI接管生活，发现了什么？",
     "html": "episodes/2026-05-16.html",
-    "mp3": "episodes/2026-05-16.mp3"
+    "mp3": "episodes/2026-05-16.mp3",
+    "topic": "Books",
+    "dow": 6,
+    "headlines": [
+      "周六书籍介绍 · I Am Not a Robot · Joanna Stern"
+    ]
   },
   {
     "date": "2026-05-15",
@@ -126,10 +131,12 @@
     "dow": 6,
     "topic": "Books",
     "format": "新闻快报",
-    "title": "2026-05-09 今日快报",
+    "title": "周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造人类命运",
     "html": "episodes/2026-05-09.html",
     "mp3": "episodes/2026-05-09.mp3",
-    "headlines": []
+    "headlines": [
+      "周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造人类命运"
+    ]
   },
   {
     "date": "2026-05-08",
@@ -224,10 +231,12 @@
     "dow": 6,
     "topic": "Books",
     "format": "新闻快报",
-    "title": "2026-05-02 今日快报",
+    "title": "周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真正的产品",
     "html": "episodes/2026-05-02.html",
     "mp3": "episodes/2026-05-02.mp3",
-    "headlines": []
+    "headlines": [
+      "周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真正的产品"
+    ]
   },
   {
     "date": "2026-05-01",
@@ -322,10 +331,12 @@
     "dow": 6,
     "topic": "Books",
     "format": "新闻快报",
-    "title": "2026-04-25 今日快报",
+    "title": "周六书籍介绍 · Curation 策展的时代 · 佐佐木俊尚 · 在信息洪流中怎么找到意义",
     "html": "episodes/2026-04-25.html",
     "mp3": "episodes/2026-04-25.mp3",
-    "headlines": []
+    "headlines": [
+      "周六书籍介绍 · Curation 策展的时代 · 佐佐木俊尚 · 在信息洪流中怎么找到意义"
+    ]
   },
   {
     "date": "2026-04-24",
@@ -419,10 +430,12 @@
     "dow": 6,
     "topic": "Books",
     "format": "新闻快报",
-    "title": "2026-04-18 今日快报",
+    "title": "周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业革命到 AI 时代",
     "html": "episodes/2026-04-18.html",
     "mp3": "episodes/2026-04-18.mp3",
-    "headlines": []
+    "headlines": [
+      "周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业革命到 AI 时代"
+    ]
   },
   {
     "date": "2026-04-17",
@@ -517,10 +530,12 @@
     "dow": 6,
     "topic": "Books",
     "format": "新闻快报",
-    "title": "2026-04-11 今日快报",
+    "title": "周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 AGI 竞赛",
     "html": "episodes/2026-04-11.html",
     "mp3": "episodes/2026-04-11.mp3",
-    "headlines": []
+    "headlines": [
+      "周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 AGI 竞赛"
+    ]
   },
   {
     "date": "2026-04-10",
@@ -615,10 +630,12 @@
     "dow": 6,
     "topic": "Books",
     "format": "新闻快报",
-    "title": "2026-04-04 今日快报",
+    "title": "周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代价",
     "html": "episodes/2026-04-04.html",
     "mp3": "episodes/2026-04-04.mp3",
-    "headlines": []
+    "headlines": [
+      "周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代价"
+    ]
   },
   {
     "date": "2026-04-03",
@@ -828,7 +845,7 @@
   {
     "date": "2026-03-18",
     "dow": 3,
-    "topic": "Robotics",
+    "topic": "Product",
     "format": "新闻快报",
     "title": "2026-03-18 · Robotics",
     "html": "episodes/2026-03-18.html",
@@ -838,7 +855,7 @@
   {
     "date": "2026-03-17",
     "dow": 2,
-    "topic": "Product",
+    "topic": "Robotics",
     "format": "新闻快报",
     "title": "2026-03-17 · Product",
     "html": "episodes/2026-03-17.html",

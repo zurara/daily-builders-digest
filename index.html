@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-18">
-<meta property="og:description" content="Apple Intelligence 开放第三方 AI · OpenAI-Microsoft 合作重构 · Cloudflare AI 裁员 1100 人 · Garry Tan 开源 GBrain">
-<title>Daily Builders Digest · 2026-05-18</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-19">
+<meta property="og:description" content="Figure AI 50h 直播 · Humanoid×Schaeffler 千台大单 · 羽田机场人形机器人 · Fraunhofer 基准测试">
+<title>Daily Builders Digest · 2026-05-19</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -124,6 +124,18 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -264,18 +276,6 @@
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
 
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
-  }
-
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--ink);
@@ -293,11 +293,11 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-18</p>
-  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <p class="header-eyebrow">机器人周刊 · 每日播客 · Vol.2026-05-19</p>
+  <h1 class="header-title">人形机器人<span>从演示</span><br>走向量产</h1>
   <div class="header-meta">
-    <span>📅 2026·05·18 周一</span>
-    <span>🏷 主题：AI 新闻快报</span>
+    <span>📅 2026·05·19 周二</span>
+    <span>🏷 主题：Robotics</span>
     <span>🎙 主持：大雨 × 小苇</span>
     <span>⏱ 约 12 分钟</span>
   </div>
@@ -306,14 +306,14 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · Claude / Gemini 接入 iOS 27</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI-Microsoft 合作重构 · 非独家许可 · AGI 条款删除</span>
-    <span class="ticker-item"><span class="dot">▶</span>Cloudflare 裁员 1100 人 · AI 使用增长 600% · 营收创新高</span>
-    <span class="ticker-item"><span class="dot">▶</span>Garry Tan 开源 GBrain · AI agent 记忆系统 · MIT 许可</span>
-    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · Claude / Gemini 接入 iOS 27</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI-Microsoft 合作重构 · 非独家许可 · AGI 条款删除</span>
-    <span class="ticker-item"><span class="dot">▶</span>Cloudflare 裁员 1100 人 · AI 使用增长 600% · 营收创新高</span>
-    <span class="ticker-item"><span class="dot">▶</span>Garry Tan 开源 GBrain · AI agent 记忆系统 · MIT 许可</span>
+    <span class="ticker-item"><span class="dot">▶</span>Figure AI 直播 50h+ 无人分拣 · 10 万包裹</span>
+    <span class="ticker-item"><span class="dot">▶</span>Humanoid × Schaeffler · 千台人形机器人工业合同</span>
+    <span class="ticker-item"><span class="dot">▶</span>羽田机场 · 日航人形机器人地面服务试验</span>
+    <span class="ticker-item"><span class="dot">▶</span>Fraunhofer IPA · 人形机器人基准测试发布</span>
+    <span class="ticker-item"><span class="dot">▶</span>Figure AI 直播 50h+ 无人分拣 · 10 万包裹</span>
+    <span class="ticker-item"><span class="dot">▶</span>Humanoid × Schaeffler · 千台人形机器人工业合同</span>
+    <span class="ticker-item"><span class="dot">▶</span>羽田机场 · 日航人形机器人地面服务试验</span>
+    <span class="ticker-item"><span class="dot">▶</span>Fraunhofer IPA · 人形机器人基准测试发布</span>
   </div>
 </div>
 
@@ -324,8 +324,8 @@
     <strong>今日播客</strong>
     <span>大雨 × 小苇 · 约 12 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-18.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-18.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-05-19.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-19.mp3">下载音频</a>
   </audio>
 </div>
 
@@ -337,56 +337,54 @@
   <!-- LEAD -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型</h2>
+    <h2 class="news-hed">Figure AI 直播分拣包裹超 50 小时——三台人形机器人无人干预处理十万包裹</h2>
     <p class="news-body">
-      据彭博社报道，Apple 正在内部测试 Google Gemini 和 Anthropic Claude 的集成，计划今秋在 iOS 27、iPadOS 27 和 macOS 27 中推出"Extensions"功能。用户将可以在设置中自由选择 AI 模型来驱动 Siri、写作工具、Image Playground 等所有 Apple Intelligence 功能。这标志着 Apple 从 AI 供应商角色转向 AI 分发平台。OpenAI 据报道对此不满，可能考虑法律行动。此举意味着 Anthropic 和 Google 将获得直达十几亿 iPhone 用户的通道。
+      Figure AI 将三台 F.03 人形机器人放在物流分拣线上面向全世界直播，运行 Helix-02 AI 系统，自主识别包裹、旋转扫描条形码并分拣归位。CEO Brett Adcock 强调"绝对没有遥操作"。网友给三台机器人取名 Bob、Frank、Gary，到直播第五天已分拣超过十万个包裹。此前 Figure AI 已在 BMW 工厂累计生产超三万辆 X3、装载九万多个钣金部件、累计工作 1250 小时。这次直播进一步证明人形机器人可在完全自主的情况下长时间稳定运行。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Bloomberg</a>
+      📎 <a href="https://www.bloomberg.com/news/articles/2026-05-15/robotics-ceo-vows-no-intervention-in-humanoids-viral-trial-run" target="_blank">Bloomberg</a>
       &nbsp;·&nbsp;
-      <a href="https://9to5mac.com/2026/05/05/ios-27-will-let-you-choose-between-gemini-claude-and-more-for-ai-features-report/" target="_blank">9to5Mac</a>
+      <a href="https://en.sedaily.com/international/2026/05/17/figure-ai-robot-sorts-100000-packages-in-81-hours-without" target="_blank">Seoul Economic Daily</a>
     </p>
   </div>
 
   <!-- 02 -->
   <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">OpenAI-Microsoft 合作重构——非独家许可、AGI 条款删除、多云开放</h2>
+    <h2 class="news-hed">Humanoid × Schaeffler 签下千台部署大单——史上最大规模人形机器人工业合同</h2>
     <p class="news-body">
-      4 月底公布的新协议中，Microsoft 对 OpenAI IP 的许可变为非独家（延续至 2032 年），OpenAI 可在 AWS、Google Cloud、Oracle 等任何云平台提供服务。AGI 条款被删除，收入分成设上限。双方从"深度绑定"走向"战略合作但各自独立"，标志着 AI 产业格局从独家联盟转向多方竞争。
+      英国公司 Humanoid 与德国工业巨头 Schaeffler 签署有约束力的部署协议，到 2032 年在全球工厂部署 1000–2000 台轮式人形机器人。首批于 2026 年底至 2027 年六月在德国 Herzogenaurach 工厂上线。采用 Robot-as-a-Service 模式，Schaeffler 同时成为 Humanoid 关节执行器的五年供应商，覆盖 50%+ 需求。Humanoid 由 Artem Sokolov 于 2024 年创立，是拿到此级别合同最年轻的公司之一。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.cnbc.com/2026/04/27/openai-microsoft-partnership-revenue-cap.html" target="_blank">CNBC</a>
+      📎 <a href="https://roboticsandautomationnews.com/2026/05/13/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/101411/" target="_blank">Robotics & Automation News</a>
       &nbsp;·&nbsp;
-      <a href="https://openai.com/index/next-phase-of-microsoft-partnership/" target="_blank">OpenAI Blog</a>
+      <a href="https://www.unite.ai/humanoid-secures-major-manufacturing-deal-with-schaeffler-to-deploy-thousands-of-robots/" target="_blank">Unite.AI</a>
     </p>
   </div>
 
   <!-- 03 -->
   <div class="news-card">
     <p class="news-num">03</p>
-    <h2 class="news-hed">Cloudflare 裁员 1100 人——AI 使用增长 600%，营收创历史新高</h2>
+    <h2 class="news-hed">日本航空在羽田机场部署人形机器人——应对劳动力危机的首次尝试</h2>
     <p class="news-body">
-      Cloudflare 裁掉约 20% 员工（1100 人），CEO Matthew Prince 将原因直指 AI：内部 AI 使用量三个月增 600%，AI agent 已深入 HR、市场、财务等部门。同周 Upwork 裁 24%（145 人），Coinbase 等也在裁。特殊之处在于：企业在盈利状态下裁员。斯坦福 AI Index 报告称生成式 AI 三年达 53% 渗透率，超过 PC 和互联网。
+      日本航空联手 GMO AI & Robotics，在东京羽田机场启动宇树科技（Unitree）人形机器人试运行。机器人身高 132cm、35kg，23–43 自由度，负责行李装卸、集装箱搬运和客舱清洁。每台基础版约 $13,500，试验期至 2028 年。日本 2026 年前两个月入境游客超 700 万，地面服务人员严重短缺。
     </p>
     <p class="news-source">
-      📎 <a href="https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/" target="_blank">TechCrunch</a>
+      📎 <a href="https://www.cnbc.com/2026/05/01/japan-airlines-humanoid-robots-haneda-labor-shortage.html" target="_blank">CNBC</a>
       &nbsp;·&nbsp;
-      <a href="https://www.fastcompany.com/91538995/tech-layoffs-due-to-ai-this-week-cloudflare-paypal-coinbase-upwork" target="_blank">Fast Company</a>
+      <a href="https://newatlas.com/ai-humanoids/humanoid-robots-baggage-handlers-tokyo-airport-unitree/" target="_blank">New Atlas</a>
     </p>
   </div>
 
   <!-- 04 -->
   <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
     <p class="news-num">04</p>
-    <h2 class="news-hed">Garry Tan 开源 GBrain——给 AI Agent 装上长期记忆的八层知识系统</h2>
+    <h2 class="news-hed">Fraunhofer IPA 发布人形机器人基准测试——行业迈入标准化评测时代</h2>
     <p class="news-body">
-      Y Combinator 掌门人 Garry Tan 开源了 GBrain，一个给 AI agent 提供长期记忆的知识图谱系统。八层架构将 Markdown 笔记变为自动连线的知识网络，底层用 Git + PostgreSQL/pgvector 做混合搜索。最酷的"dream cycles"功能让 agent 在用户睡觉时自动整理知识库。MIT 许可，发布首日 5400 星，目前超 14000。社区争议：核心功能是 Markdown 指令文档而非可执行代码——但这本身或许正是 AI 编程的新范式。
+      德国 Fraunhofer IPA 研究所发布全新人形机器人基准测试体系，以 Unitree G1 为首个测试对象。基准涵盖六个维度，包括能效、功能安全和信息安全，不仅能让人形机器人互相比较，还能与传统自动化设备做横向对比。当一个行业开始建立标准化评测，意味着它正在从"概念验证"走向"工业采购"——企业终于有了数据驱动的选型工具。
     </p>
     <p class="news-source">
-      📎 <a href="https://x.com/garrytan/status/2055670533451366479" target="_blank">Garry Tan on X</a>
-      &nbsp;·&nbsp;
-      <a href="https://github.com/garrytan/gstack" target="_blank">GitHub</a>
+      📎 <a href="https://www.therobotreport.com/fraunhofer-ipa-offers-new-test-benchmark-for-humanoid-robots/" target="_blank">The Robot Report</a>
     </p>
   </div>
 
@@ -407,27 +405,27 @@
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Apple Intelligence 开放第三方 AI <span class="tag hot">头条</span></a></td>
+      <td><a href="https://www.bloomberg.com/news/articles/2026-05-15/robotics-ceo-vows-no-intervention-in-humanoids-viral-trial-run" target="_blank">Figure AI 50h+ 无人直播分拣 <span class="tag hot">头条</span></a></td>
       <td>Bloomberg</td>
-      <td>2026-05-05</td>
+      <td>2026-05-15</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://www.cnbc.com/2026/04/27/openai-microsoft-partnership-revenue-cap.html" target="_blank">OpenAI-Microsoft 合作重构 <span class="tag">合作</span></a></td>
-      <td>CNBC</td>
-      <td>2026-04-27</td>
+      <td><a href="https://roboticsandautomationnews.com/2026/05/13/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/101411/" target="_blank">Humanoid × Schaeffler 千台部署合同 <span class="tag">合同</span></a></td>
+      <td>Robotics & Automation News</td>
+      <td>2026-05-13</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/" target="_blank">Cloudflare AI 裁员 1100 人 <span class="tag">裁员</span></a></td>
-      <td>TechCrunch</td>
-      <td>2026-05-08</td>
+      <td><a href="https://www.cnbc.com/2026/05/01/japan-airlines-humanoid-robots-haneda-labor-shortage.html" target="_blank">日航羽田机场人形机器人试验 <span class="tag">部署</span></a></td>
+      <td>CNBC</td>
+      <td>2026-05</td>
     </tr>
     <tr>
       <td>04</td>
-      <td><a href="https://x.com/garrytan/status/2055670533451366479" target="_blank">Garry Tan 开源 GBrain <span class="tag">开源</span></a></td>
-      <td>X / GitHub</td>
-      <td>2026-05-16</td>
+      <td><a href="https://www.therobotreport.com/fraunhofer-ipa-offers-new-test-benchmark-for-humanoid-robots/" target="_blank">Fraunhofer IPA 人形机器人基准测试 <span class="tag">标准</span></a></td>
+      <td>The Robot Report</td>
+      <td>2026-05-17</td>
     </tr>
   </tbody>
 </table>
@@ -440,18 +438,18 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:04。
+  数据截至今日 UTC 06:03。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">No Priors · 2026-05-14</p>
-  <p class="pc-title">Pax Silica: Inside the Trump Administration's Tech Strategy with Jacob Helberg</p>
+  <p class="pc-show">The Robot Report Podcast · 2026-05</p>
+  <p class="pc-title">Colin Angle: Building Companion Robots with Familiar Machines & Magic</p>
   <p class="pc-summary">
-    美国国务院副国务卿 Jacob Helberg 详谈 Pax Silica——一个由 14 国组成的经济安全联盟，目标是确保 AI 供应链安全。最亮眼的细节：美国在菲律宾获得 4000 英亩土地（曼哈顿面积的三分之一）建设"前沿部署工业基地"，重点关注机器人供应链脱中。Helberg 对比了中国"一带一路"的教训，强调美国版本以私营企业主导、正和博弈为核心逻辑。
+    iRobot 传奇创始人 Colin Angle 离开自己一手创建的公司后，全力投入新创业：Familiar Machines & Magic，方向是消费级 Physical AI。他们的第一款产品叫 Familiars——设计目标不是做家务，而是与人建立长期的、有情感智能的关系。从工业化的扫地机器人到有"灵魂"的陪伴机器人，Angle 正在开辟一条全新的赛道。
   </p>
-  <a href="https://www.youtube.com/watch?v=xjlYpGaxIPA" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://www.therobotreport.com/podcast-colin-angle-discusses-building-companion-robots-familiar-machines-magic/" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
@@ -462,28 +460,28 @@
       <div class="builder-avatar">GT</div>
       <div>
         <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
+        <div class="builder-handle">@garrytan · YC</div>
       </div>
     </div>
-    <p class="builder-tweet">「GBrain 是什么？它不是 RAG-in-a-box，而是一个知识系统。八层结构协同工作，让你的 AI agent 对你了如指掌。个人 AI 由此成为可能。」——开源发布，MIT 许可，14000+ GitHub 星标。</p>
+    <p class="builder-tweet">「某个二十多岁的年轻人，也许正在读这条推文，会建造出 AI 与人类深度协作的团队，直接超越传统金融巨头的整个运作模式。天花板已经被抬高了。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1231</span>
-      <a href="https://x.com/garrytan/status/2055670533451366479" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 707</span>
+      <a href="https://x.com/garrytan/status/2056123737544757733" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PS</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · OpenClaw / OpenAI</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「去掉你 Claude Code 里的 slop，如果你还没切换到 Codex 的话。」——呼吁开发者注重 AI 生成代码的质量，而不是只追求速度。</p>
+    <p class="builder-tweet">「学生和大学能做的最好的事情，就是不要因为 AI 而放弃学习基础知识。AI 会让你以为你不需要深入某个领域——但那是错觉。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 344</span>
-      <a href="https://x.com/steipete/status/2055747016727167035" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 425</span>
+      <a href="https://x.com/levie/status/2056051851439857933" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -495,27 +493,34 @@
         <div class="builder-handle">@zarazhangrui · Builder</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI psychosis：每天在两种心理状态间循环——用了 coding agent 后觉得自己无所不能；刷完推特后觉得自己彻底落后。」——精准描述了当下建造者的日常心理。</p>
+    <p class="builder-tweet">「人们总是高估做出东西的难度，低估做出来之后赢得注意力的难度。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 136</span>
-      <a href="https://x.com/zarazhangrui/status/2055728641913536762" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 129</span>
+      <a href="https://x.com/zarazhangrui/status/2056132881630826952" target="_blank">查看推文 →</a>
     </div>
   </div>
 
 </div>
 
-<!-- ─────────────────── FOOTER ─────────────────── -->
+<!-- FOOTER -->
 <hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
-  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
-  © 2026 Daily Builders Digest
+  <strong>Daily Builders Digest</strong> · 每日精选 AI 与科技前沿<br>
+  主持：大雨 × 小苇 · 由 AI 辅助制作<br>
+  🔗 <a href="https://daily-builders-digest.vercel.app/" style="color:var(--red);text-decoration:none;">daily-builders-digest.vercel.app</a>
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-18.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-18</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini...</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-17.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-17</span>
@@ -949,8 +954,8 @@
 .ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}
 .ep-card:hover{background:var(--card);}
 .ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.ep-card-date{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
-.ep-card-badge{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
+.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
+.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
 .ep-card-hl{font-size:13px;line-height:1.4;color:#333;}
 @media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}
 </style>

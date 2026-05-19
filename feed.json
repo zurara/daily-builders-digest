@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-19",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "Figure AI 直播分拣包裹超 50 小时——三台人形机器人无人干预处理十万包裹 · Humanoid × Schaeffler 签下千台部署大单——史上最大规模人形机器人工业合同",
+    "html": "episodes/2026-05-19.html",
+    "mp3": "episodes/2026-05-19.mp3",
+    "headlines": [
+      "Figure AI 直播分拣包裹超 50 小时——三台人形机器人无人干预处理十万包裹",
+      "Humanoid × Schaeffler 签下千台部署大单——史上最大规模人形机器人工业合同",
+      "日本航空在羽田机场部署人形机器人——应对劳动力危机的首次尝试",
+      "Fraunhofer IPA 发布人形机器人基准测试——行业迈入标准化评测时代"
+    ]
+  },
+  {
     "date": "2026-05-18",
     "dow": 1,
     "topic": "AI",

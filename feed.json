@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-20",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "GitHub Copilot App：代码 Agent 有了自己的家 · Googlebook：Chromebook 终结，Android 笔记本时代开始",
+    "html": "episodes/2026-05-20.html",
+    "mp3": "episodes/2026-05-20.mp3",
+    "headlines": [
+      "GitHub Copilot App：代码 Agent 有了自己的家",
+      "Googlebook：Chromebook 终结，Android 笔记本时代开始",
+      "Amazon Alexa Podcasts：AI 生成播客，按需制作",
+      "Firefox Shake to Summarize 登陆 Android"
+    ]
+  },
+  {
     "date": "2026-05-19",
     "dow": 2,
     "topic": "Robotics",

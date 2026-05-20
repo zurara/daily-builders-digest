@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-19">
-<meta property="og:description" content="Figure AI 50h 直播 · Humanoid×Schaeffler 千台大单 · 羽田机场人形机器人 · Fraunhofer 基准测试">
-<title>Daily Builders Digest · 2026-05-19</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-20">
+<meta property="og:description" content="GitHub Copilot App 独立桌面版 · Googlebook 取代 Chromebook · Alexa AI 播客 · Firefox Shake to Summarize">
+<title>Daily Builders Digest · 2026-05-20</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 42s linear infinite;
+    animation: ticker 44s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -231,10 +231,7 @@
     color: var(--red);
     width: 48px;
   }
-  .index-table td a {
-    color: var(--ink);
-    text-decoration: none;
-  }
+  .index-table td a { color: var(--ink); text-decoration: none; }
   .index-table td a:hover { text-decoration: underline; }
   .tag {
     display: inline-block;
@@ -253,14 +250,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
   .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
   .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
   .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
   .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
   .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
-
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -270,6 +265,7 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
   /* ── DIVIDER ── */
@@ -293,27 +289,27 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">机器人周刊 · 每日播客 · Vol.2026-05-19</p>
-  <h1 class="header-title">人形机器人<span>从演示</span><br>走向量产</h1>
+  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-05-20</p>
+  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
   <div class="header-meta">
-    <span>📅 2026·05·19 周二</span>
-    <span>🏷 主题：Robotics</span>
+    <span>📅 2026·05·20 周三</span>
+    <span>🏷 主题：产品 Product</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>⏱ 约 15 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Figure AI 直播 50h+ 无人分拣 · 10 万包裹</span>
-    <span class="ticker-item"><span class="dot">▶</span>Humanoid × Schaeffler · 千台人形机器人工业合同</span>
-    <span class="ticker-item"><span class="dot">▶</span>羽田机场 · 日航人形机器人地面服务试验</span>
-    <span class="ticker-item"><span class="dot">▶</span>Fraunhofer IPA · 人形机器人基准测试发布</span>
-    <span class="ticker-item"><span class="dot">▶</span>Figure AI 直播 50h+ 无人分拣 · 10 万包裹</span>
-    <span class="ticker-item"><span class="dot">▶</span>Humanoid × Schaeffler · 千台人形机器人工业合同</span>
-    <span class="ticker-item"><span class="dot">▶</span>羽田机场 · 日航人形机器人地面服务试验</span>
-    <span class="ticker-item"><span class="dot">▶</span>Fraunhofer IPA · 人形机器人基准测试发布</span>
+    <span class="ticker-item"><span class="dot">▶</span>GitHub Copilot App — 代码 Agent 有了独立桌面应用</span>
+    <span class="ticker-item"><span class="dot">▶</span>Googlebook 取代 Chromebook — Android AI 笔记本新品类</span>
+    <span class="ticker-item"><span class="dot">▶</span>Amazon Alexa Podcasts — AI 按需生成播客节目</span>
+    <span class="ticker-item"><span class="dot">▶</span>Firefox Shake to Summarize 登陆 Android</span>
+    <span class="ticker-item"><span class="dot">▶</span>GitHub Copilot App — 代码 Agent 有了独立桌面应用</span>
+    <span class="ticker-item"><span class="dot">▶</span>Googlebook 取代 Chromebook — Android AI 笔记本新品类</span>
+    <span class="ticker-item"><span class="dot">▶</span>Amazon Alexa Podcasts — AI 按需生成播客节目</span>
+    <span class="ticker-item"><span class="dot">▶</span>Firefox Shake to Summarize 登陆 Android</span>
   </div>
 </div>
 
@@ -321,114 +317,68 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <strong>收听本期播客</strong>
+    <span>· 2026-05-20 · 产品星期三</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-19.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-19.mp3">下载音频</a>
-  </audio>
+  <audio controls src="episodes/2026-05-20.mp3">您的浏览器不支持音频播放。</audio>
 </div>
 
-<!-- ─────────────────── NEWS ─────────────────── -->
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
-
-<div class="news-grid">
-
-  <!-- LEAD -->
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Figure AI 直播分拣包裹超 50 小时——三台人形机器人无人干预处理十万包裹</h2>
-    <p class="news-body">
-      Figure AI 将三台 F.03 人形机器人放在物流分拣线上面向全世界直播，运行 Helix-02 AI 系统，自主识别包裹、旋转扫描条形码并分拣归位。CEO Brett Adcock 强调"绝对没有遥操作"。网友给三台机器人取名 Bob、Frank、Gary，到直播第五天已分拣超过十万个包裹。此前 Figure AI 已在 BMW 工厂累计生产超三万辆 X3、装载九万多个钣金部件、累计工作 1250 小时。这次直播进一步证明人形机器人可在完全自主的情况下长时间稳定运行。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.bloomberg.com/news/articles/2026-05-15/robotics-ceo-vows-no-intervention-in-humanoids-viral-trial-run" target="_blank">Bloomberg</a>
-      &nbsp;·&nbsp;
-      <a href="https://en.sedaily.com/international/2026/05/17/figure-ai-robot-sorts-100000-packages-in-81-hours-without" target="_blank">Seoul Economic Daily</a>
-    </p>
-  </div>
-
-  <!-- 02 -->
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Humanoid × Schaeffler 签下千台部署大单——史上最大规模人形机器人工业合同</h2>
-    <p class="news-body">
-      英国公司 Humanoid 与德国工业巨头 Schaeffler 签署有约束力的部署协议，到 2032 年在全球工厂部署 1000–2000 台轮式人形机器人。首批于 2026 年底至 2027 年六月在德国 Herzogenaurach 工厂上线。采用 Robot-as-a-Service 模式，Schaeffler 同时成为 Humanoid 关节执行器的五年供应商，覆盖 50%+ 需求。Humanoid 由 Artem Sokolov 于 2024 年创立，是拿到此级别合同最年轻的公司之一。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://roboticsandautomationnews.com/2026/05/13/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/101411/" target="_blank">Robotics & Automation News</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.unite.ai/humanoid-secures-major-manufacturing-deal-with-schaeffler-to-deploy-thousands-of-robots/" target="_blank">Unite.AI</a>
-    </p>
-  </div>
-
-  <!-- 03 -->
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">日本航空在羽田机场部署人形机器人——应对劳动力危机的首次尝试</h2>
-    <p class="news-body">
-      日本航空联手 GMO AI & Robotics，在东京羽田机场启动宇树科技（Unitree）人形机器人试运行。机器人身高 132cm、35kg，23–43 自由度，负责行李装卸、集装箱搬运和客舱清洁。每台基础版约 $13,500，试验期至 2028 年。日本 2026 年前两个月入境游客超 700 万，地面服务人员严重短缺。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.cnbc.com/2026/05/01/japan-airlines-humanoid-robots-haneda-labor-shortage.html" target="_blank">CNBC</a>
-      &nbsp;·&nbsp;
-      <a href="https://newatlas.com/ai-humanoids/humanoid-robots-baggage-handlers-tokyo-airport-unitree/" target="_blank">New Atlas</a>
-    </p>
-  </div>
-
-  <!-- 04 -->
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">Fraunhofer IPA 发布人形机器人基准测试——行业迈入标准化评测时代</h2>
-    <p class="news-body">
-      德国 Fraunhofer IPA 研究所发布全新人形机器人基准测试体系，以 Unitree G1 为首个测试对象。基准涵盖六个维度，包括能效、功能安全和信息安全，不仅能让人形机器人互相比较，还能与传统自动化设备做横向对比。当一个行业开始建立标准化评测，意味着它正在从"概念验证"走向"工业采购"——企业终于有了数据驱动的选型工具。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.therobotreport.com/fraunhofer-ipa-offers-new-test-benchmark-for-humanoid-robots/" target="_blank">The Robot Report</a>
-    </p>
-  </div>
-
-</div>
-
-<!-- INDEX TABLE -->
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
+<!-- INDEX -->
+<p class="section-label">◈ 本期目录</p>
 <table class="index-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>标题</th>
-      <th>来源</th>
-      <th>日期</th>
-    </tr>
-  </thead>
+  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
   <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://www.bloomberg.com/news/articles/2026-05-15/robotics-ceo-vows-no-intervention-in-humanoids-viral-trial-run" target="_blank">Figure AI 50h+ 无人直播分拣 <span class="tag hot">头条</span></a></td>
-      <td>Bloomberg</td>
-      <td>2026-05-15</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://roboticsandautomationnews.com/2026/05/13/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/101411/" target="_blank">Humanoid × Schaeffler 千台部署合同 <span class="tag">合同</span></a></td>
-      <td>Robotics & Automation News</td>
-      <td>2026-05-13</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://www.cnbc.com/2026/05/01/japan-airlines-humanoid-robots-haneda-labor-shortage.html" target="_blank">日航羽田机场人形机器人试验 <span class="tag">部署</span></a></td>
-      <td>CNBC</td>
-      <td>2026-05</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://www.therobotreport.com/fraunhofer-ipa-offers-new-test-benchmark-for-humanoid-robots/" target="_blank">Fraunhofer IPA 人形机器人基准测试 <span class="tag">标准</span></a></td>
-      <td>The Robot Report</td>
-      <td>2026-05-17</td>
-    </tr>
+    <tr><td>01</td><td><a href="#s1">GitHub Copilot App：代码 Agent 有了自己的家</a></td><td><span class="tag hot">热</span></td></tr>
+    <tr><td>02</td><td><a href="#s2">Googlebook：Chromebook 的终结，Android 笔记本时代开始</a></td><td><span class="tag">硬件</span></td></tr>
+    <tr><td>03</td><td><a href="#s3">Amazon Alexa Podcasts：AI 生成播客，按需制作</a></td><td><span class="tag hot">热</span></td></tr>
+    <tr><td>04</td><td><a href="#s4">Firefox Shake to Summarize 登陆 Android</a></td><td><span class="tag">浏览器</span></td></tr>
   </tbody>
 </table>
+
+<!-- NEWS GRID -->
+<div class="news-grid">
+
+  <!-- LEAD: GitHub Copilot App -->
+  <div class="news-card lead" id="s1">
+    <p class="news-num">Story 01</p>
+    <h2 class="news-hed">GitHub Copilot App：代码 Agent 有了自己的家</h2>
+    <p class="news-body">
+      5月14号，GitHub 正式发布 Copilot App 技术预览版——不是 VS Code 插件升级，而是一个全新的独立桌面应用，支持 Mac、Windows 和 Linux。核心理念是「从 Issue 出发的全流程 Agent」：打开一个 GitHub Issue，Copilot 自动分析需求，创建独立的 git worktree 和分支，在隔离环境里写代码，最终输出 Pull Request。你可以同时跑多个 Agent session，并行处理不同任务。目前对 Copilot Pro/Pro+ 用户开放早期试用。开发工具竞争已经从「编辑器里的补全」升级到了「独立的代码 Agent 平台」。
+    </p>
+    <p class="news-source">📎 <a href="https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/" target="_blank">GitHub Blog</a> · <a href="https://thenewstack.io/github-copilot-desktop-app/" target="_blank">The New Stack</a></p>
+  </div>
+
+  <!-- Googlebook -->
+  <div class="news-card" id="s2">
+    <p class="news-num">Story 02</p>
+    <h2 class="news-hed">Googlebook：Chromebook 终结，Android 笔记本时代开始</h2>
+    <p class="news-body">
+      Google 在 The Android Show 上宣布 Googlebook——全新品类的 Android 笔记本，围绕 Gemini AI 从底层设计。告别 Chromebook 的功能局限，直接跑所有 Android 应用。独特设计包括 Magic Pointer 智能推荐和 Glowbar 发光条。Acer、ASUS、Dell、HP、Lenovo 均加入，预计今秋上市。关键信号：操作系统不再是壁垒，AI 集成才是差异化。
+    </p>
+    <p class="news-source">📎 <a href="https://blog.google/products-and-platforms/platforms/android/meet-googlebook/" target="_blank">Google Blog</a> · <a href="https://techcrunch.com/2026/05/12/google-unveils-googlebooks-a-new-line-of-ai-native-laptops/" target="_blank">TechCrunch</a></p>
+  </div>
+
+  <!-- Alexa Podcasts -->
+  <div class="news-card" id="s3">
+    <p class="news-num">Story 03</p>
+    <h2 class="news-hed">Amazon Alexa Podcasts：AI 生成播客，按需制作</h2>
+    <p class="news-body">
+      亚马逊在 Alexa+ 上线 Alexa Podcasts——说一个话题，AI 搜集信息、生成大纲，你可以调整长度和语气，然后用双 AI 主播录制。亚马逊与 AP、Reuters、华盛顿邮报等200多家媒体签约，提供真实新闻源支撑。从 NotebookLM 到 Alexa Podcasts，AI 播客正在把「按需信息获取」变成音频形式。内容正从「人们创作的东西」变成「AI 按需生成的服务」。
+    </p>
+    <p class="news-source">📎 <a href="https://techcrunch.com/2026/05/18/amazons-new-alexa-powered-feature-can-generate-podcast-episodes/" target="_blank">TechCrunch</a> · <a href="https://variety.com/2026/digital/news/amazon-alexa-plus-ai-podcasts-1236752477/" target="_blank">Variety</a></p>
+  </div>
+
+  <!-- Firefox Shake to Summarize -->
+  <div class="news-card" id="s4">
+    <p class="news-num">Story 04</p>
+    <h2 class="news-hed">Firefox Shake to Summarize 登陆 Android</h2>
+    <p class="news-body">
+      Mozilla 的 Shake to Summarize 正式登陆 Android——摇一下手机或点菜单即可获得5000字以内网页的 AI 摘要。底层使用 Mozilla 云端 Mistral-Small 模型，而非依赖 Big Tech。去年拿下 TIME Best Inventions 特别提名。产品启示：怎么在不牺牲品牌价值观的前提下，把 AI 做进产品。
+    </p>
+    <p class="news-source">📎 <a href="https://blog.mozilla.org/en/firefox/shake-to-summarize-expansion/" target="_blank">Mozilla Blog</a> · <a href="https://cybernews.com/ai-news/firefox-mozilla-shake-to-summarize-android/" target="_blank">Cybernews</a></p>
+  </div>
+
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -438,35 +388,32 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:03。
+  数据截至今日 UTC 2026-05-20 06:00。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The Robot Report Podcast · 2026-05</p>
-  <p class="pc-title">Colin Angle: Building Companion Robots with Familiar Machines & Magic</p>
-  <p class="pc-summary">
-    iRobot 传奇创始人 Colin Angle 离开自己一手创建的公司后，全力投入新创业：Familiar Machines & Magic，方向是消费级 Physical AI。他们的第一款产品叫 Familiars——设计目标不是做家务，而是与人建立长期的、有情感智能的关系。从工业化的扫地机器人到有"灵魂"的陪伴机器人，Angle 正在开辟一条全新的赛道。
-  </p>
-  <a href="https://www.therobotreport.com/podcast-colin-angle-discusses-building-companion-robots-familiar-machines-magic/" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">AI & I by Every · 2026-05-08</p>
+  <p class="pc-title">The Secrets of Claude's Platform From the Team Who Built It</p>
+  <p class="pc-summary">Anthropic 平台产品负责人 Angela 和工程负责人 Caitlin 深入解析 Claude 平台的未来方向——Claude 未来可能自己决定用什么模型、怎么调度 sub-agent，开发者不再需要手动设计架构，AI 正在学会自我组织。对产品人来说，这意味着平台正从「需要人类编排的工具」进化为「自组织的智能基础设施」。</p>
+  <a href="https://www.youtube.com/watch?v=lLypHkIVLqc" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
-
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">GR</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · YC</div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「某个二十多岁的年轻人，也许正在读这条推文，会建造出 AI 与人类深度协作的团队，直接超越传统金融巨头的整个运作模式。天花板已经被抬高了。」</p>
+    <p class="builder-tweet">「你的 Agent 会爱上的防火墙。Vercel Firewall 全部防护功能现在完全免费——包括你自定义的规则。全球传播仅需约300毫秒。Vercel 将承担任何规模攻击的计算和网络成本。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 707</span>
-      <a href="https://x.com/garrytan/status/2056123737544757733" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 303 + 264</span>
+      <a href="https://x.com/rauchg/status/2056423973123183028" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -475,58 +422,80 @@
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「学生和大学能做的最好的事情，就是不要因为 AI 而放弃学习基础知识。AI 会让你以为你不需要深入某个领域——但那是错觉。」</p>
+    <p class="builder-tweet">「这对所有 Agent 都适用，不只是编码 Agent。大多数公司在 Agent 策略中遇到的最大挑战是——如何给 Agent 正确的、受限的上下文来工作。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 425</span>
-      <a href="https://x.com/levie/status/2056051851439857933" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 132</span>
+      <a href="https://x.com/levie/status/2056574979236409521" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">ZZ</div>
+      <div class="builder-avatar">PY</div>
       <div>
-        <div class="builder-name">Zara Zhang</div>
-        <div class="builder-handle">@zarazhangrui · Builder</div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Product Creator</div>
       </div>
     </div>
-    <p class="builder-tweet">「人们总是高估做出东西的难度，低估做出来之后赢得注意力的难度。」</p>
+    <p class="builder-tweet">「我从 Anthropic Alex Albert 关于如何构建下一代 Claude 模型的分享中提炼的五大要点：第一，模型和工具链是耦合的，每一个界面都在包装模型。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 129</span>
-      <a href="https://x.com/zarazhangrui/status/2056132881630826952" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 60</span>
+      <a href="https://x.com/petergyang/status/2056381822733595090" target="_blank">查看推文 →</a>
     </div>
   </div>
 
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">RY</div>
+      <div>
+        <div class="builder-name">Ryo Lu</div>
+        <div class="builder-handle">@ryolu_ · Cursor / Anysphere</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「前沿智能，极致效率。Composer 2.5 来了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 538</span>
+      <a href="https://x.com/ryolu_/status/2056417715448156276" target="_blank">查看推文 →</a>
+    </div>
+  </div>
 </div>
 
-<!-- FOOTER -->
-<hr class="rule-heavy">
+<hr class="rule">
+
 <footer>
-  <strong>Daily Builders Digest</strong> · 每日精选 AI 与科技前沿<br>
-  主持：大雨 × 小苇 · 由 AI 辅助制作<br>
-  🔗 <a href="https://daily-builders-digest.vercel.app/" style="color:var(--red);text-decoration:none;">daily-builders-digest.vercel.app</a>
+  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-05-20<br>
+  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
+  数据来源：WebSearch · follow-builders · 公开报道<br>
+  「关注建造者，不要关注 influencer。」
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-19.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-19</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">Figure AI 直播分拣包裹超 50 小时——三台人形机器人无人干预处理十万包裹</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-18.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-18</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型</span>
+    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-17.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-17</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton 的根本分歧</span>
+    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton ...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-16.html">
     <div class="ep-card-top">
@@ -561,7 +530,7 @@
       <span class="ep-card-date">2026-05-11</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估值融资</span>
+    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-10.html">
     <div class="ep-card-top">
@@ -575,14 +544,14 @@
       <span class="ep-card-date">2026-05-09</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造人类命运</span>
+    <span class="ep-card-hl">周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-08.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-08</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes 配质检员，多智能体...</span>
+    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-07.html">
     <div class="ep-card-top">
@@ -624,7 +593,7 @@
       <span class="ep-card-date">2026-05-02</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真正的产品</span>
+    <span class="ep-card-hl">周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-01.html">
     <div class="ep-card-top">
@@ -666,7 +635,7 @@
       <span class="ep-card-date">2026-04-26</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone Else</span>
+    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-25.html">
     <div class="ep-card-top">
@@ -694,7 +663,7 @@
       <span class="ep-card-date">2026-04-22</span>
       <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
     </div>
-    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 Mac</span>
+    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 ...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-21.html">
     <div class="ep-card-top">
@@ -722,7 +691,7 @@
       <span class="ep-card-date">2026-04-18</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业革命到 AI 时代</span>
+    <span class="ep-card-hl">周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-17.html">
     <div class="ep-card-top">
@@ -736,7 +705,7 @@
       <span class="ep-card-date">2026-04-16</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康的一面镜子</span>
+    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-15.html">
     <div class="ep-card-top">
@@ -771,7 +740,7 @@
       <span class="ep-card-date">2026-04-11</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 AGI 竞赛</span>
+    <span class="ep-card-hl">周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 ...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-10.html">
     <div class="ep-card-top">
@@ -820,7 +789,7 @@
       <span class="ep-card-date">2026-04-04</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代价</span>
+    <span class="ep-card-hl">周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-03.html">
     <div class="ep-card-top">
@@ -834,7 +803,7 @@
       <span class="ep-card-date">2026-04-02</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量"对女性可能根本不标...</span>
+    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-01.html">
     <div class="ep-card-top">
@@ -848,7 +817,7 @@
       <span class="ep-card-date">2026-03-31</span>
       <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
     </div>
-    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来了？</span>
+    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-30.html">
     <div class="ep-card-top">
@@ -883,7 +852,7 @@
       <span class="ep-card-date">2026-03-26</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说清楚</span>
+    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-25.html">
     <div class="ep-card-top">
@@ -911,7 +880,7 @@
       <span class="ep-card-date">2026-03-22</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI</span>
+    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-21.html">
     <div class="ep-card-top">

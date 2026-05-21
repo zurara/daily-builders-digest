@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-20">
-<meta property="og:description" content="GitHub Copilot App 独立桌面版 · Googlebook 取代 Chromebook · Alexa AI 播客 · Firefox Shake to Summarize">
-<title>Daily Builders Digest · 2026-05-20</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-21">
+<meta property="og:description" content="健康星期四 · 社交焦虑的解药 · 家族健康史 · 心脏病防线">
+<title>Daily Builders Digest · 2026-05-21</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -124,18 +124,6 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -203,6 +191,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +267,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,11 +283,20 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -289,11 +315,11 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-05-20</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-05-21</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·05·20 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·05·21 周四</span>
+    <span>🏷 主题：社交焦虑的解药 · 家族健康史 · 心脏病防线</span>
     <span>🎙 主持：大雨 × 小苇</span>
     <span>⏱ 约 15 分钟</span>
   </div>
@@ -302,14 +328,16 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>GitHub Copilot App — 代码 Agent 有了独立桌面应用</span>
-    <span class="ticker-item"><span class="dot">▶</span>Googlebook 取代 Chromebook — Android AI 笔记本新品类</span>
-    <span class="ticker-item"><span class="dot">▶</span>Amazon Alexa Podcasts — AI 按需生成播客节目</span>
-    <span class="ticker-item"><span class="dot">▶</span>Firefox Shake to Summarize 登陆 Android</span>
-    <span class="ticker-item"><span class="dot">▶</span>GitHub Copilot App — 代码 Agent 有了独立桌面应用</span>
-    <span class="ticker-item"><span class="dot">▶</span>Googlebook 取代 Chromebook — Android AI 笔记本新品类</span>
-    <span class="ticker-item"><span class="dot">▶</span>Amazon Alexa Podcasts — AI 按需生成播客节目</span>
-    <span class="ticker-item"><span class="dot">▶</span>Firefox Shake to Summarize 登陆 Android</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Nick Epley — 跟陌生人聊天是被低估的健康干预</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA #84 — 家族健康史是你最该做的"检查"</span>
+    <span class="ticker-item"><span class="dot">▶</span>心脏病预防 — 工具已经足够好，问题是人们不用</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 找一个陌生人说一句话，你的健康会感谢你</span>
+    <span class="ticker-item"><span class="dot">▶</span>Karpathy 加入 Anthropic · Swyx 确诊 RSI</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Nick Epley — 跟陌生人聊天是被低估的健康干预</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA #84 — 家族健康史是你最该做的"检查"</span>
+    <span class="ticker-item"><span class="dot">▶</span>心脏病预防 — 工具已经足够好，问题是人们不用</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 找一个陌生人说一句话，你的健康会感谢你</span>
+    <span class="ticker-item"><span class="dot">▶</span>Karpathy 加入 Anthropic · Swyx 确诊 RSI</span>
   </div>
 </div>
 
@@ -317,68 +345,101 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>收听本期播客</strong>
-    <span>· 2026-05-20 · 产品星期三</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 15 分钟</span>
   </div>
-  <audio controls src="episodes/2026-05-20.mp3">您的浏览器不支持音频播放。</audio>
+  <audio controls preload="none" src="episodes/2026-05-21.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-21.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- INDEX -->
-<p class="section-label">◈ 本期目录</p>
-<table class="index-table">
-  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
-  <tbody>
-    <tr><td>01</td><td><a href="#s1">GitHub Copilot App：代码 Agent 有了自己的家</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>02</td><td><a href="#s2">Googlebook：Chromebook 的终结，Android 笔记本时代开始</a></td><td><span class="tag">硬件</span></td></tr>
-    <tr><td>03</td><td><a href="#s3">Amazon Alexa Podcasts：AI 生成播客，按需制作</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>04</td><td><a href="#s4">Firefox Shake to Summarize 登陆 Android</a></td><td><span class="tag">浏览器</span></td></tr>
-  </tbody>
-</table>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 两大来源</p>
 
-<!-- NEWS GRID -->
 <div class="news-grid">
 
-  <!-- LEAD: GitHub Copilot App -->
-  <div class="news-card lead" id="s1">
-    <p class="news-num">Story 01</p>
-    <h2 class="news-hed">GitHub Copilot App：代码 Agent 有了自己的家</h2>
+  <!-- LEAD: Huberman Lab -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Dr. Nick Epley：跟陌生人聊天，是最被低估的健康干预</h2>
     <p class="news-body">
-      5月14号，GitHub 正式发布 Copilot App 技术预览版——不是 VS Code 插件升级，而是一个全新的独立桌面应用，支持 Mac、Windows 和 Linux。核心理念是「从 Issue 出发的全流程 Agent」：打开一个 GitHub Issue，Copilot 自动分析需求，创建独立的 git worktree 和分支，在隔离环境里写代码，最终输出 Pull Request。你可以同时跑多个 Agent session，并行处理不同任务。目前对 Copilot Pro/Pro+ 用户开放早期试用。开发工具竞争已经从「编辑器里的补全」升级到了「独立的代码 Agent 平台」。
+      5 月 18 日发布的这期 Huberman Lab 请到了芝加哥大学行为科学教授 Nick Epley 博士，他是社交认知与人际互动领域的顶级专家。<br><br>
+      <strong>① 社交是身体健康的基础设施</strong>——Epley 的研究显示，日常与陌生人的微小互动——跟咖啡师多聊两句、在电梯里打个招呼——能显著改善心理和身体健康指标。社交联系的质量和数量是预测寿命的最强指标之一，甚至超过吸烟、肥胖和运动量。<br><br>
+      <strong>② 预期错误</strong>——人们普遍高估社交的尴尬程度，低估对方的善意回应。我们在脑海里排练社交场景时总是想象最坏结果，但实际对话几乎总是比预期更愉快。这种认知偏差是社交焦虑的核心来源。<br><br>
+      <strong>③ 行为先于感受</strong>——你不需要先克服焦虑才能社交，而是通过社交来减轻焦虑。每天跟一个陌生人说一句话——一句真诚的赞美、一个问题就够了。越是觉得自己"不擅长社交"的人，获益越大，因为边际效益更高。<br><br>
+      <strong>④ 对建造者的意义</strong>——程序员和工程师常常觉得自己适合独处，但研究表明社交孤立的健康危害被严重低估。在远程工作时代，刻意创造社交接触点变得更加重要。
     </p>
-    <p class="news-source">📎 <a href="https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/" target="_blank">GitHub Blog</a> · <a href="https://thenewstack.io/github-copilot-desktop-app/" target="_blank">The New Stack</a></p>
+    <p class="news-source">
+      📎 <a href="https://www.hubermanlab.com/episode/how-to-overcome-social-anxiety-nick-epley" target="_blank">How to Overcome Social Anxiety | Dr. Nick Epley — Huberman Lab</a>
+    </p>
   </div>
 
-  <!-- Googlebook -->
-  <div class="news-card" id="s2">
-    <p class="news-num">Story 02</p>
-    <h2 class="news-hed">Googlebook：Chromebook 终结，Android 笔记本时代开始</h2>
+  <!-- Peter Attia -->
+  <div class="news-card" style="grid-column: 1 / -1;">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">Peter Attia AMA #84：家族健康史、心脏病预防、力量训练最低剂量</h2>
     <p class="news-body">
-      Google 在 The Android Show 上宣布 Googlebook——全新品类的 Android 笔记本，围绕 Gemini AI 从底层设计。告别 Chromebook 的功能局限，直接跑所有 Android 应用。独特设计包括 Magic Pointer 智能推荐和 Glowbar 发光条。Acer、ASUS、Dell、HP、Lenovo 均加入，预计今秋上市。关键信号：操作系统不再是壁垒，AI 集成才是差异化。
+      Attia 在 5 月 4 日的 AMA 第 84 期中回答了听众的多个健康问题，信息密度极高。<br><br>
+      <strong>家族健康史</strong>——大多数人只知道"爷爷有心脏病"这种粗糙程度。Attia 建议梳理三代人的具体信息：死因、确诊年龄、疾病亚型。"心脏病"太笼统——是心梗还是心衰？45 岁还是 75 岁？这些细节决定了完全不同的风险画像。<br><br>
+      <strong>心脏病预防</strong>——全球第一杀手，预防却惊人地差。现有工具已经足够好——apoB 检测、冠状动脉钙化评分、生活方式干预。问题不是工具不够，是人们不用。传统"十年风险"评估模型低估年轻人的终身风险。动脉粥样硬化预防越早越好。<br><br>
+      <strong>力量训练最低有效剂量</strong>——时间紧张的人，每周 2–3 次、每次 30–45 分钟的力量训练就能获得大部分健康收益。<br><br>
+      <strong>NAD 补充剂</strong>——动物数据有希望，但高质量人体试验不足。Attia 不推荐也不反对，强调先把基础做好：睡眠、运动、营养、压力管理。补充剂是锦上添花，不是基础。
     </p>
-    <p class="news-source">📎 <a href="https://blog.google/products-and-platforms/platforms/android/meet-googlebook/" target="_blank">Google Blog</a> · <a href="https://techcrunch.com/2026/05/12/google-unveils-googlebooks-a-new-line-of-ai-native-laptops/" target="_blank">TechCrunch</a></p>
-  </div>
-
-  <!-- Alexa Podcasts -->
-  <div class="news-card" id="s3">
-    <p class="news-num">Story 03</p>
-    <h2 class="news-hed">Amazon Alexa Podcasts：AI 生成播客，按需制作</h2>
-    <p class="news-body">
-      亚马逊在 Alexa+ 上线 Alexa Podcasts——说一个话题，AI 搜集信息、生成大纲，你可以调整长度和语气，然后用双 AI 主播录制。亚马逊与 AP、Reuters、华盛顿邮报等200多家媒体签约，提供真实新闻源支撑。从 NotebookLM 到 Alexa Podcasts，AI 播客正在把「按需信息获取」变成音频形式。内容正从「人们创作的东西」变成「AI 按需生成的服务」。
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/ama84/" target="_blank">AMA #84 — Family health history, heart disease, metabolic health, strength training — The Peter Attia Drive</a>
     </p>
-    <p class="news-source">📎 <a href="https://techcrunch.com/2026/05/18/amazons-new-alexa-powered-feature-can-generate-podcast-episodes/" target="_blank">TechCrunch</a> · <a href="https://variety.com/2026/digital/news/amazon-alexa-plus-ai-podcasts-1236752477/" target="_blank">Variety</a></p>
-  </div>
-
-  <!-- Firefox Shake to Summarize -->
-  <div class="news-card" id="s4">
-    <p class="news-num">Story 04</p>
-    <h2 class="news-hed">Firefox Shake to Summarize 登陆 Android</h2>
-    <p class="news-body">
-      Mozilla 的 Shake to Summarize 正式登陆 Android——摇一下手机或点菜单即可获得5000字以内网页的 AI 摘要。底层使用 Mozilla 云端 Mistral-Small 模型，而非依赖 Big Tech。去年拿下 TIME Best Inventions 特别提名。产品启示：怎么在不牺牲品牌价值观的前提下，把 AI 做进产品。
-    </p>
-    <p class="news-source">📎 <a href="https://blog.mozilla.org/en/firefox/shake-to-summarize-expansion/" target="_blank">Mozilla Blog</a> · <a href="https://cybernews.com/ai-news/firefox-mozilla-shake-to-summarize-android/" target="_blank">Cybernews</a></p>
   </div>
 
 </div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 健康是一个关系型事业</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">你的健康不是一个人的事——它活在你和他人的关系中</h2>
+  <p class="spotlight-body">
+    今天两个播客看似话题不同——一个讲社交焦虑，一个讲心脏病预防——但底层逻辑惊人一致：<strong>健康从来不是一个人闷头做的事。</strong><br><br>
+    Epley 告诉我们，社交联系本身就是健康的核心要素。跟人说话、建立连接，不是"额外加分"，是基础设施。社交孤立对健康的危害不亚于每天抽 15 根烟。<br><br>
+    Attia 告诉我们，家族健康史是另一种连接。了解你的家人经历过什么——谁在什么年龄得了什么病——才能做出更好的个人决策。你的基因不是命运，但它是你做决策的起点。<br><br>
+    <strong>两者的交集：向外连接他人，向内连接家族。你的健康住在你与世界的关系里。</strong>
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.hubermanlab.com/episode/how-to-overcome-social-anxiety-nick-epley" target="_blank">How to Overcome Social Anxiety | Dr. Nick Epley</a> <span class="tag hot">New</span></td>
+      <td>Huberman Lab</td>
+      <td>2026-05-18</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://peterattiamd.com/ama84/" target="_blank">AMA #84 — Family health history, heart disease, strength training</a> <span class="tag hot">New</span></td>
+      <td>The Peter Attia Drive</td>
+      <td>2026-05-04</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.foundmyfitness.com/episodes/qa-80-dr-rhonda-patrick" target="_blank">Q&A #80 — Nattokinase, PFAS, APOE4 & HRT</a> <span class="tag">回顾</span></td>
+      <td>FoundMyFitness</td>
+      <td>2026-04-04</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -388,47 +449,47 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-05-20 06:00。
+  数据截至今日 UTC 2026-05-21T06:00。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">AI & I by Every · 2026-05-08</p>
-  <p class="pc-title">The Secrets of Claude's Platform From the Team Who Built It</p>
-  <p class="pc-summary">Anthropic 平台产品负责人 Angela 和工程负责人 Caitlin 深入解析 Claude 平台的未来方向——Claude 未来可能自己决定用什么模型、怎么调度 sub-agent，开发者不再需要手动设计架构，AI 正在学会自我组织。对产品人来说，这意味着平台正从「需要人类编排的工具」进化为「自组织的智能基础设施」。</p>
-  <a href="https://www.youtube.com/watch?v=lLypHkIVLqc" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Training Data · 2026-05-19</p>
+  <p class="pc-title">Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stauch</p>
+  <p class="pc-summary">Serval CEO Jake Stauch 谈 AI 原生企业 IT 的重塑。核心洞察：自动化应该让人回到他们真正喜欢的工作上来——消除重复性、消耗性的任务。他们用 AI 生成工作流代码而非手动搭建，让 IT 专业人员从工单搬运工变回真正的技术人。从健康角度看，减少无意义劳动本身就是心理健康的改善。</p>
+  <a href="https://www.youtube.com/watch?v=j7ypvRUFY7M" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">AK</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel CEO</div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · 前 Tesla AI 总监 / OpenAI 联合创始人</div>
       </div>
     </div>
-    <p class="builder-tweet">「你的 Agent 会爱上的防火墙。Vercel Firewall 全部防护功能现在完全免费——包括你自定义的规则。全球传播仅需约300毫秒。Vercel 将承担任何规模攻击的计算和网络成本。」</p>
+    <p class="builder-tweet">「个人更新：我加入了 Anthropic。我认为接下来几年是大语言模型前沿研究最关键的时期。我非常兴奋能加入这个团队，重返研发一线。我仍然对教育充满热情，计划未来继续这方面的工作。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 303 + 264</span>
-      <a href="https://x.com/rauchg/status/2056423973123183028" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 131,874</span>
+      <a href="https://x.com/karpathy/status/2056753169888334312" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">SX</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
       </div>
     </div>
-    <p class="builder-tweet">「这对所有 Agent 都适用，不只是编码 Agent。大多数公司在 Agent 策略中遇到的最大挑战是——如何给 Agent 正确的、受限的上下文来工作。」</p>
+    <p class="builder-tweet">「RSI is here. Jesus.」——重复性劳损来了。在我们讨论高级健康话题的同时，别忘了最基础的：手腕、颈椎、眼睛。如果你每天写代码超过 8 小时，RSI 不是"可能发生"，是"什么时候发生"。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 132</span>
-      <a href="https://x.com/levie/status/2056574979236409521" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 25</span>
+      <a href="https://x.com/swyx/status/2056790544731484358" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -437,45 +498,40 @@
       <div class="builder-avatar">PY</div>
       <div>
         <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · Product Creator</div>
+        <div class="builder-handle">@petergyang · Roblox PM / 创作者</div>
       </div>
     </div>
-    <p class="builder-tweet">「我从 Anthropic Alex Albert 关于如何构建下一代 Claude 模型的分享中提炼的五大要点：第一，模型和工具链是耦合的，每一个界面都在包装模型。」</p>
+    <p class="builder-tweet">「我不想只做一个拿着自拍杆的 influencer。我想做一个建造者，分享我的经验和错误。不能让建造者的肌肉萎缩。」——Cannot let the builder muscle atrophy. 建造者精神和身体健康一样，需要持续锻炼。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 60</span>
-      <a href="https://x.com/petergyang/status/2056381822733595090" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">RY</div>
-      <div>
-        <div class="builder-name">Ryo Lu</div>
-        <div class="builder-handle">@ryolu_ · Cursor / Anysphere</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「前沿智能，极致效率。Composer 2.5 来了。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 538</span>
-      <a href="https://x.com/ryolu_/status/2056417715448156276" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 38</span>
+      <a href="https://x.com/petergyang/status/2056953057066598805" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<hr class="rule">
-
+<!-- ─────────────────── FOOTER ─────────────────── -->
+<hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-05-20<br>
-  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
-  数据来源：WebSearch · follow-builders · 公开报道<br>
-  「关注建造者，不要关注 influencer。」
+  <strong>Daily Builders Digest</strong> · 每日建造者快报<br>
+  由 AI 辅助生成 · 人类编辑审核<br>
+  主持：大雨 × 小苇<br>
+  📬 反馈与建议：zurara@orthogonal.dev<br><br>
+  「关注建造者，不要关注 influencer。」<br>
+  数据来源：<a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a>
+  · Huberman Lab · The Peter Attia Drive · FoundMyFitness
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-20.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-20</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">GitHub Copilot App：代码 Agent 有了自己的家</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-19.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-19</span>

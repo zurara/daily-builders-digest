@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-22",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "OpenAI 通用推理模型独立解决 80 年 Erdős 数学猜想——数学界验证通过 · Google I/O 2026：Gemini 3.5 Flash 发布，Antigravity 2.0 重塑 Agent 开发",
+    "html": "episodes/2026-05-22.html",
+    "mp3": "episodes/2026-05-22.mp3",
+    "headlines": [
+      "OpenAI 通用推理模型独立解决 80 年 Erdős 数学猜想——数学界验证通过",
+      "Google I/O 2026：Gemini 3.5 Flash 发布，Antigravity 2.0 重塑 Agent 开发",
+      "Anthropic 以超三亿美元收购 Stainless——SDK 与 MCP 基础设施易主",
+      "Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型"
+    ]
+  },
+  {
     "date": "2026-05-21",
     "dow": 4,
     "topic": "Health",

@@ -6,14 +6,13 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-21">
-<meta property="og:description" content="健康星期四 · 社交焦虑的解药 · 家族健康史 · 心脏病防线">
-<title>Daily Builders Digest · 2026-05-21</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-22">
+<meta property="og:description" content="OpenAI 解决 80 年数学难题 · Google I/O 发布 Gemini 3.5 · Anthropic 收购 Stainless · Apple 开放第三方 AI">
+<title>Daily Builders Digest · 2026-05-22</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --bg:     #f2f0ea;
     --ink:    #0c0c0c;
@@ -22,257 +21,55 @@
     --light:  #d8d6d0;
     --card:   #eceae4;
   }
-
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 16px 80px;
-    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
-
-  /* ── HEADER ── */
-  .header {
-    padding: 48px 0 32px;
-    border-bottom: 1px solid var(--ink);
-  }
-  .header-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 10px;
-  }
-  .header-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 96px);
-    line-height: .95;
-    letter-spacing: .02em;
-    color: var(--ink);
-  }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
-  .header-meta {
-    margin-top: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--mid);
-    text-transform: uppercase;
-    letter-spacing: .1em;
-  }
-
-  /* ── TICKER ── */
-  .ticker-wrap {
-    overflow: hidden;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding: 9px 0;
-    margin: 0;
-    background: var(--ink);
-  }
-  .ticker-track {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: ticker 48s linear infinite;
-  }
-  .ticker-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .08em;
-    color: var(--bg);
-    margin-right: 72px;
-    text-transform: uppercase;
-  }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-
-  /* ── AUDIO PLAYER ── */
-  .audio-bar {
-    background: var(--ink);
-    padding: 16px 20px 14px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 2px solid var(--red);
-  }
-  .audio-bar-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio {
-    width: 100%;
-    height: 36px;
-    accent-color: var(--red);
-    display: block;
-  }
-
-  /* ── SECTION LABEL ── */
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--red);
-    padding: 36px 0 12px;
-    border-bottom: 1px solid var(--light);
-    margin-bottom: 24px;
-  }
-
-  /* ── NEWS GRID ── */
-  .news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--light);
-    border: 1px solid var(--light);
-    margin-bottom: 2px;
-  }
-  .news-card {
-    background: var(--bg);
-    padding: 24px;
-  }
-  .news-card.lead {
-    grid-column: 1 / -1;
-    padding: 32px;
-    border-bottom: 1px solid var(--light);
-  }
-  .news-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    color: var(--red);
-    letter-spacing: .08em;
-    margin-bottom: 8px;
-  }
-  .news-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
+  .news-card { background: var(--bg); padding: 24px; }
+  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
+  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
+  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
   .news-card.lead .news-hed { font-size: 24px; }
-  .news-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #333;
-  }
-  .news-source {
-    margin-top: 14px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .06em;
-    color: var(--mid);
-  }
-  .news-source a {
-    color: var(--red);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color .15s;
-  }
+  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
+  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
   .news-source a:hover { border-color: var(--red); }
-
-  /* ── SPOTLIGHT BLOCK ── */
-  .spotlight {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 32px;
-    margin-bottom: 2px;
-  }
-  .spotlight-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 10px;
-  }
-  .spotlight-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 14px;
-  }
-  .spotlight-body {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #ccc;
-  }
-  .spotlight-body strong { color: var(--bg); }
-
-  /* ── INDEX TABLE ── */
-  .index-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin-bottom: 48px;
-  }
-  .index-table th {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--ink);
-  }
-  .index-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--light);
-    vertical-align: top;
-  }
-  .index-table td:first-child {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--red);
-    width: 48px;
-  }
+  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
+  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
+  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
+  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
   .index-table td a { color: var(--ink); text-decoration: none; }
   .index-table td a:hover { text-decoration: underline; }
-  .tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    margin-left: 8px;
-    vertical-align: middle;
-  }
+  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
   .tag.hot { background: var(--red); color: #fff; }
-
-  /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -282,166 +79,148 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
-  .builder-likes { color: var(--mid); }
-
-  /* ── DIVIDERS ── */
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-
-  /* ── MOBILE ── */
   @media (max-width: 540px) {
     .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
   }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--ink);
-    padding-top: 24px;
-    font-size: 12px;
-    color: var(--mid);
-    font-family: 'JetBrains Mono', monospace;
-    line-height: 1.8;
-    letter-spacing: .04em;
-  }
+  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
   footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-05-21</p>
-  <h1 class="header-title">健康<span>星期四</span></h1>
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-22</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
   <div class="header-meta">
-    <span>📅 2026·05·21 周四</span>
-    <span>🏷 主题：社交焦虑的解药 · 家族健康史 · 心脏病防线</span>
+    <span>📅 2026·05·22 周五</span>
+    <span>🏷 主题：AI 新闻快报</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 15 分钟</span>
+    <span>⏱ 约 12 分钟</span>
   </div>
 </header>
 
-<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Nick Epley — 跟陌生人聊天是被低估的健康干预</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA #84 — 家族健康史是你最该做的"检查"</span>
-    <span class="ticker-item"><span class="dot">▶</span>心脏病预防 — 工具已经足够好，问题是人们不用</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 找一个陌生人说一句话，你的健康会感谢你</span>
-    <span class="ticker-item"><span class="dot">▶</span>Karpathy 加入 Anthropic · Swyx 确诊 RSI</span>
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Nick Epley — 跟陌生人聊天是被低估的健康干预</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA #84 — 家族健康史是你最该做的"检查"</span>
-    <span class="ticker-item"><span class="dot">▶</span>心脏病预防 — 工具已经足够好，问题是人们不用</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 找一个陌生人说一句话，你的健康会感谢你</span>
-    <span class="ticker-item"><span class="dot">▶</span>Karpathy 加入 Anthropic · Swyx 确诊 RSI</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 通用模型解决 80 年 Erdős 数学难题 · 数学界震动</span>
+    <span class="ticker-item"><span class="dot">▶</span>Google I/O 2026 · Gemini 3.5 Flash · Antigravity 2.0 Agent 平台</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic 三亿美元收购 Stainless · SDK 基础设施易主</span>
+    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · iOS 27 Extensions</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 通用模型解决 80 年 Erdős 数学难题 · 数学界震动</span>
+    <span class="ticker-item"><span class="dot">▶</span>Google I/O 2026 · Gemini 3.5 Flash · Antigravity 2.0 Agent 平台</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic 三亿美元收购 Stainless · SDK 基础设施易主</span>
+    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · iOS 27 Extensions</span>
   </div>
 </div>
 
-<!-- AUDIO PLAYER (sticky) -->
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 健康星期四 · 约 15 分钟</span>
+    <span>大雨 × 小苇 · 约 12 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-21.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-21.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-05-22.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-22.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── 播客焦点 ─────────────────── -->
-<p class="section-label">◈ 本周健康播客 · 两大来源</p>
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
 
 <div class="news-grid">
-
-  <!-- LEAD: Huberman Lab -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Huberman Lab × Dr. Nick Epley：跟陌生人聊天，是最被低估的健康干预</h2>
+    <h2 class="news-hed">OpenAI 通用推理模型独立解决 80 年 Erdős 数学猜想——数学界验证通过</h2>
     <p class="news-body">
-      5 月 18 日发布的这期 Huberman Lab 请到了芝加哥大学行为科学教授 Nick Epley 博士，他是社交认知与人际互动领域的顶级专家。<br><br>
-      <strong>① 社交是身体健康的基础设施</strong>——Epley 的研究显示，日常与陌生人的微小互动——跟咖啡师多聊两句、在电梯里打个招呼——能显著改善心理和身体健康指标。社交联系的质量和数量是预测寿命的最强指标之一，甚至超过吸烟、肥胖和运动量。<br><br>
-      <strong>② 预期错误</strong>——人们普遍高估社交的尴尬程度，低估对方的善意回应。我们在脑海里排练社交场景时总是想象最坏结果，但实际对话几乎总是比预期更愉快。这种认知偏差是社交焦虑的核心来源。<br><br>
-      <strong>③ 行为先于感受</strong>——你不需要先克服焦虑才能社交，而是通过社交来减轻焦虑。每天跟一个陌生人说一句话——一句真诚的赞美、一个问题就够了。越是觉得自己"不擅长社交"的人，获益越大，因为边际效益更高。<br><br>
-      <strong>④ 对建造者的意义</strong>——程序员和工程师常常觉得自己适合独处，但研究表明社交孤立的健康危害被严重低估。在远程工作时代，刻意创造社交接触点变得更加重要。
+      5 月 20 日，OpenAI 宣布其通用推理模型独立解决了 1946 年由 Paul Erdős 提出的平面单位距离问题。模型在代数数域中找到了全新的点构型族，超越了长期被认为最优的方格网排列。普林斯顿组合数学家 Noga Alon、曾质疑 OpenAI 上次声明的 Thomas Bloom 等多位数学家独立验证了证明。与七个月前 GPT-5 的翻车不同，这次是通用模型在无专门微调的情况下做出的原创数学贡献。Sam Altman 表示："未来几年我们会经常说这句话。"
     </p>
     <p class="news-source">
-      📎 <a href="https://www.hubermanlab.com/episode/how-to-overcome-social-anxiety-nick-epley" target="_blank">How to Overcome Social Anxiety | Dr. Nick Epley — Huberman Lab</a>
+      📎 <a href="https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/" target="_blank">TechCrunch</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.scientificamerican.com/article/ai-just-solved-an-80-year-old-erdos-problem-and-mathematicians-are-amazed/" target="_blank">Scientific American</a>
     </p>
   </div>
 
-  <!-- Peter Attia -->
-  <div class="news-card" style="grid-column: 1 / -1;">
+  <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">Peter Attia AMA #84：家族健康史、心脏病预防、力量训练最低剂量</h2>
+    <h2 class="news-hed">Google I/O 2026：Gemini 3.5 Flash 发布，Antigravity 2.0 重塑 Agent 开发</h2>
     <p class="news-body">
-      Attia 在 5 月 4 日的 AMA 第 84 期中回答了听众的多个健康问题，信息密度极高。<br><br>
-      <strong>家族健康史</strong>——大多数人只知道"爷爷有心脏病"这种粗糙程度。Attia 建议梳理三代人的具体信息：死因、确诊年龄、疾病亚型。"心脏病"太笼统——是心梗还是心衰？45 岁还是 75 岁？这些细节决定了完全不同的风险画像。<br><br>
-      <strong>心脏病预防</strong>——全球第一杀手，预防却惊人地差。现有工具已经足够好——apoB 检测、冠状动脉钙化评分、生活方式干预。问题不是工具不够，是人们不用。传统"十年风险"评估模型低估年轻人的终身风险。动脉粥样硬化预防越早越好。<br><br>
-      <strong>力量训练最低有效剂量</strong>——时间紧张的人，每周 2–3 次、每次 30–45 分钟的力量训练就能获得大部分健康收益。<br><br>
-      <strong>NAD 补充剂</strong>——动物数据有希望，但高质量人体试验不足。Attia 不推荐也不反对，强调先把基础做好：睡眠、运动、营养、压力管理。补充剂是锦上添花，不是基础。
+      Google 在 I/O 2026（5月19-21日）发布 Gemini 3.5 Flash，在 Terminal-Bench 2.1（76.2%）和 MCP Atlas（83.6%）上超越旗舰 Gemini 3.1 Pro。Antigravity 2.0 支持子 agent 编排、终端沙箱、凭证遮蔽。C2PA 内容凭证验证已在 Gemini 应用推出。Project Genie 实现自然语言游戏设计。
     </p>
     <p class="news-source">
-      📎 <a href="https://peterattiamd.com/ama84/" target="_blank">AMA #84 — Family health history, heart disease, metabolic health, strength training — The Peter Attia Drive</a>
+      📎 <a href="https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/" target="_blank">Google Developers Blog</a>
+      &nbsp;·&nbsp;
+      <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog</a>
     </p>
   </div>
 
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Anthropic 以超三亿美元收购 Stainless——SDK 与 MCP 基础设施易主</h2>
+    <p class="news-body">
+      Anthropic 于 5 月 18 日宣布收购 SDK/CLI 自动生成工具商 Stainless。Stainless 为 Anthropic、OpenAI 等公司生成官方 SDK，并拓展至 MCP server 生成。收购后 Stainless 关闭公开 SDK 生成器，迫使竞争对手自行重建工具链。到三月，MCP 已有 9700 万月 SDK 下载量和万余公开服务器。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">Anthropic</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.digitimes.com/news/a20260520PD210/anthropic-openai-google-startup-acquisition.html" target="_blank">DIGITIMES</a>
+    </p>
+  </div>
+
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型</h2>
+    <p class="news-body">
+      Apple 正在内部测试 Google Gemini 和 Anthropic Claude 的集成，计划在 iOS 27、iPadOS 27 和 macOS 27 中推出"Extensions"功能。用户可在设置中自由选择 AI 模型驱动 Siri、写作工具、图片生成等 Apple Intelligence 功能，甚至为第三方 AI 设置独立语音。Apple 从 AI 供应商角色转向 AI 分发平台，十几亿 iPhone 用户成为各家 AI 争夺的分发渠道。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Bloomberg</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.macrumors.com/2026/05/05/ios-27-third-party-chatbots-apple-intelligence/" target="_blank">MacRumors</a>
+    </p>
+  </div>
 </div>
 
-<!-- ─────────────────── 编辑洞察 ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 编辑洞察 · 健康是一个关系型事业</p>
-
-<div class="spotlight">
-  <p class="spotlight-label">🧭 Editor's Insight</p>
-  <h2 class="spotlight-hed">你的健康不是一个人的事——它活在你和他人的关系中</h2>
-  <p class="spotlight-body">
-    今天两个播客看似话题不同——一个讲社交焦虑，一个讲心脏病预防——但底层逻辑惊人一致：<strong>健康从来不是一个人闷头做的事。</strong><br><br>
-    Epley 告诉我们，社交联系本身就是健康的核心要素。跟人说话、建立连接，不是"额外加分"，是基础设施。社交孤立对健康的危害不亚于每天抽 15 根烟。<br><br>
-    Attia 告诉我们，家族健康史是另一种连接。了解你的家人经历过什么——谁在什么年龄得了什么病——才能做出更好的个人决策。你的基因不是命运，但它是你做决策的起点。<br><br>
-    <strong>两者的交集：向外连接他人，向内连接家族。你的健康住在你与世界的关系里。</strong>
-  </p>
-</div>
-
-<!-- ─────────────────── INDEX ─────────────────── -->
-<hr class="rule">
-<p class="section-label">◈ 本周健康来源索引</p>
+<p class="section-label">◈ 新闻索引</p>
 <table class="index-table">
   <thead>
-    <tr>
-      <th>#</th>
-      <th>标题</th>
-      <th>来源</th>
-      <th>日期</th>
-    </tr>
+    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
   </thead>
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://www.hubermanlab.com/episode/how-to-overcome-social-anxiety-nick-epley" target="_blank">How to Overcome Social Anxiety | Dr. Nick Epley</a> <span class="tag hot">New</span></td>
-      <td>Huberman Lab</td>
-      <td>2026-05-18</td>
+      <td><a href="https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/" target="_blank">OpenAI 解决 80 年 Erdős 数学猜想 <span class="tag hot">头条</span></a></td>
+      <td>TechCrunch</td>
+      <td>2026-05-20</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://peterattiamd.com/ama84/" target="_blank">AMA #84 — Family health history, heart disease, strength training</a> <span class="tag hot">New</span></td>
-      <td>The Peter Attia Drive</td>
-      <td>2026-05-04</td>
+      <td><a href="https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/" target="_blank">Google I/O 2026 · Gemini 3.5 Flash <span class="tag">发布</span></a></td>
+      <td>Google</td>
+      <td>2026-05-19</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://www.foundmyfitness.com/episodes/qa-80-dr-rhonda-patrick" target="_blank">Q&A #80 — Nattokinase, PFAS, APOE4 & HRT</a> <span class="tag">回顾</span></td>
-      <td>FoundMyFitness</td>
-      <td>2026-04-04</td>
+      <td><a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">Anthropic 收购 Stainless <span class="tag">收购</span></a></td>
+      <td>Anthropic</td>
+      <td>2026-05-18</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Apple Intelligence 开放第三方 AI <span class="tag">平台</span></a></td>
+      <td>Bloomberg</td>
+      <td>2026-05-05</td>
     </tr>
   </tbody>
 </table>
 
-<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
 <p class="section-label">◈ Follow Builders · 今日建造者动态</p>
 
@@ -449,82 +228,99 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-05-21T06:00。
+  数据截至今日 UTC 06:03。
 </p>
 
-<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Training Data · 2026-05-19</p>
-  <p class="pc-title">Rebuilding IT From the Ground Up for the AI Age: Serval's Jake Stauch</p>
-  <p class="pc-summary">Serval CEO Jake Stauch 谈 AI 原生企业 IT 的重塑。核心洞察：自动化应该让人回到他们真正喜欢的工作上来——消除重复性、消耗性的任务。他们用 AI 生成工作流代码而非手动搭建，让 IT 专业人员从工单搬运工变回真正的技术人。从健康角度看，减少无意义劳动本身就是心理健康的改善。</p>
-  <a href="https://www.youtube.com/watch?v=j7ypvRUFY7M" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">AI & I by Every · 2026-05-20</p>
+  <p class="pc-title">Inside Stainless: The Developer Tools Startup Anthropic Just Bought for $300 Million</p>
+  <p class="pc-summary">
+    Dan Shipper 深度对话 Stainless 创始人 Alex Rattray，探讨 MCP 的未来走向——为什么整个互联网架构是为 pre-AI 时代设计的，MCP 正在尝试让 AI 原生对接互联网服务，但规模化和安全性上可能存在根本挑战。Alex 指出，能做好 MCP 的公司将在未来十年获胜。
+  </p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
-<!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AK</div>
+      <div class="builder-avatar">SA</div>
       <div>
-        <div class="builder-name">Andrej Karpathy</div>
-        <div class="builder-handle">@karpathy · 前 Tesla AI 总监 / OpenAI 联合创始人</div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · OpenAI CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「个人更新：我加入了 Anthropic。我认为接下来几年是大语言模型前沿研究最关键的时期。我非常兴奋能加入这个团队，重返研发一线。我仍然对教育充满热情，计划未来继续这方面的工作。」</p>
+    <p class="builder-tweet">「通用 AI 模型解决了一个重大数学开放问题。未来几年我们会经常说这句话，但这确实是一个里程碑。我非常期待 AI 大幅拓展我们的知识边界。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 131,874</span>
-      <a href="https://x.com/karpathy/status/2056753169888334312" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 4763</span>
+      <a href="https://x.com/sama/status/2057203171198636251" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SX</div>
+      <div class="builder-avatar">GR</div>
       <div>
-        <div class="builder-name">Swyx</div>
-        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「RSI is here. Jesus.」——重复性劳损来了。在我们讨论高级健康话题的同时，别忘了最基础的：手腕、颈椎、眼睛。如果你每天写代码超过 8 小时，RSI 不是"可能发生"，是"什么时候发生"。</p>
+    <p class="builder-tweet">「这将把 AI 带给 42% 的 web。每个模型、每个提供商、每种模态——文本、图像、视频、音频。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 25</span>
-      <a href="https://x.com/swyx/status/2056790544731484358" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 229</span>
+      <a href="https://x.com/rauchg/status/2057212335811620987" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PY</div>
+      <div class="builder-avatar">ZZ</div>
       <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · Roblox PM / 创作者</div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder</div>
       </div>
     </div>
-    <p class="builder-tweet">「我不想只做一个拿着自拍杆的 influencer。我想做一个建造者，分享我的经验和错误。不能让建造者的肌肉萎缩。」——Cannot let the builder muscle atrophy. 建造者精神和身体健康一样，需要持续锻炼。</p>
+    <p class="builder-tweet">「Google I/O 上'如何在 AI 时代成为更好的开发者'这个 session 的 slide 很棒——T 型人才不仅适用于开发者，而是适用于每个岗位。我们需要在专业领域更深入，同时拓宽 AI 能力的宽度。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 38</span>
-      <a href="https://x.com/petergyang/status/2056953057066598805" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 151</span>
+      <a href="https://x.com/zarazhangrui/status/2057267931025957348" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Exa 是我所有 agent 都信赖的搜索工具。我们在 YC 用它，在 OpenClaw 和 Hermes Agents 里也用它。当你的 agent 需要搜索时，没有比它更快、更可靠、更全面的选项了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1102</span>
+      <a href="https://x.com/garrytan/status/2057202833251000503" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<!-- ─────────────────── FOOTER ─────────────────── -->
 <hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 每日建造者快报<br>
-  由 AI 辅助生成 · 人类编辑审核<br>
-  主持：大雨 × 小苇<br>
-  📬 反馈与建议：zurara@orthogonal.dev<br><br>
-  「关注建造者，不要关注 influencer。」<br>
-  数据来源：<a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a>
-  · Huberman Lab · The Peter Attia Drive · FoundMyFitness
+  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
+  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
+  © 2026 Daily Builders Digest
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-21.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-21</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Nick Epley：跟陌生人聊天，是最被低估的健康干预</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-20.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-20</span>

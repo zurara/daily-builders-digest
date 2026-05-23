@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-22">
-<meta property="og:description" content="OpenAI 解决 80 年数学难题 · Google I/O 发布 Gemini 3.5 · Anthropic 收购 Stainless · Apple 开放第三方 AI">
-<title>Daily Builders Digest · 2026-05-22</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-23 · 周六书籍介绍">
+<meta property="og:description" content="Co-Intelligence · Ethan Mollick · 半人马还是赛博格？和AI共事的终极框架">
+<title>Daily Builders Digest · 2026-05-23 · 周六书籍介绍</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,11 +29,11 @@
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
   .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
   .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
   .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -43,33 +43,53 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
-  .news-card { background: var(--bg); padding: 24px; }
-  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
-  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
-  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
-  .news-card.lead .news-hed { font-size: 24px; }
-  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
-  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
-  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
-  .news-source a:hover { border-color: var(--red); }
-  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
-  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
-  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
-  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
-  .index-table td a { color: var(--ink); text-decoration: none; }
-  .index-table td a:hover { text-decoration: underline; }
-  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
-  .tag.hot { background: var(--red); color: #fff; }
+  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
+  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
+  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
+  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
+  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
+  .angle-card { background: var(--bg); padding: 20px 24px; }
+  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
+  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -80,147 +100,291 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
-  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
-  }
-  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
-  footer strong { color: var(--ink); }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
 </head>
 <body>
 
 <header class="header">
-  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-22</p>
-  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title"><span>CO-INTELLIGENCE</span></div>
   <div class="header-meta">
-    <span>📅 2026·05·22 周五</span>
-    <span>🏷 主题：AI 新闻快报</span>
-    <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>📅 2026-05-23</span>
+    <span>📚 周六书单 第十期</span>
+    <span>📰 非虚构 · AI协作 · 工作方式 · 创新</span>
+    <span>🎙 大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 通用模型解决 80 年 Erdős 数学难题 · 数学界震动</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google I/O 2026 · Gemini 3.5 Flash · Antigravity 2.0 Agent 平台</span>
-    <span class="ticker-item"><span class="dot">▶</span>Anthropic 三亿美元收购 Stainless · SDK 基础设施易主</span>
-    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · iOS 27 Extensions</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 通用模型解决 80 年 Erdős 数学难题 · 数学界震动</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google I/O 2026 · Gemini 3.5 Flash · Antigravity 2.0 Agent 平台</span>
-    <span class="ticker-item"><span class="dot">▶</span>Anthropic 三亿美元收购 Stainless · SDK 基础设施易主</span>
-    <span class="ticker-item"><span class="dot">▶</span>Apple Intelligence 开放第三方 AI · iOS 27 Extensions</span>
+    <span class="ticker-item"><span class="dot">●</span>半人马 vs 赛博格：人机协作的两种模式</span>
+    <span class="ticker-item"><span class="dot">●</span>永远邀请AI上桌 — 四条原则重塑工作方式</span>
+    <span class="ticker-item"><span class="dot">●</span>AI生产力悖论：效率提升为何反而需要更多人类参与</span>
+    <span class="ticker-item"><span class="dot">●</span>NYT畅销书 · 经济学人年度好书 · 金融时报年度好书</span>
+    <span class="ticker-item"><span class="dot">●</span>半人马 vs 赛博格：人机协作的两种模式</span>
+    <span class="ticker-item"><span class="dot">●</span>永远邀请AI上桌 — 四条原则重塑工作方式</span>
+    <span class="ticker-item"><span class="dot">●</span>AI生产力悖论：效率提升为何反而需要更多人类参与</span>
+    <span class="ticker-item"><span class="dot">●</span>NYT畅销书 · 经济学人年度好书 · 金融时报年度好书</span>
   </div>
 </div>
 
+<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <span class="icon">▶</span>
+    <strong>收听本期</strong>
+    <span>· Co-Intelligence · Ethan Mollick</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-22.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-22.mp3">下载音频</a>
-  </audio>
+  <audio controls src="episodes/2026-05-23.mp3"></audio>
 </div>
 
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
-
-<div class="news-grid">
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">OpenAI 通用推理模型独立解决 80 年 Erdős 数学猜想——数学界验证通过</h2>
-    <p class="news-body">
-      5 月 20 日，OpenAI 宣布其通用推理模型独立解决了 1946 年由 Paul Erdős 提出的平面单位距离问题。模型在代数数域中找到了全新的点构型族，超越了长期被认为最优的方格网排列。普林斯顿组合数学家 Noga Alon、曾质疑 OpenAI 上次声明的 Thomas Bloom 等多位数学家独立验证了证明。与七个月前 GPT-5 的翻车不同，这次是通用模型在无专门微调的情况下做出的原创数学贡献。Sam Altman 表示："未来几年我们会经常说这句话。"
-    </p>
-    <p class="news-source">
-      📎 <a href="https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/" target="_blank">TechCrunch</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.scientificamerican.com/article/ai-just-solved-an-80-year-old-erdos-problem-and-mathematicians-are-amazed/" target="_blank">Scientific American</a>
-    </p>
+<!-- BOOK HERO -->
+<div class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">本期书目</div>
+    <div class="book-title-big">CO-INTELLIGENCE</div>
+    <div class="book-subtitle">Living and Working with AI</div>
+    <div class="book-author-line">Ethan Mollick · Wharton School</div>
   </div>
-
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Google I/O 2026：Gemini 3.5 Flash 发布，Antigravity 2.0 重塑 Agent 开发</h2>
-    <p class="news-body">
-      Google 在 I/O 2026（5月19-21日）发布 Gemini 3.5 Flash，在 Terminal-Bench 2.1（76.2%）和 MCP Atlas（83.6%）上超越旗舰 Gemini 3.1 Pro。Antigravity 2.0 支持子 agent 编排、终端沙箱、凭证遮蔽。C2PA 内容凭证验证已在 Gemini 应用推出。Project Genie 实现自然语言游戏设计。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/" target="_blank">Google Developers Blog</a>
-      &nbsp;·&nbsp;
-      <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog</a>
-    </p>
-  </div>
-
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">Anthropic 以超三亿美元收购 Stainless——SDK 与 MCP 基础设施易主</h2>
-    <p class="news-body">
-      Anthropic 于 5 月 18 日宣布收购 SDK/CLI 自动生成工具商 Stainless。Stainless 为 Anthropic、OpenAI 等公司生成官方 SDK，并拓展至 MCP server 生成。收购后 Stainless 关闭公开 SDK 生成器，迫使竞争对手自行重建工具链。到三月，MCP 已有 9700 万月 SDK 下载量和万余公开服务器。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">Anthropic</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.digitimes.com/news/a20260520PD210/anthropic-openai-google-startup-acquisition.html" target="_blank">DIGITIMES</a>
-    </p>
-  </div>
-
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini 等 AI 模型</h2>
-    <p class="news-body">
-      Apple 正在内部测试 Google Gemini 和 Anthropic Claude 的集成，计划在 iOS 27、iPadOS 27 和 macOS 27 中推出"Extensions"功能。用户可在设置中自由选择 AI 模型驱动 Siri、写作工具、图片生成等 Apple Intelligence 功能，甚至为第三方 AI 设置独立语音。Apple 从 AI 供应商角色转向 AI 分发平台，十几亿 iPhone 用户成为各家 AI 争夺的分发渠道。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Bloomberg</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.macrumors.com/2026/05/05/ios-27-third-party-chatbots-apple-intelligence/" target="_blank">MacRumors</a>
-    </p>
+  <div class="book-meta-panel">
+    <div class="book-one-liner">不要把AI当成工具，也不要把它当成人——它是一种全新的共同智慧，你需要学会和它共事。</div>
+    <div class="book-tags">
+      <span class="tag">AI协作</span>
+      <span class="tag">工作方式</span>
+      <span class="tag">创新</span>
+      <span class="tag">生产力</span>
+      <span class="tag">管理学</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item"><div class="stat-label">出版</div><div class="stat-value">Portfolio/Penguin · 2024</div></div>
+      <div class="stat-item"><div class="stat-label">语言</div><div class="stat-value">英文</div></div>
+      <div class="stat-item"><div class="stat-label">ISBN</div><div class="stat-value">9780593716717</div></div>
+      <div class="stat-item"><div class="stat-label">页数</div><div class="stat-value">256 页</div></div>
+    </div>
   </div>
 </div>
 
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
-<table class="index-table">
-  <thead>
-    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/" target="_blank">OpenAI 解决 80 年 Erdős 数学猜想 <span class="tag hot">头条</span></a></td>
-      <td>TechCrunch</td>
-      <td>2026-05-20</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/" target="_blank">Google I/O 2026 · Gemini 3.5 Flash <span class="tag">发布</span></a></td>
-      <td>Google</td>
-      <td>2026-05-19</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">Anthropic 收购 Stainless <span class="tag">收购</span></a></td>
-      <td>Anthropic</td>
-      <td>2026-05-18</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://www.bloomberg.com/news/articles/2026-05-05/ios-27-features-apple-plans-to-let-users-swap-models-across-apple-intelligence" target="_blank">Apple Intelligence 开放第三方 AI <span class="tag">平台</span></a></td>
-      <td>Bloomberg</td>
-      <td>2026-05-05</td>
-    </tr>
-  </tbody>
-</table>
+<!-- ─── SCRIPT ─── -->
+<div class="script-container">
+  <p class="section-label">◈ 对话实录 · Transcript</p>
 
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">周六好，欢迎回到书籍介绍。今天聊一本我觉得每个和AI打交道的人都应该读的书——Ethan Mollick 的《Co-Intelligence: Living and Working with AI》。这本书在2024年出版后迅速登上了《纽约时报》畅销书榜，也是《经济学人》和《金融时报》的年度好书。一年多过去了，书里的核心框架不仅没有过时，反而越来越重要。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">Ethan Mollick 是沃顿商学院的教授对吧？他好像一直在研究AI对工作的影响。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，他是宾夕法尼亚大学沃顿商学院的副教授，专门研究AI对工作、创业和教育的影响。但他的有趣之处在于他不是纯粹的学者——他在读博之前就和合伙人一起创过业，甚至参与发明了网络付费墙，最早被《华尔街日报》等媒体采用。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">付费墙？这可太有先见之明了。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是的。他在哈佛本科以优等成绩毕业，然后去了MIT斯隆管理学院拿了MBA和博士学位。他还被《时代》杂志评为AI领域最有影响力的人物之一。更关键的是，他一直在写一个叫"One Useful Thing"的newsletter，几乎每周都在实际测试最新的AI工具，然后分享洞见。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以他不是那种只在论文里谈理论的人，他真的在用AI。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">完全正确。这也是为什么这本书读起来特别不一样——它不是高高在上地预言未来，而是一个每天都在和AI打交道的人告诉你：我观察到了什么，我建议你怎么想。</div>
+  </div>
+
+  <p class="section-label">◈ 核心框架 · 半人马与赛博格</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这本书最出名的概念是不是"半人马"和"赛博格"？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，这是全书最核心的框架。Mollick 观察了大量人和AI协作的方式，提炼出两种模式。第一种叫"半人马"——就像希腊神话里上半身是人、下半身是马的生物一样，人和AI之间有一条清晰的分界线。你负责策略和判断，AI负责执行和计算。比如你决定用什么统计方法分析数据，然后让AI去画图。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个我能理解，就是明确分工。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">第二种叫"赛博格"。赛博格模式下，人和AI是深度交织的，你可能写一句话的开头让AI续写，然后修改它写的内容，再让它扩展另一段。你不再是发号施令然后等结果，而是在不断地你来我往中共同完成一个东西。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这两种方式哪个更好？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">Mollick 的研究结论很有意思——两种都比单独工作或单独依赖AI要好。无论是半人马还是赛博格，人和AI合作产生的结果都更多样、更准确、质量更高。但不同的模式会培养不同的技能：半人马模式让你更深入自己的领域专长，而赛博格模式让你培养出一种全新的AI协作能力。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以关键不是选哪种，而是你得选一种。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">说得精准。最糟糕的选择是完全不和AI协作。</div>
+  </div>
+
+  <p class="section-label">◈ 四条原则</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">书里还提了一些使用AI的原则？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，Mollick 提出了四条核心原则。第一条：永远邀请AI上桌。意思是在任何工作场景中，都先考虑AI能不能参与。不是说AI一定能帮忙，而是养成把AI纳入思考的习惯。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个"邀请上桌"的说法很好，不是让AI主导，而是给它一个座位。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">第二条：做那个"环中人"。也就是说你必须始终保持人类监督——AI可以提供建议、生成内容、做分析，但最终判断和决策必须由人来做。第三条是把AI当作一种全新的生物来对待——不要把它当成搜索引擎，也不要把它当成人。第四条是理解这一切都在快速变化——今天AI做不到的事情，三个月后可能就能做到了。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">第四条特别重要，因为很多人用了一次AI觉得不行就下结论说AI没用。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">没错。这也是为什么 Mollick 一直强调亲自动手实验的重要性。你必须持续地去试、去探索，才能跟上这个变化的速度。</div>
+  </div>
+
+  <p class="section-label">◈ 生产力悖论</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">他后来在TED上讲了一个"生产力悖论"的概念？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，去年十月他在TEDAI旧金山做了一个演讲，题目就叫"AI的生产力悖论——以及这对你意味着什么"。他指出了一个悖论：AI让每个人都更有生产力，但如果每个人都一样有生产力，那差异化就消失了。真正成功的企业会把AI视为协作者——用AI释放出来的时间不是用来裁员，而是用来做那些人类更擅长的事：创意、判断、建立关系、探索未知。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这和很多公司目前的做法完全相反。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是的。AI时代真正的竞争优势不是谁用AI替代了更多人，而是谁更好地实现了人和AI的共同智慧——也就是"Co-Intelligence"这个书名的含义。</div>
+  </div>
+
+  <p class="section-label">◈ 对建造者的启发</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">对我们这些做产品或写代码的人来说，这本书有什么实际价值？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">最大的价值在于它帮你建立一个思考框架。很多建造者现在面临一个困境：AI变化太快，你今天花三个月搭建的AI工具链，可能一次模型更新就过时了。Mollick 的框架告诉你：不要执着于特定的工具或方法，而是去培养那种"和AI共事"的能力本身。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">就像学游泳而不是学怎么在某个特定泳池里游泳。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">很好的比喻。另一个实际启发是关于团队管理——你需要理解你的团队成员各自适合半人马模式还是赛博格模式，然后创造条件让他们找到最适合自己的协作方式。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这本书有什么局限性吗？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">有一些。它出版于2024年4月，书中一些关于大语言模型如何工作的基础说明可能显得有些基础。但核心框架——半人马与赛博格、四条原则、生产力悖论——这些概念不仅没有过时，反而随着AI agent和多模态AI的发展变得更加相关。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以你推荐谁去读这本书？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">如果你还没有一个清晰的"我该怎么和AI合作"的思维框架，这本书是最好的起点之一。不管你是产品经理、工程师、设计师、教育工作者，还是企业管理者——只要你的工作和AI沾边，这本书会帮你把散落的经验和直觉整理成一套可以操作的思路。而且它很好读，Mollick 的文笔温暖又犀利。</div>
+  </div>
+</div>
+
+<!-- TAKEAWAYS -->
+<div class="takeaways">
+  <div class="takeaways-label">关键洞察</div>
+  <div class="takeaways-title">KEY TAKEAWAYS</div>
+  <div class="takeaway-item"><span class="takeaway-num">01</span><span>半人马模式（明确分工）和赛博格模式（深度交织）都比单独工作或纯粹依赖AI更有效——关键是你得选一种。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">02</span><span>永远邀请AI上桌、做环中人、把AI当新物种、理解一切都在变——四条原则构成了和AI共事的操作框架。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">03</span><span>生产力悖论：当AI让所有人都高效时，差异化来自人类独有的创意、判断和关系建设能力。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">04</span><span>不要执着于特定工具，要培养"和AI共事"的底层能力——这才是不会被模型更新淘汰的竞争力。</span></div>
+</div>
+
+<!-- DISCUSSION ANGLES -->
+<p class="section-label">◈ 讨论角度 · Discussion Angles</p>
+<div class="angles-grid">
+  <div class="angle-card">
+    <div class="angle-num">01</div>
+    <div class="angle-text">你更倾向于半人马还是赛博格？你的日常工作流程中，人和AI的分界线在哪里？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">02</div>
+    <div class="angle-text">Mollick 说"永远邀请AI上桌"——但在哪些场景下你会主动选择不邀请AI？这个边界如何划定？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">03</div>
+    <div class="angle-text">如果AI让所有人都同样高效，个人的不可替代性来自哪里？你如何看待生产力悖论？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">04</div>
+    <div class="angle-text">作为团队领导者，你会如何根据半人马/赛博格框架来重新设计团队的AI协作方式？</div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">📎 参考来源</div>
+  <a class="source-link" href="https://www.amazon.com/Co-Intelligence-Living-Working-Ethan-Mollick/dp/059371671X" target="_blank"><span class="src-icon">Book</span> Co-Intelligence: Living and Working with AI — Amazon</a>
+  <a class="source-link" href="https://www.ted.com/talks/ethan_mollick_ai_s_productivity_paradox_and_what_it_means_for_you" target="_blank"><span class="src-icon">TED</span> AI's Productivity Paradox — and What It Means for You</a>
+  <a class="source-link" href="https://www.gsb.stanford.edu/insights/co-intelligence-ai-masterclass-ethan-mollick" target="_blank"><span class="src-icon">Stanford</span> Co-Intelligence: An AI Masterclass with Ethan Mollick</a>
+  <a class="source-link" href="https://www.oneusefulthing.org/" target="_blank"><span class="src-icon">Newsletter</span> One Useful Thing — Ethan Mollick</a>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
 <p class="section-label">◈ Follow Builders · 今日建造者动态</p>
 
@@ -228,92 +392,82 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:03。
+  数据截至今日 UTC 2026-05-22T07:32。
 </p>
 
+<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">AI & I by Every · 2026-05-20</p>
-  <p class="pc-title">Inside Stainless: The Developer Tools Startup Anthropic Just Bought for $300 Million</p>
-  <p class="pc-summary">
-    Dan Shipper 深度对话 Stainless 创始人 Alex Rattray，探讨 MCP 的未来走向——为什么整个互联网架构是为 pre-AI 时代设计的，MCP 正在尝试让 AI 原生对接互联网服务，但规模化和安全性上可能存在根本挑战。Alex 指出，能做好 MCP 的公司将在未来十年获胜。
-  </p>
-  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-05-21</p>
+  <p class="pc-title">OpenAI's Yann Dubois: Why AI Progress Suddenly Feels Real</p>
+  <p class="pc-summary">OpenAI Post-Training Frontiers 联合负责人 Yann Dubois 解释了为什么AI进步在2025年12月后突然有了"质变感"——关键是可靠性跨过了门槛。他还聊到了GPT-5.5的效率提升（速度翻倍）、强化学习从可验证的数学竞赛走向混乱的现实世界任务、以及为什么"最后一公里"的垂直应用仍然是创业者的广阔天地。</p>
+  <a href="https://www.youtube.com/watch?v=DhD1zZ8w8Mw" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
+<!-- BUILDERS GRID -->
 <div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「AI agent 从便宜的小上下文聊天工具，变成了巨大上下文窗口、成本高十倍的智能体。不同任务的成本分层越来越明显——企业需要全新的财务团队和技术来做价格优化。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 474</span>
+      <a href="https://x.com/levie/status/2057663408376516703" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">SA</div>
       <div>
         <div class="builder-name">Sam Altman</div>
-        <div class="builder-handle">@sama · OpenAI CEO</div>
+        <div class="builder-handle">@sama · CEO, OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「通用 AI 模型解决了一个重大数学开放问题。未来几年我们会经常说这句话，但这确实是一个里程碑。我非常期待 AI 大幅拓展我们的知识边界。」</p>
+    <p class="builder-tweet">「你最希望AI解决什么问题？也许我们可以帮忙！」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 4763</span>
-      <a href="https://x.com/sama/status/2057203171198636251" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 7,462</span>
+      <a href="https://x.com/sama/status/2057614780727480741" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">AM</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel CEO</div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · CEO, Replit</div>
       </div>
     </div>
-    <p class="builder-tweet">「这将把 AI 带给 42% 的 web。每个模型、每个提供商、每种模态——文本、图像、视频、音频。」</p>
+    <p class="builder-tweet">「我们很乐意和客户聊天，但你不应该被迫和我们聊天才能买产品。」——关于自助购买体验的执着。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 229</span>
-      <a href="https://x.com/rauchg/status/2057212335811620987" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">ZZ</div>
-      <div>
-        <div class="builder-name">Zara Zhang</div>
-        <div class="builder-handle">@zarazhangrui · Builder</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Google I/O 上'如何在 AI 时代成为更好的开发者'这个 session 的 slide 很棒——T 型人才不仅适用于开发者，而是适用于每个岗位。我们需要在专业领域更深入，同时拓宽 AI 能力的宽度。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 151</span>
-      <a href="https://x.com/zarazhangrui/status/2057267931025957348" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">GT</div>
-      <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Exa 是我所有 agent 都信赖的搜索工具。我们在 YC 用它，在 OpenClaw 和 Hermes Agents 里也用它。当你的 agent 需要搜索时，没有比它更快、更可靠、更全面的选项了。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 1102</span>
-      <a href="https://x.com/garrytan/status/2057202833251000503" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 259</span>
+      <a href="https://x.com/amasad/status/2057504360217891018" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<hr class="rule-heavy">
-<footer>
-  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
-  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
-  © 2026 Daily Builders Digest
+<footer class="footer">
+  <span>Daily Builders Digest</span>
+  <span>2026-05-23 · 周六书籍介绍</span>
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-22.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-22</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">OpenAI 通用推理模型独立解决 80 年 Erdős 数学猜想——数学界验证通过</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-21.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-21</span>
@@ -340,14 +494,14 @@
       <span class="ep-card-date">2026-05-18</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini...</span>
+    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-17.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-17</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton ...</span>
+    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton </span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-16.html">
     <div class="ep-card-top">
@@ -382,7 +536,7 @@
       <span class="ep-card-date">2026-05-11</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估...</span>
+    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-10.html">
     <div class="ep-card-top">
@@ -396,14 +550,14 @@
       <span class="ep-card-date">2026-05-09</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造...</span>
+    <span class="ep-card-hl">周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-08.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-08</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes...</span>
+    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-07.html">
     <div class="ep-card-top">
@@ -445,7 +599,7 @@
       <span class="ep-card-date">2026-05-02</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真...</span>
+    <span class="ep-card-hl">周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-01.html">
     <div class="ep-card-top">
@@ -487,7 +641,7 @@
       <span class="ep-card-date">2026-04-26</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E...</span>
+    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-25.html">
     <div class="ep-card-top">
@@ -515,7 +669,7 @@
       <span class="ep-card-date">2026-04-22</span>
       <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
     </div>
-    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 ...</span>
+    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 </span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-21.html">
     <div class="ep-card-top">
@@ -543,7 +697,7 @@
       <span class="ep-card-date">2026-04-18</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业...</span>
+    <span class="ep-card-hl">周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-17.html">
     <div class="ep-card-top">
@@ -557,7 +711,7 @@
       <span class="ep-card-date">2026-04-16</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康...</span>
+    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-15.html">
     <div class="ep-card-top">
@@ -592,7 +746,7 @@
       <span class="ep-card-date">2026-04-11</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 ...</span>
+    <span class="ep-card-hl">周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 </span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-10.html">
     <div class="ep-card-top">
@@ -641,7 +795,7 @@
       <span class="ep-card-date">2026-04-04</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代...</span>
+    <span class="ep-card-hl">周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-03.html">
     <div class="ep-card-top">
@@ -655,7 +809,7 @@
       <span class="ep-card-date">2026-04-02</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量...</span>
+    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-01.html">
     <div class="ep-card-top">
@@ -669,7 +823,7 @@
       <span class="ep-card-date">2026-03-31</span>
       <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
     </div>
-    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来...</span>
+    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-30.html">
     <div class="ep-card-top">
@@ -704,7 +858,7 @@
       <span class="ep-card-date">2026-03-26</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说...</span>
+    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-25.html">
     <div class="ep-card-top">
@@ -732,7 +886,7 @@
       <span class="ep-card-date">2026-03-22</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er...</span>
+    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-21.html">
     <div class="ep-card-top">
@@ -770,16 +924,7 @@
     <span class="ep-card-hl">2026-03-16 · AI</span>
   </a>
 </div>
-<style>
-.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}
-.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}
-.ep-card:hover{background:var(--card);}
-.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
-.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
-.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}
-@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}
-</style>
+<style>.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}.ep-card:hover{background:var(--card);}.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}</style>
 
 </body>
 </html>

@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-05-23",
+    "dow": 6,
+    "topic": "Books",
+    "format": "书籍介绍",
+    "title": "Co-Intelligence · Ethan Mollick",
+    "html": "episodes/2026-05-23.html",
+    "mp3": "episodes/2026-05-23.mp3",
+    "headlines": [
+      "Co-Intelligence · Ethan Mollick",
+      "半人马与赛博格：人机协作的两种模式"
+    ]
+  },
+  {
     "date": "2026-05-22",
     "dow": 5,
     "topic": "AI",

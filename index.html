@@ -6,13 +6,14 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-23 · 周六书籍介绍">
-<meta property="og:description" content="Co-Intelligence · Ethan Mollick · 半人马还是赛博格？和AI共事的终极框架">
-<title>Daily Builders Digest · 2026-05-23 · 周六书籍介绍</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-24">
+<meta property="og:description" content="周日播客精选 · Agent-Native Cloud · AI 硬件大潮 · Gemini 世界模型">
+<title>Daily Builders Digest · 2026-05-24</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --bg:     #f2f0ea;
     --ink:    #0c0c0c;
@@ -21,75 +22,219 @@
     --light:  #d8d6d0;
     --card:   #eceae4;
   }
+
   body {
-    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
-    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
-    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
-  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
-  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
   .header-title span { color: var(--red); }
-  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
-  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
-  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 42s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
-  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
-  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
-  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
-  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
-  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
-  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
-  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-  .stat-item { display: flex; flex-direction: column; gap: 4px; }
-  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
-  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
-  .script-block.lead-block { border-left-color: var(--red); }
-  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .speaker-dayu { color: var(--red); }
-  .speaker-xiaowei { color: #555; }
-  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
-  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
-  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
-  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
-  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
-  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
-  .angle-card { background: var(--bg); padding: 20px 24px; }
-  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
-  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
-  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
-  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
-  .source-link:hover { color: var(--red); }
-  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── PODCAST DEEP DIVE ── */
+  .deep-dive {
+    margin-bottom: 48px;
+  }
+  .deep-dive-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .deep-dive h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .deep-dive .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    margin-bottom: 18px;
+  }
+  .deep-dive .body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #222;
+  }
+  .deep-dive .body p { margin-bottom: 14px; }
+  .deep-dive .body strong { color: var(--ink); }
+  .deep-dive .source {
+    margin-top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .deep-dive .source a { color: var(--red); text-decoration: none; }
+
+  /* ── BRIEF CARDS ── */
+  .briefs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 48px;
+  }
+  .brief-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .brief-card .brief-show {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .brief-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .brief-card .brief-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .brief-card .brief-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .brief-card .brief-source {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+  }
+  .brief-card .brief-source a { color: var(--red); text-decoration: none; }
+
+  /* ── BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
-  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -100,288 +245,129 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .header { padding: 28px 0 20px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .deep-dive h2 { font-size: 20px; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
-  <div class="header-title"><span>CO-INTELLIGENCE</span></div>
+  <p class="header-eyebrow">周日播客精选 · 每日播客 · Vol.2026-05-24</p>
+  <h1 class="header-title">周日<span>播客</span><br>精选</h1>
   <div class="header-meta">
-    <span>📅 2026-05-23</span>
-    <span>📚 周六书单 第十期</span>
-    <span>📰 非虚构 · AI协作 · 工作方式 · 创新</span>
-    <span>🎙 大雨 × 小苇</span>
+    <span>📅 2026·05·24 周日</span>
+    <span>🏷 主题：播客精选</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 14 分钟</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>半人马 vs 赛博格：人机协作的两种模式</span>
-    <span class="ticker-item"><span class="dot">●</span>永远邀请AI上桌 — 四条原则重塑工作方式</span>
-    <span class="ticker-item"><span class="dot">●</span>AI生产力悖论：效率提升为何反而需要更多人类参与</span>
-    <span class="ticker-item"><span class="dot">●</span>NYT畅销书 · 经济学人年度好书 · 金融时报年度好书</span>
-    <span class="ticker-item"><span class="dot">●</span>半人马 vs 赛博格：人机协作的两种模式</span>
-    <span class="ticker-item"><span class="dot">●</span>永远邀请AI上桌 — 四条原则重塑工作方式</span>
-    <span class="ticker-item"><span class="dot">●</span>AI生产力悖论：效率提升为何反而需要更多人类参与</span>
-    <span class="ticker-item"><span class="dot">●</span>NYT畅销书 · 经济学人年度好书 · 金融时报年度好书</span>
+    <span class="ticker-item"><span class="dot">▶</span>Railway Agent-Native Cloud · 35 人支撑 300 万用户 · 裸金属数据中心</span>
+    <span class="ticker-item"><span class="dot">▶</span>Caitlin Kalinowski · AI 硬件大潮 · 内存危机 · 人形机器人</span>
+    <span class="ticker-item"><span class="dot">▶</span>Oriol Vinyals · Gemini 世界模型 · 持续学习 · Agent 可靠性</span>
+    <span class="ticker-item"><span class="dot">▶</span>Abridge 环境临床智能 · 安全工程师 Boom · Mullet Factory</span>
+    <span class="ticker-item"><span class="dot">▶</span>Railway Agent-Native Cloud · 35 人支撑 300 万用户 · 裸金属数据中心</span>
+    <span class="ticker-item"><span class="dot">▶</span>Caitlin Kalinowski · AI 硬件大潮 · 内存危机 · 人形机器人</span>
+    <span class="ticker-item"><span class="dot">▶</span>Oriol Vinyals · Gemini 世界模型 · 持续学习 · Agent 可靠性</span>
+    <span class="ticker-item"><span class="dot">▶</span>Abridge 环境临床智能 · 安全工程师 Boom · Mullet Factory</span>
   </div>
 </div>
 
-<!-- AUDIO -->
+<!-- AUDIO PLAYER (sticky) -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">▶</span>
-    <strong>收听本期</strong>
-    <span>· Co-Intelligence · Ethan Mollick</span>
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 14 分钟</span>
   </div>
-  <audio controls src="episodes/2026-05-23.mp3"></audio>
+  <audio controls preload="none" src="episodes/2026-05-24.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-24.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- BOOK HERO -->
-<div class="book-hero">
-  <div class="book-cover-panel">
-    <div class="book-cover-label">本期书目</div>
-    <div class="book-title-big">CO-INTELLIGENCE</div>
-    <div class="book-subtitle">Living and Working with AI</div>
-    <div class="book-author-line">Ethan Mollick · Wharton School</div>
+<!-- ─────────────────── MAIN PICK ─────────────────── -->
+<p class="section-label">◈ 本周主打 · Deep Dive</p>
+
+<div class="deep-dive">
+  <p class="deep-dive-label">🎧 Latent Space · 2026-05-20</p>
+  <h2>Railway: Agent-Native Cloud — 35 人团队如何用裸金属数据中心重新定义云基础设施</h2>
+  <p class="meta">嘉宾：Jake Cooper · Railway 创始人 / 前 Bloomberg & Uber 工程师</p>
+
+  <div class="body">
+    <p>这期 Latent Space 是 Swyx 和 Alessio 与 Railway 创始人 Jake Cooper 的深度对话。Jake 的初衷很简单——<strong>把东西部署到生产环境的门槛应该趋近于零。</strong>但他做的事情远不止简化部署。</p>
+
+    <p><strong>自建裸金属数据中心，3 个月回本，毛利率 70%。</strong> Railway 不是在 AWS 上包一层皮。Jake 把大部分工作负载迁移到了自己的裸金属服务器——投资回收期只有 3 个月，远低于传统云厂商。70% 的利润率用来资助弹性扩展——需要爆发时 burst 到 GCP 或 AWS。这是一种混合策略，但底层的控制权在自己手里。</p>
+
+    <p><strong>Agent-Native 意味着完全不同的交互范式。</strong> AI agent 部署软件的方式和人类完全不同——即时启动、动态伸缩、短生命周期的环境。传统云是为人类设计的：你登录控制台、配置实例、部署代码。但当 agent 在一秒钟内要启动一百个微服务时，整个基础设施需要重新设计。Jake 甚至提到了"PR 的死亡"——当 agent 可以直接部署和回滚代码时，pull request 审核流程反而成了瓶颈。</p>
+
+    <p><strong>35 个人，300 万用户，每周新增 10 万注册。</strong> 这个团队密度惊人。更有意思的是，他们每月 AI coding agent 开支超过 20 万美元——不是在卖 AI，而是在用 AI 构建自己的产品。Railway 的公司花费本身就是 agent-native 开发模式的最佳注解。</p>
+
+    <p><strong>5 月 19 日的 GCP 宕机</strong>给这个故事添了一笔现实主义注脚——Railway 有多可用区、多区域的 mesh 网络和 HA 光纤互连，但还是受到影响。这恰恰验证了为什么他们要加速拥有自己的硬件——依赖别人的云，就是接受别人的风险边界。</p>
   </div>
-  <div class="book-meta-panel">
-    <div class="book-one-liner">不要把AI当成工具，也不要把它当成人——它是一种全新的共同智慧，你需要学会和它共事。</div>
-    <div class="book-tags">
-      <span class="tag">AI协作</span>
-      <span class="tag">工作方式</span>
-      <span class="tag">创新</span>
-      <span class="tag">生产力</span>
-      <span class="tag">管理学</span>
+  <p class="source">📎 <a href="https://www.latent.space/p/railway" target="_blank">Latent Space — Railway: The Agent-Native Cloud</a></p>
+</div>
+
+<!-- ─────────────────── OTHER PICKS ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周其他精选 · Quick Picks</p>
+
+<div class="briefs-grid">
+
+  <div class="brief-card">
+    <p class="brief-show">Lenny's Podcast · 2026-05-17</p>
+    <h3>AI 硬件大潮的起点：Caitlin Kalinowski 谈从苹果到 OpenAI 机器人团队</h3>
+    <p class="brief-meta">嘉宾：Caitlin Kalinowski · 前 OpenAI / Meta / Apple 硬件负责人</p>
+    <div class="brief-body">
+      AI 的前沿正在从数字向物理世界转移——"你在键盘后面用 AI 做的事情很快就会饱和"。人形机器人量产面临内存危机（AI 数据中心需求推高价格），而未来两年战争领域的变化将比消费电子更大。从 MacBook Pro 到 Quest 到 OpenAI 机器人，她的职业轨迹本身就是这个趋势的缩影。
     </div>
-    <div class="book-stats">
-      <div class="stat-item"><div class="stat-label">出版</div><div class="stat-value">Portfolio/Penguin · 2024</div></div>
-      <div class="stat-item"><div class="stat-label">语言</div><div class="stat-value">英文</div></div>
-      <div class="stat-item"><div class="stat-label">ISBN</div><div class="stat-value">9780593716717</div></div>
-      <div class="stat-item"><div class="stat-label">页数</div><div class="stat-value">256 页</div></div>
+    <p class="brief-source">📎 <a href="https://www.lennysnewsletter.com/p/why-were-at-the-beginning-of-the" target="_blank">Lenny's Podcast</a></p>
+  </div>
+
+  <div class="brief-card">
+    <p class="brief-show">Unsupervised Learning (Redpoint) · 2026-05-22</p>
+    <h3>Gemini 联合负责人 Oriol Vinyals：世界模型、强化学习新领域与持续学习</h3>
+    <p class="brief-meta">嘉宾：Oriol Vinyals · Google DeepMind VP / Gemini 联合负责人 · Ep 87</p>
+    <div class="brief-body">
+      Vinyals 不是在反对 LLM，而是在思考如何让 Gemini 获得更接近世界模型的能力。强化学习已经在数学和编程之外找到了新的应用领域；持续学习系统意味着模型不需要每次从头训练。他也坦承 agent 在长链条任务中的可靠性仍不够——持续学习和记忆系统是解决路径之一。
     </div>
-  </div>
-</div>
-
-<!-- ─── SCRIPT ─── -->
-<div class="script-container">
-  <p class="section-label">◈ 对话实录 · Transcript</p>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">周六好，欢迎回到书籍介绍。今天聊一本我觉得每个和AI打交道的人都应该读的书——Ethan Mollick 的《Co-Intelligence: Living and Working with AI》。这本书在2024年出版后迅速登上了《纽约时报》畅销书榜，也是《经济学人》和《金融时报》的年度好书。一年多过去了，书里的核心框架不仅没有过时，反而越来越重要。</div>
+    <p class="brief-source">📎 <a href="https://www.youtube.com/watch?v=NQczevdpxq0" target="_blank">YouTube — Unsupervised Learning</a></p>
   </div>
 
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">Ethan Mollick 是沃顿商学院的教授对吧？他好像一直在研究AI对工作的影响。</div>
+  <div class="brief-card">
+    <p class="brief-show">Latent Space · 2026-05-14</p>
+    <h3>Abridge：环境临床智能如何在真实诊室中落地</h3>
+    <p class="brief-meta">嘉宾：Chaitanya Asawa & Janie Lee · Abridge</p>
+    <div class="brief-body">
+      AI 在诊室里实时听医生和患者的对话，自动生成结构化临床笔记、提取关键信息、给出决策建议。Abridge 已经在真实临床环境中部署。对减轻医生文档负担意义巨大——这可能是医疗 AI 中最"接地气"的应用之一。
+    </div>
+    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space Podcast</a></p>
   </div>
 
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，他是宾夕法尼亚大学沃顿商学院的副教授，专门研究AI对工作、创业和教育的影响。但他的有趣之处在于他不是纯粹的学者——他在读博之前就和合伙人一起创过业，甚至参与发明了网络付费墙，最早被《华尔街日报》等媒体采用。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">付费墙？这可太有先见之明了。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">是的。他在哈佛本科以优等成绩毕业，然后去了MIT斯隆管理学院拿了MBA和博士学位。他还被《时代》杂志评为AI领域最有影响力的人物之一。更关键的是，他一直在写一个叫"One Useful Thing"的newsletter，几乎每周都在实际测试最新的AI工具，然后分享洞见。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以他不是那种只在论文里谈理论的人，他真的在用AI。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">完全正确。这也是为什么这本书读起来特别不一样——它不是高高在上地预言未来，而是一个每天都在和AI打交道的人告诉你：我观察到了什么，我建议你怎么想。</div>
-  </div>
-
-  <p class="section-label">◈ 核心框架 · 半人马与赛博格</p>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这本书最出名的概念是不是"半人马"和"赛博格"？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，这是全书最核心的框架。Mollick 观察了大量人和AI协作的方式，提炼出两种模式。第一种叫"半人马"——就像希腊神话里上半身是人、下半身是马的生物一样，人和AI之间有一条清晰的分界线。你负责策略和判断，AI负责执行和计算。比如你决定用什么统计方法分析数据，然后让AI去画图。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这个我能理解，就是明确分工。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">第二种叫"赛博格"。赛博格模式下，人和AI是深度交织的，你可能写一句话的开头让AI续写，然后修改它写的内容，再让它扩展另一段。你不再是发号施令然后等结果，而是在不断地你来我往中共同完成一个东西。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这两种方式哪个更好？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">Mollick 的研究结论很有意思——两种都比单独工作或单独依赖AI要好。无论是半人马还是赛博格，人和AI合作产生的结果都更多样、更准确、质量更高。但不同的模式会培养不同的技能：半人马模式让你更深入自己的领域专长，而赛博格模式让你培养出一种全新的AI协作能力。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以关键不是选哪种，而是你得选一种。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">说得精准。最糟糕的选择是完全不和AI协作。</div>
-  </div>
-
-  <p class="section-label">◈ 四条原则</p>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">书里还提了一些使用AI的原则？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，Mollick 提出了四条核心原则。第一条：永远邀请AI上桌。意思是在任何工作场景中，都先考虑AI能不能参与。不是说AI一定能帮忙，而是养成把AI纳入思考的习惯。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这个"邀请上桌"的说法很好，不是让AI主导，而是给它一个座位。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">第二条：做那个"环中人"。也就是说你必须始终保持人类监督——AI可以提供建议、生成内容、做分析，但最终判断和决策必须由人来做。第三条是把AI当作一种全新的生物来对待——不要把它当成搜索引擎，也不要把它当成人。第四条是理解这一切都在快速变化——今天AI做不到的事情，三个月后可能就能做到了。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">第四条特别重要，因为很多人用了一次AI觉得不行就下结论说AI没用。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">没错。这也是为什么 Mollick 一直强调亲自动手实验的重要性。你必须持续地去试、去探索，才能跟上这个变化的速度。</div>
-  </div>
-
-  <p class="section-label">◈ 生产力悖论</p>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">他后来在TED上讲了一个"生产力悖论"的概念？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，去年十月他在TEDAI旧金山做了一个演讲，题目就叫"AI的生产力悖论——以及这对你意味着什么"。他指出了一个悖论：AI让每个人都更有生产力，但如果每个人都一样有生产力，那差异化就消失了。真正成功的企业会把AI视为协作者——用AI释放出来的时间不是用来裁员，而是用来做那些人类更擅长的事：创意、判断、建立关系、探索未知。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这和很多公司目前的做法完全相反。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">是的。AI时代真正的竞争优势不是谁用AI替代了更多人，而是谁更好地实现了人和AI的共同智慧——也就是"Co-Intelligence"这个书名的含义。</div>
-  </div>
-
-  <p class="section-label">◈ 对建造者的启发</p>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">对我们这些做产品或写代码的人来说，这本书有什么实际价值？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">最大的价值在于它帮你建立一个思考框架。很多建造者现在面临一个困境：AI变化太快，你今天花三个月搭建的AI工具链，可能一次模型更新就过时了。Mollick 的框架告诉你：不要执着于特定的工具或方法，而是去培养那种"和AI共事"的能力本身。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">就像学游泳而不是学怎么在某个特定泳池里游泳。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">很好的比喻。另一个实际启发是关于团队管理——你需要理解你的团队成员各自适合半人马模式还是赛博格模式，然后创造条件让他们找到最适合自己的协作方式。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这本书有什么局限性吗？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">有一些。它出版于2024年4月，书中一些关于大语言模型如何工作的基础说明可能显得有些基础。但核心框架——半人马与赛博格、四条原则、生产力悖论——这些概念不仅没有过时，反而随着AI agent和多模态AI的发展变得更加相关。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以你推荐谁去读这本书？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">如果你还没有一个清晰的"我该怎么和AI合作"的思维框架，这本书是最好的起点之一。不管你是产品经理、工程师、设计师、教育工作者，还是企业管理者——只要你的工作和AI沾边，这本书会帮你把散落的经验和直觉整理成一套可以操作的思路。而且它很好读，Mollick 的文笔温暖又犀利。</div>
-  </div>
-</div>
-
-<!-- TAKEAWAYS -->
-<div class="takeaways">
-  <div class="takeaways-label">关键洞察</div>
-  <div class="takeaways-title">KEY TAKEAWAYS</div>
-  <div class="takeaway-item"><span class="takeaway-num">01</span><span>半人马模式（明确分工）和赛博格模式（深度交织）都比单独工作或纯粹依赖AI更有效——关键是你得选一种。</span></div>
-  <div class="takeaway-item"><span class="takeaway-num">02</span><span>永远邀请AI上桌、做环中人、把AI当新物种、理解一切都在变——四条原则构成了和AI共事的操作框架。</span></div>
-  <div class="takeaway-item"><span class="takeaway-num">03</span><span>生产力悖论：当AI让所有人都高效时，差异化来自人类独有的创意、判断和关系建设能力。</span></div>
-  <div class="takeaway-item"><span class="takeaway-num">04</span><span>不要执着于特定工具，要培养"和AI共事"的底层能力——这才是不会被模型更新淘汰的竞争力。</span></div>
-</div>
-
-<!-- DISCUSSION ANGLES -->
-<p class="section-label">◈ 讨论角度 · Discussion Angles</p>
-<div class="angles-grid">
-  <div class="angle-card">
-    <div class="angle-num">01</div>
-    <div class="angle-text">你更倾向于半人马还是赛博格？你的日常工作流程中，人和AI的分界线在哪里？</div>
-  </div>
-  <div class="angle-card">
-    <div class="angle-num">02</div>
-    <div class="angle-text">Mollick 说"永远邀请AI上桌"——但在哪些场景下你会主动选择不邀请AI？这个边界如何划定？</div>
-  </div>
-  <div class="angle-card">
-    <div class="angle-num">03</div>
-    <div class="angle-text">如果AI让所有人都同样高效，个人的不可替代性来自哪里？你如何看待生产力悖论？</div>
-  </div>
-  <div class="angle-card">
-    <div class="angle-num">04</div>
-    <div class="angle-text">作为团队领导者，你会如何根据半人马/赛博格框架来重新设计团队的AI协作方式？</div>
-  </div>
-</div>
-
-<!-- SOURCES -->
-<div class="sources">
-  <div class="sources-label">📎 参考来源</div>
-  <a class="source-link" href="https://www.amazon.com/Co-Intelligence-Living-Working-Ethan-Mollick/dp/059371671X" target="_blank"><span class="src-icon">Book</span> Co-Intelligence: Living and Working with AI — Amazon</a>
-  <a class="source-link" href="https://www.ted.com/talks/ethan_mollick_ai_s_productivity_paradox_and_what_it_means_for_you" target="_blank"><span class="src-icon">TED</span> AI's Productivity Paradox — and What It Means for You</a>
-  <a class="source-link" href="https://www.gsb.stanford.edu/insights/co-intelligence-ai-masterclass-ethan-mollick" target="_blank"><span class="src-icon">Stanford</span> Co-Intelligence: An AI Masterclass with Ethan Mollick</a>
-  <a class="source-link" href="https://www.oneusefulthing.org/" target="_blank"><span class="src-icon">Newsletter</span> One Useful Thing — Ethan Mollick</a>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -392,75 +378,114 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-05-22T07:32。
+  数据截至今日 UTC 07:13。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
-  <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-05-21</p>
-  <p class="pc-title">OpenAI's Yann Dubois: Why AI Progress Suddenly Feels Real</p>
-  <p class="pc-summary">OpenAI Post-Training Frontiers 联合负责人 Yann Dubois 解释了为什么AI进步在2025年12月后突然有了"质变感"——关键是可靠性跨过了门槛。他还聊到了GPT-5.5的效率提升（速度翻倍）、强化学习从可验证的数学竞赛走向混乱的现实世界任务、以及为什么"最后一公里"的垂直应用仍然是创业者的广阔天地。</p>
-  <a href="https://www.youtube.com/watch?v=DhD1zZ8w8Mw" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-label">🎙 本周播客主打</p>
+  <p class="pc-show">Latent Space · 2026-05-20</p>
+  <p class="pc-title">Railway: The Agent-Native Cloud — Jake Cooper</p>
+  <p class="pc-summary">
+    35 人团队支撑 300 万用户，每周 10 万新注册。自建裸金属数据中心，3 个月回本，70% 毛利率。深度优先 agent 作为顶层获客渠道，重新定义软件部署的范式——从 PR 审核到 agent 直接部署和回滚。
+  </p>
+  <a href="https://www.latent.space/p/railway" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
+
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI agent 从便宜的小上下文聊天工具，变成了巨大上下文窗口、成本高十倍的智能体。不同任务的成本分层越来越明显——企业需要全新的财务团队和技术来做价格优化。」</p>
+    <p class="builder-tweet">「AI 让发现安全漏洞变得更容易，但新的瓶颈是人类审查、响应和修复的能力。这不是 AI 魔法般解决一切——需要大量分类工作和人类判断。安全工程师即将迎来一波 boom。杰文斯悖论再次上演。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 474</span>
-      <a href="https://x.com/levie/status/2057663408376516703" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 237</span>
+      <a href="https://x.com/levie/status/2058006473620463985" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SA</div>
+      <div class="builder-avatar">SW</div>
       <div>
-        <div class="builder-name">Sam Altman</div>
-        <div class="builder-handle">@sama · CEO, OpenAI</div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / smol.ai</div>
       </div>
     </div>
-    <p class="builder-tweet">「你最希望AI解决什么问题？也许我们可以帮忙！」</p>
+    <p class="builder-tweet">「Kakuna: 用 checklist 驱动的 skills 来加固代码库。让 agent 用 /plan 规划一天的工作，/goal 执行——回来时无聊的生产工程都做完了，还附带自我审计报告。Mullet factory——前面是有趣的功能，后面是扎实的工程。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 7,462</span>
-      <a href="https://x.com/sama/status/2057614780727480741" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 153</span>
+      <a href="https://x.com/swyx/status/2057876022553690327" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AM</div>
+      <div class="builder-avatar">GT</div>
       <div>
-        <div class="builder-name">Amjad Masad</div>
-        <div class="builder-handle">@amasad · CEO, Replit</div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们很乐意和客户聊天，但你不应该被迫和我们聊天才能买产品。」——关于自助购买体验的执着。</p>
+    <p class="builder-tweet">「GBrain v0.40.0 发布——给你的 OpenClaw/Hermes Agent 加上了基于 Gemini Live 的语音能力。大上下文、完整工具调用、全脑访问。Mars 是朋友，Venus 是你的 EA。开源送给你们。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 259</span>
-      <a href="https://x.com/amasad/status/2057504360217891018" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 159</span>
+      <a href="https://x.com/garrytan/status/2058053659527913566" target="_blank">查看推文 →</a>
     </div>
   </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · 前 Roblox PM</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「大裁员环境下如何掌控自己的命运：学会用 Codex 和 Claude Code，建立 side project 组合和 GitHub 履历，成为你领域前 10% 的人，让市场来决定你的价值。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 125</span>
+      <a href="https://x.com/petergyang/status/2057830781352034322" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
 </div>
 
-<footer class="footer">
-  <span>Daily Builders Digest</span>
-  <span>2026-05-23 · 周六书籍介绍</span>
+<!-- ─────────────────── CLOSING ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 这周你打算听哪一集？</p>
+<p style="font-size:15px; line-height:1.75; color:#222; margin-bottom:32px;">
+  本周播客的共同主线是——<strong>AI 正在从"用嘴聊天"走向"在真实世界做事"。</strong> Railway 在为 agent 建云基础设施，Kalinowski 在造 AI 硬件，Vinyals 在给模型加上世界理解和记忆，Abridge 在把 AI 塞进诊室。
+  <br><br>
+  Railway 那期必听。不是因为你会用 Railway，而是因为 Jake Cooper 对"agent 如何改变软件部署"的思考，对每一个做产品的人都有启发。当 agent 可以一秒钟启动一百个微服务的时候，我们现在的开发流程还有多少是必要的？
+  <br><br>
+  欢迎在评论区告诉我们，你最想完整听哪一集。我们下期见——关注建造者，周一不见不散。
+</p>
+
+<footer>
+  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · 周日播客精选<br>
+  「关注建造者，不要关注 influencer。」<br>
+  数据来源：follow-builders · Latent Space · Lenny's Podcast · Unsupervised Learning · X/Twitter<br>
+  © 2026 Daily Builders Digest
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-23.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-23</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">Co-Intelligence · Ethan Mollick</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-22.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-22</span>
@@ -494,14 +519,14 @@
       <span class="ep-card-date">2026-05-18</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini</span>
+    <span class="ep-card-hl">Apple Intelligence 向第三方开放——iOS 27 将支持用户自选 Claude、Gemini...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-17.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-17</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton </span>
+    <span class="ep-card-hl">Yann LeCun 离开 Meta 后首次深度访谈：反 LLM 宣言、V-JEPA 创业、与 Hinton ...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-16.html">
     <div class="ep-card-top">
@@ -536,7 +561,7 @@
       <span class="ep-card-date">2026-05-11</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估</span>
+    <span class="ep-card-hl">Anthropic 营收超越 OpenAI——300 亿年化收入，Q1 增长 80 倍，即将以 9000 亿估...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-10.html">
     <div class="ep-card-top">
@@ -550,14 +575,14 @@
       <span class="ep-card-date">2026-05-09</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造</span>
+    <span class="ep-card-hl">周六书籍介绍 · Nexus · Yuval Noah Harari · 从石器时代到AI——信息网络如何塑造...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-08.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-08</span>
       <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
     </div>
-    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes</span>
+    <span class="ep-card-hl">Anthropic 发布三大 Agent 新功能——Dreaming 让 AI 从经验中学习，Outcomes...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-07.html">
     <div class="ep-card-top">
@@ -599,7 +624,7 @@
       <span class="ep-card-date">2026-05-02</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真</span>
+    <span class="ep-card-hl">周六书籍介绍 · AI Engineering · Chip Huyen · 当基础模型已经存在，你怎么构建真...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-05-01.html">
     <div class="ep-card-top">
@@ -641,7 +666,7 @@
       <span class="ep-card-date">2026-04-26</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E</span>
+    <span class="ep-card-hl">How Anthropic's Product Team Moves Faster Than Anyone E...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-25.html">
     <div class="ep-card-top">
@@ -669,7 +694,7 @@
       <span class="ep-card-date">2026-04-22</span>
       <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
     </div>
-    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 </span>
+    <span class="ep-card-hl">OpenAI Codex 桌面大更新：Background Computer Use 让 AI 直接操控你的 ...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-21.html">
     <div class="ep-card-top">
@@ -697,7 +722,7 @@
       <span class="ep-card-date">2026-04-18</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业</span>
+    <span class="ep-card-hl">周六书籍介绍 · The Technology Trap · Carl Benedikt Frey · 从工业...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-17.html">
     <div class="ep-card-top">
@@ -711,7 +736,7 @@
       <span class="ep-card-date">2026-04-16</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康</span>
+    <span class="ep-card-hl">Huberman Lab × Dr. Natalie Crawford：女性生育力不只关乎生育——它是整体健康...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-15.html">
     <div class="ep-card-top">
@@ -746,7 +771,7 @@
       <span class="ep-card-date">2026-04-11</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 </span>
+    <span class="ep-card-hl">周六书籍介绍 · Supremacy · Parmy Olson · OpenAI 与 DeepMind 的 ...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-10.html">
     <div class="ep-card-top">
@@ -795,7 +820,7 @@
       <span class="ep-card-date">2026-04-04</span>
       <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
     </div>
-    <span class="ep-card-hl">周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代</span>
+    <span class="ep-card-hl">周六书籍介绍 · Empire of AI · Karen Hao · OpenAI 从理想主义到万亿帝国的代...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-03.html">
     <div class="ep-card-top">
@@ -809,7 +834,7 @@
       <span class="ep-card-date">2026-04-02</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量</span>
+    <span class="ep-card-hl">Huberman Lab × Marc Breedlove：产前荷尔蒙如何永久改写大脑——以及为什么"标准剂量...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-04-01.html">
     <div class="ep-card-top">
@@ -823,7 +848,7 @@
       <span class="ep-card-date">2026-03-31</span>
       <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
     </div>
-    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来</span>
+    <span class="ep-card-hl">Physical Intelligence：两岁公司估值破 110 亿美元，机器人界的 ChatGPT 时刻来...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-30.html">
     <div class="ep-card-top">
@@ -858,7 +883,7 @@
       <span class="ep-card-date">2026-03-26</span>
       <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
     </div>
-    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说</span>
+    <span class="ep-card-hl">Huberman Lab × Rhonda Patrick：从断食窗口到 BPC-157，一次性把生命力协议说...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-25.html">
     <div class="ep-card-top">
@@ -886,7 +911,7 @@
       <span class="ep-card-date">2026-03-22</span>
       <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
     </div>
-    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er</span>
+    <span class="ep-card-hl">Karpathy on Code Agents, AutoResearch, and the Loopy Er...</span>
   </a>
   <a class="ep-card" href="/episodes/2026-03-21.html">
     <div class="ep-card-top">
@@ -924,7 +949,16 @@
     <span class="ep-card-hl">2026-03-16 · AI</span>
   </a>
 </div>
-<style>.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}.ep-card:hover{background:var(--card);}.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}</style>
+<style>
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;background:var(--light);border:1px solid var(--light);margin-bottom:48px;}
+.ep-card{background:var(--bg);padding:14px 18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:background .12s;}
+.ep-card:hover{background:var(--card);}
+.ep-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.ep-card-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:.1em;}
+.ep-card-badge{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:1px 5px;border:1px solid;opacity:.85;}
+.ep-card-hl{font-size:13px;line-height:1.4;color:#333;}
+@media(max-width:480px){.ep-grid{grid-template-columns:1fr;}}
+</style>
 
 </body>
 </html>

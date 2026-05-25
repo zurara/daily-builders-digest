@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-25",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Google 搜索框 25 年最大改版——AI Agent 全面嵌入，10 亿月活用户 · Microsoft Copilot Studio「计算机使用」代理正式 GA——AI 像人一样操作界面",
+    "html": "episodes/2026-05-25.html",
+    "mp3": "episodes/2026-05-25.mp3",
+    "headlines": [
+      "Google 搜索框 25 年最大改版——AI Agent 全面嵌入，10 亿月活用户",
+      "Microsoft Copilot Studio「计算机使用」代理正式 GA——AI 像人一样操作界面",
+      "Anthropic × 盖茨基金会 2 亿美元合作——AI 深入医疗、教育、农业",
+      "YC CEO 几小时微调 Qwen3.5-397B——开源 AI 民主化加速"
+    ]
+  },
+  {
     "date": "2026-05-24",
     "dow": 7,
     "topic": "Podcasts",

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-05-25">
+<meta property="og:description" content="Google 搜索 25 年最大改版 · Microsoft 计算机使用代理 GA · Anthropic × 盖茨基金会 2 亿美元 · 开源 Qwen3.5-397B 微调">
+<title>Daily Builders Digest · 2026-05-25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
+  .news-card { background: var(--bg); padding: 24px; }
+  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
+  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
+  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
+  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .news-source a:hover { border-color: var(--red); }
+  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
+  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
+  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
+  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
+  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
+  .tag.hot { background: var(--red); color: #fff; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:"JetBrains Mono",monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px}.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0}.epnav-home:hover{color:#dd1111}.epnav-center{display:flex;align-items:center;gap:10px}.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0}.epnav-btn:hover{color:#dd1111}.epnav-btn.off{opacity:.25;pointer-events:none}.epnav-sep{color:#333;flex-shrink:0}.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media(max-width:420px){.epnav-info{display:none}}</style></head>
+<body>
+
+<header class="header">
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-05-25</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <div class="header-meta">
+    <span>📅 2026·05·25 周一</span>
+    <span>🏷 主题：AI 新闻快报</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 12 分钟</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>Google 搜索框 25 年最大改版 · AI Agent 全面嵌入 · 10 亿月活</span>
+    <span class="ticker-item"><span class="dot">▶</span>Microsoft Copilot Studio · 计算机使用代理正式 GA · 视觉推理驱动</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic × 盖茨基金会 · 2 亿美元 · 医疗教育农业</span>
+    <span class="ticker-item"><span class="dot">▶</span>Garry Tan 微调 Qwen3.5-397B · 开源 AI 民主化加速</span>
+    <span class="ticker-item"><span class="dot">▶</span>Google 搜索框 25 年最大改版 · AI Agent 全面嵌入 · 10 亿月活</span>
+    <span class="ticker-item"><span class="dot">▶</span>Microsoft Copilot Studio · 计算机使用代理正式 GA · 视觉推理驱动</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic × 盖茨基金会 · 2 亿美元 · 医疗教育农业</span>
+    <span class="ticker-item"><span class="dot">▶</span>Garry Tan 微调 Qwen3.5-397B · 开源 AI 民主化加速</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 12 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-05-25.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-25.mp3">下载音频</a>
+  </audio>
+</div>
+
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
+
+<div class="news-grid">
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Google 搜索框 25 年最大改版——AI Agent 全面嵌入，10 亿月活用户</h2>
+    <p class="news-body">
+      Google 在 I/O 2026 上发布了搜索框自诞生以来最大的一次重新设计。新搜索框支持完整句子输入，支持图片、视频和 Chrome 标签页等多模态输入，背后运行的是 Gemini 3.5 Flash。Google 同时推出「信息代理」（Information Agents），可在后台全天候监控互联网更新并主动推送。Generative UI 功能可根据查询实时生成交互式图表和模拟器，今年夏天对所有人免费开放。AI Mode 月活已超 10 亿。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank">Google Blog</a>
+      &nbsp;·&nbsp;
+      <a href="https://thenextweb.com/news/google-search-ai-overhaul-information-agents-io-2026" target="_blank">The Next Web</a>
+    </p>
+  </div>
+
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">Microsoft Copilot Studio「计算机使用」代理正式 GA——AI 像人一样操作界面</h2>
+    <p class="news-body">
+      微软宣布 Copilot Studio 的计算机使用代理正式上线。代理通过视觉推理导航真实 UI 界面，不依赖选择器或脚本，布局变化时自适应。Graebel 公司已用它操作 Global Connect 系统完成交易，无需 API 集成。同时推出 Agent 365 治理平面，构建超过 5 个代理的企业需使用，每用户每月 $15。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427" target="_blank">Microsoft Tech Community</a>
+      &nbsp;·&nbsp;
+      <a href="https://devops.com/microsoft-copilot-studio-brings-computer-using-agents-to-the-enterprise/" target="_blank">DevOps.com</a>
+    </p>
+  </div>
+
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Anthropic × 盖茨基金会 2 亿美元合作——AI 深入医疗、教育、农业</h2>
+    <p class="news-body">
+      Anthropic 与盖茨基金会于 5 月 14 日宣布 2 亿美元、为期四年的合作，将 Claude 部署到全球医疗（脊髓灰质炎、HPV、子痫前期）、教育（K-12 循证辅导、非洲和印度基础读写）和农业（小农经营生产力优化）领域。全球约 46 亿人缺乏基本医疗服务。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.anthropic.com/news/gates-foundation-partnership" target="_blank">Anthropic</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/05/ai-anthropic-partnership" target="_blank">Gates Foundation</a>
+    </p>
+  </div>
+
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">YC CEO 几小时微调 Qwen3.5-397B——开源 AI 民主化加速</h2>
+    <p class="news-body">
+      Y Combinator CEO Garry Tan 使用 Thinking Machines 平台在几小时内完成了 Qwen3.5-397B（近 4000 亿参数多模态模型）的微调。推文近 1000 赞。阿里出品的 Qwen 系列在全球开源社区中影响力持续扩大，配合 OpenAI 与微软伙伴关系重组（非排他、多云分发），AI 生态从平台锁定走向开放竞争。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://x.com/garrytan/status/2058378310254793013" target="_blank">Garry Tan on X</a>
+    </p>
+  </div>
+</div>
+
+<hr class="rule">
+<p class="section-label">◈ 新闻索引</p>
+<table class="index-table">
+  <thead>
+    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank">Google 搜索框 25 年最大改版 <span class="tag hot">头条</span></a></td>
+      <td>Google</td>
+      <td>2026-05-22</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://techcommunity.microsoft.com/blog/copilot-studio-blog/computer-using-agents-in-microsoft-copilot-studio-are-now-generally-available/4519427" target="_blank">Microsoft 计算机使用代理 GA <span class="tag">发布</span></a></td>
+      <td>Microsoft</td>
+      <td>2026-05-23</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.anthropic.com/news/gates-foundation-partnership" target="_blank">Anthropic × 盖茨基金会 2 亿美元 <span class="tag">合作</span></a></td>
+      <td>Anthropic</td>
+      <td>2026-05-14</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://x.com/garrytan/status/2058378310254793013" target="_blank">Garry Tan 微调 Qwen3.5-397B <span class="tag">开源</span></a></td>
+      <td>X/Twitter</td>
+      <td>2026-05-24</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 06:04。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · 2026-05-21</p>
+  <p class="pc-title">The Story Behind Cerebras' $63 Billion IPO with Founder and CEO Andrew Feldman</p>
+  <p class="pc-summary">
+    Cerebras 创始人 Andrew Feldman 深度讲述了从 2016 年创业到 IPO 的十年历程。Cerebras 的晶圆级芯片（餐盘大小）推理速度比 GPU 快 15-20 倍。曾在 2017-2019 年间每月烧 800 万美元却造不出来，最终在 2019 年夏天突破。先后拿下 G42 十亿美元订单、OpenAI 超 200 亿美元大单和 AWS 部署协议。Feldman 说：「要做到根本性的提升，你的设计必须与众不同。」
+  </p>
+  <a href="https://www.youtube.com/watch?v=jeop9wfb9jU" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「秀出你用 AI 做的最自豪的作品——在 1400 条回复中分析后发现：OpenAI 正在追赶 Anthropic，Codex 的提及量超过 Claude Code，但按模型使用量看，Anthropic 仍然领先。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2195</span>
+      <a href="https://x.com/rauchg/status/2058245330836271263" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Thinking Machines 令人印象深刻。几小时内我就微调了自己的 Qwen3.5-397B 模型。快速可用的多模态能力将带来令人震惊的个人 AI 体验。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 996</span>
+      <a href="https://x.com/garrytan/status/2058378310254793013" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「不要把任务自动化跟消灭工作搞混。AI 自动化岗位中的任务后，岗位会扩展去做更多、做到更高质量、或转向新任务。结果是岗位变得更有价值，甚至对全新受众开放。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 627</span>
+      <a href="https://x.com/levie/status/2058223867815227756" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TH</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code @ Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「偶尔想起来你可以直接跑一个'请帮我省钱'的 prompt，而且它真的有用——帮我清理了旧创业公司的遗留服务。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 463</span>
+      <a href="https://x.com/trq212/status/2058377974882210096" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule-heavy">
+<footer>
+  <strong>Daily Builders Digest</strong> · 每日 AI 建造者快报<br>
+  主持：大雨 × 小苇 · 数据来源：follow-builders 项目 + 公开新闻<br>
+  © 2026 Daily Builders Digest
+</footer>
+
+<div id="ep-nav-bar"><a href="/" class="epnav-home">← 首页</a><div class="epnav-center"><a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a><span class="epnav-sep">·</span><span id="epnav-info" class="epnav-info"></span><span class="epnav-sep">·</span><a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a></div></div><script>(async()=>{try{const f=await(await fetch("/feed.json")).json();const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;const ep=f[idx],older=f[idx+1],newer=f[idx-1];const i=document.getElementById("epnav-info"),p=document.getElementById("epnav-prev"),n=document.getElementById("epnav-next");if(i)i.textContent=ep.date+(ep.topic?" · "+ep.topic:"");if(p&&older){p.href="/"+older.html;p.classList.remove("off")}if(n&&newer){n.href="/"+newer.html;n.classList.remove("off")}}catch(e){console.warn("nav",e)}})();</script></body>
+</html>

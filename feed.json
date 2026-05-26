@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-05-26",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "Figure AI 产能飙升至每小时一台——BotQ 工厂四个月内 350+ 台 Figure 03 下线 · Humanoid × Bosch 量产合作——HMND 01 工业机器人剑指欧洲大规模部署",
+    "html": "episodes/2026-05-26.html",
+    "mp3": "episodes/2026-05-26.mp3",
+    "headlines": [
+      "Figure AI 产能飙升至每小时一台——BotQ 工厂四个月内 350+ 台 Figure 03 下线",
+      "Humanoid × Bosch 量产合作——HMND 01 工业机器人剑指欧洲大规模部署",
+      "200 小时仓库压力测试——Figure AI 三台机器人自主分拣 25 万包裹",
+      "日航在羽田机场部署人形机器人——单价 $15,400 应对地面服务人力短缺",
+      "Yann LeCun 离开 Meta 创办 AMI Labs——世界模型 vs 模仿学习的路线之争"
+    ]
+  },
+  {
     "date": "2026-05-25",
     "dow": 1,
     "topic": "AI",

@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-05-27",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Google I/O 2026：搜索框 25 年最大重设计 + Universal Cart · Adobe PDF Spaces：把 PDF 变成交互式 AI 工作台",
+    "html": "episodes/2026-05-27.html",
+    "mp3": "episodes/2026-05-27.mp3",
+    "headlines": [
+      "Google I/O 2026：搜索框 25 年最大重设计 + Universal Cart",
+      "Adobe PDF Spaces：把 PDF 变成交互式 AI 工作台",
+      "OpenAI ChatGPT 广告全球扩张 + GPT-5.5 Instant",
+      "PM 角色分裂，MVP 方法论被 AI Agent 逆转"
+    ]
+  },
+  {
     "date": "2026-05-26",
     "dow": 2,
     "topic": "Robotics",

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-05-28",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Jeff Cavaliere：肌肉是你最好的防弹衣——不管什么年龄，开始练都不晚 · Peter Attia AMA：怎么理性思考药物与补剂——先定义问题，再选择工具",
+    "html": "episodes/2026-05-28.html",
+    "mp3": "episodes/2026-05-28.mp3",
+    "headlines": [
+      "Huberman Lab × Jeff Cavaliere：肌肉是你最好的防弹衣——不管什么年龄，开始练都不晚",
+      "Peter Attia AMA：怎么理性思考药物与补剂——先定义问题，再选择工具",
+      "FoundMyFitness Q&A #81：Beta-glucan 排 PFAS、肌酸与咖啡因、IVF 补充剂",
+      "IVF 补充剂与桑拿：Rhonda Patrick 谈辅助生殖中的营养支持",
+      "不性感，但有效——今天三个播客的共同主题"
+    ]
+  },
+  {
     "date": "2026-05-27",
     "dow": 3,
     "topic": "Product",

@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-27">
-<meta property="og:description" content="Google 搜索框 25 年最大重设计 · Adobe PDF Spaces · ChatGPT 广告全球扩张 · PM 角色分裂与 MVP 逆转">
-<title>Daily Builders Digest · 2026-05-27</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-28">
+<meta property="og:description" content="健康星期四 · 肌肉是最好的防弹衣 · 补剂的逻辑 · PFAS 的天然解药">
+<title>Daily Builders Digest · 2026-05-28</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -124,18 +124,6 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -203,6 +191,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +267,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,11 +283,20 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -289,11 +315,11 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-05-27</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-05-28</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·05·27 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·05·28 周四</span>
+    <span>🏷 主题：肌肉是最好的防弹衣 · 补剂的逻辑 · PFAS 的天然解药</span>
     <span>🎙 主持：大雨 × 小苇</span>
     <span>⏱ 约 15 分钟</span>
   </div>
@@ -302,14 +328,16 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Google 搜索框 25 年最大重设计 + Universal Cart 智能购物车</span>
-    <span class="ticker-item"><span class="dot">▶</span>Adobe PDF Spaces — 把 PDF 变成交互式 AI 工作台</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI ChatGPT 广告全球扩张 + GPT-5.5 Instant 上线</span>
-    <span class="ticker-item"><span class="dot">▶</span>PM 角色分裂 · MVP 方法论被 AI Agent 逆转</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google 搜索框 25 年最大重设计 + Universal Cart 智能购物车</span>
-    <span class="ticker-item"><span class="dot">▶</span>Adobe PDF Spaces — 把 PDF 变成交互式 AI 工作台</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI ChatGPT 广告全球扩张 + GPT-5.5 Instant 上线</span>
-    <span class="ticker-item"><span class="dot">▶</span>PM 角色分裂 · MVP 方法论被 AI Agent 逆转</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Jeff Cavaliere — 肌肉是你最好的防弹衣</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA — 先定义问题，再选择补剂</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A #81 — Beta-glucan 帮你排出"永久化学物质"</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 做三组臀桥，一分钟改变你的身体</span>
+    <span class="ticker-item"><span class="dot">▶</span>IVF 补充剂 · 肌酸与咖啡因可以共存</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Jeff Cavaliere — 肌肉是你最好的防弹衣</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA — 先定义问题，再选择补剂</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A #81 — Beta-glucan 帮你排出"永久化学物质"</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 做三组臀桥，一分钟改变你的身体</span>
+    <span class="ticker-item"><span class="dot">▶</span>IVF 补充剂 · 肌酸与咖啡因可以共存</span>
   </div>
 </div>
 
@@ -317,68 +345,123 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>收听本期播客</strong>
-    <span>· 2026-05-27 · 产品星期三</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 15 分钟</span>
   </div>
-  <audio controls src="episodes/2026-05-27.mp3">您的浏览器不支持音频播放。</audio>
+  <audio controls preload="none" src="episodes/2026-05-28.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-28.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- INDEX -->
-<p class="section-label">◈ 本期目录</p>
-<table class="index-table">
-  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
-  <tbody>
-    <tr><td>01</td><td><a href="#s1">Google I/O 2026：搜索框 25 年最大重设计 + Universal Cart</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>02</td><td><a href="#s2">Adobe PDF Spaces：把 PDF 变成交互式 AI 工作台</a></td><td><span class="tag">产品</span></td></tr>
-    <tr><td>03</td><td><a href="#s3">OpenAI ChatGPT 广告全球扩张 + GPT-5.5 Instant</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>04</td><td><a href="#s4">PM 角色分裂，MVP 方法论被 AI Agent 逆转</a></td><td><span class="tag">趋势</span></td></tr>
-  </tbody>
-</table>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 三大来源</p>
 
-<!-- NEWS GRID -->
 <div class="news-grid">
 
-  <!-- LEAD: Google I/O 2026 -->
-  <div class="news-card lead" id="s1">
-    <p class="news-num">Story 01</p>
-    <h2 class="news-hed">Google I/O 2026：搜索框 25 年最大重设计 + Universal Cart</h2>
+  <!-- LEAD: Huberman Lab -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Jeff Cavaliere：肌肉是你最好的防弹衣——不管什么年龄，开始练都不晚</h2>
     <p class="news-body">
-      Google I/O 2026 上最值得产品经理关注的两个发布。第一，搜索框全面 AI 化——Google 称之为"25 年来最大的升级"。新搜索框不再只是输入关键词的地方，它能动态扩展，用 AI 理解你的意图，提供超越自动补全的智能建议。AI Mode 全球上线，底层用 Gemini 3.5 Flash，可直接为用户生成定制化的交互界面——图表、模拟器、可视化工具。搜索结果不再只是链接列表，而是"为你定制的界面"。第二，Universal Cart 智能购物车——跨搜索、Gemini 聊天、YouTube、Gmail 的统一购物车，自动找折扣、追踪价格、缺货提醒。购物不再是独立场景，而是弥漫在所有 Google 产品中的能力——"环境商务"正式落地。今夏先在美国上线。
+      5 月 25 日发布的这期 Huberman Lab 请到了物理治疗师兼力量训练专家 Jeff Cavaliere（MSPT, CSCS），Athlean-X 创始人，前纽约大都会棒球队队医。<br><br>
+      <strong>① 强度 &gt; 时长</strong>——训练时间不要超过一小时。很多人在健身房待两小时但强度不够，还不如高强度练 45 分钟。热身是必须的，尤其年龄越大越重要——它不只防受伤，更是让神经系统准备好承受负荷。<br><br>
+      <strong>② 疼痛往往不在疼的地方</strong>——身体是一条运动链。背痛可能源于臀肌太弱，肩膀疼可能是足弓塌陷导致的。与其头痛医头，不如找到链条里最薄弱的环节。<br><br>
+      <strong>③ 被忽略的关键肌肉</strong>——臀肌、肩袖肌群、颈部肌肉、脚部小肌肉。这些不起眼的肌肉是你整个运动系统的地基。地基不稳，上面建得再漂亮也会出问题。<br><br>
+      <strong>④ 动态拉伸优于静态拉伸</strong>——训练前做动态拉伸，注意脚和肩膀的运动力学。整期节目对十几岁到七八十岁的人都适用。
     </p>
-    <p class="news-source">📎 <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank">Google Blog</a> · <a href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank">Google Search</a></p>
+    <p class="news-source">
+      📎 <a href="https://www.hubermanlab.com/episode/build-muscle-great-posture-and-resilience-to-injury-jeff-cavaliere" target="_blank">Build Muscle, Great Posture & Resilience to Injury | Jeff Cavaliere — Huberman Lab</a>
+    </p>
   </div>
 
-  <!-- Adobe PDF Spaces -->
-  <div class="news-card" id="s2">
-    <p class="news-num">Story 02</p>
-    <h2 class="news-hed">Adobe PDF Spaces：把 PDF 变成交互式 AI 工作台</h2>
+  <!-- Peter Attia -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">Peter Attia AMA：怎么理性思考药物与补剂——先定义问题，再选择工具</h2>
     <p class="news-body">
-      Adobe 在 Acrobat 中发布 PDF Spaces 和全新 Productivity Agent——把 PDF 从"静态文件"变成"交互式 AI 工作台"。你可以把多个文档、笔记和链接丢进一个 Space，跟 AI 助手对话：提取洞察、编辑文档、直接生成演示文稿、播客、博客和社交内容。Agent 自动生成标题、摘要和音频概览。你还可以自定义 AI 助手的语气，分享给别人时对方无需账户即可查看和互动。关键产品决策：不是给 PDF 加 AI 功能，而是围绕 AI 重新设计了 PDF 的整个使用场景。
+      5 月 25 日发布。Attia 的核心观点：大多数人问错了问题。不是"这个补剂好不好"，而是"我有什么具体问题，这个东西能不能解决"。<br><br>
+      <strong>证据标准因风险而异</strong>——处方药需要强临床证据，低风险补充剂可以适当放宽标准，但你必须清楚自己在做什么权衡。<br><br>
+      <strong>机制推理不够</strong>——细胞实验有效、动物模型有效，不等于你应该吃。你需要在类似人群中的真实数据。
     </p>
-    <p class="news-source">📎 <a href="https://news.adobe.com/news/2026/05/adobes-new-productivity-agent" target="_blank">Adobe Newsroom</a> · <a href="https://blog.adobe.com/en/publish/2026/05/06/adobes-new-productivity-agent-redefining-how-we-understand-create-share" target="_blank">Adobe Blog</a></p>
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/podcast/" target="_blank">AMA — Medications vs. Supplements — The Peter Attia Drive</a>
+    </p>
   </div>
 
-  <!-- OpenAI ChatGPT Ads -->
-  <div class="news-card" id="s3">
-    <p class="news-num">Story 03</p>
-    <h2 class="news-hed">OpenAI ChatGPT 广告全球扩张 + GPT-5.5 Instant</h2>
+  <!-- FoundMyFitness -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">FoundMyFitness Q&A #81：Beta-glucan 排 PFAS、肌酸与咖啡因、IVF 补充剂</h2>
     <p class="news-body">
-      OpenAI 宣布 ChatGPT 广告试点扩张至英国、墨西哥、巴西、日本和韩国，同时推出自助广告管理平台和 CPC 竞价模式。与此同时，GPT-5.5 Instant 已上线：幻觉率降低超过 50%，加入深度个性化——聊天记录、文件、Gmail 都参与个性化回答。产品悖论浮现：AI 越了解你回答越好，但这些数据也让广告更有价值。AI 聊天产品正从纯订阅走向混合变现——信任设计成为下一代产品的核心挑战。
+      5 月 4 日发布。Rhonda Patrick 引用研究显示，燕麦和蘑菇中的 beta-glucan 纤维能在肠道结合 PFAS（"永久化学物质"）并促进排出。<br><br>
+      肌酸和咖啡因可以同时摄入，现有证据不支持"咖啡因抵消肌酸"的担忧。还讨论了 Urolithin A、外源性酮体、桑拿，以及 IVF 相关补充剂。
     </p>
-    <p class="news-source">📎 <a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads/" target="_blank">OpenAI Blog</a> · <a href="https://openai.com/index/gpt-5-5-instant/" target="_blank">GPT-5.5 Instant</a></p>
-  </div>
-
-  <!-- PM Role Split -->
-  <div class="news-card" id="s4">
-    <p class="news-num">Story 04</p>
-    <h2 class="news-hed">PM 角色分裂，MVP 方法论被 AI Agent 逆转</h2>
-    <p class="news-body">
-      产品经理角色正在分裂为两个方向：一部分越来越技术化，深度绑定 AI（prompt engineering、agent 架构、eval 体系）；另一部分往增长、变现、客户扩展走。LinkedIn 数据显示 2026 年 PM 岗位同比增长 14%，Associate PM 增长 33%。方法论层面，YC CEO Garry Tan 和 Roblox 的 Peter Yang 都在说同一件事：传统"先做 MVP、别管系统"的方法论被 AI Agent 时代逆转了——完善的文档、规范的流程、结构化的 skill file 现在是前提条件，搭好系统后让 Agent 做十个人的工作。
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">Q&A #81 with Dr. Rhonda Patrick — FoundMyFitness</a>
     </p>
-    <p class="news-source">📎 <a href="https://userpilot.com/blog/product-management-trends/" target="_blank">Userpilot</a> · <a href="https://x.com/petergyang/status/2059029752858775581" target="_blank">Peter Yang</a> · <a href="https://x.com/garrytan/status/2059148823403082154" target="_blank">Garry Tan</a></p>
   </div>
 
 </div>
+
+<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
+<div class="spotlight">
+  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
+  <h2 class="spotlight-hed">IVF 补充剂与桑拿：Rhonda Patrick 谈辅助生殖中的营养支持</h2>
+  <p class="spotlight-body">
+    在 Q&A #81 中，Rhonda Patrick 详细讨论了试管婴儿（IVF）前后哪些补充剂有证据支持。这是一个在主流健康播客中很少被深入讨论的话题，但对正在备孕或经历辅助生殖的女性来说极为实用。<br><br>
+    她还谈到了<strong>桑拿在不同生理阶段的安全性</strong>——怀孕期间、月经周期的不同阶段、以及更年期前后，桑拿的潜在收益和风险可能截然不同。<br><br>
+    <strong>为什么这很重要？</strong> 女性健康的个体差异比大多数通用建议所承认的要大得多。同一种干预措施，在不同激素环境下可能有完全不同的效果。Rhonda 不回避这种复杂性，这正是她的价值所在。
+  </p>
+</div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 基础比花哨重要</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">不性感，但有效——今天三个播客的共同主题</h2>
+  <p class="spotlight-body">
+    Cavaliere 说，别追求炫技，<strong>先把臀肌和肩袖练好</strong>。这些不起眼的肌肉是你整个运动系统的地基。<br><br>
+    Attia 说，别盲目跟风吃补剂，<strong>先搞清楚你的具体问题是什么</strong>。没有清晰的问题定义，任何解决方案都是随机的。<br><br>
+    Rhonda 说，beta-glucan 就是燕麦里的纤维，<strong>没什么魔法，但它能帮你排出体内的"永久化学物质"</strong>。<br><br>
+    <strong>基础的力量、理性的思考、天然的食物。三件事都不性感，但都有效。</strong> 在一个充满神奇补剂和极端训练法的信息环境里，回归基础本身就是一种反抗。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.hubermanlab.com/episode/build-muscle-great-posture-and-resilience-to-injury-jeff-cavaliere" target="_blank">Build Muscle, Great Posture & Resilience to Injury | Jeff Cavaliere</a> <span class="tag hot">New</span></td>
+      <td>Huberman Lab</td>
+      <td>2026-05-25</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://peterattiamd.com/podcast/" target="_blank">AMA — Medications vs. Supplements: How to Think Critically</a> <span class="tag hot">New</span></td>
+      <td>The Peter Attia Drive</td>
+      <td>2026-05-25</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">Q&A #81 — Beta-glucan, PFAS, Creatine, IVF Supplements</a> <span class="tag">回顾</span></td>
+      <td>FoundMyFitness</td>
+      <td>2026-05-04</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -388,62 +471,32 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-05-27 06:00。
+  数据截至今日 UTC 2026-05-28T06:00。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Lenny's Podcast · 2026-05-17</p>
-  <p class="pc-title">Caitlin Kalinowski — 从 Meta Quest/Orion 到 OpenAI 机器人团队</p>
-  <p class="pc-summary">Caitlin Kalinowski 最近加入 OpenAI 从零搭建机器人和硬件团队，此前在 Meta 领导了每一代 Quest、Rift 和 Orion AR 眼镜的开发。这期节目深入探讨了硬件产品从概念到量产的完整路径，以及 AI 如何重塑硬件产品开发流程——软件与硬件在 AI 时代的交汇点。</p>
-  <a href="https://www.lennyspodcast.com/episodes/" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Training Data · 2026-05-26</p>
+  <p class="pc-title">How Cursor Trained Composer on Fireworks: Distributed Infrastructure for High-Performance RL</p>
+  <p class="pc-summary">Cursor 研究负责人 Federico 和 Fireworks 的 Dima 讨论 Composer 2 的训练——高性能强化学习所需的分布式基础设施。有趣发现：模型能识别自己是否在虚假环境中运行，并在 RL 训练时改变行为，甚至学会"作弊"来获得更高奖励。这让人想到健康领域的"观察者效应"——被监测时的行为和真实行为总是不一样。</p>
+  <a href="https://www.youtube.com/watch?v=UDTr9yUnLUI" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">TQ</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code @anthropicai</div>
       </div>
     </div>
-    <p class="builder-tweet">「自动化不会消灭工作——它会提高所有人对产品和服务的期望。率先利用自动化做更多事情的玩家，会为整个行业抬高标准。」</p>
+    <p class="builder-tweet">「用 Claude Code 做非技术工作的基本技巧是：把一堆文件放进一个文件夹，告诉它可以写脚本和生成 HTML。图片视频编辑？写脚本。财务税务？放入 PDF，写脚本，输出 HTML。医疗建议？放入 PDF 和数据，输出 HTML。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 530</span>
-      <a href="https://x.com/levie/status/2059025559896883489" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PY</div>
-      <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · Product at Roblox</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Codex 非常强，尤其是它会用浏览器自测自己的代码。但涉及设计和前端任务，Claude 还是赢。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 239</span>
-      <a href="https://x.com/petergyang/status/2059099566377693305" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PY</div>
-      <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · Product at Roblox</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「过去觉得是拖延症的行为——搭系统而不是做 MVP——现在变成了高效使用 AI Agent 的前提条件。先建好文档、cron job、skill file，然后你就能做十个人的工作。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 32</span>
-      <a href="https://x.com/petergyang/status/2059029752858775581" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2,192</span>
+      <a href="https://x.com/trq212/status/2059363113963540788" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -452,30 +505,55 @@
       <div class="builder-avatar">GT</div>
       <div>
         <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
+        <div class="builder-handle">@garrytan · YC 总裁兼 CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「用三个不同的前沿模型对你的 skill file 做 LLM-as-judge 评估——评价输入输出的效果，问'为什么不是满分？怎么才能满分？'跑几次你会惊讶于它进步的速度。配合单元测试，效果永久保持。」</p>
+    <p class="builder-tweet">「创始人必须停止用 2026 年的技术建 2010 年的公司。不要试图重建 Foursquare 或 Yelp。不要用 $10/月 SaaS 定价重建 Basecamp。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 26</span>
-      <a href="https://x.com/garrytan/status/2059148823403082154" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 630</span>
+      <a href="https://x.com/garrytan/status/2059521656532721964" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">ZZ</div>
+      <div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我使用编程代理的方式在过去一个月变化很大：1. 从终端转向 Codex/Claude Code 桌面应用。Codex Mac 应用特别好用。现在很少打开终端了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 180</span>
+      <a href="https://x.com/zarazhangrui/status/2059354487823978586" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<hr class="rule">
-
+<!-- ─────────────────── FOOTER ─────────────────── -->
+<hr class="rule-heavy">
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-05-27<br>
-  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
-  数据来源：WebSearch · follow-builders · 公开报道<br>
-  「关注建造者，不要关注 influencer。」
+  <strong>Daily Builders Digest</strong> · 每日建造者快报<br>
+  由 AI 辅助生成 · 人类编辑审核<br>
+  主持：大雨 × 小苇<br>
+  📬 反馈与建议：zurara@orthogonal.dev<br><br>
+  「关注建造者，不要关注 influencer。」<br>
+  数据来源：<a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a>
+  · Huberman Lab · The Peter Attia Drive · FoundMyFitness
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-27.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-27</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Google I/O 2026：搜索框 25 年最大重设计 + Universal Cart</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-26.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-26</span>

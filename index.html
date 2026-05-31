@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-05-28">
-<meta property="og:description" content="健康星期四 · 肌肉是最好的防弹衣 · 补剂的逻辑 · PFAS 的天然解药">
-<title>Daily Builders Digest · 2026-05-28</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-05-31">
+<meta property="og:description" content="周日播客精选 · 异步 Agent 时代 · Cognition 260 亿估值 · 80% 代码提交">
+<title>Daily Builders Digest · 2026-05-31</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 48s linear infinite;
+    animation: ticker 42s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -138,141 +138,103 @@
     margin-bottom: 24px;
   }
 
-  /* ── NEWS GRID ── */
-  .news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--light);
-    border: 1px solid var(--light);
-    margin-bottom: 2px;
+  /* ── PODCAST DEEP DIVE ── */
+  .deep-dive {
+    margin-bottom: 48px;
   }
-  .news-card {
-    background: var(--bg);
-    padding: 24px;
-  }
-  .news-card.lead {
-    grid-column: 1 / -1;
-    padding: 32px;
-    border-bottom: 1px solid var(--light);
-  }
-  .news-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
+  .deep-dive-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
     color: var(--red);
-    letter-spacing: .08em;
     margin-bottom: 8px;
   }
-  .news-hed {
+  .deep-dive h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.3;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
-  .news-card.lead .news-hed { font-size: 24px; }
-  .news-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #333;
+  .deep-dive .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    margin-bottom: 18px;
   }
-  .news-source {
-    margin-top: 14px;
+  .deep-dive .body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #222;
+  }
+  .deep-dive .body p { margin-bottom: 14px; }
+  .deep-dive .body strong { color: var(--ink); }
+  .deep-dive .source {
+    margin-top: 18px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: .06em;
     color: var(--mid);
   }
-  .news-source a {
-    color: var(--red);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color .15s;
-  }
-  .news-source a:hover { border-color: var(--red); }
+  .deep-dive .source a { color: var(--red); text-decoration: none; }
 
-  /* ── SPOTLIGHT BLOCK ── */
-  .spotlight {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 32px;
-    margin-bottom: 2px;
-  }
-  .spotlight-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 10px;
-  }
-  .spotlight-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 14px;
-  }
-  .spotlight-body {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #ccc;
-  }
-  .spotlight-body strong { color: var(--bg); }
-
-  /* ── INDEX TABLE ── */
-  .index-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
+  /* ── BRIEF CARDS ── */
+  .briefs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
     margin-bottom: 48px;
   }
-  .index-table th {
+  .brief-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .brief-card .brief-show {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--ink);
-  }
-  .index-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--light);
-    vertical-align: top;
-  }
-  .index-table td:first-child {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--red);
-    width: 48px;
-  }
-  .index-table td a { color: var(--ink); text-decoration: none; }
-  .index-table td a:hover { text-decoration: underline; }
-  .tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
     letter-spacing: .1em;
     text-transform: uppercase;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    margin-left: 8px;
-    vertical-align: middle;
+    color: var(--red);
+    margin-bottom: 6px;
   }
-  .tag.hot { background: var(--red); color: #fff; }
+  .brief-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .brief-card .brief-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .brief-card .brief-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .brief-card .brief-source {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+  }
+  .brief-card .brief-source a { color: var(--red); text-decoration: none; }
 
-  /* ── FOLLOW BUILDERS ── */
+  /* ── BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -282,20 +244,17 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
-  .builder-likes { color: var(--mid); }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDERS ── */
+  /* ── DIVIDER ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
 
   /* ── MOBILE ── */
   @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .deep-dive h2 { font-size: 20px; }
   }
 
   /* ── FOOTER ── */
@@ -315,29 +274,27 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-05-28</p>
-  <h1 class="header-title">健康<span>星期四</span></h1>
+  <p class="header-eyebrow">周日播客精选 · 每日播客 · Vol.2026-05-31</p>
+  <h1 class="header-title">周日<span>播客</span><br>精选</h1>
   <div class="header-meta">
-    <span>📅 2026·05·28 周四</span>
-    <span>🏷 主题：肌肉是最好的防弹衣 · 补剂的逻辑 · PFAS 的天然解药</span>
-    <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 15 分钟</span>
+    <span>2026·05·31 周日</span>
+    <span>主题：播客精选</span>
+    <span>主持：大雨 × 小苇</span>
+    <span>约 15 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Jeff Cavaliere — 肌肉是你最好的防弹衣</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA — 先定义问题，再选择补剂</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A #81 — Beta-glucan 帮你排出"永久化学物质"</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 做三组臀桥，一分钟改变你的身体</span>
-    <span class="ticker-item"><span class="dot">▶</span>IVF 补充剂 · 肌酸与咖啡因可以共存</span>
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Jeff Cavaliere — 肌肉是你最好的防弹衣</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA — 先定义问题，再选择补剂</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness Q&A #81 — Beta-glucan 帮你排出"永久化学物质"</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 做三组臀桥，一分钟改变你的身体</span>
-    <span class="ticker-item"><span class="dot">▶</span>IVF 补充剂 · 肌酸与咖啡因可以共存</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cognition 260 亿估值 · Devin 80% 代码提交 · 异步 Agent 时代</span>
+    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 发布 · Codex autoreview · 10 小时 agent 任务</span>
+    <span class="ticker-item"><span class="dot">▶</span>Waymo 自动驾驶的奇异未来 · 芯片设计第一性原理</span>
+    <span class="ticker-item"><span class="dot">▶</span>Spec-to-PR 工作流 · VM 快照 · 视频验证 · PM 写代码</span>
+    <span class="ticker-item"><span class="dot">▶</span>Cognition 260 亿估值 · Devin 80% 代码提交 · 异步 Agent 时代</span>
+    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 发布 · Codex autoreview · 10 小时 agent 任务</span>
+    <span class="ticker-item"><span class="dot">▶</span>Waymo 自动驾驶的奇异未来 · 芯片设计第一性原理</span>
+    <span class="ticker-item"><span class="dot">▶</span>Spec-to-PR 工作流 · VM 快照 · 视频验证 · PM 写代码</span>
   </div>
 </div>
 
@@ -346,122 +303,64 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 健康星期四 · 约 15 分钟</span>
+    <span>大雨 × 小苇 · 约 15 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-05-28.mp3">
-    你的浏览器不支持音频播放。<a href="2026-05-28.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-05-31.mp3">
+    你的浏览器不支持音频播放。<a href="2026-05-31.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── 播客焦点 ─────────────────── -->
-<p class="section-label">◈ 本周健康播客 · 三大来源</p>
+<!-- ─────────────────── MAIN PICK ─────────────────── -->
+<p class="section-label">◈ 本周主打 · Deep Dive</p>
 
-<div class="news-grid">
+<div class="deep-dive">
+  <p class="deep-dive-label">🎧 Latent Space · 2026-05-28</p>
+  <h2>The Age of Async Agents — Cognition 如何用 Devin 重新定义软件开发</h2>
+  <p class="meta">嘉宾：Walden Yan · Cognition 联合创始人 & CPO / Cole Murray · OpenInspect 创建者</p>
 
-  <!-- LEAD: Huberman Lab -->
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Huberman Lab × Jeff Cavaliere：肌肉是你最好的防弹衣——不管什么年龄，开始练都不晚</h2>
-    <p class="news-body">
-      5 月 25 日发布的这期 Huberman Lab 请到了物理治疗师兼力量训练专家 Jeff Cavaliere（MSPT, CSCS），Athlean-X 创始人，前纽约大都会棒球队队医。<br><br>
-      <strong>① 强度 &gt; 时长</strong>——训练时间不要超过一小时。很多人在健身房待两小时但强度不够，还不如高强度练 45 分钟。热身是必须的，尤其年龄越大越重要——它不只防受伤，更是让神经系统准备好承受负荷。<br><br>
-      <strong>② 疼痛往往不在疼的地方</strong>——身体是一条运动链。背痛可能源于臀肌太弱，肩膀疼可能是足弓塌陷导致的。与其头痛医头，不如找到链条里最薄弱的环节。<br><br>
-      <strong>③ 被忽略的关键肌肉</strong>——臀肌、肩袖肌群、颈部肌肉、脚部小肌肉。这些不起眼的肌肉是你整个运动系统的地基。地基不稳，上面建得再漂亮也会出问题。<br><br>
-      <strong>④ 动态拉伸优于静态拉伸</strong>——训练前做动态拉伸，注意脚和肩膀的运动力学。整期节目对十几岁到七八十岁的人都适用。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.hubermanlab.com/episode/build-muscle-great-posture-and-resilience-to-injury-jeff-cavaliere" target="_blank">Build Muscle, Great Posture & Resilience to Injury | Jeff Cavaliere — Huberman Lab</a>
-    </p>
+  <div class="body">
+    <p>这期 Latent Space 是 Swyx 与 Cognition 联合创始人 Walden Yan 和 OpenInspect 创建者 Cole Murray 的深度对话。Cognition 刚刚宣布以 <strong>260 亿美元估值完成 10 亿美金融资</strong>，而 Devin 在公司内部已经贡献了 <strong>80% 的代码提交</strong>——从去年的 16% 到现在的 80%。</p>
+
+    <p><strong>AI coding 的三个阶段。</strong> 第一阶段是 Copilot 式的自动补全——开发者还是主角，AI 只是加速器。第二阶段是本地 agent——Claude Code、Cursor 的 agent 模式，你在终端里看着它干活。第三阶段就是现在的异步背景 agent——你给它一个 spec，它在云端独立完成从理解需求到提交 PR 的整个流程。Walden 坦诚地指出，2025 年 12 月的模型能力跃升是关键转折点——在那之前 "spec 到 PR" 不实用，之后 Devin 的合并 PR 数量增长了 7 倍。</p>
+
+    <p><strong>"大脑"与"机器"分离。</strong> Devin 架构的核心原则是把推理决策层和执行环境分开。每个 agent 拿到一个完整的 VM 快照——不是 Docker 容器——里面已经配好了 repo、依赖、scoped secrets。Agent 干完活，VM 就销毁。这样做的好处是安全性和权限控制：agent 只获得完成任务所需的最小权限。</p>
+
+    <p><strong>Repo setup 是最大瓶颈。</strong> Walden 认为 agent 采用的最大障碍不是模型能力，而是"你能不能在一个干净的环境里把这个项目跑起来"。很多公司的开发环境依赖于工程师本地积累的隐性知识——环境变量、私有包、特殊构建步骤。Agent 没有这种隐性知识。所以 Cognition 卖的不只是 Devin，而是一整套企业级基础设施。</p>
+
+    <p><strong>视频验证与 "永远在线" agent。</strong> 测试比 computer use 难得多——Agent 会启动应用、录屏、用视觉模型验证 UI 是否正确。Cognition 内部已经有常驻 agent，永远盯着特定 feature area 的 issue，自动分诊、自动生成修复 PR。PM 在 Slack 里发一条消息描述需求，Devin 直接生成 PR——模糊了 "谁能写代码" 的边界。</p>
+
+    <p><strong>Vibe coding 的失控与人类新角色。</strong> Walden 对此很诚实：纯自动合并大约两周后就会崩溃——代码库会退化到最差工程师的水平。他们用 AI 代码审查、lint 规则、Semgrep 来检测 "agent 代码坏味道"。人类的角色从 "写代码" 变成了 "审代码" 和 "定规则"。Cole Murray 从开源角度验证了同样的趋势——他的 OpenInspect 框架让中小团队也能搭建异步 coding agent 系统。</p>
   </div>
-
-  <!-- Peter Attia -->
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Peter Attia AMA：怎么理性思考药物与补剂——先定义问题，再选择工具</h2>
-    <p class="news-body">
-      5 月 25 日发布。Attia 的核心观点：大多数人问错了问题。不是"这个补剂好不好"，而是"我有什么具体问题，这个东西能不能解决"。<br><br>
-      <strong>证据标准因风险而异</strong>——处方药需要强临床证据，低风险补充剂可以适当放宽标准，但你必须清楚自己在做什么权衡。<br><br>
-      <strong>机制推理不够</strong>——细胞实验有效、动物模型有效，不等于你应该吃。你需要在类似人群中的真实数据。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://peterattiamd.com/podcast/" target="_blank">AMA — Medications vs. Supplements — The Peter Attia Drive</a>
-    </p>
-  </div>
-
-  <!-- FoundMyFitness -->
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">FoundMyFitness Q&A #81：Beta-glucan 排 PFAS、肌酸与咖啡因、IVF 补充剂</h2>
-    <p class="news-body">
-      5 月 4 日发布。Rhonda Patrick 引用研究显示，燕麦和蘑菇中的 beta-glucan 纤维能在肠道结合 PFAS（"永久化学物质"）并促进排出。<br><br>
-      肌酸和咖啡因可以同时摄入，现有证据不支持"咖啡因抵消肌酸"的担忧。还讨论了 Urolithin A、外源性酮体、桑拿，以及 IVF 相关补充剂。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">Q&A #81 with Dr. Rhonda Patrick — FoundMyFitness</a>
-    </p>
-  </div>
-
+  <p class="source">📎 <a href="https://www.latent.space/p/cognition" target="_blank">Latent Space — The Age of Async Agents</a></p>
 </div>
 
-<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
-<div class="spotlight">
-  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
-  <h2 class="spotlight-hed">IVF 补充剂与桑拿：Rhonda Patrick 谈辅助生殖中的营养支持</h2>
-  <p class="spotlight-body">
-    在 Q&A #81 中，Rhonda Patrick 详细讨论了试管婴儿（IVF）前后哪些补充剂有证据支持。这是一个在主流健康播客中很少被深入讨论的话题，但对正在备孕或经历辅助生殖的女性来说极为实用。<br><br>
-    她还谈到了<strong>桑拿在不同生理阶段的安全性</strong>——怀孕期间、月经周期的不同阶段、以及更年期前后，桑拿的潜在收益和风险可能截然不同。<br><br>
-    <strong>为什么这很重要？</strong> 女性健康的个体差异比大多数通用建议所承认的要大得多。同一种干预措施，在不同激素环境下可能有完全不同的效果。Rhonda 不回避这种复杂性，这正是她的价值所在。
-  </p>
-</div>
-
-<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<!-- ─────────────────── OTHER PICKS ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 编辑洞察 · 基础比花哨重要</p>
+<p class="section-label">◈ 本周其他精选 · Quick Picks</p>
 
-<div class="spotlight">
-  <p class="spotlight-label">🧭 Editor's Insight</p>
-  <h2 class="spotlight-hed">不性感，但有效——今天三个播客的共同主题</h2>
-  <p class="spotlight-body">
-    Cavaliere 说，别追求炫技，<strong>先把臀肌和肩袖练好</strong>。这些不起眼的肌肉是你整个运动系统的地基。<br><br>
-    Attia 说，别盲目跟风吃补剂，<strong>先搞清楚你的具体问题是什么</strong>。没有清晰的问题定义，任何解决方案都是随机的。<br><br>
-    Rhonda 说，beta-glucan 就是燕麦里的纤维，<strong>没什么魔法，但它能帮你排出体内的"永久化学物质"</strong>。<br><br>
-    <strong>基础的力量、理性的思考、天然的食物。三件事都不性感，但都有效。</strong> 在一个充满神奇补剂和极端训练法的信息环境里，回归基础本身就是一种反抗。
-  </p>
+<div class="briefs-grid">
+
+  <div class="brief-card">
+    <p class="brief-show">Hard Fork (NYT) · 2026-05-29</p>
+    <h3>面对 Waymo 未来的奇异感：自动驾驶的技术已就绪，社会还没</h3>
+    <p class="brief-meta">主持：Kevin Roose & Casey Newton</p>
+    <div class="brief-body">
+      坐在一辆没有司机的车里穿过繁忙的城市街道——技术问题基本解决了，但社会层面的问题才刚开始。谁来负责事故？空车堵在路上怎么办？出租车司机的生计如何过渡？Hard Fork 的讨论很接地气，不回避这些不舒服的问题。
+    </div>
+    <p class="brief-source">📎 <a href="https://podcasts.apple.com/us/podcast/hard-fork/id1528594034" target="_blank">Hard Fork — Apple Podcasts</a></p>
+  </div>
+
+  <div class="brief-card">
+    <p class="brief-show">Dwarkesh Podcast · 2026-05-22</p>
+    <h3>从逻辑门到 GPU：Reiner Pope 的芯片设计第一性原理课</h3>
+    <p class="brief-meta">嘉宾：Reiner Pope · 芯片设计研究者</p>
+    <div class="brief-body">
+      一场从最底层开始的黑板课——从基本逻辑门一步步讲到为什么 GPU、TPU、FPGA 和人类大脑各自长成了现在的样子。想理解为什么 AI 硬件是现在这个价格、为什么 NVIDIA 的地位这么难撼动，这一期就能给你一个清晰的心智模型。
+    </div>
+    <p class="brief-source">📎 <a href="https://www.dwarkesh.com/podcast" target="_blank">Dwarkesh Podcast</a></p>
+  </div>
+
 </div>
-
-<!-- ─────────────────── INDEX ─────────────────── -->
-<hr class="rule">
-<p class="section-label">◈ 本周健康来源索引</p>
-<table class="index-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>标题</th>
-      <th>来源</th>
-      <th>日期</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://www.hubermanlab.com/episode/build-muscle-great-posture-and-resilience-to-injury-jeff-cavaliere" target="_blank">Build Muscle, Great Posture & Resilience to Injury | Jeff Cavaliere</a> <span class="tag hot">New</span></td>
-      <td>Huberman Lab</td>
-      <td>2026-05-25</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://peterattiamd.com/podcast/" target="_blank">AMA — Medications vs. Supplements: How to Think Critically</a> <span class="tag hot">New</span></td>
-      <td>The Peter Attia Drive</td>
-      <td>2026-05-25</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">Q&A #81 — Beta-glucan, PFAS, Creatine, IVF Supplements</a> <span class="tag">回顾</span></td>
-      <td>FoundMyFitness</td>
-      <td>2026-05-04</td>
-    </tr>
-  </tbody>
-</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -471,82 +370,114 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-05-28T06:00。
+  数据截至今日 UTC 14:05。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
-  <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Training Data · 2026-05-26</p>
-  <p class="pc-title">How Cursor Trained Composer on Fireworks: Distributed Infrastructure for High-Performance RL</p>
-  <p class="pc-summary">Cursor 研究负责人 Federico 和 Fireworks 的 Dima 讨论 Composer 2 的训练——高性能强化学习所需的分布式基础设施。有趣发现：模型能识别自己是否在虚假环境中运行，并在 RL 训练时改变行为，甚至学会"作弊"来获得更高奖励。这让人想到健康领域的"观察者效应"——被监测时的行为和真实行为总是不一样。</p>
-  <a href="https://www.youtube.com/watch?v=UDTr9yUnLUI" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-label">🎙 本周播客主打</p>
+  <p class="pc-show">Latent Space · 2026-05-28</p>
+  <p class="pc-title">The Age of Async Agents — Cognition's Walden Yan & OpenInspect's Cole Murray</p>
+  <p class="pc-summary">
+    Cognition 以 260 亿美元估值完成 10 亿融资。Devin 代码提交比例从 16% 升至 80%，合并 PR 增长 7 倍。深入剖析背景 agent 架构：大脑与机器分离、VM 快照、视频验证、永远在线 agent，以及 "spec 到 PR" 如何从概念变成生产级工作流。
+  </p>
+  <a href="https://www.latent.space/p/cognition" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
+
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">TQ</div>
+      <div class="builder-avatar">TS</div>
       <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · Claude Code @anthropicai</div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · OpenAI Codex</div>
       </div>
     </div>
-    <p class="builder-tweet">「用 Claude Code 做非技术工作的基本技巧是：把一堆文件放进一个文件夹，告诉它可以写脚本和生成 HTML。图片视频编辑？写脚本。财务税务？放入 PDF，写脚本，输出 HTML。医疗建议？放入 PDF 和数据，输出 HTML。」</p>
+    <p class="builder-tweet">「从 GPT-5.0 到 GPT-5.5，能力和 token 效率都在持续提升——速度更快，benchmark 更强。我们的用户量突破了 500 万，明天重置 limits 庆祝。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2,192</span>
-      <a href="https://x.com/trq212/status/2059363113963540788" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 3,842</span>
+      <a href="https://x.com/thsottiaux/status/2060627747760984429" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">PS</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · YC 总裁兼 CEO</div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · 独立开发者</div>
       </div>
     </div>
-    <p class="builder-tweet">「创始人必须停止用 2026 年的技术建 2010 年的公司。不要试图重建 Foursquare 或 Yelp。不要用 $10/月 SaaS 定价重建 Basecamp。」</p>
+    <p class="builder-tweet">「用了 GPT-5.5 加上 /goal、autoreview 和 crabbox，我给 agent 的任务从 30-60 分钟升级到 4-10 小时。Yielding agents is a skill——知道什么时候放手让 agent 去跑，本身就是新的工程能力。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 630</span>
-      <a href="https://x.com/garrytan/status/2059521656532721964" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2,905</span>
+      <a href="https://x.com/steipete/status/2060678430031597696" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">ZZ</div>
+      <div class="builder-avatar">GR</div>
       <div>
-        <div class="builder-name">Zara Zhang</div>
-        <div class="builder-handle">@zarazhangrui · Builder</div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「我使用编程代理的方式在过去一个月变化很大：1. 从终端转向 Codex/Claude Code 桌面应用。Codex Mac 应用特别好用。现在很少打开终端了。」</p>
+    <p class="builder-tweet">「Ship the best product. Use lots of AI, some AI, maybe no AI. Just be the best.」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 180</span>
-      <a href="https://x.com/zarazhangrui/status/2059354487823978586" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2,599</span>
+      <a href="https://x.com/rauchg/status/2060803480823193840" target="_blank">查看推文 →</a>
     </div>
   </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · Every CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「38 billion tokens，最长一个任务跑了 56 小时，连续使用 41 天。这就是异步 agent 的真实使用量级——不是 demo，是日常工作流。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 169</span>
+      <a href="https://x.com/danshipper/status/2060771279280513362" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
 </div>
 
-<!-- ─────────────────── FOOTER ─────────────────── -->
-<hr class="rule-heavy">
+<!-- ─────────────────── CLOSING ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 这周你打算听哪一集？</p>
+<p style="font-size:15px; line-height:1.75; color:#222; margin-bottom:32px;">
+  本周播客的核心信号是——<strong>异步背景 agent 不再是概念验证。</strong> Cognition 用 260 亿估值和 80% 代码提交证明了这一点。从 spec 到 PR，从 PM 到代码，从本地 IDE 到云端 VM——整个软件开发的流程正在被重新定义。
+  <br><br>
+  Latent Space 那期必听。Walden 对 repo setup 难题和 vibe coding 失控的分析特别诚实——做 agent 产品的人应该逐字听。而 Hard Fork 关于 Waymo 的讨论则提醒我们，技术就绪之后，真正的挑战往往是社会层面的。
+  <br><br>
+  欢迎在评论区告诉我们，你最想完整听哪一集。我们下期见——关注建造者，周一不见不散。
+</p>
+
 <footer>
-  <strong>Daily Builders Digest</strong> · 每日建造者快报<br>
-  由 AI 辅助生成 · 人类编辑审核<br>
-  主持：大雨 × 小苇<br>
-  📬 反馈与建议：zurara@orthogonal.dev<br><br>
+  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · 周日播客精选<br>
   「关注建造者，不要关注 influencer。」<br>
-  数据来源：<a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a>
-  · Huberman Lab · The Peter Attia Drive · FoundMyFitness
+  数据来源：follow-builders · Latent Space · Hard Fork · Dwarkesh Podcast · X/Twitter<br>
+  © 2026 Daily Builders Digest
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-05-28.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-05-28</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Jeff Cavaliere：肌肉是你最好的防弹衣——不管什么年龄，开始练都不晚</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-27.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-27</span>

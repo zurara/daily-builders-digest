@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-06-01",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "GPT-5.5 正式上线 + Codex 突破 500 万用户——OpenAI 双管齐下 · Anthropic 年化营收 300 亿美元——历史首超 OpenAI",
+    "html": "episodes/2026-06-01.html",
+    "mp3": "episodes/2026-06-01.mp3",
+    "headlines": [
+      "GPT-5.5 正式上线 + Codex 突破 500 万用户——OpenAI 双管齐下",
+      "Anthropic 年化营收 300 亿美元——历史首超 OpenAI",
+      "Gemini 3.5 Flash 全面上线——Google 押注代理赛道",
+      "DeepMind 斥资 8000-9000 万收编 Contextual AI 团队——人才并购新模式"
+    ]
+  },
+  {
     "date": "2026-05-31",
     "dow": 7,
     "topic": "Podcasts",

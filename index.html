@@ -6,13 +6,14 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-01">
-<meta property="og:description" content="GPT-5.5 上线 + Codex 500万用户 · Anthropic 300亿美元首超 OpenAI · Gemini 3.5 Flash 全面上线 · DeepMind 收编 Contextual AI">
-<title>Daily Builders Digest · 2026-06-01</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-03">
+<meta property="og:description" content="NVIDIA RTX Spark 重新定义 PC · Dell XPS 13 $599 挑战 MacBook Neo · Merge Agent Handler 企业管控 · PM K 型分化">
+<title>Daily Builders Digest · 2026-06-03</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --bg:     #f2f0ea;
     --ink:    #0c0c0c;
@@ -21,47 +22,232 @@
     --light:  #d8d6d0;
     --card:   #eceae4;
   }
+
   body {
-    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
-    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
-    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
-  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
-  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
   .header-title span { color: var(--red); }
-  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
-  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
-  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 44s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
-  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
-  .news-card { background: var(--bg); padding: 24px; }
-  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
-  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
-  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
   .news-card.lead .news-hed { font-size: 24px; }
-  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
-  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
-  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
   .news-source a:hover { border-color: var(--red); }
-  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
-  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
-  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
-  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
   .index-table td a { color: var(--ink); text-decoration: none; }
   .index-table td a:hover { text-decoration: underline; }
-  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
   .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -79,147 +265,120 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── DIVIDER ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
   }
-  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
   footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-06-01</p>
-  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
+  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-06-03</p>
+  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
   <div class="header-meta">
-    <span>📅 2026·06·01 周一</span>
-    <span>🏷 主题：AI 新闻快报</span>
+    <span>📅 2026·06·03 周三</span>
+    <span>🏷 主题：产品 Product</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>⏱ 约 15 分钟</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 正式上线 · Codex 突破 500 万用户 · Token 效率飞跃</span>
-    <span class="ticker-item"><span class="dot">▶</span>Anthropic 年化 300 亿美元 · 首超 OpenAI · Claude Code 驱动增长</span>
-    <span class="ticker-item"><span class="dot">▶</span>Gemini 3.5 Flash GA · 9 亿月活 · 输出速度 4 倍提升</span>
-    <span class="ticker-item"><span class="dot">▶</span>DeepMind 8000 万收编 Contextual AI · 人才并购新模式</span>
-    <span class="ticker-item"><span class="dot">▶</span>GPT-5.5 正式上线 · Codex 突破 500 万用户 · Token 效率飞跃</span>
-    <span class="ticker-item"><span class="dot">▶</span>Anthropic 年化 300 亿美元 · 首超 OpenAI · Claude Code 驱动增长</span>
-    <span class="ticker-item"><span class="dot">▶</span>Gemini 3.5 Flash GA · 9 亿月活 · 输出速度 4 倍提升</span>
-    <span class="ticker-item"><span class="dot">▶</span>DeepMind 8000 万收编 Contextual AI · 人才并购新模式</span>
+    <span class="ticker-item"><span class="dot">▶</span>NVIDIA RTX Spark 超级芯片——PC 从工具变队友</span>
+    <span class="ticker-item"><span class="dot">▶</span>Dell XPS 13 起价 $599 正面对标 MacBook Neo</span>
+    <span class="ticker-item"><span class="dot">▶</span>Merge Agent Handler — 给企业 AI Agent 装门禁</span>
+    <span class="ticker-item"><span class="dot">▶</span>PM 角色 K 型分化 · AI 时代的竞争壁垒在哪</span>
+    <span class="ticker-item"><span class="dot">▶</span>NVIDIA RTX Spark 超级芯片——PC 从工具变队友</span>
+    <span class="ticker-item"><span class="dot">▶</span>Dell XPS 13 起价 $599 正面对标 MacBook Neo</span>
+    <span class="ticker-item"><span class="dot">▶</span>Merge Agent Handler — 给企业 AI Agent 装门禁</span>
+    <span class="ticker-item"><span class="dot">▶</span>PM 角色 K 型分化 · AI 时代的竞争壁垒在哪</span>
   </div>
 </div>
 
+<!-- AUDIO PLAYER (sticky) -->
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <strong>收听本期播客</strong>
+    <span>· 2026-06-03 · 产品星期三</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-06-01.mp3">
-    你的浏览器不支持音频播放。<a href="2026-06-01.mp3">下载音频</a>
-  </audio>
+  <audio controls src="episodes/2026-06-03.mp3">您的浏览器不支持音频播放。</audio>
 </div>
 
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
-
-<div class="news-grid">
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">GPT-5.5 正式上线 + Codex 突破 500 万用户——OpenAI 双管齐下</h2>
-    <p class="news-body">
-      OpenAI 发布了 GPT-5.5，被称为"最聪明、最直觉"的模型。智能水平更高，但每 token 延迟与 5.4 持平，完成相同 Codex 任务的 token 消耗显著减少。与此同时，Codex 用户突破 500 万大关——从去年五月研究预览版上线到现在刚好一年。OpenAI 工程师 Thibault Sottiaux 宣布重置速率限制以示庆祝。GPT-5.5 擅长编写调试代码、在线调研、数据分析、生成文档和表格、操作软件，并能跨工具持续执行任务直到完成。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank">OpenAI</a>
-      &nbsp;·&nbsp;
-      <a href="https://officechai.com/ai/openais-codex-reaches-5-million-users-resets-rate-limits-for-users/" target="_blank">OfficeChai</a>
-    </p>
-  </div>
-
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Anthropic 年化营收 300 亿美元——历史首超 OpenAI</h2>
-    <p class="news-body">
-      Anthropic 的年化营收跑到了 300 亿美元，首次超过 OpenAI 的 240 亿美元。增长曲线惊人：2024 年初 8700 万 → 年底 10 亿 → 2025 年底 90 亿 → 2026 年二月 140 亿 → 四月 300 亿。Salesforce 用 20 年走完的路，Anthropic 不到三年就跑完了。核心驱动力是 Claude Code，六个月内做到 10 亿年化营收，且训练成本仅为 OpenAI 的四分之一。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" target="_blank">VentureBeat</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.saastr.com/anthropic-just-passed-openai-in-revenue-while-spending-4x-less-to-train-their-models/" target="_blank">SaaStr</a>
-    </p>
-  </div>
-
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">Gemini 3.5 Flash 全面上线——Google 押注代理赛道</h2>
-    <p class="news-body">
-      Google I/O 2026 上，Gemini 3.5 Flash 全面可用。在多个维度达到旗舰模型水平，输出 token 速度快 4 倍，成本不到同类一半。Gemini 月活达 9 亿（翻倍），AI Overview 触达 25 亿用户。Google 将 Ultra 订阅降至 200 美元，新增 100 美元 Developer tier。TechCrunch 评价：Google 的下一波 AI 赌注押在代理而非聊天机器人上。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/" target="_blank">MarkTechPost</a>
-      &nbsp;·&nbsp;
-      <a href="https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/" target="_blank">TechCrunch</a>
-    </p>
-  </div>
-
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">DeepMind 斥资 8000-9000 万收编 Contextual AI 团队——人才并购新模式</h2>
-    <p class="news-body">
-      DeepMind 通过一笔 8000-9000 万美元的许可协议，从 Contextual AI 挖走了 20 多位研究员，包括联合创始人兼 CEO Douwe Kiela。这不是传统的公司收购——买的不是公司，是人。在 AI 领域，顶尖研究人才的争夺越来越像体育界的转会市场。三家实验室高管都承认，前沿竞赛已进入"几乎齐头并进"的阶段。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.heygotrade.com/en/news/google-io-2026-gemini-deepmind-contextual-ai/" target="_blank">HeyGoTrade</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.axios.com/2026/05/21/google-ai-anthropic-openai-war" target="_blank">Axios</a>
-    </p>
-  </div>
-</div>
-
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
+<!-- INDEX -->
+<p class="section-label">◈ 本期目录</p>
 <table class="index-table">
-  <thead>
-    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
-  </thead>
+  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
   <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank">GPT-5.5 上线 + Codex 500 万用户 <span class="tag hot">头条</span></a></td>
-      <td>OpenAI</td>
-      <td>2026-05-30</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth" target="_blank">Anthropic 300 亿 ARR 首超 OpenAI <span class="tag">营收</span></a></td>
-      <td>VentureBeat</td>
-      <td>2026-05-29</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/" target="_blank">Gemini 3.5 Flash 全面上线 <span class="tag">模型</span></a></td>
-      <td>Google</td>
-      <td>2026-05-20</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://www.heygotrade.com/en/news/google-io-2026-gemini-deepmind-contextual-ai/" target="_blank">DeepMind 收编 Contextual AI <span class="tag">人才</span></a></td>
-      <td>HeyGoTrade</td>
-      <td>2026-05-21</td>
-    </tr>
+    <tr><td>01</td><td><a href="#s1">NVIDIA RTX Spark：从"工具"到"队友"，PC 正在被重新定义</a></td><td><span class="tag hot">热</span></td></tr>
+    <tr><td>02</td><td><a href="#s2">Dell XPS 13 起价 $599：Premium 硬件的价格下沉</a></td><td><span class="tag">产品</span></td></tr>
+    <tr><td>03</td><td><a href="#s3">Merge Agent Handler：谁来管住你公司的 AI Agent？</a></td><td><span class="tag">企业</span></td></tr>
+    <tr><td>04</td><td><a href="#s4">PM 的 K 型分化与 AI 时代的竞争壁垒</a></td><td><span class="tag">趋势</span></td></tr>
   </tbody>
 </table>
+
+<!-- NEWS GRID -->
+<div class="news-grid">
+
+  <!-- LEAD: NVIDIA RTX Spark -->
+  <div class="news-card lead" id="s1">
+    <p class="news-num">Story 01</p>
+    <h2 class="news-hed">NVIDIA RTX Spark：从"工具"到"队友"，PC 正在被重新定义</h2>
+    <p class="news-body">
+      Computex 2026 上最大的产品发布。NVIDIA CEO 黄仁勋发布了 RTX Spark 超级芯片——把 Blackwell GPU 和全新 ARM 架构 Grace CPU 融合在一起，最高 128GB 统一内存，1 petaflop AI 算力。你可以在笔记本上本地跑 1200 亿参数的大模型，100 万 token 上下文窗口，不需要云。NVIDIA 的定位是四个字：Tool to Teammate——"工具变队友"。他们跟微软深度合作，要把 Windows 变成 AI Agent 操作系统。RTX Spark 不只让你用 AI，而是让 AI Agent 在你的电脑上自主运行。今年秋天上市，ASUS、Dell、HP、联想、微软 Surface、MSI 都会出搭载 RTX Spark 的机型，预计超过 30 款。PC 作为产品的定义变了——从"你完成任务的设备"到"能自主工作的团队成员"。
+    </p>
+    <p class="news-source">📎 <a href="https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark" target="_blank">NVIDIA Newsroom</a> · <a href="https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory" target="_blank">Tom's Hardware</a></p>
+  </div>
+
+  <!-- Dell XPS 13 -->
+  <div class="news-card" id="s2">
+    <p class="news-num">Story 02</p>
+    <h2 class="news-hed">Dell XPS 13 起价 $599：Premium 硬件的价格下沉</h2>
+    <p class="news-body">
+      同样在 Computex 上，Dell 发布了全新 XPS 13——学生版 599 美元，普通版 699 美元。这是 Dell 史上最轻最薄的 XPS：0.9 公斤，12.7 毫米厚，CNC 铝合金机身，2.5K 触摸屏，四扬声器杜比全景声，1080P 摄像头支持 Windows Hello。完全正面对标苹果 MacBook Neo，但给了触摸屏和更好的音频系统——这些是 MacBook Neo 没有的。一个经典的"价格下沉"产品策略：用 Premium 品质打低价市场，在 AI PC 时代抢占入门用户。
+    </p>
+    <p class="news-source">📎 <a href="https://www.tomshardware.com/laptops/dell-xps-13-targets-macbook-neo-with-intels-wildcat-lake-usd699-starting-price-usd599-for-students" target="_blank">Tom's Hardware</a> · <a href="https://www.windowscentral.com/hardware/dell/dell-xps-13-2026-returns-599-computex" target="_blank">Windows Central</a></p>
+  </div>
+
+  <!-- Merge Agent Handler -->
+  <div class="news-card" id="s3">
+    <p class="news-num">Story 03</p>
+    <h2 class="news-hed">Merge Agent Handler：谁来管住你公司的 AI Agent？</h2>
+    <p class="news-body">
+      公司里每个人都在用 Claude、ChatGPT、各种 AI Agent 连接公司系统，但 IT 部门不知道谁在用什么、能访问哪些数据。Merge 发布 Agent Handler for Employees 解决这个问题：连接身份认证系统，导入员工和组，设定每个人可以用哪些 AI 工具、连接哪些系统、执行哪些操作。所有 AI 会话都有日志，加上数据防泄漏控制。六月二号 Agent Handler 宣布上架微软 Agent Store，支持 MCP 协议。AI Agent 正在从"个人效率工具"变成"企业基础设施"——Merge 看到了"管理 Agent 的中间层"这个机会。
+    </p>
+    <p class="news-source">📎 <a href="https://siliconangle.com/2026/06/01/merge-launches-agent-handler-employees-gatekeeper-workplace-ai-agents/" target="_blank">SiliconANGLE</a> · <a href="https://www.merge.dev/agent-handler/employees" target="_blank">Merge</a></p>
+  </div>
+
+  <!-- PM K-Split -->
+  <div class="news-card" id="s4">
+    <p class="news-num">Story 04</p>
+    <h2 class="news-hed">PM 的 K 型分化与 AI 时代的竞争壁垒</h2>
+    <p class="news-body">
+      产品经理角色正在经历 K 型分化——一部分人往上走（AI Product Manager 和 AI-Powered PM），一部分人往下走（传统通才型 PM，其核心工作正被 Agent 吞噬）。团队配比也在变：从 1 PM : 4 工程师，到前沿团队的 2 PM : 1 工程师——Agent 写代码，但需要更多人做产品策略和用户研究。关键问题：当竞争对手也有同样的 AI，你的竞争壁垒在哪？答案可能是——壁垒不再是技术本身，而是你对用户的理解深度、数据的独特性、以及团队使用 AI 的方法论。
+    </p>
+    <p class="news-source">📎 <a href="https://userpilot.com/blog/product-management-trends/" target="_blank">Userpilot</a> · <a href="https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager" target="_blank">Product School</a></p>
+  </div>
+
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -229,50 +388,20 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 06:03。
+  数据截至今日 UTC 2026-06-03 04:00。
 </p>
 
+<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Unsupervised Learning · 2026-05-22</p>
-  <p class="pc-title">Ep 87: Gemini Co-Lead on World Models, RL's Next Domains & Continual Learning</p>
-  <p class="pc-summary">
-    Oriol Vinyals 是 Gemini 的联合负责人（与 Noam Shazir、Jeff Dean 并列）。这一期在 Google I/O 之后录制，深入讨论了多模态世界模型的下一步发展、记忆系统的进化为何将像推理一样重要，以及当前 scaffolding 和代理生态中哪些模式会持续发展。对于关注代理和基础模型演进方向的建造者来说，这期非常值得完整收听。
-  </p>
-  <a href="https://www.youtube.com/watch?v=NQczevdpxq0" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Unsupervised Learning (Redpoint AI) · 2026-06-01</p>
+  <p class="pc-title">Ep 88: Unpacking DeepMind's Quest for SuperIntelligence with Demis Hassabis' Biographer</p>
+  <p class="pc-summary">Sebastian Mallaby 花了三十多个小时与 DeepMind CEO Demis Hassabis 深度对谈，写出了《The Infinity Machine》。这期节目挖掘了 Hassabis 的核心信念——用正确的方式理解自然，我们可能接近某种"神性"。还聊到了 Reid Hoffman 曾出价十亿美元要把 DeepMind 从 Google 剥离出来，以及 Hassabis 与 Elon、Sam Altman 关系的演变。</p>
+  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
+<!-- BUILDERS GRID -->
 <div class="builders-grid">
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">TS</div>
-      <div>
-        <div class="builder-name">Thibault Sottiaux</div>
-        <div class="builder-handle">@thsottiaux · Codex & ChatGPT @OpenAI</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「从 GPT-5.0 到 5.5，每次版本号增加都伴随能力和 token 效率的提升，效率提升转化为速度增益。五百万用户的共识——重置限制庆祝。Time to go /fast。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 3842</span>
-      <a href="https://x.com/thsottiaux/status/2060627747760984429" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PS</div>
-      <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · @OpenClaw / @OpenAI</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「用了 GPT 5.5 配合 /goal、autoreview 和 crabbox，我的提示从 30-60 分钟任务变成了 4-10 小时任务，对结果的信心高多了。Yielding agents is a skill.」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 2905</span>
-      <a href="https://x.com/steipete/status/2060678430031597696" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">GR</div>
@@ -281,25 +410,55 @@
         <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「Ship the best product. Use lots of AI, some AI, maybe no AI. Just be the best. 发布最好的产品——多用 AI、少用 AI、不用 AI 都行，重点是做到最好。」</p>
+    <p class="builder-tweet">「MiniMax M3 在 Next.js Agent 评测中已经是最强开源模型——表现仅次于 Opus 和 GPT-5，但便宜十倍。Anthropic 和 OpenAI 仍领先，但开源在 Agent 任务上追上来了。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2599</span>
-      <a href="https://x.com/rauchg/status/2060803480823193840" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 596</span>
+      <a href="https://x.com/rauchg/status/2061593874498531707" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">DS</div>
+      <div class="builder-avatar">AM</div>
       <div>
-        <div class="builder-name">Dan Shipper</div>
-        <div class="builder-handle">@danshipper · CEO @Every</div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「38B tokens，最长单任务 56 小时，连续使用 41 天。LFG Codex。当编码代理能跑几十个小时还保持稳定，工作方式就彻底变了。」</p>
+    <p class="builder-tweet">「从一个 prompt 到完整的生意：网站、移动应用、支付、特拉华州注册公司。免费开始。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 169</span>
-      <a href="https://x.com/danshipper/status/2060771279280513362" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 167</span>
+      <a href="https://x.com/amasad/status/2061575503434408106" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「进入 AI Agent 时代，核心问题是——当你的竞争对手也能用同样的 AI 时，你怎么建立竞争优势？」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 154</span>
+      <a href="https://x.com/levie/status/2061662386680127688" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MT</div>
+      <div>
+        <div class="builder-name">Matt Turck</div>
+        <div class="builder-handle">@mattturck · Firstmark Capital</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「CEO："我们有几万个 AI Agent 在生产环境大规模运行。" CTO 的反应：（见原推）——企业 AI 的理想与现实之间的差距。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 289</span>
+      <a href="https://x.com/mattturck/status/2061533386296963464" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
@@ -307,16 +466,23 @@
 <hr class="rule">
 
 <footer>
-  <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
-  主持：大雨 × 小苇 · 2026-06-01<br>
-  数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
-  © 2026 Daily Builders Digest
+  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-06-03<br>
+  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
+  数据来源：WebSearch · follow-builders · 公开报道<br>
+  「关注建造者，不要关注 influencer。」
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-01.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-01</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">GPT-5.5 正式上线 + Codex 突破 500 万用户——OpenAI 双管齐下</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-05-31.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-05-31</span>

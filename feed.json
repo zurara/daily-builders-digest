@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-06-04",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Dr. Abud Bakri：肽类的科学、用途与安全性——从 BPC-157 到 GLP-1 的全面拆解 · Peter Attia #394：睡眠药理学——从传统安眠药到 DORAs，以及阿尔茨海默症预防的新方向",
+    "html": "episodes/2026-06-04.html",
+    "mp3": "episodes/2026-06-04.mp3",
+    "headlines": [
+      "Huberman Lab × Dr. Abud Bakri：肽类的科学、用途与安全性——从 BPC-157 到 GLP-1 的全面拆解",
+      "Peter Attia #394：睡眠药理学——从传统安眠药到 DORAs，以及阿尔茨海默症预防的新方向",
+      "FoundMyFitness：Beta-glucan 优于洋车前子、肌酸与咖啡因共存、IVF 补充剂指南",
+      "IVF 补充剂、桑拿安全性与 GLP-1 药物对女性生育的影响",
+      "分层思维——今天三个播客的共同框架"
+    ]
+  },
+  {
     "date": "2026-06-03",
     "dow": 3,
     "topic": "Product",

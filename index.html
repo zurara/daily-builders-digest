@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-03">
-<meta property="og:description" content="NVIDIA RTX Spark 重新定义 PC · Dell XPS 13 $599 挑战 MacBook Neo · Merge Agent Handler 企业管控 · PM K 型分化">
-<title>Daily Builders Digest · 2026-06-03</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-04">
+<meta property="og:description" content="健康星期四 · 肽的科学与风险 · 睡眠药理学 · PFAS 排出与 IVF 营养">
+<title>Daily Builders Digest · 2026-06-04</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -124,18 +124,6 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -203,6 +191,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +267,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,11 +283,20 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -289,11 +315,11 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-06-03</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-06-04</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·06·03 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·06·04 周四</span>
+    <span>🏷 主题：肽的科学与风险 · 睡眠药理学 · PFAS 排出与 IVF 营养</span>
     <span>🎙 主持：大雨 × 小苇</span>
     <span>⏱ 约 15 分钟</span>
   </div>
@@ -302,14 +328,16 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>NVIDIA RTX Spark 超级芯片——PC 从工具变队友</span>
-    <span class="ticker-item"><span class="dot">▶</span>Dell XPS 13 起价 $599 正面对标 MacBook Neo</span>
-    <span class="ticker-item"><span class="dot">▶</span>Merge Agent Handler — 给企业 AI Agent 装门禁</span>
-    <span class="ticker-item"><span class="dot">▶</span>PM 角色 K 型分化 · AI 时代的竞争壁垒在哪</span>
-    <span class="ticker-item"><span class="dot">▶</span>NVIDIA RTX Spark 超级芯片——PC 从工具变队友</span>
-    <span class="ticker-item"><span class="dot">▶</span>Dell XPS 13 起价 $599 正面对标 MacBook Neo</span>
-    <span class="ticker-item"><span class="dot">▶</span>Merge Agent Handler — 给企业 AI Agent 装门禁</span>
-    <span class="ticker-item"><span class="dot">▶</span>PM 角色 K 型分化 · AI 时代的竞争壁垒在哪</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Dr. Bakri — 肽类的科学、用途与安全性</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #394 — 睡眠药理学：药物、DORAs、补充剂</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — Beta-glucan 优于洋车前子 · IVF 补充剂</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 睡前一小时关闭主灯，成本为零</span>
+    <span class="ticker-item"><span class="dot">▶</span>BPC-157 · GLP-1 · DORAs · Retatrutide</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Dr. Bakri — 肽类的科学、用途与安全性</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #394 — 睡眠药理学：药物、DORAs、补充剂</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — Beta-glucan 优于洋车前子 · IVF 补充剂</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 睡前一小时关闭主灯，成本为零</span>
+    <span class="ticker-item"><span class="dot">▶</span>BPC-157 · GLP-1 · DORAs · Retatrutide</span>
   </div>
 </div>
 
@@ -317,68 +345,124 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>收听本期播客</strong>
-    <span>· 2026-06-03 · 产品星期三</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 15 分钟</span>
   </div>
-  <audio controls src="episodes/2026-06-03.mp3">您的浏览器不支持音频播放。</audio>
+  <audio controls preload="none" src="episodes/2026-06-04.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-04.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- INDEX -->
-<p class="section-label">◈ 本期目录</p>
-<table class="index-table">
-  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
-  <tbody>
-    <tr><td>01</td><td><a href="#s1">NVIDIA RTX Spark：从"工具"到"队友"，PC 正在被重新定义</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>02</td><td><a href="#s2">Dell XPS 13 起价 $599：Premium 硬件的价格下沉</a></td><td><span class="tag">产品</span></td></tr>
-    <tr><td>03</td><td><a href="#s3">Merge Agent Handler：谁来管住你公司的 AI Agent？</a></td><td><span class="tag">企业</span></td></tr>
-    <tr><td>04</td><td><a href="#s4">PM 的 K 型分化与 AI 时代的竞争壁垒</a></td><td><span class="tag">趋势</span></td></tr>
-  </tbody>
-</table>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 三大来源</p>
 
-<!-- NEWS GRID -->
 <div class="news-grid">
 
-  <!-- LEAD: NVIDIA RTX Spark -->
-  <div class="news-card lead" id="s1">
-    <p class="news-num">Story 01</p>
-    <h2 class="news-hed">NVIDIA RTX Spark：从"工具"到"队友"，PC 正在被重新定义</h2>
+  <!-- LEAD: Huberman Lab -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Dr. Abud Bakri：肽类的科学、用途与安全性——从 BPC-157 到 GLP-1 的全面拆解</h2>
     <p class="news-body">
-      Computex 2026 上最大的产品发布。NVIDIA CEO 黄仁勋发布了 RTX Spark 超级芯片——把 Blackwell GPU 和全新 ARM 架构 Grace CPU 融合在一起，最高 128GB 统一内存，1 petaflop AI 算力。你可以在笔记本上本地跑 1200 亿参数的大模型，100 万 token 上下文窗口，不需要云。NVIDIA 的定位是四个字：Tool to Teammate——"工具变队友"。他们跟微软深度合作，要把 Windows 变成 AI Agent 操作系统。RTX Spark 不只让你用 AI，而是让 AI Agent 在你的电脑上自主运行。今年秋天上市，ASUS、Dell、HP、联想、微软 Surface、MSI 都会出搭载 RTX Spark 的机型，预计超过 30 款。PC 作为产品的定义变了——从"你完成任务的设备"到"能自主工作的团队成员"。
+      6 月 1 日发布。Dr. Abud Bakri 是委员会认证的医生，在这期节目中逐一拆解了目前最热门的肽类。<br><br>
+      <strong>① BPC-157 的现实</strong>——这种源自胃液的肽在动物模型中显示出强大的组织修复能力（肌腱、韧带、肠道黏膜），但人体临床数据几乎为零。更关键的是来源风险——市场上的 BPC-157 来源参差不齐，纯度和污染物才是真正的危险。<br><br>
+      <strong>② GHK-Cu 与 Epithalon</strong>——铜肽 GHK-Cu 在护肤品中用于促进胶原蛋白合成，外用风险较低。Epithalon 被宣传有抗衰老作用，但证据太初步，Dr. Bakri 持审慎态度。<br><br>
+      <strong>③ GLP-1 类药物是真正的信号</strong>——Semaglutide 有大规模临床试验支持。Retatrutide（三靶点激动剂）正在试验中，减重效果可能更强。但即使是 FDA 批准的药物，也需要医生指导。<br><br>
+      <strong>核心信息：</strong>动物数据 ≠ 人体效果。来源决定安全性。肽类里最危险的不是肽本身，是未经监管的获取渠道。
     </p>
-    <p class="news-source">📎 <a href="https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark" target="_blank">NVIDIA Newsroom</a> · <a href="https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory" target="_blank">Tom's Hardware</a></p>
+    <p class="news-source">
+      📎 <a href="https://www.hubermanlab.com/episode/peptides-the-science-uses-and-safety-abud-bakri" target="_blank">Peptides: The Science, Uses & Safety | Dr. Abud Bakri — Huberman Lab</a>
+    </p>
   </div>
 
-  <!-- Dell XPS 13 -->
-  <div class="news-card" id="s2">
-    <p class="news-num">Story 02</p>
-    <h2 class="news-hed">Dell XPS 13 起价 $599：Premium 硬件的价格下沉</h2>
+  <!-- Peter Attia -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">Peter Attia #394：睡眠药理学——从传统安眠药到 DORAs，以及阿尔茨海默症预防的新方向</h2>
     <p class="news-body">
-      同样在 Computex 上，Dell 发布了全新 XPS 13——学生版 599 美元，普通版 699 美元。这是 Dell 史上最轻最薄的 XPS：0.9 公斤，12.7 毫米厚，CNC 铝合金机身，2.5K 触摸屏，四扬声器杜比全景声，1080P 摄像头支持 Windows Hello。完全正面对标苹果 MacBook Neo，但给了触摸屏和更好的音频系统——这些是 MacBook Neo 没有的。一个经典的"价格下沉"产品策略：用 Premium 品质打低价市场，在 AI PC 时代抢占入门用户。
+      6 月 1 日发布。Attia 的框架：睡眠是生理需求，行为干预是第一道防线，药物是精确匹配工具。<br><br>
+      <strong>DORAs（双重食欲素受体拮抗剂）</strong>是亮点——不是强行让大脑"关机"，而是抑制清醒信号，对睡眠结构的干扰更小。研究显示 DORAs 可能对高风险阿尔茨海默症人群有预防作用。<br><br>
+      补充剂方面：有些有特定条件下的数据支持，但没有一个能替代基础的睡眠卫生。
     </p>
-    <p class="news-source">📎 <a href="https://www.tomshardware.com/laptops/dell-xps-13-targets-macbook-neo-with-intels-wildcat-lake-usd699-starting-price-usd599-for-students" target="_blank">Tom's Hardware</a> · <a href="https://www.windowscentral.com/hardware/dell/dell-xps-13-2026-returns-599-computex" target="_blank">Windows Central</a></p>
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/sleeppharmacology/" target="_blank">#394 — Sleep Pharmacology — The Peter Attia Drive</a>
+    </p>
   </div>
 
-  <!-- Merge Agent Handler -->
-  <div class="news-card" id="s3">
-    <p class="news-num">Story 03</p>
-    <h2 class="news-hed">Merge Agent Handler：谁来管住你公司的 AI Agent？</h2>
+  <!-- FoundMyFitness -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">FoundMyFitness：Beta-glucan 优于洋车前子、肌酸与咖啡因共存、IVF 补充剂指南</h2>
     <p class="news-body">
-      公司里每个人都在用 Claude、ChatGPT、各种 AI Agent 连接公司系统，但 IT 部门不知道谁在用什么、能访问哪些数据。Merge 发布 Agent Handler for Employees 解决这个问题：连接身份认证系统，导入员工和组，设定每个人可以用哪些 AI 工具、连接哪些系统、执行哪些操作。所有 AI 会话都有日志，加上数据防泄漏控制。六月二号 Agent Handler 宣布上架微软 Agent Store，支持 MCP 协议。AI Agent 正在从"个人效率工具"变成"企业基础设施"——Merge 看到了"管理 Agent 的中间层"这个机会。
+      综合 5 月 22 日和 5 月 4 日（Q&A #81）两期内容。Rhonda Patrick 进一步讨论了 beta-glucan 为什么优于洋车前子——不仅帮助排出 PFAS "永久化学物质"，在胆固醇调节上效率也更高。<br><br>
+      肌酸和咖啡因可以安全共存。IVF 相关补充剂和桑拿安全性的讨论，在主流健康播客中极为少见。
     </p>
-    <p class="news-source">📎 <a href="https://siliconangle.com/2026/06/01/merge-launches-agent-handler-employees-gatekeeper-workplace-ai-agents/" target="_blank">SiliconANGLE</a> · <a href="https://www.merge.dev/agent-handler/employees" target="_blank">Merge</a></p>
-  </div>
-
-  <!-- PM K-Split -->
-  <div class="news-card" id="s4">
-    <p class="news-num">Story 04</p>
-    <h2 class="news-hed">PM 的 K 型分化与 AI 时代的竞争壁垒</h2>
-    <p class="news-body">
-      产品经理角色正在经历 K 型分化——一部分人往上走（AI Product Manager 和 AI-Powered PM），一部分人往下走（传统通才型 PM，其核心工作正被 Agent 吞噬）。团队配比也在变：从 1 PM : 4 工程师，到前沿团队的 2 PM : 1 工程师——Agent 写代码，但需要更多人做产品策略和用户研究。关键问题：当竞争对手也有同样的 AI，你的竞争壁垒在哪？答案可能是——壁垒不再是技术本身，而是你对用户的理解深度、数据的独特性、以及团队使用 AI 的方法论。
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">FoundMyFitness Episodes</a>
     </p>
-    <p class="news-source">📎 <a href="https://userpilot.com/blog/product-management-trends/" target="_blank">Userpilot</a> · <a href="https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager" target="_blank">Product School</a></p>
   </div>
 
 </div>
+
+<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
+<div class="spotlight">
+  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
+  <h2 class="spotlight-hed">IVF 补充剂、桑拿安全性与 GLP-1 药物对女性生育的影响</h2>
+  <p class="spotlight-body">
+    Rhonda Patrick 在 Q&A #81 中深入讨论了试管婴儿（IVF）前后哪些补充剂有证据支持——包括 CoQ10、DHEA 和叶酸的不同形式。她强调，这些都需要在医生指导下个性化使用，不能照搬通用方案。<br><br>
+    <strong>桑拿在不同生理阶段的安全性</strong>也被详细讨论——怀孕期间、月经周期的不同阶段、更年期前后，桑拿的潜在收益和风险可能截然不同。关键是体温升高的程度和持续时间。<br><br>
+    另一个值得关注的交叉点来自 Huberman Lab——GLP-1 类药物和生育的关系。随着越来越多育龄女性使用 semaglutide，<strong>停药时机与备孕计划的协调</strong>成了一个需要医生具体评估的问题。Dr. Bakri 建议在计划怀孕前至少两个月停药，但个体差异很大。<br><br>
+    <strong>为什么这很重要？</strong> 女性健康不是健康话题的附录。肽类、睡眠药物、补充剂——这些话题在讨论时几乎总是默认以男性身体为参考。当研究者和科普者开始明确讨论女性特有的考量时，才是真正的进步。
+  </p>
+</div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 区分信号和噪音</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">分层思维——今天三个播客的共同框架</h2>
+  <p class="spotlight-body">
+    Huberman 那期在说，肽类市场里信号和噪音混在一起——有 FDA 批准的 GLP-1 药物，也有来源不明的 BPC-157。<strong>你必须学会区分确定的、有前景的、和纯炒作的。</strong><br><br>
+    Attia 在说，睡眠领域也一样——有科学依据的药物选择，和"吃颗褪黑素就好"的简单思维之间有本质区别。<strong>药物是精确工具，不是万能钥匙。</strong><br><br>
+    Rhonda 在说，连膳食纤维这种基础话题，也有层次——<strong>beta-glucan 在特定功能上优于其他纤维，但这不意味着"只吃燕麦"。</strong><br><br>
+    三位专家都在做同一件事：把复杂的健康信息分成"确定"、"有前景但需要更多数据"、和"纯炒作"三层。<strong>这种分层思维，才是真正的健康素养。</strong>
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.hubermanlab.com/episode/peptides-the-science-uses-and-safety-abud-bakri" target="_blank">Peptides: The Science, Uses & Safety | Dr. Abud Bakri</a> <span class="tag hot">New</span></td>
+      <td>Huberman Lab</td>
+      <td>2026-06-01</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://peterattiamd.com/sleeppharmacology/" target="_blank">#394 — Sleep Pharmacology</a> <span class="tag hot">New</span></td>
+      <td>The Peter Attia Drive</td>
+      <td>2026-06-01</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">Beta-glucan for PFAS, Creatine & Caffeine, IVF Supplements</a> <span class="tag hot">New</span></td>
+      <td>FoundMyFitness</td>
+      <td>2026-05-22</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -388,94 +472,98 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-06-03 04:00。
+  数据截至今日 UTC 2026-06-04T04:00。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Unsupervised Learning (Redpoint AI) · 2026-06-01</p>
-  <p class="pc-title">Ep 88: Unpacking DeepMind's Quest for SuperIntelligence with Demis Hassabis' Biographer</p>
-  <p class="pc-summary">Sebastian Mallaby 花了三十多个小时与 DeepMind CEO Demis Hassabis 深度对谈，写出了《The Infinity Machine》。这期节目挖掘了 Hassabis 的核心信念——用正确的方式理解自然，我们可能接近某种"神性"。还聊到了 Reid Hoffman 曾出价十亿美元要把 DeepMind 从 Google 剥离出来，以及 Hassabis 与 Elon、Sam Altman 关系的演变。</p>
-  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Training Data · 2026-06-02</p>
+  <p class="pc-title">Knowing What Your Customers Want, All the Time: Listen Labs' Alfred Wahlforss</p>
+  <p class="pc-summary">Listen Labs 创始人 Alfred Wahlforss 讨论了 AI 原生客户研究平台如何改变市场调研——用 AI 代理进行大规模异步访谈，已服务 20% 的财富 500 强。有趣观察：人们对 AI 访谈比对人类访谈更诚实，因为 AI 是一个"不评判的、真正对你感兴趣的实体"。这让人联想到健康领域的一个平行——人们在匿名数字工具上报告的健康数据，往往比在医生面前说的更真实。</p>
+  <a href="https://www.youtube.com/watch?v=Rumft-rsEu4" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · CEO @OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「最能激励我的一句话：'凡你手所当做的事，要尽力去做。'——在艰难的日子里，不需要宏大的愿景，只需要全力做手边的事。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 16,278</span>
+      <a href="https://x.com/sama/status/2061828631089844709" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
       <div class="builder-avatar">GR</div>
       <div>
         <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel CEO</div>
+        <div class="builder-handle">@rauchg · CEO @vercel</div>
       </div>
     </div>
-    <p class="builder-tweet">「MiniMax M3 在 Next.js Agent 评测中已经是最强开源模型——表现仅次于 Opus 和 GPT-5，但便宜十倍。Anthropic 和 OpenAI 仍领先，但开源在 Agent 任务上追上来了。」</p>
+    <p class="builder-tweet">「这就是 AI 时代的教育。从语言入手：语言表面就是你的路线图。」——从健康素养的角度看，学会读懂医学术语（肽、受体激动剂、食欲素）就是理解自己身体的第一步。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 596</span>
-      <a href="https://x.com/rauchg/status/2061593874498531707" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 765</span>
+      <a href="https://x.com/rauchg/status/2061862134469062850" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AM</div>
-      <div>
-        <div class="builder-name">Amjad Masad</div>
-        <div class="builder-handle">@amasad · Replit CEO</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「从一个 prompt 到完整的生意：网站、移动应用、支付、特拉华州注册公司。免费开始。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 167</span>
-      <a href="https://x.com/amasad/status/2061575503434408106" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">AB</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-handle">@levie · CEO @Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「进入 AI Agent 时代，核心问题是——当你的竞争对手也能用同样的 AI 时，你怎么建立竞争优势？」</p>
+    <p class="builder-tweet">「随着 token 预算在运营成本中的占比越来越大，模型路由成为必然趋势。」——有趣的类比：在健康领域，随着我们理解的深入，"对症下药"式的精准干预也成了趋势——不是一种药治百病，而是根据你的具体问题选择最合适的工具。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 154</span>
-      <a href="https://x.com/levie/status/2061662386680127688" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">MT</div>
-      <div>
-        <div class="builder-name">Matt Turck</div>
-        <div class="builder-handle">@mattturck · Firstmark Capital</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「CEO："我们有几万个 AI Agent 在生产环境大规模运行。" CTO 的反应：（见原推）——企业 AI 的理想与现实之间的差距。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 289</span>
-      <a href="https://x.com/mattturck/status/2061533386296963464" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 299</span>
+      <a href="https://x.com/levie/status/2061974298760495132" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
+<!-- ─────────────────── 今日行动 ─────────────────── -->
 <hr class="rule">
+<p class="section-label">◈ 今日健康行动</p>
 
+<div class="spotlight">
+  <p class="spotlight-label">💡 Today's Action</p>
+  <h2 class="spotlight-hed">睡前一小时关闭主灯——成本为零，效果可能超过大多数补充剂</h2>
+  <p class="spotlight-body">
+    Peter Attia 说，这是最被低估的行为干预。不需要买任何东西，不需要任何app——<strong>今晚睡前一小时，关掉头顶的主灯，只留一盏暗光。</strong><br><br>
+    光照是昼夜节律最强的信号。你的手机屏幕亮度不是唯一的问题——头顶的天花板灯才是更大的罪魁祸首。降低环境光照，让你的大脑自然开始分泌褪黑素，而不是用一颗外源性的褪黑素药片来补救。<br><br>
+    <strong>基础做对了，才值得讨论高级工具。</strong>
+  </p>
+</div>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-06-03<br>
-  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
-  数据来源：WebSearch · follow-builders · 公开报道<br>
-  「关注建造者，不要关注 influencer。」
+  <strong>Daily Builders Digest</strong> · 健康星期四 · 2026-06-04<br>
+  主持：大雨 × 小苇 · 数据来源：Huberman Lab · The Peter Attia Drive · FoundMyFitness · follow-builders<br>
+  © 2026 Daily Builders Digest · 关注建造者，不要关注 influencer
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-03.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-03</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">NVIDIA RTX Spark：从"工具"到"队友"，PC 正在被重新定义</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-01.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-01</span>

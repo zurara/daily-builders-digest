@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-06-05",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "白宫签署 AI 行政令——自愿 30 天模型预审，\"软性安全\"框架成型 · Anthropic 秘密递交 IPO 申请——估值 9650 亿美元，首超 OpenAI",
+    "html": "episodes/2026-06-05.html",
+    "mp3": "episodes/2026-06-05.mp3",
+    "headlines": [
+      "白宫签署 AI 行政令——自愿 30 天模型预审，\"软性安全\"框架成型",
+      "Anthropic 秘密递交 IPO 申请——估值 9650 亿美元，首超 OpenAI",
+      "MiniMax M3 发布——稀疏注意力架构，开源权重，SWE-Bench Pro 超越 GPT-5.5",
+      "NVIDIA Cosmos 3 发布——首个开放物理 AI 全能模型，机器人生态加速"
+    ]
+  },
+  {
     "date": "2026-06-04",
     "dow": 4,
     "topic": "Health",

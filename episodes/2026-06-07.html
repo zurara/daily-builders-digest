@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-06-07">
+<meta property="og:description" content="周日播客精选 · 当 AI 开始自己做发现 · OpenAI Dan Roberts 谈强化学习 · Erdős 问题被攻克">
+<title>Daily Builders Digest · 2026-06-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 42s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── PODCAST DEEP DIVE ── */
+  .deep-dive {
+    margin-bottom: 48px;
+  }
+  .deep-dive-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .deep-dive h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .deep-dive .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    margin-bottom: 18px;
+  }
+  .deep-dive .body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #222;
+  }
+  .deep-dive .body p { margin-bottom: 14px; }
+  .deep-dive .body strong { color: var(--ink); }
+  .deep-dive .source {
+    margin-top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .deep-dive .source a { color: var(--red); text-decoration: none; }
+
+  /* ── BRIEF CARDS ── */
+  .briefs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 48px;
+  }
+  .brief-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .brief-card .brief-show {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .brief-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .brief-card .brief-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .brief-card .brief-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .brief-card .brief-source {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+  }
+  .brief-card .brief-source a { color: var(--red); text-decoration: none; }
+
+  /* ── BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .header { padding: 28px 0 20px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .deep-dive h2 { font-size: 20px; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">周日播客精选 · 每日播客 · Vol.2026-06-07</p>
+  <h1 class="header-title">周日<span>播客</span><br>精选</h1>
+  <div class="header-meta">
+    <span>2026·06·07 周日</span>
+    <span>主题：播客精选</span>
+    <span>主持：大雨 × 小苇</span>
+    <span>约 14 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>AI 攻克 Erdős 数学难题 · OpenAI Dan Roberts 谈 RL 底层逻辑</span>
+    <span class="ticker-item"><span class="dot">▶</span>可验证奖励的边界 · 从大到小理解 Scaling · 物理学家看 AI</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic 80% 代码由 Claude 写 · ChatGPT 记忆大升级</span>
+    <span class="ticker-item"><span class="dot">▶</span>个人软件如家常菜 · Spiral 4.0 写作搭档 · 形式化数学验证</span>
+    <span class="ticker-item"><span class="dot">▶</span>AI 攻克 Erdős 数学难题 · OpenAI Dan Roberts 谈 RL 底层逻辑</span>
+    <span class="ticker-item"><span class="dot">▶</span>可验证奖励的边界 · 从大到小理解 Scaling · 物理学家看 AI</span>
+    <span class="ticker-item"><span class="dot">▶</span>Anthropic 80% 代码由 Claude 写 · ChatGPT 记忆大升级</span>
+    <span class="ticker-item"><span class="dot">▶</span>个人软件如家常菜 · Spiral 4.0 写作搭档 · 形式化数学验证</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 14 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-06-07.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-07.mp3">下载音频</a>
+  </audio>
+</div>
+
+<!-- ─────────────────── MAIN PICK ─────────────────── -->
+<p class="section-label">◈ 本周主打 · Deep Dive</p>
+
+<div class="deep-dive">
+  <p class="deep-dive-label">🎧 The MAD Podcast (Matt Turck) · 2026-06-04</p>
+  <h2>当 AI 开始自己做发现 — OpenAI 的 Dan Roberts 谈强化学习的底层逻辑</h2>
+  <p class="meta">嘉宾：Dan Roberts · OpenAI「强化学习基础」团队负责人 / 前 MIT 理论物理博士</p>
+
+  <div class="body">
+    <p>这期 The MAD Podcast 录制在一个特殊的时间点——就在节目前那几天，<strong>OpenAI、DeepMind 和 Anthropic 的模型分别攻克了几道著名的、悬而未决的数学难题，也就是所谓的 Erdős 问题</strong>。这是数学家保罗·埃尔德什生前悬赏、几十年无人解出的题目。AI 给出了人类此前并不掌握的证明。主持人 Matt Turck 请来 OpenAI 的 Dan Roberts 来拆解：这一刻为什么可能。</p>
+
+    <p><strong>解题与"做发现"的区别。</strong> 考试题有标准答案，模型可能是记住或拼凑出来的；但 Erdős 问题的答案不在训练数据里，因为人类自己都还不知道。Dan 分享了一个细节——其中一道题，模型的突破口是"假设这个命题是错的"。关键不在于它用了反证法，而在于它"敢于"沿着一条反直觉的路一直走下去。Dan 说，做违背常识、很反主流的事，你必须对自己有强烈的信念，才能撑过一条极长的计算路径——而模型展现出了这种"坚持"。</p>
+
+    <p><strong>RL 是把算力变成智能的引擎。</strong> Dan 是 OpenAI「强化学习基础」团队负责人。他直言 RL 是当下最重要的范式：OpenAI 在拼命囤算力，而他们要做的事，就是"把算力变成智能"。RL 训练出的，是一个会在给出答案前先产生一长串推理的"会思考"的模型——让这串推理变得有用，正是 RL 的工作。</p>
+
+    <p><strong>可验证奖励的鸿沟。</strong> 这是全场最诚实的一段。所谓"可验证奖励"，是原则上无法被钻空子的奖励——数学题答案是整数，直接比对即可。但"这是不是一篇好文章"涉及品味、因人而异，可能是个分布问题。问到咨询、法律、银行这些没有可验证奖励的领域，Dan 没有给漂亮答案，而是很克制：OpenAI 一定会做出好产品，RL 会扮演一部分角色，但他没有吹嘘 RL 能解决一切。一个站在最前沿的人，清楚地知道当前范式的边界在哪。</p>
+
+    <p><strong>从大到小，而不是从小到大。</strong> 借着物理学背景，Dan 抛出一个他自己都说"可能很反主流"的观点。大家习惯"从小到大"地理解 scaling——小模型不行，放大就涌现了某种能力。Dan 说他"完全拒绝"这个说法。当大系统出现小模型没有的奇怪现象，与其说"规模涌现、scaling law 断裂"，不如承认"你没真正理解你在放大什么"。正确做法是回过头把模型做小、做简单，造一个玩具版本，直到整条曲线平滑无断裂——这恰恰是理论物理的心法：想研究电磁现象，就忽略标准模型里的其它一切，只研究那一小块。</p>
+
+    <p><strong>把研究 AI 当成研究宇宙。</strong> Dan 说 AI 系统之所以迷人，是因为它是"做人类会做的事"的一个简单样本；如果它和我们理解万物的框架活在同一套数学里，你就能在"宇宙怎么运作"和"智能怎么运作"之间画上等号。结尾他说得很动人——他真正兴奋的，是我们将能在模型的帮助下、甚至以模型为驱动力，去回答科学里那些最根本的问题。</p>
+  </div>
+  <p class="source">📎 <a href="https://www.youtube.com/watch?v=oWOz2htozfI" target="_blank">The MAD Podcast — OpenAI's Dan Roberts: Why AI Can Now Make Discoveries</a></p>
+</div>
+
+<!-- ─────────────────── OTHER PICKS ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周其他精选 · Quick Picks</p>
+
+<div class="briefs-grid">
+
+  <div class="brief-card">
+    <p class="brief-show">Latent Space · 2026-06-03</p>
+    <h3>可验证的 AI 与形式化数学 — Axiom Math 的 Carina Hong 谈 Lean 与证明验证</h3>
+    <p class="brief-meta">主持：Swyx · 嘉宾：Carina Hong (Axiom Math)</p>
+    <div class="brief-body">
+      和主打那期正好是一组对照：Dan 讲为什么 AI 能做数学发现，Carina 讲怎么用 Lean 等形式化工具让这些发现变得可被机器严格验证。当模型开始自己证明定理，"谁来核对它没出错"就成了下一个关键问题。创造与验证，配着听很合适。
+    </div>
+    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space — Verified AI & Formal Math</a></p>
+  </div>
+
+  <div class="brief-card">
+    <p class="brief-show">Latent Space × No Priors · 2026-06-03</p>
+    <h3>Satya Nadella 串台：MAI 模型、生态战略与 agent 时代的企业工作方式</h3>
+    <p class="brief-meta">嘉宾：Satya Nadella (Microsoft CEO)</p>
+    <div class="brief-body">
+      微软 CEO 与 Latent Space、No Priors 主持人的串台对话，聊微软自研的 MAI 模型、平台层的生态思路，以及当 agent 真正进入工作流后，企业的组织方式会怎么变。另有 GitHub 的 Kyle Daigle 一期，从开发流程视角讲工程师角色的演化，同样务实。
+    </div>
+    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space — Satya Nadella Crossover</a></p>
+  </div>
+
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:03。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 本周播客主打</p>
+  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-06-04</p>
+  <p class="pc-title">OpenAI's Dan Roberts — Why AI Can Now Make Discoveries</p>
+  <p class="pc-summary">
+    在 AI 首次攻克 Erdős 数学难题的当口，OpenAI「强化学习基础」负责人 Dan Roberts 拆解这一刻为何可能：解题与"做发现"的区别、RL 如何把算力变成会思考的模型、可验证奖励的边界，以及一个物理学家"从大到小"理解 scaling 的反主流方法论。
+  </p>
+  <a href="https://www.youtube.com/watch?v=oWOz2htozfI" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Alex Albert</div>
+        <div class="builder-handle">@alexalbert__ · Anthropic Research</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们公布了一组内部数据：现在合并进代码库的代码里，超过 80% 是 Claude 写的。已经有好几个月，很多研究员没有亲手写过代码了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,294</span>
+      <a href="https://x.com/alexalbert__/status/2062580571214389510" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · OpenAI CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「ChatGPT 记忆能力今天迎来一次大升级！」以及另一条：「互联网早期的那些日子，真的太特别了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3,765</span>
+      <a href="https://x.com/sama/status/2062660086787613116" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TQ</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code, Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「重读 2020 年那篇《一个 app 可以是一顿家常菜》。个人软件在 2020 年还太早，但到了 2026 年，它真的可以像一顿家常菜、一封手写信那样私人。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 511</span>
+      <a href="https://x.com/trq212/status/2062605395101884916" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · Every CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「发布 Spiral 4.0——给你和你的 agent 用的写作搭档。我们基于文体学原理做了一个全新的 Style Engine，能提取你和品牌的声音，稳定产出好文字。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 222</span>
+      <a href="https://x.com/danshipper/status/2062628079869005876" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ─────────────────── CLOSING ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 这周你打算听哪一集？</p>
+<p style="font-size:15px; line-height:1.75; color:#222; margin-bottom:32px;">
+  本周播客的核心信号是——<strong>AI 第一次开始"自己做发现"，而不只是完成我们交代的任务。</strong> Erdős 难题被攻克，是这件事最具象的证据。而 Dan Roberts 的可贵之处在于，他既兴奋于这个时刻，又冷静地告诉你当前范式（RL + 可验证奖励）的边界在哪里。
+  <br><br>
+  Dan Roberts 那期一定要完整听，尤其是"可验证奖励"和"从大到小理解 scaling"这两段——做 AI 的人值得逐字听。如果时间够，再配上 Latent Space 的 Carina Hong 那期，把"创造"和"验证"一起补齐。
+  <br><br>
+  而建造者动态这一周的主线也很清楚：AI 既在帮顶尖实验室写下 80% 的代码，也在让每个普通人都能造出私人的软件——两头同时在发生。欢迎告诉我们，你这周最想完整听哪一集。我们下期见——关注建造者，周一不见不散。
+</p>
+
+<footer>
+  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · 周日播客精选<br>
+  「关注建造者，不要关注 influencer。」<br>
+  数据来源：follow-builders · The MAD Podcast · Latent Space · X/Twitter<br>
+  © 2026 Daily Builders Digest
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

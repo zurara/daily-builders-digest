@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-06-07",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "新闻快报",
+    "title": "当 AI 开始自己做发现 — OpenAI 的 Dan Roberts 谈强化学习的底层逻辑",
+    "html": "episodes/2026-06-07.html",
+    "mp3": "episodes/2026-06-07.mp3",
+    "headlines": [
+      "当 AI 开始自己做发现 — OpenAI 的 Dan Roberts 谈强化学习的底层逻辑"
+    ]
+  },
+  {
     "date": "2026-06-06",
     "dow": 6,
     "topic": "Books",

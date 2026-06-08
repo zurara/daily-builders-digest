@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-06-08",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "苹果 WWDC 重做 Siri——基于 Google Gemini 的 1.2 万亿参数模型，年付谷歌约 10 亿美元 · Anthropic：八成代码已由 Claude 编写——同周呼吁前沿实验室协调\"放缓\"",
+    "html": "episodes/2026-06-08.html",
+    "mp3": "episodes/2026-06-08.mp3",
+    "headlines": [
+      "苹果 WWDC 重做 Siri——基于 Google Gemini 的 1.2 万亿参数模型，年付谷歌约 10 亿美元",
+      "Anthropic：八成代码已由 Claude 编写——同周呼吁前沿实验室协调\"放缓\"",
+      "OpenAI 把 Codex 推向\"每个角色\"——产品经理、律师、数据分析师都能用",
+      "ChatGPT 学会\"做梦\"——Dreaming V3 记忆系统自动整理、与时俱进"
+    ]
+  },
+  {
     "date": "2026-06-07",
     "dow": 7,
     "topic": "Podcasts",

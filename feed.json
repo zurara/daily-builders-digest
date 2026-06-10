@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-06-10",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "WWDC 2026：苹果发布史上最大 Siri 升级，但底层是谷歌的 Gemini · NotebookLM 大升级：从研究工具变成能交活的工作台",
+    "html": "episodes/2026-06-10.html",
+    "mp3": "episodes/2026-06-10.mp3",
+    "headlines": [
+      "WWDC 2026：苹果发布史上最大 Siri 升级，但底层是谷歌的 Gemini",
+      "NotebookLM 大升级：从研究工具变成能交活的工作台",
+      "Claude Code 满一周年：从提示到调度，交互范式正在变",
+      "把三件事连起来：模型在商品化，价值在往调度层和交付层迁移"
+    ]
+  },
+  {
     "date": "2026-06-09",
     "dow": 2,
     "topic": "Robotics",

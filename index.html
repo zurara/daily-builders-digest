@@ -6,13 +6,14 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-09">
-<meta property="og:description" content="英伟达 Cosmos 3 物理 AI · Figure 每小时造一台机器人 · 全电动 Atlas 全年产能售罄 · ICRA 灵巧手与触觉">
-<title>Daily Builders Digest · 2026-06-09</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-10">
+<meta property="og:description" content="WWDC 2026 新 Siri 底层是 Gemini · NotebookLM 变工作台 · Claude Code 满一年 · 模型在商品化，价值往调度层和交付层迁移">
+<title>Daily Builders Digest · 2026-06-10</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --bg:     #f2f0ea;
     --ink:    #0c0c0c;
@@ -21,47 +22,232 @@
     --light:  #d8d6d0;
     --card:   #eceae4;
   }
+
   body {
-    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
-    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
-    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
-  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
-  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
   .header-title span { color: var(--red); }
-  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
-  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
-  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 44s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
-  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
-  .news-card { background: var(--bg); padding: 24px; }
-  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
-  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
-  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
   .news-card.lead .news-hed { font-size: 24px; }
-  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
-  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
-  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
   .news-source a:hover { border-color: var(--red); }
-  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
-  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
-  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
-  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
   .index-table td a { color: var(--ink); text-decoration: none; }
   .index-table td a:hover { text-decoration: underline; }
-  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
   .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -79,145 +265,120 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── DIVIDER ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
   }
-  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
   footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">机器人星期二 · 每日播客 · Vol.2026-06-09</p>
-  <h1 class="header-title">机器人<span>星期二</span></h1>
+  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-06-10</p>
+  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
   <div class="header-meta">
-    <span>📅 2026·06·09 周二</span>
-    <span>🏷 主题：机器人 / 物理 AI</span>
+    <span>📅 2026·06·10 周三</span>
+    <span>🏷 主题：产品 Product</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>⏱ 约 15 分钟</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>英伟达 Cosmos 3 · 物理 AI 开放前沿模型 · 训练周期从数月压到数天</span>
-    <span class="ticker-item"><span class="dot">▶</span>Figure BotQ · 每小时造一台机器人 · 四个月 24 倍提速 · 本周 55 台</span>
-    <span class="ticker-item"><span class="dot">▶</span>全电动 Atlas · 2026 全年产能售罄 · 现代 + 谷歌 DeepMind 包圆</span>
-    <span class="ticker-item"><span class="dot">▶</span>ICRA 2026 维也纳 · TARS 21 自由度灵巧手 · 触觉传感成主角</span>
-    <span class="ticker-item"><span class="dot">▶</span>英伟达 Cosmos 3 · 物理 AI 开放前沿模型 · 训练周期从数月压到数天</span>
-    <span class="ticker-item"><span class="dot">▶</span>Figure BotQ · 每小时造一台机器人 · 四个月 24 倍提速 · 本周 55 台</span>
-    <span class="ticker-item"><span class="dot">▶</span>全电动 Atlas · 2026 全年产能售罄 · 现代 + 谷歌 DeepMind 包圆</span>
-    <span class="ticker-item"><span class="dot">▶</span>ICRA 2026 维也纳 · TARS 21 自由度灵巧手 · 触觉传感成主角</span>
+    <span class="ticker-item"><span class="dot">▶</span>WWDC 2026 · 新 Siri 史上最大升级，底层却是谷歌 Gemini</span>
+    <span class="ticker-item"><span class="dot">▶</span>NotebookLM 大升级——从研究工具变成能交活的工作台</span>
+    <span class="ticker-item"><span class="dot">▶</span>Claude Code 满一年 · Boris Cherny 八个月没手写过代码</span>
+    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往调度层和交付层迁移</span>
+    <span class="ticker-item"><span class="dot">▶</span>WWDC 2026 · 新 Siri 史上最大升级，底层却是谷歌 Gemini</span>
+    <span class="ticker-item"><span class="dot">▶</span>NotebookLM 大升级——从研究工具变成能交活的工作台</span>
+    <span class="ticker-item"><span class="dot">▶</span>Claude Code 满一年 · Boris Cherny 八个月没手写过代码</span>
+    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往调度层和交付层迁移</span>
   </div>
 </div>
 
+<!-- AUDIO PLAYER (sticky) -->
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <strong>收听本期播客</strong>
+    <span>· 2026-06-10 · 产品星期三</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-06-09.mp3">
-    你的浏览器不支持音频播放。<a href="2026-06-09.mp3">下载音频</a>
-  </audio>
+  <audio controls src="episodes/2026-06-10.mp3">您的浏览器不支持音频播放。</audio>
 </div>
 
-<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
-
-<div class="news-grid">
-  <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">英伟达发布 Cosmos 3——物理 AI 的开放前沿基础模型，把机器人训练周期从数月压到数天</h2>
-    <p class="news-body">
-      6 月 1 日，黄仁勋在台北 GTC 上发布 NVIDIA Cosmos 3，称之为"物理 AI 的开放前沿基础模型"。它采用一种"混合 Transformer"架构，把视觉推理、世界生成和动作预测放进同一个系统，能原生理解并生成文本、图像、视频、环境声音乃至"动作"，并以领先的物理精度运行。最关键的一句：它能把物理 AI 的训练和评估周期从几个月压缩到几天。这意味着机器人不必在真实世界里跌撞几千次，而能在生成的虚拟世界里像"做梦"般反复练习。英伟达同时组建 Cosmos 联盟，Runway、Skild AI、Black Forest Labs、Agile Robots 等悉数在列——这是把"教机器人理解世界"彻底工业化的信号。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai" target="_blank">NVIDIA Newsroom (June 1)</a>
-      &nbsp;·&nbsp;
-      <a href="https://blogs.nvidia.com/blog/cosmos-3-physical-ai-open-world-foundation-model/" target="_blank">NVIDIA Blog</a>
-    </p>
-  </div>
-
-  <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Figure 的 BotQ 工厂：人形机器人产能从"每天一台"飙到"每小时一台"</h2>
-    <p class="news-body">
-      Figure 把加州 BotQ 工厂的产能从每天一台提升到每小时一台——四个月内实现 24 倍提速。CEO Brett Adcock 称本周可造 55 台机器人。支撑这一切的是 150 多个联网工作站、9000 多个自研执行器，首次通过率已达 80%，累计交付超过 350 台。这条一代产线初期年产能上看 1.2 万台，四年内目标 10 万台。人形机器人最大的瓶颈从来不是"能不能动"，而是"能不能量产"——Figure 这一步等于宣布，可制造性这道坎基本跨过去了。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://roboticsandautomationnews.com/2026/05/27/figure-ramps-humanoid-robot-manufacturing-at-unprecedented-speed/101954/" target="_blank">Robotics & Automation News</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.figure.ai/news/ramping-figure-03-production" target="_blank">Figure</a>
-    </p>
-  </div>
-
-  <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">波士顿动力全电动 Atlas：2026 全年产能被现代与谷歌 DeepMind 全部包圆</h2>
-    <p class="news-body">
-      波士顿动力全电动 Atlas 的整个 2026 年产能，已被两个客户全部锁定：母公司现代汽车集团，以及研究伙伴谷歌 DeepMind。现代把它们送进佐治亚的工厂做汽车装配——搬运车身面板、安装紧固件、钻到车底完成组装；DeepMind 那一份则要把谷歌的基础模型塞进 Atlas 的"大脑"，赋予它更强的认知能力。这恰是 Cosmos 3 故事的另一面：一边造"会思考的大脑"，一边造"能干活的身体"，两端正在合拢。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/" target="_blank">Boston Dynamics</a>
-    </p>
-  </div>
-
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04</p>
-    <h2 class="news-hed">ICRA 2026 维也纳：灵巧手与触觉成主角——TARS 21 自由度 DexHand 首次公开</h2>
-    <p class="news-body">
-      机器人领域最重要的学术会议 ICRA 2026 本周在维也纳举行，今年的主角是"灵巧手"和"触觉"。TARS 首次向全球公开 21 个自由度的 DexHand：1:1 人手尺寸，集成超高分辨率微型摄像头与弹性体触觉传感器，由其通用具身基础模型 AWE 驱动，能实时分辨滑不滑、糙不糙、硬不硬，甚至比出 26 个英文字母手势。另一家 Xense Robotics 则把触觉传感器做成指尖、夹爪、平面、曲面等多种形态。为什么重要？因为接触密集型操作（拧螺丝、插插头、捏鸡蛋）一直是机器人最大的软肋——眼睛能看，但"手感"长期空白。今年 ICRA 的信号是：这块空白正在被填上。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://roboticsandautomationnews.com/2026/06/08/tars-brings-real-life-embodied-ai-to-icra-2026-robotics-conference/102367/" target="_blank">Robotics & Automation News</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.prnewswire.com/news-releases/touch-ignites-physical-intelligence-xense-robotics-showcases-the-real-ability-of-tactile-intelligence-at-icra-2026-302790324.html" target="_blank">PR Newswire · Xense</a>
-    </p>
-  </div>
-</div>
-
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
+<!-- INDEX -->
+<p class="section-label">◈ 本期目录</p>
 <table class="index-table">
-  <thead>
-    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
-  </thead>
+  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
   <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai" target="_blank">英伟达 Cosmos 3 物理 AI 前沿模型 <span class="tag hot">头条</span></a></td>
-      <td>NVIDIA</td>
-      <td>2026-06-01</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://roboticsandautomationnews.com/2026/05/27/figure-ramps-humanoid-robot-manufacturing-at-unprecedented-speed/101954/" target="_blank">Figure BotQ 每小时造一台机器人 <span class="tag">量产</span></a></td>
-      <td>R&A News</td>
-      <td>2026-05-27</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/" target="_blank">全电动 Atlas 全年产能售罄 <span class="tag">部署</span></a></td>
-      <td>Boston Dynamics</td>
-      <td>2026-05-29</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://roboticsandautomationnews.com/2026/06/08/tars-brings-real-life-embodied-ai-to-icra-2026-robotics-conference/102367/" target="_blank">ICRA 2026 灵巧手与触觉 <span class="tag">研究</span></a></td>
-      <td>ICRA / R&A News</td>
-      <td>2026-06-08</td>
-    </tr>
+    <tr><td>01</td><td><a href="#s1">WWDC 2026：苹果史上最大 Siri 升级，底层却是谷歌 Gemini</a></td><td><span class="tag hot">热</span></td></tr>
+    <tr><td>02</td><td><a href="#s2">NotebookLM 大升级：从研究工具变成能交活的工作台</a></td><td><span class="tag">产品</span></td></tr>
+    <tr><td>03</td><td><a href="#s3">Claude Code 满一周年：从提示到调度的范式变化</a></td><td><span class="tag">趋势</span></td></tr>
+    <tr><td>04</td><td><a href="#s4">把三件事连起来：模型在商品化，价值在迁移</a></td><td><span class="tag">洞察</span></td></tr>
   </tbody>
 </table>
+
+<!-- NEWS GRID -->
+<div class="news-grid">
+
+  <!-- LEAD: WWDC -->
+  <div class="news-card lead" id="s1">
+    <p class="news-num">Story 01</p>
+    <h2 class="news-hed">WWDC 2026：苹果发布史上最大 Siri 升级，但底层是谷歌的 Gemini</h2>
+    <p class="news-body">
+      六月九号，苹果在 WWDC 2026 发布了十多年来 Siri 最大的一次升级——Siri AI。新 Siri 跨所有平台运行，能执行复杂的连续操作，对话更自然、更有上下文，而且不再把问题转交给 ChatGPT 这类第三方。但最微妙的地方是：它真正的大脑，是谷歌的 Gemini。苹果自己的模型没跟上，于是做了一个务实的决定——界面、入口、调度、隐私这一层自己牢牢握住，生成答案的模型则租谷歌的。对用户来说，Siri 从哪个模型出来根本不重要，重要的是它就在 Dynamic Island 上、在你下滑的界面里、在每一台 iPhone 里。iOS 27 还把 Apple Intelligence 铺进了 Safari、信息、密码、快捷指令、家庭。苹果赌的是——能把模型无缝塞进十亿台设备日常操作里的能力，比模型本身更稀缺。开发者测试版已放出，正式版今年秋天上线，支持 iPhone 16 全系、iPhone 15 Pro 及以上。
+    </p>
+    <p class="news-source">📎 <a href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank">Apple Newsroom</a> · <a href="https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/" target="_blank">TechCrunch</a></p>
+  </div>
+
+  <!-- NotebookLM -->
+  <div class="news-card" id="s2">
+    <p class="news-num">Story 02</p>
+    <h2 class="news-hed">NotebookLM 大升级：从研究工具变成能交活的工作台</h2>
+    <p class="news-body">
+      六月八号的一次更新，让 NotebookLM 换了一个物种。以前它的输出是笔记和音频，现在它能直接生成 PDF 报告、Word、Excel、PPT、图表，带数据可视化，从面板下载、生成完还能编辑。更底层的两个变化：一是加了 Deep Research，搜索不再局限于你上传的资料，能往外找新来源；二是每个笔记本都配了一台安全的云端电脑，能自己写代码、跑代码做复杂分析，整个东西跑在 Gemini 3.5 和 Antigravity 上。它从一个帮你理解资料的工具，变成了一个帮你完成工作的工作台。信号很清晰：AI 产品的下一步，不是回答得更好，而是交付得更完整。
+    </p>
+    <p class="news-source">📎 <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-deep-research-file-types/" target="_blank">Google Blog</a> · <a href="https://x.com/joshwoodward/status/2064046368352825492" target="_blank">@joshwoodward</a></p>
+  </div>
+
+  <!-- Claude Code -->
+  <div class="news-card" id="s3">
+    <p class="news-num">Story 03</p>
+    <h2 class="news-hed">Claude Code 满一周年：从提示到调度，交互范式正在变</h2>
+    <p class="news-body">
+      Claude Code 满一年，创造者 Boris Cherny 六月八号发长推复盘。几个数字：他已经八个月没手写过一行代码，有些日子同时调度好几万个 Agent，大部分工作在手机上、睡觉前开始。整个 Anthropic 今年代码产出涨了八倍，人均工程效率提升近 70%，人数翻了三倍。关键的范式变化——他现在主要用 auto mode 而非 plan mode（一年前 Agent 三十秒就跑偏，现在能连跑五到二十小时），还用 routines 让 Claude 自己持续推进、在他发现之前就修好 bug。Swyx 引用的新基准 FrontierCode 也印证：去年底模型可靠性跨过临界点，人就敢往上爬一层抽象——从写代码，变成写让 Agent 自己干活的循环。
+    </p>
+    <p class="news-source">📎 <a href="https://fortune.com/2026/06/08/anthropics-boris-cherny-creator-of-claude-code-says-there-are-days-he-manages-tens-of-thousands-of-ai-agents-at-once/" target="_blank">Fortune</a> · <a href="https://x.com/bcherny/status/2064034799711588805" target="_blank">@bcherny</a></p>
+  </div>
+
+  <!-- Synthesis -->
+  <div class="news-card" id="s4">
+    <p class="news-num">Story 04</p>
+    <h2 class="news-hed">把三件事连起来：模型在商品化，价值在往调度层和交付层迁移</h2>
+    <p class="news-body">
+      苹果把模型外包给谷歌、自己守住入口；NotebookLM 不比谁答得聪明、比谁交付得完整；Boris 不再写代码、而是调度 Agent。三件事都在说同一句话：模型本身不再是壁垒。一个足够好的模型谁都买得到、租得到，真正的价值在往两头跑——一头是调度层，谁能把一群 Agent 编排好、让它们可靠地连续工作；另一头是交付层，谁能把 AI 的能力变成用户真正能用的成品和入口。呼应 Aaron Levie 这周的观点：再多智能也替代不了上下文。你独有的上下文、你对用户的理解、你调度 AI 的方法论——这些没法被一个更大的模型直接买走。你的护城河，从来都不在那个你租来的模型里。
+    </p>
+    <p class="news-source">📎 <a href="https://x.com/levie/status/2064186766907887941" target="_blank">@levie</a></p>
+  </div>
+
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -227,77 +388,77 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:00。
+  数据截至今日 UTC 2026-06-10 04:00。
 </p>
 
+<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-05-28</p>
-  <p class="pc-title">State of Enterprise AI 2026: Aaron Levie on Tokenmaxxing, Rise of Headless, and AI-Proofing Your Job</p>
-  <p class="pc-summary">
-    Matt Turck 对话 Box CEO Aaron Levie，盘点 2026 企业 AI 的现状。虽非机器人主题，但其中"模型家族分层"的判断对机器人同样适用——高端任务用前沿智能，高频任务用更便宜的模型。当人形机器人开始量产，算力成本如何在"思考"和"执行"之间分配，将成为下一个关键命题。这条软件世界已经走过的路，物理世界很快也会重走一遍。
-  </p>
-  <a href="https://www.youtube.com/watch?v=Gs2styCcwro" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">No Priors · 2026-05-28</p>
+  <p class="pc-title">Building an AI Guardian for Enterprise with Onyx Security CEO Maxim Bar Kogan</p>
+  <p class="pc-summary">当一个人一天要调度上万个 Agent，谁来盯着这些 Agent？Onyx Security 的答案是：训练一批"很小、很笨、但只擅长一件事"的模型——判断某个 Agent 动作要不要叫一个更聪明的模型来复核。Maxim 用下棋打比方：高手大多数走子靠直觉，只在关键局面停下来深算。把这套"直觉 + 关键时刻深算"做进监督层，才能在成本和延迟都可控的前提下，看住那些比我们更聪明的 Agent。对做产品的人，这是"调度层"之上又长出的一层——治理层。</p>
+  <a href="https://www.youtube.com/watch?v=QDsbFLEt9ro" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
+<!-- BUILDERS GRID -->
 <div class="builders-grid">
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PS</div>
-      <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · OpenClaw + OpenAI</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「每月提醒你一次：你不应该再去给编程智能体写提示词了，你应该去设计那些会自动给智能体写提示词的『循环』。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 13734</span>
-      <a href="https://x.com/steipete/status/2063697162748260627" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">BC</div>
       <div>
         <div class="builder-name">Boris Cherny</div>
-        <div class="builder-handle">@bcherny · Claude Code @Anthropic</div>
+        <div class="builder-handle">@bcherny · Claude Code @ Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「多项基准显示 Opus 是长时运行任务的最佳模型。让 Opus 自主跑几小时甚至几天的五个技巧：用自动权限模式，让它不必逐步请求批准；用动态工作流……」</p>
+    <p class="builder-tweet">「Claude Code GA 满一年，我和 @_catwu 坐下来复盘：为什么我用 auto mode 而不是 plan mode，routines 怎么在我发现之前就修好 bug，为什么我现在大部分代码都从手机上开始写。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1865</span>
-      <a href="https://x.com/bcherny/status/2063792263067754658" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1794</span>
+      <a href="https://x.com/bcherny/status/2064034799711588805" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">MG</div>
+      <div class="builder-avatar">JW</div>
       <div>
-        <div class="builder-name">Madhu Guru</div>
-        <div class="builder-handle">@realmadhuguru · ex Google Gemini/Veo</div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · VP, Google Labs</div>
       </div>
     </div>
-    <p class="builder-tweet">「一个常见误解是训练数据都是低技能的苦力活——扫扫笔记本、挖挖互联网。恰恰相反，推动模型前沿的数据需求是反过来的：实验室需要高经济价值的训练数据。」</p>
+    <p class="builder-tweet">「NotebookLM 的新杀手锏：把搜索范围轻松扩展到你自己的资料之外。今天的更新还能生成新的输出格式——PDF、DOCX、XLSX、PPTX、图表等等。我们要让 NotebookLM 持续帮你做更好的研究。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 60</span>
-      <a href="https://x.com/realmadhuguru/status/2063704354910347520" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 745</span>
+      <a href="https://x.com/joshwoodward/status/2064046368352825492" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · CEO @ycombinator</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「教人们如何使用这些 AI 工具，已经成了一个严重的瓶颈。」</p>
+    <p class="builder-tweet">「无论你往 AI 模型里塞多少智能，都替代不了上下文。对于任何足够通用的 AI，你永远需要给它喂对的上下文。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 543</span>
-      <a href="https://x.com/garrytan/status/2063786111588323780" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 216</span>
+      <a href="https://x.com/levie/status/2064186766907887941" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI builder, 150K+ readers</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「感觉拿两百美元月费补贴订阅的 AI 建造者，和在公司里努力控制 API 成本的员工，他们的最佳实践其实是两套完全不同的东西。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 325</span>
+      <a href="https://x.com/petergyang/status/2064063499517743417" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
@@ -305,16 +466,23 @@
 <hr class="rule">
 
 <footer>
-  <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
-  主持：大雨 × 小苇 · 2026-06-09<br>
-  数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
-  © 2026 Daily Builders Digest
+  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-06-10<br>
+  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
+  数据来源：WebSearch · follow-builders · 公开报道<br>
+  「关注建造者，不要关注 influencer。」
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-09.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-09</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">英伟达发布 Cosmos 3——物理 AI 的开放前沿基础模型，把机器人训练周期从数月压到数天</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-08.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-08</span>

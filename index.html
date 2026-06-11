@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-10">
-<meta property="og:description" content="WWDC 2026 新 Siri 底层是 Gemini · NotebookLM 变工作台 · Claude Code 满一年 · 模型在商品化，价值往调度层和交付层迁移">
-<title>Daily Builders Digest · 2026-06-10</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-11">
+<meta property="og:description" content="健康星期四 · 睡眠与食欲的性别差异 · 大脑胆固醇与阿尔茨海默症 · 高强度运动的死亡率红利">
+<title>Daily Builders Digest · 2026-06-11</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -124,18 +124,6 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -203,6 +191,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +267,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,11 +283,20 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -289,27 +315,29 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-06-10</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-06-11</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·06·10 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·06·11 周四</span>
+    <span>🏷 主题：睡眠与食欲的性别差异 · 大脑胆固醇与阿尔茨海默症 · 高强度运动的死亡率红利</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 15 分钟</span>
+    <span>⏱ 约 14 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>WWDC 2026 · 新 Siri 史上最大升级，底层却是谷歌 Gemini</span>
-    <span class="ticker-item"><span class="dot">▶</span>NotebookLM 大升级——从研究工具变成能交活的工作台</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Code 满一年 · Boris Cherny 八个月没手写过代码</span>
-    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往调度层和交付层迁移</span>
-    <span class="ticker-item"><span class="dot">▶</span>WWDC 2026 · 新 Siri 史上最大升级，底层却是谷歌 Gemini</span>
-    <span class="ticker-item"><span class="dot">▶</span>NotebookLM 大升级——从研究工具变成能交活的工作台</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Code 满一年 · Boris Cherny 八个月没手写过代码</span>
-    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往调度层和交付层迁移</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × St-Onge — 睡眠不足如何改写饥饿激素</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #395 — 大脑胆固醇、APOE 基因与阿尔茨海默症</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 高强度运动延寿效果是中等强度的 4–10 倍</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 睡眠不足时女性更难"停下来吃"</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 在已有运动中加 2–3 分钟高强度冲刺</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × St-Onge — 睡眠不足如何改写饥饿激素</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #395 — 大脑胆固醇、APOE 基因与阿尔茨海默症</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 高强度运动延寿效果是中等强度的 4–10 倍</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 睡眠不足时女性更难"停下来吃"</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 在已有运动中加 2–3 分钟高强度冲刺</span>
   </div>
 </div>
 
@@ -317,68 +345,126 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>收听本期播客</strong>
-    <span>· 2026-06-10 · 产品星期三</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 14 分钟</span>
   </div>
-  <audio controls src="episodes/2026-06-10.mp3">您的浏览器不支持音频播放。</audio>
+  <audio controls preload="none" src="episodes/2026-06-11.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-11.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- INDEX -->
-<p class="section-label">◈ 本期目录</p>
-<table class="index-table">
-  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
-  <tbody>
-    <tr><td>01</td><td><a href="#s1">WWDC 2026：苹果史上最大 Siri 升级，底层却是谷歌 Gemini</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>02</td><td><a href="#s2">NotebookLM 大升级：从研究工具变成能交活的工作台</a></td><td><span class="tag">产品</span></td></tr>
-    <tr><td>03</td><td><a href="#s3">Claude Code 满一周年：从提示到调度的范式变化</a></td><td><span class="tag">趋势</span></td></tr>
-    <tr><td>04</td><td><a href="#s4">把三件事连起来：模型在商品化，价值在迁移</a></td><td><span class="tag">洞察</span></td></tr>
-  </tbody>
-</table>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 三大来源</p>
 
-<!-- NEWS GRID -->
 <div class="news-grid">
 
-  <!-- LEAD: WWDC -->
-  <div class="news-card lead" id="s1">
-    <p class="news-num">Story 01</p>
-    <h2 class="news-hed">WWDC 2026：苹果发布史上最大 Siri 升级，但底层是谷歌的 Gemini</h2>
+  <!-- LEAD: Huberman Lab -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Dr. Marie-Pierre St-Onge：睡眠不足如何增加食欲、改写激素、悄悄让你增重</h2>
     <p class="news-body">
-      六月九号，苹果在 WWDC 2026 发布了十多年来 Siri 最大的一次升级——Siri AI。新 Siri 跨所有平台运行，能执行复杂的连续操作，对话更自然、更有上下文，而且不再把问题转交给 ChatGPT 这类第三方。但最微妙的地方是：它真正的大脑，是谷歌的 Gemini。苹果自己的模型没跟上，于是做了一个务实的决定——界面、入口、调度、隐私这一层自己牢牢握住，生成答案的模型则租谷歌的。对用户来说，Siri 从哪个模型出来根本不重要，重要的是它就在 Dynamic Island 上、在你下滑的界面里、在每一台 iPhone 里。iOS 27 还把 Apple Intelligence 铺进了 Safari、信息、密码、快捷指令、家庭。苹果赌的是——能把模型无缝塞进十亿台设备日常操作里的能力，比模型本身更稀缺。开发者测试版已放出，正式版今年秋天上线，支持 iPhone 16 全系、iPhone 15 Pro 及以上。
+      6 月 8 日发布。Dr. Marie-Pierre St-Onge 是哥伦比亚大学营养医学教授，研究睡眠和营养的双向关系。<br><br>
+      <strong>① 中等程度的睡眠不足就有影响</strong>——不需要熬通宵，每晚少睡一两个小时，就足以增加食欲、扰乱饥饿相关激素，并导致体重增加，哪怕你没有刻意多吃。<br><br>
+      <strong>② 时段也重要</strong>——她强调一个常被忽略的细节：睡眠损失发生在夜里哪个时段会有差异，后半夜的睡眠损失对神经内分泌食欲调节的破坏更大。<br><br>
+      <strong>③ 食物与进餐时机可以补救</strong>——富含色氨酸和复合碳水的食物有助入睡；太晚进食则同时损害睡眠质量与代谢。<br><br>
+      <strong>核心信息：</strong>睡眠不是体重管理的旁支，而是上游开关。把睡眠还回来，常常比管住嘴更有效。男女差异详见下方女性健康聚焦。
     </p>
-    <p class="news-source">📎 <a href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank">Apple Newsroom</a> · <a href="https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/" target="_blank">TechCrunch</a></p>
+    <p class="news-source">
+      📎 <a href="https://www.hubermanlab.com/episode/how-sleep-loss-affects-hunger-hormones-weight-marie-pierre-st-onge" target="_blank">How Sleep Loss Affects Hunger, Hormones & Weight | Dr. Marie-Pierre St-Onge — Huberman Lab</a>
+    </p>
   </div>
 
-  <!-- NotebookLM -->
-  <div class="news-card" id="s2">
-    <p class="news-num">Story 02</p>
-    <h2 class="news-hed">NotebookLM 大升级：从研究工具变成能交活的工作台</h2>
+  <!-- Peter Attia -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">Peter Attia #395 × Tom Dayspring：脂质与大脑健康——APOE 基因型与阿尔茨海默症风险</h2>
     <p class="news-body">
-      六月八号的一次更新，让 NotebookLM 换了一个物种。以前它的输出是笔记和音频，现在它能直接生成 PDF 报告、Word、Excel、PPT、图表，带数据可视化，从面板下载、生成完还能编辑。更底层的两个变化：一是加了 Deep Research，搜索不再局限于你上传的资料，能往外找新来源；二是每个笔记本都配了一台安全的云端电脑，能自己写代码、跑代码做复杂分析，整个东西跑在 Gemini 3.5 和 Antigravity 上。它从一个帮你理解资料的工具，变成了一个帮你完成工作的工作台。信号很清晰：AI 产品的下一步，不是回答得更好，而是交付得更完整。
+      最新一期。脂质专家 Tom Dayspring 回归，深入拆解一个反直觉的事实——<strong>大脑的胆固醇系统几乎完全独立运作</strong>，基本不靠血液运输，而是大脑就地合成与回收。<br><br>
+      他们重点讲了 apoB、apoA-I，尤其是 <strong>apoE</strong> 在胆固醇平衡中的角色。关键在 <strong>APOE 基因型</strong>——携带 APOE4 等位基因的人，阿尔茨海默症风险显著更高。<br><br>
+      节目还拆解了胆固醇代谢、淀粉样蛋白与 tau 病理之间的复杂联系，这正是阿尔茨海默症研究的最前沿。
     </p>
-    <p class="news-source">📎 <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-deep-research-file-types/" target="_blank">Google Blog</a> · <a href="https://x.com/joshwoodward/status/2064046368352825492" target="_blank">@joshwoodward</a></p>
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/tomdayspring8/" target="_blank">#395 — Lipids and brain health | Tom Dayspring, M.D. — The Peter Attia Drive</a>
+    </p>
   </div>
 
-  <!-- Claude Code -->
-  <div class="news-card" id="s3">
-    <p class="news-num">Story 03</p>
-    <h2 class="news-hed">Claude Code 满一周年：从提示到调度，交互范式正在变</h2>
+  <!-- FoundMyFitness -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">FoundMyFitness Journal Club：高强度运动的延寿效果是中等强度的 4–10 倍</h2>
     <p class="news-body">
-      Claude Code 满一年，创造者 Boris Cherny 六月八号发长推复盘。几个数字：他已经八个月没手写过一行代码，有些日子同时调度好几万个 Agent，大部分工作在手机上、睡觉前开始。整个 Anthropic 今年代码产出涨了八倍，人均工程效率提升近 70%，人数翻了三倍。关键的范式变化——他现在主要用 auto mode 而非 plan mode（一年前 Agent 三十秒就跑偏，现在能连跑五到二十小时），还用 routines 让 Claude 自己持续推进、在他发现之前就修好 bug。Swyx 引用的新基准 FrontierCode 也印证：去年底模型可靠性跨过临界点，人就敢往上爬一层抽象——从写代码，变成写让 Agent 自己干活的循环。
+      Rhonda Patrick 与耐力运动员 Brady Holmer 拆解一篇 <strong>Nature Communications</strong> 新研究——在降低全因死亡率等指标上，高强度运动比中等强度活动强约 <strong>4 到 10 倍</strong>。<br><br>
+      "保持活动就好"没错，但<strong>强度本身是被严重低估的变量</strong>。同样的时间，练得更狠，回报可能是好几倍。<br><br>
+      落地不难：快走中穿插冲刺、爬楼梯、或几组高强度间歇——喘到只能蹦出几个字，就是到位了。
     </p>
-    <p class="news-source">📎 <a href="https://fortune.com/2026/06/08/anthropics-boris-cherny-creator-of-claude-code-says-there-are-days-he-manages-tens-of-thousands-of-ai-agents-at-once/" target="_blank">Fortune</a> · <a href="https://x.com/bcherny/status/2064034799711588805" target="_blank">@bcherny</a></p>
-  </div>
-
-  <!-- Synthesis -->
-  <div class="news-card" id="s4">
-    <p class="news-num">Story 04</p>
-    <h2 class="news-hed">把三件事连起来：模型在商品化，价值在往调度层和交付层迁移</h2>
-    <p class="news-body">
-      苹果把模型外包给谷歌、自己守住入口；NotebookLM 不比谁答得聪明、比谁交付得完整；Boris 不再写代码、而是调度 Agent。三件事都在说同一句话：模型本身不再是壁垒。一个足够好的模型谁都买得到、租得到，真正的价值在往两头跑——一头是调度层，谁能把一群 Agent 编排好、让它们可靠地连续工作；另一头是交付层，谁能把 AI 的能力变成用户真正能用的成品和入口。呼应 Aaron Levie 这周的观点：再多智能也替代不了上下文。你独有的上下文、你对用户的理解、你调度 AI 的方法论——这些没法被一个更大的模型直接买走。你的护城河，从来都不在那个你租来的模型里。
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">Journal Club: Vigorous Exercise & Mortality — FoundMyFitness</a>
     </p>
-    <p class="news-source">📎 <a href="https://x.com/levie/status/2064186766907887941" target="_blank">@levie</a></p>
   </div>
 
 </div>
+
+<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
+<div class="spotlight">
+  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
+  <h2 class="spotlight-hed">睡眠不足时，男性"更想开始吃"，女性"更难停下来吃"——食欲激素的性别差异</h2>
+  <p class="spotlight-body">
+    St-Onge 这期 Huberman Lab 里最重要、却很少被公开讨论的发现，是<strong>睡眠限制对食欲激素的影响存在明显的性别差异</strong>。<br><br>
+    <strong>男性</strong>主要表现为饥饿素（ghrelin）上升——这是刺激食欲的激素，让人更饿、更想吃。<br><br>
+    <strong>女性</strong>走的是另一条路：主要表现为类胰高血糖素肽（GLP-1）相关的<strong>饱腹信号下降</strong>。换句话说，睡眠不足后，女性在"恢复饱腹感"这一端受到的损害更明显，更难停下来吃。<br><br>
+    这个区别极其关键——如果只看男性数据，你会以为问题是"如何抑制食欲"；但对女性来说，真正的问题是"为什么饱腹信号失灵了"。同样是睡眠不足导致的体重困扰，针对女性的策略可能需要不一样。<br><br>
+    <strong>为什么这很重要？</strong> 大量健康研究默认以男性身体为参照。当研究者明确去区分性别差异时，才是真正有价值的进步。如果你是女性又长期缺觉，停不下来可能不是意志力问题，而是饱腹激素被睡眠债悄悄改写了——先把睡眠还回来。
+  </p>
+</div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 区分信号和噪音</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">睡眠、大脑、运动——三期播客指向同一个底层逻辑：上游优先</h2>
+  <p class="spotlight-body">
+    St-Onge 在说，<strong>睡眠是体重的上游开关</strong>——与其在饮食端苦苦挣扎，不如先修好睡眠这个源头。<br><br>
+    Dayspring 在说，<strong>大脑有它自己的一套胆固醇规则</strong>，不能简单套用心血管那套逻辑——理解机制，才能做出针对性的判断，而不是一刀切。<br><br>
+    Rhonda 在说，<strong>强度比时长更被低估</strong>——已经在动的人，下一步不是动得更久，而是偶尔动得更狠。<br><br>
+    三期播客的共同点是：<strong>别在下游使蛮力，去找到那个真正决定结果的上游变量。</strong>睡眠之于食欲、基因型之于脑健康、强度之于延寿——抓对杠杆，省力十倍。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.hubermanlab.com/episode/how-sleep-loss-affects-hunger-hormones-weight-marie-pierre-st-onge" target="_blank">How Sleep Loss Affects Hunger, Hormones & Weight | Dr. Marie-Pierre St-Onge</a> <span class="tag hot">New</span></td>
+      <td>Huberman Lab</td>
+      <td>2026-06-08</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://peterattiamd.com/tomdayspring8/" target="_blank">#395 — Lipids and brain health | Tom Dayspring, M.D.</a> <span class="tag hot">New</span></td>
+      <td>The Peter Attia Drive</td>
+      <td>2026-06-08</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">Journal Club: Vigorous Exercise & Mortality (Brady Holmer)</a> <span class="tag hot">New</span></td>
+      <td>FoundMyFitness</td>
+      <td>2026-06</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -388,94 +474,98 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-06-10 04:00。
+  数据截至今日 UTC 2026-06-11T04:04。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">No Priors · 2026-05-28</p>
-  <p class="pc-title">Building an AI Guardian for Enterprise with Onyx Security CEO Maxim Bar Kogan</p>
-  <p class="pc-summary">当一个人一天要调度上万个 Agent，谁来盯着这些 Agent？Onyx Security 的答案是：训练一批"很小、很笨、但只擅长一件事"的模型——判断某个 Agent 动作要不要叫一个更聪明的模型来复核。Maxim 用下棋打比方：高手大多数走子靠直觉，只在关键局面停下来深算。把这套"直觉 + 关键时刻深算"做进监督层，才能在成本和延迟都可控的前提下，看住那些比我们更聪明的 Agent。对做产品的人，这是"调度层"之上又长出的一层——治理层。</p>
-  <a href="https://www.youtube.com/watch?v=QDsbFLEt9ro" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-05-28</p>
+  <p class="pc-title">State of Enterprise AI 2026: Aaron Levie on Tokenmaxxing, Rise of Headless, and AI-Proofing Your Job</p>
+  <p class="pc-summary">Box CEO Aaron Levie 讨论 2026 企业 AI 的格局——"token 极大化"的成本焦虑、无界面（headless）软件的崛起，以及如何让自己的工作"防 AI 化"。健康领域的平行启示：与其焦虑被工具取代，不如像今天三期播客那样，专注于理解上游机制——这是任何自动化都难以替代的判断力。</p>
+  <a href="https://mattturck.com/" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">BC</div>
+      <div class="builder-avatar">AA</div>
       <div>
-        <div class="builder-name">Boris Cherny</div>
-        <div class="builder-handle">@bcherny · Claude Code @ Anthropic</div>
+        <div class="builder-name">Aditya Agarwal</div>
+        <div class="builder-handle">@adityaag · GP @SouthPkCommons · 联创 @Bevel_Health</div>
       </div>
     </div>
-    <p class="builder-tweet">「Claude Code GA 满一年，我和 @_catwu 坐下来复盘：为什么我用 auto mode 而不是 plan mode，routines 怎么在我发现之前就修好 bug，为什么我现在大部分代码都从手机上开始写。」</p>
+    <p class="builder-tweet">「巨额财富往往放大你更深层的欲望，而不是创造新的欲望。」——一个很健康的心理观察：钱不会改变你，只会把你本来的样子放大。看待野心与幸福的好提醒。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1794</span>
-      <a href="https://x.com/bcherny/status/2064034799711588805" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 385</span>
+      <a href="https://x.com/adityaag" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">JW</div>
+      <div class="builder-avatar">PS</div>
       <div>
-        <div class="builder-name">Josh Woodward</div>
-        <div class="builder-handle">@joshwoodward · VP, Google Labs</div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · Builder</div>
       </div>
     </div>
-    <p class="builder-tweet">「NotebookLM 的新杀手锏：把搜索范围轻松扩展到你自己的资料之外。今天的更新还能生成新的输出格式——PDF、DOCX、XLSX、PPTX、图表等等。我们要让 NotebookLM 持续帮你做更好的研究。」</p>
+    <p class="builder-tweet">「别再给 AI 代理写提示词了，去设计那些驱动代理的循环。」——放到健康上特别贴切：真正起作用的不是某天的英雄式努力，而是你能持续运转的那套系统。把好习惯变成默认循环。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 745</span>
-      <a href="https://x.com/joshwoodward/status/2064046368352825492" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 13,734</span>
+      <a href="https://x.com/steipete" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">NK</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner @FPVVentures</div>
       </div>
     </div>
-    <p class="builder-tweet">「无论你往 AI 模型里塞多少智能，都替代不了上下文。对于任何足够通用的 AI，你永远需要给它喂对的上下文。」</p>
+    <p class="builder-tweet">「几周之内，大家就从 token 焦虑变成了 token 优化。」——这个"焦虑到优化"的转变，是很多健康话题的缩影：接触新概念先慌，成熟后才学会接受现状、一点点调好。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 216</span>
-      <a href="https://x.com/levie/status/2064186766907887941" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PY</div>
-      <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · AI builder, 150K+ readers</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「感觉拿两百美元月费补贴订阅的 AI 建造者，和在公司里努力控制 API 成本的员工，他们的最佳实践其实是两套完全不同的东西。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 325</span>
-      <a href="https://x.com/petergyang/status/2064063499517743417" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 89</span>
+      <a href="https://x.com/nikunj" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
+<!-- ─────────────────── 今日行动 ─────────────────── -->
 <hr class="rule">
+<p class="section-label">◈ 今日健康行动</p>
 
+<div class="spotlight">
+  <p class="spotlight-label">💡 Today's Action</p>
+  <h2 class="spotlight-hed">在已有的运动里，加一段 2–3 分钟的高强度冲刺——成本为零，回报翻倍</h2>
+  <p class="spotlight-body">
+    今天的行动来自 Rhonda Patrick 那期。研究说强度本身就值好几倍的延寿回报，而它不需要任何装备或会员卡。<br><br>
+    <strong>如果你今天本来要散步</strong>，挑中间一段，快走到你喘得说不出完整句子，坚持两三分钟，再恢复。<strong>如果你爬楼梯</strong>，就一口气爬到有点喘。你只需要在已经在做的活动里，短暂地把强度拉满一次。<br><br>
+    <strong>基础做对了——你已经在动了——下一步不是动得更久，而是偶尔动得更狠。</strong>这是今天最划算的健康投资。
+  </p>
+</div>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-06-10<br>
-  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
-  数据来源：WebSearch · follow-builders · 公开报道<br>
-  「关注建造者，不要关注 influencer。」
+  <strong>Daily Builders Digest</strong> · 健康星期四 · 2026-06-11<br>
+  主持：大雨 × 小苇 · 数据来源：Huberman Lab · The Peter Attia Drive · FoundMyFitness · follow-builders<br>
+  © 2026 Daily Builders Digest · 关注建造者，不要关注 influencer
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-10.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-10</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">WWDC 2026：苹果发布史上最大 Siri 升级，但底层是谷歌的 Gemini</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-09.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-09</span>

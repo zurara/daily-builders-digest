@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-06-12",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Anthropic 把\"Mythos 级\"最强模型 Claude Fable 5 公开放给所有人——高风险话题自动回退 Opus 4.8 · OpenAI × Oracle：前沿模型与 Codex 直接接入 Oracle 通用额度",
+    "html": "episodes/2026-06-12.html",
+    "mp3": "episodes/2026-06-12.mp3",
+    "headlines": [
+      "Anthropic 把\"Mythos 级\"最强模型 Claude Fable 5 公开放给所有人——高风险话题自动回退 Opus 4.8",
+      "OpenAI × Oracle：前沿模型与 Codex 直接接入 Oracle 通用额度",
+      "前沿实验室排队冲刺 IPO——OpenAI 递交 S-1 草案，Anthropic 年化收入逼近 500 亿",
+      "DeepSeek 把 V4-Pro 永久降价 75%——输出价仅为 GPT-5.5 的三十四分之一"
+    ]
+  },
+  {
     "date": "2026-06-11",
     "dow": 4,
     "topic": "Health",

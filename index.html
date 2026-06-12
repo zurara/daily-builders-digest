@@ -6,14 +6,13 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-11">
-<meta property="og:description" content="健康星期四 · 睡眠与食欲的性别差异 · 大脑胆固醇与阿尔茨海默症 · 高强度运动的死亡率红利">
-<title>Daily Builders Digest · 2026-06-11</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-12">
+<meta property="og:description" content="Anthropic 把 Mythos 级模型 Fable 5 放给所有人 · OpenAI 把前沿模型塞进 Oracle 账单 · 前沿实验室排队 IPO · DeepSeek 把推理价格按到地板">
+<title>Daily Builders Digest · 2026-06-12</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --bg:     #f2f0ea;
     --ink:    #0c0c0c;
@@ -22,257 +21,55 @@
     --light:  #d8d6d0;
     --card:   #eceae4;
   }
-
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 16px 80px;
-    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
-
-  /* ── HEADER ── */
-  .header {
-    padding: 48px 0 32px;
-    border-bottom: 1px solid var(--ink);
-  }
-  .header-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 10px;
-  }
-  .header-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 96px);
-    line-height: .95;
-    letter-spacing: .02em;
-    color: var(--ink);
-  }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
-  .header-meta {
-    margin-top: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--mid);
-    text-transform: uppercase;
-    letter-spacing: .1em;
-  }
-
-  /* ── TICKER ── */
-  .ticker-wrap {
-    overflow: hidden;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding: 9px 0;
-    margin: 0;
-    background: var(--ink);
-  }
-  .ticker-track {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: ticker 48s linear infinite;
-  }
-  .ticker-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: .08em;
-    color: var(--bg);
-    margin-right: 72px;
-    text-transform: uppercase;
-  }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-
-  /* ── AUDIO PLAYER ── */
-  .audio-bar {
-    background: var(--ink);
-    padding: 16px 20px 14px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 2px solid var(--red);
-  }
-  .audio-bar-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio {
-    width: 100%;
-    height: 36px;
-    accent-color: var(--red);
-    display: block;
-  }
-
-  /* ── SECTION LABEL ── */
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--red);
-    padding: 36px 0 12px;
-    border-bottom: 1px solid var(--light);
-    margin-bottom: 24px;
-  }
-
-  /* ── NEWS GRID ── */
-  .news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--light);
-    border: 1px solid var(--light);
-    margin-bottom: 2px;
-  }
-  .news-card {
-    background: var(--bg);
-    padding: 24px;
-  }
-  .news-card.lead {
-    grid-column: 1 / -1;
-    padding: 32px;
-    border-bottom: 1px solid var(--light);
-  }
-  .news-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    color: var(--red);
-    letter-spacing: .08em;
-    margin-bottom: 8px;
-  }
-  .news-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
+  .news-card { background: var(--bg); padding: 24px; }
+  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
+  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
+  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
   .news-card.lead .news-hed { font-size: 24px; }
-  .news-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #333;
-  }
-  .news-source {
-    margin-top: 14px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .06em;
-    color: var(--mid);
-  }
-  .news-source a {
-    color: var(--red);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color .15s;
-  }
+  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
+  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
   .news-source a:hover { border-color: var(--red); }
-
-  /* ── SPOTLIGHT BLOCK ── */
-  .spotlight {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 32px;
-    margin-bottom: 2px;
-  }
-  .spotlight-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 10px;
-  }
-  .spotlight-hed {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 14px;
-  }
-  .spotlight-body {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #ccc;
-  }
-  .spotlight-body strong { color: var(--bg); }
-
-  /* ── INDEX TABLE ── */
-  .index-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin-bottom: 48px;
-  }
-  .index-table th {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--ink);
-  }
-  .index-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--light);
-    vertical-align: top;
-  }
-  .index-table td:first-child {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--red);
-    width: 48px;
-  }
+  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
+  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
+  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
+  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
   .index-table td a { color: var(--ink); text-decoration: none; }
   .index-table td a:hover { text-decoration: underline; }
-  .tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    background: var(--light);
-    color: var(--mid);
-    margin-left: 8px;
-    vertical-align: middle;
-  }
+  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
   .tag.hot { background: var(--red); color: #fff; }
-
-  /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -282,186 +79,144 @@
   .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
-  .builder-likes { color: var(--mid); }
-
-  /* ── DIVIDERS ── */
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-
-  /* ── MOBILE ── */
   @media (max-width: 540px) {
     .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
   }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--ink);
-    padding-top: 24px;
-    font-size: 12px;
-    color: var(--mid);
-    font-family: 'JetBrains Mono', monospace;
-    line-height: 1.8;
-    letter-spacing: .04em;
-  }
+  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
   footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-06-11</p>
-  <h1 class="header-title">健康<span>星期四</span></h1>
+  <p class="header-eyebrow">今日AI快报 · 每日播客 · Vol.2026-06-12</p>
+  <h1 class="header-title">今日<span>AI</span><br>快报</h1>
   <div class="header-meta">
-    <span>📅 2026·06·11 周四</span>
-    <span>🏷 主题：睡眠与食欲的性别差异 · 大脑胆固醇与阿尔茨海默症 · 高强度运动的死亡率红利</span>
+    <span>📅 2026·06·12 周五</span>
+    <span>🏷 主题：AI 新闻快报</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 14 分钟</span>
+    <span>⏱ 约 13 分钟</span>
   </div>
 </header>
 
-<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × St-Onge — 睡眠不足如何改写饥饿激素</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #395 — 大脑胆固醇、APOE 基因与阿尔茨海默症</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 高强度运动延寿效果是中等强度的 4–10 倍</span>
-    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 睡眠不足时女性更难"停下来吃"</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 在已有运动中加 2–3 分钟高强度冲刺</span>
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × St-Onge — 睡眠不足如何改写饥饿激素</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #395 — 大脑胆固醇、APOE 基因与阿尔茨海默症</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 高强度运动延寿效果是中等强度的 4–10 倍</span>
-    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 睡眠不足时女性更难"停下来吃"</span>
-    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 在已有运动中加 2–3 分钟高强度冲刺</span>
+    <span class="ticker-item"><span class="dot">▶</span>Claude Fable 5 · Mythos 级模型首次公开 · 高风险话题回退 Opus 4.8</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI × Oracle · 前沿模型与 Codex 接入 Oracle 通用额度</span>
+    <span class="ticker-item"><span class="dot">▶</span>前沿实验室排队 IPO · OpenAI 递交 S-1 草案 · Anthropic 年化 470 亿美元</span>
+    <span class="ticker-item"><span class="dot">▶</span>DeepSeek V4-Pro · 永久降价 75% · 输出价仅 GPT-5.5 的 1/34</span>
+    <span class="ticker-item"><span class="dot">▶</span>Claude Fable 5 · Mythos 级模型首次公开 · 高风险话题回退 Opus 4.8</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI × Oracle · 前沿模型与 Codex 接入 Oracle 通用额度</span>
+    <span class="ticker-item"><span class="dot">▶</span>前沿实验室排队 IPO · OpenAI 递交 S-1 草案 · Anthropic 年化 470 亿美元</span>
+    <span class="ticker-item"><span class="dot">▶</span>DeepSeek V4-Pro · 永久降价 75% · 输出价仅 GPT-5.5 的 1/34</span>
   </div>
 </div>
 
-<!-- AUDIO PLAYER (sticky) -->
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 健康星期四 · 约 14 分钟</span>
+    <span>大雨 × 小苇 · 约 13 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-06-11.mp3">
-    你的浏览器不支持音频播放。<a href="2026-06-11.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-06-12.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-12.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── 播客焦点 ─────────────────── -->
-<p class="section-label">◈ 本周健康播客 · 三大来源</p>
+<p class="section-label">◈ 今日焦点 · 最新三天 · 精选四条</p>
 
 <div class="news-grid">
-
-  <!-- LEAD: Huberman Lab -->
   <div class="news-card lead">
     <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Huberman Lab × Dr. Marie-Pierre St-Onge：睡眠不足如何增加食欲、改写激素、悄悄让你增重</h2>
+    <h2 class="news-hed">Anthropic 把"Mythos 级"最强模型 Claude Fable 5 公开放给所有人——高风险话题自动回退 Opus 4.8</h2>
     <p class="news-body">
-      6 月 8 日发布。Dr. Marie-Pierre St-Onge 是哥伦比亚大学营养医学教授，研究睡眠和营养的双向关系。<br><br>
-      <strong>① 中等程度的睡眠不足就有影响</strong>——不需要熬通宵，每晚少睡一两个小时，就足以增加食欲、扰乱饥饿相关激素，并导致体重增加，哪怕你没有刻意多吃。<br><br>
-      <strong>② 时段也重要</strong>——她强调一个常被忽略的细节：睡眠损失发生在夜里哪个时段会有差异，后半夜的睡眠损失对神经内分泌食欲调节的破坏更大。<br><br>
-      <strong>③ 食物与进餐时机可以补救</strong>——富含色氨酸和复合碳水的食物有助入睡；太晚进食则同时损害睡眠质量与代谢。<br><br>
-      <strong>核心信息：</strong>睡眠不是体重管理的旁支，而是上游开关。把睡眠还回来，常常比管住嘴更有效。男女差异详见下方女性健康聚焦。
+      6 月 9 日，Anthropic 发布 Claude Fable 5，以及一个受限版本 Mythos 5。关键在于：Fable 5 是 Anthropic 第一个面向公众开放的"Mythos 级"模型——也就是它内部最强的那一档能力，第一次让普通人直接用上。它在几乎所有公开能力基准上都是当前最强：软件工程、知识工作、视觉、科学研究全面领先，能力超过 Anthropic 以往任何公开发布的模型。微妙之处在于：就在几天前，公司还发文警告"AI 太危险、前沿实验室应协调放缓"。它的解法是在产品层加一道安全开关——在网络安全、生物、化学等高风险领域拒绝回答，自动回退到更保守的 Claude Opus 4.8 来响应。把"最强能力"和"最危险用途"在产品层切开。定价为每百万输入 token 10 美元、输出 50 美元，是 Opus 4.8 的两倍；Pro / Max / Team / 企业版用户在 6 月 22 日前免费，之后需消耗额度。一个典型的"先让你上瘾、再收费"窗口。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.hubermanlab.com/episode/how-sleep-loss-affects-hunger-hormones-weight-marie-pierre-st-onge" target="_blank">How Sleep Loss Affects Hunger, Hormones & Weight | Dr. Marie-Pierre St-Onge — Huberman Lab</a>
+      📎 <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Anthropic</a>
+      &nbsp;·&nbsp;
+      <a href="https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/" target="_blank">TechCrunch</a>
     </p>
   </div>
 
-  <!-- Peter Attia -->
   <div class="news-card">
     <p class="news-num">02</p>
-    <h2 class="news-hed">Peter Attia #395 × Tom Dayspring：脂质与大脑健康——APOE 基因型与阿尔茨海默症风险</h2>
+    <h2 class="news-hed">OpenAI × Oracle：前沿模型与 Codex 直接接入 Oracle 通用额度</h2>
     <p class="news-body">
-      最新一期。脂质专家 Tom Dayspring 回归，深入拆解一个反直觉的事实——<strong>大脑的胆固醇系统几乎完全独立运作</strong>，基本不靠血液运输，而是大脑就地合成与回收。<br><br>
-      他们重点讲了 apoB、apoA-I，尤其是 <strong>apoE</strong> 在胆固醇平衡中的角色。关键在 <strong>APOE 基因型</strong>——携带 APOE4 等位基因的人，阿尔茨海默症风险显著更高。<br><br>
-      节目还拆解了胆固醇代谢、淀粉样蛋白与 tau 病理之间的复杂联系，这正是阿尔茨海默症研究的最前沿。
+      6 月 11 日，OpenAI 宣布企业客户可以用已有的 Oracle 通用额度，直接调用 OpenAI 的前沿模型和 Codex——无需单独走采购流程、单独签合同、单独开账户，在现有 Oracle 账单里就能把 OpenAI 用起来。这是把模型能力"塞进企业已有的水管"：对一个想冲企业市场的实验室来说，最大的敌人往往不是对手的模型，而是采购流程，摩擦越小渗透越快。一个旁证：OpenAI 的 Thibault Sottiaux 这周发推说，Codex 的 token 消耗在过去 48 小时出现强劲尖峰，"在我们没有发布任何东西的时候，这很不寻常"。这种"无声的增长"往往比一场发布会更说明问题。
     </p>
     <p class="news-source">
-      📎 <a href="https://peterattiamd.com/tomdayspring8/" target="_blank">#395 — Lipids and brain health | Tom Dayspring, M.D. — The Peter Attia Drive</a>
+      📎 <a href="https://openai.com/news/" target="_blank">OpenAI News</a>
+      &nbsp;·&nbsp;
+      <a href="https://x.com/thsottiaux/status/2064911328087810308" target="_blank">Thibault Sottiaux · X</a>
     </p>
   </div>
 
-  <!-- FoundMyFitness -->
   <div class="news-card">
     <p class="news-num">03</p>
-    <h2 class="news-hed">FoundMyFitness Journal Club：高强度运动的延寿效果是中等强度的 4–10 倍</h2>
+    <h2 class="news-hed">前沿实验室排队冲刺 IPO——OpenAI 递交 S-1 草案，Anthropic 年化收入逼近 500 亿</h2>
     <p class="news-body">
-      Rhonda Patrick 与耐力运动员 Brady Holmer 拆解一篇 <strong>Nature Communications</strong> 新研究——在降低全因死亡率等指标上，高强度运动比中等强度活动强约 <strong>4 到 10 倍</strong>。<br><br>
-      "保持活动就好"没错，但<strong>强度本身是被严重低估的变量</strong>。同样的时间，练得更狠，回报可能是好几倍。<br><br>
-      落地不难：快走中穿插冲刺、爬楼梯、或几组高强度间歇——喘到只能蹦出几个字，就是到位了。
+      6 月 8 日，OpenAI 确认已向美国 SEC 秘密递交 S-1 草案，即上市招股说明书初稿。不止它一家——Anthropic 也表示等 SEC 审查完成后可能上市，截至 5 月的年化收入已达 470 亿美元，预计 6 月底突破 500 亿。两三年前还在讨论这些公司"会不会有商业模式"，如今它们已在排队进公开市场。前沿实验室正从"烧钱搞研究的实验室"变成"要对公众股东负责的上市公司"。影响是双向的：财务足够健康可经受审视，但季度财报的压力也会真实传导到模型的发布节奏与定价上。以后看模型发布，恐怕也得带上一副"财报视角"。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">Journal Club: Vigorous Exercise & Mortality — FoundMyFitness</a>
+      📎 <a href="https://openai.com/news/" target="_blank">OpenAI News</a>
+      &nbsp;·&nbsp;
+      <a href="https://llm-stats.com/ai-news" target="_blank">LLM Stats</a>
     </p>
   </div>
 
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04</p>
+    <h2 class="news-hed">DeepSeek 把 V4-Pro 永久降价 75%——输出价仅为 GPT-5.5 的三十四分之一</h2>
+    <p class="news-body">
+      中国的 DeepSeek 把旗舰模型 V4-Pro 的价格永久下调 75%。关键在于"永久"二字——这不是促销，而是效率红利的直接传导。V4-Pro 在架构上专门优化了长上下文推理：在很长的上下文下，它的单 token 算力大约只有上一代的四分之一，显存占用只有十分之一，成本真的降下来了，所以价格也能真的永久降下来。结果是输出 token 的价格大约是 GPT-5.5 的三十四分之一——已经不是"便宜一点"，而是把推理成本按到地板上。这就是 2026 年 AI 的另一条主线：一边是 Fable 5 把"能力天花板"越顶越高，一边是 DeepSeek 把"能力地板"的价格往下砸。当底层又强又便宜，被挤压的就是只靠倒卖 API 差价的中间层；价值只能往上走，走到真正交付结果的那一层。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.infoworld.com/article/4176709/deepseeks-steep-v4-pro-price-cut-escalates-ai-pricing-war.html" target="_blank">InfoWorld</a>
+      &nbsp;·&nbsp;
+      <a href="https://deepseek.ai/blog/deepseek-v4-pro-api-price-cut-permanent" target="_blank">DeepSeek 官方博客</a>
+    </p>
+  </div>
 </div>
 
-<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
-<div class="spotlight">
-  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
-  <h2 class="spotlight-hed">睡眠不足时，男性"更想开始吃"，女性"更难停下来吃"——食欲激素的性别差异</h2>
-  <p class="spotlight-body">
-    St-Onge 这期 Huberman Lab 里最重要、却很少被公开讨论的发现，是<strong>睡眠限制对食欲激素的影响存在明显的性别差异</strong>。<br><br>
-    <strong>男性</strong>主要表现为饥饿素（ghrelin）上升——这是刺激食欲的激素，让人更饿、更想吃。<br><br>
-    <strong>女性</strong>走的是另一条路：主要表现为类胰高血糖素肽（GLP-1）相关的<strong>饱腹信号下降</strong>。换句话说，睡眠不足后，女性在"恢复饱腹感"这一端受到的损害更明显，更难停下来吃。<br><br>
-    这个区别极其关键——如果只看男性数据，你会以为问题是"如何抑制食欲"；但对女性来说，真正的问题是"为什么饱腹信号失灵了"。同样是睡眠不足导致的体重困扰，针对女性的策略可能需要不一样。<br><br>
-    <strong>为什么这很重要？</strong> 大量健康研究默认以男性身体为参照。当研究者明确去区分性别差异时，才是真正有价值的进步。如果你是女性又长期缺觉，停不下来可能不是意志力问题，而是饱腹激素被睡眠债悄悄改写了——先把睡眠还回来。
-  </p>
-</div>
-
-<!-- ─────────────────── 编辑洞察 ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 编辑洞察 · 区分信号和噪音</p>
-
-<div class="spotlight">
-  <p class="spotlight-label">🧭 Editor's Insight</p>
-  <h2 class="spotlight-hed">睡眠、大脑、运动——三期播客指向同一个底层逻辑：上游优先</h2>
-  <p class="spotlight-body">
-    St-Onge 在说，<strong>睡眠是体重的上游开关</strong>——与其在饮食端苦苦挣扎，不如先修好睡眠这个源头。<br><br>
-    Dayspring 在说，<strong>大脑有它自己的一套胆固醇规则</strong>，不能简单套用心血管那套逻辑——理解机制，才能做出针对性的判断，而不是一刀切。<br><br>
-    Rhonda 在说，<strong>强度比时长更被低估</strong>——已经在动的人，下一步不是动得更久，而是偶尔动得更狠。<br><br>
-    三期播客的共同点是：<strong>别在下游使蛮力，去找到那个真正决定结果的上游变量。</strong>睡眠之于食欲、基因型之于脑健康、强度之于延寿——抓对杠杆，省力十倍。
-  </p>
-</div>
-
-<!-- ─────────────────── INDEX ─────────────────── -->
-<hr class="rule">
-<p class="section-label">◈ 本周健康来源索引</p>
+<p class="section-label">◈ 新闻索引</p>
 <table class="index-table">
   <thead>
-    <tr>
-      <th>#</th>
-      <th>标题</th>
-      <th>来源</th>
-      <th>日期</th>
-    </tr>
+    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
   </thead>
   <tbody>
     <tr>
       <td>01</td>
-      <td><a href="https://www.hubermanlab.com/episode/how-sleep-loss-affects-hunger-hormones-weight-marie-pierre-st-onge" target="_blank">How Sleep Loss Affects Hunger, Hormones & Weight | Dr. Marie-Pierre St-Onge</a> <span class="tag hot">New</span></td>
-      <td>Huberman Lab</td>
-      <td>2026-06-08</td>
+      <td><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Anthropic 公开发布 Claude Fable 5 <span class="tag hot">头条</span></a></td>
+      <td>Anthropic</td>
+      <td>2026-06-09</td>
     </tr>
     <tr>
       <td>02</td>
-      <td><a href="https://peterattiamd.com/tomdayspring8/" target="_blank">#395 — Lipids and brain health | Tom Dayspring, M.D.</a> <span class="tag hot">New</span></td>
-      <td>The Peter Attia Drive</td>
-      <td>2026-06-08</td>
+      <td><a href="https://openai.com/news/" target="_blank">OpenAI 前沿模型与 Codex 接入 Oracle <span class="tag">企业</span></a></td>
+      <td>OpenAI</td>
+      <td>2026-06-11</td>
     </tr>
     <tr>
       <td>03</td>
-      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">Journal Club: Vigorous Exercise & Mortality (Brady Holmer)</a> <span class="tag hot">New</span></td>
-      <td>FoundMyFitness</td>
-      <td>2026-06</td>
+      <td><a href="https://llm-stats.com/ai-news" target="_blank">OpenAI 递交 S-1 草案 · 实验室排队 IPO <span class="tag">资本</span></a></td>
+      <td>SEC / LLM Stats</td>
+      <td>2026-06-08</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.infoworld.com/article/4176709/deepseeks-steep-v4-pro-price-cut-escalates-ai-pricing-war.html" target="_blank">DeepSeek V4-Pro 永久降价 75% <span class="tag">价格战</span></a></td>
+      <td>InfoWorld</td>
+      <td>2026-06-10</td>
     </tr>
   </tbody>
 </table>
@@ -474,91 +229,101 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-06-11T04:04。
+  数据截至今日 UTC 06:00。
 </p>
 
-<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-05-28</p>
-  <p class="pc-title">State of Enterprise AI 2026: Aaron Levie on Tokenmaxxing, Rise of Headless, and AI-Proofing Your Job</p>
-  <p class="pc-summary">Box CEO Aaron Levie 讨论 2026 企业 AI 的格局——"token 极大化"的成本焦虑、无界面（headless）软件的崛起，以及如何让自己的工作"防 AI 化"。健康领域的平行启示：与其焦虑被工具取代，不如像今天三期播客那样，专注于理解上游机制——这是任何自动化都难以替代的判断力。</p>
-  <a href="https://mattturck.com/" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Anthropic · 2026-06-10</p>
+  <p class="pc-title">How Anthropic Uses Claude Fable 5 — with Mike Krieger</p>
+  <p class="pc-summary">
+    Anthropic 首席产品官 Mike Krieger（Instagram 联合创始人）聊了一期"Anthropic 内部怎么用 Fable 5"。最有意思的一点是：Fable 5 在他们内部远不止写代码，而是被用在整个产品的复杂知识工作上——研究、文档、运营都在交给它跑。从这个角度看，模型公司自己就是模型最激进的用户，他们在拿自己当试验场。如果你想知道一个 Mythos 级模型在真实工作流里到底能干到什么程度，这一期是第一手的窗口。
+  </p>
+  <a href="https://www.youtube.com/watch?v=XWpTgCvgYaE" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
-<!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AA</div>
+      <div class="builder-avatar">TH</div>
       <div>
-        <div class="builder-name">Aditya Agarwal</div>
-        <div class="builder-handle">@adityaag · GP @SouthPkCommons · 联创 @Bevel_Health</div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code @Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「巨额财富往往放大你更深层的欲望，而不是创造新的欲望。」——一个很健康的心理观察：钱不会改变你，只会把你本来的样子放大。看待野心与幸福的好提醒。</p>
+    <p class="builder-tweet">「很多人问我怎么用 Fable 编辑它自己的发布视频，于是我专门做了个视频讲解。简单说——它写了一大堆代码，调用转写服务、用 ffmpeg、做调色、接 Figma 的 MCP、用 Remotion 生成 UI 再渲染。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 385</span>
-      <a href="https://x.com/adityaag" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 6036</span>
+      <a href="https://x.com/trq212/status/2064826394589442448" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PS</div>
+      <div class="builder-avatar">TS</div>
       <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · Builder</div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex & ChatGPT @OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「别再给 AI 代理写提示词了，去设计那些驱动代理的循环。」——放到健康上特别贴切：真正起作用的不是某天的英雄式努力，而是你能持续运转的那套系统。把好习惯变成默认循环。</p>
+    <p class="builder-tweet">「可以确认：过去 48 小时我们看到 Codex 的 token 消耗出现了一个强劲的增长尖峰。在我们没有发布任何东西的时候，这很不寻常。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 13,734</span>
-      <a href="https://x.com/steipete" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2460</span>
+      <a href="https://x.com/thsottiaux/status/2064911328087810308" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">NK</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Nikunj Kothari</div>
-        <div class="builder-handle">@nikunj · Partner @FPVVentures</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「几周之内，大家就从 token 焦虑变成了 token 优化。」——这个"焦虑到优化"的转变，是很多健康话题的缩影：接触新概念先慌，成熟后才学会接受现状、一点点调好。</p>
+    <p class="builder-tweet">「大量证据表明 Fable 在编码（及相关）任务上能力出现巨大跃升，在复杂知识工作上的准确率和成功率也是一次重大飞跃。在我们的 Box AI 复杂工作评测里，把它和 Opus 4.8 对比，看到了巨大的提升。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 89</span>
-      <a href="https://x.com/nikunj" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 177</span>
+      <a href="https://x.com/levie/status/2064922814688481678" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">ZZ</div>
+      <div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder · follow-builders</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「感觉旧金山大部分创业公司其实都在互相卖产品给对方。当我问创始人他们的目标用户是谁，九成的回答是'工程和产品团队、AI 原生创业公司'。同一小撮目标用户，被反复瞄准。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 203</span>
+      <a href="https://x.com/zarazhangrui/status/2064825302359150870" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<!-- ─────────────────── 今日行动 ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 今日健康行动</p>
 
-<div class="spotlight">
-  <p class="spotlight-label">💡 Today's Action</p>
-  <h2 class="spotlight-hed">在已有的运动里，加一段 2–3 分钟的高强度冲刺——成本为零，回报翻倍</h2>
-  <p class="spotlight-body">
-    今天的行动来自 Rhonda Patrick 那期。研究说强度本身就值好几倍的延寿回报，而它不需要任何装备或会员卡。<br><br>
-    <strong>如果你今天本来要散步</strong>，挑中间一段，快走到你喘得说不出完整句子，坚持两三分钟，再恢复。<strong>如果你爬楼梯</strong>，就一口气爬到有点喘。你只需要在已经在做的活动里，短暂地把强度拉满一次。<br><br>
-    <strong>基础做对了——你已经在动了——下一步不是动得更久，而是偶尔动得更狠。</strong>这是今天最划算的健康投资。
-  </p>
-</div>
-
-<!-- ── FOOTER ── -->
 <footer>
-  <strong>Daily Builders Digest</strong> · 健康星期四 · 2026-06-11<br>
-  主持：大雨 × 小苇 · 数据来源：Huberman Lab · The Peter Attia Drive · FoundMyFitness · follow-builders<br>
-  © 2026 Daily Builders Digest · 关注建造者，不要关注 influencer
+  <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
+  主持：大雨 × 小苇 · 2026-06-12<br>
+  数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
+  © 2026 Daily Builders Digest
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-11.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-11</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">Huberman Lab × Dr. Marie-Pierre St-Onge：睡眠不足如何增加食欲、改写激素...</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-10.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-10</span>

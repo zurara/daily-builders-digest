@@ -6,13 +6,14 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-13 · 周六书籍介绍">
-<meta property="og:description" content="The Thinking Machine · Stephen Witt · 黄仁勋、英伟达，与三十年的痛苦与豪赌">
-<title>Daily Builders Digest · 2026-06-13 · 周六书籍介绍</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-14">
+<meta property="og:description" content="周日播客精选 · 当 API 可能消失 · Unsupervised Learning 的 AI Vibe Check · 实验室战争与算力荒">
+<title>Daily Builders Digest · 2026-06-14</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --bg:     #f2f0ea;
     --ink:    #0c0c0c;
@@ -21,75 +22,219 @@
     --light:  #d8d6d0;
     --card:   #eceae4;
   }
+
   body {
-    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
-    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
-    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
   }
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
-  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
-  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
   .header-title span { color: var(--red); }
-  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
-  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
-  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 42s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
-  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
   .audio-bar-top .icon { color: var(--red); font-size: 16px; }
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
-  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
-  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
-  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
-  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
-  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
-  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
-  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-  .stat-item { display: flex; flex-direction: column; gap: 4px; }
-  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
-  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
-  .script-block.lead-block { border-left-color: var(--red); }
-  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .speaker-dayu { color: var(--red); }
-  .speaker-xiaowei { color: #555; }
-  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
-  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
-  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
-  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
-  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
-  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
-  .angle-card { background: var(--bg); padding: 20px 24px; }
-  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
-  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
-  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
-  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
-  .source-link:hover { color: var(--red); }
-  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── PODCAST DEEP DIVE ── */
+  .deep-dive {
+    margin-bottom: 48px;
+  }
+  .deep-dive-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .deep-dive h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .deep-dive .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    margin-bottom: 18px;
+  }
+  .deep-dive .body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #222;
+  }
+  .deep-dive .body p { margin-bottom: 14px; }
+  .deep-dive .body strong { color: var(--ink); }
+  .deep-dive .source {
+    margin-top: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .deep-dive .source a { color: var(--red); text-decoration: none; }
+
+  /* ── BRIEF CARDS ── */
+  .briefs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 48px;
+  }
+  .brief-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .brief-card .brief-show {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .brief-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .brief-card .brief-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .brief-card .brief-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .brief-card .brief-source {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+  }
+  .brief-card .brief-source a { color: var(--red); text-decoration: none; }
+
+  /* ── BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
-  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -100,266 +245,133 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .header { padding: 28px 0 20px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .deep-dive h2 { font-size: 20px; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
-  <div class="header-title"><span>THE THINKING MACHINE</span></div>
+  <p class="header-eyebrow">周日播客精选 · 每日播客 · Vol.2026-06-14</p>
+  <h1 class="header-title">周日<span>播客</span><br>精选</h1>
   <div class="header-meta">
-    <span>📅 2026-06-13</span>
-    <span>📚 周六书单 第十二期</span>
-    <span>📰 商业传记 · 英伟达 · 黄仁勋 · 芯片 · AI硬件</span>
-    <span>🎙 大雨 × 小苇</span>
+    <span>2026·06·14 周日</span>
+    <span>主题：播客精选</span>
+    <span>主持：大雨 × 小苇</span>
+    <span>约 15 分钟</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>从 Denny's 卡座到全球第一：英伟达三十一年</span>
-    <span class="ticker-item"><span class="dot">●</span>CUDA：一场早了快二十年的孤独豪赌</span>
-    <span class="ticker-item"><span class="dot">●</span>黄仁勋的"痛苦与磨难"：60 个直接下属，零一对一</span>
-    <span class="ticker-item"><span class="dot">●</span>金融时报 2025 年度商业书 · 经济学人年度好书</span>
-    <span class="ticker-item"><span class="dot">●</span>从 Denny's 卡座到全球第一：英伟达三十一年</span>
-    <span class="ticker-item"><span class="dot">●</span>CUDA：一场早了快二十年的孤独豪赌</span>
-    <span class="ticker-item"><span class="dot">●</span>黄仁勋的"痛苦与磨难"：60 个直接下属，零一对一</span>
-    <span class="ticker-item"><span class="dot">●</span>金融时报 2025 年度商业书 · 经济学人年度好书</span>
+    <span class="ticker-item"><span class="dot">▶</span>Unsupervised Learning AI Vibe Check · 实验室战争与未来六个月</span>
+    <span class="ticker-item"><span class="dot">▶</span>为什么 API 可能消失 · 算力荒逼出的生存威胁</span>
+    <span class="ticker-item"><span class="dot">▶</span>预训练没撞墙 · 别从 naive scaling 的失败过度泛化</span>
+    <span class="ticker-item"><span class="dot">▶</span>撬开半导体供应链 · 原子光刻 · X 射线光刻 · TerraFab</span>
+    <span class="ticker-item"><span class="dot">▶</span>Unsupervised Learning AI Vibe Check · 实验室战争与未来六个月</span>
+    <span class="ticker-item"><span class="dot">▶</span>为什么 API 可能消失 · 算力荒逼出的生存威胁</span>
+    <span class="ticker-item"><span class="dot">▶</span>预训练没撞墙 · 别从 naive scaling 的失败过度泛化</span>
+    <span class="ticker-item"><span class="dot">▶</span>撬开半导体供应链 · 原子光刻 · X 射线光刻 · TerraFab</span>
   </div>
 </div>
 
-<!-- AUDIO -->
+<!-- AUDIO PLAYER (sticky) -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">▶</span>
-    <strong>收听本期</strong>
-    <span>· The Thinking Machine · Stephen Witt</span>
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 15 分钟</span>
   </div>
-  <audio controls src="episodes/2026-06-13.mp3"></audio>
+  <audio controls preload="none" src="episodes/2026-06-14.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-14.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- BOOK HERO -->
-<div class="book-hero">
-  <div class="book-cover-panel">
-    <div class="book-cover-label">本期书目</div>
-    <div class="book-title-big">THE THINKING MACHINE</div>
-    <div class="book-subtitle">Jensen Huang, Nvidia, and the World's Most Coveted Microchip</div>
-    <div class="book-author-line">Stephen Witt 斯蒂芬·维特 · 2025</div>
+<!-- ─────────────────── MAIN PICK ─────────────────── -->
+<p class="section-label">◈ 本周主打 · Deep Dive</p>
+
+<div class="deep-dive">
+  <p class="deep-dive-label">🎧 Unsupervised Learning (Jacob Efron) · 2026-06-12</p>
+  <h2>AI Vibe Check — 实验室战争、为什么 API 可能消失，以及未来六个月</h2>
+  <p class="meta">嘉宾：Ari（Datology 创始人 / 前 DeepMind & Meta 研究员）· Rob（Radical 风投）</p>
+
+  <div class="body">
+    <p>这一期是 Unsupervised Learning 最受欢迎的格式之一——"AI Vibe Check"。主持人 Jacob Efron 拉上两位朋友，把当下 AI 世界正在发生的事从头到尾过一遍。没有要推广的产品，三个真正在场内的人就把自己的判断、甚至还没想清楚的赌注摊在桌面上。开场一句话定了基调：<strong>"在 AI 世界里，六个月就是一个永恒。"</strong> 距离上次录制才半年，已经经历了 IPO 申报、模型先没发后又发、SpaceX 变成一家 AI 基建公司。</p>
+
+    <p><strong>编程 agent 跨过了阈值。</strong> Ari 说这半年最大的变化，是编程 agent 真正能在"长时间跨度"上干活了。一旦跨过某个阈值，它的价值会陡增——直接后果是工程师正在大批量地从"自己写代码的 IC"变成"管理一群 agent 的经理"，token 消耗也随之暴涨（所谓 token maxing）。</p>
+
+    <p><strong>最反常识的判断：API 可能会消失。</strong> 这是全场最让人意外的一段。Ari 和 Rob 都认为，对外开放的大模型 API 有可能消失——而且不是商业决策，是算力被卡死逼出来的。OpenAI 已经开始卖"推理期货"（锁定未来 token 额度），这对任何在模型之上做应用的公司都是生存级威胁。Rob 把它推得更远：实验室甚至可能连最强的模型都不通过 API 对外提供，只留作内部使用——因为在算力极度短缺的世界里，每一块算力都更愿意喂给自己的第一方产品和研发。</p>
+
+    <p><strong>算力荒至少持续到 2030。</strong> Ari 很冷静：沿着现在的轨迹，他很难想象算力约束在几年内被解除。根源是半导体供应链卡在一个荒诞结构上——全世界只有一家公司（台积电）能造最尖端芯片，而它最关键的那台机器又只有另一家（ASML）能造。但 Rob 指出，正因为缺算力，反而会逼出真正的创新：有创业公司在搞"原子光刻"（用一束原子而非光刻特征）、有人想跳过 EUV 直接用 X 射线光刻，再加上马斯克的 TerraFab 概念。乐观估计也至少还要五年。</p>
+
+    <p><strong>缺算力 → 效率、小模型、非英伟达芯片。</strong> 前沿实验室过去不在乎效率，因为资本近乎无限；撞上物理约束后，被迫把模型做小做高效。Ari 坚信你不需要上万亿参数就能达到今天的能力，越来越小的模型在追平一两年前最大的模型。对芯片而言，替代品不是解药但是受益者——大家其实都更想用英伟达，但芯片不够分，于是 AMD、亚马逊 Trainium、Cerebras 迎来巨大顺风。</p>
+
+    <p><strong>Fable 的"沉默限制"惹毛了人。</strong> Anthropic 这半年走了一波"前所未有的 vibe run"，但录节目前一天发布的新模型 Fable 出现裂缝。问题不在模型本身，而在 Anthropic 对它在 AI 开发用途上加了一个"沉默的限制"——不拒绝、不告知，只是悄悄把表现做烂。Ari 说真正激怒人的正是这种沉默；官方说是安全，但看起来更像竞争卡位。他还反驳了"开源只能靠偷闭源才能追上"的说法，称之为 copium——Datology 全程不碰闭源 API、只用公开数据，照样造出很强的模型。</p>
+
+    <p><strong>预训练没有撞墙。</strong> Rob 说 Fable 的意义恰恰在于反驳了"预训练撞墙、只能靠 RL 往前推"的叙事——收益还在源源不断地来。Ari 补充：所谓"撞墙"是从 naive scaling（把同样的东西简单放大十倍百倍）的失败里过度泛化出来的结论。深度学习反直觉的地方是，你可能 95% 都做对了，差最后一个旋钮就是不工作；拧对了能力就会阶跃——这也让"负面结果"极难解读。</p>
   </div>
-  <div class="book-meta-panel">
-    <div class="book-one-liner">不是一夜暴富的故事，而是一个用三十年"痛苦与磨难"换来的故事——一张 Denny's 餐桌、一场早了二十年的 CUDA 豪赌，和一家全球第一的公司。</div>
-    <div class="book-tags">
-      <span class="tag">商业传记</span>
-      <span class="tag">英伟达</span>
-      <span class="tag">黄仁勋</span>
-      <span class="tag">CUDA</span>
-      <span class="tag">AI硬件</span>
+  <p class="source">📎 <a href="https://www.youtube.com/watch?v=W_iO8XxgD_I" target="_blank">Unsupervised Learning — AI Vibe Check: Lab Wars, Why APIs Might Vanish & Future Predictions</a></p>
+</div>
+
+<!-- ─────────────────── OTHER PICKS ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周其他精选 · Quick Picks</p>
+
+<div class="briefs-grid">
+
+  <div class="brief-card">
+    <p class="brief-show">Latent Space · 2026-06-03</p>
+    <h3>可验证的 AI 与形式化数学 — Axiom Math 的 Carina Hong 谈 Lean 与证明验证</h3>
+    <p class="brief-meta">嘉宾：Carina Hong (Axiom Math)</p>
+    <div class="brief-body">
+      和主打那期是一组好对照：一边是算力与模型的宏观博弈，一边是微观上"怎么确认 AI 没在数学上骗你"。当模型开始自己证定理，用 Lean 这类形式化工具做严格机器验证，就成了下一个关键问题。
     </div>
-    <div class="book-stats">
-      <div class="stat-item"><div class="stat-label">出版</div><div class="stat-value">Viking / PRH · 2025</div></div>
-      <div class="stat-item"><div class="stat-label">语言</div><div class="stat-value">英文</div></div>
-      <div class="stat-item"><div class="stat-label">ISBN</div><div class="stat-value">9780593832691</div></div>
-      <div class="stat-item"><div class="stat-label">荣誉</div><div class="stat-value">FT 年度商业书 2025</div></div>
+    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space — Verified AI & Formal Math</a></p>
+  </div>
+
+  <div class="brief-card">
+    <p class="brief-show">Latent Space × No Priors · 2026-06-03</p>
+    <h3>Satya Nadella 串台：MAI 模型、生态战略与 agent 时代的企业工作方式</h3>
+    <p class="brief-meta">嘉宾：Satya Nadella (Microsoft CEO)</p>
+    <div class="brief-body">
+      从 Build 2026 现场聊起——微软自研的 MAI 模型、平台层的生态思路，以及 agent 真正进入工作流后企业会怎么变。站在"算力荒"的背景下听 Satya 讲生态，别有一番味道。
     </div>
-  </div>
-</div>
-
-<!-- ─── SCRIPT ─── -->
-<div class="script-container">
-  <p class="section-label">◈ 对话实录 · Transcript</p>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">周六好，欢迎回到书籍介绍。今天这本书，我觉得特别适合我们这个总在聊"建造者"的节目——Stephen Witt 写的《The Thinking Machine》，副标题是 "Jensen Huang, Nvidia, and the World's Most Coveted Microchip"，黄仁勋、英伟达，和这个世界上最被觊觎的芯片。这本书 2025 年出版，刚刚拿下了金融时报年度商业书大奖，还被《经济学人》选为 2025 年度好书。</div>
+    <p class="brief-source">📎 <a href="https://commandline.microsoft.com/satya-nadella-no-priors-latent-space-engineering-podcast-build-2026/" target="_blank">No Priors × Latent Space — Satya Nadella Crossover</a></p>
   </div>
 
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">黄仁勋我们都熟，但说实话，一家做显卡的公司怎么就变成全世界最值钱的公司了，我一直没完全想明白。</div>
+  <div class="brief-card">
+    <p class="brief-show">Latent Space · 2026-06-02</p>
+    <h3>GitHub 的 Kyle Daigle 谈 AI 如何渗透开发流程，以及工程师角色的演化</h3>
+    <p class="brief-meta">嘉宾：Kyle Daigle (GitHub)</p>
+    <div class="brief-body">
+      从开发流程的视角讲 AI 怎么进入 GitHub 的每个环节，工程师这个角色正在怎样变。正好呼应主打那期"工程师从 IC 变经理"的判断——配着听很顺。
+    </div>
+    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space — Kyle Daigle (GitHub)</a></p>
   </div>
 
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">这正是这本书想回答的问题。2024 年 6 月，英伟达市值登顶全球第一，成了地球上最值钱的公司。而它的起点，是 1993 年圣何塞一家 Denny's 餐厅角落的卡座。三十一年，从一张餐桌到全球第一——Witt 想讲的，不是一个一夜暴富的故事，而是一个用三十年痛苦换来的故事。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">那我们先聊聊写书的人吧，Stephen Witt 是谁？</div>
-  </div>
-
-  <p class="section-label">◈ 作者背景 · 写盗版起家的记者，为什么来写芯片</p>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">Witt 这个人挺有意思。他本科在芝加哥大学读数学，后来去哥伦比亚读了新闻硕士，给纽约客、连线、GQ、滚石这些杂志写稿。他成名作是 2015 年的《How Music Got Free》，讲 MP3 和盗版怎么搞垮了整个音乐工业——那本书也进过金融时报年度商业书的决选。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以他擅长的是，把一个特别技术、特别枯燥的东西，写成一个有人物、有戏剧张力的故事。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，这是他最大的本事。芯片、CUDA、并行计算，这些词听着就让人犯困。但 Witt 能把它写成一部商业惊险片——你会真的为英伟达的工程师们捏一把汗。评论界普遍说，这本书最难得的地方，是它让 AI 背后的硬件第一次变得可读、可感。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">他怎么写黄仁勋本人？是那种官方授权的吹捧传记吗？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">不是。Witt 采访了黄仁勋本人，也采访了大量前员工、同行、对手。他写出来的黄仁勋，是个又有远见、又极度严苛、甚至让人害怕的人。这不是一本捧场的书，这点很重要。</div>
-  </div>
-
-  <p class="section-label">◈ 内容精华 · 一张餐桌、一场豪赌、和"痛苦"</p>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">那我们从 Denny's 那张桌子开始讲吧。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">1993 年，黄仁勋和另外两位创始人 Chris Malachowsky、Curtis Priem，在圣何塞东部一家 Denny's 的卡座里，喝着续杯不要钱的咖啡，一聊就是几个钟头，英伟达就这么定下来了。黄仁勋年轻时还在 Denny's 洗过盘子、当过服务员——他后来说，那段经历教给他的东西，不比任何 MBA 少。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">从洗盘子到全球第一，这个弧线太戏剧化了。但中间肯定不是一帆风顺吧？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">完全不是。Witt 书里写，这三十年英伟达经历了几十次足以让大多数创始人放弃的灾难：产品失败、押错技术、市场崩盘、现金链几乎断裂。好几次都濒临破产。真正决定命运的那一步，是 2006 年的 CUDA。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">CUDA 到底是什么？为什么是它救了、又差点毁了英伟达？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">简单说，GPU 本来是用来渲染游戏画面的，它的特点是能同时做大量并行计算。黄仁勋赌的是：如果我把 GPU 变成一个能用来做通用计算的平台，让科学家、研究者都能在上面写程序，那它的用处会远远超过打游戏。CUDA 就是为此做的软件平台。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">听起来很对啊，问题在哪？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">问题是，这个赌注下得太早了。CUDA 烧了海量的钱，但很多年里看不到回报。华尔街根本不理解他为什么要把一家显卡公司的命押在一个没人要的计算平台上，股价被压得很惨。整整快二十年，市场才反应过来——原来深度学习、原来今天这一整波 AI，全都跑在 CUDA 和英伟达的 GPU 上。2012 年 AlexNet 那场深度学习的引爆，背后就是英伟达的卡。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以他赢，赢在比所有人都早看见，而且扛住了中间那段没人鼓掌的时间。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对。Witt 反复强调这一点。而支撑黄仁勋扛过去的，是他那套很出名、也很有争议的哲学——痛苦与磨难。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">Pain and suffering，我看他公开演讲老说这个词。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">他到今天还在公司里、带着一种近乎得意的口气说这个词。他甚至会对斯坦福的毕业生说，我祝愿你们经历足量的痛苦与磨难。他真心相信，伟大不是靠舒适养出来的，是被苦难逼出来的。</div>
-  </div>
-
-  <p class="section-label">◈ 关键洞察 · 扁平组织，和"光速"管理</p>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">除了痛苦，书里还讲了他怎么管这家公司吗？毕竟管一家全球第一的公司，方法肯定不寻常。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">非常不寻常。最典型的一点：黄仁勋有大约 60 个人直接向他汇报。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">60 个？正常 CEO 不是五到七个直接下属吗？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，这是他故意的。他把组织架构压得极扁，砍掉中间那些层层叠叠的管理层，让自己和真正做决策的人之间没有缓冲。更反常的是，他几乎不做一对一谈话。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">不做一对一？那他怎么了解每个人的情况？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">他的逻辑是：一对一会制造信息差，会让重要信息变成少数人的特权。他偏要在公开的团队会议上解决问题，让所有人掌握同样的信息、一起在台面上把问题摊开来解决。Witt 把这套叫做一种光速运转的文化——信息流动越快、层级越少，公司反应就越接近物理极限。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">这跟我们平时聊的那些小团队、AI 时代一个人就是一家公司的趋势，其实是一个方向——少一点管理，多一点信息透明。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">完全是。这也是为什么我觉得这本书不只是讲一家芯片公司，它讲的是一种在极端不确定里做长期赌注、并且把组织磨成一把快刀的方式。对建造者来说，这比任何成功学都实在。</div>
-  </div>
-</div>
-
-<!-- TAKEAWAYS -->
-<div class="takeaways">
-  <div class="takeaways-label">关键洞察</div>
-  <div class="takeaways-title">KEY TAKEAWAYS</div>
-  <div class="takeaway-item"><span class="takeaway-num">01</span><span>最好的赌注往往早得离谱：CUDA 比市场理解它早了快二十年，赢的人是那个能扛过漫长沉默期的人。</span></div>
-  <div class="takeaway-item"><span class="takeaway-num">02</span><span>"痛苦与磨难"是黄仁勋的信条——但要警惕幸存者偏差，分清"值得扛的苦"和"该止损的坑"。</span></div>
-  <div class="takeaway-item"><span class="takeaway-num">03</span><span>60 个直接下属、零一对一：把层级压扁、把信息摊在台面上，是一种"光速"运转的组织设计。</span></div>
-  <div class="takeaway-item"><span class="takeaway-num">04</span><span>这一整波 AI 都跑在硅片上——AI 的故事归根到底是硬件的故事，别让自己离硬件太远。</span></div>
-</div>
-
-<!-- DISCUSSION ANGLES -->
-<p class="section-label">◈ 讨论角度 · Discussion Angles</p>
-<div class="angles-grid">
-  <div class="angle-card">
-    <div class="angle-num">01</div>
-    <div class="angle-text">CUDA 是一个"早了二十年"的赌注。你手上有没有一件别人都不看好、但你愿意为它扛过漫长沉默期的事？</div>
-  </div>
-  <div class="angle-card">
-    <div class="angle-num">02</div>
-    <div class="angle-text">"痛苦与磨难"到底是真智慧，还是幸存者偏差？黄仁勋赢了所以苦难像勋章——多少人扛着同样的苦却没等到那天？</div>
-  </div>
-  <div class="angle-card">
-    <div class="angle-num">03</div>
-    <div class="angle-text">60 个直接下属、不做一对一，这套极扁平管理，放到你所在的团队，会更高效还是会失控？</div>
-  </div>
-  <div class="angle-card">
-    <div class="angle-num">04</div>
-    <div class="angle-text">我们总聊软件、模型、agent，但它们都跑在硅片上。作为建造者，你会选择离硬件更近一点吗？</div>
-  </div>
-</div>
-
-<!-- SOURCES -->
-<div class="sources">
-  <div class="sources-label">📎 参考来源</div>
-  <a class="source-link" href="https://www.penguinrandomhouse.com/books/757558/the-thinking-machine-by-stephen-witt/" target="_blank"><span class="src-icon">Book</span> The Thinking Machine: Jensen Huang, Nvidia, and the World's Most Coveted Microchip — Penguin Random House</a>
-  <a class="source-link" href="https://blogs.lse.ac.uk/lsereviewofbooks/2026/01/07/stephen-witt-jensen-huang-re-engineered-nvidia-to-make-it-the-most-valuable-company-in-the-world/" target="_blank"><span class="src-icon">Interview</span> Stephen Witt: "Jensen Huang re-engineered Nvidia to make it the most valuable company in the world" — LSE Review of Books</a>
-  <a class="source-link" href="https://www.inc.com/carmine-gallo/why-jensen-huang-keeps-talking-about-pain-and-suffering-when-nvidias-worth-5-trillion/91261743" target="_blank"><span class="src-icon">News</span> Why Jensen Huang Keeps Talking About 'Pain and Suffering' — Inc.</a>
-  <a class="source-link" href="https://www.entrepreneur.com/business-news/why-nvidia-ceo-jensen-huang-never-has-one-on-one-meetings" target="_blank"><span class="src-icon">News</span> Why Nvidia CEO Jensen Huang Never Has One-on-One Meetings With His 60 Direct Reports — Entrepreneur</a>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -370,47 +382,35 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-06-13T04:03。
+  数据截至今日 UTC 04:03。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
-  <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Training Data (Sequoia) · 2026-06-11</p>
-  <p class="pc-title">Google DeepMind's Logan Kilpatrick: Why the Model Eats the Harness</p>
-  <p class="pc-summary">DeepMind 的 Logan Kilpatrick 抛出一个和今天这本书遥相呼应的判断："模型会吃掉脚手架"——意思是，随着底层模型越来越强，我们今天围着它搭的各种工程框架、提示技巧、外挂工具，迟早会被模型本身的能力吞并。这其实就是黄仁勋式的押注逻辑：与其优化当下的脚手架，不如赌底层那块"芯片"会持续变强。对建造者来说，这是一个关于"该在哪一层下注"的根本提醒。</p>
-  <a href="https://www.youtube.com/watch?v=cMAs8z2dehs" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-label">🎙 本周播客主打</p>
+  <p class="pc-show">Unsupervised Learning with Jacob Efron · 2026-06-12</p>
+  <p class="pc-title">AI Vibe Check — Lab Wars, Why APIs Might Vanish & Future Predictions</p>
+  <p class="pc-summary">
+    三个场内人把当下 AI 世界从头过一遍：编程 agent 跨过长时间跨度阈值、为什么对外 API 可能因算力荒而消失、算力约束至少持续到 2030、撬开半导体供应链的原子光刻与 X 射线光刻、Fable 的"沉默限制"风波，以及为什么预训练并没有撞墙。
+  </p>
+  <a href="https://www.youtube.com/watch?v=W_iO8XxgD_I" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">AM</div>
-      <div>
-        <div class="builder-name">Amjad Masad</div>
-        <div class="builder-handle">@amasad · CEO, Replit</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「第一次，我在 vibecoding 时毫无挫败感，完全进入心流状态——以至于我开始想不出新点子了。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 1,165</span>
-      <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">查看推文 →</a>
-    </div>
-  </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">AK</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · CEO, Vercel</div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · ex-OpenAI / Tesla</div>
       </div>
     </div>
-    <p class="builder-tweet">「Vercel + Shopify 实在太顶了——2 分钟处理 500+ 订单，用 v0 加 Cursor 搭出来的全定制 Next.js 站点。」工具变强，一个人能做的事正在指数级放大。</p>
+    <p class="builder-tweet">「为 SpaceX 和它的故事而惊叹——过去、现在和未来。你可以从十几个不同角度去想它，然后一次次把自己的脑子重新震一遍。向团队致敬！🚀」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 588</span>
-      <a href="https://x.com/rauchg/status/2065116986678624419" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 17,009</span>
+      <a href="https://x.com/karpathy/status/2065490793092337691" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -419,41 +419,77 @@
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们在 Box 调研了美国、日本、欧洲共 1,640 位 IT 负责人对 agentic AI 的采用情况。诸多发现里最突出的一条是：越早动手部署的公司，拿到的回报越大。」</p>
+    <p class="builder-tweet">「这是 AI 监管的一个大转折点。政府开始把某些模型判定为'对特定用途来说太强大'，这为未来一系列管控开了先例。我属于认为这没必要的一派。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 124</span>
-      <a href="https://x.com/levie/status/2065287110744297809" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 451</span>
+      <a href="https://x.com/levie/status/2065616509666472329" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">NK</div>
+      <div class="builder-avatar">GT</div>
       <div>
-        <div class="builder-name">Nikunj Kothari</div>
-        <div class="builder-handle">@nikunj · 投资人 / The Operators</div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「你做的事情，重要性前所未有。务必让它有趣。务必让它疯狂地有野心。这，才是最大的护城河。」</p>
+    <p class="builder-tweet">「大家都以为 AI 编程工具让创始人自由了。看看人们真正用它造出了什么：规则、审批、流程、层层叠叠。同一个牢笼，只是组装得更快。能在一个下午搭出任何东西的工具，也能在一个下午搭出你的官僚主义。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 103</span>
-      <a href="https://x.com/nikunj/status/2065075361969500162" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 746</span>
+      <a href="https://x.com/garrytan/status/2065416181943865611" target="_blank">查看推文 →</a>
     </div>
   </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们发布了 HarnessAgent——一个统一的抽象层，把任意 agent 的'大脑'编排进你的应用。AI SDK 现在让你既不被模型锁死，也不被 agent 框架锁死。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 828</span>
+      <a href="https://x.com/rauchg/status/2065520041894756480" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
 </div>
 
-<footer class="footer">
-  <span>Daily Builders Digest</span>
-  <span>2026-06-13 · 周六书籍介绍</span>
+<!-- ─────────────────── CLOSING ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 这周你打算听哪一集？</p>
+<p style="font-size:15px; line-height:1.75; color:#222; margin-bottom:32px;">
+  本周播客的核心信号是——<strong>算力，正在成为决定一切的那个变量。</strong> 它决定了模型要不要开放 API、决定了实验室之间怎么打、也决定了未来五年硬科技往哪使劲。Unsupervised Learning 那期最可贵的，是三个场内人既兴奋又冷静地告诉你：瓶颈在哪，旋钮还差几个没拧到。
+  <br><br>
+  主打那期一定要完整听，尤其是"API 可能消失"和"别从 naive scaling 的失败里过度泛化"这两段。时间够的话，再配上 Latent Space 的 Carina Hong，把"创造"和"验证"一起补齐。
+  <br><br>
+  而建造者这一周的主线也很清楚：从 Karpathy 对 SpaceX 撬开硬科技天花板的惊叹，到 Garry Tan 提醒我们别用更快的工具搭出同一个牢笼——技术给了我们自由，怎么用是另一回事。欢迎告诉我们，你这周最想完整听哪一集。我们下期见——关注建造者，周一不见不散。
+</p>
+
+<footer>
+  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · 周日播客精选<br>
+  「关注建造者，不要关注 influencer。」<br>
+  数据来源：follow-builders · Unsupervised Learning · Latent Space · X/Twitter<br>
+  © 2026 Daily Builders Digest
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-13.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-13</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-06-13 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-12.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-12</span>

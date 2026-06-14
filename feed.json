@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-06-14",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "新闻快报",
+    "title": "AI Vibe Check — 实验室战争、为什么 API 可能消失，以及未来六个月",
+    "html": "episodes/2026-06-14.html",
+    "mp3": "episodes/2026-06-14.mp3",
+    "headlines": [
+      "AI Vibe Check — 实验室战争、为什么 API 可能消失，以及未来六个月"
+    ]
+  },
+  {
     "date": "2026-06-13",
     "dow": 6,
     "topic": "Books",

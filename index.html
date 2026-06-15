@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-14">
-<meta property="og:description" content="周日播客精选 · 当 API 可能消失 · Unsupervised Learning 的 AI Vibe Check · 实验室战争与算力荒">
-<title>Daily Builders Digest · 2026-06-14</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-15">
+<meta property="og:description" content="AI 每日快报 · Codex 收购 Ona · Meta Muse Spark · 英伟达 Nemotron 3 Nano · 模型在吃掉脚手架">
+<title>Daily Builders Digest · 2026-06-15</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -138,10 +138,8 @@
     margin-bottom: 24px;
   }
 
-  /* ── PODCAST DEEP DIVE ── */
-  .deep-dive {
-    margin-bottom: 48px;
-  }
+  /* ── DEEP DIVE ── */
+  .deep-dive { margin-bottom: 48px; }
   .deep-dive-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -163,11 +161,7 @@
     color: var(--mid);
     margin-bottom: 18px;
   }
-  .deep-dive .body {
-    font-size: 15px;
-    line-height: 1.75;
-    color: #222;
-  }
+  .deep-dive .body { font-size: 15px; line-height: 1.75; color: #222; }
   .deep-dive .body p { margin-bottom: 14px; }
   .deep-dive .body strong { color: var(--ink); }
   .deep-dive .source {
@@ -188,10 +182,7 @@
     border: 1px solid var(--light);
     margin-bottom: 48px;
   }
-  .brief-card {
-    background: var(--bg);
-    padding: 24px;
-  }
+  .brief-card { background: var(--bg); padding: 24px; }
   .brief-card .brief-show {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -200,23 +191,14 @@
     color: var(--red);
     margin-bottom: 6px;
   }
-  .brief-card h3 {
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
+  .brief-card h3 { font-size: 17px; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
   .brief-card .brief-meta {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--mid);
     margin-bottom: 10px;
   }
-  .brief-card .brief-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #333;
-  }
+  .brief-card .brief-body { font-size: 14px; line-height: 1.65; color: #333; }
   .brief-card .brief-source {
     margin-top: 12px;
     font-family: 'JetBrains Mono', monospace;
@@ -274,27 +256,27 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">周日播客精选 · 每日播客 · Vol.2026-06-14</p>
-  <h1 class="header-title">周日<span>播客</span><br>精选</h1>
+  <p class="header-eyebrow">AI 每日快报 · 每日建造者快报 · Vol.2026-06-15</p>
+  <h1 class="header-title">AI<span>·</span>每日<br>快报</h1>
   <div class="header-meta">
-    <span>2026·06·14 周日</span>
-    <span>主题：播客精选</span>
+    <span>2026·06·15 周一</span>
+    <span>主题：AI</span>
     <span>主持：大雨 × 小苇</span>
-    <span>约 15 分钟</span>
+    <span>约 8 分钟</span>
   </div>
 </header>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Unsupervised Learning AI Vibe Check · 实验室战争与未来六个月</span>
-    <span class="ticker-item"><span class="dot">▶</span>为什么 API 可能消失 · 算力荒逼出的生存威胁</span>
-    <span class="ticker-item"><span class="dot">▶</span>预训练没撞墙 · 别从 naive scaling 的失败过度泛化</span>
-    <span class="ticker-item"><span class="dot">▶</span>撬开半导体供应链 · 原子光刻 · X 射线光刻 · TerraFab</span>
-    <span class="ticker-item"><span class="dot">▶</span>Unsupervised Learning AI Vibe Check · 实验室战争与未来六个月</span>
-    <span class="ticker-item"><span class="dot">▶</span>为什么 API 可能消失 · 算力荒逼出的生存威胁</span>
-    <span class="ticker-item"><span class="dot">▶</span>预训练没撞墙 · 别从 naive scaling 的失败过度泛化</span>
-    <span class="ticker-item"><span class="dot">▶</span>撬开半导体供应链 · 原子光刻 · X 射线光刻 · TerraFab</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 收购 Ona · Codex 进入持久 agent 时代 · 周活破 500 万</span>
+    <span class="ticker-item"><span class="dot">▶</span>Meta Muse Spark · 沉思模式并行多 agent · HLE 58%</span>
+    <span class="ticker-item"><span class="dot">▶</span>英伟达 Nemotron 3 Nano Omni · 开源全模态 · 30B MoE</span>
+    <span class="ticker-item"><span class="dot">▶</span>主线：模型正在吃掉围在它身边的脚手架</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 收购 Ona · Codex 进入持久 agent 时代 · 周活破 500 万</span>
+    <span class="ticker-item"><span class="dot">▶</span>Meta Muse Spark · 沉思模式并行多 agent · HLE 58%</span>
+    <span class="ticker-item"><span class="dot">▶</span>英伟达 Nemotron 3 Nano Omni · 开源全模态 · 30B MoE</span>
+    <span class="ticker-item"><span class="dot">▶</span>主线：模型正在吃掉围在它身边的脚手架</span>
   </div>
 </div>
 
@@ -302,74 +284,66 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 15 分钟</span>
+    <strong>今日音频</strong>
+    <span>大雨 × 小苇 · 约 8 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-06-14.mp3">
-    你的浏览器不支持音频播放。<a href="2026-06-14.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-06-15.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-15.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- ─────────────────── MAIN PICK ─────────────────── -->
-<p class="section-label">◈ 本周主打 · Deep Dive</p>
+<!-- ─────────────────── LEAD STORY ─────────────────── -->
+<p class="section-label">◈ 今日头条 · Lead Story</p>
 
 <div class="deep-dive">
-  <p class="deep-dive-label">🎧 Unsupervised Learning (Jacob Efron) · 2026-06-12</p>
-  <h2>AI Vibe Check — 实验室战争、为什么 API 可能消失，以及未来六个月</h2>
-  <p class="meta">嘉宾：Ari（Datology 创始人 / 前 DeepMind & Meta 研究员）· Rob（Radical 风投）</p>
+  <p class="deep-dive-label">📰 OpenAI · 2026-06-11</p>
+  <h2>OpenAI 收购 Ona — Codex 从"帮你写代码"进化成"自己有工位的持久 agent"</h2>
+  <p class="meta">每周 500 万人在用 Codex · 较今年早些时候 +400%</p>
 
   <div class="body">
-    <p>这一期是 Unsupervised Learning 最受欢迎的格式之一——"AI Vibe Check"。主持人 Jacob Efron 拉上两位朋友，把当下 AI 世界正在发生的事从头到尾过一遍。没有要推广的产品，三个真正在场内的人就把自己的判断、甚至还没想清楚的赌注摊在桌面上。开场一句话定了基调：<strong>"在 AI 世界里，六个月就是一个永恒。"</strong> 距离上次录制才半年，已经经历了 IPO 申报、模型先没发后又发、SpaceX 变成一家 AI 基建公司。</p>
+    <p>6 月 11 日，OpenAI 宣布要收购 <strong>Ona</strong>——一家做安全、持久运行环境的云基础设施公司。表面是一笔收购，本质是 Codex 的一次变形：OpenAI 想让 Codex 不再只是"你打开浏览器、它帮你写两行代码"，而是能在你关掉电脑之后，继续在云端干上几个小时、甚至几天的活。</p>
 
-    <p><strong>编程 agent 跨过了阈值。</strong> Ari 说这半年最大的变化，是编程 agent 真正能在"长时间跨度"上干活了。一旦跨过某个阈值，它的价值会陡增——直接后果是工程师正在大批量地从"自己写代码的 IC"变成"管理一群 agent 的经理"，token 消耗也随之暴涨（所谓 token maxing）。</p>
+    <p><strong>关键在"工位可以开在企业自己的云里"。</strong> Ona 的技术让 agent 在客户自有的云环境中运行，公司能继续掌握数据访问、安全策略、凭证、日志、合规这些东西，同时又用上 Codex。很多大企业过去不敢用，卡的就是这一关——这次正是冲着企业级落地去的。</p>
 
-    <p><strong>最反常识的判断：API 可能会消失。</strong> 这是全场最让人意外的一段。Ari 和 Rob 都认为，对外开放的大模型 API 有可能消失——而且不是商业决策，是算力被卡死逼出来的。OpenAI 已经开始卖"推理期货"（锁定未来 token 额度），这对任何在模型之上做应用的公司都是生存级威胁。Rob 把它推得更远：实验室甚至可能连最强的模型都不通过 API 对外提供，只留作内部使用——因为在算力极度短缺的世界里，每一块算力都更愿意喂给自己的第一方产品和研发。</p>
-
-    <p><strong>算力荒至少持续到 2030。</strong> Ari 很冷静：沿着现在的轨迹，他很难想象算力约束在几年内被解除。根源是半导体供应链卡在一个荒诞结构上——全世界只有一家公司（台积电）能造最尖端芯片，而它最关键的那台机器又只有另一家（ASML）能造。但 Rob 指出，正因为缺算力，反而会逼出真正的创新：有创业公司在搞"原子光刻"（用一束原子而非光刻特征）、有人想跳过 EUV 直接用 X 射线光刻，再加上马斯克的 TerraFab 概念。乐观估计也至少还要五年。</p>
-
-    <p><strong>缺算力 → 效率、小模型、非英伟达芯片。</strong> 前沿实验室过去不在乎效率，因为资本近乎无限；撞上物理约束后，被迫把模型做小做高效。Ari 坚信你不需要上万亿参数就能达到今天的能力，越来越小的模型在追平一两年前最大的模型。对芯片而言，替代品不是解药但是受益者——大家其实都更想用英伟达，但芯片不够分，于是 AMD、亚马逊 Trainium、Cerebras 迎来巨大顺风。</p>
-
-    <p><strong>Fable 的"沉默限制"惹毛了人。</strong> Anthropic 这半年走了一波"前所未有的 vibe run"，但录节目前一天发布的新模型 Fable 出现裂缝。问题不在模型本身，而在 Anthropic 对它在 AI 开发用途上加了一个"沉默的限制"——不拒绝、不告知，只是悄悄把表现做烂。Ari 说真正激怒人的正是这种沉默；官方说是安全，但看起来更像竞争卡位。他还反驳了"开源只能靠偷闭源才能追上"的说法，称之为 copium——Datology 全程不碰闭源 API、只用公开数据，照样造出很强的模型。</p>
-
-    <p><strong>预训练没有撞墙。</strong> Rob 说 Fable 的意义恰恰在于反驳了"预训练撞墙、只能靠 RL 往前推"的叙事——收益还在源源不断地来。Ari 补充：所谓"撞墙"是从 naive scaling（把同样的东西简单放大十倍百倍）的失败里过度泛化出来的结论。深度学习反直觉的地方是，你可能 95% 都做对了，差最后一个旋钮就是不工作；拧对了能力就会阶跃——这也让"负面结果"极难解读。</p>
+    <p><strong>这就是本周的主线：模型在吃掉脚手架。</strong> 持久运行、云上长时任务，这些原本是你要在模型外面自己搭的框架，现在被直接收进了产品本体。Sam Altman 当天只发了一句 "really looking forward to working together"，配的就是 Ona 团队，两千多赞——建造者圈把这当成 Codex 进入"持久 agent"时代的明确信号。</p>
   </div>
-  <p class="source">📎 <a href="https://www.youtube.com/watch?v=W_iO8XxgD_I" target="_blank">Unsupervised Learning — AI Vibe Check: Lab Wars, Why APIs Might Vanish & Future Predictions</a></p>
+  <p class="source">📎 <a href="https://openai.com/index/openai-to-acquire-ona/" target="_blank">OpenAI to acquire Ona</a> · <a href="https://www.cnbc.com/2026/06/11/open-ai-ona-acquisition-codex.html" target="_blank">CNBC 报道</a></p>
 </div>
 
-<!-- ─────────────────── OTHER PICKS ─────────────────── -->
+<!-- ─────────────────── MORE STORIES ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 本周其他精选 · Quick Picks</p>
+<p class="section-label">◈ 今日要闻 · More Stories</p>
 
 <div class="briefs-grid">
 
   <div class="brief-card">
-    <p class="brief-show">Latent Space · 2026-06-03</p>
-    <h3>可验证的 AI 与形式化数学 — Axiom Math 的 Carina Hong 谈 Lean 与证明验证</h3>
-    <p class="brief-meta">嘉宾：Carina Hong (Axiom Math)</p>
+    <p class="brief-show">Meta Superintelligence Labs · 本周</p>
+    <h3>Meta 发布 Muse Spark — Muse 家族首个模型，能并行调度多个推理 agent</h3>
+    <p class="brief-meta">原生多模态推理 · 视觉思维链 · 多 agent 编排</p>
     <div class="brief-body">
-      和主打那期是一组好对照：一边是算力与模型的宏观博弈，一边是微观上"怎么确认 AI 没在数学上骗你"。当模型开始自己证定理，用 Lean 这类形式化工具做严格机器验证，就成了下一个关键问题。
+      Muse Spark 主打原生多模态推理、工具使用，还有一个叫 Contemplating（沉思）的模式——会同时调度好几个推理 agent 并行去想同一个问题，等于把一个团队塞进一个模型里。成绩上在 Humanity's Last Exam 拿到 58%、FrontierScience Research 38%。又是"模型把外部多 agent 框架内化"的同一条主线。benchmark 归 benchmark，真好不好用还得等大家上手。
     </div>
-    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space — Verified AI & Formal Math</a></p>
+    <p class="brief-source">📎 <a href="https://dentro.de/ai/news/" target="_blank">AI News — June 2026</a></p>
   </div>
 
   <div class="brief-card">
-    <p class="brief-show">Latent Space × No Priors · 2026-06-03</p>
-    <h3>Satya Nadella 串台：MAI 模型、生态战略与 agent 时代的企业工作方式</h3>
-    <p class="brief-meta">嘉宾：Satya Nadella (Microsoft CEO)</p>
+    <p class="brief-show">NVIDIA · 本周</p>
+    <h3>英伟达发布 Nemotron 3 Nano Omni — 开源全模态推理模型，30B MoE</h3>
+    <p class="brief-meta">视觉 + 音频 + 语言统一 · 吞吐量最高 9 倍</p>
     <div class="brief-body">
-      从 Build 2026 现场聊起——微软自研的 MAI 模型、平台层的生态思路，以及 agent 真正进入工作流后企业会怎么变。站在"算力荒"的背景下听 Satya 讲生态，别有一番味道。
+      不是 Cosmos，而是一个开源的全模态推理模型，把视觉、音频、语言塞进一个 300 亿参数的 MoE 架构里，号称吞吐量比同类开源多模态模型高出最多 9 倍。它跟前两周的 Cosmos 3 是一条线——英伟达在认真推开源的全模态底座，想让更多人能在便宜硬件上跑得动统一处理图像、声音、文字的模型。对想自己折腾的人是好消息。
     </div>
-    <p class="brief-source">📎 <a href="https://commandline.microsoft.com/satya-nadella-no-priors-latent-space-engineering-podcast-build-2026/" target="_blank">No Priors × Latent Space — Satya Nadella Crossover</a></p>
+    <p class="brief-source">📎 <a href="https://llm-stats.com/ai-news" target="_blank">LLM News — June 2026</a></p>
   </div>
 
   <div class="brief-card">
-    <p class="brief-show">Latent Space · 2026-06-02</p>
-    <h3>GitHub 的 Kyle Daigle 谈 AI 如何渗透开发流程，以及工程师角色的演化</h3>
-    <p class="brief-meta">嘉宾：Kyle Daigle (GitHub)</p>
+    <p class="brief-show">Intel · 本周</p>
+    <h3>英特尔 CEO 陈立武：AI 推理与 agent 工作负载会让 CPU 重回中心</h3>
+    <p class="brief-meta">季度营收 136 亿美元超预期 · AI 相关业务占六成</p>
     <div class="brief-body">
-      从开发流程的视角讲 AI 怎么进入 GitHub 的每个环节，工程师这个角色正在怎样变。正好呼应主打那期"工程师从 IC 变经理"的判断——配着听很顺。
+      一个不太一样的角度。陈立武放话说，当 agent 开始长时间、低频次地"思考"，而不是疯狂并行训练时，计算的形态可能真的会变，CPU 会重新回到舞台中央。这话有立场在里面，但它点出一个真问题——别默认 GPU 永远是唯一答案。留个心眼即可。
     </div>
-    <p class="brief-source">📎 <a href="https://www.latent.space/podcast" target="_blank">Latent Space — Kyle Daigle (GitHub)</a></p>
+    <p class="brief-source">📎 <a href="https://dentro.de/ai/news/" target="_blank">AI News — June 2026</a></p>
   </div>
 
 </div>
@@ -387,13 +361,13 @@
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
-  <p class="pc-label">🎙 本周播客主打</p>
-  <p class="pc-show">Unsupervised Learning with Jacob Efron · 2026-06-12</p>
-  <p class="pc-title">AI Vibe Check — Lab Wars, Why APIs Might Vanish & Future Predictions</p>
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Training Data (Sequoia) · 2026-06-11</p>
+  <p class="pc-title">Why the Model Eats the Harness — Google DeepMind 的 Logan Kilpatrick</p>
   <p class="pc-summary">
-    三个场内人把当下 AI 世界从头过一遍：编程 agent 跨过长时间跨度阈值、为什么对外 API 可能因算力荒而消失、算力约束至少持续到 2030、撬开半导体供应链的原子光刻与 X 射线光刻、Fable 的"沉默限制"风波，以及为什么预训练并没有撞墙。
+    Logan 管 Google AI Studio 和 Gemini API。他讲了一个跟今天主线一模一样的观察：Google 五十多个产品过去没有主线，是 Gemini 第一次把它们串起来，现在这条主线正升级成 Antigravity 这套 agent 框架。但他真正想说的更狠——随着模型越来越强，外面那层 agent 框架（harness）会被模型本身慢慢吸收掉。今天你精心搭的脚手架，明天可能就是模型的内置能力。
   </p>
-  <a href="https://www.youtube.com/watch?v=W_iO8XxgD_I" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://www.youtube.com/watch?v=cMAs8z2dehs" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
@@ -401,46 +375,46 @@
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AK</div>
+      <div class="builder-avatar">SA</div>
       <div>
-        <div class="builder-name">Andrej Karpathy</div>
-        <div class="builder-handle">@karpathy · ex-OpenAI / Tesla</div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · OpenAI CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「为 SpaceX 和它的故事而惊叹——过去、现在和未来。你可以从十几个不同角度去想它，然后一次次把自己的脑子重新震一遍。向团队致敬！🚀」</p>
+    <p class="builder-tweet">「真的非常期待一起合作！」（配的是 Ona 团队加入的消息）</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 17,009</span>
-      <a href="https://x.com/karpathy/status/2065490793092337691" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2,166</span>
+      <a href="https://x.com/sama/status/2065160791205310565" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">TS</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Ona / Codex</div>
       </div>
     </div>
-    <p class="builder-tweet">「这是 AI 监管的一个大转折点。政府开始把某些模型判定为'对特定用途来说太强大'，这为未来一系列管控开了先例。我属于认为这没必要的一派。」</p>
+    <p class="builder-tweet">「Codex 🤟 Ona。无比兴奋能和 Johannes 还有团队一起建造未来。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 451</span>
-      <a href="https://x.com/levie/status/2065616509666472329" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 990</span>
+      <a href="https://x.com/thsottiaux/status/2065193272952422852" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">AM</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · Y Combinator CEO</div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「大家都以为 AI 编程工具让创始人自由了。看看人们真正用它造出了什么：规则、审批、流程、层层叠叠。同一个牢笼，只是组装得更快。能在一个下午搭出任何东西的工具，也能在一个下午搭出你的官僚主义。」</p>
+    <p class="builder-tweet">「第一次零挫败感地 vibecoding，完全进入心流——以至于我开始没点子可写了。平时我总有一堆想加的待办积压，而现在……都做完了。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 746</span>
-      <a href="https://x.com/garrytan/status/2065416181943865611" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1,165</span>
+      <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -452,10 +426,10 @@
         <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们发布了 HarnessAgent——一个统一的抽象层，把任意 agent 的'大脑'编排进你的应用。AI SDK 现在让你既不被模型锁死，也不被 agent 框架锁死。」</p>
+    <p class="builder-tweet">「Vercel + Shopify 太强了……一个用 v0 加 Cursor 做的全自定义无头店面，两分钟处理了 500 多个订单。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 828</span>
-      <a href="https://x.com/rauchg/status/2065520041894756480" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 588</span>
+      <a href="https://x.com/rauchg/status/2065116986678624419" target="_blank">查看推文 →</a>
     </div>
   </div>
 
@@ -463,19 +437,17 @@
 
 <!-- ─────────────────── CLOSING ─────────────────── -->
 <hr class="rule">
-<p class="section-label">◈ 这周你打算听哪一集？</p>
+<p class="section-label">◈ 今日一句</p>
 <p style="font-size:15px; line-height:1.75; color:#222; margin-bottom:32px;">
-  本周播客的核心信号是——<strong>算力，正在成为决定一切的那个变量。</strong> 它决定了模型要不要开放 API、决定了实验室之间怎么打、也决定了未来五年硬科技往哪使劲。Unsupervised Learning 那期最可贵的，是三个场内人既兴奋又冷静地告诉你：瓶颈在哪，旋钮还差几个没拧到。
+  今天这几条串起来，是同一个动作——<strong>模型在吃掉它的脚手架。</strong> 持久运行、多 agent 编排、多模态处理，这些原本是你要在外面自己搭的框架，现在一个接一个被收进模型本体。
   <br><br>
-  主打那期一定要完整听，尤其是"API 可能消失"和"别从 naive scaling 的失败里过度泛化"这两段。时间够的话，再配上 Latent Space 的 Carina Hong，把"创造"和"验证"一起补齐。
-  <br><br>
-  而建造者这一周的主线也很清楚：从 Karpathy 对 SpaceX 撬开硬科技天花板的惊叹，到 Garry Tan 提醒我们别用更快的工具搭出同一个牢笼——技术给了我们自由，怎么用是另一回事。欢迎告诉我们，你这周最想完整听哪一集。我们下期见——关注建造者，周一不见不散。
+  对建造者，这句话有个很实在的含义：<strong>别在会被吃掉的地方下重注。</strong> 你的位置，应该站在模型还没吃到、且最需要人类判断的地方。我们明天见——关注建造者。
 </p>
 
 <footer>
-  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · 周日播客精选<br>
+  <strong>Daily Builders Digest</strong> · 大雨 × 小苇 · AI 每日快报<br>
   「关注建造者，不要关注 influencer。」<br>
-  数据来源：follow-builders · Unsupervised Learning · Latent Space · X/Twitter<br>
+  数据来源：follow-builders · Training Data (Sequoia) · OpenAI · X/Twitter<br>
   © 2026 Daily Builders Digest
 </footer>
 
@@ -483,6 +455,13 @@
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-14.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-14</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">AI Vibe Check — 实验室战争、为什么 API 可能消失，以及未来六个月</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-13.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-13</span>

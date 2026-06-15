@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-06-15",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "OpenAI 收购 Ona — Codex 从\"帮你写代码\"进化成\"自己有工位的持久 agent\"",
+    "html": "episodes/2026-06-15.html",
+    "mp3": "episodes/2026-06-15.mp3",
+    "headlines": [
+      "OpenAI 收购 Ona — Codex 从\"帮你写代码\"进化成\"自己有工位的持久 agent\""
+    ]
+  },
+  {
     "date": "2026-06-14",
     "dow": 7,
     "topic": "Podcasts",

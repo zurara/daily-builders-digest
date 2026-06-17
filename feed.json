@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-06-17",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云 · Replit 统一画布：从想法到上架，全在一块画布上",
+    "html": "episodes/2026-06-17.html",
+    "mp3": "episodes/2026-06-17.mp3",
+    "headlines": [
+      "OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云",
+      "Replit 统一画布：从想法到上架，全在一块画布上",
+      "Vercel + Shopify：v0 + Cursor 搭的定制店铺，两分钟 500 单",
+      "Snowflake CoWork / CoCo：把 agent 跑进你被治理的数据"
+    ]
+  },
+  {
     "date": "2026-06-16",
     "dow": 2,
     "topic": "Robotics",

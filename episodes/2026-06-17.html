@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-06-17">
+<meta property="og:description" content="OpenAI 收购 Ona，Codex 进你的云 · Replit 统一画布 · Vercel+Shopify · Snowflake CoCo · 主线：模型在商品化，价值往执行层和上下文迁移">
+<title>Daily Builders Digest · 2026-06-17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 44s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3),
+    .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-06-17</p>
+  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <div class="header-meta">
+    <span>📅 2026·06·17 周三</span>
+    <span>🏷 主题：产品 Product</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 14 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 收购 Ona（前 Gitpod）· Codex 进客户自己的云，周活破 500 万</span>
+    <span class="ticker-item"><span class="dot">▶</span>Replit 统一画布 · 网页/手机/营销/上架素材一块画布全包</span>
+    <span class="ticker-item"><span class="dot">▶</span>Vercel + Shopify · v0+Cursor 搭的定制店铺两分钟 500 单</span>
+    <span class="ticker-item"><span class="dot">▶</span>Snowflake CoWork / CoCo · 你的数据，才是真正的护城河</span>
+    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往执行层和上下文迁移</span>
+    <span class="ticker-item"><span class="dot">▶</span>OpenAI 收购 Ona（前 Gitpod）· Codex 进客户自己的云，周活破 500 万</span>
+    <span class="ticker-item"><span class="dot">▶</span>Replit 统一画布 · 网页/手机/营销/上架素材一块画布全包</span>
+    <span class="ticker-item"><span class="dot">▶</span>Vercel + Shopify · v0+Cursor 搭的定制店铺两分钟 500 单</span>
+    <span class="ticker-item"><span class="dot">▶</span>Snowflake CoWork / CoCo · 你的数据，才是真正的护城河</span>
+    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往执行层和上下文迁移</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>收听本期播客</strong>
+    <span>· 2026-06-17 · 产品星期三</span>
+  </div>
+  <audio controls src="2026-06-17.mp3">您的浏览器不支持音频播放。</audio>
+</div>
+
+<!-- INDEX -->
+<p class="section-label">◈ 本期目录</p>
+<table class="index-table">
+  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
+  <tbody>
+    <tr><td>01</td><td><a href="#s1">OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云</a></td><td><span class="tag hot">热</span></td></tr>
+    <tr><td>02</td><td><a href="#s2">Replit 统一画布：从想法到上架，全在一块画布上</a></td><td><span class="tag">产品</span></td></tr>
+    <tr><td>03</td><td><a href="#s3">Vercel + Shopify：v0 + Cursor 搭的定制店铺，两分钟 500 单</a></td><td><span class="tag">产品</span></td></tr>
+    <tr><td>04</td><td><a href="#s4">Snowflake CoWork / CoCo：把 agent 跑进你被治理的数据</a></td><td><span class="tag">洞察</span></td></tr>
+  </tbody>
+</table>
+
+<!-- NEWS GRID -->
+<div class="news-grid">
+
+  <!-- LEAD: OpenAI + Ona -->
+  <div class="news-card lead" id="s1">
+    <p class="news-num">Story 01</p>
+    <h2 class="news-hed">OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云</h2>
+    <p class="news-body">
+      六月十一号，OpenAI 宣布收购 Ona——就是原来那家叫 Gitpod 的德国云端开发平台。整个团队会并进 OpenAI 的 Codex。这笔收购的核心，不是又添一个会写代码的模型，而是补上一块"地盘"：Ona 擅长的，是安全的云端执行和编排——让 agent 能在客户自己的云环境里、长时间、持续地跑活儿，代码和数据不出企业家门。OpenAI 给出的数字很猛：现在每周有超过五百万人用 Codex，比今年早些时候涨了百分之四百。潜台词很清楚——光有一个聪明的编程模型已经不够，谁能让这个模型在企业真实环境里安全、持久地连续工作，谁才握住了新的护城河。Ona 的核心成员 Thibault Sottiaux 已在 X 上官宣加入 OpenAI，swyx 等一众建造者转发祝贺。交易尚待监管审查，财务条款未披露。
+    </p>
+    <p class="news-source">📎 <a href="https://openai.com/index/openai-to-acquire-ona/" target="_blank">OpenAI</a> · <a href="https://www.cnbc.com/2026/06/11/open-ai-ona-acquisition-codex.html" target="_blank">CNBC</a> · <a href="https://www.bloomberg.com/news/articles/2026-06-11/openai-to-acquire-cloud-platform-ona-to-support-ai-agents" target="_blank">Bloomberg</a></p>
+  </div>
+
+  <!-- Replit -->
+  <div class="news-card" id="s2">
+    <p class="news-num">Story 02</p>
+    <h2 class="news-hed">Replit 统一画布：从想法到上架，全在一块画布上</h2>
+    <p class="news-body">
+      Replit 这周在推它的"统一画布"。Amjad Masad 演示：一块画布上同时放着你的网页应用、手机应用、营销素材、还有上架 App Store 要用的图文材料，点进任何一个都能改——等于把"做一个产品"从头到尾需要的所有东西塞进一个界面，彻底打破"先写代码、再做设计、再做营销"的旧流水线。他还专门发了一条讲成本：Agent 团队把 Fable 模型的使用成本做得"能让胃接受了"，因为 agent 出错少了，里外算下来反而更便宜。这个细节很关键——vibecoding 能不能成为真正的生产工具，瓶颈往往不是聪不聪明，而是出错率和成本。Amjad 另一条说得更直接：第一次完全没挫败感地 vibecoding，进了心流，灵感反而不够用了。这意味着这个形态过了临界点：从玩具变成了工作台。
+    </p>
+    <p class="news-source">📎 <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">@amasad</a></p>
+  </div>
+
+  <!-- Vercel + Shopify -->
+  <div class="news-card" id="s3">
+    <p class="news-num">Story 03</p>
+    <h2 class="news-hed">Vercel + Shopify：v0 + Cursor 搭的定制店铺，两分钟 500 单</h2>
+    <p class="news-body">
+      Vercel 的 CEO Guillermo Rauch 这周晒了一个 Vercel + Shopify 项目：一个完全定制的店铺前端，用 v0 加 Cursor 搭出来，跑在 Next.js 上，两分钟内处理了五百多笔订单。两分钟五百单是营销噱头，但真正的信号在"完全定制"四个字。过去想要一个高转化、又长成自己样子的店铺前端，要么花大价钱找团队，要么忍受模板的千篇一律；现在 v0 加 Cursor 让"定制"的成本塌了下来——你可以既用 Shopify 的支付和库存这套后端基础设施，又拥有一个完全属于你自己的前端皮。又是同一条主线的变体：后端基础能力商品化、谁都能接，价值跑到了"你能不能快速搭出一个独一无二的交付层"。后端是租来的，前端的体验和速度才是你的。
+    </p>
+    <p class="news-source">📎 <a href="https://x.com/rauchg/status/2065116986678624419" target="_blank">@rauchg</a></p>
+  </div>
+
+  <!-- Snowflake -->
+  <div class="news-card" id="s4">
+    <p class="news-num">Story 04</p>
+    <h2 class="news-hed">Snowflake CoWork / CoCo：把 agent 跑进你被治理的数据</h2>
+    <p class="news-body">
+      把镜头拉到企业级。这个月初的 Snowflake Summit 上发了两个 agent：CoWork 是给普通知识工作者的私人 agent，不用会写 SQL 就能问数据、生成报告；CoCo 是给开发者的数据原生编程 agent。两个底层都是 Claude，Snowflake 跟 Anthropic 签了笔两亿美元的多年合作。又是"agent 跑在你的数据上"——前面是跑在你的云里、你的画布里，这里是跑在被治理好的企业数据上。这次 Summit 被很多人总结成一句话："你的数据，才是真正的 AI 护城河。" 它跟今天的主线是一体两面：模型是商品，但你独有的数据、上下文、对自己业务的理解，没法被一个更大的模型直接买走。把四条连起来——OpenAI 把 agent 塞进你的云，Replit 塞进创作者的工作流，Vercel 塞进交付层，Snowflake 塞进企业数据。模型本身不再是壁垒。2026 年别再问"你用哪个模型"，要问"你的 agent 在谁的地盘上跑、喂的是谁的上下文"。
+    </p>
+    <p class="news-source">📎 <a href="https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/" target="_blank">Snowflake</a> · <a href="https://x.com/levie/status/2065287110744297809" target="_blank">@levie</a></p>
+  </div>
+
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 2026-06-17 04:00。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Training Data (Sequoia) · 2026-06-11</p>
+  <p class="pc-title">Google DeepMind's Logan Kilpatrick: Why the Model Eats the Harness</p>
+  <p class="pc-summary">"模型吞掉脚手架"是今天主线的另一面：每一代模型变强，上一代为了弥补它能力不足而搭的工具、规则、脚手架就会被它自己吸收掉。Logan 的判断是——不要在模型很快就会自己做到的事情上重投入；把精力放在模型短期内做不到、又只有你才有的那部分：你的分发、你的数据、你对用户的理解。这恰好解释了为什么今天四条新闻里，大家抢的都是"执行层"和"上下文"，而不是模型本身。</p>
+  <a href="https://www.youtube.com/watch?v=cMAs8z2dehs" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · ex-Ona → OpenAI Codex</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Codex 加 Ona。无比兴奋能和 Johannes 与团队一起，去建造未来。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 990</span>
+      <a href="https://x.com/thsottiaux/status/2065193272952422852" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「第一次完全没有挫败感地 vibecoding，整个人进了心流状态，进到我都快没新点子了。这就是在 Replit 上做产品的样子——一块画布上装下你的网页应用、手机应用、营销和上架素材。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1165</span>
+      <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Vercel + Shopify 太顶了……一个用 v0 加 Cursor 搭、跑在 Next.js 上的完全定制店铺，两分钟内处理了 500 多笔订单。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 588</span>
+      <a href="https://x.com/rauchg/status/2065116986678624419" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们调研了美国、日本、欧洲 1,640 位 IT 负责人对 agentic AI 的采用。一个突出的发现：跑得最快的公司，赢在把 agent 接进了自己独有的上下文，而不是赢在用了哪个模型。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 124</span>
+      <a href="https://x.com/levie/status/2065287110744297809" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<footer>
+  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-06-17<br>
+  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
+  数据来源：WebSearch · follow-builders · 公开报道<br>
+  「关注建造者，不要关注 influencer。」
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

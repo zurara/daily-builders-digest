@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-06-17">
-<meta property="og:description" content="OpenAI 收购 Ona，Codex 进你的云 · Replit 统一画布 · Vercel+Shopify · Snowflake CoCo · 主线：模型在商品化，价值往执行层和上下文迁移">
-<title>Daily Builders Digest · 2026-06-17</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-06-18">
+<meta property="og:description" content="健康星期四 · 海豹突击队的心理框架 · 运动时机的昼夜节律 · 睡眠药理学">
+<title>Daily Builders Digest · 2026-06-18</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +81,7 @@
   .ticker-track {
     display: inline-flex;
     white-space: nowrap;
-    animation: ticker 44s linear infinite;
+    animation: ticker 48s linear infinite;
   }
   .ticker-item {
     font-family: 'JetBrains Mono', monospace;
@@ -124,18 +124,6 @@
     height: 36px;
     accent-color: var(--red);
     display: block;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead,
-    .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3),
-    .index-table td:nth-child(3) { display: none; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
   }
 
   /* ── SECTION LABEL ── */
@@ -203,6 +191,35 @@
   }
   .news-source a:hover { border-color: var(--red); }
 
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
   /* ── INDEX TABLE ── */
   .index-table {
     width: 100%;
@@ -250,12 +267,12 @@
   /* ── FOLLOW BUILDERS ── */
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -266,11 +283,20 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   .builder-likes { color: var(--mid); }
-  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
 
-  /* ── DIVIDER ── */
+  /* ── DIVIDERS ── */
   .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
   .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -289,11 +315,11 @@
 
 <!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日快报 · Vol.2026-06-17</p>
-  <h1 class="header-title">产品<span>快报</span><br>星期三</h1>
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-06-18</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·06·17 周三</span>
-    <span>🏷 主题：产品 Product</span>
+    <span>📅 2026·06·18 周四</span>
+    <span>🏷 主题：海豹突击队的心理框架 · 运动时机的昼夜节律 · 睡眠药理学</span>
     <span>🎙 主持：大雨 × 小苇</span>
     <span>⏱ 约 14 分钟</span>
   </div>
@@ -302,16 +328,16 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 收购 Ona（前 Gitpod）· Codex 进客户自己的云，周活破 500 万</span>
-    <span class="ticker-item"><span class="dot">▶</span>Replit 统一画布 · 网页/手机/营销/上架素材一块画布全包</span>
-    <span class="ticker-item"><span class="dot">▶</span>Vercel + Shopify · v0+Cursor 搭的定制店铺两分钟 500 单</span>
-    <span class="ticker-item"><span class="dot">▶</span>Snowflake CoWork / CoCo · 你的数据，才是真正的护城河</span>
-    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往执行层和上下文迁移</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 收购 Ona（前 Gitpod）· Codex 进客户自己的云，周活破 500 万</span>
-    <span class="ticker-item"><span class="dot">▶</span>Replit 统一画布 · 网页/手机/营销/上架素材一块画布全包</span>
-    <span class="ticker-item"><span class="dot">▶</span>Vercel + Shopify · v0+Cursor 搭的定制店铺两分钟 500 单</span>
-    <span class="ticker-item"><span class="dot">▶</span>Snowflake CoWork / CoCo · 你的数据，才是真正的护城河</span>
-    <span class="ticker-item"><span class="dot">▶</span>一条主线：模型在商品化，价值往执行层和上下文迁移</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Andy Stumpf — "影响 vs 担心" 的心理一刀</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 什么时候运动最好？昼夜节律是关键</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #394 — 褪黑素是授时信号，不是安眠药</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 早练减腹脂控血压，晚练增力量改善情绪</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 选那个"稍微更难一点"的版本</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Andy Stumpf — "影响 vs 担心" 的心理一刀</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 什么时候运动最好？昼夜节律是关键</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #394 — 褪黑素是授时信号，不是安眠药</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 早练减腹脂控血压，晚练增力量改善情绪</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 选那个"稍微更难一点"的版本</span>
   </div>
 </div>
 
@@ -319,68 +345,130 @@
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
-    <strong>收听本期播客</strong>
-    <span>· 2026-06-17 · 产品星期三</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 14 分钟</span>
   </div>
-  <audio controls src="episodes/2026-06-17.mp3">您的浏览器不支持音频播放。</audio>
+  <audio controls preload="none" src="episodes/2026-06-18.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-18.mp3">下载音频</a>
+  </audio>
 </div>
 
-<!-- INDEX -->
-<p class="section-label">◈ 本期目录</p>
-<table class="index-table">
-  <thead><tr><th>#</th><th>标题</th><th>标签</th></tr></thead>
-  <tbody>
-    <tr><td>01</td><td><a href="#s1">OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云</a></td><td><span class="tag hot">热</span></td></tr>
-    <tr><td>02</td><td><a href="#s2">Replit 统一画布：从想法到上架，全在一块画布上</a></td><td><span class="tag">产品</span></td></tr>
-    <tr><td>03</td><td><a href="#s3">Vercel + Shopify：v0 + Cursor 搭的定制店铺，两分钟 500 单</a></td><td><span class="tag">产品</span></td></tr>
-    <tr><td>04</td><td><a href="#s4">Snowflake CoWork / CoCo：把 agent 跑进你被治理的数据</a></td><td><span class="tag">洞察</span></td></tr>
-  </tbody>
-</table>
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 三大来源</p>
 
-<!-- NEWS GRID -->
 <div class="news-grid">
 
-  <!-- LEAD: OpenAI + Ona -->
-  <div class="news-card lead" id="s1">
-    <p class="news-num">Story 01</p>
-    <h2 class="news-hed">OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云</h2>
+  <!-- LEAD: Huberman Lab -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Andy Stumpf：海豹突击队的"心理框架"——用每一个当下的微小选择，建立纪律与韧性</h2>
     <p class="news-body">
-      六月十一号，OpenAI 宣布收购 Ona——就是原来那家叫 Gitpod 的德国云端开发平台。整个团队会并进 OpenAI 的 Codex。这笔收购的核心，不是又添一个会写代码的模型，而是补上一块"地盘"：Ona 擅长的，是安全的云端执行和编排——让 agent 能在客户自己的云环境里、长时间、持续地跑活儿，代码和数据不出企业家门。OpenAI 给出的数字很猛：现在每周有超过五百万人用 Codex，比今年早些时候涨了百分之四百。潜台词很清楚——光有一个聪明的编程模型已经不够，谁能让这个模型在企业真实环境里安全、持久地连续工作，谁才握住了新的护城河。Ona 的核心成员 Thibault Sottiaux 已在 X 上官宣加入 OpenAI，swyx 等一众建造者转发祝贺。交易尚待监管审查，财务条款未披露。
+      6 月 15 日发布。Andy Stumpf 是退役海豹突击队成员、翼装飞行世界纪录保持者。但这一期真正的硬核不是极限运动，而是一套朴素、可操作的心理工具。<br><br>
+      <strong>① 影响 vs 担心</strong>——当一个反复纠缠你的念头出现，先问：这是我能"影响"的，还是只是我在"担心"的？能影响就做点什么，只是担心就放下。这是切断内耗最实用的一刀。<br><br>
+      <strong>② 做"稍微更难一点"的事</strong>——纪律不来自某天的英雄式爆发，而来自在每个小选择上选那个略微费劲的版本：走楼梯、把手机放远。微小的"稍微更难"累积起来，就是韧性。<br><br>
+      <strong>③ 对心理健康的坦诚</strong>——他没把 SEAL 包装成无坚不摧的硬汉，而是谈了离婚、为人父母的挣扎，以及高成就者群体的心理健康与自杀预防。韧性不是没有裂缝，而是带着裂缝继续往前。
     </p>
-    <p class="news-source">📎 <a href="https://openai.com/index/openai-to-acquire-ona/" target="_blank">OpenAI</a> · <a href="https://www.cnbc.com/2026/06/11/open-ai-ona-acquisition-codex.html" target="_blank">CNBC</a> · <a href="https://www.bloomberg.com/news/articles/2026-06-11/openai-to-acquire-cloud-platform-ona-to-support-ai-agents" target="_blank">Bloomberg</a></p>
+    <p class="news-source">
+      📎 <a href="https://www.youtube.com/watch?v=baecUt1GaPk" target="_blank">The Mental Frame & Specific Daily Actions to Succeed | Andy Stumpf — Huberman Lab</a>
+    </p>
   </div>
 
-  <!-- Replit -->
-  <div class="news-card" id="s2">
-    <p class="news-num">Story 02</p>
-    <h2 class="news-hed">Replit 统一画布：从想法到上架，全在一块画布上</h2>
+  <!-- FoundMyFitness -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">FoundMyFitness × Rhonda Patrick：什么时候运动最好？昼夜节律是被低估的变量</h2>
     <p class="news-body">
-      Replit 这周在推它的"统一画布"。Amjad Masad 演示：一块画布上同时放着你的网页应用、手机应用、营销素材、还有上架 App Store 要用的图文材料，点进任何一个都能改——等于把"做一个产品"从头到尾需要的所有东西塞进一个界面，彻底打破"先写代码、再做设计、再做营销"的旧流水线。他还专门发了一条讲成本：Agent 团队把 Fable 模型的使用成本做得"能让胃接受了"，因为 agent 出错少了，里外算下来反而更便宜。这个细节很关键——vibecoding 能不能成为真正的生产工具，瓶颈往往不是聪不聪明，而是出错率和成本。Amjad 另一条说得更直接：第一次完全没挫败感地 vibecoding，进了心流，灵感反而不够用了。这意味着这个形态过了临界点：从玩具变成了工作台。
+      Rhonda Patrick 拆解一个常见疑问——早上还是晚上运动更好？核心是<strong>昼夜节律</strong>：你的代谢不是一天到晚一样的。同样一顿饭，<strong>早餐后血糖上升最小，晚餐后最大</strong>。<br><br>
+      她自己的做法是先晒晨光锚定生物钟，把进食窗口放在白天活跃期（约 11:00–19:00），空腹加晨练帮她减掉了腹部脂肪。<br><br>
+      要点：别只看"吃多少、动多少"，<strong>"什么时候吃、什么时候动"同样重要</strong>。而且运动时机存在明显性别差异，详见下方女性健康聚焦。
     </p>
-    <p class="news-source">📎 <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">@amasad</a></p>
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">When Is the Best Time to Exercise? — FoundMyFitness</a>
+    </p>
   </div>
 
-  <!-- Vercel + Shopify -->
-  <div class="news-card" id="s3">
-    <p class="news-num">Story 03</p>
-    <h2 class="news-hed">Vercel + Shopify：v0 + Cursor 搭的定制店铺，两分钟 500 单</h2>
+  <!-- Peter Attia -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Peter Attia #394：睡眠药理学——褪黑素是"授时信号"，不是安眠药</h2>
     <p class="news-body">
-      Vercel 的 CEO Guillermo Rauch 这周晒了一个 Vercel + Shopify 项目：一个完全定制的店铺前端，用 v0 加 Cursor 搭出来，跑在 Next.js 上，两分钟内处理了五百多笔订单。两分钟五百单是营销噱头，但真正的信号在"完全定制"四个字。过去想要一个高转化、又长成自己样子的店铺前端，要么花大价钱找团队，要么忍受模板的千篇一律；现在 v0 加 Cursor 让"定制"的成本塌了下来——你可以既用 Shopify 的支付和库存这套后端基础设施，又拥有一个完全属于你自己的前端皮。又是同一条主线的变体：后端基础能力商品化、谁都能接，价值跑到了"你能不能快速搭出一个独一无二的交付层"。后端是租来的，前端的体验和速度才是你的。
+      Peter 把基调定得很清楚：<strong>行为和环境干预永远是好睡眠的地基</strong>，药物只是工具，且需精准匹配你的睡眠问题。<br><br>
+      关键澄清——<strong>褪黑素本质是调节昼夜节律的授时信号，不是镇静剂</strong>，当安眠药天天吃是用错了方向；而且补剂实际含量常远高于标签，需保守使用。<br><br>
+      他对比了曲唑酮（保留深睡眠、风险较低）、第一代抗组胺药（只宜短期，有抗胆碱能与长期认知风险），以及甘氨酸、镁、南非醉茄等补剂——证据与质量都参差。
     </p>
-    <p class="news-source">📎 <a href="https://x.com/rauchg/status/2065116986678624419" target="_blank">@rauchg</a></p>
-  </div>
-
-  <!-- Snowflake -->
-  <div class="news-card" id="s4">
-    <p class="news-num">Story 04</p>
-    <h2 class="news-hed">Snowflake CoWork / CoCo：把 agent 跑进你被治理的数据</h2>
-    <p class="news-body">
-      把镜头拉到企业级。这个月初的 Snowflake Summit 上发了两个 agent：CoWork 是给普通知识工作者的私人 agent，不用会写 SQL 就能问数据、生成报告；CoCo 是给开发者的数据原生编程 agent。两个底层都是 Claude，Snowflake 跟 Anthropic 签了笔两亿美元的多年合作。又是"agent 跑在你的数据上"——前面是跑在你的云里、你的画布里，这里是跑在被治理好的企业数据上。这次 Summit 被很多人总结成一句话："你的数据，才是真正的 AI 护城河。" 它跟今天的主线是一体两面：模型是商品，但你独有的数据、上下文、对自己业务的理解，没法被一个更大的模型直接买走。把四条连起来——OpenAI 把 agent 塞进你的云，Replit 塞进创作者的工作流，Vercel 塞进交付层，Snowflake 塞进企业数据。模型本身不再是壁垒。2026 年别再问"你用哪个模型"，要问"你的 agent 在谁的地盘上跑、喂的是谁的上下文"。
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/sleeppharmacology/" target="_blank">#394 — Sleep pharmacology — The Peter Attia Drive</a>
     </p>
-    <p class="news-source">📎 <a href="https://www.snowflake.com/en/news/press-releases/snowflake-cowork-powers-the-agentic-enterprise-as-the-personal-agent-for-knowledge-workers-to-work-smarter/" target="_blank">Snowflake</a> · <a href="https://x.com/levie/status/2065287110744297809" target="_blank">@levie</a></p>
   </div>
 
 </div>
+
+<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
+<div class="spotlight">
+  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
+  <h2 class="spotlight-hed">"最佳运动时间"有性别差异：女性早练更减腹脂、更控血压；晚练更增力量、更稳情绪</h2>
+  <p class="spotlight-body">
+    Rhonda 那期运动时机背后，有一项<strong>随机对照研究</strong>把训练有素的女性和男性分别安排在早上（6–8 点）或晚上（18:30–20:30）做同样的多模式训练，连续 12 周，然后<strong>分性别</strong>分析结果——差异非常明显。<br><br>
+    <strong>女性：早上运动</strong>减掉的总脂肪和腹部脂肪更多，血压下降更明显，下肢爆发力更强；<strong>女性：晚上运动</strong>则在上肢力量、情绪和饱腹感上改善更多。<br><br>
+    <strong>男性</strong>几乎反过来——晚上运动能更好地降低收缩压、减轻疲劳、刺激脂肪氧化。<br><br>
+    <strong>为什么这很重要？</strong> 大量运动与代谢研究历史上默认以男性身体为参照。只有当研究者明确区分性别时，才会浮现"同样的运动、不同的最佳时机"。所以如果你是女性还在纠结早练还是晚练——答案取决于目标：<strong>奔着减脂控压，早上；奔着力量和情绪，傍晚。</strong>这不是玄学，是有数据支撑的安排。
+  </p>
+</div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 区分信号和噪音</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">心理、运动、睡眠——三期播客指向同一句话：别盯着"做多少"，去管"怎么做、什么时候做"</h2>
+  <p class="spotlight-body">
+    Stumpf 在说，<strong>纪律来自每个当下"稍微更难一点"的选择</strong>，而不是某天的英雄式爆发。<br><br>
+    Rhonda 在说，<strong>什么时候动、什么时候吃，跟动多少同样重要</strong>——时机是被严重低估的变量。<br><br>
+    Attia 在说，<strong>睡眠的地基是行为，不是药丸</strong>——褪黑素是授时信号，别当万能安眠药。<br><br>
+    三者的共同点是：<strong>健康不是更用力，而是更对齐。</strong>对齐你的生物节律、对齐你能影响的事、对齐睡眠的根本机制——抓对杠杆，省力十倍。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.youtube.com/watch?v=baecUt1GaPk" target="_blank">The Mental Frame & Specific Daily Actions to Succeed | Andy Stumpf</a> <span class="tag hot">New</span></td>
+      <td>Huberman Lab</td>
+      <td>2026-06-15</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">When Is the Best Time to Exercise?</a></td>
+      <td>FoundMyFitness</td>
+      <td>2026-06-05</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://peterattiamd.com/sleeppharmacology/" target="_blank">#394 — Sleep pharmacology</a></td>
+      <td>The Peter Attia Drive</td>
+      <td>2026-06-01</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2022.893783/full" target="_blank">Morning Exercise Reduces Abdominal Fat & Blood Pressure in Women（女性健康聚焦研究）</a></td>
+      <td>Frontiers in Physiology</td>
+      <td>研究</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -390,94 +478,98 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 2026-06-17 04:00。
+  数据截至今日 UTC 2026-06-18T04:03。
 </p>
 
 <!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Training Data (Sequoia) · 2026-06-11</p>
-  <p class="pc-title">Google DeepMind's Logan Kilpatrick: Why the Model Eats the Harness</p>
-  <p class="pc-summary">"模型吞掉脚手架"是今天主线的另一面：每一代模型变强，上一代为了弥补它能力不足而搭的工具、规则、脚手架就会被它自己吸收掉。Logan 的判断是——不要在模型很快就会自己做到的事情上重投入；把精力放在模型短期内做不到、又只有你才有的那部分：你的分发、你的数据、你对用户的理解。这恰好解释了为什么今天四条新闻里，大家抢的都是"执行层"和"上下文"，而不是模型本身。</p>
-  <a href="https://www.youtube.com/watch?v=cMAs8z2dehs" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Training Data · 2026-06-16</p>
+  <p class="pc-title">Simulating Humans at Scale: Simile's Joon Sung Park</p>
+  <p class="pc-summary">Simile 创始人 Joon Sung Park 想用大语言模型模拟整个社会的行为，来辅助决策。健康领域的平行启示：他做的是"先建立模型、再理解系统"——这正是今天三期健康播客的底层逻辑。无论睡眠、运动还是心理，真正有用的不是照搬别人的方案，而是先搞懂自己这套系统怎么运转。</p>
+  <a href="https://www.youtube.com/watch?v=lfhFmwcESRw" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">TS</div>
-      <div>
-        <div class="builder-name">Thibault Sottiaux</div>
-        <div class="builder-handle">@thsottiaux · ex-Ona → OpenAI Codex</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Codex 加 Ona。无比兴奋能和 Johannes 与团队一起，去建造未来。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 990</span>
-      <a href="https://x.com/thsottiaux/status/2065193272952422852" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
       <div class="builder-avatar">AM</div>
       <div>
         <div class="builder-name">Amjad Masad</div>
-        <div class="builder-handle">@amasad · Replit CEO</div>
+        <div class="builder-handle">@amasad · CEO @Replit</div>
       </div>
     </div>
-    <p class="builder-tweet">「第一次完全没有挫败感地 vibecoding，整个人进了心流状态，进到我都快没新点子了。这就是在 Replit 上做产品的样子——一块画布上装下你的网页应用、手机应用、营销和上架素材。」</p>
+    <p class="builder-tweet">「第一次，我写代码时完全没有挫败感，进入了彻底的心流状态，甚至开始没点子了。」——非常典型的心流描述。心流不只是效率，它本身就是一种高质量的心理健康状态。能让你进入心流的活动，值得多留点时间。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1165</span>
+      <span class="builder-likes">❤ 1,165</span>
       <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">NK</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel CEO</div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner @FPVVentures</div>
       </div>
     </div>
-    <p class="builder-tweet">「Vercel + Shopify 太顶了……一个用 v0 加 Cursor 搭、跑在 Next.js 上的完全定制店铺，两分钟内处理了 500 多笔订单。」</p>
+    <p class="builder-tweet">「你做什么，从来没有像现在这么重要。确保它是有趣的，确保它足够有野心——这才是最大的护城河。」——放到健康和人生上同样成立：可持续的努力，往往来自"有趣"和"有意义"，而不是硬逼自己。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 588</span>
-      <a href="https://x.com/rauchg/status/2065116986678624419" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 103</span>
+      <a href="https://x.com/nikunj/status/2065075361969500162" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">SW</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们调研了美国、日本、欧洲 1,640 位 IT 负责人对 agentic AI 的采用。一个突出的发现：跑得最快的公司，赢在把 agent 接进了自己独有的上下文，而不是赢在用了哪个模型。」</p>
+    <p class="builder-tweet">「未来一个世纪的整场游戏，也许就是能否尽可能高效地把一个个循环叠起来。」——放到健康上特别贴切：真正起作用的不是某天的英雄式努力，而是你能持续运转的那套循环。把好习惯变成默认。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 124</span>
-      <a href="https://x.com/levie/status/2065287110744297809" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 29</span>
+      <a href="https://x.com/swyx/status/2065307558198567206" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
+<!-- ─────────────────── 今日行动 ─────────────────── -->
 <hr class="rule">
+<p class="section-label">◈ 今日健康行动</p>
 
+<div class="spotlight">
+  <p class="spotlight-label">💡 Today's Action</p>
+  <h2 class="spotlight-hed">挑一件本来要做的事，选那个"稍微更难一点"的版本——再加一个"影响 vs 担心"的提问</h2>
+  <p class="spotlight-body">
+    今天的行动来自 Andy Stumpf 的心理框架，结合 Rhonda 的运动时机。<br><br>
+    <strong>身体上</strong>：挑一件你本来要做的事，选略微费劲的版本——走楼梯、把手机放到另一个房间充电、把一段散步加快到有点喘。如果你是女性、目标是减腹部脂肪和控血压，时间允许就把这段动放在<strong>早上</strong>。<br><br>
+    <strong>心理上</strong>：当一个纠缠你的念头出现，问自己一句——<strong>这是我能"影响"的，还是只是我在"担心"？</strong>能影响就去做一点，只是担心就放下。这一个问题，今天就能帮你省下大量内耗。
+  </p>
+</div>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <strong>Daily Builders Digest</strong> · 产品星期三 · 2026-06-17<br>
-  主持：大雨 × 小苇 · 每日 10:00 自动生成<br>
-  数据来源：WebSearch · follow-builders · 公开报道<br>
-  「关注建造者，不要关注 influencer。」
+  <strong>Daily Builders Digest</strong> · 健康星期四 · 2026-06-18<br>
+  主持：大雨 × 小苇 · 数据来源：Huberman Lab · FoundMyFitness · The Peter Attia Drive · follow-builders<br>
+  © 2026 Daily Builders Digest · 关注建造者，不要关注 influencer
 </footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-06-17.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-06-17</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">OpenAI 收购 Ona：让 Codex 的 agent 跑进你自己的云</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-16.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-16</span>

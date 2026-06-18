@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-06-18">
+<meta property="og:description" content="健康星期四 · 海豹突击队的心理框架 · 运动时机的昼夜节律 · 睡眠药理学">
+<title>Daily Builders Digest · 2026-06-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .header-title span { color: var(--red); }
+  .header-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 9px 0;
+    margin: 0;
+    background: var(--ink);
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 48s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--bg);
+    margin-right: 72px;
+    text-transform: uppercase;
+  }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── AUDIO PLAYER ── */
+  .audio-bar {
+    background: var(--ink);
+    padding: 16px 20px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid var(--red);
+  }
+  .audio-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio {
+    width: 100%;
+    height: 36px;
+    accent-color: var(--red);
+    display: block;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 36px 0 12px;
+    border-bottom: 1px solid var(--light);
+    margin-bottom: 24px;
+  }
+
+  /* ── NEWS GRID ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin-bottom: 2px;
+  }
+  .news-card {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .news-card.lead {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-bottom: 1px solid var(--light);
+  }
+  .news-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .news-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+  }
+  .news-source {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .06em;
+    color: var(--mid);
+  }
+  .news-source a {
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s;
+  }
+  .news-source a:hover { border-color: var(--red); }
+
+  /* ── SPOTLIGHT BLOCK ── */
+  .spotlight {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 32px;
+    margin-bottom: 2px;
+  }
+  .spotlight-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .spotlight-hed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .spotlight-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+  .spotlight-body strong { color: var(--bg); }
+
+  /* ── INDEX TABLE ── */
+  .index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 48px;
+  }
+  .index-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .index-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--light);
+    vertical-align: top;
+  }
+  .index-table td:first-child {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--red);
+    width: 48px;
+  }
+  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background: var(--light);
+    color: var(--mid);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .tag.hot { background: var(--red); color: #fff; }
+
+  /* ── FOLLOW BUILDERS ── */
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--bg); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  .builder-likes { color: var(--mid); }
+
+  /* ── DIVIDERS ── */
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead,
+    .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+    letter-spacing: .04em;
+  }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <p class="header-eyebrow">健康星期四 · 每日建造者快报 · Vol.2026-06-18</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
+  <div class="header-meta">
+    <span>📅 2026·06·18 周四</span>
+    <span>🏷 主题：海豹突击队的心理框架 · 运动时机的昼夜节律 · 睡眠药理学</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 14 分钟</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Andy Stumpf — "影响 vs 担心" 的心理一刀</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 什么时候运动最好？昼夜节律是关键</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #394 — 褪黑素是授时信号，不是安眠药</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 早练减腹脂控血压，晚练增力量改善情绪</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 选那个"稍微更难一点"的版本</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab × Andy Stumpf — "影响 vs 担心" 的心理一刀</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness — 什么时候运动最好？昼夜节律是关键</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #394 — 褪黑素是授时信号，不是安眠药</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康 — 早练减腹脂控血压，晚练增力量改善情绪</span>
+    <span class="ticker-item"><span class="dot">▶</span>今日行动 — 选那个"稍微更难一点"的版本</span>
+  </div>
+</div>
+
+<!-- AUDIO PLAYER (sticky) -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 健康星期四 · 约 14 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-06-18.mp3">
+    你的浏览器不支持音频播放。<a href="2026-06-18.mp3">下载音频</a>
+  </audio>
+</div>
+
+<!-- ─────────────────── 播客焦点 ─────────────────── -->
+<p class="section-label">◈ 本周健康播客 · 三大来源</p>
+
+<div class="news-grid">
+
+  <!-- LEAD: Huberman Lab -->
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Huberman Lab × Andy Stumpf：海豹突击队的"心理框架"——用每一个当下的微小选择，建立纪律与韧性</h2>
+    <p class="news-body">
+      6 月 15 日发布。Andy Stumpf 是退役海豹突击队成员、翼装飞行世界纪录保持者。但这一期真正的硬核不是极限运动，而是一套朴素、可操作的心理工具。<br><br>
+      <strong>① 影响 vs 担心</strong>——当一个反复纠缠你的念头出现，先问：这是我能"影响"的，还是只是我在"担心"的？能影响就做点什么，只是担心就放下。这是切断内耗最实用的一刀。<br><br>
+      <strong>② 做"稍微更难一点"的事</strong>——纪律不来自某天的英雄式爆发，而来自在每个小选择上选那个略微费劲的版本：走楼梯、把手机放远。微小的"稍微更难"累积起来，就是韧性。<br><br>
+      <strong>③ 对心理健康的坦诚</strong>——他没把 SEAL 包装成无坚不摧的硬汉，而是谈了离婚、为人父母的挣扎，以及高成就者群体的心理健康与自杀预防。韧性不是没有裂缝，而是带着裂缝继续往前。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.youtube.com/watch?v=baecUt1GaPk" target="_blank">The Mental Frame & Specific Daily Actions to Succeed | Andy Stumpf — Huberman Lab</a>
+    </p>
+  </div>
+
+  <!-- FoundMyFitness -->
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">FoundMyFitness × Rhonda Patrick：什么时候运动最好？昼夜节律是被低估的变量</h2>
+    <p class="news-body">
+      Rhonda Patrick 拆解一个常见疑问——早上还是晚上运动更好？核心是<strong>昼夜节律</strong>：你的代谢不是一天到晚一样的。同样一顿饭，<strong>早餐后血糖上升最小，晚餐后最大</strong>。<br><br>
+      她自己的做法是先晒晨光锚定生物钟，把进食窗口放在白天活跃期（约 11:00–19:00），空腹加晨练帮她减掉了腹部脂肪。<br><br>
+      要点：别只看"吃多少、动多少"，<strong>"什么时候吃、什么时候动"同样重要</strong>。而且运动时机存在明显性别差异，详见下方女性健康聚焦。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">When Is the Best Time to Exercise? — FoundMyFitness</a>
+    </p>
+  </div>
+
+  <!-- Peter Attia -->
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Peter Attia #394：睡眠药理学——褪黑素是"授时信号"，不是安眠药</h2>
+    <p class="news-body">
+      Peter 把基调定得很清楚：<strong>行为和环境干预永远是好睡眠的地基</strong>，药物只是工具，且需精准匹配你的睡眠问题。<br><br>
+      关键澄清——<strong>褪黑素本质是调节昼夜节律的授时信号，不是镇静剂</strong>，当安眠药天天吃是用错了方向；而且补剂实际含量常远高于标签，需保守使用。<br><br>
+      他对比了曲唑酮（保留深睡眠、风险较低）、第一代抗组胺药（只宜短期，有抗胆碱能与长期认知风险），以及甘氨酸、镁、南非醉茄等补剂——证据与质量都参差。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/sleeppharmacology/" target="_blank">#394 — Sleep pharmacology — The Peter Attia Drive</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- ─────────────────── 女性健康聚焦 ─────────────────── -->
+<div class="spotlight">
+  <p class="spotlight-label">👩‍⚕️ 女性健康聚焦</p>
+  <h2 class="spotlight-hed">"最佳运动时间"有性别差异：女性早练更减腹脂、更控血压；晚练更增力量、更稳情绪</h2>
+  <p class="spotlight-body">
+    Rhonda 那期运动时机背后，有一项<strong>随机对照研究</strong>把训练有素的女性和男性分别安排在早上（6–8 点）或晚上（18:30–20:30）做同样的多模式训练，连续 12 周，然后<strong>分性别</strong>分析结果——差异非常明显。<br><br>
+    <strong>女性：早上运动</strong>减掉的总脂肪和腹部脂肪更多，血压下降更明显，下肢爆发力更强；<strong>女性：晚上运动</strong>则在上肢力量、情绪和饱腹感上改善更多。<br><br>
+    <strong>男性</strong>几乎反过来——晚上运动能更好地降低收缩压、减轻疲劳、刺激脂肪氧化。<br><br>
+    <strong>为什么这很重要？</strong> 大量运动与代谢研究历史上默认以男性身体为参照。只有当研究者明确区分性别时，才会浮现"同样的运动、不同的最佳时机"。所以如果你是女性还在纠结早练还是晚练——答案取决于目标：<strong>奔着减脂控压，早上；奔着力量和情绪，傍晚。</strong>这不是玄学，是有数据支撑的安排。
+  </p>
+</div>
+
+<!-- ─────────────────── 编辑洞察 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 编辑洞察 · 区分信号和噪音</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">🧭 Editor's Insight</p>
+  <h2 class="spotlight-hed">心理、运动、睡眠——三期播客指向同一句话：别盯着"做多少"，去管"怎么做、什么时候做"</h2>
+  <p class="spotlight-body">
+    Stumpf 在说，<strong>纪律来自每个当下"稍微更难一点"的选择</strong>，而不是某天的英雄式爆发。<br><br>
+    Rhonda 在说，<strong>什么时候动、什么时候吃，跟动多少同样重要</strong>——时机是被严重低估的变量。<br><br>
+    Attia 在说，<strong>睡眠的地基是行为，不是药丸</strong>——褪黑素是授时信号，别当万能安眠药。<br><br>
+    三者的共同点是：<strong>健康不是更用力，而是更对齐。</strong>对齐你的生物节律、对齐你能影响的事、对齐睡眠的根本机制——抓对杠杆，省力十倍。
+  </p>
+</div>
+
+<!-- ─────────────────── INDEX ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 本周健康来源索引</p>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>标题</th>
+      <th>来源</th>
+      <th>日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://www.youtube.com/watch?v=baecUt1GaPk" target="_blank">The Mental Frame & Specific Daily Actions to Succeed | Andy Stumpf</a> <span class="tag hot">New</span></td>
+      <td>Huberman Lab</td>
+      <td>2026-06-15</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://www.foundmyfitness.com/episodes" target="_blank">When Is the Best Time to Exercise?</a></td>
+      <td>FoundMyFitness</td>
+      <td>2026-06-05</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://peterattiamd.com/sleeppharmacology/" target="_blank">#394 — Sleep pharmacology</a></td>
+      <td>The Peter Attia Drive</td>
+      <td>2026-06-01</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2022.893783/full" target="_blank">Morning Exercise Reduces Abdominal Fat & Blood Pressure in Women（女性健康聚焦研究）</a></td>
+      <td>Frontiers in Physiology</td>
+      <td>研究</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 2026-06-18T04:03。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Training Data · 2026-06-16</p>
+  <p class="pc-title">Simulating Humans at Scale: Simile's Joon Sung Park</p>
+  <p class="pc-summary">Simile 创始人 Joon Sung Park 想用大语言模型模拟整个社会的行为，来辅助决策。健康领域的平行启示：他做的是"先建立模型、再理解系统"——这正是今天三期健康播客的底层逻辑。无论睡眠、运动还是心理，真正有用的不是照搬别人的方案，而是先搞懂自己这套系统怎么运转。</p>
+  <a href="https://www.youtube.com/watch?v=lfhFmwcESRw" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · CEO @Replit</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「第一次，我写代码时完全没有挫败感，进入了彻底的心流状态，甚至开始没点子了。」——非常典型的心流描述。心流不只是效率，它本身就是一种高质量的心理健康状态。能让你进入心流的活动，值得多留点时间。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,165</span>
+      <a href="https://x.com/amasad/status/2065236013627351551" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NK</div>
+      <div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner @FPVVentures</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「你做什么，从来没有像现在这么重要。确保它是有趣的，确保它足够有野心——这才是最大的护城河。」——放到健康和人生上同样成立：可持续的努力，往往来自"有趣"和"有意义"，而不是硬逼自己。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 103</span>
+      <a href="https://x.com/nikunj/status/2065075361969500162" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「未来一个世纪的整场游戏，也许就是能否尽可能高效地把一个个循环叠起来。」——放到健康上特别贴切：真正起作用的不是某天的英雄式努力，而是你能持续运转的那套循环。把好习惯变成默认。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 29</span>
+      <a href="https://x.com/swyx/status/2065307558198567206" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────── 今日行动 ─────────────────── -->
+<hr class="rule">
+<p class="section-label">◈ 今日健康行动</p>
+
+<div class="spotlight">
+  <p class="spotlight-label">💡 Today's Action</p>
+  <h2 class="spotlight-hed">挑一件本来要做的事，选那个"稍微更难一点"的版本——再加一个"影响 vs 担心"的提问</h2>
+  <p class="spotlight-body">
+    今天的行动来自 Andy Stumpf 的心理框架，结合 Rhonda 的运动时机。<br><br>
+    <strong>身体上</strong>：挑一件你本来要做的事，选略微费劲的版本——走楼梯、把手机放到另一个房间充电、把一段散步加快到有点喘。如果你是女性、目标是减腹部脂肪和控血压，时间允许就把这段动放在<strong>早上</strong>。<br><br>
+    <strong>心理上</strong>：当一个纠缠你的念头出现，问自己一句——<strong>这是我能"影响"的，还是只是我在"担心"？</strong>能影响就去做一点，只是担心就放下。这一个问题，今天就能帮你省下大量内耗。
+  </p>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <strong>Daily Builders Digest</strong> · 健康星期四 · 2026-06-18<br>
+  主持：大雨 × 小苇 · 数据来源：Huberman Lab · FoundMyFitness · The Peter Attia Drive · follow-builders<br>
+  © 2026 Daily Builders Digest · 关注建造者，不要关注 influencer
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

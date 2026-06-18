@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-06-18",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab × Andy Stumpf：海豹突击队的\"心理框架\"——用每一个当下的微小选择，建立纪律与韧性 · FoundMyFitness × Rhonda Patrick：什么时候运动最好？昼夜节律是被低估的变量",
+    "html": "episodes/2026-06-18.html",
+    "mp3": "episodes/2026-06-18.mp3",
+    "headlines": [
+      "Huberman Lab × Andy Stumpf：海豹突击队的\"心理框架\"——用每一个当下的微小选择，建立纪律与韧性",
+      "FoundMyFitness × Rhonda Patrick：什么时候运动最好？昼夜节律是被低估的变量",
+      "Peter Attia #394：睡眠药理学——褪黑素是\"授时信号\"，不是安眠药",
+      "\"最佳运动时间\"有性别差异：女性早练更减腹脂、更控血压；晚练更增力量、更稳情绪",
+      "心理、运动、睡眠——三期播客指向同一句话：别盯着\"做多少\"，去管\"怎么做、什么时候做\""
+    ]
+  },
+  {
     "date": "2026-06-17",
     "dow": 3,
     "topic": "Product",

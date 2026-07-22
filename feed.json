@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-07-22",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Slack MCP 客户端通用可用：聊天框，正在变成「企业指挥中心」 · Claude Cowork 上手机与网页：抢的是那个「跟着你人走」的入口",
+    "html": "episodes/2026-07-22.html",
+    "mp3": "episodes/2026-07-22.mp3",
+    "headlines": [
+      "Slack MCP 客户端通用可用：聊天框，正在变成「企业指挥中心」",
+      "Claude Cowork 上手机与网页：抢的是那个「跟着你人走」的入口",
+      "OpenAI 新 ChatGPT agent：Operator + deep research 合体，直逼 Cowork",
+      "当所有人在抢大入口，Google 在把每一次点击磨顺——产品最老的手艺"
+    ]
+  },
+  {
     "date": "2026-06-18",
     "dow": 4,
     "topic": "Health",

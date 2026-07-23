@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-07-22">
-<meta property="og:description" content="产品星期三 · 对话正在变成操作台 · Slack MCP 客户端通用可用 · Claude Cowork 上手机与网页 · OpenAI ChatGPT agent 直逼 Cowork · Google 打磨每一次点击">
-<title>Daily Builders Digest · 2026-07-22</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-07-23">
+<meta property="og:description" content="健康星期四 · 主动权 · Huberman 请 Tommy Wood 讲主动造一颗更强的大脑 · Peter Attia AMA#87 谈环境污染与长寿 · Rhonda Patrick 讲日常能拧的旋钮——女性健康聚焦子宫内膜异位症与子宫腺肌症">
+<title>Daily Builders Digest · 2026-07-23</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -54,14 +54,19 @@
   .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
   .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
   .news-source a:hover { border-color: var(--red); }
-  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
-  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
-  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
-  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
-  .index-table td a { color: var(--ink); text-decoration: none; }
-  .index-table td a:hover { text-decoration: underline; }
-  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
-  .tag.hot { background: var(--red); color: #fff; }
+  .spotlight { background: var(--ink); color: var(--bg); padding: 32px; margin: 2px 0 0; border-top: 3px solid var(--red); }
+  .spotlight .sp-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .spotlight .sp-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.3; margin-bottom: 16px; color: var(--bg); }
+  .spotlight .sp-body { font-size: 14px; line-height: 1.75; color: #d8d6d0; margin-bottom: 14px; }
+  .spotlight .sp-body strong { color: var(--bg); }
+  .spotlight .sp-stat { font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1; color: var(--red); margin: 8px 0 4px; }
+  .spotlight .sp-stat-cap { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--mid); text-transform: uppercase; margin-bottom: 18px; }
+  .spotlight .sp-source { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .spotlight .sp-source a { color: var(--red); text-decoration: none; }
+  .tip-box { background: var(--card); border-left: 3px solid var(--red); padding: 24px 28px; margin: 36px 0; }
+  .tip-box .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .tip-box .tip-body { font-size: 15px; line-height: 1.7; color: #333; }
+  .tip-box .tip-body strong { color: var(--ink); }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -86,9 +91,10 @@
     .news-grid { grid-template-columns: 1fr !important; }
     .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
+    .spotlight { padding: 24px; }
+    .spotlight .sp-hed { font-size: 19px; }
   }
   footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
   footer strong { color: var(--ink); }
@@ -97,26 +103,26 @@
 <body>
 
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日播客 · Vol.2026-07-22</p>
-  <h1 class="header-title">产品<span>星期三</span></h1>
+  <p class="header-eyebrow">健康星期四 · 每日播客 · Vol.2026-07-23</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·07·22 周三</span>
-    <span>🏷 主题：产品 / 对话正在变成操作台</span>
+    <span>📅 2026·07·23 周四</span>
+    <span>🏷 主题：健康 / Health</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>⏱ 约 13 分钟</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Slack MCP 客户端通用可用 · 20+ 合作 App 接入 · 聊天变成企业指挥中心 · 直顶 Teams</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Cowork 扩到手机与网页 · 会话文件跨设备走 · 加入月度回顾与专注设置</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 新 ChatGPT agent · Operator + deep research 合体 · 正面挑战 Cowork 与 Copilot</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google 月度系统更新 · 装 App 顺手加组件 · TV 支持通行密钥 · 打磨每一次点击</span>
-    <span class="ticker-item"><span class="dot">▶</span>Slack MCP 客户端通用可用 · 20+ 合作 App 接入 · 聊天变成企业指挥中心 · 直顶 Teams</span>
-    <span class="ticker-item"><span class="dot">▶</span>Claude Cowork 扩到手机与网页 · 会话文件跨设备走 · 加入月度回顾与专注设置</span>
-    <span class="ticker-item"><span class="dot">▶</span>OpenAI 新 ChatGPT agent · Operator + deep research 合体 · 正面挑战 Cowork 与 Copilot</span>
-    <span class="ticker-item"><span class="dot">▶</span>Google 月度系统更新 · 装 App 顺手加组件 · TV 支持通行密钥 · 打磨每一次点击</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · Tommy Wood 讲主动造大脑 · 可塑性不会因年纪关掉，是你不再给它「新」的东西</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA#87 · 环境污染与长寿 · 空气、噪音、光——先管证据最硬的</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · Rhonda Patrick 讲日常旋钮 · 桑拿、纤维、防晒，先垒地基</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 子宫内膜异位症平均拖 7-10 年确诊 · 早诊断避免四成疾病负担</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · Tommy Wood 讲主动造大脑 · 可塑性不会因年纪关掉，是你不再给它「新」的东西</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA#87 · 环境污染与长寿 · 空气、噪音、光——先管证据最硬的</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · Rhonda Patrick 讲日常旋钮 · 桑拿、纤维、防晒，先垒地基</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 子宫内膜异位症平均拖 7-10 年确诊 · 早诊断避免四成疾病负担</span>
   </div>
 </div>
 
@@ -124,96 +130,87 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <span>大雨 × 小苇 · 约 13 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-07-22.mp3">
-    你的浏览器不支持音频播放。<a href="2026-07-22.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-07-23.mp3">
+    你的浏览器不支持音频播放。<a href="2026-07-23.mp3">下载音频</a>
   </audio>
 </div>
 
-<p class="section-label">◈ 今日焦点 · 对话正在变成操作台 · 精选四条</p>
+<p class="section-label">◈ 健康星期四 · 三档播客 · 一条主线：主动权</p>
 
 <div class="news-grid">
   <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Slack MCP 客户端通用可用：聊天框，正在变成「企业指挥中心」</h2>
+    <p class="news-num">导语</p>
+    <h2 class="news-hed">主动建造，加主动防御——本周三档健康播客，讲的都是「多少握在你自己手里」</h2>
     <p class="news-body">
-      七月二十号，Slack 把它的 MCP 客户端正式做成通用可用——MCP 就是那个已经成为行业标准的「模型上下文协议」。它一上来就带了超过二十个合作 App：Amplitude、Atlassian、Box、Canva、Docusign、Gamma、Linear、Miro、Notion、Replit、Webflow、Zoom，而且还在继续加。它建立在开放的 MCP 标准之上，能把任何 App 接进 Slackbot——不管是 Salesforce 自家产品、第三方工具，还是你团队自己搭的东西。含义很直接：你不用再开十几个浏览器标签、在一堆孤立的 AI 工具之间跳来跳去了。在 Slack 里说一句话，就能让 Replit 起一个 App、拉一张 Amplitude 的实时图表、更新一张 Linear 工单、生成一个 Canva 设计——所有事都在同一个对话界面里完成。这就是所谓的「聊天即企业指挥中心」，而它这一枪，直接顶着微软 Teams 打：过去工作分散在一堆软件里，Slack 想把对话这一层，变成你操作所有软件的统一入口。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://slack.com/blog/news/slackbots-mcp-client" target="_blank">Slack Blog</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.salesforce.com/news/stories/slack-context-aware-ai-apps-agents/" target="_blank">Salesforce News</a>
+      把本周 Huberman Lab、Peter Attia 的 The Drive、Rhonda Patrick 的 FoundMyFitness 摆在一起听，会发现三期意外地指向同一句话：你的大脑和身体，有比你以为的多得多的部分，握在自己手里。三个方向各拧一颗螺丝：Huberman 请神经科学家 <strong>Tommy Wood</strong> 讲「主动造」——怎么用挑战、运动、营养造出一颗更强的大脑；Peter Attia 的 AMA 反过来讲「主动防御」——空气、噪音、光、水这些你被动吸进来的东西，怎么把伤害降到最低；Rhonda Patrick 则聚焦日常里你能亲手拧的那些旋钮。今天一段段聊，落到女性健康：<strong>子宫内膜异位症与子宫腺肌症</strong>——一个平均要拖七到十年才确诊、却被长期低估的病。最后留一个今天就能做的动作。
     </p>
   </div>
 
   <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">Claude Cowork 上手机与网页：抢的是那个「跟着你人走」的入口</h2>
+    <p class="news-num">01 · Huberman Lab · 2026-07-20</p>
+    <h2 class="news-hed">Tommy Wood 讲主动造大脑：可塑性不会因年纪关掉，是你不再给它「新」东西</h2>
     <p class="news-body">
-      同一周，Anthropic 把 Claude 的 Cowork 从桌面扩到了手机和网页——会话和文件能跟着你跨设备走：后台自主干活、定时任务、共享的对话和项目、在手机上点一下就批准。它还加了「月度回顾」和「专注设置」：休息提醒、免打扰时段，以及工作洞察——会告诉你这段时间都花在了哪些主题上，还有它观察到你是怎么跟它协作的。如果说 Slack 抢的是「团队协作的入口」，Cowork 抢的就是「跟着你个人走」的入口：不管你在桌面、手机还是网页，那个帮你干活、还越来越了解你的助手一直在。当一个工具开始记录你的工作习惯，它就不只是工具了——它在争取成为你每天工作的默认起点。
+      本周 Huberman Lab 请来华盛顿大学神经科学家 Tommy Wood 教授（新书《The Stimulated Mind》）。最颠覆的一句：<strong>大脑可塑性不会因为年纪大就关掉，真正让它关掉的，是你不再给它「新」的东西</strong>。他区分了「熟悉」与「新奇」任务——每天做惯的工作再费脑也是走老路，真正驱动可塑性的是又新又难、还得同时动到身体和脑子的任务，比如跳舞、学乐器、学新运动。研究显示人的心理处理速度其实能保持到六十岁左右才明显下滑。硬招是运动：一项研究让上了年纪的人做 <strong>HIIT</strong>，管学习记忆的海马体出现了长期改善；有氧加力量分别护着大脑的灰质与白质。营养上他推地中海／MIND 饮食、Omega-3、B 族维生素与肌酸。还有个冷门发现——<strong>打带状疱疹疫苗的人，后来得痴呆的风险明显更低</strong>，提示大脑衰退里有相当一部分是可干预的。
     </p>
     <p class="news-source">
-      📎 <a href="https://releasebot.io/updates/anthropic/claude" target="_blank">Releasebot · Anthropic</a>
+      📎 <a href="https://www.hubermanlab.com/episode/accelerate-learning-and-increase-cognitive-capacity-tommy-wood" target="_blank">Huberman Lab · Dr. Tommy Wood</a>
     </p>
   </div>
 
   <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">OpenAI 新 ChatGPT agent：Operator + deep research 合体，直逼 Cowork</h2>
+    <p class="news-num">02 · The Peter Attia Drive · AMA #87</p>
+    <h2 class="news-hed">环境污染与长寿：别焦虑，但要分清哪些值得管——空气排第一</h2>
     <p class="news-body">
-      七月十八号，OpenAI 放出新的 ChatGPT agent 能力，把 Operator 的「能操作」和 deep research 的「会查」揉进了一个东西里，在一个虚拟电脑环境中自主完成复杂任务——排日程、做竞品分析、生成整套演示。加上此前的 ChatGPT Work（把聊天机器人和 Codex 编程工具融为一体），OpenAI 摆明了是在正面挑战 Anthropic 的 Claude Cowork 和微软 Copilot。把前三条连起来看画面很清楚：Slack、Anthropic、OpenAI 三家，抢的是同一句话的所有权——「帮我把这件事从头到尾办完。」入口之争，本质上是在争谁能成为那个你每天第一个打开、什么都往里说的地方。
+      Peter Attia 这期 AMA 主题是「环境污染与长寿」——空气、噪音、光污染与电磁场。核心态度是<strong>按证据强弱分配注意力</strong>。排最前的是<strong>空气</strong>：PM2.5 有大量证据与心血管病、认知衰退相关（正好接上 Tommy Wood 那句「血管健康就是大脑健康」），动作很朴素——看本地 AQI、重污染天少户外剧烈运动、家里尤其卧室用带 HEPA 的净化器。其次是<strong>噪音</strong>：长期交通噪音是一种慢性生理应激源，和血压、睡眠都相关。<strong>夜间光污染</strong>证据较硬——扰乱昼夜节律、拖累睡眠代谢，所以卧室做暗、睡前少看亮屏。至于<strong>电磁场</strong>，他相对淡定，认为日常水平证据仍弱，不必过度焦虑。别把有限的注意力花在既难改、证据又薄的东西上，而忽略空气、睡眠、运动这些大头。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.resultsense.com/news/2026-07-10-openai-chatgpt-work-super-app/" target="_blank">Resultsense</a>
-    </p>
-  </div>
-
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04 · 观察</p>
-    <h2 class="news-hed">当所有人在抢大入口，Google 在把每一次点击磨顺——产品最老的手艺</h2>
-    <p class="news-body">
-      还是七月二十号，Google 放出了月度系统更新（Google System Updates）。里面没有惊天动地的 agent，全是小到你几乎不会注意的产品细节：装一个 App 的时候，可以顺手就把它的小组件加到主屏；电视端支持了凭据管理器，让你在 TV 上也能用保存的密码和通行密钥登录；厂商还能在系统里直接接入存储管理和订阅流程。当所有目光都盯着「谁家 agent 更强、谁来当那个大入口」，Google 在做的，是把每天几十亿人真实用的那个界面，一个像素、一次点击地打磨顺。装 App 少一步、登录少输一次密码——这种「减一步」的功夫，是产品最古老、也最不过时的手艺。今天四条放在一起，是一组张力：一边是三巨头抢那个「宏大的对话入口」，另一边是把用户每一次真实点击都磨得更顺的「微小体验」。对产品人，问题于是有两层——大处：你是想成为那个操作台，还是接进别人的操作台？小处：入口之争尘埃落定后，用户每天真正碰的，还是那些具体瞬间，别把手艺丢了。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://9to5google.com/2026/07/20/july-2026-google-system-updates/" target="_blank">9to5Google</a>
+      📎 <a href="https://peterattiamd.com/ama87/" target="_blank">The Peter Attia Drive · AMA #87</a>
     </p>
   </div>
 </div>
 
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
-<table class="index-table">
-  <thead>
-    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://slack.com/blog/news/slackbots-mcp-client" target="_blank">Slack MCP 客户端通用可用 · 20+ App 接入 <span class="tag hot">头条</span></a></td>
-      <td>Slack</td>
-      <td>2026-07-20</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://releasebot.io/updates/anthropic/claude" target="_blank">Claude Cowork 扩到手机与网页 <span class="tag">平台</span></a></td>
-      <td>Anthropic</td>
-      <td>2026-07-20</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://www.resultsense.com/news/2026-07-10-openai-chatgpt-work-super-app/" target="_blank">OpenAI 新 ChatGPT agent 直逼 Cowork <span class="tag">Agent</span></a></td>
-      <td>Resultsense</td>
-      <td>2026-07-18</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://9to5google.com/2026/07/20/july-2026-google-system-updates/" target="_blank">Google 月度系统更新 · 打磨每一次点击 <span class="tag">观察</span></a></td>
-      <td>9to5Google</td>
-      <td>2026-07-20</td>
-    </tr>
-  </tbody>
-</table>
+<div class="news-grid" style="margin-top:2px;">
+  <div class="news-card" style="grid-column:1 / -1;">
+    <p class="news-num">03 · FoundMyFitness · Rhonda Patrick</p>
+    <h2 class="news-hed">日常能拧的旋钮：桑拿、纤维、防晒——但别本末倒置，先垒地基</h2>
+    <p class="news-body">
+      Rhonda Patrick 这期像一份很实在的生活清单——有机食材、模拟禁食、桑拿、防晒、红光、反渗透净水、还有膳食纤维。跟 Attia 那期正好是一体两面：Attia 讲怎么<strong>躲开坏暴露</strong>，Rhonda 讲怎么主动用好习惯去<strong>对冲</strong>。她讲得最有意思的两个：一是<strong>桑拿</strong>——规律桑拿与心血管健康、乃至更低死亡率有关联，可理解为一种「被动的有氧训练」，让心血管系统在热里适应；二是<strong>纤维</strong>，一个被严重低估的东西，绝大多数人吃得远远不够，却几乎是喂养肠道菌群、维持代谢健康最便宜的杠杆。至于有机食材、防晒、净水这些，她也很清醒：能减少不必要暴露当然好，但<strong>先把睡眠、运动、饮食这些证据最硬的地基打牢，再抠细节</strong>。三期共同的底色都是——别被花哨的东西带跑，先做证据最硬的那几件事。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">FoundMyFitness · Sauna, fiber, sunscreen & daily levers</a>
+    </p>
+  </div>
+</div>
+
+<!-- ─────────────────── WOMEN'S HEALTH SPOTLIGHT ─────────────────── -->
+<div class="spotlight">
+  <p class="sp-label">◈ 女性健康聚焦 · The Peter Attia Drive #397 · Renato Tomioka, M.D., Ph.D.</p>
+  <h2 class="sp-hed">子宫内膜异位症：平均拖七到十年才确诊——「很痛」不该被当成理所当然</h2>
+  <p class="sp-body">
+    这周的女性健康聚焦，落在一个被严重忽视的病——<strong>子宫内膜异位症</strong>，以及它的近亲<strong>子宫腺肌症</strong>。Peter Attia 前不久请来妇科专家 Renato Tomioka 专门讲这一期。先感受一个数字：全球大约<strong>每十个育龄女性里就有一个</strong>受子宫内膜异位症影响，可平均确诊要拖上七到十年。
+  </p>
+  <p class="sp-body">
+    为什么这么难被发现？两个原因交织：一是症状容易被「正常化」——剧烈痛经、性交痛、慢性盆腔痛，太多女性从小被告知「痛经忍忍就过去了」；二是诊断本身就难，影像常常看不清，过去甚至要靠腹腔镜才能确诊。Tomioka 最戳心的一句是：<strong>如果能在青春期或年轻女性身上早一点诊断出来，就能避免高达四成的病灶、或者说疾病负担。</strong>
+  </p>
+  <p class="sp-stat">40%</p>
+  <p class="sp-stat-cap">早诊断可避免的疾病负担 · 子宫内膜异位跑到子宫外，子宫腺肌症长进子宫肌层，常同时存在</p>
+  <p class="sp-body">
+    这期还聊到一个很现实的话题——<strong>生殖衰老</strong>：这些病会影响卵巢功能和生育窗口，所以早诊断不只是为了止痛，也关系到女性对生育时间的规划。好消息是治疗选择比过去多了，从激素治疗到更精准的手术都在进步。给正被这些症状困扰的女性一句最实在的话：<strong>别把「很痛」当成理所当然。</strong>如果痛经痛到影响正常生活、上不了班上不了学，那不是娇气，是身体在报警——值得去找专业妇科医生认真评估，而不是一句「女人都这样」打发过去。早一次问诊，可能就省下未来七年的痛。
+  </p>
+  <p class="sp-source">
+    📎 <a href="https://peterattiamd.com/renatotomioka/" target="_blank">The Peter Attia Drive · #397 Endometriosis and adenomyosis — Renato Tomioka, M.D., Ph.D.</a>
+  </p>
+</div>
+
+<!-- ─────────────────── TODAY'S ACTION ─────────────────── -->
+<div class="tip-box">
+  <p class="tip-label">✅ 今日健康行动 · 一件就够</p>
+  <p class="tip-body">
+    今天做一件「<strong>新而难、还得动身体</strong>」的事——不用多，十五分钟就行：跟着视频学一段舞、学几个新和弦，或者用不常用的那只手做点精细动作。这正是 Tommy Wood 说的、能真正驱动大脑可塑性的刺激。再叠一件几乎零成本的主动防御：<strong>今晚把卧室弄暗一点、睡前少看亮屏</strong>——这一条同时护着你的昼夜节律、睡眠和大脑。一件新鲜的难事，加一间更暗的卧室：主动建造，加主动防御。
+  </p>
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -222,78 +219,63 @@
 <p class="builders-intro">
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
-  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:00。
+  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:00。今日为健康主题，播客卡片选取本周与「学习·认知」最合拍的一期，建造者动态优先选取与认知、心态、营养相关的内容。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">No Priors · 2026-07-09</p>
-  <p class="pc-title">用 AI 的视角看旅行——对话 Booking.com CEO Glenn Fogel</p>
+  <p class="pc-show">Huberman Lab · 2026-07-20</p>
+  <p class="pc-title">Accelerate Learning & Increase Cognitive Capacity — Dr. Tommy Wood</p>
   <p class="pc-summary">
-    Fogel 从 2000 年 Priceline 只值几亿美金时加入，一路把 Booking 做成千亿级公司。他有一句话贯穿全场：「根本不存在什么护城河，也不存在哪个地方能让你永远躲开创新。」今天有优势，明天就可能没了——唯一的长期赢法，是不停做新服务、不停问客户「你还缺什么、哪儿疼」。放在今天的入口之争里听尤其应景：没有谁能靠占住一个入口就一劳永逸。
+    与今天主线最合拍的一期：大脑可塑性不会因年纪关掉，关掉它的是你不再给它「新」的东西。真正驱动可塑性的是又新又难、还得同时动身体和脑子的任务；运动（尤其 HIIT）能改善年长者海马体的学习能力；而一个冷门发现是——带状疱疹疫苗与更低的痴呆风险相关，提示大脑衰退里有相当一部分是可干预的。
   </p>
-  <a href="https://www.youtube.com/watch?v=8nj_0wZkbtA" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://www.hubermanlab.com/episode/accelerate-learning-and-increase-cognitive-capacity-tommy-wood" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">TH</div>
+      <div class="builder-avatar">MG</div>
       <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · Claude Code @anthropicai</div>
+        <div class="builder-name">Madhu Guru</div>
+        <div class="builder-handle">@realmadhuguru · Sr Director AI, Meta</div>
       </div>
     </div>
-    <p class="builder-tweet">「先做原型——mockup、schema、数据模型、概念验证——是避免你烧掉一大堆 token 之后才发现『这根本不是我想要的』的最好办法。」先做出来看看，再决定要不要。</p>
+    <p class="builder-tweet">「越是依赖我的『第二大脑』，我那颗主大脑就变得越迟钝。我意识到，把大量事实、半成品的想法、松散的线头随身装在脑子里，其实极有价值——你的潜意识会一直在后台熬煮它们。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 634</span>
-      <a href="https://x.com/trq212/status/2078189833445654714" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 133</span>
+      <a href="https://x.com/realmadhuguru/status/2079581493542969694" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">GT</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO @box</div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President & CEO, YC</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI 越便宜，整个生态、尤其是终端客户，机会就越大。一切都被『太贵』卡着——价格降下来，需求就被放出来。」</p>
+    <p class="builder-tweet">「团队不会靠奇迹凝聚。得有人足够热爱这群人、也足够在意结果，愿意去消化冲突，而不是把任何一方丢下。对抗组织熵增这场仗，说到底就是鼓励疗愈、并默认对方是善意的。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 331</span>
-      <a href="https://x.com/levie/status/2078139206946459853" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 289</span>
+      <a href="https://x.com/garrytan/status/2079700506742751344" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">ZZ</div>
+      <div class="builder-avatar">PY</div>
       <div>
-        <div class="builder-name">Zara Zhang</div>
-        <div class="builder-handle">@zarazhangrui · Founder @ follow-builders</div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI tutorials & interviews</div>
       </div>
     </div>
-    <p class="builder-tweet">「Building in public 的小技巧：如果做内容让你觉得是额外负担，那就把产品里本来就在发生的过程秀出来——一段几秒录屏、第一个版本、用户的真实反馈。」别为了做内容再造内容。</p>
+    <p class="builder-tweet">「不敢相信这碗拉面有 28 克蛋白质，谢谢 @kevinleeme 寄来的这份！」——健康从来不必苦大仇深，把蛋白质悄悄塞进日常那碗面里，也是一种可持续的地基维护。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 206</span>
-      <a href="https://x.com/zarazhangrui/status/2078086930756202924" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">GR</div>
-      <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · CEO @vercel</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「像 shadcn 那样发布。」四个字，说的是那种高频、公开、把每一步都摊在阳光下的发布节奏——发布本身就是产品的一部分。</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 193</span>
-      <a href="https://x.com/rauchg/status/2078299647689310270" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 21</span>
+      <a href="https://x.com/petergyang/status/2079723792696586572" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
@@ -302,8 +284,9 @@
 
 <footer>
   <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
-  主持：大雨 × 小苇 · 2026-07-22<br>
+  主持：大雨 × 小苇 · 2026-07-23 · 健康星期四<br>
   数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
+  本期内容为健康科普，不构成医疗建议；涉及环境暴露、激素治疗、补剂与妇科疾病，个体差异大，诊断与治疗方案请与专业医生一对一商量。<br>
   © 2026 Daily Builders Digest
 </footer>
 
@@ -311,6 +294,13 @@
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-07-22.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-07-22</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Slack MCP 客户端通用可用：聊天框，正在变成「企业指挥中心」</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-06-18.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-06-18</span>

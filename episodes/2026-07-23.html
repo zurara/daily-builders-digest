@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-07-23">
+<meta property="og:description" content="健康星期四 · 主动权 · Huberman 请 Tommy Wood 讲主动造一颗更强的大脑 · Peter Attia AMA#87 谈环境污染与长寿 · Rhonda Patrick 讲日常能拧的旋钮——女性健康聚焦子宫内膜异位症与子宫腺肌症">
+<title>Daily Builders Digest · 2026-07-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
+  .news-card { background: var(--bg); padding: 24px; }
+  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
+  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
+  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
+  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .news-source a:hover { border-color: var(--red); }
+  .spotlight { background: var(--ink); color: var(--bg); padding: 32px; margin: 2px 0 0; border-top: 3px solid var(--red); }
+  .spotlight .sp-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .spotlight .sp-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.3; margin-bottom: 16px; color: var(--bg); }
+  .spotlight .sp-body { font-size: 14px; line-height: 1.75; color: #d8d6d0; margin-bottom: 14px; }
+  .spotlight .sp-body strong { color: var(--bg); }
+  .spotlight .sp-stat { font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1; color: var(--red); margin: 8px 0 4px; }
+  .spotlight .sp-stat-cap { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--mid); text-transform: uppercase; margin-bottom: 18px; }
+  .spotlight .sp-source { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .spotlight .sp-source a { color: var(--red); text-decoration: none; }
+  .tip-box { background: var(--card); border-left: 3px solid var(--red); padding: 24px 28px; margin: 36px 0; }
+  .tip-box .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .tip-box .tip-body { font-size: 15px; line-height: 1.7; color: #333; }
+  .tip-box .tip-body strong { color: var(--ink); }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+    .spotlight { padding: 24px; }
+    .spotlight .sp-hed { font-size: 19px; }
+  }
+  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
+  footer strong { color: var(--ink); }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <p class="header-eyebrow">健康星期四 · 每日播客 · Vol.2026-07-23</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
+  <div class="header-meta">
+    <span>📅 2026·07·23 周四</span>
+    <span>🏷 主题：健康 / Health</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 13 分钟</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · Tommy Wood 讲主动造大脑 · 可塑性不会因年纪关掉，是你不再给它「新」的东西</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA#87 · 环境污染与长寿 · 空气、噪音、光——先管证据最硬的</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · Rhonda Patrick 讲日常旋钮 · 桑拿、纤维、防晒，先垒地基</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 子宫内膜异位症平均拖 7-10 年确诊 · 早诊断避免四成疾病负担</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · Tommy Wood 讲主动造大脑 · 可塑性不会因年纪关掉，是你不再给它「新」的东西</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA#87 · 环境污染与长寿 · 空气、噪音、光——先管证据最硬的</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · Rhonda Patrick 讲日常旋钮 · 桑拿、纤维、防晒，先垒地基</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 子宫内膜异位症平均拖 7-10 年确诊 · 早诊断避免四成疾病负担</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 13 分钟</span>
+  </div>
+  <audio controls preload="none" src="2026-07-23.mp3">
+    你的浏览器不支持音频播放。<a href="2026-07-23.mp3">下载音频</a>
+  </audio>
+</div>
+
+<p class="section-label">◈ 健康星期四 · 三档播客 · 一条主线：主动权</p>
+
+<div class="news-grid">
+  <div class="news-card lead">
+    <p class="news-num">导语</p>
+    <h2 class="news-hed">主动建造，加主动防御——本周三档健康播客，讲的都是「多少握在你自己手里」</h2>
+    <p class="news-body">
+      把本周 Huberman Lab、Peter Attia 的 The Drive、Rhonda Patrick 的 FoundMyFitness 摆在一起听，会发现三期意外地指向同一句话：你的大脑和身体，有比你以为的多得多的部分，握在自己手里。三个方向各拧一颗螺丝：Huberman 请神经科学家 <strong>Tommy Wood</strong> 讲「主动造」——怎么用挑战、运动、营养造出一颗更强的大脑；Peter Attia 的 AMA 反过来讲「主动防御」——空气、噪音、光、水这些你被动吸进来的东西，怎么把伤害降到最低；Rhonda Patrick 则聚焦日常里你能亲手拧的那些旋钮。今天一段段聊，落到女性健康：<strong>子宫内膜异位症与子宫腺肌症</strong>——一个平均要拖七到十年才确诊、却被长期低估的病。最后留一个今天就能做的动作。
+    </p>
+  </div>
+
+  <div class="news-card">
+    <p class="news-num">01 · Huberman Lab · 2026-07-20</p>
+    <h2 class="news-hed">Tommy Wood 讲主动造大脑：可塑性不会因年纪关掉，是你不再给它「新」东西</h2>
+    <p class="news-body">
+      本周 Huberman Lab 请来华盛顿大学神经科学家 Tommy Wood 教授（新书《The Stimulated Mind》）。最颠覆的一句：<strong>大脑可塑性不会因为年纪大就关掉，真正让它关掉的，是你不再给它「新」的东西</strong>。他区分了「熟悉」与「新奇」任务——每天做惯的工作再费脑也是走老路，真正驱动可塑性的是又新又难、还得同时动到身体和脑子的任务，比如跳舞、学乐器、学新运动。研究显示人的心理处理速度其实能保持到六十岁左右才明显下滑。硬招是运动：一项研究让上了年纪的人做 <strong>HIIT</strong>，管学习记忆的海马体出现了长期改善；有氧加力量分别护着大脑的灰质与白质。营养上他推地中海／MIND 饮食、Omega-3、B 族维生素与肌酸。还有个冷门发现——<strong>打带状疱疹疫苗的人，后来得痴呆的风险明显更低</strong>，提示大脑衰退里有相当一部分是可干预的。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.hubermanlab.com/episode/accelerate-learning-and-increase-cognitive-capacity-tommy-wood" target="_blank">Huberman Lab · Dr. Tommy Wood</a>
+    </p>
+  </div>
+
+  <div class="news-card">
+    <p class="news-num">02 · The Peter Attia Drive · AMA #87</p>
+    <h2 class="news-hed">环境污染与长寿：别焦虑，但要分清哪些值得管——空气排第一</h2>
+    <p class="news-body">
+      Peter Attia 这期 AMA 主题是「环境污染与长寿」——空气、噪音、光污染与电磁场。核心态度是<strong>按证据强弱分配注意力</strong>。排最前的是<strong>空气</strong>：PM2.5 有大量证据与心血管病、认知衰退相关（正好接上 Tommy Wood 那句「血管健康就是大脑健康」），动作很朴素——看本地 AQI、重污染天少户外剧烈运动、家里尤其卧室用带 HEPA 的净化器。其次是<strong>噪音</strong>：长期交通噪音是一种慢性生理应激源，和血压、睡眠都相关。<strong>夜间光污染</strong>证据较硬——扰乱昼夜节律、拖累睡眠代谢，所以卧室做暗、睡前少看亮屏。至于<strong>电磁场</strong>，他相对淡定，认为日常水平证据仍弱，不必过度焦虑。别把有限的注意力花在既难改、证据又薄的东西上，而忽略空气、睡眠、运动这些大头。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://peterattiamd.com/ama87/" target="_blank">The Peter Attia Drive · AMA #87</a>
+    </p>
+  </div>
+</div>
+
+<div class="news-grid" style="margin-top:2px;">
+  <div class="news-card" style="grid-column:1 / -1;">
+    <p class="news-num">03 · FoundMyFitness · Rhonda Patrick</p>
+    <h2 class="news-hed">日常能拧的旋钮：桑拿、纤维、防晒——但别本末倒置，先垒地基</h2>
+    <p class="news-body">
+      Rhonda Patrick 这期像一份很实在的生活清单——有机食材、模拟禁食、桑拿、防晒、红光、反渗透净水、还有膳食纤维。跟 Attia 那期正好是一体两面：Attia 讲怎么<strong>躲开坏暴露</strong>，Rhonda 讲怎么主动用好习惯去<strong>对冲</strong>。她讲得最有意思的两个：一是<strong>桑拿</strong>——规律桑拿与心血管健康、乃至更低死亡率有关联，可理解为一种「被动的有氧训练」，让心血管系统在热里适应；二是<strong>纤维</strong>，一个被严重低估的东西，绝大多数人吃得远远不够，却几乎是喂养肠道菌群、维持代谢健康最便宜的杠杆。至于有机食材、防晒、净水这些，她也很清醒：能减少不必要暴露当然好，但<strong>先把睡眠、运动、饮食这些证据最硬的地基打牢，再抠细节</strong>。三期共同的底色都是——别被花哨的东西带跑，先做证据最硬的那几件事。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">FoundMyFitness · Sauna, fiber, sunscreen & daily levers</a>
+    </p>
+  </div>
+</div>
+
+<!-- ─────────────────── WOMEN'S HEALTH SPOTLIGHT ─────────────────── -->
+<div class="spotlight">
+  <p class="sp-label">◈ 女性健康聚焦 · The Peter Attia Drive #397 · Renato Tomioka, M.D., Ph.D.</p>
+  <h2 class="sp-hed">子宫内膜异位症：平均拖七到十年才确诊——「很痛」不该被当成理所当然</h2>
+  <p class="sp-body">
+    这周的女性健康聚焦，落在一个被严重忽视的病——<strong>子宫内膜异位症</strong>，以及它的近亲<strong>子宫腺肌症</strong>。Peter Attia 前不久请来妇科专家 Renato Tomioka 专门讲这一期。先感受一个数字：全球大约<strong>每十个育龄女性里就有一个</strong>受子宫内膜异位症影响，可平均确诊要拖上七到十年。
+  </p>
+  <p class="sp-body">
+    为什么这么难被发现？两个原因交织：一是症状容易被「正常化」——剧烈痛经、性交痛、慢性盆腔痛，太多女性从小被告知「痛经忍忍就过去了」；二是诊断本身就难，影像常常看不清，过去甚至要靠腹腔镜才能确诊。Tomioka 最戳心的一句是：<strong>如果能在青春期或年轻女性身上早一点诊断出来，就能避免高达四成的病灶、或者说疾病负担。</strong>
+  </p>
+  <p class="sp-stat">40%</p>
+  <p class="sp-stat-cap">早诊断可避免的疾病负担 · 子宫内膜异位跑到子宫外，子宫腺肌症长进子宫肌层，常同时存在</p>
+  <p class="sp-body">
+    这期还聊到一个很现实的话题——<strong>生殖衰老</strong>：这些病会影响卵巢功能和生育窗口，所以早诊断不只是为了止痛，也关系到女性对生育时间的规划。好消息是治疗选择比过去多了，从激素治疗到更精准的手术都在进步。给正被这些症状困扰的女性一句最实在的话：<strong>别把「很痛」当成理所当然。</strong>如果痛经痛到影响正常生活、上不了班上不了学，那不是娇气，是身体在报警——值得去找专业妇科医生认真评估，而不是一句「女人都这样」打发过去。早一次问诊，可能就省下未来七年的痛。
+  </p>
+  <p class="sp-source">
+    📎 <a href="https://peterattiamd.com/renatotomioka/" target="_blank">The Peter Attia Drive · #397 Endometriosis and adenomyosis — Renato Tomioka, M.D., Ph.D.</a>
+  </p>
+</div>
+
+<!-- ─────────────────── TODAY'S ACTION ─────────────────── -->
+<div class="tip-box">
+  <p class="tip-label">✅ 今日健康行动 · 一件就够</p>
+  <p class="tip-body">
+    今天做一件「<strong>新而难、还得动身体</strong>」的事——不用多，十五分钟就行：跟着视频学一段舞、学几个新和弦，或者用不常用的那只手做点精细动作。这正是 Tommy Wood 说的、能真正驱动大脑可塑性的刺激。再叠一件几乎零成本的主动防御：<strong>今晚把卧室弄暗一点、睡前少看亮屏</strong>——这一条同时护着你的昼夜节律、睡眠和大脑。一件新鲜的难事，加一间更暗的卧室：主动建造，加主动防御。
+  </p>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:00。今日为健康主题，播客卡片选取本周与「学习·认知」最合拍的一期，建造者动态优先选取与认知、心态、营养相关的内容。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Huberman Lab · 2026-07-20</p>
+  <p class="pc-title">Accelerate Learning & Increase Cognitive Capacity — Dr. Tommy Wood</p>
+  <p class="pc-summary">
+    与今天主线最合拍的一期：大脑可塑性不会因年纪关掉，关掉它的是你不再给它「新」的东西。真正驱动可塑性的是又新又难、还得同时动身体和脑子的任务；运动（尤其 HIIT）能改善年长者海马体的学习能力；而一个冷门发现是——带状疱疹疫苗与更低的痴呆风险相关，提示大脑衰退里有相当一部分是可干预的。
+  </p>
+  <a href="https://www.hubermanlab.com/episode/accelerate-learning-and-increase-cognitive-capacity-tommy-wood" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MG</div>
+      <div>
+        <div class="builder-name">Madhu Guru</div>
+        <div class="builder-handle">@realmadhuguru · Sr Director AI, Meta</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「越是依赖我的『第二大脑』，我那颗主大脑就变得越迟钝。我意识到，把大量事实、半成品的想法、松散的线头随身装在脑子里，其实极有价值——你的潜意识会一直在后台熬煮它们。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 133</span>
+      <a href="https://x.com/realmadhuguru/status/2079581493542969694" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President & CEO, YC</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「团队不会靠奇迹凝聚。得有人足够热爱这群人、也足够在意结果，愿意去消化冲突，而不是把任何一方丢下。对抗组织熵增这场仗，说到底就是鼓励疗愈、并默认对方是善意的。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 289</span>
+      <a href="https://x.com/garrytan/status/2079700506742751344" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI tutorials & interviews</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「不敢相信这碗拉面有 28 克蛋白质，谢谢 @kevinleeme 寄来的这份！」——健康从来不必苦大仇深，把蛋白质悄悄塞进日常那碗面里，也是一种可持续的地基维护。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 21</span>
+      <a href="https://x.com/petergyang/status/2079723792696586572" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<footer>
+  <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
+  主持：大雨 × 小苇 · 2026-07-23 · 健康星期四<br>
+  数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
+  本期内容为健康科普，不构成医疗建议；涉及环境暴露、激素治疗、补剂与妇科疾病，个体差异大，诊断与治疗方案请与专业医生一对一商量。<br>
+  © 2026 Daily Builders Digest
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-07-23">
-<meta property="og:description" content="健康星期四 · 主动权 · Huberman 请 Tommy Wood 讲主动造一颗更强的大脑 · Peter Attia AMA#87 谈环境污染与长寿 · Rhonda Patrick 讲日常能拧的旋钮——女性健康聚焦子宫内膜异位症与子宫腺肌症">
-<title>Daily Builders Digest · 2026-07-23</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-07-24 · AI 星期五">
+<meta property="og:description" content="DeepSeek V4 今日正式发布 · 中国开放权重三连发 Kimi K3 / Qwen 3.8 · V4-Pro 逼平 Opus 4.6 却便宜七倍 · Anthropic 经济指数:就业冲击小于预期,技能鸿沟在扩大">
+<title>Daily Builders Digest · 2026-07-24 · AI 星期五</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,11 +29,11 @@
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
   .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
   .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
   .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -43,30 +43,43 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
-  .news-card { background: var(--bg); padding: 24px; }
-  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
-  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
-  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
-  .news-card.lead .news-hed { font-size: 24px; }
-  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
-  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
-  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
-  .news-source a:hover { border-color: var(--red); }
-  .spotlight { background: var(--ink); color: var(--bg); padding: 32px; margin: 2px 0 0; border-top: 3px solid var(--red); }
-  .spotlight .sp-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
-  .spotlight .sp-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.3; margin-bottom: 16px; color: var(--bg); }
-  .spotlight .sp-body { font-size: 14px; line-height: 1.75; color: #d8d6d0; margin-bottom: 14px; }
-  .spotlight .sp-body strong { color: var(--bg); }
-  .spotlight .sp-stat { font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1; color: var(--red); margin: 8px 0 4px; }
-  .spotlight .sp-stat-cap { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--mid); text-transform: uppercase; margin-bottom: 18px; }
-  .spotlight .sp-source { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
-  .spotlight .sp-source a { color: var(--red); text-decoration: none; }
-  .tip-box { background: var(--card); border-left: 3px solid var(--red); padding: 24px 28px; margin: 36px 0; }
-  .tip-box .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
-  .tip-box .tip-body { font-size: 15px; line-height: 1.7; color: #333; }
-  .tip-box .tip-body strong { color: var(--ink); }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -85,131 +98,175 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
-  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
-  @media (max-width: 540px) {
-    .news-grid { grid-template-columns: 1fr !important; }
-    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
-    .news-card.lead .news-hed { font-size: 18px; }
-    .builders-grid { grid-template-columns: 1fr !important; }
-    .header { padding: 28px 0 20px; }
-    .spotlight { padding: 24px; }
-    .spotlight .sp-hed { font-size: 19px; }
-  }
-  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
-  footer strong { color: var(--ink); }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <p class="header-eyebrow">健康星期四 · 每日播客 · Vol.2026-07-23</p>
-  <h1 class="header-title">健康<span>星期四</span></h1>
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期五</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
   <div class="header-meta">
-    <span>📅 2026·07·23 周四</span>
-    <span>🏷 主题：健康 / Health</span>
-    <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 13 分钟</span>
+    <span>📅 2026-07-24</span>
+    <span>🤖 AI 星期五</span>
+    <span>◇ 便宜到地板 · 天没塌</span>
+    <span>大雨 × 小苇</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · Tommy Wood 讲主动造大脑 · 可塑性不会因年纪关掉，是你不再给它「新」的东西</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA#87 · 环境污染与长寿 · 空气、噪音、光——先管证据最硬的</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · Rhonda Patrick 讲日常旋钮 · 桑拿、纤维、防晒，先垒地基</span>
-    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 子宫内膜异位症平均拖 7-10 年确诊 · 早诊断避免四成疾病负担</span>
-    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · Tommy Wood 讲主动造大脑 · 可塑性不会因年纪关掉，是你不再给它「新」的东西</span>
-    <span class="ticker-item"><span class="dot">▶</span>Peter Attia AMA#87 · 环境污染与长寿 · 空气、噪音、光——先管证据最硬的</span>
-    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · Rhonda Patrick 讲日常旋钮 · 桑拿、纤维、防晒，先垒地基</span>
-    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 子宫内膜异位症平均拖 7-10 年确诊 · 早诊断避免四成疾病负担</span>
+    <span class="ticker-item"><span class="dot">●</span>DeepSeek V4 今日正式发布 · V4-Pro 1.6T / V4-Flash 284B · MIT 许可 · 1M 上下文</span>
+    <span class="ticker-item"><span class="dot">●</span>V4-Pro SWE-bench 80.6% 逼平 Opus 4.6，输出价约七分之一</span>
+    <span class="ticker-item"><span class="dot">●</span>中国开放权重三连发 · Kimi K3 2.8T · Qwen 3.8 2.4T · DeepSeek V4</span>
+    <span class="ticker-item"><span class="dot">●</span>Anthropic 经济指数:就业负面冲击小于预期,但技能鸿沟在扩大</span>
+    <span class="ticker-item"><span class="dot">●</span>DeepSeek V4 今日正式发布 · V4-Pro 1.6T / V4-Flash 284B · MIT 许可 · 1M 上下文</span>
+    <span class="ticker-item"><span class="dot">●</span>V4-Pro SWE-bench 80.6% 逼平 Opus 4.6，输出价约七分之一</span>
+    <span class="ticker-item"><span class="dot">●</span>中国开放权重三连发 · Kimi K3 2.8T · Qwen 3.8 2.4T · DeepSeek V4</span>
+    <span class="ticker-item"><span class="dot">●</span>Anthropic 经济指数:就业负面冲击小于预期,但技能鸿沟在扩大</span>
   </div>
 </div>
 
+<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">🎙</span>
-    <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 13 分钟</span>
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期五 · 便宜到地板,但天没塌</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-07-23.mp3">
-    你的浏览器不支持音频播放。<a href="2026-07-23.mp3">下载音频</a>
+  <audio controls src="episodes/2026-07-24.mp3">
+    Your browser does not support the audio element.
   </audio>
 </div>
 
-<p class="section-label">◈ 健康星期四 · 三档播客 · 一条主线：主动权</p>
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日头条 · 成本战争打到地板</div>
+    <div class="feature-show-name">DEEPSEEK&nbsp;V4<br>×&nbsp;THE&nbsp;WAVE</div>
+    <div class="feature-ep-title">DeepSeek V4 今日正式发布,接上 Kimi K3 与 Qwen 3.8<br>中国开放权重,几周之内把「最大 · 最强 · 最便宜 · 开源」焊在了一起</div>
+    <div class="feature-guest">DeepSeek · 月之暗面 · 阿里 · Anthropic · 2026-07-24</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      今天的主线还是一个词——便宜。DeepSeek 正式发布 V4，双模型、100 万上下文、MIT 许可；V4-Pro 在 SWE-bench Verified 上 80.6%，距 Claude Opus 4.6 只差 0.2 分，输出价却只有约七分之一。往前推几周，Kimi K3、Qwen 3.8 已连番登场。而在模型疯狂降价的另一端，Anthropic 的经济指数给出一份冷静的数据：就业的负面冲击，比很多人预期的要小——只是技能鸿沟正在悄悄扩大。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">DeepSeek V4</span>
+      <span class="tag">开放权重</span>
+      <span class="tag">成本七分之一</span>
+      <span class="tag">Kimi K3 / Qwen 3.8</span>
+      <span class="tag">Economic Index</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">DeepSeek V4-Pro</div>
+        <div class="stat-value">1.6T 总参 / 49B 激活 · SWE-bench 80.6%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">对标 Opus 4.6</div>
+        <div class="stat-value">仅差 0.2 分 · 输出价约 1/7</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Anthropic 经济指数</div>
+        <div class="stat-value">高暴露岗位无系统性失业 · 年轻人招聘放缓</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="news-grid">
-  <div class="news-card lead">
-    <p class="news-num">导语</p>
-    <h2 class="news-hed">主动建造，加主动防御——本周三档健康播客，讲的都是「多少握在你自己手里」</h2>
-    <p class="news-body">
-      把本周 Huberman Lab、Peter Attia 的 The Drive、Rhonda Patrick 的 FoundMyFitness 摆在一起听，会发现三期意外地指向同一句话：你的大脑和身体，有比你以为的多得多的部分，握在自己手里。三个方向各拧一颗螺丝：Huberman 请神经科学家 <strong>Tommy Wood</strong> 讲「主动造」——怎么用挑战、运动、营养造出一颗更强的大脑；Peter Attia 的 AMA 反过来讲「主动防御」——空气、噪音、光、水这些你被动吸进来的东西，怎么把伤害降到最低；Rhonda Patrick 则聚焦日常里你能亲手拧的那些旋钮。今天一段段聊，落到女性健康：<strong>子宫内膜异位症与子宫腺肌症</strong>——一个平均要拖七到十年才确诊、却被长期低估的病。最后留一个今天就能做的动作。
-    </p>
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
+    <div class="script-text">欢迎回到 AI 星期五。这一周如果只留一个词，我想留「便宜」。就在今天，7 月 24 号，DeepSeek 正式发布了 V4——不是四月那个预览版，是正式版。而且它不是一个模型，是两个：一个 V4-Pro，<strong>1.6 万亿</strong>总参数、激活 490 亿；一个 V4-Flash，2840 亿总参、激活 130 亿。两个都带 100 万 token 的上下文，都用 MIT 许可，随便商用。</div>
   </div>
 
-  <div class="news-card">
-    <p class="news-num">01 · Huberman Lab · 2026-07-20</p>
-    <h2 class="news-hed">Tommy Wood 讲主动造大脑：可塑性不会因年纪关掉，是你不再给它「新」东西</h2>
-    <p class="news-body">
-      本周 Huberman Lab 请来华盛顿大学神经科学家 Tommy Wood 教授（新书《The Stimulated Mind》）。最颠覆的一句：<strong>大脑可塑性不会因为年纪大就关掉，真正让它关掉的，是你不再给它「新」的东西</strong>。他区分了「熟悉」与「新奇」任务——每天做惯的工作再费脑也是走老路，真正驱动可塑性的是又新又难、还得同时动到身体和脑子的任务，比如跳舞、学乐器、学新运动。研究显示人的心理处理速度其实能保持到六十岁左右才明显下滑。硬招是运动：一项研究让上了年纪的人做 <strong>HIIT</strong>，管学习记忆的海马体出现了长期改善；有氧加力量分别护着大脑的灰质与白质。营养上他推地中海／MIND 饮食、Omega-3、B 族维生素与肌酸。还有个冷门发现——<strong>打带状疱疹疫苗的人，后来得痴呆的风险明显更低</strong>，提示大脑衰退里有相当一部分是可干预的。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.hubermanlab.com/episode/accelerate-learning-and-increase-cognitive-capacity-tommy-wood" target="_blank">Huberman Lab · Dr. Tommy Wood</a>
-    </p>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">等等，DeepSeek 又来了。去年是它掀桌子，今年 Kimi、Qwen 轮番上，现在它自己又发正式版。这一次它想证明什么？</div>
   </div>
 
-  <div class="news-card">
-    <p class="news-num">02 · The Peter Attia Drive · AMA #87</p>
-    <h2 class="news-hed">环境污染与长寿：别焦虑，但要分清哪些值得管——空气排第一</h2>
-    <p class="news-body">
-      Peter Attia 这期 AMA 主题是「环境污染与长寿」——空气、噪音、光污染与电磁场。核心态度是<strong>按证据强弱分配注意力</strong>。排最前的是<strong>空气</strong>：PM2.5 有大量证据与心血管病、认知衰退相关（正好接上 Tommy Wood 那句「血管健康就是大脑健康」），动作很朴素——看本地 AQI、重污染天少户外剧烈运动、家里尤其卧室用带 HEPA 的净化器。其次是<strong>噪音</strong>：长期交通噪音是一种慢性生理应激源，和血压、睡眠都相关。<strong>夜间光污染</strong>证据较硬——扰乱昼夜节律、拖累睡眠代谢，所以卧室做暗、睡前少看亮屏。至于<strong>电磁场</strong>，他相对淡定，认为日常水平证据仍弱，不必过度焦虑。别把有限的注意力花在既难改、证据又薄的东西上，而忽略空气、睡眠、运动这些大头。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://peterattiamd.com/ama87/" target="_blank">The Peter Attia Drive · AMA #87</a>
-    </p>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这一次它想证明的不是「我最聪明」，而是「我最划算」。你看它的架构就懂了——V4 把注意力机制换成了两套压缩方案，一套叫压缩稀疏注意力 CSA，一套叫重压缩注意力 HCA。这两个东西盯的不是跑分，是「服务成本」，也就是每一次推理到底烧多少钱。结果是什么呢？V4-Pro 在 SWE-bench Verified 上拿到 <strong>80.6%</strong>，和 Claude Opus 4.6 的 80.8% 只差 0.2 分，几乎贴脸——但输出价格大概只有对方的<strong>七分之一</strong>。
+    <span class="source-inline">📎 来源: <a href="https://explainx.ai/blog/deepseek-v4-official-release-peak-pricing-mid-july-2026" target="_blank">DeepSeek V4 Official Release — explainX</a></span></div>
   </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">七分之一……差 0.2 分，但便宜七倍。这个账任何一个做产品的人都会算。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，而且还有个很有意思的信号——V4 第一次给 DeepSeek 引入了「高峰定价」。以前 DeepSeek 是出了名的平价、随便用，这次在中国的工作时段，价格会翻到 <strong>2 倍</strong>。听起来是涨价，其实是另一回事：说明它的便宜已经便宜到需求爆了、算力扛不住了，只能用价格来削峰。另外今天还有个句号——老的 deepseek-chat 和 deepseek-reasoner 这两个接口，今天 UTC 下午三点五十九分正式退休，全部并到 V4。一个时代干脆利落地翻篇。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以把镜头拉远一点，这已经不是 DeepSeek 一家的事了吧？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">完全正确，这才是今天真正的主线。你把这个夏天的中国开放权重连起来看：上周月之暗面的 Kimi K3，<strong>2.8 万亿</strong>参数，是目前发布过最大的开放权重模型，一发布就冲到 Frontend Code Arena 榜首，1679 分，压过了 Claude Fable 5 和 GPT-5.6 Sol，它的完整权重 7 月 27 号开放；紧接着阿里公布了 Qwen 3.8，<strong>2.4 万亿</strong>参数，同样走开放权重；今天又轮到 DeepSeek V4。三家中国团队，几周之内，把「最大、最强、最便宜、还开源」这几个词几乎焊在了一起。
+    <span class="source-inline">📎 来源: <a href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems" target="_blank">China's Moonshot AI releases Kimi K3, the largest open-source model ever — VentureBeat</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个画面挺震撼的。但我心里冒出来一个问题——模型越来越便宜、越来越强，那些真的在用它工作的人呢？是不是很多人的饭碗，就这么被它一点点吃掉了？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这正好接上今天第二条，我特别想聊的一条。就在这两天，Anthropic 更新了它的 Economic Index，就是那份专门研究「AI 到底怎么改变工作」的报告。里面有一个和大家直觉相反的结论：到目前为止，就业受到的负面冲击，比很多人预期的要小。高暴露的职业，从 2022 年底到现在，并<strong>没有</strong>出现系统性的失业上升。
+    <span class="source-inline">📎 来源: <a href="https://builtin.com/articles/anthropic-economic-index-2026-ai-jobs-report" target="_blank">Anthropic's Economic Index Shows the AI Skills Gap Is Growing — Built In</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">没有系统性失业？那大家天天喊的「AI 抢工作」，是喊错了？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">不能这么说，它更像是「事情比标题复杂」。报告里有三个更细的点。第一，影响极不均匀——AI 的使用高度集中在某些国家、某些职业，有的岗位被深度改造，有的几乎没被碰到。第二，有一个正在扩大的「<strong>技能鸿沟</strong>」：熟练的 Claude 用户，自动化任务的成功率远高于新手。也就是说，拉开差距的不是「你会不会被 AI 取代」，而是「你会不会用 AI」。第三，一个需要盯住的隐忧——虽然整体失业没上升，但在高暴露岗位上，<strong>年轻人的招聘明显在放缓</strong>。冲击可能不是砸向存量，而是悄悄拧紧了新人进场的那扇门。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这三点放一起，其实挺清醒的。模型这边在疯狂降价、开源，好像技术的洪水说来就来；但真到「人怎么被影响」这一端，数据反而是慢的、分化的、藏在细节里的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
+    <div class="script-text">这就是我今天想留给你的那句话——<strong>便宜到地板，但天没塌</strong>。价格曲线可以一夜之间掉七分之一，就业曲线不会。技术的速度和社会的速度，从来不是同一条线。真正的分水岭，也许不在「模型有多便宜」，而在「谁真的学会了把这么便宜的能力，接进自己的工作里」。今天的建造者动态，正好都是这种人。我们下期见。</div>
+  </div>
+
 </div>
 
-<div class="news-grid" style="margin-top:2px;">
-  <div class="news-card" style="grid-column:1 / -1;">
-    <p class="news-num">03 · FoundMyFitness · Rhonda Patrick</p>
-    <h2 class="news-hed">日常能拧的旋钮：桑拿、纤维、防晒——但别本末倒置，先垒地基</h2>
-    <p class="news-body">
-      Rhonda Patrick 这期像一份很实在的生活清单——有机食材、模拟禁食、桑拿、防晒、红光、反渗透净水、还有膳食纤维。跟 Attia 那期正好是一体两面：Attia 讲怎么<strong>躲开坏暴露</strong>，Rhonda 讲怎么主动用好习惯去<strong>对冲</strong>。她讲得最有意思的两个：一是<strong>桑拿</strong>——规律桑拿与心血管健康、乃至更低死亡率有关联，可理解为一种「被动的有氧训练」，让心血管系统在热里适应；二是<strong>纤维</strong>，一个被严重低估的东西，绝大多数人吃得远远不够，却几乎是喂养肠道菌群、维持代谢健康最便宜的杠杆。至于有机食材、防晒、净水这些，她也很清醒：能减少不必要暴露当然好，但<strong>先把睡眠、运动、饮食这些证据最硬的地基打牢，再抠细节</strong>。三期共同的底色都是——别被花哨的东西带跑，先做证据最硬的那几件事。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://www.foundmyfitness.com/episodes" target="_blank">FoundMyFitness · Sauna, fiber, sunscreen & daily levers</a>
-    </p>
-  </div>
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">◈ 本期速记 · 两条主线</div>
+  <div class="insight-title">FLOOR-CHEAP · SKY INTACT</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>DeepSeek V4 今日正式发布：V4-Pro（1.6T 总参 / 49B 激活）与 V4-Flash（284B / 13B），均 1M 上下文、MIT 许可。新注意力架构 CSA + HCA 主攻服务成本；V4-Pro SWE-bench Verified 80.6%，距 Opus 4.6 仅 0.2 分，输出价约 1/7。首次引入高峰定价（业务时段 2×），旧 chat/reasoner 接口今日 UTC 15:59 退休。接上 Kimi K3（2.8T，Frontend Arena #1）与 Qwen 3.8（2.4T），中国开放权重连番登场。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Anthropic Economic Index：AI 对就业的负面冲击小于预期，高暴露职业自 2022 底未见系统性失业上升。但三点值得盯——影响极不均匀（集中于特定国家/职业）；熟练用户与新手的「技能鸿沟」在扩大；高暴露岗位年轻人招聘明显放缓。技术降价的速度，远快于劳动力市场调整的速度。</span></div>
 </div>
 
-<!-- ─────────────────── WOMEN'S HEALTH SPOTLIGHT ─────────────────── -->
-<div class="spotlight">
-  <p class="sp-label">◈ 女性健康聚焦 · The Peter Attia Drive #397 · Renato Tomioka, M.D., Ph.D.</p>
-  <h2 class="sp-hed">子宫内膜异位症：平均拖七到十年才确诊——「很痛」不该被当成理所当然</h2>
-  <p class="sp-body">
-    这周的女性健康聚焦，落在一个被严重忽视的病——<strong>子宫内膜异位症</strong>，以及它的近亲<strong>子宫腺肌症</strong>。Peter Attia 前不久请来妇科专家 Renato Tomioka 专门讲这一期。先感受一个数字：全球大约<strong>每十个育龄女性里就有一个</strong>受子宫内膜异位症影响，可平均确诊要拖上七到十年。
-  </p>
-  <p class="sp-body">
-    为什么这么难被发现？两个原因交织：一是症状容易被「正常化」——剧烈痛经、性交痛、慢性盆腔痛，太多女性从小被告知「痛经忍忍就过去了」；二是诊断本身就难，影像常常看不清，过去甚至要靠腹腔镜才能确诊。Tomioka 最戳心的一句是：<strong>如果能在青春期或年轻女性身上早一点诊断出来，就能避免高达四成的病灶、或者说疾病负担。</strong>
-  </p>
-  <p class="sp-stat">40%</p>
-  <p class="sp-stat-cap">早诊断可避免的疾病负担 · 子宫内膜异位跑到子宫外，子宫腺肌症长进子宫肌层，常同时存在</p>
-  <p class="sp-body">
-    这期还聊到一个很现实的话题——<strong>生殖衰老</strong>：这些病会影响卵巢功能和生育窗口，所以早诊断不只是为了止痛，也关系到女性对生育时间的规划。好消息是治疗选择比过去多了，从激素治疗到更精准的手术都在进步。给正被这些症状困扰的女性一句最实在的话：<strong>别把「很痛」当成理所当然。</strong>如果痛经痛到影响正常生活、上不了班上不了学，那不是娇气，是身体在报警——值得去找专业妇科医生认真评估，而不是一句「女人都这样」打发过去。早一次问诊，可能就省下未来七年的痛。
-  </p>
-  <p class="sp-source">
-    📎 <a href="https://peterattiamd.com/renatotomioka/" target="_blank">The Peter Attia Drive · #397 Endometriosis and adenomyosis — Renato Tomioka, M.D., Ph.D.</a>
-  </p>
-</div>
-
-<!-- ─────────────────── TODAY'S ACTION ─────────────────── -->
-<div class="tip-box">
-  <p class="tip-label">✅ 今日健康行动 · 一件就够</p>
-  <p class="tip-body">
-    今天做一件「<strong>新而难、还得动身体</strong>」的事——不用多，十五分钟就行：跟着视频学一段舞、学几个新和弦，或者用不常用的那只手做点精细动作。这正是 Tommy Wood 说的、能真正驱动大脑可塑性的刺激。再叠一件几乎零成本的主动防御：<strong>今晚把卧室弄暗一点、睡前少看亮屏</strong>——这一条同时护着你的昼夜节律、睡眠和大脑。一件新鲜的难事，加一间更暗的卧室：主动建造，加主动防御。
-  </p>
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◈ 消息来源</div>
+  <a class="source-link" href="https://explainx.ai/blog/deepseek-v4-official-release-peak-pricing-mid-july-2026" target="_blank"><span class="src-icon">explainX</span><span>DeepSeek V4 Official Release: Peak Pricing Guide</span></a>
+  <a class="source-link" href="https://inews.zoombangla.com/deepseek-v4-launch-july-24-2026/" target="_blank"><span class="src-icon">iNews</span><span>DeepSeek V4 Launches July 24, Adding Rival to AI Inference Market</span></a>
+  <a class="source-link" href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems" target="_blank"><span class="src-icon">VentureBeat</span><span>China's Moonshot AI releases Kimi K3, the largest open-source model ever</span></a>
+  <a class="source-link" href="https://builtin.com/articles/anthropic-economic-index-2026-ai-jobs-report" target="_blank"><span class="src-icon">Built In</span><span>Anthropic's Economic Index Shows the AI Skills Gap Is Growing</span></a>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -219,81 +276,96 @@
 <p class="builders-intro">
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
-  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:00。今日为健康主题，播客卡片选取本周与「学习·认知」最合拍的一期，建造者动态优先选取与认知、心态、营养相关的内容。
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:00。
 </p>
 
+<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Huberman Lab · 2026-07-20</p>
-  <p class="pc-title">Accelerate Learning & Increase Cognitive Capacity — Dr. Tommy Wood</p>
-  <p class="pc-summary">
-    与今天主线最合拍的一期：大脑可塑性不会因年纪关掉，关掉它的是你不再给它「新」的东西。真正驱动可塑性的是又新又难、还得同时动身体和脑子的任务；运动（尤其 HIIT）能改善年长者海马体的学习能力；而一个冷门发现是——带状疱疹疫苗与更低的痴呆风险相关，提示大脑衰退里有相当一部分是可干预的。
-  </p>
-  <a href="https://www.hubermanlab.com/episode/accelerate-learning-and-increase-cognitive-capacity-tommy-wood" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">AI & I by Every · 2026-07-22</p>
+  <p class="pc-title">How Every's Team Used AI to Ship Its Biggest Launch Ever</p>
+  <p class="pc-summary">Every 团队复盘了他们的新订阅层 Builder Pack：和一堆自己每天在用的 AI 工具打包合作，给订阅者送 Codex 额度、一年免费 Cursor 之类的福利，结果创造了公司历史上最大的一次订阅收入增长。它有意思的点不在营销，而在于——一个 AI 原生的小团队，是怎么把「我们自己怎么用 AI」直接变成商业模式的。便宜的模型是原料，怎么把它组装成别人愿意付费的东西，才是这一集真正在讲的手艺。</p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
+<!-- BUILDERS GRID -->
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">MG</div>
+      <div class="builder-avatar">GR</div>
       <div>
-        <div class="builder-name">Madhu Guru</div>
-        <div class="builder-handle">@realmadhuguru · Sr Director AI, Meta</div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO, Vercel</div>
       </div>
     </div>
-    <p class="builder-tweet">「越是依赖我的『第二大脑』，我那颗主大脑就变得越迟钝。我意识到，把大量事实、半成品的想法、松散的线头随身装在脑子里，其实极有价值——你的潜意识会一直在后台熬煮它们。」</p>
+    <p class="builder-tweet">「Fable 几乎是自主地，在 Turbopack / Next.js 里找到了一个 15%–30% 的内存效率提升。有人今天问我：你用 AI 最震撼的瞬间是什么？我的回答是——每一周都有。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 133</span>
-      <a href="https://x.com/realmadhuguru/status/2079581493542969694" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2098</span>
+      <a href="https://x.com/rauchg/status/2080098518535110913" target="_blank">查看推文 →</a>
     </div>
   </div>
-
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · President & CEO, YC</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「团队不会靠奇迹凝聚。得有人足够热爱这群人、也足够在意结果，愿意去消化冲突，而不是把任何一方丢下。对抗组织熵增这场仗，说到底就是鼓励疗愈、并默认对方是善意的。」</p>
+    <p class="builder-tweet">「Anthropic 经济学负责人的好文。数据一次又一次显示：工作受 AI 的负面影响，比预期的要小——因为人会把省下来的时间，投到新的、更难的事情上去。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 289</span>
-      <a href="https://x.com/garrytan/status/2079700506742751344" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 116</span>
+      <a href="https://x.com/levie/status/2080156917373214900" target="_blank">查看推文 →</a>
     </div>
   </div>
-
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PY</div>
+      <div class="builder-avatar">TS</div>
       <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · AI tutorials & interviews</div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex & ChatGPT, OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「不敢相信这碗拉面有 28 克蛋白质，谢谢 @kevinleeme 寄来的这份！」——健康从来不必苦大仇深，把蛋白质悄悄塞进日常那碗面里，也是一种可持续的地基维护。</p>
+    <p class="builder-tweet">「对正在成形的东西激动得难以置信。明天，感觉很 codexy。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 21</span>
-      <a href="https://x.com/petergyang/status/2079723792696586572" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 6475</span>
+      <a href="https://x.com/thsottiaux/status/2080144499716800513" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">CL</div>
+      <div>
+        <div class="builder-name">Claude</div>
+        <div class="builder-handle">@claudeai · Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Claude Code 的安全插件进入 beta。提交前先扫一遍改动里的漏洞，或对整个代码库跑一次全量扫描——全在终端里，用你已经在用的 Claude 推理完成。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 12836</span>
+      <a href="https://x.com/claudeai/status/2079990597973057691" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<hr class="rule">
-
-<footer>
-  <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
-  主持：大雨 × 小苇 · 2026-07-23 · 健康星期四<br>
-  数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
-  本期内容为健康科普，不构成医疗建议；涉及环境暴露、激素治疗、补剂与妇科疾病，个体差异大，诊断与治疗方案请与专业医生一对一商量。<br>
-  © 2026 Daily Builders Digest
-</footer>
+<!-- FOOTER -->
+<div class="footer">
+  <span>Daily Builders Digest · AI 星期五</span>
+  <span>2026-07-24 · 大雨 × 小苇</span>
+</div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-07-23.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-07-23</span>
+      <span class="ep-card-badge" style="color:#007744;border-color:#007744">Health</span>
+    </div>
+    <span class="ep-card-hl">主动建造，加主动防御——本周三档健康播客，讲的都是「多少握在你自己手里」</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-07-22.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-07-22</span>

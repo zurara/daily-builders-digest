@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-07-26 · 周日播客精选">
-<meta property="og:description" content="史上最大的芯片 · Cerebras CEO Andrew Feldman × MAD Podcast · 没人谈的三个短缺 · CUDA 不再是护城河 · 在沙漠里待十年">
-<title>Daily Builders Digest · 2026-07-26 · 周日播客精选</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-07-27 · AI 星期一">
+<meta property="og:description" content="Claude Opus 5 登顶 · 开放权重成行业共识 · AI Agent 一月融资18亿 · 阿里云 Agent 原生云">
+<title>Daily Builders Digest · 2026-07-27 · AI 星期一</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -43,48 +43,25 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
-  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
-  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
-  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
-  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-  .stat-item { display: flex; flex-direction: column; gap: 4px; }
-  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
-  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .story { margin-top: 44px; }
+  .story-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: var(--red); margin-bottom: 8px; }
+  .story-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4.4vw, 42px); line-height: 1.02; letter-spacing: .01em; color: var(--ink); margin-bottom: 20px; }
+  .script-container { margin-top: 8px; }
+  .script-block { margin-bottom: 22px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
   .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
   .speaker-dayu  { color: var(--red); }
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
   .script-text strong { font-weight: 600; }
-  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .src-inline { display: block; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mid); text-decoration: none; }
+  .src-inline:hover { color: var(--red); }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 48px 0; }
   .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
   .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
   .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
   .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .episodes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 8px 0 40px; }
-  @media (max-width: 640px) { .episodes-grid { grid-template-columns: 1fr; } }
-  .ep-card { background: var(--bg); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
-  .ep-show { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
-  .ep-title { font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--ink); }
-  .ep-desc { font-size: 13px; line-height: 1.6; color: #555; flex-grow: 1; }
-  .ep-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); text-decoration: none; text-transform: uppercase; border-bottom: 1px solid var(--light); padding-bottom: 4px; display: inline-block; }
-  .ep-link:hover { color: var(--red); border-color: var(--red); }
-  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
-  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
-  .source-link:hover { color: var(--red); }
-  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
   .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
@@ -105,240 +82,169 @@
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
-  <div class="header-title">PODCAST<br><span>DIGEST</span></div>
+<div class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 每日快报</div>
+  <div class="header-title">AI <span>星期一</span></div>
   <div class="header-meta">
-    <span>📅 2026-07-26</span>
-    <span>🎙 周日播客精选</span>
-    <span>🤖 史上最大芯片 · 三个短缺 · CUDA 护城河 · 十年沙漠</span>
+    <span>2026-07-27</span>
+    <span>主题 / AI</span>
     <span>大雨 × 小苇</span>
   </div>
-</header>
+</div>
 
-<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>The MAD Podcast × Andrew Feldman · Cerebras CEO</span>
-    <span class="ticker-item"><span class="dot">●</span>史上最大芯片 · 比 GPU 大 58 倍</span>
-    <span class="ticker-item"><span class="dot">●</span>没人谈的三个短缺 · Cerebras 一个都不碰</span>
-    <span class="ticker-item"><span class="dot">●</span>CUDA 不再是护城河 · 切换只需八个键</span>
-    <span class="ticker-item"><span class="dot">●</span>在沙漠里待十年 · 没人在乎</span>
-    <span class="ticker-item"><span class="dot">●</span>No Priors × DoorDash · Lenny's × Netflix CPTO</span>
-    <span class="ticker-item"><span class="dot">●</span>The MAD Podcast × Andrew Feldman · Cerebras CEO</span>
-    <span class="ticker-item"><span class="dot">●</span>史上最大芯片 · 比 GPU 大 58 倍</span>
-    <span class="ticker-item"><span class="dot">●</span>没人谈的三个短缺 · Cerebras 一个都不碰</span>
-    <span class="ticker-item"><span class="dot">●</span>CUDA 不再是护城河 · 切换只需八个键</span>
-    <span class="ticker-item"><span class="dot">●</span>在沙漠里待十年 · 没人在乎</span>
-    <span class="ticker-item"><span class="dot">●</span>No Priors × DoorDash · Lenny's × Netflix CPTO</span>
+    <span class="ticker-item"><span class="dot">◈</span>Claude Opus 5 登顶智能指数 61 · Agent 指数 55.3</span>
+    <span class="ticker-item"><span class="dot">◈</span>开放权重成行业共识 · Google 站队</span>
+    <span class="ticker-item"><span class="dot">◈</span>AI Agent 七月融资 18 亿美元</span>
+    <span class="ticker-item"><span class="dot">◈</span>阿里云发布 Agent 原生云</span>
+    <span class="ticker-item"><span class="dot">◈</span>Claude Opus 5 登顶智能指数 61 · Agent 指数 55.3</span>
+    <span class="ticker-item"><span class="dot">◈</span>开放权重成行业共识 · Google 站队</span>
+    <span class="ticker-item"><span class="dot">◈</span>AI Agent 七月融资 18 亿美元</span>
+    <span class="ticker-item"><span class="dot">◈</span>阿里云发布 Agent 原生云</span>
   </div>
 </div>
 
-<!-- AUDIO -->
 <div class="audio-bar">
-  <div class="audio-bar-top">
-    <span class="icon">▶</span>
-    <strong>本期音频</strong>
-    <span>· 周日播客精选 · 史上最大的芯片，和护城河正在消失的判断</span>
-  </div>
-  <audio controls src="episodes/2026-07-26.mp3">
-    Your browser does not support the audio element.
-  </audio>
+  <div class="audio-bar-top"><span class="icon">🎧</span><strong>今日音频</strong><span>· AI 星期一 · 大雨 × 小苇</span></div>
+  <audio controls src="episodes/2026-07-27.mp3"></audio>
 </div>
 
-<!-- MAIN FEATURE HERO -->
-<section class="feature-hero">
-  <div class="feature-left">
-    <div class="feature-eyebrow">本周主推 · The MAD Podcast</div>
-    <div class="feature-show-name">THE BIGGEST<br>CHIP EVER BUILT</div>
-    <div class="feature-ep-title">Why OpenAI Runs On It ·<br>Cerebras CEO Andrew Feldman</div>
-    <div class="feature-guest">Andrew Feldman (Cerebras) × Matt Turck · 2026-07-23</div>
-  </div>
-  <div class="feature-right">
-    <div class="feature-lede">
-      不聊头条，从一片晶圆讲起。Cerebras 造出了计算机史上最大的芯片——比 GPU 大 58 倍。CEO 费尔德曼把 AI 从「模型多聪明」的软件叙事，一路拽到最硬的硅片层：为什么 GPU 做不好快速推理、没人谈的三个短缺、以及一个最反共识的判断——CUDA 已经不再是英伟达的护城河。
-    </div>
-    <div class="feature-tags">
-      <span class="tag">史上最大芯片</span>
-      <span class="tag">三个短缺</span>
-      <span class="tag">CUDA 护城河</span>
-      <span class="tag">推理速度</span>
-      <span class="tag">十年沙漠</span>
-    </div>
-    <div class="feature-stats">
-      <div class="stat-item">
-        <div class="stat-label">嘉宾</div>
-        <div class="stat-value">Cerebras 联合创始人兼 CEO</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">芯片尺寸</div>
-        <div class="stat-value">比 GPU 大 58 倍</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">最反共识判断</div>
-        <div class="stat-value">CUDA 不再是护城河</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCRIPT SECTION -->
-<div class="section-label" style="margin-top:40px;">🎙 播客对话 · 大雨 × 小苇</div>
+<p class="section-label">◈ 开场</p>
 <div class="script-container">
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
-    <div class="script-text">这周的主推，来自 Matt Turck 的 MAD Podcast，嘉宾是 Cerebras 的联合创始人兼 CEO，Andrew Feldman 安德鲁·费尔德曼。Cerebras 干了一件很疯的事——他们造出了计算机工业史上最大的一块芯片，比一块普通 GPU 大 <strong>58 倍</strong>。而且他们刚刚完成了半导体行业史上规模最大的一次 IPO，手里还握着和 OpenAI 一笔两百多亿美元的大单。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">但费尔德曼自己说，这一集他不想聊头条。他想从最底层讲起——从「一片晶圆到底是什么」开始，一层一层往上搭。为什么 GPU 做不好快速推理、没人谈的三个短缺、还有那个「在沙漠里待了十年没人要」的故事。我特别喜欢这种讲法。</div>
-  </div>
-
   <div class="script-block lead-block">
     <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，所以我们今天也顺着他的思路走。先说他抛出的第一个判断：整个 AI 世界的话题，正在收敛到一个词——<strong>速度</strong>。他说 AI 有很长一段时间只是个客厅魔术，好玩但没用；大概在 2025 年年中，AI 突然聪明到了人们真的开始用它。而只要你开始用它、它开始产生价值，速度就变得要命——快的 token 就是更有生产力的 token。</div>
+    <div class="script-text">早上好，欢迎收听每日快报。今天是七月二十七号，星期一，我们又回到了 AI 主题。这周开局特别猛，前脚 Anthropic 刚把 Claude Opus 5 甩出来登顶各大榜单，后脚整个行业围绕"开放权重"吵成一团，AI Agent 的融资也在疯狂加速。小苇，准备好了吗？</div>
   </div>
-
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">他有个类比我印象特别深，是拿 Netflix 举例的。</div>
+    <div class="script-text">准备好了。说实话我周末就一直在刷 Opus 5 的评测，感觉这一次的分数有点吓人。咱们就从它开始聊吧？</div>
   </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">是的，这个类比很妙。他说互联网慢的时候，Netflix 是往信封里塞 DVD 寄给你的。等互联网变快了，他们没有去更高效地寄 DVD——他们直接变成了一家电影公司。<strong>速度不是让你把老事做得更好，速度是让你变成一个完全不同的东西。</strong>对 AI 也一样：够快，你就会待得更久、来得更勤、去啃更难的问题。慢的搜索、拨号上网，市场都是零。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">那接下来就是那个没人谈的三个短缺。这部分我觉得是整集最硬核、也最能解释 Cerebras 为什么活下来的地方。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">完全同意。费尔德曼说，现在整个 AI 硬件生态卡着三个瓶颈。第一个，是一种叫 <strong>HBM</strong> 的高带宽内存——几乎所有 GPU 和 ASIC 都要用，全世界只有三家能造：SK 海力士、三星、美光。三家，全部卖光。第二个，是台积电一个叫 <strong>CoWoS</strong> 的封装工艺，把芯片和内存像贴在一块硅做的主板上，英伟达、AMD 都靠它——也卖光了。第三个，是台积电的 <strong>3 纳米产能</strong>，最先进的工厂，挤破了头。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">然后他每讲一个，都补一句同样的话。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text"><strong>我们不用。</strong>三个短缺，Cerebras 一个都不碰。因为他们架构上的选择不一样：不用 HBM、不用 CoWoS、芯片停在 5 纳米而不是去挤 3 纳米。别人被三道瓶颈同时卡住的时候，他们从旁边绕过去了。这不是运气，这是十年前那个疯狂决定结出来的果。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">说到十年——他讲了一个挺心酸的开场。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对。他说，我们解决了一个计算机史上没人解决过的问题，2020 年就交付了，然后没人在乎。没人在乎，没人买，所有人都说我们疯了、说这东西永远成不了。于是我们就造了下一代。<strong>在沙漠里待了十年</strong>，等到的是 2025 年这场推理速度的爆发。这句话我觉得每个做长期、做逆共识的 builder 都该听一听。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">那我们绕不开那个最尖锐的问题——泡沫。前阵子六月不是有一次闪崩吗？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">是的。六月那次，市场一天蒸发了大概 <strong>1.5 万亿美元</strong>的市值，英伟达一天掉了 3000 亿，然后 48 小时之内又涨回来了。市场非常神经质。费尔德曼的态度很清楚：如果你每天盯着公开市场的涨跌，你就盯错了东西。他引用那句老话——短期市场是投票机，比谁更受欢迎；长期市场是称重机，比谁创造了更多价值。他们能做的，就是不看每天的波动，专心把技术做到极致。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">但他也正面回答了这到底是不是泡沫。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">回答得很有意思。他说，历史上的泡沫，都是<strong>供给跑到了需求前面</strong>——比如九十年代铺光纤，提前好多年铺好，赌建了就会有人用。而今天的 AI 恰恰相反：我们是在拼命追赶一个已经到来的需求，数据中心建得不够快、内存不够用，到处都是短缺。他说，这不像泡沫。全世界真正把 AI 用到接近其潜力的人，还只是很小一撮，我们却已经被算力需求淹没了。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">最后压轴的，是那句最反共识的话——CUDA 不再是护城河。这可是英伟达被讨论最多的那道护城河。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">他说得非常直接：<strong>我不认为 CUDA 是护城河。</strong>他给了数据。两年前，几乎每一个最先进的模型，都是在 CUDA 的流程里训练出来的。而现在呢？Gemini 在 TPU 上训练，不用 CUDA；Anthropic 的 Claude 在 Trainium 上训练，不用 CUDA；OpenAI 也一样。也就是说，在一两年里，CUDA 在最先进模型的训练这件事上，丢掉了大约 <strong>70% 的份额</strong>。而在推理这一侧，护城河更是几乎不存在——他说，从 GPU 的 API 切到 Cerebras 的云，只要敲八个键。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">还有那个细节——英伟达花两百亿收购 Groq，他们内部居然是庆祝的？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">对，这点很反直觉。费尔德曼说，英伟达最耐用的一道护城河，其实是一种<strong>认知</strong>——大家觉得 GPU 什么都能干、做 AI 有它就够了。而英伟达用两百亿去收购排名第二的推理玩家 Groq，这个动作本身就向所有人证明了：GPU 架构做不了快速推理，而这个市场又大又长得飞快。对做推理芯片、而且做得最快最大的 Cerebras 来说，那当然是个好日子。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
-    <div class="script-text">这一集为什么值得听——因为它把 AI 从模型有多聪明的软件叙事，一路拽到最硬的硅片层：晶圆、内存、封装、纳米制程、电力。当所有人都在比模型参数的时候，费尔德曼提醒你，真正决定谁能赢的，可能是那些没人谈的物理短缺，和一个愿意在沙漠里待十年的团队。这周你打算听哪一集？我们下周见。</div>
-  </div>
-
 </div>
 
-<!-- INSIGHT BOX -->
+<div class="story">
+  <div class="story-num">STORY 01</div>
+  <div class="story-headline">Claude Opus 5 登顶，Agent 能力甩开一个身位</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">Anthropic 在七月二十四号发布了 Claude Opus 5，三天时间就把独立评测机构 Artificial Analysis 的两个核心榜单都拿下了：综合智能指数六十一分，Agent 能力指数五十五点三分，两项都是第一，压过了 Fable 5 和 GPT-5.6 Sol。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">综合第一我理解，但你特别强调了 Agent 能力指数。这个指标为什么重要？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">因为它衡量的不是"聊天聊得好不好"，而是"能不能自己把一件多步骤的活儿干完"。今年大家真正在意的，是模型能不能像一个员工一样，自己规划、调用工具、连续操作几十步不翻车。Opus 5 在 Frontier-Bench 这个专测 Agent 编程的榜单上拿了四十三点三分，在 ARC-AGI-3 这个考新颖推理的榜单上拿了三十点二分——差不多是第二名的三倍。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">三倍这个差距太夸张了。那价格呢？这么强会不会贵到用不起？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">每百万 token 输入五美元、输出二十五美元。不算便宜，但考虑到它能替代的工作量，很多团队会觉得值。真正的信号是：前沿模型的天花板还在往上顶，而且是往"能干活"的方向顶，不是往"更会说话"的方向。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://www.vellum.ai/blog/claude-opus-5-benchmarks-explained" target="_blank">📎 来源: Claude Opus 5 Benchmarks Explained — Vellum</a>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 02</div>
+  <div class="story-headline">开放权重成了行业共识</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">第二条其实是这周社交媒体上最热闹的一场辩论——开放权重，也就是 open weights。GitHub Copilot 这周加进了它第一个开放权重的编程模型，而更大的信号是 Google 也公开站队支持开放权重。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">我看到 Box 的 CEO Aaron Levie 发了条推特，说"现在连 Google 都上船了，这是对开放权重 AI 的一次完整背书"。为什么大公司站队开放权重是件大事？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">因为过去两年，最强的模型几乎都是闭源的、只能通过 API 调用。开放权重意味着你能把模型权重下载下来，自己部署、自己微调、数据不出门。对企业来说这是安全和成本的双重解法。当 Google 这种量级的玩家也开始背书，等于告诉整个市场：闭源不再是唯一的赢家路径。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">那闭源阵营是什么反应？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">有意思的是并没有对着干。开发者 Peter Steinberger 就说，OpenAI 也签署了那封支持开放生态的联名信，他原话是"竞争对生态是好事，大规模地把模型跑起来本身就很难"。这说明连最头部的实验室都意识到，开放和闭源不是你死我活，而是会长期共存。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">📎 来源: GitHub Copilot adds open-weight coding model — Crescendo</a>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 03</div>
+  <div class="story-headline">AI Agent 一月融资十八亿美元</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">第三条讲钱。七月一个月，AI Agent 创业公司拿到了十八亿美元融资，分布在十二笔以上的交易里，其中做企业级自动化 Agent 的公司拿走了百分之五十八的资金。最亮眼的一笔是法律 AI 公司 Harvey，两亿美元的 C 轮，估值二十一亿。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">钱都往"企业自动化"这个方向涌，是不是说明消费级 Agent 反而没那么受追捧了？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">至少投资人现在更看好企业端。Gartner 给了个数字很能说明问题：到今年年底，百分之四十的企业软件里会内嵌 Agent，而 2025 年这个比例还不到百分之五。同时 Gartner 也警告，有两千三百四十亿美元的企业软件支出正因为 Agent 化而面临洗牌风险。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">洗牌风险，意思是老牌软件公司可能被 Agent 取代？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">对。如果一个 Agent 能直接帮你把活干了，你还需要那么多点来点去的传统软件界面吗？这是今年悬在每一家软件公司头上的问题。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://aifunding.me/insights/ai-agent-funding-july-2026" target="_blank">📎 来源: AI Agent Startup Funding July 2026 — AI Funding</a>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 04</div>
+  <div class="story-headline">阿里云推出「Agent 原生云」</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">最后一条把视角切到中国。在七月十八号的世界人工智能大会上，阿里云发布了"Agent 原生云"，一套专门为 AI Agent 设计的云架构。里面有三块：AgentTeams 做多 Agent 协同编排，Agentic Computer 提供安全的沙箱执行环境，还有专门为可复用 Agent 技能调优的基础设施。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">听起来是把"跑 Agent"这件事当成云计算的一等公民来设计了。这和普通云有什么本质区别？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">普通云是为人写的程序设计的——你部署一个服务，它老老实实跑。但 Agent 是会自己做决策、自己调工具、甚至自己写代码去执行的，你必须给它一个既能放手让它干、又能随时收得回来的环境。沙箱、编排、权限，这些以前是可选项，现在变成了地基。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">所以云厂商的竞争，正在从"谁的算力便宜"变成"谁更懂怎么安全地养 Agent"。</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">说得好。这就是今年基础设施层最深的一条暗线。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://solutionsreview.com/ai-news-for-the-week-of-july-24-updates-from-booz-allen-gartner-microsoft-more/" target="_blank">📎 来源: AI News for the Week of July 24 — Solutions Review</a>
+</div>
+
 <div class="insight-box">
-  <div class="insight-label">◆ 三个记忆点</div>
-  <div class="insight-title">MAIN TAKEAWAYS</div>
-  <div class="insight-item"><span class="insight-num">01</span><span>速度成了 AI 的第一话题。2025 年年中 AI 变得真正有用，推理速度就此变要命——快的 token 就是更有生产力的 token。Netflix 类比：速度不是把老事做得更好，是让你变成完全不同的东西。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span>没人谈的三个短缺——HBM 内存（三家厂商全卖光）、台积电 CoWoS 封装、3 纳米产能。Cerebras 因架构选择一个都不碰，从三道瓶颈旁边绕了过去。这是十年前那个「疯狂决定」的红利。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span>CUDA 不再是护城河：Gemini 用 TPU、Claude 用 Trainium、OpenAI 也已脱离，一两年丢掉约 70% 的 SOTA 训练份额；推理侧切换只需八个键。判断泡沫的标准是供给是否跑到需求前面——今天恰恰相反，是在追赶已到来的需求。</span></div>
-</div>
-
-<!-- OTHER EPISODES -->
-<div class="section-label">◈ 本周其他集数</div>
-<div class="episodes-grid">
-  <div class="ep-card">
-    <div class="ep-show">No Priors · DoorDash 联合创始人</div>
-    <div class="ep-title">Building an Autonomous Delivery Experience · Andy Fang & Stanley Tang</div>
-    <div class="ep-desc">一个反直觉的框架：DoorDash 过去八年其实是一家机器人公司。两位联合创始人聊配送网络的数据优势、Agentic Commerce（用 AI 改变人们消费什么）的落地，以及支撑 900 万骑手、每年 30 亿次配送的系统。想理解「AI + 实体运营」的人别错过。</div>
-    <a class="ep-link" href="https://www.youtube.com/watch?v=vNpcg_Ma-FA" target="_blank">收听 →</a>
-  </div>
-  <div class="ep-card">
-    <div class="ep-show">Lenny's Podcast · Elizabeth Stone (Netflix)</div>
-    <div class="ep-title">Why Netflix bets on systems thinkers—not specialists—in the AI era</div>
-    <div class="ep-desc">Netflix 的首席产品与技术官 Elizabeth Stone 抛出一个用人观：AI 时代，Netflix 押注的是「系统思考者」而不是「专才」。当单点技能越来越容易被 AI 补齐，能把工程、产品、设计串成一个整体来想的人反而更稀缺。做团队和招聘的人值得一听。</div>
-    <a class="ep-link" href="https://www.lennysnewsletter.com/podcast" target="_blank">收听 →</a>
-  </div>
-  <div class="ep-card">
-    <div class="ep-show">Latent Space · Ep 216</div>
-    <div class="ep-title">The AI Engineer Podcast · 本周新一期</div>
-    <div class="ep-desc">Swyx 和 Alessio 的 AI 工程师播客本周更新到第 216 期。如果你是一线做 AI 应用、Agent、评测的工程师，这档节目一贯是把「怎么真正把模型用起来」讲得最落地的一档，适合当每周的技术加餐。</div>
-    <a class="ep-link" href="https://www.latent.space/podcast" target="_blank">收听 →</a>
-  </div>
-  <div class="ep-card">
-    <div class="ep-show">收尾 · 大雨</div>
-    <div class="ep-title">这周你打算听哪一集？</div>
-    <div class="ep-desc">主推 MAD Podcast——史上最大的芯片，和一个「护城河正在消失」的判断；另外三集，一集把 DoorDash 讲成机器人公司，一集聊 AI 时代该招什么样的人，一集是 AI 工程师的技术加餐。从硅片到组织，一条完整的链。我们下周见。</div>
-    <a class="ep-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">主推重听 →</a>
-  </div>
-</div>
-
-<!-- SOURCES -->
-<div class="sources">
-  <div class="sources-label">◆ 来源</div>
-  <a class="source-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank"><span class="src-icon">MAD</span><span>The Biggest Chip Ever Built — Why OpenAI Runs On It | Cerebras CEO Andrew Feldman — The MAD Podcast with Matt Turck</span></a>
-  <a class="source-link" href="https://www.youtube.com/watch?v=vNpcg_Ma-FA" target="_blank"><span class="src-icon">NP</span><span>Building an Autonomous Delivery Experience with DoorDash Co-Founders Andy Fang and Stanley Tang — No Priors</span></a>
-  <a class="source-link" href="https://www.lennysnewsletter.com/podcast" target="_blank"><span class="src-icon">LEN</span><span>Why Netflix bets on systems thinkers—not specialists—in the AI era | Elizabeth Stone — Lenny's Podcast</span></a>
-  <a class="source-link" href="https://www.latent.space/podcast" target="_blank"><span class="src-icon">LS</span><span>Latent Space: The AI Engineer Podcast · Ep 216</span></a>
+  <div class="insight-label">◈ 今日一条主线</div>
+  <div class="insight-title">从「更聪明」到「会干活」</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>模型能力天花板还在往上顶，但顶的方向是 Agent——能自己规划、调工具、连续操作。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>开放与闭源不再是你死我活，Google、OpenAI 同框，长期共存成为共识。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>钱与基础设施同时转向"怎么让 Agent 安全地干活"——沙箱、编排、权限成为地基。</span></div>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -352,31 +258,15 @@
   数据截至今日 UTC 04:03。
 </p>
 
-<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-07-23</p>
-  <p class="pc-title">The Biggest Chip Ever Built — Why OpenAI Runs On It | Cerebras CEO Andrew Feldman</p>
-  <p class="pc-summary">费尔德曼不聊头条，从一片晶圆讲起：Cerebras 造出了计算机史上最大的芯片，比 GPU 大 58 倍。他点出没人谈的三个短缺——HBM 内存、台积电 CoWoS 封装、3 纳米产能全部卖光，而 Cerebras 因架构选择一个都不碰。最反共识的判断是「CUDA 不再是护城河」：Gemini 用 TPU、Claude 用 Trainium、OpenAI 也已脱离，推理侧切换只需八个键。他还讲了在沙漠里待十年、没人在乎的创业故事。</p>
-  <a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Unsupervised Learning · 2026-07-16</p>
+  <p class="pc-title">Ep 91: Top AI Analyst Unpacks Today's AI Hype Cycle（嘉宾：Benedict Evans）</p>
+  <p class="pc-summary">Redpoint 的 Jacob Efron 对话科技分析师 Benedict Evans，聊当下 AI 的"泡沫感"到底虚不虚。Evans 用"电力"类比反问：价值最终会沉淀在哪一层——是基础模型，还是应用？他对消费级 AI 应用"为什么还没真正跑通"，以及能力"参差不齐的锯齿状边缘"如何拖慢企业落地，给出了少见的冷静判断。</p>
+  <a href="https://www.youtube.com/watch?v=vDY_ocrkQ5w" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
-<!-- BUILDERS GRID -->
 <div class="builders-grid">
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">CL</div>
-      <div>
-        <div class="builder-name">Claude (Anthropic)</div>
-        <div class="builder-handle">@claudeai · Anthropic</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「语音模式现在跑在 Claude 更强的模型上，还能在对话中途调用你连接的工具。把难题大声说出来去想清楚，支持的语言也多了很多。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 8895</span>
-      <a href="https://x.com/claudeai/status/2080376094939603366" target="_blank">查看推文 →</a>
-    </div>
-  </div>
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">TS</div>
@@ -385,24 +275,24 @@
         <div class="builder-handle">@thsottiaux · OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「Jarvis / Samantha / TARS 等等——试试看，离开键盘也能做出你最好的工作。现在就在 ChatGPT 桌面端可用。玩起来！」</p>
+    <p class="builder-tweet">「ChatGPT Work 的活跃用户数正式超过了 Codex。干得漂亮。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2810</span>
-      <a href="https://x.com/thsottiaux/status/2080408012515340394" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 3,485</span>
+      <a href="https://x.com/thsottiaux" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AM</div>
+      <div class="builder-avatar">PS</div>
       <div>
-        <div class="builder-name">Amjad Masad</div>
-        <div class="builder-handle">@amasad · Replit</div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · 独立开发者</div>
       </div>
     </div>
-    <p class="builder-tweet">「Viktor 用 Replit 颠覆了代理商模式，赚了不少钱。然后他想：为什么不把整件事都自动化，而不只是写代码那一部分？The Agency：说到底就是一个 agent 循环。」</p>
+    <p class="builder-tweet">「一，竞争对生态是好事。二，大规模地把模型跑起来本身就很难。很高兴 OpenAI 签了那封信。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 284</span>
-      <a href="https://x.com/amasad/status/2080371567221944657" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1,441</span>
+      <a href="https://x.com/steipete" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
@@ -410,27 +300,48 @@
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「理解 AI 最好的方式，是把它当作一个力量倍增器——放大你已经懂的领域，或加快你想学新领域的速度。而第三类情况——没有既有判断、没有直觉——才是真正的难题。」</p>
+    <p class="builder-tweet">「现在连 Google 都上船了，这是对开放权重 AI 的一次完整背书。对整个行业来说都是个大时刻。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 154</span>
-      <a href="https://x.com/levie/status/2080471989060559336" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1,351</span>
+      <a href="https://x.com/levie" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「(软件)工厂本身才是产品。你的产品好到什么程度，取决于你搭起来自主维护它的那些 Agent。这正是马斯克在特斯拉悟到的事，现在对软件也成立了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,050</span>
+      <a href="https://x.com/rauchg" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-  <span>Daily Builders Digest · 周日播客精选</span>
-  <span>2026-07-26 · 大雨 × 小苇</span>
+  <span>Daily Builders Digest</span>
+  <span>2026-07-27 · AI</span>
+  <span>大雨 × 小苇</span>
 </div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-07-26.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-07-26</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-07-26 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-07-25.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-07-25</span>

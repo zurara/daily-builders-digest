@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-07-27 · AI 星期一">
+<meta property="og:description" content="Claude Opus 5 登顶 · 开放权重成行业共识 · AI Agent 一月融资18亿 · 阿里云 Agent 原生云">
+<title>Daily Builders Digest · 2026-07-27 · AI 星期一</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .story { margin-top: 44px; }
+  .story-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: var(--red); margin-bottom: 8px; }
+  .story-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4.4vw, 42px); line-height: 1.02; letter-spacing: .01em; color: var(--ink); margin-bottom: 20px; }
+  .script-container { margin-top: 8px; }
+  .script-block { margin-bottom: 22px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .src-inline { display: block; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mid); text-decoration: none; }
+  .src-inline:hover { color: var(--red); }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 48px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 每日快报</div>
+  <div class="header-title">AI <span>星期一</span></div>
+  <div class="header-meta">
+    <span>2026-07-27</span>
+    <span>主题 / AI</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">◈</span>Claude Opus 5 登顶智能指数 61 · Agent 指数 55.3</span>
+    <span class="ticker-item"><span class="dot">◈</span>开放权重成行业共识 · Google 站队</span>
+    <span class="ticker-item"><span class="dot">◈</span>AI Agent 七月融资 18 亿美元</span>
+    <span class="ticker-item"><span class="dot">◈</span>阿里云发布 Agent 原生云</span>
+    <span class="ticker-item"><span class="dot">◈</span>Claude Opus 5 登顶智能指数 61 · Agent 指数 55.3</span>
+    <span class="ticker-item"><span class="dot">◈</span>开放权重成行业共识 · Google 站队</span>
+    <span class="ticker-item"><span class="dot">◈</span>AI Agent 七月融资 18 亿美元</span>
+    <span class="ticker-item"><span class="dot">◈</span>阿里云发布 Agent 原生云</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top"><span class="icon">🎧</span><strong>今日音频</strong><span>· AI 星期一 · 大雨 × 小苇</span></div>
+  <audio controls src="2026-07-27.mp3"></audio>
+</div>
+
+<p class="section-label">◈ 开场</p>
+<div class="script-container">
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">早上好，欢迎收听每日快报。今天是七月二十七号，星期一，我们又回到了 AI 主题。这周开局特别猛，前脚 Anthropic 刚把 Claude Opus 5 甩出来登顶各大榜单，后脚整个行业围绕"开放权重"吵成一团，AI Agent 的融资也在疯狂加速。小苇，准备好了吗？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">准备好了。说实话我周末就一直在刷 Opus 5 的评测，感觉这一次的分数有点吓人。咱们就从它开始聊吧？</div>
+  </div>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 01</div>
+  <div class="story-headline">Claude Opus 5 登顶，Agent 能力甩开一个身位</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">Anthropic 在七月二十四号发布了 Claude Opus 5，三天时间就把独立评测机构 Artificial Analysis 的两个核心榜单都拿下了：综合智能指数六十一分，Agent 能力指数五十五点三分，两项都是第一，压过了 Fable 5 和 GPT-5.6 Sol。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">综合第一我理解，但你特别强调了 Agent 能力指数。这个指标为什么重要？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">因为它衡量的不是"聊天聊得好不好"，而是"能不能自己把一件多步骤的活儿干完"。今年大家真正在意的，是模型能不能像一个员工一样，自己规划、调用工具、连续操作几十步不翻车。Opus 5 在 Frontier-Bench 这个专测 Agent 编程的榜单上拿了四十三点三分，在 ARC-AGI-3 这个考新颖推理的榜单上拿了三十点二分——差不多是第二名的三倍。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">三倍这个差距太夸张了。那价格呢？这么强会不会贵到用不起？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">每百万 token 输入五美元、输出二十五美元。不算便宜，但考虑到它能替代的工作量，很多团队会觉得值。真正的信号是：前沿模型的天花板还在往上顶，而且是往"能干活"的方向顶，不是往"更会说话"的方向。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://www.vellum.ai/blog/claude-opus-5-benchmarks-explained" target="_blank">📎 来源: Claude Opus 5 Benchmarks Explained — Vellum</a>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 02</div>
+  <div class="story-headline">开放权重成了行业共识</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">第二条其实是这周社交媒体上最热闹的一场辩论——开放权重，也就是 open weights。GitHub Copilot 这周加进了它第一个开放权重的编程模型，而更大的信号是 Google 也公开站队支持开放权重。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">我看到 Box 的 CEO Aaron Levie 发了条推特，说"现在连 Google 都上船了，这是对开放权重 AI 的一次完整背书"。为什么大公司站队开放权重是件大事？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">因为过去两年，最强的模型几乎都是闭源的、只能通过 API 调用。开放权重意味着你能把模型权重下载下来，自己部署、自己微调、数据不出门。对企业来说这是安全和成本的双重解法。当 Google 这种量级的玩家也开始背书，等于告诉整个市场：闭源不再是唯一的赢家路径。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">那闭源阵营是什么反应？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">有意思的是并没有对着干。开发者 Peter Steinberger 就说，OpenAI 也签署了那封支持开放生态的联名信，他原话是"竞争对生态是好事，大规模地把模型跑起来本身就很难"。这说明连最头部的实验室都意识到，开放和闭源不是你死我活，而是会长期共存。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">📎 来源: GitHub Copilot adds open-weight coding model — Crescendo</a>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 03</div>
+  <div class="story-headline">AI Agent 一月融资十八亿美元</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">第三条讲钱。七月一个月，AI Agent 创业公司拿到了十八亿美元融资，分布在十二笔以上的交易里，其中做企业级自动化 Agent 的公司拿走了百分之五十八的资金。最亮眼的一笔是法律 AI 公司 Harvey，两亿美元的 C 轮，估值二十一亿。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">钱都往"企业自动化"这个方向涌，是不是说明消费级 Agent 反而没那么受追捧了？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">至少投资人现在更看好企业端。Gartner 给了个数字很能说明问题：到今年年底，百分之四十的企业软件里会内嵌 Agent，而 2025 年这个比例还不到百分之五。同时 Gartner 也警告，有两千三百四十亿美元的企业软件支出正因为 Agent 化而面临洗牌风险。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">洗牌风险，意思是老牌软件公司可能被 Agent 取代？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">对。如果一个 Agent 能直接帮你把活干了，你还需要那么多点来点去的传统软件界面吗？这是今年悬在每一家软件公司头上的问题。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://aifunding.me/insights/ai-agent-funding-july-2026" target="_blank">📎 来源: AI Agent Startup Funding July 2026 — AI Funding</a>
+</div>
+
+<div class="story">
+  <div class="story-num">STORY 04</div>
+  <div class="story-headline">阿里云推出「Agent 原生云」</div>
+  <div class="script-container">
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">最后一条把视角切到中国。在七月十八号的世界人工智能大会上，阿里云发布了"Agent 原生云"，一套专门为 AI Agent 设计的云架构。里面有三块：AgentTeams 做多 Agent 协同编排，Agentic Computer 提供安全的沙箱执行环境，还有专门为可复用 Agent 技能调优的基础设施。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">听起来是把"跑 Agent"这件事当成云计算的一等公民来设计了。这和普通云有什么本质区别？</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">普通云是为人写的程序设计的——你部署一个服务，它老老实实跑。但 Agent 是会自己做决策、自己调工具、甚至自己写代码去执行的，你必须给它一个既能放手让它干、又能随时收得回来的环境。沙箱、编排、权限，这些以前是可选项，现在变成了地基。</div>
+    </div>
+    <div class="script-block">
+      <div class="speaker-tag speaker-xiaowei">小苇</div>
+      <div class="script-text">所以云厂商的竞争，正在从"谁的算力便宜"变成"谁更懂怎么安全地养 Agent"。</div>
+    </div>
+    <div class="script-block lead-block">
+      <div class="speaker-tag speaker-dayu">大雨</div>
+      <div class="script-text">说得好。这就是今年基础设施层最深的一条暗线。</div>
+    </div>
+  </div>
+  <a class="src-inline" href="https://solutionsreview.com/ai-news-for-the-week-of-july-24-updates-from-booz-allen-gartner-microsoft-more/" target="_blank">📎 来源: AI News for the Week of July 24 — Solutions Review</a>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 今日一条主线</div>
+  <div class="insight-title">从「更聪明」到「会干活」</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>模型能力天花板还在往上顶，但顶的方向是 Agent——能自己规划、调工具、连续操作。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>开放与闭源不再是你死我活，Google、OpenAI 同框，长期共存成为共识。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>钱与基础设施同时转向"怎么让 Agent 安全地干活"——沙箱、编排、权限成为地基。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:03。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Unsupervised Learning · 2026-07-16</p>
+  <p class="pc-title">Ep 91: Top AI Analyst Unpacks Today's AI Hype Cycle（嘉宾：Benedict Evans）</p>
+  <p class="pc-summary">Redpoint 的 Jacob Efron 对话科技分析师 Benedict Evans，聊当下 AI 的"泡沫感"到底虚不虚。Evans 用"电力"类比反问：价值最终会沉淀在哪一层——是基础模型，还是应用？他对消费级 AI 应用"为什么还没真正跑通"，以及能力"参差不齐的锯齿状边缘"如何拖慢企业落地，给出了少见的冷静判断。</p>
+  <a href="https://www.youtube.com/watch?v=vDY_ocrkQ5w" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「ChatGPT Work 的活跃用户数正式超过了 Codex。干得漂亮。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3,485</span>
+      <a href="https://x.com/thsottiaux" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PS</div>
+      <div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · 独立开发者</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「一，竞争对生态是好事。二，大规模地把模型跑起来本身就很难。很高兴 OpenAI 签了那封信。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,441</span>
+      <a href="https://x.com/steipete" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「现在连 Google 都上船了，这是对开放权重 AI 的一次完整背书。对整个行业来说都是个大时刻。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,351</span>
+      <a href="https://x.com/levie" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「(软件)工厂本身才是产品。你的产品好到什么程度，取决于你搭起来自主维护它的那些 Agent。这正是马斯克在特斯拉悟到的事，现在对软件也成立了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,050</span>
+      <a href="https://x.com/rauchg" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest</span>
+  <span>2026-07-27 · AI</span>
+  <span>大雨 × 小苇</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

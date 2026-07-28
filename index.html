@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-07-27 · AI 星期一">
-<meta property="og:description" content="Claude Opus 5 登顶 · 开放权重成行业共识 · AI Agent 一月融资18亿 · 阿里云 Agent 原生云">
-<title>Daily Builders Digest · 2026-07-27 · AI 星期一</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-07-28 · Robotics 星期二">
+<meta property="og:description" content="特斯拉 Q2 财报：Optimus 量产依旧为零，马斯克称最难量产 · 宇树冲刺科创板 · 1X NEO 进家门，背后仍站着远程操作员 · 从承诺到交付">
+<title>Daily Builders Digest · 2026-07-28 · Robotics 星期二</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -43,25 +43,42 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .story { margin-top: 44px; }
-  .story-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: var(--red); margin-bottom: 8px; }
-  .story-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4.4vw, 42px); line-height: 1.02; letter-spacing: .01em; color: var(--ink); margin-bottom: 20px; }
-  .script-container { margin-top: 8px; }
-  .script-block { margin-bottom: 22px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
   .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
   .speaker-dayu  { color: var(--red); }
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
   .script-text strong { font-weight: 600; }
-  .src-inline { display: block; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mid); text-decoration: none; }
-  .src-inline:hover { color: var(--red); }
-  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 48px 0; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
   .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
   .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
   .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
   .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
   .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
@@ -82,169 +99,224 @@
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 每日快报</div>
-  <div class="header-title">AI <span>星期一</span></div>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · Robotics 星期二</div>
+  <div class="header-title">ROBOT<br><span>DIGEST</span></div>
   <div class="header-meta">
-    <span>2026-07-27</span>
-    <span>主题 / AI</span>
+    <span>📅 2026-07-28</span>
+    <span>🤖 Robotics 星期二</span>
+    <span>◇ 从承诺到交付</span>
     <span>大雨 × 小苇</span>
   </div>
-</div>
+</header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">◈</span>Claude Opus 5 登顶智能指数 61 · Agent 指数 55.3</span>
-    <span class="ticker-item"><span class="dot">◈</span>开放权重成行业共识 · Google 站队</span>
-    <span class="ticker-item"><span class="dot">◈</span>AI Agent 七月融资 18 亿美元</span>
-    <span class="ticker-item"><span class="dot">◈</span>阿里云发布 Agent 原生云</span>
-    <span class="ticker-item"><span class="dot">◈</span>Claude Opus 5 登顶智能指数 61 · Agent 指数 55.3</span>
-    <span class="ticker-item"><span class="dot">◈</span>开放权重成行业共识 · Google 站队</span>
-    <span class="ticker-item"><span class="dot">◈</span>AI Agent 七月融资 18 亿美元</span>
-    <span class="ticker-item"><span class="dot">◈</span>阿里云发布 Agent 原生云</span>
+    <span class="ticker-item"><span class="dot">●</span>特斯拉 Q2 财报：Optimus 量产依旧为零 · 股价一度跌 14%</span>
+    <span class="ticker-item"><span class="dot">●</span>马斯克：Optimus 是我们做过最难量产的产品 · 每个零件都是全新的</span>
+    <span class="ticker-item"><span class="dot">●</span>首批 Optimus 不交客户 · 进 Optimus Academy 采集训练数据</span>
+    <span class="ticker-item"><span class="dot">●</span>宇树科创板 IPO 获批 · 拟募 42 亿元 · 剑指 A 股人形机器人第一股</span>
+    <span class="ticker-item"><span class="dot">●</span>1X NEO 进家门 · 25 自由度触觉新手 · 但尚无核实的消费者交付</span>
+    <span class="ticker-item"><span class="dot">●</span>特斯拉 Q2 财报：Optimus 量产依旧为零 · 股价一度跌 14%</span>
+    <span class="ticker-item"><span class="dot">●</span>马斯克：Optimus 是我们做过最难量产的产品 · 每个零件都是全新的</span>
+    <span class="ticker-item"><span class="dot">●</span>首批 Optimus 不交客户 · 进 Optimus Academy 采集训练数据</span>
+    <span class="ticker-item"><span class="dot">●</span>宇树科创板 IPO 获批 · 拟募 42 亿元 · 剑指 A 股人形机器人第一股</span>
+    <span class="ticker-item"><span class="dot">●</span>1X NEO 进家门 · 25 自由度触觉新手 · 但尚无核实的消费者交付</span>
   </div>
 </div>
 
+<!-- AUDIO -->
 <div class="audio-bar">
-  <div class="audio-bar-top"><span class="icon">🎧</span><strong>今日音频</strong><span>· AI 星期一 · 大雨 × 小苇</span></div>
-  <audio controls src="episodes/2026-07-27.mp3"></audio>
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· Robotics 星期二 · 从承诺到交付</span>
+  </div>
+  <audio controls src="episodes/2026-07-28.mp3">
+    Your browser does not support the audio element.
+  </audio>
 </div>
 
-<p class="section-label">◈ 开场</p>
-<div class="script-container">
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">早上好，欢迎收听每日快报。今天是七月二十七号，星期一，我们又回到了 AI 主题。这周开局特别猛，前脚 Anthropic 刚把 Claude Opus 5 甩出来登顶各大榜单，后脚整个行业围绕"开放权重"吵成一团，AI Agent 的融资也在疯狂加速。小苇，准备好了吗？</div>
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日头条 · 行业从"承诺"艰难挪向"交付"</div>
+    <div class="feature-show-name">PROMISE<br>→&nbsp;DELIVERY</div>
+    <div class="feature-ep-title">特斯拉在财报里给 Optimus 降温，宇树用上市换门票，<br>1X 的机器人进了家门却仍牵着一根遥控的线</div>
+    <div class="feature-guest">特斯拉 · 宇树 · 1X · 2026-07-22/28</div>
   </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这一周机器人的关键词只有两个字——交付。特斯拉在 Q2 财报里承认 Optimus 量产依旧为零，马斯克罕见地说这是"我们做过最难量产的产品"，并悄悄删掉了"mass production"这个词；东边的宇树则用一张财报冲刺科创板，剑指 A 股人形机器人第一股；而走进家门的 1X NEO，换上了带触觉的新手，背后却仍站着远程操作员。整个行业，正从"承诺"挪向"交付"。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Optimus 量产=0</span>
+      <span class="tag">马斯克降温</span>
+      <span class="tag">宇树 IPO</span>
+      <span class="tag">1X NEO 家用</span>
+      <span class="tag">遥操作真相</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">特斯拉 Optimus</div>
+        <div class="stat-value">Q2 量产为零 · 首批进 Academy 采数据 · 股价一度跌 14%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">宇树科创板</div>
+        <div class="stat-value">IPO 获批 · 拟发 ~4045 万股募 42 亿元 · 估值 ~420 亿</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">1X NEO</div>
+        <div class="stat-value">$20K / $499月租 · 25 自由度触觉手 · 尚无核实交付</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
+    <div class="script-text">早上好，欢迎回到 Robotics 星期二。上周我们聊了机器人的"身体、大脑和账本"同时到位。这一周，主题只有两个字——<strong>交付</strong>。因为就在过去几天，行业里最会讲故事的那家公司，第一次被迫在财报电话会上，把"承诺"和"现实"摆到了一起。小苇，你猜是谁？</div>
+  </div>
+
   <div class="script-block">
     <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">准备好了。说实话我周末就一直在刷 Opus 5 的评测，感觉这一次的分数有点吓人。咱们就从它开始聊吧？</div>
+    <div class="script-text">会讲故事、又刚开完财报……不用猜了，是特斯拉吧。Optimus 又出什么幺蛾子了？</div>
   </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 第一条</div>
+    <div class="script-text">对，就是它。7 月 22 号，特斯拉开了 2026 年第二季度财报电话会。营收其实还不错，但利润没达预期，股价当天一度跌了 <strong>14%</strong>。而真正的信号藏在 Optimus 上：截至财报，Optimus 的正式量产数量，<strong>依然是零</strong>。
+    <span class="source-inline">📎 来源: <a href="https://www.cnbc.com/2026/07/22/tesla-tsla-q2-2026-earnings-report.html" target="_blank">Tesla (TSLA) Q2 2026 earnings report — CNBC</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">零？我记得马斯克前两年可是说过，2026 年要造五万到十万台的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这正是这次财报最耐人寻味的地方。特斯拉说，它已经把弗里蒙特工厂原来的 Model S 和 X 产线拆了，正在装第一代 Optimus 产线，"很快就会开始生产"，但把口径改成了"预计今年晚些时候"。更微妙的是——他们悄悄地把 Q2 的股东材料里"量产 mass production"这个词给<strong>删掉了</strong>，而一个季度前，也就是 Q1，他们还在用这个词。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">删掉一个词，听起来是小事，但放在这个位置，感觉像是在悄悄给期望降温。马斯克自己在电话会上是怎么说的？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">他这次说得非常直白，甚至有点罕见的谦逊。他说 Optimus 会是特斯拉<strong>有史以来最难量产的产品</strong>，因为这个机器人身上的每一个零件都是全新的。他还说想把大家的预期校准一下——初期产能爬坡会是一条正常曲线，但前面那段平台期，可能会比投资人希望的更长。
+    <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/musk-optimus-hardest-product-scale-manufacturing-tesla" target="_blank">Musk says Optimus will be the hardest product Tesla has ever scaled — TNW</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">"把每一个零件都重新造一遍"——这句话其实很有分量。我们平时看机器人 demo，看的是它会不会翻跟头；但真正卡住量产的，是那一万个没有现成供应链的新零件。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">你说到了核心。而且还有一个细节特别说明问题：特斯拉说，第一批造出来的 Optimus，<strong>不会交给客户</strong>，而是送进他们内部的 Optimus Academy，专门用来采集训练数据、继续打磨功能。换句话说，这批机器人不是产品，是"学徒"。这跟"量产上市"，完全是两回事。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以西边这边，特斯拉在给自己降温。那东边呢？上周你说宇树的 IPO 获批了。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 第二条</div>
+    <div class="script-text">对，这就是有意思的对照。同样是交付，特斯拉要交付的是产品，而宇树先交付的是——一张财报和一次上市。7 月初，中国证监会正式核准了宇树在科创板的 IPO 注册。它计划发行至少约 <strong>4045 万股</strong>，募资 42 亿人民币、也就是六亿多美元，整体估值大约 420 亿人民币。从被受理到过会只用了 73 天，是科创板"预审核"机制以来最快的一次。
+    <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/unitree-shanghai-ipo-approval" target="_blank">China approves Unitree's Shanghai listing registration, valuing IPO at $619M — TNW</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">73 天，这个速度确实说明监管层在给"硬科技"开绿灯。但我更好奇的是——宇树凭什么能上市？它跟特斯拉最大的不同在哪？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">最大的不同是，宇树是真的在<strong>赚钱</strong>的，而且赚的是"卖铲子"的钱。它的核心竞争力在关节电机、也就是执行器上，那台一万三千多美元的 G1，是眼下你真的能买到、能下单的人形机器人。所以你看这个对照特别清楚：特斯拉在讲"未来能造多少"，宇树在讲"现在卖了多少"。一个用愿景融资，一个用业绩上市。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">不过我也听到一点隐忧——宇树今年一季度的营收增速好像掉得挺快，利润还腰斩了？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是的，它的招股书里自己也写了风险：增速在放缓，而且明确点名了<strong>价格战</strong>——来自特斯拉，也来自国内那些跨界造机器人的车企。所以哪怕是"第一股"，这个行业的账，也没那么好算。上市是起点，不是终点。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 第三条</div>
+    <div class="script-text">说完工厂和资本市场，我们把镜头拉回到最贴近普通人的地方——家里。这一周，把机器人往家庭里推得最猛的是挪威公司 1X。它的家用人形机器人 <strong>NEO</strong>，定价两万美元，或者每月 499 美元订阅。7 月 9 号，他们刚给 NEO 换了一双新手：25 个自由度、腱驱动、指尖带触觉和打滑检测，还做到了 IP68 防水，说是会装在第一批交付的机器上。
+    <span class="source-inline">📎 来源: <a href="https://www.eweek.com/news/1x-neo-humanoid-home-robot-2026/" target="_blank">1X NEO humanoid home robot 2026 — eWeek</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">一双能感知打滑的手，听起来已经很科幻了。那它到底交付了没有？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这就是今天这条主线里最诚实的一笔。截至 7 月中旬，<strong>还没有任何一台 NEO 被核实真正交到消费者手里</strong>。1X 手上有超过一万台预订，工厂年产能也是一万台左右，但还有一个更大的"抢货方"——一家叫 EQT 的机构签了协议，2026 到 2030 年要在它投资的公司里部署最多一万台 NEO，用于物流、仓储、制造。也就是说，同一条产线，消费者和企业在排同一支队。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">而且我隐约记得，NEO 早期的很多"自主"演示，其实背后是有真人远程操控的？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">你记得没错，这也是家用人形机器人现在最不愿意大声说、但绕不开的真相：很多复杂动作，眼下还得靠<strong>远程的人"接管"</strong>来完成。1X 自己也承认，早期这些遥操作数据，正是用来训练模型、让机器人未来能自己干活的。所以你在客厅里看到的那个"聪明"的 NEO，此刻可能有一半的聪明，来自屏幕另一端一个戴着头显的操作员。这不丢人，但它提醒我们：家用机器人真正的"自主交付"，还没到。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以把今天这三条连起来看——特斯拉把"量产"这个词悄悄删了，宇树用财报换了一张上市门票，1X 的机器人进了家门但可能还牵着一根遥控的线。它们其实在说同一件事。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
+    <div class="script-text">是。这就是我今天想留给你的那两个字——<strong>交付</strong>。过去一年，机器人行业最不缺的是发布会：更炫的跟头、更低的报价、更宏大的路线图。但这个七月，风向变了。当最能画饼的公司都开始在财报里说"这是我们做过最难量产的东西"，当"第一股"的招股书里写满了价格战的风险，当走进家门的机器人背后还站着一个远程的人——你会发现，整个行业正在从"承诺"这个词，艰难地挪向"交付"这个词。上半场比谁的愿景大，下半场比谁真的能把东西造出来、送出去、并且养活自己。能跨过这道坎的公司，可能不多。但只有跨过去的，才配谈下一个夏天。我们下期见。</div>
+  </div>
+
 </div>
 
-<div class="story">
-  <div class="story-num">STORY 01</div>
-  <div class="story-headline">Claude Opus 5 登顶，Agent 能力甩开一个身位</div>
-  <div class="script-container">
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">Anthropic 在七月二十四号发布了 Claude Opus 5，三天时间就把独立评测机构 Artificial Analysis 的两个核心榜单都拿下了：综合智能指数六十一分，Agent 能力指数五十五点三分，两项都是第一，压过了 Fable 5 和 GPT-5.6 Sol。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">综合第一我理解，但你特别强调了 Agent 能力指数。这个指标为什么重要？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">因为它衡量的不是"聊天聊得好不好"，而是"能不能自己把一件多步骤的活儿干完"。今年大家真正在意的，是模型能不能像一个员工一样，自己规划、调用工具、连续操作几十步不翻车。Opus 5 在 Frontier-Bench 这个专测 Agent 编程的榜单上拿了四十三点三分，在 ARC-AGI-3 这个考新颖推理的榜单上拿了三十点二分——差不多是第二名的三倍。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">三倍这个差距太夸张了。那价格呢？这么强会不会贵到用不起？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">每百万 token 输入五美元、输出二十五美元。不算便宜，但考虑到它能替代的工作量，很多团队会觉得值。真正的信号是：前沿模型的天花板还在往上顶，而且是往"能干活"的方向顶，不是往"更会说话"的方向。</div>
-    </div>
-  </div>
-  <a class="src-inline" href="https://www.vellum.ai/blog/claude-opus-5-benchmarks-explained" target="_blank">📎 来源: Claude Opus 5 Benchmarks Explained — Vellum</a>
-</div>
-
-<div class="story">
-  <div class="story-num">STORY 02</div>
-  <div class="story-headline">开放权重成了行业共识</div>
-  <div class="script-container">
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">第二条其实是这周社交媒体上最热闹的一场辩论——开放权重，也就是 open weights。GitHub Copilot 这周加进了它第一个开放权重的编程模型，而更大的信号是 Google 也公开站队支持开放权重。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">我看到 Box 的 CEO Aaron Levie 发了条推特，说"现在连 Google 都上船了，这是对开放权重 AI 的一次完整背书"。为什么大公司站队开放权重是件大事？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">因为过去两年，最强的模型几乎都是闭源的、只能通过 API 调用。开放权重意味着你能把模型权重下载下来，自己部署、自己微调、数据不出门。对企业来说这是安全和成本的双重解法。当 Google 这种量级的玩家也开始背书，等于告诉整个市场：闭源不再是唯一的赢家路径。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">那闭源阵营是什么反应？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">有意思的是并没有对着干。开发者 Peter Steinberger 就说，OpenAI 也签署了那封支持开放生态的联名信，他原话是"竞争对生态是好事，大规模地把模型跑起来本身就很难"。这说明连最头部的实验室都意识到，开放和闭源不是你死我活，而是会长期共存。</div>
-    </div>
-  </div>
-  <a class="src-inline" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">📎 来源: GitHub Copilot adds open-weight coding model — Crescendo</a>
-</div>
-
-<div class="story">
-  <div class="story-num">STORY 03</div>
-  <div class="story-headline">AI Agent 一月融资十八亿美元</div>
-  <div class="script-container">
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">第三条讲钱。七月一个月，AI Agent 创业公司拿到了十八亿美元融资，分布在十二笔以上的交易里，其中做企业级自动化 Agent 的公司拿走了百分之五十八的资金。最亮眼的一笔是法律 AI 公司 Harvey，两亿美元的 C 轮，估值二十一亿。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">钱都往"企业自动化"这个方向涌，是不是说明消费级 Agent 反而没那么受追捧了？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">至少投资人现在更看好企业端。Gartner 给了个数字很能说明问题：到今年年底，百分之四十的企业软件里会内嵌 Agent，而 2025 年这个比例还不到百分之五。同时 Gartner 也警告，有两千三百四十亿美元的企业软件支出正因为 Agent 化而面临洗牌风险。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">洗牌风险，意思是老牌软件公司可能被 Agent 取代？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">对。如果一个 Agent 能直接帮你把活干了，你还需要那么多点来点去的传统软件界面吗？这是今年悬在每一家软件公司头上的问题。</div>
-    </div>
-  </div>
-  <a class="src-inline" href="https://aifunding.me/insights/ai-agent-funding-july-2026" target="_blank">📎 来源: AI Agent Startup Funding July 2026 — AI Funding</a>
-</div>
-
-<div class="story">
-  <div class="story-num">STORY 04</div>
-  <div class="story-headline">阿里云推出「Agent 原生云」</div>
-  <div class="script-container">
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">最后一条把视角切到中国。在七月十八号的世界人工智能大会上，阿里云发布了"Agent 原生云"，一套专门为 AI Agent 设计的云架构。里面有三块：AgentTeams 做多 Agent 协同编排，Agentic Computer 提供安全的沙箱执行环境，还有专门为可复用 Agent 技能调优的基础设施。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">听起来是把"跑 Agent"这件事当成云计算的一等公民来设计了。这和普通云有什么本质区别？</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">普通云是为人写的程序设计的——你部署一个服务，它老老实实跑。但 Agent 是会自己做决策、自己调工具、甚至自己写代码去执行的，你必须给它一个既能放手让它干、又能随时收得回来的环境。沙箱、编排、权限，这些以前是可选项，现在变成了地基。</div>
-    </div>
-    <div class="script-block">
-      <div class="speaker-tag speaker-xiaowei">小苇</div>
-      <div class="script-text">所以云厂商的竞争，正在从"谁的算力便宜"变成"谁更懂怎么安全地养 Agent"。</div>
-    </div>
-    <div class="script-block lead-block">
-      <div class="speaker-tag speaker-dayu">大雨</div>
-      <div class="script-text">说得好。这就是今年基础设施层最深的一条暗线。</div>
-    </div>
-  </div>
-  <a class="src-inline" href="https://solutionsreview.com/ai-news-for-the-week-of-july-24-updates-from-booz-allen-gartner-microsoft-more/" target="_blank">📎 来源: AI News for the Week of July 24 — Solutions Review</a>
-</div>
-
+<!-- INSIGHT BOX -->
 <div class="insight-box">
-  <div class="insight-label">◈ 今日一条主线</div>
-  <div class="insight-title">从「更聪明」到「会干活」</div>
-  <div class="insight-item"><span class="insight-num">01</span><span>模型能力天花板还在往上顶，但顶的方向是 Agent——能自己规划、调工具、连续操作。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span>开放与闭源不再是你死我活，Google、OpenAI 同框，长期共存成为共识。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span>钱与基础设施同时转向"怎么让 Agent 安全地干活"——沙箱、编排、权限成为地基。</span></div>
+  <div class="insight-label">◈ 本期速记 · 从承诺到交付</div>
+  <div class="insight-title">PROMISE → DELIVERY</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>特斯拉 Q2 2026 财报（7 月 22 日）：Optimus 量产数量依旧为零；弗里蒙特产线在装配中，口径改为"今年晚些时候"，股东材料中悄然删去"mass production"；股价一度跌 14%。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>马斯克罕见降温：称 Optimus 是"特斯拉有史以来最难量产的产品，每个零件都是全新的"；首批机器不交客户，进内部 Optimus Academy 采集训练数据、打磨功能。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>东边的"交付"是资本市场：宇树科创板 IPO 注册获证监会核准，拟发行 ≥4045 万股募 42 亿元、估值约 420 亿元，73 天过会创纪录；靠执行器实打实盈利，但招股书自陈增速放缓、直面价格战。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>1X NEO 进家庭：$20K / $499 月租，7 月 9 日升级 25 自由度触觉新手（IP68）；截至 7 月中旬无核实的消费者交付，EQT 协议再抢同一产线的一万台，且早期"自主"演示仍依赖真人遥操作。</span></div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◈ 消息来源</div>
+  <a class="source-link" href="https://www.cnbc.com/2026/07/22/tesla-tsla-q2-2026-earnings-report.html" target="_blank"><span class="src-icon">CNBC</span><span>Tesla (TSLA) Q2 2026 earnings report（Optimus 量产为零 · 产线在装）</span></a>
+  <a class="source-link" href="https://thenextweb.com/news/musk-optimus-hardest-product-scale-manufacturing-tesla" target="_blank"><span class="src-icon">TNW</span><span>Musk says Optimus will be the hardest product Tesla has ever scaled</span></a>
+  <a class="source-link" href="https://thenextweb.com/news/unitree-shanghai-ipo-approval" target="_blank"><span class="src-icon">TNW</span><span>China approves Unitree's Shanghai listing registration, valuing IPO at $619M</span></a>
+  <a class="source-link" href="https://www.eweek.com/news/1x-neo-humanoid-home-robot-2026/" target="_blank"><span class="src-icon">eWeek</span><span>1X NEO Humanoid Home Robot 2026（触觉新手 · 交付与遥操作真相）</span></a>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -254,87 +326,96 @@
 <p class="builders-intro">
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
-  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:03。
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:00。今日 feed 偏 AI 话题，已挑选与「智能走进物理世界」最相关的几条。
 </p>
 
+<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Unsupervised Learning · 2026-07-16</p>
-  <p class="pc-title">Ep 91: Top AI Analyst Unpacks Today's AI Hype Cycle（嘉宾：Benedict Evans）</p>
-  <p class="pc-summary">Redpoint 的 Jacob Efron 对话科技分析师 Benedict Evans，聊当下 AI 的"泡沫感"到底虚不虚。Evans 用"电力"类比反问：价值最终会沉淀在哪一层——是基础模型，还是应用？他对消费级 AI 应用"为什么还没真正跑通"，以及能力"参差不齐的锯齿状边缘"如何拖慢企业落地，给出了少见的冷静判断。</p>
-  <a href="https://www.youtube.com/watch?v=vDY_ocrkQ5w" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-07-16</p>
+  <p class="pc-title">OpenAI's Compute Chief: We Can't Build Fast Enough — Sachin Katti</p>
+  <p class="pc-summary">OpenAI 工业算力负责人 Sachin Katti 谈这轮"人类史上最大基建"。有一句话正好击中今天的机器人主题："物理世界没那么快。"无论是数据中心、电网，还是 Optimus 那一万个全新零件——真正卡住 AI 的，从来不是模型有多聪明，而是它要在现实世界里被造出来、装起来、跑起来。智能是软的，交付是硬的。</p>
+  <a href="https://www.youtube.com/watch?v=wEZBlmvxx4o" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
+<!-- BUILDERS GRID -->
 <div class="builders-grid">
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">TS</div>
-      <div>
-        <div class="builder-name">Thibault Sottiaux</div>
-        <div class="builder-handle">@thsottiaux · OpenAI</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「ChatGPT Work 的活跃用户数正式超过了 Codex。干得漂亮。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 3,485</span>
-      <a href="https://x.com/thsottiaux" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">PS</div>
-      <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · 独立开发者</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「一，竞争对生态是好事。二，大规模地把模型跑起来本身就很难。很高兴 OpenAI 签了那封信。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 1,441</span>
-      <a href="https://x.com/steipete" target="_blank">查看推文 →</a>
-    </div>
-  </div>
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · Box CEO</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「现在连 Google 都上船了，这是对开放权重 AI 的一次完整背书。对整个行业来说都是个大时刻。」</p>
+    <p class="builder-tweet">「AI 扩散进真实世界，机会还大得很。大多数企业要把模型突破真正用到自己的流程里，都还需要大量支持——光有智能是不够的。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,351</span>
-      <a href="https://x.com/levie" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 321</span>
+      <a href="https://x.com/levie/status/2081491621162668207" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">SA</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · Vercel CEO</div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · CEO, OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「(软件)工厂本身才是产品。你的产品好到什么程度，取决于你搭起来自主维护它的那些 Agent。这正是马斯克在特斯拉悟到的事，现在对软件也成立了。」</p>
+    <p class="builder-tweet">「感觉这事很大，我想要一种全新的计算机。」——当 AI 开始能替你干活，下一步自然是它需要一个新的"身体"。机器人，或许就是那个新的计算机形态。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,050</span>
-      <a href="https://x.com/rauchg" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 5511</span>
+      <a href="https://x.com/sama/status/2081513071135346814" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NK</div>
+      <div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner, FPV Ventures</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Proof of prompt 很快会取代 proof of work。」——一句半玩笑，但放在今天的语境里也成立：机器人的下半场，考的不是能画多好的饼（proof of prompt），而是能不能真的交付（proof of work）。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 70</span>
+      <a href="https://x.com/nikunj/status/2081383934928068619" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">ZZ</div>
+      <div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我平均一天在 X 上发三次，加起来最多花 15 到 20 分钟。不过度琢磨，想到就发，大部分内容都是我早就当面跟人说过的话。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 145</span>
+      <a href="https://x.com/zarazhangrui/status/2081304884469809295" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
-  <span>Daily Builders Digest</span>
-  <span>2026-07-27 · AI</span>
-  <span>大雨 × 小苇</span>
+  <span>Daily Builders Digest · Robotics 星期二</span>
+  <span>2026-07-28 · 大雨 × 小苇</span>
 </div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-07-27.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-07-27</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-07-27 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-07-26.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-07-26</span>

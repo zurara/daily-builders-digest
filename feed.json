@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-07-28",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "2026-07-28 今日快报",
+    "html": "episodes/2026-07-28.html",
+    "mp3": "episodes/2026-07-28.mp3",
+    "headlines": []
+  },
+  {
     "date": "2026-07-27",
     "dow": 1,
     "topic": "AI",

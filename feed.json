@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-07-29",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "Roblox Build 公开内测：一个九岁的孩子，一句话，在手机上做出能玩的游戏 · ChatGPT Work + Codex 冲上八百万用户：专业工作流被压缩成一句吩咐",
+    "html": "episodes/2026-07-29.html",
+    "mp3": "episodes/2026-07-29.mp3",
+    "headlines": [
+      "Roblox Build 公开内测：一个九岁的孩子，一句话，在手机上做出能玩的游戏",
+      "ChatGPT Work + Codex 冲上八百万用户：专业工作流被压缩成一句吩咐",
+      "Schlage Sense Pro：连「说」都省了——你走过来，锁就先懂了",
+      "当造东西几乎免费，稀缺的东西换了位置——从「能不能造」变成「造得好不好」"
+    ]
+  },
+  {
     "date": "2026-07-28",
     "dow": 2,
     "topic": "Robotics",

@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-07-28 · Robotics 星期二">
-<meta property="og:description" content="特斯拉 Q2 财报：Optimus 量产依旧为零，马斯克称最难量产 · 宇树冲刺科创板 · 1X NEO 进家门，背后仍站着远程操作员 · 从承诺到交付">
-<title>Daily Builders Digest · 2026-07-28 · Robotics 星期二</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-07-29">
+<meta property="og:description" content="产品星期三 · 说出来它就成了 · Roblox Build 公开内测 · ChatGPT Work 冲上八百万用户 · Schlage Sense Pro 智能锁提前开门 · 造物门槛塌向每个人">
+<title>Daily Builders Digest · 2026-07-29</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,11 +29,11 @@
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
   .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
   .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
-  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 42s linear infinite; }
   .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
   .ticker-item .dot { color: var(--red); margin-right: 10px; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -43,43 +43,25 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
-  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
-  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
-  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
-  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-  .stat-item { display: flex; flex-direction: column; gap: 4px; }
-  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
-  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
-  .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
-  .script-block.lead-block { border-left-color: var(--red); }
-  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .speaker-dayu  { color: var(--red); }
-  .speaker-xiaowei { color: #555; }
-  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
-  .script-text strong { font-weight: 600; }
-  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
-  .source-inline a { color: var(--red); text-decoration: none; }
-  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
-  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
-  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
-  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
-  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
-  .source-link:hover { color: var(--red); }
-  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); padding: 36px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin-bottom: 2px; }
+  .news-card { background: var(--bg); padding: 24px; }
+  .news-card.lead { grid-column: 1 / -1; padding: 32px; border-bottom: 1px solid var(--light); }
+  .news-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--red); letter-spacing: .08em; margin-bottom: 8px; }
+  .news-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.3; margin-bottom: 10px; }
+  .news-card.lead .news-hed { font-size: 24px; }
+  .news-body { font-size: 14px; line-height: 1.65; color: #333; }
+  .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+  .news-source a:hover { border-color: var(--red); }
+  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
+  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
+  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
+  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
+  .index-table td a { color: var(--ink); text-decoration: none; }
+  .index-table td a:hover { text-decoration: underline; }
+  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
+  .tag.hot { background: var(--red); color: #fff; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -98,226 +80,142 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+  .rule { border: none; border-top: 1px solid var(--light); margin: 40px 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: 40px 0; }
+  @media (max-width: 540px) {
+    .news-grid { grid-template-columns: 1fr !important; }
+    .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
+    .news-card.lead .news-hed { font-size: 18px; }
+    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
+    .builders-grid { grid-template-columns: 1fr !important; }
+    .header { padding: 28px 0 20px; }
+  }
+  footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
+  footer strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · Robotics 星期二</div>
-  <div class="header-title">ROBOT<br><span>DIGEST</span></div>
+  <p class="header-eyebrow">产品星期三 · 每日播客 · Vol.2026-07-29</p>
+  <h1 class="header-title">产品<span>星期三</span></h1>
   <div class="header-meta">
-    <span>📅 2026-07-28</span>
-    <span>🤖 Robotics 星期二</span>
-    <span>◇ 从承诺到交付</span>
-    <span>大雨 × 小苇</span>
+    <span>📅 2026·07·29 周三</span>
+    <span>🏷 主题：产品 / 说出来，它就成了</span>
+    <span>🎙 主持：大雨 × 小苇</span>
+    <span>⏱ 约 12 分钟</span>
   </div>
 </header>
 
-<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>特斯拉 Q2 财报：Optimus 量产依旧为零 · 股价一度跌 14%</span>
-    <span class="ticker-item"><span class="dot">●</span>马斯克：Optimus 是我们做过最难量产的产品 · 每个零件都是全新的</span>
-    <span class="ticker-item"><span class="dot">●</span>首批 Optimus 不交客户 · 进 Optimus Academy 采集训练数据</span>
-    <span class="ticker-item"><span class="dot">●</span>宇树科创板 IPO 获批 · 拟募 42 亿元 · 剑指 A 股人形机器人第一股</span>
-    <span class="ticker-item"><span class="dot">●</span>1X NEO 进家门 · 25 自由度触觉新手 · 但尚无核实的消费者交付</span>
-    <span class="ticker-item"><span class="dot">●</span>特斯拉 Q2 财报：Optimus 量产依旧为零 · 股价一度跌 14%</span>
-    <span class="ticker-item"><span class="dot">●</span>马斯克：Optimus 是我们做过最难量产的产品 · 每个零件都是全新的</span>
-    <span class="ticker-item"><span class="dot">●</span>首批 Optimus 不交客户 · 进 Optimus Academy 采集训练数据</span>
-    <span class="ticker-item"><span class="dot">●</span>宇树科创板 IPO 获批 · 拟募 42 亿元 · 剑指 A 股人形机器人第一股</span>
-    <span class="ticker-item"><span class="dot">●</span>1X NEO 进家门 · 25 自由度触觉新手 · 但尚无核实的消费者交付</span>
+    <span class="ticker-item"><span class="dot">▶</span>Roblox Build 公开内测 · 一句话在手机上生成能玩的游戏 · 九岁起可用 · 造物门槛塌到地板</span>
+    <span class="ticker-item"><span class="dot">▶</span>ChatGPT Work + Codex 冲上八百万用户 · 从一百万到八百万只用五个月 · 骑车路上一句话改完发布视频</span>
+    <span class="ticker-item"><span class="dot">▶</span>Schlage Sense Pro 智能锁 · UWB 传感器预判你的步速与方向 · 伸手之前先开门</span>
+    <span class="ticker-item"><span class="dot">▶</span>观察 · 当造东西几乎免费 · 稀缺的换成了判断与品味</span>
+    <span class="ticker-item"><span class="dot">▶</span>Roblox Build 公开内测 · 一句话在手机上生成能玩的游戏 · 九岁起可用 · 造物门槛塌到地板</span>
+    <span class="ticker-item"><span class="dot">▶</span>ChatGPT Work + Codex 冲上八百万用户 · 从一百万到八百万只用五个月 · 骑车路上一句话改完发布视频</span>
+    <span class="ticker-item"><span class="dot">▶</span>Schlage Sense Pro 智能锁 · UWB 传感器预判你的步速与方向 · 伸手之前先开门</span>
+    <span class="ticker-item"><span class="dot">▶</span>观察 · 当造东西几乎免费 · 稀缺的换成了判断与品味</span>
   </div>
 </div>
 
-<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">▶</span>
-    <strong>本期音频</strong>
-    <span>· Robotics 星期二 · 从承诺到交付</span>
+    <span class="icon">🎙</span>
+    <strong>今日播客</strong>
+    <span>大雨 × 小苇 · 约 12 分钟</span>
   </div>
-  <audio controls src="episodes/2026-07-28.mp3">
-    Your browser does not support the audio element.
+  <audio controls preload="none" src="episodes/2026-07-29.mp3">
+    你的浏览器不支持音频播放。<a href="2026-07-29.mp3">下载音频</a>
   </audio>
 </div>
 
-<!-- MAIN FEATURE HERO -->
-<section class="feature-hero">
-  <div class="feature-left">
-    <div class="feature-eyebrow">今日头条 · 行业从"承诺"艰难挪向"交付"</div>
-    <div class="feature-show-name">PROMISE<br>→&nbsp;DELIVERY</div>
-    <div class="feature-ep-title">特斯拉在财报里给 Optimus 降温，宇树用上市换门票，<br>1X 的机器人进了家门却仍牵着一根遥控的线</div>
-    <div class="feature-guest">特斯拉 · 宇树 · 1X · 2026-07-22/28</div>
-  </div>
-  <div class="feature-right">
-    <div class="feature-lede">
-      这一周机器人的关键词只有两个字——交付。特斯拉在 Q2 财报里承认 Optimus 量产依旧为零，马斯克罕见地说这是"我们做过最难量产的产品"，并悄悄删掉了"mass production"这个词；东边的宇树则用一张财报冲刺科创板，剑指 A 股人形机器人第一股；而走进家门的 1X NEO，换上了带触觉的新手，背后却仍站着远程操作员。整个行业，正从"承诺"挪向"交付"。
-    </div>
-    <div class="feature-tags">
-      <span class="tag">Optimus 量产=0</span>
-      <span class="tag">马斯克降温</span>
-      <span class="tag">宇树 IPO</span>
-      <span class="tag">1X NEO 家用</span>
-      <span class="tag">遥操作真相</span>
-    </div>
-    <div class="feature-stats">
-      <div class="stat-item">
-        <div class="stat-label">特斯拉 Optimus</div>
-        <div class="stat-value">Q2 量产为零 · 首批进 Academy 采数据 · 股价一度跌 14%</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">宇树科创板</div>
-        <div class="stat-value">IPO 获批 · 拟发 ~4045 万股募 42 亿元 · 估值 ~420 亿</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">1X NEO</div>
-        <div class="stat-value">$20K / $499月租 · 25 自由度触觉手 · 尚无核实交付</div>
-      </div>
-    </div>
-  </div>
-</section>
+<p class="section-label">◈ 今日焦点 · 造物门槛正在塌向每个人 · 精选四条</p>
 
-<!-- SCRIPT SECTION -->
-<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
-<div class="script-container">
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
-    <div class="script-text">早上好，欢迎回到 Robotics 星期二。上周我们聊了机器人的"身体、大脑和账本"同时到位。这一周，主题只有两个字——<strong>交付</strong>。因为就在过去几天，行业里最会讲故事的那家公司，第一次被迫在财报电话会上，把"承诺"和"现实"摆到了一起。小苇，你猜是谁？</div>
+<div class="news-grid">
+  <div class="news-card lead">
+    <p class="news-num">01 · 头条</p>
+    <h2 class="news-hed">Roblox Build 公开内测：一个九岁的孩子，一句话，在手机上做出能玩的游戏</h2>
+    <p class="news-body">
+      七月二十八号，Roblox 的新功能 Build 开始公开内测，第一站是新西兰。它是一个手机优先的 AI 工具——你用大白话描述一个游戏，比如「在末日城市里开赛车、能捡道具」，Build 就直接生成一个能玩的初版，带上玩法机制、场景、角色、视觉风格和音效。生成完可以当场试玩、用聊天让它改、分享给朋友，或接着搬进桌面版 Roblox Studio 继续做，两边共用同一套后端、模型和聊天记录。内测门槛是新西兰、九岁以上、完成年龄验证，十六岁以上才能把作品发布给全球玩家。方向值得注意：过去「说一句话就出东西」主要发生在程序员、设计师手里，Roblox 把它直接递到了一个用手机的孩子面前。造物的门槛不是降了一点，是塌到了地板上。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://about.roblox.com/newsroom/2026/07/build-without-limits-on-roblox" target="_blank">Roblox Newsroom</a>
+      &nbsp;·&nbsp;
+      <a href="https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/" target="_blank">TechCrunch</a>
+    </p>
   </div>
 
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">会讲故事、又刚开完财报……不用猜了，是特斯拉吧。Optimus 又出什么幺蛾子了？</div>
+  <div class="news-card">
+    <p class="news-num">02</p>
+    <h2 class="news-hed">ChatGPT Work + Codex 冲上八百万用户：专业工作流被压缩成一句吩咐</h2>
+    <p class="news-body">
+      OpenAI 把聊天、Codex 编程和「帮你把活干完」的 ChatGPT Work 揉进一个桌面 App，七月九号上线，到十四号活跃用户就冲到八百万——二月还只有一百万，两天前才六百万，涨得像坐火箭。这周负责人 Thibault Sottiaux 一边庆祝「重置了所有付费用户的用量上限」，一边说「感觉自己也被 reset 了一下」。更能说明问题的是它已经溢出程序员圈：OpenAI 的 jxnlco 在骑车途中被同事要求改一条发布视频，他从手机远程让 Codex 剪好、导出、发回 Slack，还交代「每三十分钟看反馈、导出 V2/V3/V4」；等他骑车到家，视频已被批准。他甚至没在「做」，只是说了一句，然后走开。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://explainx.ai/blog/openai-codex-chatgpt-work-8-million-users-gpt-5-6-sol-july-2026" target="_blank">explainx.ai</a>
+    </p>
   </div>
 
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 第一条</div>
-    <div class="script-text">对，就是它。7 月 22 号，特斯拉开了 2026 年第二季度财报电话会。营收其实还不错，但利润没达预期，股价当天一度跌了 <strong>14%</strong>。而真正的信号藏在 Optimus 上：截至财报，Optimus 的正式量产数量，<strong>依然是零</strong>。
-    <span class="source-inline">📎 来源: <a href="https://www.cnbc.com/2026/07/22/tesla-tsla-q2-2026-earnings-report.html" target="_blank">Tesla (TSLA) Q2 2026 earnings report — CNBC</a></span></div>
+  <div class="news-card">
+    <p class="news-num">03</p>
+    <h2 class="news-hed">Schlage Sense Pro：连「说」都省了——你走过来，锁就先懂了</h2>
+    <p class="news-body">
+      「说出来它就成了」不只发生在屏幕里。这周 Schlage 推出新智能锁 Sense Pro，带触摸屏、支持 Matter 智能家居标准、支持苹果 Home Key，但真正有意思的是那颗超宽带（UWB）传感器——它能算出你走近门的速度和方向，在你还没伸手去够门把手之前，就先把锁开了。把它和前两条连起来：Roblox 是「你说，它造」，ChatGPT Work 是「你说，它办」，Schlage 是连「说」都省了，「你走过来，它就懂了」。三个点在同一条曲线上，方向一致——把「意图」和「结果」之间的摩擦一点一点磨掉。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.cnn.com/cnn-underscored/reviews/best-product-launches-2026-07-24" target="_blank">CNN Underscored</a>
+    </p>
   </div>
 
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">零？我记得马斯克前两年可是说过，2026 年要造五万到十万台的。</div>
+  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
+    <p class="news-num">04 · 观察</p>
+    <h2 class="news-hed">当造东西几乎免费，稀缺的东西换了位置——从「能不能造」变成「造得好不好」</h2>
+    <p class="news-body">
+      门槛塌下来是好事，但它会把稀缺换个地方。当谁都能一句话生成一个游戏、一份文档、一段视频，产出本身就不值钱了，满世界都是「能用」的东西。这时真正稀缺的是判断力：哪个想法值得做、这一版到底好不好、该砍掉什么。Linear 产品负责人 Nan Yu 这周说得很损也很准：「一大批很聪明的人努力把产品做得很好、很好用；如果你手上有很聪明的人，就该让他们把你自己的产品做好——然后付我们一点小钱用我们的产品就行。」生成能力可以外包、可以买，但「把产品做好」的那份判断和品味外包不掉。Meta 的 Madhu Guru 补了一刀：最好的产品评审会是在一小时里模拟出市场对你想法的真实反应，而这只有屋里的人真懂领域、有强观点、还经常判断对才成立。今天给产品人的问题因此有两层——大处：门槛塌了，你打算把它递给谁、解放谁？小处：满世界都是「能用」的东西，你凭什么让人记住你这一个？答案八成不在「造得更快」，而在「判断得更准」。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">Nan Yu · X</a>
+      &nbsp;·&nbsp;
+      <a href="https://x.com/realmadhuguru/status/2081781952437486052" target="_blank">Madhu Guru · X</a>
+    </p>
   </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">这正是这次财报最耐人寻味的地方。特斯拉说，它已经把弗里蒙特工厂原来的 Model S 和 X 产线拆了，正在装第一代 Optimus 产线，"很快就会开始生产"，但把口径改成了"预计今年晚些时候"。更微妙的是——他们悄悄地把 Q2 的股东材料里"量产 mass production"这个词给<strong>删掉了</strong>，而一个季度前，也就是 Q1，他们还在用这个词。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">删掉一个词，听起来是小事，但放在这个位置，感觉像是在悄悄给期望降温。马斯克自己在电话会上是怎么说的？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">他这次说得非常直白，甚至有点罕见的谦逊。他说 Optimus 会是特斯拉<strong>有史以来最难量产的产品</strong>，因为这个机器人身上的每一个零件都是全新的。他还说想把大家的预期校准一下——初期产能爬坡会是一条正常曲线，但前面那段平台期，可能会比投资人希望的更长。
-    <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/musk-optimus-hardest-product-scale-manufacturing-tesla" target="_blank">Musk says Optimus will be the hardest product Tesla has ever scaled — TNW</a></span></div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">"把每一个零件都重新造一遍"——这句话其实很有分量。我们平时看机器人 demo，看的是它会不会翻跟头；但真正卡住量产的，是那一万个没有现成供应链的新零件。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">你说到了核心。而且还有一个细节特别说明问题：特斯拉说，第一批造出来的 Optimus，<strong>不会交给客户</strong>，而是送进他们内部的 Optimus Academy，专门用来采集训练数据、继续打磨功能。换句话说，这批机器人不是产品，是"学徒"。这跟"量产上市"，完全是两回事。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以西边这边，特斯拉在给自己降温。那东边呢？上周你说宇树的 IPO 获批了。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 第二条</div>
-    <div class="script-text">对，这就是有意思的对照。同样是交付，特斯拉要交付的是产品，而宇树先交付的是——一张财报和一次上市。7 月初，中国证监会正式核准了宇树在科创板的 IPO 注册。它计划发行至少约 <strong>4045 万股</strong>，募资 42 亿人民币、也就是六亿多美元，整体估值大约 420 亿人民币。从被受理到过会只用了 73 天，是科创板"预审核"机制以来最快的一次。
-    <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/unitree-shanghai-ipo-approval" target="_blank">China approves Unitree's Shanghai listing registration, valuing IPO at $619M — TNW</a></span></div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">73 天，这个速度确实说明监管层在给"硬科技"开绿灯。但我更好奇的是——宇树凭什么能上市？它跟特斯拉最大的不同在哪？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">最大的不同是，宇树是真的在<strong>赚钱</strong>的，而且赚的是"卖铲子"的钱。它的核心竞争力在关节电机、也就是执行器上，那台一万三千多美元的 G1，是眼下你真的能买到、能下单的人形机器人。所以你看这个对照特别清楚：特斯拉在讲"未来能造多少"，宇树在讲"现在卖了多少"。一个用愿景融资，一个用业绩上市。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">不过我也听到一点隐忧——宇树今年一季度的营收增速好像掉得挺快，利润还腰斩了？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">是的，它的招股书里自己也写了风险：增速在放缓，而且明确点名了<strong>价格战</strong>——来自特斯拉，也来自国内那些跨界造机器人的车企。所以哪怕是"第一股"，这个行业的账，也没那么好算。上市是起点，不是终点。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 第三条</div>
-    <div class="script-text">说完工厂和资本市场，我们把镜头拉回到最贴近普通人的地方——家里。这一周，把机器人往家庭里推得最猛的是挪威公司 1X。它的家用人形机器人 <strong>NEO</strong>，定价两万美元，或者每月 499 美元订阅。7 月 9 号，他们刚给 NEO 换了一双新手：25 个自由度、腱驱动、指尖带触觉和打滑检测，还做到了 IP68 防水，说是会装在第一批交付的机器上。
-    <span class="source-inline">📎 来源: <a href="https://www.eweek.com/news/1x-neo-humanoid-home-robot-2026/" target="_blank">1X NEO humanoid home robot 2026 — eWeek</a></span></div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">一双能感知打滑的手，听起来已经很科幻了。那它到底交付了没有？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">这就是今天这条主线里最诚实的一笔。截至 7 月中旬，<strong>还没有任何一台 NEO 被核实真正交到消费者手里</strong>。1X 手上有超过一万台预订，工厂年产能也是一万台左右，但还有一个更大的"抢货方"——一家叫 EQT 的机构签了协议，2026 到 2030 年要在它投资的公司里部署最多一万台 NEO，用于物流、仓储、制造。也就是说，同一条产线，消费者和企业在排同一支队。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">而且我隐约记得，NEO 早期的很多"自主"演示，其实背后是有真人远程操控的？</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <div class="script-text">你记得没错，这也是家用人形机器人现在最不愿意大声说、但绕不开的真相：很多复杂动作，眼下还得靠<strong>远程的人"接管"</strong>来完成。1X 自己也承认，早期这些遥操作数据，正是用来训练模型、让机器人未来能自己干活的。所以你在客厅里看到的那个"聪明"的 NEO，此刻可能有一半的聪明，来自屏幕另一端一个戴着头显的操作员。这不丢人，但它提醒我们：家用机器人真正的"自主交付"，还没到。</div>
-  </div>
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <div class="script-text">所以把今天这三条连起来看——特斯拉把"量产"这个词悄悄删了，宇树用财报换了一张上市门票，1X 的机器人进了家门但可能还牵着一根遥控的线。它们其实在说同一件事。</div>
-  </div>
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
-    <div class="script-text">是。这就是我今天想留给你的那两个字——<strong>交付</strong>。过去一年，机器人行业最不缺的是发布会：更炫的跟头、更低的报价、更宏大的路线图。但这个七月，风向变了。当最能画饼的公司都开始在财报里说"这是我们做过最难量产的东西"，当"第一股"的招股书里写满了价格战的风险，当走进家门的机器人背后还站着一个远程的人——你会发现，整个行业正在从"承诺"这个词，艰难地挪向"交付"这个词。上半场比谁的愿景大，下半场比谁真的能把东西造出来、送出去、并且养活自己。能跨过这道坎的公司，可能不多。但只有跨过去的，才配谈下一个夏天。我们下期见。</div>
-  </div>
-
 </div>
 
-<!-- INSIGHT BOX -->
-<div class="insight-box">
-  <div class="insight-label">◈ 本期速记 · 从承诺到交付</div>
-  <div class="insight-title">PROMISE → DELIVERY</div>
-  <div class="insight-item"><span class="insight-num">01</span><span>特斯拉 Q2 2026 财报（7 月 22 日）：Optimus 量产数量依旧为零；弗里蒙特产线在装配中，口径改为"今年晚些时候"，股东材料中悄然删去"mass production"；股价一度跌 14%。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span>马斯克罕见降温：称 Optimus 是"特斯拉有史以来最难量产的产品，每个零件都是全新的"；首批机器不交客户，进内部 Optimus Academy 采集训练数据、打磨功能。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span>东边的"交付"是资本市场：宇树科创板 IPO 注册获证监会核准，拟发行 ≥4045 万股募 42 亿元、估值约 420 亿元，73 天过会创纪录；靠执行器实打实盈利，但招股书自陈增速放缓、直面价格战。</span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span>1X NEO 进家庭：$20K / $499 月租，7 月 9 日升级 25 自由度触觉新手（IP68）；截至 7 月中旬无核实的消费者交付，EQT 协议再抢同一产线的一万台，且早期"自主"演示仍依赖真人遥操作。</span></div>
-</div>
-
-<!-- SOURCES -->
-<div class="sources">
-  <div class="sources-label">◈ 消息来源</div>
-  <a class="source-link" href="https://www.cnbc.com/2026/07/22/tesla-tsla-q2-2026-earnings-report.html" target="_blank"><span class="src-icon">CNBC</span><span>Tesla (TSLA) Q2 2026 earnings report（Optimus 量产为零 · 产线在装）</span></a>
-  <a class="source-link" href="https://thenextweb.com/news/musk-optimus-hardest-product-scale-manufacturing-tesla" target="_blank"><span class="src-icon">TNW</span><span>Musk says Optimus will be the hardest product Tesla has ever scaled</span></a>
-  <a class="source-link" href="https://thenextweb.com/news/unitree-shanghai-ipo-approval" target="_blank"><span class="src-icon">TNW</span><span>China approves Unitree's Shanghai listing registration, valuing IPO at $619M</span></a>
-  <a class="source-link" href="https://www.eweek.com/news/1x-neo-humanoid-home-robot-2026/" target="_blank"><span class="src-icon">eWeek</span><span>1X NEO Humanoid Home Robot 2026（触觉新手 · 交付与遥操作真相）</span></a>
-</div>
+<hr class="rule">
+<p class="section-label">◈ 新闻索引</p>
+<table class="index-table">
+  <thead>
+    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td><a href="https://about.roblox.com/newsroom/2026/07/build-without-limits-on-roblox" target="_blank">Roblox Build 公开内测 · 一句话生成能玩的游戏 <span class="tag hot">头条</span></a></td>
+      <td>Roblox</td>
+      <td>2026-07-28</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td><a href="https://explainx.ai/blog/openai-codex-chatgpt-work-8-million-users-gpt-5-6-sol-july-2026" target="_blank">ChatGPT Work + Codex 冲上八百万用户 <span class="tag">Agent</span></a></td>
+      <td>explainx.ai</td>
+      <td>2026-07-27</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td><a href="https://www.cnn.com/cnn-underscored/reviews/best-product-launches-2026-07-24" target="_blank">Schlage Sense Pro 智能锁 · UWB 提前开门 <span class="tag">硬件</span></a></td>
+      <td>CNN Underscored</td>
+      <td>2026-07-24</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td><a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">当造东西几乎免费，稀缺的换成了判断 <span class="tag">观察</span></a></td>
+      <td>Builders · X</td>
+      <td>2026-07-27</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -327,88 +225,101 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:00。今日 feed 偏 AI 话题，已挑选与「智能走进物理世界」最相关的几条。
+  数据截至今日 UTC 04:00。
 </p>
 
-<!-- PODCAST CARD -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-07-16</p>
-  <p class="pc-title">OpenAI's Compute Chief: We Can't Build Fast Enough — Sachin Katti</p>
-  <p class="pc-summary">OpenAI 工业算力负责人 Sachin Katti 谈这轮"人类史上最大基建"。有一句话正好击中今天的机器人主题："物理世界没那么快。"无论是数据中心、电网，还是 Optimus 那一万个全新零件——真正卡住 AI 的，从来不是模型有多聪明，而是它要在现实世界里被造出来、装起来、跑起来。智能是软的，交付是硬的。</p>
-  <a href="https://www.youtube.com/watch?v=wEZBlmvxx4o" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">AI & I by Every · 2026-07-15</p>
+  <p class="pc-title">一家 15 亿美金 AI 公司的创始人：第一波 AI 应用之后，会来什么——对话 Granola CEO Chris</p>
+  <p class="pc-summary">
+    Granola 是最早那批让人惊呼「这玩意儿真的能用」的 AI 应用之一，做 AI 会议记录，现估值十五亿美金。但创始人 Chris 在节目里泼了盆冷水：「会议记录并不是所有人追着跑的那个终极价值，后面有个大得多的东西。我们还处在一场计算革命非常非常早的起步阶段——到目前为止发生的一切，跟接下来要来的相比，会显得很苍白。」放进今天这条主线里听尤其应景：Roblox Build、ChatGPT Work，这些今天看着已经很酷的东西，可能都只是第一波。
+  </p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
-<!-- BUILDERS GRID -->
 <div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · 产品 & AI 内容作者</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我问 OpenAI 的 jxnlco：Codex 给你干过最疯的一件事是什么？他说：我骑车时同事让我改发布视频，我从手机远程连进去，让 Codex 剪好、导出、发回 Slack。二十分钟后新版本就在群里了。我又说『每半小时看反馈、导出 V2/V3/V4』，等我到家，视频已经被批准了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 338</span>
+      <a href="https://x.com/petergyang/status/2081775399097549083" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NY</div>
+      <div>
+        <div class="builder-name">Nan Yu</div>
+        <div class="builder-handle">@thenanyu · Head of Product @linear</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「一大批很聪明的人，很努力地把产品做得很好、很好用。如果你手上有很聪明的人，你应该让他们去把你自己的产品做好——然后付我们一点小钱，用我们的产品就行。」生成能力能买，判断和品味外包不掉。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 247</span>
+      <a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">AL</div>
       <div>
         <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-handle">@levie · CEO @box</div>
       </div>
     </div>
-    <p class="builder-tweet">「AI 扩散进真实世界，机会还大得很。大多数企业要把模型突破真正用到自己的流程里，都还需要大量支持——光有智能是不够的。」</p>
+    <p class="builder-tweet">「大家预言的『AI 让人失业』至今没发生。我聊过的大量企业还在招人，只是招的岗位类型变了——AI 让他们能做更多，杰文斯悖论正在上演：他们招工程师去啃以前啃不动的问题，招销售因为能更深地经营客户关系。只用 AI 省成本的公司，最终会被用 AI 更好服务客户的公司打败。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 321</span>
-      <a href="https://x.com/levie/status/2081491621162668207" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 219</span>
+      <a href="https://x.com/levie/status/2081930301752942703" target="_blank">查看推文 →</a>
     </div>
   </div>
+
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SA</div>
+      <div class="builder-avatar">MG</div>
       <div>
-        <div class="builder-name">Sam Altman</div>
-        <div class="builder-handle">@sama · CEO, OpenAI</div>
+        <div class="builder-name">Madhu Guru</div>
+        <div class="builder-handle">@realmadhuguru · Sr Director, AI @meta</div>
       </div>
     </div>
-    <p class="builder-tweet">「感觉这事很大，我想要一种全新的计算机。」——当 AI 开始能替你干活，下一步自然是它需要一个新的"身体"。机器人，或许就是那个新的计算机形态。</p>
+    <p class="builder-tweet">「大多数产品评审会之所以让人烦，是因为开得太烂。最好的评审会能在一小时里把几个月的学习压缩起来——靠的是当场模拟市场对你想法的真实反应。但这只有当屋里的人真懂这个领域、有强观点、而且经常判断对，才成立。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 5511</span>
-      <a href="https://x.com/sama/status/2081513071135346814" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">NK</div>
-      <div>
-        <div class="builder-name">Nikunj Kothari</div>
-        <div class="builder-handle">@nikunj · Partner, FPV Ventures</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「Proof of prompt 很快会取代 proof of work。」——一句半玩笑，但放在今天的语境里也成立：机器人的下半场，考的不是能画多好的饼（proof of prompt），而是能不能真的交付（proof of work）。</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 70</span>
-      <a href="https://x.com/nikunj/status/2081383934928068619" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">ZZ</div>
-      <div>
-        <div class="builder-name">Zara Zhang</div>
-        <div class="builder-handle">@zarazhangrui · Builder</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「我平均一天在 X 上发三次，加起来最多花 15 到 20 分钟。不过度琢磨，想到就发，大部分内容都是我早就当面跟人说过的话。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 145</span>
-      <a href="https://x.com/zarazhangrui/status/2081304884469809295" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 36</span>
+      <a href="https://x.com/realmadhuguru/status/2081781952437486052" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <span>Daily Builders Digest · Robotics 星期二</span>
-  <span>2026-07-28 · 大雨 × 小苇</span>
-</div>
+<hr class="rule">
+
+<footer>
+  <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
+  主持：大雨 × 小苇 · 2026-07-29<br>
+  数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
+  © 2026 Daily Builders Digest
+</footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-07-28.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-07-28</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">2026-07-28 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-07-27.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-07-27</span>

@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-07-29">
-<meta property="og:description" content="产品星期三 · 说出来它就成了 · Roblox Build 公开内测 · ChatGPT Work 冲上八百万用户 · Schlage Sense Pro 智能锁提前开门 · 造物门槛塌向每个人">
-<title>Daily Builders Digest · 2026-07-29</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-07-30">
+<meta property="og:description" content="健康星期四 · 早一点 · Huberman 问答专场答那些问得太晚的问题 · Peter Attia 请 Gayatri Devi 讲痴呆的早发现 · Rhonda Patrick 聊 NAD+ 抗衰上游——女性健康聚焦更年期与大脑">
+<title>Daily Builders Digest · 2026-07-30</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -54,14 +54,19 @@
   .news-source { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
   .news-source a { color: var(--red); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
   .news-source a:hover { border-color: var(--red); }
-  .index-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 48px; }
-  .index-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mid); text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--ink); }
-  .index-table td { padding: 10px 12px; border-bottom: 1px solid var(--light); vertical-align: top; }
-  .index-table td:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red); width: 48px; }
-  .index-table td a { color: var(--ink); text-decoration: none; }
-  .index-table td a:hover { text-decoration: underline; }
-  .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; background: var(--light); color: var(--mid); margin-left: 8px; vertical-align: middle; }
-  .tag.hot { background: var(--red); color: #fff; }
+  .spotlight { background: var(--ink); color: var(--bg); padding: 32px; margin: 2px 0 0; border-top: 3px solid var(--red); }
+  .spotlight .sp-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .spotlight .sp-hed { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.3; margin-bottom: 16px; color: var(--bg); }
+  .spotlight .sp-body { font-size: 14px; line-height: 1.75; color: #d8d6d0; margin-bottom: 14px; }
+  .spotlight .sp-body strong { color: var(--bg); }
+  .spotlight .sp-stat { font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1; color: var(--red); margin: 8px 0 4px; }
+  .spotlight .sp-stat-cap { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--mid); text-transform: uppercase; margin-bottom: 18px; }
+  .spotlight .sp-source { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); }
+  .spotlight .sp-source a { color: var(--red); text-decoration: none; }
+  .tip-box { background: var(--card); border-left: 3px solid var(--red); padding: 24px 28px; margin: 36px 0; }
+  .tip-box .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .tip-box .tip-body { font-size: 15px; line-height: 1.7; color: #333; }
+  .tip-box .tip-body strong { color: var(--ink); }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
   .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
@@ -86,9 +91,10 @@
     .news-grid { grid-template-columns: 1fr !important; }
     .news-card.lead, .news-card[style*="grid-column"] { grid-column: 1 !important; }
     .news-card.lead .news-hed { font-size: 18px; }
-    .index-table th:nth-child(3), .index-table td:nth-child(3) { display: none; }
     .builders-grid { grid-template-columns: 1fr !important; }
     .header { padding: 28px 0 20px; }
+    .spotlight { padding: 24px; }
+    .spotlight .sp-hed { font-size: 19px; }
   }
   footer { border-top: 1px solid var(--ink); padding-top: 24px; font-size: 12px; color: var(--mid); font-family: 'JetBrains Mono', monospace; line-height: 1.8; letter-spacing: .04em; }
   footer strong { color: var(--ink); }
@@ -97,26 +103,26 @@
 <body>
 
 <header class="header">
-  <p class="header-eyebrow">产品星期三 · 每日播客 · Vol.2026-07-29</p>
-  <h1 class="header-title">产品<span>星期三</span></h1>
+  <p class="header-eyebrow">健康星期四 · 每日播客 · Vol.2026-07-30</p>
+  <h1 class="header-title">健康<span>星期四</span></h1>
   <div class="header-meta">
-    <span>📅 2026·07·29 周三</span>
-    <span>🏷 主题：产品 / 说出来，它就成了</span>
+    <span>📅 2026·07·30 周四</span>
+    <span>🏷 主题：健康 / Health</span>
     <span>🎙 主持：大雨 × 小苇</span>
-    <span>⏱ 约 12 分钟</span>
+    <span>⏱ 约 13 分钟</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">▶</span>Roblox Build 公开内测 · 一句话在手机上生成能玩的游戏 · 九岁起可用 · 造物门槛塌到地板</span>
-    <span class="ticker-item"><span class="dot">▶</span>ChatGPT Work + Codex 冲上八百万用户 · 从一百万到八百万只用五个月 · 骑车路上一句话改完发布视频</span>
-    <span class="ticker-item"><span class="dot">▶</span>Schlage Sense Pro 智能锁 · UWB 传感器预判你的步速与方向 · 伸手之前先开门</span>
-    <span class="ticker-item"><span class="dot">▶</span>观察 · 当造东西几乎免费 · 稀缺的换成了判断与品味</span>
-    <span class="ticker-item"><span class="dot">▶</span>Roblox Build 公开内测 · 一句话在手机上生成能玩的游戏 · 九岁起可用 · 造物门槛塌到地板</span>
-    <span class="ticker-item"><span class="dot">▶</span>ChatGPT Work + Codex 冲上八百万用户 · 从一百万到八百万只用五个月 · 骑车路上一句话改完发布视频</span>
-    <span class="ticker-item"><span class="dot">▶</span>Schlage Sense Pro 智能锁 · UWB 传感器预判你的步速与方向 · 伸手之前先开门</span>
-    <span class="ticker-item"><span class="dot">▶</span>观察 · 当造东西几乎免费 · 稀缺的换成了判断与品味</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · 问答专场 · 那些「问得太晚」的日常问题——运动后怎么睡、怎么备孕、更年期与情绪</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #399 · Gayatri Devi 讲痴呆早发现 · 在人还很能干时就抓住细微下滑</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · NAD+ 与衰老 · 上游杠杆，但先垒好睡眠运动饮食的地基</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 更年期与大脑 · 雌激素退场时的脑雾情绪，不是「想太多」</span>
+    <span class="ticker-item"><span class="dot">▶</span>Huberman Lab · 问答专场 · 那些「问得太晚」的日常问题——运动后怎么睡、怎么备孕、更年期与情绪</span>
+    <span class="ticker-item"><span class="dot">▶</span>Peter Attia #399 · Gayatri Devi 讲痴呆早发现 · 在人还很能干时就抓住细微下滑</span>
+    <span class="ticker-item"><span class="dot">▶</span>FoundMyFitness · NAD+ 与衰老 · 上游杠杆，但先垒好睡眠运动饮食的地基</span>
+    <span class="ticker-item"><span class="dot">▶</span>女性健康聚焦 · 更年期与大脑 · 雌激素退场时的脑雾情绪，不是「想太多」</span>
   </div>
 </div>
 
@@ -124,98 +130,87 @@
   <div class="audio-bar-top">
     <span class="icon">🎙</span>
     <strong>今日播客</strong>
-    <span>大雨 × 小苇 · 约 12 分钟</span>
+    <span>大雨 × 小苇 · 约 13 分钟</span>
   </div>
-  <audio controls preload="none" src="episodes/2026-07-29.mp3">
-    你的浏览器不支持音频播放。<a href="2026-07-29.mp3">下载音频</a>
+  <audio controls preload="none" src="episodes/2026-07-30.mp3">
+    你的浏览器不支持音频播放。<a href="2026-07-30.mp3">下载音频</a>
   </audio>
 </div>
 
-<p class="section-label">◈ 今日焦点 · 造物门槛正在塌向每个人 · 精选四条</p>
+<p class="section-label">◈ 健康星期四 · 三档播客 · 一条主线：早一点</p>
 
 <div class="news-grid">
   <div class="news-card lead">
-    <p class="news-num">01 · 头条</p>
-    <h2 class="news-hed">Roblox Build 公开内测：一个九岁的孩子，一句话，在手机上做出能玩的游戏</h2>
+    <p class="news-num">导语</p>
+    <h2 class="news-hed">把管健康的时间点往前挪——本周三档播客，讲的都是「早一点」</h2>
     <p class="news-body">
-      七月二十八号，Roblox 的新功能 Build 开始公开内测，第一站是新西兰。它是一个手机优先的 AI 工具——你用大白话描述一个游戏，比如「在末日城市里开赛车、能捡道具」，Build 就直接生成一个能玩的初版，带上玩法机制、场景、角色、视觉风格和音效。生成完可以当场试玩、用聊天让它改、分享给朋友，或接着搬进桌面版 Roblox Studio 继续做，两边共用同一套后端、模型和聊天记录。内测门槛是新西兰、九岁以上、完成年龄验证，十六岁以上才能把作品发布给全球玩家。方向值得注意：过去「说一句话就出东西」主要发生在程序员、设计师手里，Roblox 把它直接递到了一个用手机的孩子面前。造物的门槛不是降了一点，是塌到了地板上。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://about.roblox.com/newsroom/2026/07/build-without-limits-on-roblox" target="_blank">Roblox Newsroom</a>
-      &nbsp;·&nbsp;
-      <a href="https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/" target="_blank">TechCrunch</a>
+      把本周 Huberman Lab、Peter Attia 的 The Drive、Rhonda Patrick 的 FoundMyFitness 摆在一起听，会发现三期指向同一个动作：把镜头往前挪。三个尺度各挪一步：Huberman 用一整期问答，答那些人们「真到坎上才查」的日常问题——夜里运动完怎么睡好、怎么备孕、更年期为什么情绪会变；Peter Attia 请来记忆障碍专家 <strong>Gayatri Devi</strong>，讲怎么在人还很「能干」的时候就早一步发现认知在悄悄下滑；Rhonda Patrick 则把镜头一路推到分子层面，聊 <strong>NAD+</strong> 这个随年纪下降的上游开关。女性健康落点在两期意外撞到一起的地方——<strong>更年期与大脑</strong>：雌激素退场时，认知和情绪会跟着晃，而这件事长期被「就是老了」打发掉。最后留一个今晚就能做的动作。
     </p>
   </div>
 
   <div class="news-card">
-    <p class="news-num">02</p>
-    <h2 class="news-hed">ChatGPT Work + Codex 冲上八百万用户：专业工作流被压缩成一句吩咐</h2>
+    <p class="news-num">01 · Huberman Lab · 2026-07-27</p>
+    <h2 class="news-hed">问答专场：那些「问得太晚」的日常问题，其实现在就该打地基</h2>
     <p class="news-body">
-      OpenAI 把聊天、Codex 编程和「帮你把活干完」的 ChatGPT Work 揉进一个桌面 App，七月九号上线，到十四号活跃用户就冲到八百万——二月还只有一百万，两天前才六百万，涨得像坐火箭。这周负责人 Thibault Sottiaux 一边庆祝「重置了所有付费用户的用量上限」，一边说「感觉自己也被 reset 了一下」。更能说明问题的是它已经溢出程序员圈：OpenAI 的 jxnlco 在骑车途中被同事要求改一条发布视频，他从手机远程让 Codex 剪好、导出、发回 Slack，还交代「每三十分钟看反馈、导出 V2/V3/V4」；等他骑车到家，视频已被批准。他甚至没在「做」，只是说了一句，然后走开。
+      本周 Huberman Lab 是一期听众问答专场，全是真问题、特别接地气：夜里运动完怎么还能睡个好觉、不含咖啡因又不毁睡眠的运动前该怎么补、怎么改善记忆力甚至嗅觉、备孕期男女各该怎么吃、更年期前后为什么情绪会变、术后怎么恢复得快一点。挑最多人踩的睡眠坑：很多人只能晚上练，一练完就精神。Huberman 的思路不是别练，而是做好<strong>降温</strong>——运动会升高核心体温，而入睡需要体温往下走，所以练完留出降温窗口、把卧室弄凉弄暗，比纠结几点练更管用；运动前也别一上来就靠咖啡因，尤其下午晚些时候，它的长半衰期会悄悄啃掉深睡。备孕他强调是<strong>男女双方的事</strong>，重点在打好睡眠、代谢、微量营养素的地基，而不是指望某种「神药」。这一期最动人的是那个姿态：这些问题都不该等出问题才问。
     </p>
     <p class="news-source">
-      📎 <a href="https://explainx.ai/blog/openai-codex-chatgpt-work-8-million-users-gpt-5-6-sol-july-2026" target="_blank">explainx.ai</a>
+      📎 <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab · Your Top Health Questions Answered</a>
     </p>
   </div>
 
   <div class="news-card">
-    <p class="news-num">03</p>
-    <h2 class="news-hed">Schlage Sense Pro：连「说」都省了——你走过来，锁就先懂了</h2>
+    <p class="news-num">02 · The Peter Attia Drive · #399</p>
+    <h2 class="news-hed">Gayatri Devi 讲痴呆的早发现：在人还很「能干」时就抓住细微下滑</h2>
     <p class="news-body">
-      「说出来它就成了」不只发生在屏幕里。这周 Schlage 推出新智能锁 Sense Pro，带触摸屏、支持 Matter 智能家居标准、支持苹果 Home Key，但真正有意思的是那颗超宽带（UWB）传感器——它能算出你走近门的速度和方向，在你还没伸手去够门把手之前，就先把锁开了。把它和前两条连起来：Roblox 是「你说，它造」，ChatGPT Work 是「你说，它办」，Schlage 是连「说」都省了，「你走过来，它就懂了」。三个点在同一条曲线上，方向一致——把「意图」和「结果」之间的摩擦一点一点磨掉。
+      Peter Attia 这期请来全美知名的神经科医生 <strong>Gayatri Devi</strong>，专看记忆障碍。她先掰开一个常见误解：<strong>痴呆不是一个开关，而是一个谱系</strong>——阿尔茨海默、血管性痴呆、路易体痴呆，还常是混合型，背后是淀粉样蛋白、tau 蛋白、神经炎症共同作用。她最前沿的地方，是能在那些还很「高功能」、外人完全看不出来的人身上，捕捉到极细微的认知下滑，手段包括<strong>生物标志物</strong>和对无症状者做 <strong>APOE4</strong> 基因检测。她也坦诚聊了 lecanemab、donanemab 这类抗淀粉样蛋白新药的好处与风险。整体信息是乐观的：早发现加上 AI 辅助监测、精准医疗，正把痴呆从「只能等着恶化」变成「有相当一部分能提前干预」。这一期还专门讲了更年期、雌激素与认知的关系——见下方女性健康聚焦。
     </p>
     <p class="news-source">
-      📎 <a href="https://www.cnn.com/cnn-underscored/reviews/best-product-launches-2026-07-24" target="_blank">CNN Underscored</a>
-    </p>
-  </div>
-
-  <div class="news-card" style="grid-column: 1 / -1; border-top: 1px solid var(--light);">
-    <p class="news-num">04 · 观察</p>
-    <h2 class="news-hed">当造东西几乎免费，稀缺的东西换了位置——从「能不能造」变成「造得好不好」</h2>
-    <p class="news-body">
-      门槛塌下来是好事，但它会把稀缺换个地方。当谁都能一句话生成一个游戏、一份文档、一段视频，产出本身就不值钱了，满世界都是「能用」的东西。这时真正稀缺的是判断力：哪个想法值得做、这一版到底好不好、该砍掉什么。Linear 产品负责人 Nan Yu 这周说得很损也很准：「一大批很聪明的人努力把产品做得很好、很好用；如果你手上有很聪明的人，就该让他们把你自己的产品做好——然后付我们一点小钱用我们的产品就行。」生成能力可以外包、可以买，但「把产品做好」的那份判断和品味外包不掉。Meta 的 Madhu Guru 补了一刀：最好的产品评审会是在一小时里模拟出市场对你想法的真实反应，而这只有屋里的人真懂领域、有强观点、还经常判断对才成立。今天给产品人的问题因此有两层——大处：门槛塌了，你打算把它递给谁、解放谁？小处：满世界都是「能用」的东西，你凭什么让人记住你这一个？答案八成不在「造得更快」，而在「判断得更准」。
-    </p>
-    <p class="news-source">
-      📎 <a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">Nan Yu · X</a>
-      &nbsp;·&nbsp;
-      <a href="https://x.com/realmadhuguru/status/2081781952437486052" target="_blank">Madhu Guru · X</a>
+      📎 <a href="https://peterattiamd.com/gayatridevi/" target="_blank">The Peter Attia Drive · #399 Gayatri Devi, M.D.</a>
     </p>
   </div>
 </div>
 
-<hr class="rule">
-<p class="section-label">◈ 新闻索引</p>
-<table class="index-table">
-  <thead>
-    <tr><th>#</th><th>标题</th><th>来源</th><th>日期</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td><a href="https://about.roblox.com/newsroom/2026/07/build-without-limits-on-roblox" target="_blank">Roblox Build 公开内测 · 一句话生成能玩的游戏 <span class="tag hot">头条</span></a></td>
-      <td>Roblox</td>
-      <td>2026-07-28</td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td><a href="https://explainx.ai/blog/openai-codex-chatgpt-work-8-million-users-gpt-5-6-sol-july-2026" target="_blank">ChatGPT Work + Codex 冲上八百万用户 <span class="tag">Agent</span></a></td>
-      <td>explainx.ai</td>
-      <td>2026-07-27</td>
-    </tr>
-    <tr>
-      <td>03</td>
-      <td><a href="https://www.cnn.com/cnn-underscored/reviews/best-product-launches-2026-07-24" target="_blank">Schlage Sense Pro 智能锁 · UWB 提前开门 <span class="tag">硬件</span></a></td>
-      <td>CNN Underscored</td>
-      <td>2026-07-24</td>
-    </tr>
-    <tr>
-      <td>04</td>
-      <td><a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">当造东西几乎免费，稀缺的换成了判断 <span class="tag">观察</span></a></td>
-      <td>Builders · X</td>
-      <td>2026-07-27</td>
-    </tr>
-  </tbody>
-</table>
+<div class="news-grid" style="margin-top:2px;">
+  <div class="news-card" style="grid-column:1 / -1;">
+    <p class="news-num">03 · FoundMyFitness · Rhonda Patrick × Charles Brenner</p>
+    <h2 class="news-hed">NAD+ 与衰老：把炒作和证据分开——它是上游杠杆，但别本末倒置</h2>
+    <p class="news-body">
+      Rhonda Patrick 这期跟 NAD 领域专家 Charles Brenner 深聊 <strong>NAD+</strong>。可以把它理解成细胞里最核心的一种「能量货币」兼「修理工」——参与产能，还帮着修复 DNA 损伤。关键在于它的水平会<strong>随年纪一路下降</strong>，而这个下降本身可能就在推动代谢紊乱、神经退行这些衰老相关的毛病。那 NMN、NR 补剂，还有很贵的 NAD 静脉滴注到底靠不靠谱？这期最有价值的地方就是把炒作和证据分开：NR 和 NMN 确实在研究里能把 NAD+ 提上来，动物实验还看到对抗高脂饮食、改善线粒体和心血管指标；但从「能提升 NAD+」到「人吃了就抗衰老」中间还有一大段路，NAD 静脉滴注则更该谨慎。Rhonda 的立场没变：<strong>这些是锦上添花的上游杠杆，前提是你已经把运动、睡眠、饮食的地基打牢了，别倒过来。</strong>三期共同的底色是——往前挪，但别被花哨的东西带跑。
+    </p>
+    <p class="news-source">
+      📎 <a href="https://www.foundmyfitness.com/episodes/charles-brenner" target="_blank">FoundMyFitness · NAD+ in aging, Dr. Charles Brenner</a>
+    </p>
+  </div>
+</div>
+
+<!-- ─────────────────── WOMEN'S HEALTH SPOTLIGHT ─────────────────── -->
+<div class="spotlight">
+  <p class="sp-label">◈ 女性健康聚焦 · Huberman Lab × The Peter Attia Drive #399</p>
+  <h2 class="sp-hed">更年期与大脑：雌激素退场时的脑雾和情绪，不是「想太多」</h2>
+  <p class="sp-body">
+    这周的女性健康聚焦，落在两期意外撞到一起的那个点。Huberman 那期有听众专门问「<strong>围绝经期与心理健康</strong>」；Attia 请的 Devi 医生，也讲了她提出的一个概念——「<strong>更年期相关的认知损害</strong>」。两条放一起，指向同一件被长期低估的事：当雌激素退场，女性的认知和情绪会跟着晃动，而这常被一句「就是上了年纪」打发掉。
+  </p>
+  <p class="sp-body">
+    为什么雌激素退场，脑子会受影响？因为它在大脑里<strong>不只是「性激素」</strong>——它深度参与神经保护、影响情绪相关的神经递质、还跟大脑的能量代谢有关。所以围绝经期那几年，很多女性会经历一种很具体的体验：脑雾、记不住词、注意力涣散、情绪起伏变大。这些不是「想太多」，是有生理基础的。
+  </p>
+  <p class="sp-stat">≈2×</p>
+  <p class="sp-stat-cap">女性得阿尔茨海默的风险约为男性的两倍 · 更年期这个窗口，正是理解这种性别差异的关键一环</p>
+  <p class="sp-body">
+    所以这期最实在的信息是：如果你在四十多岁、五十岁前后，突然觉得脑子不如以前好使、情绪也不稳，<strong>别急着自我否定，也别默认「只能这样」</strong>。这是一个值得认真对待、也有办法应对的阶段——从激素治疗到生活方式干预都在进步，关键是找对医生、把它当成一个真实的医学问题来谈，而不是一个人硬扛。早一次开口，可能就少走很多年弯路。
+  </p>
+  <p class="sp-source">
+    📎 <a href="https://peterattiamd.com/gayatridevi/" target="_blank">The Peter Attia Drive · #399 Gayatri Devi, M.D. — menopause, estrogen & cognition</a>
+  </p>
+</div>
+
+<!-- ─────────────────── TODAY'S ACTION ─────────────────── -->
+<div class="tip-box">
+  <p class="tip-label">✅ 今日健康行动 · 一件就够</p>
+  <p class="tip-body">
+    今天做一件事就够——<strong>给你的睡眠环境降个温、变个暗</strong>。这是三期里都藏着的那条最硬的地基：Huberman 讲运动后靠降温入睡，Attia 讲睡眠是护脑的大头，Rhonda 也把睡眠排在所有补剂之前。具体两步：把卧室温度调低一两度、今晚睡前一小时把亮屏和大灯关掉。几乎零成本，却同时护着你的睡眠、情绪，和这颗要用一辈子的大脑。早一点，就从今晚这间更凉更暗的卧室开始。
+  </p>
+</div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
@@ -224,78 +219,63 @@
 <p class="builders-intro">
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
-  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:00。
+  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:00。今日为健康主题，播客卡片选取本周与「早发现·护脑」最合拍的一期，建造者动态优先选取与心态、意图、心理健康相关的内容。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">AI & I by Every · 2026-07-15</p>
-  <p class="pc-title">一家 15 亿美金 AI 公司的创始人：第一波 AI 应用之后，会来什么——对话 Granola CEO Chris</p>
+  <p class="pc-show">The Peter Attia Drive · #399 · 2026-07-13</p>
+  <p class="pc-title">The evolution of Alzheimer's disease and dementia care — Gayatri Devi, M.D.</p>
   <p class="pc-summary">
-    Granola 是最早那批让人惊呼「这玩意儿真的能用」的 AI 应用之一，做 AI 会议记录，现估值十五亿美金。但创始人 Chris 在节目里泼了盆冷水：「会议记录并不是所有人追着跑的那个终极价值，后面有个大得多的东西。我们还处在一场计算革命非常非常早的起步阶段——到目前为止发生的一切，跟接下来要来的相比，会显得很苍白。」放进今天这条主线里听尤其应景：Roblox Build、ChatGPT Work，这些今天看着已经很酷的东西，可能都只是第一波。
+    与今天主线最合拍的一期：痴呆不是一个开关，而是一个谱系。真正在重塑照护方式的是「早发现」——在人还很高功能、外人看不出来时，用生物标志物和 APOE4 检测抓住细微的认知下滑。她也坦诚讲了 lecanemab、donanemab 等新药的利弊，以及一个跟女性高度相关的概念：更年期相关的认知损害。整体信息是乐观的——痴呆里有相当一部分是可提前干预的。
   </p>
-  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+  <a href="https://peterattiamd.com/gayatridevi/" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PY</div>
+      <div class="builder-avatar">GT</div>
       <div>
-        <div class="builder-name">Peter Yang</div>
-        <div class="builder-handle">@petergyang · 产品 & AI 内容作者</div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President & CEO, YC</div>
       </div>
     </div>
-    <p class="builder-tweet">「我问 OpenAI 的 jxnlco：Codex 给你干过最疯的一件事是什么？他说：我骑车时同事让我改发布视频，我从手机远程连进去，让 Codex 剪好、导出、发回 Slack。二十分钟后新版本就在群里了。我又说『每半小时看反馈、导出 V2/V3/V4』，等我到家，视频已经被批准了。」</p>
+    <p class="builder-tweet">「开玩笑没关系，但一旦涉及你的人生、你的意图、你的世界观——就认真到底。」——健康里最容易被忽略的一味药，是对自己这条命的认真。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 338</span>
-      <a href="https://x.com/petergyang/status/2081775399097549083" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 228</span>
+      <a href="https://x.com/garrytan/status/2082176112906711452" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">NY</div>
+      <div class="builder-avatar">AA</div>
       <div>
-        <div class="builder-name">Nan Yu</div>
-        <div class="builder-handle">@thenanyu · Head of Product @linear</div>
+        <div class="builder-name">Aditya Agarwal</div>
+        <div class="builder-handle">@adityaag · 投资人 / 前 Dropbox CTO</div>
       </div>
     </div>
-    <p class="builder-tweet">「一大批很聪明的人，很努力地把产品做得很好、很好用。如果你手上有很聪明的人，你应该让他们去把你自己的产品做好——然后付我们一点小钱，用我们的产品就行。」生成能力能买，判断和品味外包不掉。</p>
+    <p class="builder-tweet">「十年前，我正走过自己那段『Minus One』的旅程，迷失在不确定的浓雾里，那时我得到两条很深的个人洞见：一、我想在世界上造新东西；二、我想和聪明又强烈的人共事。像今天这样的日子里，这两样都很充盈。」——熬过迷雾的人，往往靠的是几句想清楚的话。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 247</span>
-      <a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 107</span>
+      <a href="https://x.com/adityaag/status/2082214798935326833" target="_blank">查看推文 →</a>
     </div>
   </div>
 
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">DS</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO @box</div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · CEO, Every</div>
       </div>
     </div>
-    <p class="builder-tweet">「大家预言的『AI 让人失业』至今没发生。我聊过的大量企业还在招人，只是招的岗位类型变了——AI 让他们能做更多，杰文斯悖论正在上演：他们招工程师去啃以前啃不动的问题，招销售因为能更深地经营客户关系。只用 AI 省成本的公司，最终会被用 AI 更好服务客户的公司打败。」</p>
+    <p class="builder-tweet">「这就是为什么我在用抗抑郁药和兴奋剂。」——建造者也在公开、平常地谈论心理健康与用药，把它从禁忌里拉出来。用药是很个人、需要和专业医生一对一商量的决定，但「能开口谈」本身，就是一种进步。</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 219</span>
-      <a href="https://x.com/levie/status/2081930301752942703" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">MG</div>
-      <div>
-        <div class="builder-name">Madhu Guru</div>
-        <div class="builder-handle">@realmadhuguru · Sr Director, AI @meta</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「大多数产品评审会之所以让人烦，是因为开得太烂。最好的评审会能在一小时里把几个月的学习压缩起来——靠的是当场模拟市场对你想法的真实反应。但这只有当屋里的人真懂这个领域、有强观点、而且经常判断对，才成立。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 36</span>
-      <a href="https://x.com/realmadhuguru/status/2081781952437486052" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 40</span>
+      <a href="https://x.com/danshipper/status/2082270947793350785" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
@@ -304,8 +284,9 @@
 
 <footer>
   <strong>Daily Builders Digest</strong> · 关注建造者，不关注 influencer<br>
-  主持：大雨 × 小苇 · 2026-07-29<br>
+  主持：大雨 × 小苇 · 2026-07-30 · 健康星期四<br>
   数据来源：WebSearch · <a href="https://github.com/zarazhangrui/follow-builders" style="color:var(--red);text-decoration:none;">follow-builders</a><br>
+  本期内容为健康科普，不构成医疗建议；涉及认知衰退、激素治疗、补剂与心理健康用药，个体差异大，诊断与治疗方案请与专业医生一对一商量。<br>
   © 2026 Daily Builders Digest
 </footer>
 
@@ -313,6 +294,13 @@
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-07-29.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-07-29</span>
+      <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
+    </div>
+    <span class="ep-card-hl">Roblox Build 公开内测：一个九岁的孩子，一句话，在手机上做出能玩的游戏</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-07-28.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-07-28</span>

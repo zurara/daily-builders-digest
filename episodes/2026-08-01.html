@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-08-01 · 周六书籍介绍">
+<meta property="og:description" content="Source Code · Bill Gates · 首富的第一段源代码，写的不是软件，是他自己">
+<title>Daily Builders Digest · 2026-08-01 · 周六书籍介绍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
+  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 4.6vw, 58px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
+  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
+  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
+  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
+  .angle-card { background: var(--bg); padding: 20px 24px; }
+  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
+  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">SOURCE CODE<span> · 源代码</span></div>
+  <div class="header-meta">
+    <span>📅 2026-08-01</span>
+    <span>📚 周六书单 第十九期</span>
+    <span>📰 建造者养成 · 家庭 · 友谊 · 起点</span>
+    <span>🎙 大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>比尔·盖茨回忆录三部曲第一部 · 只写起点</span>
+    <span class="ticker-item"><span class="dot">●</span>「如果今天长大，我大概会被诊断在自闭症谱系上」</span>
+    <span class="ticker-item"><span class="dot">●</span>挚友 Kent Evans 之死 · Paul Allen 的归来</span>
+    <span class="ticker-item"><span class="dot">●</span>Traf-O-Data → Altair → Microsoft · 算力将会免费</span>
+    <span class="ticker-item"><span class="dot">●</span>比尔·盖茨回忆录三部曲第一部 · 只写起点</span>
+    <span class="ticker-item"><span class="dot">●</span>「如果今天长大，我大概会被诊断在自闭症谱系上」</span>
+    <span class="ticker-item"><span class="dot">●</span>挚友 Kent Evans 之死 · Paul Allen 的归来</span>
+    <span class="ticker-item"><span class="dot">●</span>Traf-O-Data → Altair → Microsoft · 算力将会免费</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>收听本期</strong>
+    <span>· Source Code · Bill Gates</span>
+  </div>
+  <audio controls src="2026-08-01.mp3"></audio>
+</div>
+
+<!-- BOOK HERO -->
+<div class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">本期书目</div>
+    <div class="book-title-big">SOURCE CODE</div>
+    <div class="book-subtitle">My Beginnings</div>
+    <div class="book-author-line">Bill Gates · 2025</div>
+  </div>
+  <div class="book-meta-panel">
+    <div class="book-one-liner">我们太熟悉「首富盖茨」，却从没见过那个 13 岁的盖茨。三部曲的第一部里没有 Windows、没有反垄断，只有童年、家庭、一个死去的挚友，和一台让他着魔的机器——一个建造者，是怎么被一行一行编译出来的。</div>
+    <div class="book-tags">
+      <span class="tag">回忆录</span>
+      <span class="tag">建造者养成</span>
+      <span class="tag">家庭与友谊</span>
+      <span class="tag">神经多样性</span>
+      <span class="tag">微软起源</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item"><div class="stat-label">出版</div><div class="stat-value">Knopf · 2025-02</div></div>
+      <div class="stat-item"><div class="stat-label">形式</div><div class="stat-value">回忆录三部曲 · 第一部</div></div>
+      <div class="stat-item"><div class="stat-label">语言</div><div class="stat-value">英文</div></div>
+      <div class="stat-item"><div class="stat-label">主题</div><div class="stat-value">起点 · 而非帝国</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SCRIPT ─── -->
+<div class="script-container">
+  <p class="section-label">◈ 对话实录 · Transcript</p>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">周六好，欢迎回到《每日快报》的书籍时间。这几周我们读的书，主角大多是「AI 会带我们去哪里」。今天我们把镜头往回拨五十年，读一本讲「一个建造者是怎么长出来的」的书：比尔·盖茨 2025 年 2 月出版的回忆录《Source Code: My Beginnings》，源代码：我的起点。这是他计划中三部曲的第一部——这一部里没有 Windows，没有反垄断，甚至微软到最后才刚刚诞生。它讲的是童年、家庭、一个死去的挚友，和一台让他着魔的机器。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">有意思。我们太熟悉「首富盖茨」「慈善家盖茨」了，反而对那个 13 岁的盖茨一无所知。他为什么选在快 70 岁这年，回头去写童年？而且是三部曲的第一部就先写童年——这本身就是个选择。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">他在采访里说得很直接。他说自己一向不爱往回看——就算微软过十周年，他想的也是「我们得活下去、得比所有人跑得更快」。但今年几件事撞在一起：他要 70 岁了，微软 50 岁，盖茨基金会 25 岁，而他父亲要是还在，正好 100 岁。他说，是这些数字让他第一次认真地去解释，自己一路上到底得到了多少「机会」。所以这本书的底色，不是炫耀，是一种少见的坦诚——甚至可以说是一次公开的自我剖析。</div>
+  </div>
+
+  <p class="section-label">◈ 作者背景 · 盖茨家的第一所学校</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那先说说这本书里的盖茨家吧。他常说自己「运气好得离谱」，这个运气具体指什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">书评人有个很精准的说法，叫「罗尔斯式的道德运气」——他恰好生在对的时间、对的地点，恰好有一身正好用得上的技能，还恰好长在一个能让他茁壮的家庭里，而这一切又正赶上计算机刚刚开始变得触手可及。他的父亲老比尔是西雅图受人敬重的律师，母亲玛丽是打破了银行业玻璃天花板的公民领袖和慈善家。盖茨说，父母那种「既高度支持、又高度要求」的方式，是他内在操作系统里最早的一段代码。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">「既支持又要求」这几个字，听起来简单，做起来其实最难。他有没有讲，这种家庭具体给了他什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">有一个细节我印象很深。他说父母总鼓励他跟大人对话——因为他的社交能力发育得慢，他跟成年人反而比跟同龄人聊得更自在。他家经常有父亲同事、朋友的聚会，他就在旁边听、插嘴问问题。他父亲会把手上的官司摊开讲给他听，「这就是反垄断的意思」——他说，哦，原来如此，太有意思了。你听，一个日后要打人生最大反垄断官司的人，反垄断这个词，是小时候在自家客厅里，从父亲嘴里第一次听到的。</div>
+  </div>
+
+  <p class="section-label">◈ 内容精华 · 把「不一样」变成力量</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这就是家庭作为「第一所学校」的意思。不过我读到一个更让我意外的坦白——他说如果自己是今天长大的孩子，很可能会被诊断在自闭症谱系上。一个站在世界之巅的人，公开这样讲，是需要勇气的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这可能是全书最动人的地方。他写得非常具体：他会把一份别人写十页的报告，写成两百页交上去；他在社交场合会不知道该跟谁坐、会「读错信号」；甚至到今天，他思考得很用力的时候，身体会不自觉地前后摇晃——那是一种叫 stimming 的、让自己安定下来的动作。他说，把这些写出来，是一种诚实。而他更想传递的是：任何一个「和别人不一样」的人，都能看到——我曾经把这种不一样，变成了自己的力量。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">从「缺陷」到「力量」，这中间隔着的往往不是天赋，是有没有人帮你翻译。书里有这样的人吗？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">有，而且不止一个。有一位叫 Cressey 的心理医生，在盖茨最叛逆、最跟父母对着干的那几年，用了整整一年，非常清楚地对他说：你把精力浪费在跟父母斗上了。他们爱你，所以这场仗你已经赢了，这不该是你花力气的地方。盖茨说，那一刻他心里想的是——天哪，你说得对。大概 13 岁起，他整个人就变了。你看，改变一个天才少年的，有时候不是更难的数学题，是一句「你其实已经赢了，别再打这场仗了」。</div>
+  </div>
+
+  <p class="section-label">◈ 内容精华 · 一台机器，两个名字</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">我们该说说那台机器了。盖茨和计算机的第一次相遇，是怎么发生的？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这里就要请出两个名字，Kent Evans 和 Paul Allen。故事发生在西雅图的湖滨中学。学校弄来一台计算机终端，大部分人对着它一头雾水。盖茨说，是保罗·艾伦——比他高两届——因为他一次数学考试考得特别好，故意来激他：哦，你不是挺聪明吗？你能搞懂这玩意儿吗？就这么一句话，把他勾进去了。而他又把最好的朋友肯特·埃文斯拉了进来。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">Kent Evans 这个名字，我隐约知道结局是悲伤的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是。肯特是盖茨少年时代最亲密的朋友，某种程度上比他更成熟、更面向世界。他成绩全科拔尖，比盖茨还要用功。更重要的是，他很早就在跟盖茨聊——我们长大要当大使、当将军，还是当 CEO？盖茨当时一脸茫然：什么？是肯特让他开始读《财富》杂志，第一次把事业、世界这样的词，放进一个初中生的脑子里。他们俩已经约好，要一起做一辈子的事。可是 1972 年 5 月，就在他们准备一起过一个编程的暑假之前，肯特在一次登山事故中去世了，那年他们才 11 年级，离毕业只差一年。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">一个 16 岁的少年，失去了那个「注定要一起做点什么」的人。这件事在他身上留下了什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">盖茨自己说得很克制，但你能感到分量。他说肯特的死教会他生命的脆弱，也某种程度上推着他去冒险、去抓住机会——因为你不知道时间还剩多少。而就在肯特走后，保罗回来了，来帮他完成学校那个排课程序。也正是从那时候起，他和保罗开始真正较起劲来：好，我们要开一家公司。你看，微软的种子，是在一个朋友离去、另一个朋友归来的缝隙里，被埋下的。</div>
+  </div>
+
+  <p class="section-label">◈ 内容精华 · 算力将会免费</p>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那从湖滨中学的排课程序，到「微软」这个名字，中间还有一段吧？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">有，就是 Traf-O-Data。盖茨和保罗搞了一个小创业，做的是分析交通流量数据的软件和硬件。这东西商业上算不上成功，但它是一次极其宝贵的排练——他们在里面第一次搞懂了怎么把一个想法变成能跑的产品。等到 1975 年，那台叫 Altair 的微型计算机出现，他们意识到个人电脑的时代真的要来了，于是果断跳了进去——微软就此诞生。保罗还是那个一直在读摩尔定律、跟盖茨讲计算会变得免费的人。盖茨说他当时的反应是：保罗，你知道这有多惊人吗？所有人都该跑到街上大喊——因为这意味着，算力，将会免费。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">算力将会免费——一个十几岁的少年，在 1970 年代就抓住了这句话，然后用一生去兑现它。这大概就是建造者和普通人的分野吧。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对。而这也正好回到我们这档节目的主题。盖茨在采访里说了一句我很想分享的话：他说，他一生所做的所有创新——微软、OpenAI、各种 AI 的东西——进展都比他预想的更快、更好；真正让他意外的，是我们把这些创新交付进去的那个世界，比我预想的更不稳定、更撕裂。你看，一个从 13 岁就在造工具的人，到 70 岁最担心的，已经不是技术本身跑得够不够快，而是接住技术的那个社会，稳不稳。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以这本《源代码》，表面写的是一个软件天才的养成，底下写的其实是——一个建造者是怎么被家庭、被友谊、被失去、甚至被自己的不一样，一行一行编译出来的。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">说得好。在一个满是「没有道德硬盘的科技巨头」的时代，这本书难得地画出了一张更有人味的肖像。它提醒每一个想造点什么的人：你最早的那段源代码，往往不是你自己写的——是养你的人、爱你的人、和你一起做梦的人，替你写下的。而你这一生要做的，是把它读懂，然后接着往下写。</div>
+  </div>
+</div>
+
+<!-- TAKEAWAYS -->
+<div class="takeaways">
+  <div class="takeaways-label">◈ Key Takeaways</div>
+  <div class="takeaways-title">五个可以带走的关键洞察</div>
+  <div class="takeaway-item"><span class="takeaway-num">01</span><span>他先写「起点」而不是「帝国」——70 岁回望，重点是解释自己得到过多少「机会」，而不是炫耀成就。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">02</span><span>家庭是第一所学校：父母「既高度支持、又高度要求」，鼓励他跟大人对话，把复杂世界摊开讲给他听。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">03</span><span>公开承认「如果今天长大会被诊断在自闭症谱系上」——并把这种「不一样」讲成可以变成力量的东西。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">04</span><span>挚友 Kent Evans 的骤逝教会他生命的脆弱，推着他去冒险；Paul Allen 的归来，埋下了微软的种子。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">05</span><span>从 Traf-O-Data 到 Altair，「算力将会免费」这句判断，被一个少年抓住，用一生去兑现。</span></div>
+</div>
+
+<!-- DISCUSSION ANGLES -->
+<p class="section-label">◈ 讨论角度 · Discussion Angles</p>
+<div class="angles-grid">
+  <div class="angle-card">
+    <div class="angle-num">01</div>
+    <div class="angle-text">盖茨反复强调「运气」。当一个成功者如此坦率地谈运气，这是真正的谦卑，还是一种更高级的、让成就显得更「应得」的叙事？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">02</div>
+    <div class="angle-text">如果没有那个「既支持又要求」的家庭，同样天赋的孩子会走到哪里？天才养成里，家庭到底占多大比重？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">03</div>
+    <div class="angle-text">把神经多样性讲成「变成力量」，会不会无意中给还在挣扎的人一种压力——好像你没成功，是因为你没把它变成力量？</div>
+  </div>
+  <div class="angle-card">
+    <div class="angle-num">04</div>
+    <div class="angle-text">他 70 岁最担心的不是技术不够快，而是社会不够稳。作为今天的建造者，我们该把多少精力，从「造得更快」挪到「接得更稳」？</div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">📎 参考来源</div>
+  <a class="source-link" href="https://en.wikipedia.org/wiki/Source_Code_(memoir)" target="_blank"><span class="src-icon">Book</span> Source Code (memoir) — Wikipedia</a>
+  <a class="source-link" href="https://www.geekwire.com/2025/interview-bill-gates-on-his-early-life-key-influences-and-outlook-on-the-world-today/" target="_blank"><span class="src-icon">Interview</span> Bill Gates on his early years, key influences, and outlook — GeekWire</a>
+  <a class="source-link" href="https://www.npr.org/2025/02/08/nx-s1-5288815/bill-gates-gets-personal-in-his-new-memoir-source-code" target="_blank"><span class="src-icon">Interview</span> Bill Gates gets personal in his new memoir 'Source Code' — NPR</a>
+  <a class="source-link" href="https://www.aol.com/age-tech-tycoons-without-moral-071150064.html" target="_blank"><span class="src-icon">Review</span> A more human picture — Fortune（在 AOL 转载）</a>
+  <a class="source-link" href="https://www.goodreads.com/book/show/213034913-source-code" target="_blank"><span class="src-icon">Store</span> Source Code: My Beginnings — Goodreads</a>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 2026-08-01。今天顺着《源代码》这条「建造者养成」的主线，挑了一段关于「第一波 AI 应用之后是什么」的播客，以及四条正在打磨产品、思考手艺的推文。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选 · 第一波之后</p>
+  <p class="pc-show">AI &amp; I by Every · 2026-07-15</p>
+  <p class="pc-title">The Founder of a $1.5B AI Company on What Comes After the First Wave of AI Apps</p>
+  <p class="pc-summary">如果说《源代码》讲的是一个建造者最初怎么被点燃，那这期播客讲的就是今天的建造者站在哪儿。Granola 的联合创始人兼 CEO 说，「会议记录」远不是终点，背后有更大得多的东西；他判断我们正处在一场计算革命极早、极早的阶段——「至今为止发生的一切，跟即将到来的相比都会黯然失色」。还有一句很盖茨式的狠话：创业就像刀战。半个世纪过去，点燃建造者的那股劲头没变。</p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NY</div>
+      <div>
+        <div class="builder-name">Nan Yu</div>
+        <div class="builder-handle">@thenanyu · Head of Product, Linear</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「一群很聪明的人，很努力地把产品做得很好、很好用。如果你手里有很聪明的人，就该让他们把你自己的产品做得很好、很好用。」——半是玩笑，半是手艺人的信条：把好东西做出来，本身就是价值。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 247</span>
+      <a href="https://x.com/thenanyu/status/2081768780045156358" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「那个『AI 抢走工作』的负面结局，一直没有像某些人预测的那样发生。我聊过的大量企业——跨各个行业——还在招人，只是招的岗位类型在悄悄变化。」——技术交付进去的世界，比想象的更复杂，也更有韧性。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 219</span>
+      <a href="https://x.com/levie/status/2081930301752942703" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI 教程作者</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我问 OpenAI 的 jxnl：Codex 帮你干过最疯狂的事是什么？他说：我在骑车，同事让我改一个发布视频，我就用手机远程连上，让 Codex 去操作电脑把它做完了。」——少年盖茨会羡慕的画面：工具随身，判断随时可以落地。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 338</span>
+      <a href="https://x.com/petergyang/status/2081775399097549083" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · CEO, Every</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「如果这是真的，那太糟了，不该这样对待珍本书。」——建造者对「书」这件事的分寸感：工具再强，也有些东西值得被小心对待。恰好呼应今天这本关于「起点」的书。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 232</span>
+      <a href="https://x.com/danshipper/status/2081754482568835152" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Daily Builders Digest</span>
+  <span>2026-08-01 · 周六书籍介绍</span>
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

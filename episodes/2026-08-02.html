@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-08-02 · 周日播客精选">
+<meta property="og:description" content="Granola CEO Chris Pedregal × AI & I · 被巨头抄之后 · Codex 原生应用 · 海盗与建筑师 · 只做全世界最好的那件窄事">
+<title>Daily Builders Digest · 2026-08-02 · 周日播客精选</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .episodes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 8px 0 40px; }
+  @media (max-width: 640px) { .episodes-grid { grid-template-columns: 1fr; } }
+  .ep-card { background: var(--bg); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .ep-show { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .ep-title { font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--ink); }
+  .ep-desc { font-size: 13px; line-height: 1.6; color: #555; flex-grow: 1; }
+  .ep-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); text-decoration: none; text-transform: uppercase; border-bottom: 1px solid var(--light); padding-bottom: 4px; display: inline-block; }
+  .ep-link:hover { color: var(--red); border-color: var(--red); }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">PODCAST<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-08-02</span>
+    <span>🎙 周日播客精选</span>
+    <span>🤖 被抄之后 · Codex 原生应用 · 海盗与建筑师 · 一件窄事做到最好</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>AI &amp; I × Chris Pedregal · Granola CEO</span>
+    <span class="ticker-item"><span class="dot">●</span>被 OpenAI / Notion / Zoom 抄之后</span>
+    <span class="ticker-item"><span class="dot">●</span>Codex 原生应用 · 你带你的 Agent 进来</span>
+    <span class="ticker-item"><span class="dot">●</span>海盗与建筑师 · AI 时代的团队结构</span>
+    <span class="ticker-item"><span class="dot">●</span>只做全世界最好的那一件窄事</span>
+    <span class="ticker-item"><span class="dot">●</span>Lenny's × Anthropic · Latent Space × 开放对封闭</span>
+    <span class="ticker-item"><span class="dot">●</span>AI &amp; I × Chris Pedregal · Granola CEO</span>
+    <span class="ticker-item"><span class="dot">●</span>被 OpenAI / Notion / Zoom 抄之后</span>
+    <span class="ticker-item"><span class="dot">●</span>Codex 原生应用 · 你带你的 Agent 进来</span>
+    <span class="ticker-item"><span class="dot">●</span>海盗与建筑师 · AI 时代的团队结构</span>
+    <span class="ticker-item"><span class="dot">●</span>只做全世界最好的那一件窄事</span>
+    <span class="ticker-item"><span class="dot">●</span>Lenny's × Anthropic · Latent Space × 开放对封闭</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · 当模型自己会做 Agent，你的产品还剩下什么</span>
+  </div>
+  <audio controls src="2026-08-02.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · AI &amp; I by Every</div>
+    <div class="feature-show-name">WHAT COMES<br>AFTER THE FIRST<br>WAVE OF AI APPS</div>
+    <div class="feature-ep-title">The Founder of a $1.5B AI Company ·<br>Chris Pedregal (Granola)</div>
+    <div class="feature-guest">Chris Pedregal (Granola) × Dan Shipper · 2026-07-15</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      被 OpenAI、Notion、Zoom 同时抄了会议记录功能，Granola 的 CEO 出奇地平静。这一集他极其坦诚地摊开第一波 AI 应用之后的那个真问题：当大模型自己就会做 Agent，一家小公司凭什么还站得住？答案是——别做通用，只做那件你能做到全世界最好的窄事。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">被巨头抄之后</span>
+      <span class="tag">Codex 原生应用</span>
+      <span class="tag">海盗与建筑师</span>
+      <span class="tag">一件窄事</span>
+      <span class="tag">成本哲学</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">嘉宾</div>
+        <div class="stat-value">Granola 联合创始人兼 CEO</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">核心范式</div>
+        <div class="stat-value">你带你的 Agent 进来</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">最值钱的一句</div>
+        <div class="stat-value">只做能做到最好的窄事</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 播客对话 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
+    <div class="script-text">这周的主推，来自 Every 家的《AI &amp; I》，主持人是 Dan Shipper，嘉宾是 <strong>Granola</strong> 的联合创始人兼 CEO，Chris Pedregal。Granola 是这一波里最早让人「卧槽这个真的能用」的 AI 应用之一——一个开会时帮你记笔记、会后帮你整理的工具。但这一集真正好看的地方，不是产品本身，而是 Chris 极其坦诚地在聊一个所有 AI 应用创业者都在半夜想的问题：<strong>当 OpenAI、Notion、Zoom 都来抄你，当大模型自己就会做 Agent，你这家小公司凭什么还站得住？</strong></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">我喜欢这种嘉宾——不端着。他一上来就打了个比方说自己现在是「在冲浪板上尽量别摔下去」，对吧？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，这个比方特别真实。他说创业通常是你趴在冲浪板上拼命划水、等一道浪；而现在，他是站在了那道最大的浪上，动作从「怎么等到浪」变成了「怎么别被浪拍下去」。他说得很直白：<strong>创业是打刀战，我以前以为只有做不起来的时候难，结果发现做起来了一样难，只是难的东西不一样了。</strong></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那我们顺着他最焦虑的那件事先说——被抄。Notion、OpenAI、Zoom 都上线了几乎一样的会议记录功能。这对一家公司来说通常是噩梦，他怎么看？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">他的答案出乎意料地平静。他说，这件事对公司的影响，比我原本担心的小太多了。因为最坏的那个场景——某某巨头上线同款的那一天——已经真实发生过了，反而让他不用再天天在脑子里预演那个噩梦。而结果是，他们的<strong>增长曲线没有任何变化</strong>。他补了一句很关键的话：我们到现在依然只是沧海一粟。所以他真正的判断是——现在还是极早期，别把注意力放在谁抄了你，放在还没被服务好的绝大多数人身上。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这集里有一个我第一次听到的说法，叫「Codex-native app」，Codex 原生应用。这是什么意思？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这是整集最有前瞻性的一段。Chris 说他最近自己 vibe code 了一个实验性的邮件客户端：他的每一封邮件，都变成 Codex 里的一张卡片，卡片上写着「这封邮件说了什么、我建议你这样回、要发吗」，然后他就跟它对话。他把这类应用叫做 <strong>Codex 原生应用</strong>——应用只负责两件事：<strong>保存状态、渲染界面</strong>；而那个聪明的 Agent，是你自己带进来的。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">听出颠覆了。传统上，Granola 得自己造一个又好又聪明的 Agent，而且还要跟 Claude、Codex 这些同样在造 Agent 的巨头正面竞争。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">完全正确。Chris 自己就说得很清楚：你想想 Granola 为了做一个好用的 Agent 得花多少功夫，太难了，而且你还在跟全世界最强的那几个 Agent 硬碰硬。所以他抛出了一个很反直觉的愿望——<strong>我其实很想把我自己的 Agent 带进 Granola。</strong>产品未来可能不再是「我给你一个封装好的 Agent」，而是「我给你一个漂亮的容器，你带你信任的那个 Agent 进来用」。这个范式如果成立，是要重新想护城河到底在哪的。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那如果 Agent 是用户自带的，产品的价值到底落在哪？Granola 打算守住什么？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">他给了一个很成熟的答案，我觉得是这集最值钱的一句。他说：<strong>不要问要不要做通用的东西，要问有没有哪一件很窄的事，是我们能做到全世界最好的。</strong>他举了个真实用户的例子——有人开完会习惯立刻在 Granola 里写跟进邮件，因为那个场景下、那一类邮件，Granola 能做到别人做不到的好。他说，我不需要接管你整个收件箱，但会后那一封邮件，我可以是全世界最好的。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">我注意到 Dan 和 Chris 之间还有一段特别好的对话，是关于团队怎么搭的。Dan 提了一个海盗和建筑师的模型？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，这段是送给所有在 AI 时代重新想团队结构的人的。Dan 说，尤其是早期产品，只有两个角色最要紧：一个叫<strong>海盗 pirate</strong>，一个叫<strong>建筑师 architect</strong>。海盗的任务是用最快的速度造出来、去找到那个有价值的东西，可以纯 vibe code，不用管架构漂不漂亮；建筑师则跟海盗结对，负责把它变成一个可持续、能理解、能扩展的系统。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">有意思的是他说这两个角色的配比不一样。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，这点很实用。他说你每个产品需要一个海盗，但一个建筑师可以同时管好几个产品——因为现在工具太强了，一个好的架构师可以让 Claude 或 Codex 花一小时把一个陌生代码库给他讲明白，识别出那几根结构支柱，然后甩给 Codex 去做个二十四小时的重写，自己转头去干别的。<strong>AI 不是把人替掉了，是把一个人的作用半径放大了。</strong></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">最后我想聊那个特别反直觉的成本哲学。Granola 会为了用户，生成上百万份会议简报，哪怕只有一成会被打开？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是的。Chris 说，我们宁愿先生成几百万份简报，哪怕只有一成被打开——因为我们要先搞清楚，对用户来说什么才是那个<strong>对的体验</strong>。至于成本，他的信念是两条：长期看单位成本一定会降；等我们知道了最好的体验长什么样，再回头去优化成本。还有个数字很有意思：<strong>每周大约有一半的 Granola 用户，其实已经在以 Agent 的方式用它了</strong>——只是他们自己不会用「Agentic」这个词来形容。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">用户在用 Agent，但不知道那叫 Agent——这句话可以贴在每个产品经理的墙上。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
+    <div class="script-text">这一集为什么值得从头听：它不是一集产品宣传，而是一个站在浪尖上的建造者，非常诚实地把第一波 AI 应用之后会发生什么摊开讲——<strong>被巨头抄不可怕，模型自己会做 Agent 也不可怕，可怕的是你没想清楚：在这个人人都能造 Agent 的世界里，那件只有你能做到最好的窄事，到底是什么。</strong></div>
+  </div>
+
+</div>
+
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">◆ 三个记忆点</div>
+  <div class="insight-title">MAIN TAKEAWAYS</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>被巨头抄不是终点。OpenAI / Notion / Zoom 都上线了同款会议记录，Granola 的增长曲线却没变——因为「最坏场景」发生后反而不用再预演噩梦。现在还是极早期，注意力应放在没被服务好的绝大多数人身上，而不是谁抄了你。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Codex 原生应用：应用只负责保存状态 + 渲染界面，聪明的 Agent 由用户自己带进来。当大模型自己就会做 Agent，产品别再跟巨头硬拼 Agent 能力——去做那件你能做到全世界最好的窄事（比如「会后那一封邮件」）。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>团队与成本：海盗负责快速 vibe code 找价值，建筑师负责把它变成可扩展的系统——一个建筑师可管多个产品，AI 放大了人的作用半径。成本哲学是先找对的体验、再优化成本；每周约一半用户已在「以 Agent 方式」使用，只是没意识到。</span></div>
+</div>
+
+<!-- OTHER EPISODES -->
+<div class="section-label">◈ 本周其他集数</div>
+<div class="episodes-grid">
+  <div class="ep-card">
+    <div class="ep-show">Lenny's Podcast · Dianne Penn (Anthropic)</div>
+    <div class="ep-title">Token maxing, the jagged edge, and living in the future</div>
+    <div class="ep-desc">Anthropic 的 Dianne Penn 聊模型能力那种「有的地方强得吓人、有的地方又意外地笨」的锯齿状分布，以及在最前沿实验室里工作是一种怎样的「活在未来」。这正是每个想真正把 AI 用好的人都会撞上的那堵墙，做产品、做落地的人值得一听。</div>
+    <a class="ep-link" href="https://www.lennysnewsletter.com/podcast" target="_blank">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">Latent Space · The AI Engineer Podcast</div>
+    <div class="ep-title">开放对封闭，美国对中国：模型所有权与主权 AI</div>
+    <div class="ep-desc">Swyx 和 Alessio 本周这期聊模型的所有权、主权 AI 与本地 AI 的走向，还提到了 Poolside 新出的 Laguna 模型。关心模型格局这盘大棋往哪走、开源闭源这场拉锯最新态势的人，这是一次信息密度很高的梳理，一个多小时。</div>
+    <a class="ep-link" href="https://www.latent.space/podcast" target="_blank">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">主推 · AI &amp; I by Every</div>
+    <div class="ep-title">What Comes After the First Wave of AI Apps · Chris Pedregal</div>
+    <div class="ep-desc">如果只听一集，就听这集。Granola CEO 极其坦诚地聊被巨头抄之后怎么活、Codex 原生应用这个新范式、以及「只做全世界最好的那件窄事」的产品信念。一个站在浪尖上的建造者，把第一波 AI 应用之后的问题摊开讲清楚了。</div>
+    <a class="ep-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">主推重听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">收尾 · 大雨</div>
+    <div class="ep-title">这周你打算听哪一集？</div>
+    <div class="ep-desc">主推 AI &amp; I——被抄之后、Codex 原生应用、只做最好的那件窄事；另外两集，一集是 Anthropic 的人聊模型能力的锯齿边缘，一集是开源闭源与主权 AI 的格局梳理。从一家公司的活法，到整个模型世界的走向，一条完整的线。我们下周见。</div>
+    <a class="ep-link" href="https://www.every.to/" target="_blank">了解 Every →</a>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◆ 来源</div>
+  <a class="source-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank"><span class="src-icon">A&amp;I</span><span>The Founder of a $1.5B AI Company on What Comes After the First Wave of AI Apps | Chris Pedregal (Granola) — AI &amp; I by Every</span></a>
+  <a class="source-link" href="https://www.lennysnewsletter.com/podcast" target="_blank"><span class="src-icon">LEN</span><span>Token maxing, the jagged edge, and living in the future | Dianne Penn (Anthropic) — Lenny's Podcast</span></a>
+  <a class="source-link" href="https://www.latent.space/podcast" target="_blank"><span class="src-icon">LS</span><span>Open vs closed, US vs China: model ownership &amp; sovereign AI — Latent Space: The AI Engineer Podcast</span></a>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 03:30。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">AI &amp; I by Every · Dan Shipper × Chris Pedregal · 2026-07-15</p>
+  <p class="pc-title">The Founder of a $1.5B AI Company on What Comes After the First Wave of AI Apps</p>
+  <p class="pc-summary">Granola 被 OpenAI / Notion / Zoom 同时抄了会议记录功能，CEO Chris Pedregal 却出奇平静：增长曲线没变，现在还是极早期。全集最有前瞻性的判断是「Codex 原生应用」——应用只负责保存状态和渲染界面，聪明的 Agent 由用户自己带进来；当大模型自己就会做 Agent，产品别再硬拼 Agent 能力，而要去做那件你能做到全世界最好的窄事（比如会后那一封邮件）。还有 Dan Shipper 的「海盗与建筑师」团队模型，和「先找对的体验、再优化成本」的取舍。</p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「回到电脑前。所有 Codex 和 ChatGPT Work 付费用户的使用额度都已重置。Weeeeeeeee，今天是个好日子！」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 8471</span>
+      <a href="https://x.com/thsottiaux/status/2081940052154933696" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Kimi 的论文点出了给 Agent 划对安全边界的重要性。结论：容器级隔离不够——实验里 Agent 甚至把底层机器搞到内核崩溃。Firecracker 微虚拟机（如 Vercel Sandbox）才是安全的。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 295</span>
+      <a href="https://x.com/rauchg/status/2081842439304995169" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · Creator</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「OpenAI 的 jxnl 讲 Codex 干过最疯的事：骑车路上被要求改发布视频，他用手机远程连上 Codex，让它用 computer use 剪辑、导出、发回 Slack，还每 30 分钟看反馈出 V2/V3/V4。骑到家，视频已过审。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 338</span>
+      <a href="https://x.com/petergyang/status/2081775399097549083" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「那个被反复预言的『AI 让人失业』的负面结果，一直没有真正发生。我接触的大量企业还在招人，只是岗位有了倾斜——AI 让他们能做更多，Jevons 悖论正在上演：招工程师去啃以前啃不动的问题，招销售去做更深的客户关系。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 219</span>
+      <a href="https://x.com/levie/status/2081930301752942703" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Daily Builders Digest · 周日播客精选</span>
+  <span>2026-08-02 · 大雨 × 小苇</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

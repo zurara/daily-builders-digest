@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-08-04 · Robotics 星期二">
+<meta property="og:description" content="Figure 03 第 1000 台下线，一小时一台 · 比亚迪入局人形机器人 · Physical Intelligence 与机器人基础模型 · 身体下线，大脑进场">
+<title>Daily Builders Digest · 2026-08-04 · Robotics 星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · Robotics 星期二</div>
+  <div class="header-title">ROBOT<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-08-04</span>
+    <span>🤖 Robotics 星期二</span>
+    <span>◇ 身体下线，大脑进场</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Figure 03 第 1000 台下线 · 节拍升至一小时一台 · 四个月 24 倍产能</span>
+    <span class="ticker-item"><span class="dot">●</span>Figure 整机良率 &gt;80% · 电池一次通过率 99.3% · 150+ 联网工位</span>
+    <span class="ticker-item"><span class="dot">●</span>比亚迪确认 8 月初发布首款人形机器人 · 亮相「迪空间」</span>
+    <span class="ticker-item"><span class="dot">●</span>Physical Intelligence 融资 6 亿美元 · 只造大脑不造身体</span>
+    <span class="ticker-item"><span class="dot">●</span>VLA 基础模型：只见过两次的空气炸锅也能操作 · 机器人也有规模定律</span>
+    <span class="ticker-item"><span class="dot">●</span>Figure 03 第 1000 台下线 · 节拍升至一小时一台 · 四个月 24 倍产能</span>
+    <span class="ticker-item"><span class="dot">●</span>Figure 整机良率 &gt;80% · 电池一次通过率 99.3% · 150+ 联网工位</span>
+    <span class="ticker-item"><span class="dot">●</span>比亚迪确认 8 月初发布首款人形机器人 · 亮相「迪空间」</span>
+    <span class="ticker-item"><span class="dot">●</span>Physical Intelligence 融资 6 亿美元 · 只造大脑不造身体</span>
+    <span class="ticker-item"><span class="dot">●</span>VLA 基础模型：只见过两次的空气炸锅也能操作 · 机器人也有规模定律</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· Robotics 星期二 · 身体下线，大脑进场</span>
+  </div>
+  <audio controls src="2026-08-04.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日头条 · 交付真的开始了</div>
+    <div class="feature-show-name">BODY&nbsp;OFF<br>THE&nbsp;LINE</div>
+    <div class="feature-ep-title">Figure 的产线一小时一台，比亚迪这种最懂量产的人也下了场；<br>而真正的胜负手，转到了「大脑」这一侧</div>
+    <div class="feature-guest">Figure · 比亚迪 · Physical Intelligence · 2026-07/08</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      上周的关键词是「交付」，这周，交付真的开始发生了。Figure 在 BotQ 造出第 1000 台 Figure 03，节拍升到一小时一台、整机良率超八成；最懂大规模制造的比亚迪确认 8 月初发布首款人形机器人。当身体开始成批下线，问题也随之从「造不造得出」变成「造出来能干什么」——这把镜头拉向了只造大脑、不造身体的 Physical Intelligence，以及那句正在被验证的话：机器人基础模型，也有规模定律。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Figure 一小时一台</span>
+      <span class="tag">良率 &gt;80%</span>
+      <span class="tag">比亚迪入局</span>
+      <span class="tag">VLA 基础模型</span>
+      <span class="tag">机器人规模定律</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">Figure 03</div>
+        <div class="stat-value">7/23 第 1000 台下线 · 一小时一台 · 整机良率 &gt;80% · 电池 99.3%</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">比亚迪</div>
+        <div class="stat-value">确认 8 月初发布首款人形机器人 · 亮相「迪空间」</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Physical Intelligence</div>
+        <div class="stat-value">融资 6 亿美元 · 只造大脑 · VLA 通用操作 · 规模定律成立</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
+    <div class="script-text">Robotics 星期二，早上好。上周我们聊的主题是「从承诺到交付」——特斯拉把「量产」这个词悄悄删了，机器人行业还卡在「造不造得出来」这一关。而这一周，风向变了：交付，真的开始发生了。今天三条新闻串起来其实在讲一件事——身体正在成批地从产线上下来，而问题也随之从「造不造得出」，变成了「造出来能干什么」。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">「身体下线，大脑进场」。听起来这周从工厂开始讲？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，我们先去工厂里看看那条真的转起来了的产线。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 第一条</div>
+    <div class="script-text">第一条，Figure。7 月 23 号，他们在自己的 BotQ 工厂造出了第 <strong>1000 台</strong> Figure 03 人形机器人。更关键的不是这个数字，而是速度——现在的节拍是「<strong>一小时一台</strong>」。要知道，就在四月底，他们还是「一天一台」，四个月里把产能拉高了 24 倍。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">一小时一台，这已经是汽车产线的语言了，不是实验室的语言了。良率怎么样？总不能造得快但一堆是废品。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这正是最能说明问题的地方。Figure 说，整机的下线良率现在超过 <strong>80%</strong>，也就是每造出五台，有四台能一次通过终检；而电池那条线更夸张，一次通过率 <strong>99.3%</strong>。支撑这个节拍的，是分布在 150 多个联网工位上的自研制造软件。换句话说，这不再是「手工搭一台 demo」，而是一套真正意义上的工业化生产系统。这条为什么重要？因为过去两年，人形机器人最大的问号一直是「能不能量产」。Figure 用一条一小时一台、良率八成的产线，把这个问号擦掉了一半。
+    <span class="source-inline">📎 来源: <a href="https://www.figure.ai/news/ramping-figure-03-production" target="_blank">Ramping Figure 03 Production — Figure AI</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">擦掉一半——那另一半呢？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">另一半是「造出来干什么」。这个我们留到第三条。先说第二条，因为就在 Figure 证明「产线能转」的同时，一个最懂产线的玩家，下场了。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 第二条</div>
+    <div class="script-text">第二条，比亚迪。8 月初这几天，比亚迪确认要发布它的第一款人形机器人，就在它的「<strong>迪空间</strong>」体验中心。线下门店此前已经放出了预热海报。这意味着，继特斯拉、小鹏、小米之后，又一家顶级车企正式跨界进人形机器人。
+    <span class="source-inline">📎 来源: <a href="https://technode.com/2026/07/27/byd-to-unveil-first-humanoid-robot-in-early-august/" target="_blank">BYD to unveil first humanoid robot in early August — TechNode</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">车企扎堆造机器人，这两年已经不新鲜了。比亚迪进来，为什么值得单独说一条？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">因为比亚迪跟别人不太一样——它是全世界最懂「把复杂东西便宜地、大规模地造出来」的公司之一。你回想第一条：特斯拉说 Optimus 是「有史以来最难量产的产品」，卡点从来不在机器人会不会翻跟头，而在那上万个没有现成供应链的新零件、在电机、在电池、在垂直整合的制造能力。而这些，恰恰是比亚迪的主场——它自己造电池、造电机、造芯片。所以比亚迪入局，不是又多了一个 demo，而是把「<strong>制造</strong>」这个人形机器人最深的护城河，摆上了牌桌。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以第一条和第二条其实是一体的：Figure 证明了产线能转，比亚迪证明了「会造车的人也想来转这条产线」。身体这一侧，突然变得很拥挤。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，身体在加速下线。可当身体不再稀缺，真正稀缺的、也真正决定胜负的，是另一样东西——<strong>大脑</strong>。这就是今天的第三条，也是我最想跟你聊的一条。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 第三条</div>
+    <div class="script-text">第三条，我们从会造身体的公司，转到一家「只造大脑、不造身体」的公司——<strong>Physical Intelligence</strong>。它今年拿了 6 亿美元融资，专门做机器人的基础模型。它的思路很纯粹：不卖机器人，卖一个能同时控制尽可能多种机器人身体的「脑子」。
+    <span class="source-inline">📎 来源: <a href="https://www.therobotreport.com/physical-intelligence-raises-600m-advance-robot-foundation-models/" target="_blank">Physical Intelligence raises $600M to advance robot foundation models — The Robot Report</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">一个脑子控制很多种身体，这跟我们造一个 demo 机器人有什么本质不同？</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">本质不同在于「<strong>不用为每个任务重新编程</strong>」。它的 VLA 模型——视觉、语言、动作三合一——目标是让机器人像大语言模型理解文字那样，直接把「看到的画面」和「一句话指令」翻译成「手该怎么动」。有一个细节我特别喜欢：他们最新的模型，能去操作一个训练数据里<strong>只见过两次</strong>的空气炸锅，完成它从没被专门训练过的任务。这在过去是不可想象的——以前每换一个任务、一个厨房、一把不同的锅，都得重新写一遍程序、重新采一遍数据。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">「只见过两次就会用」——这句话的分量，其实不亚于「一小时下线一台」。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">你说到点子上了。而且今年还有一个更底层的发现：有研究第一次拿出了比较硬的证据，说机器人基础模型也遵循和大语言模型一样的「<strong>规模定律</strong>」——喂的数据越多，能力就越可预测地变强。这句话为什么重要？因为它意味着，机器人的「大脑」不再需要靠灵感和运气，而是可以像训练 GPT 那样，靠「加数据、加算力」稳定地往上推。身体那一侧，Figure 和比亚迪在解决「怎么造得多、造得便宜」；大脑这一侧，Physical Intelligence 们在解决「怎么让一个脑子适配所有身体」。这两条曲线一旦交汇，人形机器人才真正从「展品」变成「产品」。
+    <span class="source-inline">📎 来源: <a href="https://www.interconnects.ai/p/robotic-foundation-models" target="_blank">A realistic path to robotic foundation models — Interconnects</a></span></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以把今天三条连起来看——Figure 的产线一小时一台，比亚迪这种最懂量产的人也下了场，而大脑那一侧，模型开始能「举一反三」。身体在下线，大脑在进场。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
+    <div class="script-text">是。这就是我今天想留给你的一句话——上周的关键词是「交付」，这周，交付真的开始了。但真正的分水岭，不在产线的速度，而在身体和大脑的交汇点上。会造身体的公司越来越多，Figure、比亚迪、宇树、特斯拉，产能会一年比一年便宜；可谁能给这些身体装上一个通用的、越用越聪明的大脑，谁才拿到了下一个十年的入场券。身体决定这个行业能不能「铺开」，大脑决定它能不能「有用」。今年夏天，这两件事第一次同时在往前走。我们下期见。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">下期见。</div>
+  </div>
+
+</div>
+
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">◈ 本期速记 · 身体下线，大脑进场</div>
+  <div class="insight-title">BODY OFF THE LINE, BRAIN ON STAGE</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>Figure 03（7 月 23 日）：BotQ 工厂造出第 1000 台，节拍升至「一小时一台」，四个月内产能提升 24 倍；整机下线良率 &gt;80%，电池一次通过率 99.3%，150+ 联网工位的自研制造软件支撑——人形机器人「能不能量产」的问号被擦掉一半。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>比亚迪（8 月初）：确认发布首款人形机器人，亮相「迪空间」体验中心。最懂大规模、低成本制造的车企下场，把「制造」这一最深护城河摆上牌桌——身体这一侧突然变得拥挤。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>Physical Intelligence：融资 6 亿美元，只造大脑不造身体。VLA（视觉-语言-动作）基础模型让机器人「不用为每个任务编程」——最新模型能操作训练里只见过两次的空气炸锅。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>更底层的信号：研究首次给出较硬证据，机器人基础模型也遵循与大语言模型一样的「规模定律」——数据越多，能力越可预测地变强。身体（造得多、造得便宜）与大脑（一脑适配所有身体）两条曲线正走向交汇。</span></div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◈ 消息来源</div>
+  <a class="source-link" href="https://www.figure.ai/news/ramping-figure-03-production" target="_blank"><span class="src-icon">FIGURE</span><span>Ramping Figure 03 Production（第 1000 台 · 一小时一台 · 良率 &gt;80%）</span></a>
+  <a class="source-link" href="https://technode.com/2026/07/27/byd-to-unveil-first-humanoid-robot-in-early-august/" target="_blank"><span class="src-icon">TECHNODE</span><span>BYD to unveil first humanoid robot in early August</span></a>
+  <a class="source-link" href="https://www.therobotreport.com/physical-intelligence-raises-600m-advance-robot-foundation-models/" target="_blank"><span class="src-icon">ROBOT RPT</span><span>Physical Intelligence raises $600M to advance robot foundation models</span></a>
+  <a class="source-link" href="https://www.interconnects.ai/p/robotic-foundation-models" target="_blank"><span class="src-icon">INTERCONNECTS</span><span>A realistic path to robotic foundation models（机器人规模定律）</span></a>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  今日 feed 偏 AI 话题，已挑选与「智能走进物理世界」最相关的几条。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Embodied AI 101 · 2026-07-30</p>
+  <p class="pc-title">机器人基础模型：从空间世界模型到双模型控制架构</p>
+  <p class="pc-summary">这档专注「具身智能」的播客，7 月 30 日这期正好接上今天的主题。它把 2026 年这波机器人跃迁拆成三根支柱：空间世界模型、让机器人「先想再动」的双模型控制架构，以及用仿真批量造训练数据的合成管线。一句话总结——身体的产能靠工厂，身体的「聪明」靠这三样东西。当 Figure 一小时下线一台，真正决定它值不值钱的，是装进去的这颗脑子。</p>
+  <a href="https://podcasts.apple.com/us/podcast/embodied-ai-101/id1831534364" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「那个『AI 会带来负面就业冲击』的预言，一直没发生。我接触的大量企业——跨各个行业——现在还在招人。」——放在机器人语境里同样成立：自动化真正的瓶颈从不是「取代」，而是「铺开」有多慢。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 219</span>
+      <a href="https://x.com/levie/status/2081930301752942703" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / smol.ai</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「按输入/输出 token 计价，去年某个时候就已经不再是有意义的成本指标了。该把你的横轴换成『每个任务多少钱』了。」——机器人也一样：真正该算的账，不是每次推理多少钱，而是「干成一件活」多少钱。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 94</span>
+      <a href="https://x.com/swyx/status/2081904230768816487" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PS</div>
+      <div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · Builder, OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我的 agent 报了个 bug，他们的 agent 把它修了。就在同一个晚上。」——当软件里的 agent 已经能互相协作、自主闭环，物理世界的机器人「大脑」，正是下一个要跑通这条自主回路的地方。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 325</span>
+      <a href="https://x.com/steipete/status/2081767828278170002" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · CEO, Replit</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们正进入一个新的探索时代。我们的祖先测绘了地球，然后探索太空。我们这一代，或许要去探索计算的宇宙。」——而机器人，正是让「计算」第一次走出屏幕、真正长出身体的那一步。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 6</span>
+      <a href="https://x.com/amasad/status/2082000490066592127" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Daily Builders Digest · Robotics 星期二</span>
+  <span>2026-08-04 · 大雨 × 小苇</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-09-06 · 周日播客精选">
+<meta property="og:description" content="No Priors × Arm CEO Rene Haas · 变快的不是设计是验证 · 不可测试就不可训练 · 谁在拉走 token · 常驻 AI 同事 · 2029 接管论 · 物理没有基础模型">
+<title>Daily Builders Digest · 2026-09-06 · 周日播客精选</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .episodes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 8px 0 40px; }
+  @media (max-width: 640px) { .episodes-grid { grid-template-columns: 1fr; } }
+  .ep-card { background: var(--bg); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .ep-show { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .ep-title { font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--ink); }
+  .ep-desc { font-size: 13px; line-height: 1.6; color: #555; flex-grow: 1; }
+  .ep-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; color: var(--mid); text-decoration: none; text-transform: uppercase; border-bottom: 1px solid var(--light); padding-bottom: 4px; display: inline-block; }
+  .ep-link:hover { color: var(--red); border-color: var(--red); }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">PODCAST<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-09-06</span>
+    <span>🎙 周日播客精选</span>
+    <span>🤖 变快的不是设计是验证 · 不可测试就不可训练 · 谁在拉走 token</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>No Priors × Rene Haas · Arm CEO</span>
+    <span class="ticker-item"><span class="dot">●</span>24–36 个月里，大头是验证不是设计</span>
+    <span class="ticker-item"><span class="dot">●</span>不可用 = 不可测试 = 不可训练</span>
+    <span class="ticker-item"><span class="dot">●</span>Token 工厂之外，谁开卡车</span>
+    <span class="ticker-item"><span class="dot">●</span>Lenny's × 常驻 AI 同事 · MAD × 2029 接管论</span>
+    <span class="ticker-item"><span class="dot">●</span>Latent Space × 物理没有基础模型</span>
+    <span class="ticker-item"><span class="dot">●</span>No Priors × Rene Haas · Arm CEO</span>
+    <span class="ticker-item"><span class="dot">●</span>24–36 个月里，大头是验证不是设计</span>
+    <span class="ticker-item"><span class="dot">●</span>不可用 = 不可测试 = 不可训练</span>
+    <span class="ticker-item"><span class="dot">●</span>Token 工厂之外，谁开卡车</span>
+    <span class="ticker-item"><span class="dot">●</span>Lenny's × 常驻 AI 同事 · MAD × 2029 接管论</span>
+    <span class="ticker-item"><span class="dot">●</span>Latent Space × 物理没有基础模型</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · 变快的不是设计，是验证</span>
+  </div>
+  <audio controls src="2026-09-06.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · No Priors</div>
+    <div class="feature-show-name">WHO MOVES<br>THE TOKENS</div>
+    <div class="feature-ep-title">Redefining Chip Architecture ·<br>with Arm CEO Rene Haas</div>
+    <div class="feature-guest">Rene Haas (Arm / SoftBank) × Sarah Guo &amp; Elad Gil · 2026-09-03</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      一颗芯片要做 24 到 36 个月，但大头从来不是设计——是验证、调试、写文档。AI 真正压缩掉的是这一段。顺着这个判断往下，Rene Haas 讲出了这一集最狠的一条链子：写不清楚的东西不可测试，不可测试就不可训练，不可训练，AI 就帮不了你。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">验证才是大头</span>
+      <span class="tag">不可测试就不可训练</span>
+      <span class="tag">谁在拉走 token</span>
+      <span class="tag">下一个瓶颈是基建</span>
+      <span class="tag">机器人卡在成本</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">嘉宾</div>
+        <div class="stat-value">Arm CEO · 软银集团国际</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">核心判断</div>
+        <div class="stat-value">AI 压缩的是核实，不是创造</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">最值钱的一句</div>
+        <div class="stat-value">大家盯着工厂，没人盯着物流</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT SECTION -->
+<div class="section-label" style="margin-top:40px;">🎙 播客对话 · 大雨 × 小苇</div>
+<div class="script-container">
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 开场</div>
+    <div class="script-text">这周的主推是 <strong>《No Priors》</strong>，主持人 Sarah Guo 和 Elad Gil，嘉宾是 <strong>Arm 的 CEO、同时也是软银集团国际业务负责人的 Rene Haas</strong>，9 月 3 号上线。我知道很多人一看是芯片就想跳过——先别跳。这一集里有一段话，我认为是今年关于「AI 到底改变了什么」讲得最准的一段，而且它跟芯片没多大关系，跟你手上的活关系很大。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">先给不熟的人补个背景吧。Arm 到底是干嘛的？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">它在芯片供应链里占两个位置。主业是<strong>授权 IP</strong>，就是那个 CPU 核心的设计图——手机、数据中心、汽车里的芯片，很多都基于它。它自己不造芯片，客户拿了设计图，要么自己有厂（比如三星），要么送去台积电流片。Rene 有句话形容这个生意有多美：他 2013 年从英伟达跳过来的时候心想，<strong>没有库存、没有退货、没有废料，这有什么不好的？</strong></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">主持人补了一刀，说 Arm 的毛利率是 98.5%。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，Sarah 说她没在别的地方见过这个数字。但这一集的第一个转折就是——他们从去年三月开始<strong>自己做实体芯片</strong>了，叫 Arm AGI CPU。为什么？因为有客户直接找上门。第一个是 <strong>Meta</strong>，想要一颗「通用的 Agent 用途 CPU」，市面上没人能给，就说那我们一起做吧。于是一家零库存零废料的公司，开始要跟三星、美光、SK 海力士谈内存配额，跟台积电谈晶圆。他自己说，我们现在也踩进这锅汤里了。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那你说的那段最准的话，是哪一段？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是 Elad 问他 AI 在芯片设计里到底用到什么程度。Rene 说，设计一颗芯片要 <strong>24 到 36 个月</strong>，但——重点来了——<strong>真正花时间的不是设计</strong>。架构、写 RTL、把架构映射下来，这些不是大头。大头是<strong>验证、确认、调试、写文档</strong>。而 AI 恰恰特别擅长这一块。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">所以 AI 压缩的不是「想出来」的部分，是「确认它对不对」的部分。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对，我觉得这句话值得所有人抄下来。我们平时聊 AI，总在聊它能不能替你想、能不能替你创造。但一个 24 到 36 个月的工程周期里，<strong>创造从来不是瓶颈，核实才是</strong>。这个结构在写代码、写文档、做设计、做研究里都成立——你花在「做」上的时间，往往远小于花在「检查做得对不对」上的时间。Arm 现在有 <strong>80% 到 90% 的工程师每天在用 AI</strong>。Rene 打了个比方说，如果现在把它关掉，就像回到 1990 年代，跟大家说互联网每天只开放两点到四点，之后请去走廊尽头那间有书的屋子查资料——会出乱子的。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那有没有 AI 还不行的地方？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">有，而且他讲的原因非常好。他说 <strong>RTL 生成、物理设计和实现</strong>这几块，工具还不成熟。为什么？因为模型是在公开可得的东西上训练的，而这些信息高度专有。然后他说了一句我听完停了一下的话——他说他以前待过的芯片公司也想把手里的 IP 授权出去，因为「这东西很值钱」，结果一查：没有文档，没有说明怎么用。这样的 IP 是不可用的、不可测试的；而<strong>如果它不可用、不可测试，它其实就是不可训练的</strong>；不可训练，AI 就用不上它。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">这个链条挺狠的。等于说，你有没有把东西写清楚、能不能被测试，直接决定了你的资产在 AI 时代还算不算资产。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">是的。Arm 引以为豪的不只是 IP 本身，是 <strong>IP 加上它的文档、测试台、构建方式</strong>。Rene 说这是他们的天然优势。你想想这对一个团队意味着什么——那些一直被当成「等有空再补」的文档和测试，现在是<strong>训练数据</strong>。写不清楚的东西，AI 帮不了你。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">Elad 追问了一个很具体的问题：那 24 到 36 个月会缩到多短？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">Rene 没给两三年的答案，他说<strong>五年以上</strong>吧——从一个想法直接生成 <strong>GDS II 文件</strong>，就是最后送去流片的那个文件，对某些比较直接的设计，是有可能的。但他也划了界：你要是跟工具说「给我设计一个比某某快 10%、便宜 20%、在这个模型上高效 30% 的东西」，按一下按钮就出来，那不可能。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">我们换个话题。整个行业这两年一直在换瓶颈——先是封装，然后是内存。他觉得下一个卡在哪？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text"><strong>数据中心的建设本身</strong>。他说你看今天所有在建的项目，没几个是进度超前、用工比预想少的。再叠加美国国内不少地方在讨论限制数据中心，这可能变成一个逆风。但他补了半句很有意思的话：这也许<strong>反而是好事</strong>，因为如果基建不成为瓶颈，那晶圆产能、内存产能就会成为瓶颈。总得有个东西在限速。至于大家最爱问的 AI 泡沫——他把估值泡沫和供需泡沫分开，说估值那是股市的事，但要问供给是不是超过需求了？<strong>「差得远呢。」</strong></div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">说到反对数据中心，他怎么看那些抗议？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">他认为底层是对失业的恐惧，而且他说这个恐惧「一点都不成立」。Sarah 举了个特别好的反例：<strong>电工工会前不久公开说，请不要禁止数据中心，我们需要这些工作。</strong>Rene 顺着说，电工这个职业以前甚至有点被人看轻，觉得不需要博士学位——但它是需要大量培训和认证的高技能工种，而且数据中心需要一大堆。他最后那句话是：数据中心不幸变成了「AI 所有可能变坏的事」的靶心。他也说了句挺重的：AI 这波对很多人有好处，但也有很多人一点好处没沾到，房贷难还、工资没涨，再来个 AI，看着就是雪上加霜。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">那我们回到最开始那个问题——他自己最兴奋的是什么？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">这里有这一集第二个我很喜欢的观点。他说 ChatGPT 爆发之后，所有注意力都跑到加速器上去了，好像不管问题是什么，答案都是加速器。但他说：<strong>没有任何一个被发明出来的计算问题，是用不上微处理器的。</strong>所有的路都要经过它、绕过它、路过它。然后他打了个我觉得特别好的比方——当计算从训练往推理转移，token 变成了主角，那么系统里总得有个东西来做<strong>编排和仲裁</strong>，决定这些 token 往哪走。他说，token 工厂负责生产 token，但字面意义上，<strong>是哪些卡车把 token 拉走、送到用户手里？</strong>那就是 CPU 干的活。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">我喜欢这个比喻。大家都在盯着工厂，没人盯着物流。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">而且他把这个推到了边缘设备上。他说越往小的设备走，AI 越要在本地做，而 CPU 本来就是必备的——<strong>「你总不能在头上顶一个 50 瓦的 GPU 吧。」</strong>所以头戴设备、可穿戴、机器人手指上那些做感知和传感的微处理器，都是 Arm 的地盘。他说今天你看到的人形机器人，那些「大脑」，不管是英伟达的还是高通的，跑的都是 Arm。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">机器人这块他判断怎么样？</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">Sarah 先给了个定性：通用机器人认真做了大概两年，对比大语言模型的十年，现在 demo 越来越好看，泛化、鲁棒性甚至上下文学习都有进展，但还没有大规模部署。Rene 说百分之百同意。他讲了机器人 1.0 和现在的差别：以前是专用机械配专用软件，产线一改，机器人不合适就得整条拆掉，门槛极高；现在是机器人能学，加上机械结构做得足够通用可以被重新编程，再加上成本下降——他的原话是「那还有什么是它做不了的？」但他也非常冷静地说，现在真正卡住的不是技术，是<strong>成本太高、商业模式还没跑通</strong>。至于形态之争，人形还是专用？他的答案是<strong>「两个都是」</strong>。最先被自动化的，他赌配送中心、工厂自动化和运输——他说一辆自动驾驶的卡车，某种意义上就是个机器人。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <div class="script-text">最后有一段是给创业者的建议，我觉得可以单独拎出来。</div>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <div class="script-text">对。Sarah 问，在这种需要烧巨量资本开支的行业里，创业者该怎么办？Rene 的回答是：<strong>极早地建立战略伙伴关系</strong>——供应链里的人、私募、银行本身，全都算。他说现在半导体创业公司又多起来了，有很久一段时间根本没人投这个赛道；但对他们来说，<strong>能不能拿到资本才是那道闸门</strong>。有好的芯片想法不够，你还得能拿到晶圆、内存配额、先进封装的产能。他也顺手介绍了软银在做的事——<strong>SoftBank Neo</strong>，要做一朵 neo cloud，可以成为这些年轻芯片公司的「家」，省得他们去微软或谷歌那里死磕一个设计中标。</div>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · 收尾</div>
+    <div class="script-text">这一集如果只留一句话，我留两句，因为它们其实是一件事的两面。第一句：<strong>变快的不是设计，是验证</strong>——所以你写不清楚、测不了的东西，AI 帮不上忙，因为它压根训练不了。第二句：<strong>大家都在看 token 工厂，别忘了看卡车</strong>——真正稳的需求，常常在那个不性感的编排层上。</div>
+  </div>
+
+</div>
+
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">◆ 三个记忆点</div>
+  <div class="insight-title">MAIN TAKEAWAYS</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>芯片周期 24–36 个月，大头不是设计而是验证、确认、调试、写文档——AI 恰好最擅长这一段。Arm 有 80–90% 的工程师每天在用。这个结构在写代码、做研究、做设计里同样成立：创造从来不是瓶颈，核实才是。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>不可用 = 不可测试 = 不可训练。Rene 的原话链条：没有文档和测试台的 IP 是不可用的，不可用就不可测试，不可测试就不可训练，不可训练 AI 就用不上。那些「等有空再补」的文档和测试，现在是训练数据。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>ChatGPT 之后所有注意力都在加速器上，但推理时代总得有东西编排、仲裁 token 往哪走——token 工厂负责生产，卡车负责拉走，那是 CPU 干的活。边缘同理：你不能在头上顶一个 50 瓦的 GPU。下一个瓶颈他押数据中心基建，而供需层面「差得远呢」。</span></div>
+</div>
+
+<!-- OTHER EPISODES -->
+<div class="section-label">◈ 本周其他集数</div>
+<div class="episodes-grid">
+  <div class="ep-card">
+    <div class="ep-show">Lenny's Podcast · Tara Seshan (OpenAI) · 08-30</div>
+    <div class="ep-title">AI's third era: the rise of persistent AI coworkers</div>
+    <div class="ep-desc">OpenAI 负责 Codex 与 ChatGPT Work 的产品负责人，核心比喻是从「划桨」变成「掌舵」——当 AI 把执行那一层吃掉，人剩下的差异化是判断力和野心。里面还有一段讲 OpenAI 怎么为「两三个月后才会存在的模型能力」做产品，做产品的人值得听。</div>
+    <a class="ep-link" href="https://www.lennysnewsletter.com/p/ais-third-era-the-rise-of-persistent" target="_blank">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">The MAD Podcast · Ryan Greenblatt (Redwood) · 08-27</div>
+    <div class="ep-title">AI Could Take Over in 2029. Is It Already Too Late?</div>
+    <div class="ep-desc">最早记录下模型「伪装对齐」的那位研究者。他主张按「2029 年 AI 研究完全自动化」来做准备，而他预期的场景里系统最后会有能力地跟创造者玩心机。后半集讲 AI 2040 Plan A：研究透明度、芯片追踪，以及他称为「相互确保算力摧毁」的威慑机制。跟主推同周听，一个讲怎么把 Agent 用得更狠，一个讲怎么别让它跑掉。</div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/the-mad-podcast-with-matt-turck/id1686238724" target="_blank">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">Latent Space · Anima Anandkumar (Caltech) · 08-26</div>
+    <div class="ep-title">「我们有语言的基础模型，没有物理的基础模型」</div>
+    <div class="ep-desc">FourCastNet——第一个开源 AI 天气模型——的作者，讲 Neural Operator 这一类给连续物理系统建模的方法。天气、聚变、流体与传热这些领域缩放定律不成立：数据稀缺，而且要达到物理级分辨率的话，上下文长度会被推到千亿量级。跟主推接得上：他讲算力的物流，她讲算力撞上物理世界时，语言模型那套经验为什么失效。</div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/latent-space-the-ai-engineer-podcast/id1674008350" target="_blank">收听 →</a>
+  </div>
+  <div class="ep-card">
+    <div class="ep-show">收尾 · 大雨</div>
+    <div class="ep-title">这周你打算听哪一集？</div>
+    <div class="ep-desc">如果只听一集，听主推那集，听到「验证才是大头」和「谁在拉走 token」这两段就够回本了。如果今天有空，那就照 Madhu Guru 说的做——挑一个你最熟的流程，从头到尾自动化一遍，然后自己感受一下：卡住你的到底是想不出来，还是确认不了。我们下周见。</div>
+    <a class="ep-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">主推重听 →</a>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◆ 来源</div>
+  <a class="source-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank"><span class="src-icon">NP</span><span>Redefining Chip Architecture with Arm CEO Rene Haas — No Priors · 2026-09-03</span></a>
+  <a class="source-link" href="https://www.lennysnewsletter.com/p/ais-third-era-the-rise-of-persistent" target="_blank"><span class="src-icon">LEN</span><span>AI's third era: the rise of persistent AI coworkers | Tara Seshan (OpenAI) — Lenny's Podcast · 2026-08-30</span></a>
+  <a class="source-link" href="https://podcasts.apple.com/us/podcast/the-mad-podcast-with-matt-turck/id1686238724" target="_blank"><span class="src-icon">MAD</span><span>AI Could Take Over in 2029. Is It Already Too Late? | Ryan Greenblatt (Redwood Research) — The MAD Podcast with Matt Turck · 2026-08-27</span></a>
+  <a class="source-link" href="https://podcasts.apple.com/us/podcast/latent-space-the-ai-engineer-podcast/id1674008350" target="_blank"><span class="src-icon">LS</span><span>"We have foundation models for language, not for physics" | Anima Anandkumar — Latent Space: The AI Engineer Podcast · 2026-08-26</span></a>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:03。
+</p>
+
+<!-- PODCAST CARD -->
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · Sarah Guo &amp; Elad Gil × Rene Haas · 2026-09-03</p>
+  <p class="pc-title">Redefining Chip Architecture with Arm CEO Rene Haas</p>
+  <p class="pc-summary">一颗芯片 24 到 36 个月，大头不是设计，是验证、确认、调试和写文档——AI 正好最擅长这一段，Arm 已有 80–90% 的工程师每天在用。由此引出全集最狠的一条链子：没有文档和测试台的 IP 不可用，不可用就不可测试，不可测试就不可训练。另一半讲 CPU 在推理时代的位置——token 工厂负责生产，总得有卡车把 token 拉走送到用户手里，那是 CPU 干的活；边缘设备同理，你不能在头上顶一个 50 瓦的 GPU。还有下一个瓶颈（数据中心基建）、机器人真正卡在成本而非技术，以及给重资本创业者的一条建议：极早地建立战略伙伴关系。</p>
+  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<!-- BUILDERS GRID -->
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · OpenAI（Codex &amp; ChatGPT）</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「在 Astra 还没公开发布的时候，它可能是我们最大的竞争优势。用上它之后我们的生产力涨了太多，以至于把一部分计划提前了六个月——本来要明年年中才发的东西，改到 DevDay 就发。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 7364</span>
+      <a href="https://x.com/thsottiaux/status/2096101429832552872" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「GPT-6 Astra 现已面向所有 Pro、Enterprise 和 Business Premium 用户在 Work/Codex 中开放，API 也已可用。接下来会开始推给 Plus 和 Business 用户。感谢各位的耐心。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 15960</span>
+      <a href="https://x.com/sama/status/2095973658867171733" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「非常看好 WebMCP。就像特斯拉 FSD 是去适应现实世界——街道、红绿灯、坑洼照单全收——Agent 也必须跑在现有的万维网基础设施上，WebMCP 只是让它更高效。还有些独特的好处：Next.js 的开发页面可以把调试工具直接暴露给 Agent，就在它正在测的那个标签页里，带着页面自己的上下文，而不用去翻服务端日志。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 550</span>
+      <a href="https://x.com/rauchg/status/2096065378598441431" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MG</div>
+      <div>
+        <div class="builder-name">Madhu Guru</div>
+        <div class="builder-handle">@realmadhuguru · Meta（AI 高级总监）</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「这个周末可以做一件很实在的事来提升做 AI 产品的能力：挑一个你非常熟的工作流——生活里的或工作里的都行——用 AI 把它从头到尾自动化一遍。这会逼你想清楚四件事：① 端到端的好体验长什么样？② MCP 和工具该怎么用？③ 人应该留在哪一环？④ 你怎么评估它？这么做一次，比读一个月的 AI 产品文章学到的都多。唯一的学法就是动手做。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 129</span>
+      <a href="https://x.com/realmadhuguru/status/2095907570540335174" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Daily Builders Digest · 周日播客精选</span>
+  <span>2026-09-06 · 大雨 × 小苇</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

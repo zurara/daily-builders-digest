@@ -3,11 +3,17 @@
     "date": "2026-09-20",
     "dow": 7,
     "topic": "Podcasts",
-    "format": "新闻快报",
-    "title": "2026-09-20 今日快报",
+    "format": "周日播客精选",
+    "title": "为什么扩散会赢下推理这一仗 · 智能体从工具变成同事",
     "html": "episodes/2026-09-20.html",
     "mp3": "episodes/2026-09-20.mp3",
-    "headlines": []
+    "headlines": [
+      "为什么扩散会赢下推理这一仗 · No Priors × Stefano Ermon",
+      "自回归的瓶颈不在训练，在推理：串行、访存受限、对 GPU 不友好",
+      "四周做出 Grok Bot · 给每个 bot 一台持续存在的云电脑",
+      "Stripe 的 Kai：为人类开发者建的基建，正好是智能体要的",
+      "从划桨到掌舵 · 为两三个月后的模型能力做设计"
+    ]
   },
   {
     "date": "2026-09-19",

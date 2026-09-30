@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-09-29 · 机器人星期二">
-<meta property="og:description" content="造出来 vs 干上活 · 特斯拉每周数百台 Optimus · 智元累计两万台 · Figure 加入英伟达 agent 安全平台 · Niantic 场景库与 Asimov 开源行走训练">
-<title>Daily Builders Digest · 2026-09-29 · 机器人星期二</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-09-30 · Product 星期三">
+<meta property="og:description" content="一次发二十个 · OpenAI Dots 常驻 agent · ChatGPT 做文档和幻灯片 · 插件扩展与 Sign in with ChatGPT · Apple 要发得更快">
+<title>Daily Builders Digest · 2026-09-30 · Product 星期三</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -59,6 +59,11 @@
   .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
   .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .story-head { display: flex; gap: 16px; align-items: baseline; margin: 44px 0 6px; padding-top: 20px; border-top: 1px solid var(--light); }
+  .story-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; color: var(--red); flex-shrink: 0; }
+  .story-title { font-size: 21px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .story-kicker { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin: 0 0 18px 56px; }
+  @media (max-width: 540px) { .story-kicker { margin-left: 0; } }
   .script-container { margin-top: 32px; }
   .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
@@ -67,26 +72,21 @@
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
   .script-text strong { font-weight: 600; }
-  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
-  .source-inline a { color: var(--red); text-decoration: none; }
+  .script-src { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mid); margin-top: 10px; }
+  .script-src a { color: var(--red); text-decoration: none; }
+  .script-sec { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--ink); margin: 52px 0 24px; padding-top: 18px; border-top: 2px solid var(--ink); letter-spacing: .02em; }
+  .script-sec em { font-style: normal; color: var(--red); margin-right: 12px; }
   .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
   .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
   .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
   .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
   .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
-  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
-  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
-  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
-  .spotlight p:last-child { margin-bottom: 0; }
-  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
-  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
-  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
-  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
-  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
-  .diary-col.hl { border-color: var(--red); color: var(--bg); }
-  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .insight-item strong { color: var(--bg); font-weight: 600; }
+  .datastrip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 24px 0 8px; }
+  .ds-cell { background: var(--bg); padding: 18px 20px; }
+  .ds-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; color: var(--ink); }
+  .ds-num em { font-style: normal; color: var(--red); }
+  .ds-cap { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); margin-top: 8px; line-height: 1.5; }
   .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
   .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
   .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
@@ -111,651 +111,427 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } .story-num { font-size: 32px; } .story-title { font-size: 18px; } }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
-  <div class="header-title">BUILT<br>IS NOT<br><span>DEPLOYED</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · Product 星期三</div>
+  <div class="header-title">TWENTY<br>LAUNCHES<br><span>ONE USER</span></div>
   <div class="header-meta">
-    <span>📅 2026-09-29</span>
-    <span>🧭 机器人星期二</span>
-    <span>◇ 造出来 vs 干上活</span>
+    <span>📅 2026-09-30</span>
+    <span>◈ Product 星期三</span>
+    <span>◈ 一次发二十个</span>
     <span>大雨 × 小苇</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>The Information · 特斯拉 8 月 Fremont 每周生产数百台 Optimus · 二季度为每周数十台</span>
-    <span class="ticker-item"><span class="dot">●</span>特斯拉目标 · 2026 年底建成每周 1,000+ 台连续产线 · 长期目标每周约 20,000 台（产能目标，非实际产量）</span>
-    <span class="ticker-item"><span class="dot">●</span>Optimus V3 非最终客户版本 · 大部分用于内部测试、训练与数据采集 · 训练数据超 50 万小时</span>
-    <span class="ticker-item"><span class="dot">●</span>智元 9·24 宣布累计产量 20,000 台 · 第 20,000 台为 A3 Ultra，交付长隆</span>
-    <span class="ticker-item"><span class="dot">●</span>智元分系列 · A 系列 5,638 · X 系列 8,757 · G 系列（轮式）5,605 · 为产量，非销量</span>
-    <span class="ticker-item"><span class="dot">●</span>英伟达 9·28 发布 Open Agent Safety Platform · OpenShell 沙盒运行环境 + Sentry 硬件隔离监控 · 100+ 合作伙伴</span>
-    <span class="ticker-item"><span class="dot">●</span>Figure CEO Adcock 确认加入：人形机器人很快进入家庭与工作场所，必须安全可信</span>
-    <span class="ticker-item"><span class="dot">●</span>Niantic Spatial 发布 Places Library · 100 个真实场景 · 高斯泼溅 + 对齐碰撞网格 · 支持 Isaac Sim / Isaac Lab</span>
-    <span class="ticker-item"><span class="dot">●</span>Asimov 开源 Asimov 1 行走训练代码 · Isaac Lab · PPO + AMP · BSD-3 许可证</span>
-    <span class="ticker-item"><span class="dot">●</span>The Information · 特斯拉 8 月 Fremont 每周生产数百台 Optimus · 二季度为每周数十台</span>
-    <span class="ticker-item"><span class="dot">●</span>特斯拉目标 · 2026 年底建成每周 1,000+ 台连续产线 · 长期目标每周约 20,000 台（产能目标，非实际产量）</span>
-    <span class="ticker-item"><span class="dot">●</span>Optimus V3 非最终客户版本 · 大部分用于内部测试、训练与数据采集 · 训练数据超 50 万小时</span>
-    <span class="ticker-item"><span class="dot">●</span>智元 9·24 宣布累计产量 20,000 台 · 第 20,000 台为 A3 Ultra，交付长隆</span>
-    <span class="ticker-item"><span class="dot">●</span>智元分系列 · A 系列 5,638 · X 系列 8,757 · G 系列（轮式）5,605 · 为产量，非销量</span>
-    <span class="ticker-item"><span class="dot">●</span>英伟达 9·28 发布 Open Agent Safety Platform · OpenShell 沙盒运行环境 + Sentry 硬件隔离监控 · 100+ 合作伙伴</span>
-    <span class="ticker-item"><span class="dot">●</span>Figure CEO Adcock 确认加入：人形机器人很快进入家庭与工作场所，必须安全可信</span>
-    <span class="ticker-item"><span class="dot">●</span>Niantic Spatial 发布 Places Library · 100 个真实场景 · 高斯泼溅 + 对齐碰撞网格 · 支持 Isaac Sim / Isaac Lab</span>
-    <span class="ticker-item"><span class="dot">●</span>Asimov 开源 Asimov 1 行走训练代码 · Isaac Lab · PPO + AMP · BSD-3 许可证</span>
+    <span class="ticker-item"><span class="dot">●</span>OpenAI DevDay 发布 20+ 项 · Dan Shipper：历届最多</span>
+    <span class="ticker-item"><span class="dot">●</span>Dots 常驻 agent · 自带云端电脑 · 连 4000+ 应用</span>
+    <span class="ticker-item"><span class="dot">●</span>ChatGPT Space / Pages / 协作幻灯片 · 对着 Notion 和 Google Docs</span>
+    <span class="ticker-item"><span class="dot">●</span>Sign in with ChatGPT · 用户订阅替开发者付 token</span>
+    <span class="ticker-item"><span class="dot">●</span>Apple 新 CEO Ternus · 发产品要更快、更频繁</span>
+    <span class="ticker-item"><span class="dot">●</span>OpenAI DevDay 发布 20+ 项 · Dan Shipper：历届最多</span>
+    <span class="ticker-item"><span class="dot">●</span>Dots 常驻 agent · 自带云端电脑 · 连 4000+ 应用</span>
+    <span class="ticker-item"><span class="dot">●</span>ChatGPT Space / Pages / 协作幻灯片 · 对着 Notion 和 Google Docs</span>
+    <span class="ticker-item"><span class="dot">●</span>Sign in with ChatGPT · 用户订阅替开发者付 token</span>
+    <span class="ticker-item"><span class="dot">●</span>Apple 新 CEO Ternus · 发产品要更快、更频繁</span>
   </div>
 </div>
 
+<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· 机器人星期二 · 造出来 vs 干上活 · 17 分 17 秒</span>
+    <span>· Product 星期三 · 一次发二十个</span>
   </div>
-  <audio controls src="episodes/2026-09-29.mp3">
+  <audio controls src="episodes/2026-09-30.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
+<!-- MAIN FEATURE HERO -->
 <section class="feature-hero">
   <div class="feature-left">
-    <div class="feature-eyebrow">今日主线 · 产量上去了，客户那边的数字还没有</div>
-    <div class="feature-show-name">BUILT<br>NOT YET<br><span style="color:#dd1111">WORKING</span></div>
-    <div class="feature-ep-title">一周几百台、累计两万台，<br>大部分还没有在给客户干活。</div>
-    <div class="feature-guest">The Information · AGIBOT · NVIDIA × Figure · Niantic Spatial · Asimov · 2026-09-25 至 09-28</div>
+    <div class="feature-eyebrow">今日主线 · 2026-09-30</div>
+    <div class="feature-show-name">一次发<br>二十个</div>
+    <div class="feature-ep-title">发布的速度可以翻倍，<br>用户的注意力不会翻倍。</div>
+    <div class="feature-guest">OpenAI DevDay × Dots × ChatGPT Space × Apple</div>
   </div>
   <div class="feature-right">
     <div class="feature-lede">
-      <strong>The Information</strong> 报道，特斯拉 8 月每周生产<strong>数百台</strong> Optimus，大部分用于内部测试和数据采集，且不是最终客户版本。<strong>智元</strong>宣布累计产量 <strong>20,000 台</strong>，其中约四分之一是轮式机器人。<strong>英伟达</strong>发布开放 agent 安全平台，<strong>Figure</strong> 加入。<strong>Niantic Spatial</strong> 开始卖真实场景做仿真训练，<strong>Asimov</strong> 开源了人形机器人走路的训练代码。四条新闻回答同一个问题：从造出来到干上活，中间还差什么。
+      OpenAI 在 DevDay 一次发了二十多个产品：常驻 agent Dots、ChatGPT 自己的文档和幻灯片、开放给开发者的插件扩展、用用户订阅付 token 的 Sign in with ChatGPT。同一天，彭博报道 Apple 新 CEO 要让公司发产品更快、更频繁。<strong>两家都在往「更快」走。Every 的 Dan Shipper 测完说：兴奋，但也累，也乱。功能的成本在降，用户理解一个产品的成本没有降。</strong>
     </div>
     <div class="feature-tags">
-      <span class="tag">Optimus V3</span>
-      <span class="tag">智元 20,000</span>
-      <span class="tag">OpenShell / Sentry</span>
-      <span class="tag">Places Library</span>
-      <span class="tag">isaac_asimov</span>
-      <span class="tag">IROS 2026</span>
+      <span class="tag">常驻 agent</span>
+      <span class="tag">给 agent 用的文档</span>
+      <span class="tag">平台分发</span>
+      <span class="tag">谁付 token</span>
+      <span class="tag">发布节奏</span>
     </div>
     <div class="feature-stats">
-      <div class="stat-item"><span class="stat-label">Optimus 8 月周产量（报道）</span><span class="stat-value">数百台</span></div>
-      <div class="stat-item"><span class="stat-label">Optimus 训练数据</span><span class="stat-value">50 万+ 小时</span></div>
-      <div class="stat-item"><span class="stat-label">智元累计产量</span><span class="stat-value">20,000 台</span></div>
-      <div class="stat-item"><span class="stat-label">Niantic 场景库</span><span class="stat-value">100 个真实环境</span></div>
+      <div class="stat-item">
+        <div class="stat-label">今日选题</div>
+        <div class="stat-value">Product · 9 月 28–29 日四条</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">核心判断</div>
+        <div class="stat-value">速度不是问题，连贯才是问题</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">今日动作</div>
+        <div class="stat-value">找一个新用户，让他说说你的产品是做什么的</div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- DATA STRIP -->
+<div class="section-label" style="margin-top:40px;">◈ 今日数字</div>
+<div class="datastrip">
+  <div class="ds-cell">
+    <div class="ds-num"><em>20</em>+</div>
+    <div class="ds-cap">OpenAI DevDay 2026 主要发布数量 · 官方回顾</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>4,000</em>+</div>
+    <div class="ds-cap">Dots 通过插件能连接的应用数量</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>12</em>亿</div>
+    <div class="ds-cap">ChatGPT 每周用户 · 插件扩展的分发规模</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>16</em></div>
+    <div class="ds-cap">Sign in with ChatGPT 首批合作方 · 含 Devin、Notion、Vercel</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>76</em>/78</div>
+    <div class="ds-cap">Decisions API 在 Every 电脑操作测试中选对的步数 · 约 230 毫秒</div>
+  </div>
+</div>
+
+<!-- INSIGHT BOX -->
 <div class="insight-box">
-  <div class="insight-label">◈ 本周四条新闻，各自说明了什么</div>
-  <div class="insight-title">产量能说明工厂在动，说明不了机器人在干活</div>
-  <div class="insight-item"><span class="insight-num">01</span><span><strong>特斯拉。</strong>8 月每周<strong>数百台</strong>，二季度每周数十台。大部分用于内部测试、训练、数据采集。V3 <strong>不是最终客户版本</strong>。手部装配、触觉传感器耐用性、AI 泛化仍是问题。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span><strong>智元。</strong>累计 <strong>20,000 台</strong>，最近三个季度每季约 5,000 台。其中 G 系列轮式 <strong>5,605 台（28%）</strong>。数字是<strong>产量</strong>，不是销量或在役部署量。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span><strong>英伟达 × Figure。</strong>OpenShell 在 agent 外部限制它能做什么，Sentry 在独立硬件上监控。放到机器人身上还要解决物理问题：<strong>中断一个正在走路的机器人，本身也要设计。</strong></span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span><strong>Niantic × Asimov。</strong>场景可以买（100 个真实环境，视觉与碰撞对齐），行走训练方法可以下载（奖励、域随机化、执行器参数全部公开）。两者都<strong>没有给出真机效果数据</strong>。</span></div>
-  <div class="insight-item"><span class="insight-num">05</span><span><strong>该看的数字。</strong>任务完成率、人工干预次数、正常运行时间、维护要求、客户验收。<strong style="color:#dd1111">本周所有新闻都没有给出这组数字。</strong></span></div>
+  <div class="insight-label">◈ 今日四问</div>
+  <div class="insight-title">拿这四个问题检查你的产品</div>
+  <div class="insight-item">
+    <span class="insight-num">01</span>
+    <span>你最近三个月发的功能，新用户能不能说清楚你的产品<strong>整体</strong>是做什么的？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">02</span>
+    <span>如果你的产品是一个「放东西的地方」，<strong>agent</strong> 在你这里干活，比在平台自己的文档里好在哪？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">03</span>
+    <span>让用户的订阅替你付 token，你省下的成本和你增加的<strong>依赖</strong>，哪个更大？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">04</span>
+    <span>你的产品里有多少「选一个」的小判断？能不能换成答案<strong>范围固定</strong>、更快、更好测的调用？</span>
+  </div>
 </div>
 
-<p class="section-label">◈ 今日脚本 · 大雨 × 小苇</p>
-
+<!-- SCRIPT -->
+<div class="section-label" style="margin-top:40px;">🎙 对话全文 · 大雨 × 小苇</div>
 <div class="script-container">
-<p class="section-label">◈ 开场：造出来，和干上活</p>
-
-<div class="script-block lead-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">周二好，欢迎回到每日快报。今天是九月二十九号，机器人星期二。上周我们讲的是一个数字：IFR 统计，二〇二五年全球人形机器人一共卖出去七千台。这周的新闻，正好接着那个数字往下走。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">怎么接？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">这周有两条关于产量的新闻。一条说特斯拉现在一周能造几百台 Optimus。另一条是智元机器人宣布，累计产量到了两万台。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那数字一下子就大了。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">大了。但这两条新闻里都有同一句话：造出来的机器人，大部分还没有在给客户干活。另外两条新闻讲的就是中间缺的东西：一条是安全，Figure 加入了英伟达的一个 agent 安全平台；一条是训练场，Niantic 卖真实场景给机器人做仿真训练，Asimov 把人形机器人走路的训练代码开源了。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">所以今天的问题是：从造出来到干上活，中间还差什么。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，就这个问题。
-  </div>
-</div>
-
-<p class="section-label">◈ 第一条：特斯拉一周几百台 Optimus，但不是给客户的版本</p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">先说特斯拉。九月二十五号，The Information 发了一篇报道，Humanoids Daily 第二天做了整理。报道说，八月份特斯拉在 Fremont 工厂一周能造几百台 Optimus。二季度的时候还是小批量试产，一周几十台。差不多涨了十倍。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">十倍，几个月之内。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。管理层的目标是到二〇二六年底，建成一条每周能产一千台以上的连续自动化产线，长期目标是每周两万台。但要注意，这些是产能目标，不是已经做到的产量，也不是交付给客户的数量。
-  </div>
-</div>
-
-<p class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/tesla-optimus-production-hundreds-per-week-report" target="_blank">Tesla Reportedly Builds Hundreds of Optimus Robots a Week</a></p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那现在造出来的这几百台在干什么？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">报道说，大部分用在内部：测试、训练、采集数据。在特斯拉自己工厂里干活的那些，是在划定的区域里、有人紧盯着、做事先编好程序的具体任务。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这听起来跟上周 IFR 说的一样。机器人造出来，先拿去喂数据。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">一样。还有一点：现在产线上造的叫 Optimus V3，比之前更轻，摄像头更多，外形更像人。但报道的消息来源说，这不是最终卖给客户的版本。客户版本还在开发，耐用性和可靠性的要求更高。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那问题出在哪？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">报道列了几个具体问题。第一是手。一套手加前臂，有一百多个螺丝和小零件，现在都要人工装配。产线一开快，有些工装夹具就不稳，返工的机器变多。第二是触觉传感器不耐用。特斯拉的做法是做一个可更换的传感手套，传感层坏了只换手套不换整只手，计划二〇二七年用上。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">所以手套这个方案，说明问题还没解决。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，这是应对方案，不是问题已经解决的证据。第三是 AI。三个知情人士说，Optimus 现在还不能可靠地完成很多种任务，遇到不熟悉的情况会出现不可预测的行为。学一个基本任务还是要花好几天。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">数据方面呢？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">特斯拉有超过五十万小时的训练数据，目标是年底翻倍。数据来源是遥操作示范、动作捕捉设备，还有录人做体力活的视频。报道里还有一个细节：有些工厂工人不愿意录示范，因为这些机器是要来替代他们的。后来特斯拉就专门雇了采集员，大部分采集也挪到了产线之外。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这个细节挺说明问题的。机器人要学人的工作，第一个要说服的是那个人。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">商业计划方面，报道说特斯拉最开始打算租，不打算卖，租给工厂或仓库跟它自己差不多的客户。租的好处是机器可以收回来升级、翻新，客户那边的部署也能回传数据。但报道里没有提到任何已签的租约，也没有交付时间表。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那我们应该看什么数字，才能判断它真的能用了？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">Humanoids Daily 列了一组，我觉得是对的：任务完成率、人工干预次数、正常运行时间、维护要求、客户验收。产量只能说明工厂在动，说明不了机器人在客户那里能不能干活。
-  </div>
-</div>
-
-<p class="section-label">◈ 第二条：智元累计两万台，但两万台不是同一种机器人</p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">第二条是智元。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">智元机器人，上海的公司。九月二十四号宣布，累计产量到了两万台，第两万台交付给了长隆，是一台 A3 Ultra。时间线是这样的：去年十二月五千台，今年三月一万台，六月一万五，九月两万。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">每个季度加五千。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，最近三个季度都是大约五千台。所以更准确的说法是产能很稳定，不是一直在加速。累计从一万翻到两万，不代表工厂的生产速度翻倍了。
-  </div>
-</div>
-
-<p class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/agibot-20000-robots-production-milestone" target="_blank">AGIBOT Has Built 20,000 Robots—Twice Its March Total</a></p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">两万台都是人形机器人吗？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">不是，这一点很重要。智元公布了分系列的数字：A 系列，就是全尺寸双足人形，五千六百三十八台；X 系列，小一点的双足人形，八千七百五十七台；G 系列，是轮式的工业任务机器人，五千六百零五台。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">所以四分之一多是轮式的。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">百分之二十八是轮式。最多的是 X 系列，占百分之四十四。而且这些都是产量，不是销量，也不是正在运行的部署量。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那第两万台交付给长隆，是在做什么？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">长隆是珠海的主题乐园。智元和长隆一起在长隆宇宙飞船乐园部署了三百多台机器人，做表演、导览、酒店服务，还成立了一个文旅研究院。这是一个有名字的客户、有具体场景的部署。但三百台只占两万台的一小部分。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">把特斯拉和智元放在一起看，我有一个感觉：两家的路线完全不一样。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">说说看。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">特斯拉是一款机器人，先在自己工厂里用，目标是每周两万台。智元是好几个系列，双足、轮式都有，卖给乐园、酒店、商店、工厂，哪个场景能用就先进哪个场景。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">这个对比是对的。一个是先把一款产品做到极致再铺开；另一个是先让不同形态的机器进入能用的场景。上周 Agility 也说在考虑做轮式机器人。说明至少有一部分公司已经认为，不一定所有场景都需要腿。
-  </div>
-</div>
-
-<p class="section-label">◈ 第三条：Figure 加入英伟达的 agent 安全平台</p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">第三条换个方向，讲安全。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">九月二十八号，英伟达 CEO 黄仁勋宣布了一个叫 Open Agent Safety Platform 的计划，开放 agent 安全平台，说有一百多家合作伙伴。Figure 的 CEO Brett Adcock 发帖确认参加，他的原话是：人形机器人很快会进入家庭和工作场所，它们必须安全、值得信任。
-  </div>
-</div>
-
-<p class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/figure-nvidia-open-agent-safety-platform" target="_blank">Figure Joins NVIDIA&#x27;s Open Agent Safety Platform as Humanoid Deployment Approaches</a></p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这个平台具体做什么？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">两部分。第一部分叫 OpenShell，是一个开源的运行环境。每个 agent 跑在一个隔离的沙盒里，能读哪些文件、能调用哪些系统功能、能连哪些网络，都有限制。而且这些限制是在 agent 外面执行的，不靠 agent 自己守规矩。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">就是说，就算模型做了一个坏决定，它也做不了超出权限的事。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。英伟达区分得很清楚：提示词和训练出来的行为，影响的是模型想做什么；运行环境限制的是它实际能做什么。第二部分叫 Sentry，是一个可选的监控层，跑在单独的 BlueField 硬件上，agent 和它所在的主机碰不到它。英伟达说能在几毫秒内把一个 agent 隔离掉。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那放到机器人身上，意味着什么？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">原则是有用的：负责决定动作的系统，不应该同时是唯一负责检查这个动作的系统。但 Humanoids Daily 提醒得对，机器人比软件 agent 多了一层物理问题。比如说，限制访问机器人的控制接口，能挡住一个未授权的指令。但它不能保证一个已授权的抓取用的力气是合适的。还有，如果你突然中断一个模型，一台正在走路的机器人会不会摔倒？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">软件里的"立刻停止"，到了物理世界不一定是安全的。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。停下来本身也是一个动作。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那 Figure 具体会怎么用？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">还不知道。Adcock 的帖子没说 Figure 会贡献什么、哪个系统会用。英伟达公布的合作伙伴图里，Figure 好像是唯一一家专门做人形机器人的公司，另外还有 Gecko Robotics 和 Skild AI。Gecko 的 CEO 在 CNBC 讲了一个更具体的例子：用 agent 规划检测机器人的路线，决定在哪些表面多采集数据，但一直在人设定的范围里，而且人随时可以收回。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这个我能理解。人定边界，agent 在边界里规划，人保留叫停的权力。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。还有一个背景：上周有一个叫 RoboHarm 的测试，发现 GPT-6 Astra 很少拒绝不安全的机器人指令。那个研究没有测英伟达这个平台，但它说明了一件事：一个模型能不能完成任务，和它会不会拒绝危险指令，是两种不同的能力。
-  </div>
-</div>
-
-<p class="section-label">◈ 第四条：训练场正在变成一门生意</p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">第四条是训练场。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">两件事放在一起说。第一件是 Niantic Spatial，就是做 Pokémon GO 的 Niantic 分出来的那家做空间计算的公司。九月二十五号发布了一个叫 Places Library 的场景库，一开始有一百个真实环境，给机器人做仿真训练和评估。
-  </div>
-</div>
-
-<p class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/niantic-spatial-places-library-robot-training" target="_blank">Niantic Spatial Launches Places Library With 100 Real Environments for Robot Training</a></p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">真实环境是什么意思？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">就是真实拍下来的地方，比如斯塔滕岛的一个医疗仓库、新泽西的一个货架区、伦敦和旧金山的街道。每个环境里有两层东西：一层是高斯泼溅，负责看起来像真的；另一层是碰撞网格，负责告诉机器人哪里能走、哪里会撞上。两层是从同一次重建里出来的，所以看到的边缘和碰到的边缘是对齐的。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">为什么对齐这么重要？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">举个例子。一个仿真机器人走向货架，如果摄像头看到的货架边缘和物理引擎里的货架边缘差了几厘米，机器人看到的和碰到的就对不上，学出来的东西到了真实世界就不准。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这个生意怎么收钱？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">有两个免费样例，其他要付费。评估档最少签三个月，可以下载十五个场景，每个月十五分钟的自采拍摄额度。训练档最少签一年，一百个场景，每个月六十分钟拍摄额度。拍摄额度的意思是，你可以把自己的工厂拍下来加进去。页面上没写价格，要找销售谈。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">效果有数据吗？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">这次发布没有给出真实机器人成功率提高了多少。之前有一个例子：瑞士的 Flexion 在七月份用 Niantic 重建的办公室训练了一个导航策略，说是零样本迁移到了真实办公室，家具挪了位置也能应对。但那是在场景库发布之前做的，不能直接当作这一百个场景的效果。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">第二件呢？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">第二件是 Asimov，Menlo Research 做的一个开源人形机器人项目。他们之前已经开源了 CAD 和仿真文件，还在卖 DIY 套件。九月二十五号，他们把 Asimov 1 走路的训练代码开源了。
-  </div>
-</div>
-
-<p class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/asimov-open-source-locomotion-policy-training" target="_blank">Asimov Open-Sources the Training Code Behind Its Humanoid&#x27;s Walk</a></p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">开源的具体是什么？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">一个基于英伟达 Isaac Lab 的训练框架，BSD-3 许可证。里面能看到奖励怎么设：跟上指令速度、保持站立有奖励；脚打滑、动作突变、自己撞自己要扣分。还能看到仿真里故意加的变化：脚底摩擦力、关节初始位置、执行器增益，还有外力干扰和带噪声的传感器读数。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">故意加干扰，是为了让它到了真机上不那么脆弱。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，这是在处理仿真到真机的差距。每个关节的扭矩上限、刚度、阻尼、摩擦、执行器延迟也都能改。如果你改了机器人的硬件，就可以在这里改仿真参数。有一个问题要说一下：Asimov 的公告说包含一个训练好的策略检查点，但 Humanoids Daily 去仓库和 GitHub 发布页查了，没找到可以下载的检查点。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">所以现在能拿到的是训练方法，不是训练好的模型。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。把这两件事放在一起：Niantic 卖场景，Asimov 开源训练方法。以前走路和场景都是每家公司自己关起门来做的，现在开始变成可以买、可以下载的东西。
-  </div>
-</div>
-
-<p class="section-label">◈ 收尾：这周该记住什么</p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">把四条串起来吧。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">特斯拉和智元说明，产量正在上去，一周几百台，一个季度五千台。但特斯拉的机器大部分在内部采数据，智元的两万台是好几种不同的机器。英伟达和 Figure 说明，让 agent 能安全地做事，已经有人在搭基础设施，但到了机器人身上，"停下来"本身也要设计。Niantic 和 Asimov 说明，训练需要的场景和方法开始变成公共资源。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">所以判断一家公司的机器人能不能干活，看的不是它造了多少台。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。看的是在某个具体任务里，它能完成多少、要人帮几次、一天能正常运行几个小时。这周所有新闻都没有给出这组数字，这也是这周最值得记住的一点。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">还有一件事，Figure 那边说九月三十号要给 Figure 02 办一个告别。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，明天。Adcock 发了一个 AI 生成的预告，说要像终结者那样把退役的 Figure 02 熔掉。另外这周 IROS 正在匹兹堡开，到十月一号结束。有新消息我们下周说。
-  </div>
-</div>
-
-<p class="section-label">◈ 关注建造者 · 今日建造者动态</p>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">最后是关注建造者。今天的推文没有直接讲机器人的，但有几条讲的问题跟今天一样：新技术看起来很厉害的时候，怎么判断它是不是真的在起作用。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">先说点赞最多的那条。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">Thariq，在 Anthropic 做 Claude Code。他说：我最担心的是，我们会因为变得更懒，把 agent 带来的生产力提升都吃掉。四千多个赞。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这句跟特斯拉那个故事有点像。工具变强了，但人怎么用它，决定了最后的结果。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">第二条是 Zara Zhang，就是 follow-builders 这个项目的作者。她说：新技术可以耀眼到让我们看不见它哪里不管用。有时候还会让你觉得，如果某个东西不管用，那可能是你的问题，不是技术的问题，因为世界变得太快，每个人好像都走在你前面。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这句话放在今天特别合适。一周几百台、累计两万台，这些数字都很耀眼。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，所以我们今天一直在问：这些机器到底在干什么。第三条是 Box 的 CEO Aaron Levie。他说，当 agent 开始替用户做最好或最高效的选择时，有两类市场会受影响。一类是靠用户懒得换来赚钱的市场，这些市场的切换成本会降低，竞争会加剧。另一类是因为太麻烦而被压住的市场，比如医疗、旅行、本地服务，agent 会让这些东西变得容易买，反而释放出新的经济活动。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">最后一条？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">Matt Turck，FirstMarkCap 的投资人，MAD Podcast 的主持人。他说：值得注意的是，很多真正懂 AI 怎么工作的研究者，既不相信 AI 末日论，也不相信大规模失控加速；反而是不太懂的人，观点非常确定。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">播客呢？
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">这周推荐 The Robot Report 播客第二百六十三期，嘉宾是 General Robotics 的 CTO Sai Vemprala，他之前在微软研究院做研究员。他们的做法跟现在主流不一样：不训练一个什么都会的大模型，而是把专门的能力组合起来，让机器人能换任务、换形态。节目开头还过了一遍上周的新闻，包括 Agility 考虑轮式机器人、波士顿动力开 Atlas 训练中心、高通收购 PickNik。
-  </div>
-</div>
-
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">好，今天就到这儿。明天是产品星期三。周二快乐，明天见。
-  </div>
-</div>
-
+  <div class="script-sec">一次发二十个</div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">欢迎来到 Daily Builders Digest，今天是二〇二六年九月三十号，星期三，产品日。我是大雨。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">我是小苇。昨天是 OpenAI 的开发者大会 DevDay，我看到的数字是二十多个发布。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">官方说法是「超过二十个主要发布」。Every 的 Dan Shipper 从二〇二三年起每届都去，他说这是 OpenAI 发得最多的一次。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">发得多是好事还是坏事？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">今天就聊这个。四条新闻：OpenAI 的常驻 agent Dots；ChatGPT 自己做文档和幻灯片；ChatGPT 向开发者开放成一个平台；最后是 Apple，新 CEO 要让 Apple 发产品更快、更频繁。四条放一起，问的是同一件事：发得快，用户跟不跟得上。</div>
+  </div>
+  <div class="script-sec"><em>01</em>Dots：关掉网页也在干活的 agent</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">先说事实。Dots 是 OpenAI 这次最大的新产品，一种常驻的 agent。它跑在 GPT-6 Astra 上，每个 Dot 有自己的云端电脑，你关掉网页它还在干活。它通过插件能连四千多个应用，可以在 ChatGPT 里用，也可以在 Slack 和 Teams 里用，还能打电话跟它说话。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">谁能用？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">Pro 和 Business Premium 用户，第一个 Dot 包含在套餐里，不另收钱。跟 Dot 的对话也不算进 ChatGPT 的用量额度。企业、教育、医疗版是测试版，默认关闭，要管理员手动打开。</div>
+    <div class="script-src">📎 来源: <a href="https://openai.com/index/devday-2026-recap/" target="_blank">DevDay 2026 Recap — OpenAI</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这个形态听起来不新。OpenClaw、Meta 的 Muse、Grok Bot，都是这个方向。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对，Dan Shipper 也这么说。他提前用了几天，给自己的 Dot 起名叫 Boo。他说好的时候很好：Boo 会帮他过滤 Slack 和邮件，他改签航班时，Boo 提醒他新航班和一条他还没读的 Slack 会议邀请冲突了。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">那不好的时候呢？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">他说这个版本太多 bug，现在不推荐：权限经常出问题，消息会丢，Dot 经常连不上内置浏览器。还有一点我觉得更值得注意：他和他的 Dot 都会搞不清楚，这件事到底该在 Dot 自己的电脑上做，还是在主对话的浏览器里做，还是在 Dot 另开的一个对话里做。</div>
+    <div class="script-src">📎 来源: <a href="https://every.to/vibe-check/vibe-check-openai-devday-2026" target="_blank">Vibe Check: OpenAI DevDay 2026 — Every</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">连 agent 自己都分不清在哪儿干活。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">现场演示也卡了。演示的人用语音问她的 Dot，Dot 回「正在查」，然后又回「还在查」。Codex 负责人 Thibault Sottiaux 后来发推解释，说所有更新同时上线，拖累了现场演示，但以后还会坚持现场演示。</div>
+    <div class="script-src">📎 来源: <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank">OpenAI DevDay 2026: every announcement — DEV Community</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">我的问题是：这么多 bug，Dan 为什么还在用？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">他自己说了：虽然烦，但他已经习惯先找 Dot，而不是新开一个 Codex 对话。这是做产品的人要看清楚的一点：一个形态对了，用户会忍 bug。但忍耐有期限。他给读者的建议是等一两周再试。</div>
+  </div>
+  <div class="script-sec"><em>02</em>ChatGPT 自己做文档、幻灯片和共享空间</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">第二条。OpenAI 发了一整套办公工具。ChatGPT Space 是团队共享的工作区，你、同事、ChatGPT 和你的 Dot 在同一个地方放文件。Pages 是一种新文档，官方说法是「为人和 agent 协作而做的文档」。协作幻灯片几周后上线，多人和 agent 可以同时编辑，能导出成 PowerPoint 或 Google Slides。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这就是直接对着 Notion 和 Google Docs 去了。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">Dan Shipper 就是在 Space 里写的这篇测评。他说了一个我之前没想到的好处：速度。Dot 通过浏览器去改 Google Docs，改动是一点一点爬进去的，因为 Google Docs 不是给 agent 设计的。在 ChatGPT 自己的文档里没有这个延迟。你还可以在文档评论里直接 @ 你的 Dot，不用回到对话框里说「去看一下那个文件」。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">还有个「保持更新」的开关？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对，打开以后 Dot 会自动让这份文档保持最新，适合路线图、公司制度这种一直在变的文档。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">那问题在哪儿？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">迁移成本。Dan 自己也说，大多数 ChatGPT 用户，包括 Every 这家公司，协作都在 Google 和 Notion 里。而且有个细节很有意思：这次「用 ChatGPT 账号登录」的首批合作方里，就有 Notion。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">一边合作，一边做它的替代品。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">这对做产品的人是个提醒：如果你的产品是一个「放东西的地方」，文档、看板、表格，平台方现在有理由自己做一个给 agent 用得更顺手的版本。你要回答的是：为什么 agent 在你这里干活，比在平台自己的文档里更好。</div>
+  </div>
+  <div class="script-sec"><em>03</em>ChatGPT 变成平台：插件扩展和「用 ChatGPT 付钱」</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">第三条，给开发者的。插件扩展，英文叫 plugin extensions。OpenAI 说，它把自己做 ChatGPT 功能用的那套平台开放了。你的插件可以在侧边栏有一个固定入口，可以做交互面板，让用户在对话旁边操作，还可以给你支持的文件格式做查看器。Sam Altman 的原话是：你可以直接在 ChatGPT 和 Codex 里做一个编辑器、一个仪表盘、一整个工作区。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">用户怎么找到这些插件？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">有插件目录，ChatGPT 也会在对话里推荐相关插件。OpenAI 说的分发规模是 ChatGPT 每周十二亿用户。Dan Shipper 的评价是：这是 OpenAI 第三还是第四次做应用商店了，总有一次会成。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">另一个呢？「用 ChatGPT 付钱」是什么意思？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">叫 Sign in with ChatGPT。用户用 ChatGPT 账号登录你的应用，在你应用里产生的 OpenAI 用量，算进用户自己的 ChatGPT 套餐额度。首批十六个合作方，包括 Devin、Notion、Vercel。</div>
+    <div class="script-src">📎 来源: <a href="https://openai.com/index/devday-2026-recap/" target="_blank">DevDay 2026 Recap — OpenAI</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">也就是说，token 的钱从开发者身上，转到了用户的订阅上。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对。Dan Shipper 很早就预测过，AI 订阅会像手机流量套餐：你买一份，然后自己选在哪些应用里用。他说这对 Every 这种做工具的公司是好事，不用担心重度用户把 token 账单刷爆。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">代价是什么？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">DEV Community 那篇分析说得直接：你的登录、你用户的额度、你的成本结构，都要经过 OpenAI 的账号系统。你省下了 token 成本，换来的是依赖。</div>
+    <div class="script-src">📎 来源: <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank">OpenAI DevDay 2026: every announcement — DEV Community</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">还有一个 Decisions API，我看很多人说这才是最重要的。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">这个很小，但很实用。你给它一段上下文和一组固定答案，它从里面选一个。比如这封邮件要不要回、这个工单归哪一类、agent 下一步点哪个按钮。Every 的编辑测了一组电脑操作任务，七十八步里选对了七十六步，一般两百三十毫秒出结果。价格还没公布。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">为什么说它重要？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">因为每个 agent 产品里都有大量这种小判断。现在大多是调一个大模型、给个格式、失败了再重试。一个答案范围固定的小模型，更快，也更好测试，因为所有可能的输出就是你自己写的那张列表。</div>
+  </div>
+  <div class="script-sec"><em>04</em>Apple 新 CEO：发产品要更快、更频繁</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">最后一条，换个公司。九月一号，John Ternus 正式接任 Apple CEO。九月二十九号，彭博的 Mark Gurman 报道，Ternus 正在改组公司，目标是加快产品开发、更频繁地发新品。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">具体怎么改？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">报道里提到几件事。一是考虑减少对春季、秋季两次固定发布会的依赖，一年里随时发新设备。二是砍掉一部分中层管理岗位，减少工程师和高管之间的层级。三是他在内部说 Apple 要「更敢实验」，才能在 AI 时代保持竞争力。四是控制成本：二〇二七年的早期规划里，预算增幅缩小、人数持平、营销支出减少。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">已经有动作了吗？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">有。过去两周，一些总监和工程项目经理被撤职，给几周时间在公司内部找新岗位，找不到就被裁。Siri、Vision Pro、AI 软件工程、Fitness+ 这几个团队也有缩减。内部经理对 Gurman 说，压力变大了，产品团队被要求在更短的时间里交付更多产品。</div>
+    <div class="script-src">📎 来源: <a href="https://www.macrumors.com/2026/09/29/apple-to-launch-products-faster-and-more-often/" target="_blank">Apple Planning to Launch Products Faster and More Often — MacRumors</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">读者评论怎么看？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">MacRumors 评论区点赞最高的一条是：软件更需要这样。另一条说：缩短工程师和高管的距离是好事，但靠裁掉有能力的工程师来省钱是坏事，而且加快硬件节奏会不会拖累软件质量，还不知道。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">跟 OpenAI 放在一起看挺有意思。一家一次发二十个，一家想从一年两次变成随时发。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对。两家都在往「更快」走，但出发点不一样。OpenAI 的问题是发太多，用户看不懂。Apple 的问题是发太慢，用户觉得它落后了。中间有一个共同的约束：用户能消化的新东西是有限的。</div>
+  </div>
+  <div class="script-sec">今天的观察</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">那回到开头的问题：发得多，是好事还是坏事？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">Dan Shipper 那篇测评的最后一段，我觉得回答得最好。他说，这么快的更新节奏让他很兴奋，手动开一个个 Codex 对话已经显得有点过时了。但他也觉得累，也觉得乱。他的原话大意是：功能多、更新快，在连贯的时候是好事；可现在连他这种重度用户都有很多东西要搞清楚，而且不是每样都能用。下次打开 ChatGPT，如果要搞清楚的东西少一点，他会更高兴。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">所以速度不是问题，连贯才是问题。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">我的看法是这样的。有了编程 agent，写代码变快了，功能的成本在降。但用户理解一个新功能的成本没有降。发布的速度可以翻倍，用户的注意力不会翻倍。所以现在做产品，要多问一句：这个功能发出去，用户要多花多少力气才能搞懂整个产品？</div>
+  </div>
+  <div class="script-sec">关注建造者</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">今天的建造者动态，挑几条跟产品有关的。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">点赞最多的是 Claude Code 的 Thariq，四千两百多个赞。他说：现在基本不可能有人直接「给你看他的 prompt」了，因为一切都靠参考资料、技能和例子。他经常先让 agent 去看他之前做的三个仓库，再上网找参考，再调别的 AI 接口。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">这跟做产品有关系：好结果越来越依赖你喂给 agent 的上下文，而不是那一句提示词。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">第二条是 Codex 负责人 Thibault Sottiaux，DevDay 前一天发的。他说二百美元的 Pro 套餐重新开放新用户订阅，但用量的计算方式变了，换算下来，相当于旧套餐 API 等价额度的一半。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">这条值得看，是因为他在坏消息出来之前先讲清楚了。他解释了原因：不会再加回五小时限制；随着模型变便宜，同样的钱能做的事会越来越多；他们也不想为了让订阅显得划算，故意抬高 API 标价。先说坏消息、再讲为什么，这是一种做定价沟通的方式。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">第三条是投资人 Nikunj Kothari。他问：那些说「分发就是护城河，所以要多融钱」的投资人现在去哪了？现在是大公司在秀分发能力。他的建议是：回到第一性原理，找你的不公平优势，做留存高、最好有网络效应的产品，把钱当武器而不是命运，最后想办法自己养活自己。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">这条放在今天特别合适。ChatGPT 每周十二亿用户，自己做文档、做 agent、开插件商店，这就是大公司在用分发。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">最后是 Dan Shipper 自己的推：从二〇二三年起每届 DevDay 他都去了，这次是 OpenAI 发布最多的一次。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">播客推荐一期 Lenny's Podcast，嘉宾是 Molly Graham，她在 Google、Facebook 都做过管理。这期讲科技行业现在的倦怠和孤独感，还有她那条有名的建议「把你的乐高送出去」，在 AI 时代为什么不再完全成立。她有一个观点：把事交给 AI 和交给一个人，本质上不一样，现在每个员工都在变成管理者，不管愿不愿意。</div>
+    <div class="script-src">📎 来源: <a href="https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout" target="_blank">The grief, loneliness, and burnout sweeping through the tech industry right now | Molly Graham — Lenny&#x27;s Podcast</a></div>
+  </div>
+  <div class="script-sec">结尾</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">今天留一个问题给听的人？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">看看你产品最近三个月发的功能，挑一个新用户，让他说说你的产品是做什么的。如果他说不清楚，下一个版本先别加功能，先做减法。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">发得快不难，让人看得懂难。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">明天是星期四，健康日。我们明天见。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">明天见。</div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◈ 来源</div>
+  <a class="source-link" href="https://openai.com/index/devday-2026-recap/" target="_blank"><span class="src-icon">Web</span><span>OpenAI — DevDay 2026 Recap (2026-09-29)</span></a>
+  <a class="source-link" href="https://every.to/vibe-check/vibe-check-openai-devday-2026" target="_blank"><span class="src-icon">News</span><span>Every — Vibe Check: OpenAI DevDay 2026 (2026-09-29)</span></a>
+  <a class="source-link" href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank"><span class="src-icon">News</span><span>DEV Community — OpenAI DevDay 2026: every announcement, with prices and availability</span></a>
+  <a class="source-link" href="https://www.macrumors.com/2026/09/29/apple-to-launch-products-faster-and-more-often/" target="_blank"><span class="src-icon">News</span><span>MacRumors — Apple Planning to Launch Products Faster and More Often (2026-09-29)</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2104608785696440510" target="_blank"><span class="src-icon">X</span><span>Thariq — on prompts, references and skills</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2104823812042940713" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux — Pro $200 reopening and usage change</span></a>
+  <a class="source-link" href="https://x.com/nikunj/status/2104566122549063756" target="_blank"><span class="src-icon">X</span><span>Nikunj Kothari — on distribution as a moat</span></a>
+  <a class="source-link" href="https://x.com/danshipper/status/2104662907716050988" target="_blank"><span class="src-icon">X</span><span>Dan Shipper — most DevDay launches ever</span></a>
+  <a class="source-link" href="https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout" target="_blank"><span class="src-icon">Pod</span><span>Lenny&#x27;s Podcast — Molly Graham (2026-09-28)</span></a>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -766,15 +542,16 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:09。今天的推文没有直接讲机器人，挑选的几条讲的是同一个问题：新技术看起来很厉害时，怎么判断它是不是真的在起作用。
+  数据截至今日 UTC 04:09。
 </p>
 
+<!-- PODCAST CARD — feed-podcasts.json empty; episode found via web -->
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The Robot Report Podcast · Ep. 263 · 2026-09-25</p>
-  <p class="pc-title">General Robotics Is Betting on Modular Intelligence, Not One Robot Brain</p>
-  <p class="pc-summary">嘉宾是 General Robotics 联合创始人兼 CTO Sai Vemprala（前微软研究院高级研究员），负责 GRID 平台。他们不训练一个什么都会的大模型，而是把专门的能力组合起来，让机器人能在不同任务和不同形态之间切换。节目前半段过了一遍上周新闻：Agility 考虑轮式机器人、波士顿动力开 Atlas 训练中心、康耐视收购 RealSense、高通收购 PickNik。</p>
-  <a href="https://www.therobotreport.com/general-robotics-is-betting-on-modular-intelligence-not-one-robot-brain/" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Lenny's Podcast · 2026-09-28</p>
+  <p class="pc-title">The grief, loneliness, and burnout sweeping through the tech industry right now | Molly Graham</p>
+  <p class="pc-summary">Molly Graham 在 Google、Facebook、Quip 做过管理，现在主持 TED 的 WorkLife 播客。这期讲科技行业现在的倦怠、孤独和失落感，以及她有名的建议「把你的乐高送出去」为什么在 AI 时代不再完全成立。她的核心观点：把事交给 AI 和交给一个人本质上不同，现在每个员工都在变成管理者，不管愿不愿意。</p>
+  <a href="https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
@@ -786,89 +563,72 @@
         <div class="builder-handle">@trq212 · Claude Code, Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「我最担心的是，我们会因为变得更懒，把 agent 带来的生产力提升都吃掉。」</p>
+    <p class="builder-tweet">「现在基本不可能有人直接「给你看他的 prompt」了，因为一切都靠参考资料、技能和例子。我经常先让 agent 去看我做过的另外三个仓库，再上网找参考、调用别的 AI 接口，等等。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 4,322</span>
-      <a href="https://x.com/trq212/status/2104273243599405395" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 4265</span>
+      <a href="https://x.com/trq212/status/2104608785696440510" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">TS</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex & ChatGPT, OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「当 agent 开始替用户做最好或最高效的选择，会有很多影响。一部分市场靠用户改变习惯的阻力获益，那里的切换成本会下降、竞争会大幅加剧；另一部分市场被阻力拖累，比如医疗、旅行、本地服务，agent 让这些东西更容易买，会释放大量经济活动。」</p>
+    <p class="builder-tweet">「明天我们重新向新用户开放 200 美元的 Pro 订阅，同时改变用量的计算方式。算下来，相当于旧 Pro 200 套餐 API 等价额度的一半。……我们承诺不会重新加回 5 小时限制；也不想为了让订阅显得划算而人为抬高 API 标价。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 174</span>
-      <a href="https://x.com/levie/status/2104350592290406849" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 697</span>
+      <a href="https://x.com/thsottiaux/status/2104823812042940713" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">ZZ</div>
+      <div class="builder-avatar">NK</div>
       <div>
-        <div class="builder-name">Zara Zhang</div>
-        <div class="builder-handle">@zarazhangrui · Builder, follow-builders</div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner, FPV Ventures</div>
       </div>
     </div>
-    <p class="builder-tweet">「新技术可以耀眼到让我们看不见它哪里不管用。（有时还会让你觉得，如果某个东西不管用，多半是你的问题而不是技术的问题，因为世界变得太快，好像每个人都走在你前面。）」</p>
+    <p class="builder-tweet">「那些说「分发就是护城河，所以要多融钱」的投资人现在去哪了？现在是大公司在秀分发肌肉。回到第一性原理：找到你的不公平优势，做留存高、最好有网络效应的产品，把资本当武器而不是命运，最后想办法自己养活自己。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 68</span>
-      <a href="https://x.com/zarazhangrui/status/2104112917264126195" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 111</span>
+      <a href="https://x.com/nikunj/status/2104566122549063756" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">MT</div>
+      <div class="builder-avatar">DS</div>
       <div>
-        <div class="builder-name">Matt Turck</div>
-        <div class="builder-handle">@mattturck · VC, FirstMark</div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · CEO, Every</div>
       </div>
     </div>
-    <p class="builder-tweet">「值得注意的是：很多懂 AI 怎么工作的研究者，既不相信 AI 末日，也不相信大规模失控加速；而不太懂的人，反而观点非常确定。」</p>
+    <p class="builder-tweet">「从 2023 年起每届 DevDay 我都去了。这次是 OpenAI 发布最多的一次。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 53</span>
-      <a href="https://x.com/mattturck/status/2104331402385002831" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 52</span>
+      <a href="https://x.com/danshipper/status/2104662907716050988" target="_blank">查看推文 →</a>
     </div>
   </div>
-</div>
-
-<div class="disclaimer">
-  <strong>核实说明：</strong>特斯拉 Optimus 的周产量、V3 非最终版本、手部装配与传感器问题、50 万小时训练数据、租赁计划等，均来自 <strong>The Information 援引匿名知情人士的报道</strong>（经 Humanoids Daily 整理），特斯拉未回应置评请求；每周 1,000 台和 20,000 台是<strong>产能目标</strong>，不是实际产量。本期未直接阅读 The Information 原文（付费墙）。智元 20,000 台及分系列数字为<strong>公司自报的累计产量</strong>，不代表销量或在役部署量。英伟达平台的技术描述来自英伟达官网与 GitHub 仓库；Figure 如何接入<strong>尚未披露</strong>。Niantic Places Library 的发布<strong>未提供真机成功率提升数据</strong>，Flexion 的零样本迁移案例早于场景库发布。Asimov 公告称包含训练好的策略检查点，但 Humanoids Daily 在仓库中<strong>未找到可下载的检查点</strong>。Niantic 场景库公告日期为 9 月 25 日，Humanoids Daily 报道日期为 9 月 28 日。建造者推文原文为英文，中文为本节目翻译。本文不构成任何投资建议。
-</div>
-
-<div class="sources">
-  <div class="sources-label">◈ 本期来源</div>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/tesla-optimus-production-hundreds-per-week-report" target="_blank"><span class="src-icon">Humanoids Daily</span><span>Tesla Reportedly Builds Hundreds of Optimus Robots a Week · 2026-09-26</span></a>
-  <a class="source-link" href="https://www.theinformation.com/articles/teslas-optimus-hits-snags-hands-suppliers-scale-up-begins" target="_blank"><span class="src-icon">The Information</span><span>Tesla&#x27;s Optimus hits snags with hands, suppliers as scale-up begins · 2026-09-25</span></a>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/agibot-20000-robots-production-milestone" target="_blank"><span class="src-icon">Humanoids Daily</span><span>AGIBOT Has Built 20,000 Robots—Twice Its March Total · 2026-09-26</span></a>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/agibot-chimelong-theme-park-300-robots" target="_blank"><span class="src-icon">Humanoids Daily</span><span>AGIBOT Brings 300-Plus Robots to Chimelong Theme Park · 2026-09-24</span></a>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/figure-nvidia-open-agent-safety-platform" target="_blank"><span class="src-icon">Humanoids Daily</span><span>Figure Joins NVIDIA&#x27;s Open Agent Safety Platform · 2026-09-28</span></a>
-  <a class="source-link" href="https://www.nvidia.com/en-us/solutions/ai/agent-safety/" target="_blank"><span class="src-icon">NVIDIA</span><span>NVIDIA Open Agent Safety Platform overview</span></a>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/niantic-spatial-places-library-robot-training" target="_blank"><span class="src-icon">Humanoids Daily</span><span>Niantic Spatial Launches Places Library With 100 Real Environments · 2026-09-28</span></a>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/asimov-open-source-locomotion-policy-training" target="_blank"><span class="src-icon">Humanoids Daily</span><span>Asimov Open-Sources the Training Code Behind Its Humanoid&#x27;s Walk · 2026-09-26</span></a>
-  <a class="source-link" href="https://github.com/menloresearch/isaac_asimov/" target="_blank"><span class="src-icon">GitHub</span><span>menloresearch/isaac_asimov</span></a>
-  <a class="source-link" href="https://www.therobotreport.com/agility-robotics-maker-of-digit-humanoid-exploring-wheeled-robots/" target="_blank"><span class="src-icon">Robot Report</span><span>Agility Robotics, maker of Digit humanoid, exploring wheeled robots · 2026-09-25</span></a>
-  <a class="source-link" href="https://www.humanoidsdaily.com/news/figure-02-terminator-melting-sendoff" target="_blank"><span class="src-icon">Humanoids Daily</span><span>Hasta La Vista, Figure 02: Adcock Teases a Terminator-Style Sendoff · 2026-09-28</span></a>
-  <a class="source-link" href="https://www.therobotreport.com/general-robotics-is-betting-on-modular-intelligence-not-one-robot-brain/" target="_blank"><span class="src-icon">Podcast</span><span>The Robot Report Podcast Ep. 263 — General Robotics × Sai Vemprala · 2026-09-25</span></a>
-  <a class="source-link" href="https://x.com/trq212/status/2104273243599405395" target="_blank"><span class="src-icon">X</span><span>Thariq — eating the productivity gains of agents by becoming lazier</span></a>
-  <a class="source-link" href="https://x.com/zarazhangrui/status/2104112917264126195" target="_blank"><span class="src-icon">X</span><span>Zara Zhang — new technology can be so dazzling</span></a>
-  <a class="source-link" href="https://x.com/levie/status/2104350592290406849" target="_blank"><span class="src-icon">X</span><span>Aaron Levie — agents making the most efficient choice for users</span></a>
-  <a class="source-link" href="https://x.com/mattturck/status/2104331402385002831" target="_blank"><span class="src-icon">X</span><span>Matt Turck — AI researchers believe in neither doom nor acceleration</span></a>
 </div>
 
 <div class="footer">
-  <span>Daily Builders Digest · 2026-09-29 · 机器人星期二</span>
-  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+  <span>Daily Builders Digest · 2026-09-30 · Product 星期三</span>
+  <span>大雨 × 小苇 · 明日：健康星期四</span>
 </div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-09-29.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-09-29</span>
+      <span class="ep-card-badge" style="color:#cc5500;border-color:#cc5500">Robotics</span>
+    </div>
+    <span class="ep-card-hl">2026-09-29 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-09-28.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-09-28</span>

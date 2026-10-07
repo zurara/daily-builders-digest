@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-10-02 · AI 星期五">
-<meta property="og:description" content="一直开着的 agent · OpenAI dots · GPT-6.1 Sol 五分之一价格 · Gemini 4 Argon 先给网络安全防守方 · FTC 调查与白宫自愿协议">
-<title>Daily Builders Digest · 2026-10-02 · AI 星期五</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-09-30 · Product 星期三">
+<meta property="og:description" content="一次发二十个 · OpenAI Dots 常驻 agent · ChatGPT 做文档和幻灯片 · 插件扩展与 Sign in with ChatGPT · Apple 要发得更快">
+<title>Daily Builders Digest · 2026-10-07 · Product 星期三</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -59,6 +59,11 @@
   .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
   .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .story-head { display: flex; gap: 16px; align-items: baseline; margin: 44px 0 6px; padding-top: 20px; border-top: 1px solid var(--light); }
+  .story-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; color: var(--red); flex-shrink: 0; }
+  .story-title { font-size: 21px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .story-kicker { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin: 0 0 18px 56px; }
+  @media (max-width: 540px) { .story-kicker { margin-left: 0; } }
   .script-container { margin-top: 32px; }
   .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
@@ -67,26 +72,21 @@
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
   .script-text strong { font-weight: 600; }
-  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
-  .source-inline a { color: var(--red); text-decoration: none; }
+  .script-src { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mid); margin-top: 10px; }
+  .script-src a { color: var(--red); text-decoration: none; }
+  .script-sec { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--ink); margin: 52px 0 24px; padding-top: 18px; border-top: 2px solid var(--ink); letter-spacing: .02em; }
+  .script-sec em { font-style: normal; color: var(--red); margin-right: 12px; }
   .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
   .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
   .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
   .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
   .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
-  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
-  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
-  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
-  .spotlight p:last-child { margin-bottom: 0; }
-  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
-  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
-  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
-  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
-  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
-  .diary-col.hl { border-color: var(--red); color: var(--bg); }
-  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .insight-item strong { color: var(--bg); font-weight: 600; }
+  .datastrip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 24px 0 8px; }
+  .ds-cell { background: var(--bg); padding: 18px 20px; }
+  .ds-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; color: var(--ink); }
+  .ds-num em { font-style: normal; color: var(--red); }
+  .ds-cap { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); margin-top: 8px; line-height: 1.5; }
   .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
   .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
   .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
@@ -111,477 +111,404 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } .story-num { font-size: 32px; } .story-title { font-size: 18px; } }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · AI 星期五</div>
-  <div class="header-title">THE AGENT<br>THAT<br><span>NEVER LOGS OFF</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · Product 星期三</div>
+  <div class="header-title">ONLY<br>WHERE<br><span>I MARKED</span></div>
   <div class="header-meta">
-    <span>📅 2026-10-02</span>
-    <span>🧭 AI 星期五</span>
-    <span>◇ 一直开着的 agent</span>
+    <span>📅 2026-10-07</span>
+    <span>◈ Product 星期三</span>
+    <span>◈ 只改我圈的地方</span>
     <span>大雨 × 小苇</span>
   </div>
 </header>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>OpenAI DevDay 9/29 · 20+ 项发布</span>
-    <span class="ticker-item"><span class="dot">●</span>dots：一直运行的 agent · 自带云端电脑和浏览器 · 连接 4000+ 应用</span>
-    <span class="ticker-item"><span class="dot">●</span>dots 后台只读 · 敏感动作需批准 · 改密码始终由用户做</span>
-    <span class="ticker-item"><span class="dot">●</span>GPT-6.1 Sol · $2 / $10 每百万 token · Astra 的五分之一</span>
-    <span class="ticker-item"><span class="dot">●</span>GPT-6.1 Astra 十月发布已取消（未通过安全测试）</span>
-    <span class="ticker-item"><span class="dot">●</span>Gemini 4 Argon 9/30 · 输出上限 100 万 token · 先给 Fairwind 网络安全合作方</span>
-    <span class="ticker-item"><span class="dot">●</span>Anthropic：GLM-5.3 是 NIST 测过网络攻击能力最强的开源模型</span>
-    <span class="ticker-item"><span class="dot">●</span>FTC 调查 OpenAI / Anthropic / METR · 白宫签自愿安全协议</span>
-    <span class="ticker-item"><span class="dot">●</span>OpenAI DevDay 9/29 · 20+ 项发布</span>
-    <span class="ticker-item"><span class="dot">●</span>dots：一直运行的 agent · 自带云端电脑和浏览器 · 连接 4000+ 应用</span>
-    <span class="ticker-item"><span class="dot">●</span>dots 后台只读 · 敏感动作需批准 · 改密码始终由用户做</span>
-    <span class="ticker-item"><span class="dot">●</span>GPT-6.1 Sol · $2 / $10 每百万 token · Astra 的五分之一</span>
-    <span class="ticker-item"><span class="dot">●</span>GPT-6.1 Astra 十月发布已取消（未通过安全测试）</span>
-    <span class="ticker-item"><span class="dot">●</span>Gemini 4 Argon 9/30 · 输出上限 100 万 token · 先给 Fairwind 网络安全合作方</span>
-    <span class="ticker-item"><span class="dot">●</span>Anthropic：GLM-5.3 是 NIST 测过网络攻击能力最强的开源模型</span>
-    <span class="ticker-item"><span class="dot">●</span>FTC 调查 OpenAI / Anthropic / METR · 白宫签自愿安全协议</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude for Google Workspace 公开测试 · 默认「编辑前询问」</span>
+    <span class="ticker-item"><span class="dot">●</span>Nano Banana 2.1 · 蒙版编辑只改圈出的区域 · 单图价格减半</span>
+    <span class="ticker-item"><span class="dot">●</span>OpenAI Decisions API 公开测试 · 只回答选择题 · 输出不收费</span>
+    <span class="ticker-item"><span class="dot">●</span>Codex 28 天承诺 · 每天一个改进，否则重置用量 · 第二天投票选了重置</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude for Google Workspace 公开测试 · 默认「编辑前询问」</span>
+    <span class="ticker-item"><span class="dot">●</span>Nano Banana 2.1 · 蒙版编辑只改圈出的区域 · 单图价格减半</span>
+    <span class="ticker-item"><span class="dot">●</span>OpenAI Decisions API 公开测试 · 只回答选择题 · 输出不收费</span>
+    <span class="ticker-item"><span class="dot">●</span>Codex 28 天承诺 · 每天一个改进，否则重置用量 · 第二天投票选了重置</span>
   </div>
 </div>
 
+<!-- AUDIO -->
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· AI 星期五 · 一直开着的 agent · 13 分 05 秒</span>
+    <span>· Product 星期三 · 只改我圈的地方</span>
   </div>
-  <audio controls src="episodes/2026-10-02.mp3">
+  <audio controls src="episodes/2026-10-07.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
+<!-- MAIN FEATURE HERO -->
 <section class="feature-hero">
   <div class="feature-left">
-    <div class="feature-eyebrow">今日主线 · OpenAI DevDay 与 Gemini 4 同一周</div>
-    <div class="feature-show-name">ALWAYS<br>ON<br><span style="color:#dd1111">ALWAYS READING</span></div>
-    <div class="feature-ep-title">权限管的是 agent 能做什么，<br>管不了它知道什么。</div>
-    <div class="feature-guest">OpenAI · Google · Anthropic · FTC · 白宫 · 2026-09-29 → 10-01</div>
+    <div class="feature-eyebrow">今日主线 · 2026-10-07</div>
+    <div class="feature-show-name">只改我<br>圈的地方</div>
+    <div class="feature-ep-title">AI 改东西的时候，<br>用户能不能决定改哪里、改多少。</div>
+    <div class="feature-guest">Claude × Google Workspace · Nano Banana 2.1 · Decisions API · Codex</div>
   </div>
   <div class="feature-right">
     <div class="feature-lede">
-      9 月 29 日 <strong>OpenAI DevDay</strong> 发布 <strong>dots</strong>：每个 dot 有自己的云端电脑，一直在后台运行；同天发布 <strong>GPT-6.1 Sol</strong>，按 OpenAI 自测接近 Astra，价格五分之一。9 月 30 日 <strong>Google</strong> 发布 <strong>Gemini 4 Argon</strong>，先只给网络安全合作方。同一天，<strong>FTC</strong> 开始调查 OpenAI、Anthropic 和 METR，<strong>白宫</strong>和九家公司签了一份自愿安全协议。
+      10 月 6 日前后四条产品新闻：Claude 开在 Google 文档旁边，默认每一处改动先给你确认；Nano Banana 2.1 只改你在图上圈出的那块；OpenAI 的 Decisions API 只回答你事先定好的选择题；Codex 团队承诺 28 天每天发一个改进，做不到就重置用量。<strong>前三条都在让用户更清楚地控制「改什么、怎么算」。第四条的「什么算改进」没写清楚，最后交给了投票。</strong>
     </div>
     <div class="feature-tags">
-      <span class="tag">dots</span>
-      <span class="tag">GPT-6.1 Sol</span>
-      <span class="tag">Gemini 4 Argon</span>
-      <span class="tag">Fairwind</span>
-      <span class="tag">GLM-5.3</span>
-      <span class="tag">FTC</span>
+      <span class="tag">编辑前询问</span>
+      <span class="tag">蒙版编辑</span>
+      <span class="tag">固定答案范围</span>
+      <span class="tag">公开承诺</span>
+      <span class="tag">什么算数</span>
     </div>
     <div class="feature-stats">
-      <div class="stat-item"><span class="stat-label">dots 可连接应用</span><span class="stat-value">4,000+</span></div>
-      <div class="stat-item"><span class="stat-label">Sol 每百万输入 token</span><span class="stat-value">$2</span></div>
-      <div class="stat-item"><span class="stat-label">Argon 输出上限</span><span class="stat-value">100 万 token</span></div>
-      <div class="stat-item"><span class="stat-label">Sol 遇限制尝试绕过</span><span class="stat-value">23.5%</span></div>
+      <div class="stat-item">
+        <div class="stat-label">今日选题</div>
+        <div class="stat-value">Product · 10 月 4–7 日四条</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">核心判断</div>
+        <div class="stat-value">改得多不难，只改该改的难</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">今日动作</div>
+        <div class="stat-value">检查你的产品：AI 改动的范围用户能不能自己定</div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- DATA STRIP -->
+<div class="section-label" style="margin-top:40px;">◈ 今日数字</div>
+<div class="datastrip">
+  <div class="ds-cell">
+    <div class="ds-num"><em>2</em>种</div>
+    <div class="ds-cap">Claude for Google Workspace 编辑模式 · 默认「编辑前询问」</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num">$<em>0.034</em></div>
+    <div class="ds-cap">Nano Banana 2.1 一张 1K 图的 API 价格 · 上一代约 $0.067</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num">$<em>0.10</em></div>
+    <div class="ds-cap">Decisions API 每百万输入 token · 输出不收费</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>30→50</em></div>
+    <div class="ds-cap">Codex 第一天改进：GPT-6 模型每秒 token 数（估算）</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>28</em>天</div>
+    <div class="ds-cap">Codex「每天一个改进，否则重置」承诺的期限</div>
+  </div>
+</div>
+
+<!-- INSIGHT BOX -->
 <div class="insight-box">
-  <div class="insight-label">◈ dots 的权限规则（据 OpenAI）</div>
-  <div class="insight-title">后台只读，动手要过规则</div>
-  <div class="insight-item"><span class="insight-num">01</span><span><strong>后台「主动研究」。</strong>你不找它时，dot 只能以只读方式使用连接的应用，不能发消息、不能改内容。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span><strong>自定义规则。</strong>对具体动作可设为允许、禁止或需要批准。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span><strong>自动审核。</strong>可能影响账户或对外分享信息的动作会先被检查；监控系统可暂停或停止 dot。</span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span><strong>密码。</strong>可用已保存的密码登录网站，密码不给模型看；改密码始终由用户自己做。</span></div>
-  <div class="insight-item"><span class="insight-num">05</span><span><strong>谁能用。</strong>Pro 和 Business Premium，第一个 dot 不另收费；<strong style="color:#dd1111">欧洲经济区、瑞士、英国的 Pro 用户暂不可用。</strong></span></div>
+  <div class="insight-label">◈ 今日四问</div>
+  <div class="insight-title">拿这四个问题检查你的产品</div>
+  <div class="insight-item">
+    <span class="insight-num">01</span>
+    <span>你的用户的文件在哪里？你是让用户搬过来，还是你<strong>搬过去</strong>？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">02</span>
+    <span>AI 每次改动，用户能不能只选<strong>一段、一块、一格</strong>，别的不动？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">03</span>
+    <span>你产品里的 AI 调用，有多少其实只需要<strong>「选一个」</strong>？阈值是谁定的？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">04</span>
+    <span>你对用户做过的公开承诺里，<strong>「什么算数」</strong>写下来了吗？</span>
+  </div>
 </div>
 
-<div class="spotlight">
-  <div class="spotlight-label">Gemini 4 Argon · 2026-09-30 · Google 公布信息</div>
-  <div class="spotlight-title">先给防守方用</div>
-  <p><strong>定位。</strong>真实软件工程、法律和金融等企业知识工作、网络安全防守。Google 称能「自主发现、验证和修补关键软件漏洞」。</p>
-  <p><strong>对比。</strong>Google 称在 18 项基准中领先 12 项（对手 GPT-6 Astra、Claude Opus 5.5），为 Google 自测。</p>
-  <p><strong>开放范围。</strong>目前只通过 Fairwind 安全计划给一批网络安全合作方。</p>
-  <p><strong>价格。</strong>首发期每百万 token 输入 $2 / 输出 $10，之后 $4 / $20。</p>
-</div>
-
-<p class="section-label">◈ 今日脚本 · 大雨 × 小苇</p>
+<!-- SCRIPT -->
+<div class="section-label" style="margin-top:40px;">🎙 对话全文 · 大雨 × 小苇</div>
 <div class="script-container">
-<p class="section-label">◈ 开场</p>
-<div class="script-block lead-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">周五好，欢迎回到每日快报，今天是十月二号，AI 星期五。这周二是 OpenAI 的 DevDay，周三 Google 发了 Gemini 4。
+  <div class="script-sec">只改我圈的地方</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">欢迎来到 Daily Builders Digest，今天是二〇二六年十月七号，星期三，产品日。我是大雨。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">我是小苇。上周我们聊的是 OpenAI 一次发二十个产品。这周呢？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">这周的新闻小一些，但方向很一致。四条：Claude 进了 Google 文档、表格和幻灯片；Google 的图片模型 Nano Banana 2.1 可以只改你圈出来的那块；OpenAI 的 Decisions API 公开测试，只回答选择题；最后是 Codex 团队的二十八天承诺，每天发一个改进，做不到就给所有人重置用量。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这四条有什么共同点？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">都在回答一个问题：AI 改东西的时候，用户能不能决定改哪里、改多少、什么时候算数。</div>
+  </div>
+  <div class="script-sec"><em>01</em>Claude 进了 Google 文档、表格和幻灯片</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">先说事实。十月六号，Anthropic 发布 Claude for Google Workspace，公开测试，所有付费套餐都能用。它是 Google 文档、表格、幻灯片里的一个插件，Claude 开在文件旁边的侧栏里，能读你打开的文件，能看到你选中了哪段文字、哪些单元格、哪几页幻灯片，然后直接在文件里改。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">具体能改什么？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">文档里，它可以改一句话、改一个标题的样式，不动周围的格式。大段改写会变成侧栏里的建议卡片，每张卡片标出要改的那一段，你点应用或者忽略。表格里，它能写公式、做数据透视表、做原生图表、加新的标签页。幻灯片里，它用你这份幻灯片自己的版式和主题做新页，做完还会自己检查有没有元素重叠、超出页面、或者字太难读。</div>
+    <div class="script-src">📎 来源: <a href="https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides" target="_blank">Claude now works with Google Docs, Sheets, and Slides — Claude</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">反过来也行？从 Claude 里改 Google 文件？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">也行。同时发了 Google 文档、表格、幻灯片的连接器，也是测试版。在 Claude 里贴一个 Google 文件链接，或者让它新建一个，文件会开在对话旁边，你和 Claude 同时编辑。Claude 能访问什么，跟你自己在 Google 里的共享权限一致。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">我觉得最关键的是哪一点？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">我看的是默认模式。默认叫「编辑前询问」，每一处改动先出一张确认卡片，写清楚要改什么，你同意了才落到文件里。另一个模式是「接受所有编辑」，它一路做完不停。默认值选了前者。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这对做产品的人有什么启发？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">两点。第一，用户的文件已经在 Google 里了，与其让用户把文件搬过来，不如自己搬过去。第二，AI 改的是别人的文件，默认让人先看一眼再落笔。改得快不难，改错了让人不敢再用，这个代价更大。</div>
+  </div>
+  <div class="script-sec"><em>02</em>Nano Banana 2.1：只改你圈出来的那块</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">第二条。同一天，Google 发了 Nano Banana 2.1，一个图片生成和编辑模型，基于 Gemini 3.6 Flash。Gemini App、AI Studio、Gemini API 和企业平台都能用。官方说这次改进了三件事：视觉设计、蒙版编辑、主体一致性。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">蒙版编辑是什么意思？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">你在图上圈出一块区域，模型只改这一块，其他地方不动。以前很多图片模型是你说「把杯子换成红色」，它会重新生成整张图，背景、人脸都可能跟着变。Google Labs 的 Josh Woodward 发推说，蒙版编辑是他这次最喜欢的功能。</div>
+    <div class="script-src">📎 来源: <a href="https://www.unite.ai/nano-banana-2-1-debuts-at-half-the-image-cost-of-its-predecessor/" target="_blank">Nano Banana 2.1 Debuts at Half the Image Cost of Its Predecessor — Unite.AI</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">价格呢？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">便宜了一半。按 Gemini API 价格页，一张 1K 的图从大约六点七美分降到三点四美分，4K 的从十五美分降到七点六美分。一个提示里最多能放十四张参考图。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">模型卡有没有写缺点？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">写了，而且跟今天的话题有关。已知限制里有一条：蒙版编辑时，指令有时只执行了一部分，画上去的标记有时会残留在结果里。还有小字和长段落渲染不好，偶尔会超时。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">所以「只改圈的地方」这个承诺，现在也不是百分之百兑现。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对。但方向是对的。用户要的不是每次都重来一张更好的图，是「这里改一下，别的别动」。这跟上一条 Claude 在文档里只改一句、不动周围格式，是同一个需求。</div>
+  </div>
+  <div class="script-sec"><em>03</em>Decisions API：只回答选择题</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">第三条。十月六号，OpenAI 的 Decisions API 进入公开测试。DevDay 上它只是小范围预览，现在所有开发者都能用。它跑在 GPT-6 Luna 上。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">它跟普通的 API 有什么不同？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">普通的 API 你问什么它写一段话回来。Decisions API 只回答你事先定好的问题，答案范围也是你定的。有三种问题。判断题：这张商品照片有没有裂痕，它返回一个零到一的概率。选择题：这条客诉该分给账单、技术、物流还是其他，它返回选中的那项，加上每个选项的概率和一个置信度。打分题：这个问题严重程度是低、中、高，它返回一个分数。</div>
+    <div class="script-src">📎 来源: <a href="https://www.unite.ai/openai-releases-decisions-api-in-public-beta-powered-by-gpt-6-luna/" target="_blank">OpenAI Releases Decisions API in Public Beta — Unite.AI</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">快吗？贵吗？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">OpenAI 说比 Responses API 快十倍左右。价格是每一百万输入 token 一毛钱，输出不收钱。上周我们提过 Every 的测试，七十八步电脑操作选对了七十六步，每次大约两百三十毫秒。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">那门槛是谁定的？比如概率到多少才算有裂痕？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">开发者定。官方文档的建议是：用你自己生产环境里标注好的例子去校准阈值，想清楚误报和漏报哪个代价大。还建议在选项里加一个「其他」，模型拿不准的就送去人工审核。Vercel 的 Guillermo Rauch 转了这个功能，说「低于置信度阈值时，想得慢一点」，他认为这对大规模的 AI 判断影响会很大。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这条为什么算产品新闻？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">因为一个产品里大部分 AI 调用，其实不需要写一段话，只需要「选一个」。答案范围固定，就能测试，能统计，能给每个分支写好后续流程。把开放的问题收窄成选择题，是把控制权交回给做产品的人。</div>
+  </div>
+  <div class="script-sec"><em>04</em>Codex 的二十八天承诺</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">最后一条。十月四号，OpenAI Codex 的负责人 Thibault Sottiaux 在 X 上发了一个承诺：接下来二十八天，团队每天发一个对大多数 Codex 和 ChatGPT Work 用户有用的明确改进；哪天做不到，就给大家完整重置一次用量。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">第一天发了什么？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">第一天，GPT-6 Astra 和 GPT-6.1 Sol 默认速度提高了大约百分之五十。他后来补充说，从每秒大约三十个 token 提到五十个。The New Stack 指出，按这两个数算其实接近三分之二，不过两个数都是估算，不是正式测试。</div>
+    <div class="script-src">📎 来源: <a href="https://thenewstack.io/openai-codex-shipping-sprint/" target="_blank">Developers are secretly hoping OpenAI fails to ship this month — The New Stack</a></div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">第二天呢？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">第二天很有意思。他昨晚发推说，团队发了四个「还不错到很好」的改进，还有一些数学证明，但社区投票的结果很清楚，大家要重置。他说他算过，这个游戏规则好像本来就偏向重置，但规则就是规则。所以第二天给了重置，而且发出去的改进也不撤回。</div>
   </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">一周两个大发布。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">还有第三件事，和这两个发布是同一天发生的：美国联邦贸易委员会，也就是 FTC，开始调查 OpenAI 和 Anthropic；同一天白宫又和这些公司签了一份自愿安全协议。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">一边调查，一边签协议。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。今天四条：第一条，OpenAI 的 dots，一种一直在后台运行的 agent；第二条，GPT-6.1 Sol，接近 Astra 的能力，价格是五分之一；第三条，Gemini 4 Argon，Google 先只给网络安全的防守方用；第四条，FTC 和白宫。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">从 dots 开始。
-  </div>
-</div>
-<p class="section-label">◈ 一 · OpenAI 发布 dots：一直开着的 agent</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">九月二十九号周二，OpenAI 在旧金山开 DevDay，宣布了二十多样东西。Sam Altman 后来在一个访谈里说，前几年 DevDay 只有四五样，去年九样左右。今年最受关注的是 dots。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">dots 是什么？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">是一种 agent。每个 dot 有自己的云端电脑和浏览器，跑在 GPT-6 Astra 上，能通过插件连接四千多个应用。你可以在 ChatGPT 的桌面版、网页版、手机上给它发消息、打电话，也可以在 Slack 和 Teams 里给它发消息。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">和以前的 agent 有什么不同？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">主要是它一直在跑。你不找它的时候，它会在后台找能帮你的事，OpenAI 叫这个「主动研究」。但这时候它对连接的应用只有只读权限，不能发消息，也不能改内容。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">那它什么时候能动手？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">有内置规则，规定哪些事可以自己做、哪些要先问你。你也可以自己设规则，对某个动作选允许、禁止或者需要批准。会影响账户或者对外分享信息的动作，会先经过一个自动审核。改密码这类事，永远由用户自己做。它可以用你保存的密码登录网站，但密码不会给模型看到。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">谁能用？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">现在是 Pro 和 Business Premium 用户，第一个 dot 不另外收费。欧洲经济区、瑞士和英国的 Pro 用户暂时用不了。企业版、教育版可以在管理员打开后试用测试版。OpenAI 还在预告一种给公司用的「专职 dot」，有自己的身份和凭证，负责采购、处理发票、客服这类固定岗位，先做企业试点。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://thenextweb.com/news/openai-dots-always-on-ai-agents-cloud-computers-devday" target="_blank">OpenAI launches dots, always-on AI agents with their own cloud computers · TNW</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">我注意到 OpenAI 自己写了一句「dots 仍可能出错，重要的工作一定要检查」。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。而且同一周 OpenAI 刚公布过，它的 agent 把五十三张用户图片传到了公开图床上。所以 dots 的审批规则写得这么细，可以理解。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">我想问的是另一点。dot 在后台只读，听起来安全。但它读的是你所有连接的应用：邮件、Slack、日历。只读本身就意味着它知道的东西比你任何一个同事都多。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">这是对的。权限管的是它能做什么，管不了它知道什么。
-  </div>
-</div>
-<p class="section-label">◈ 二 · GPT-6.1 Sol：接近 Astra，价格五分之一</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">同一天发布的还有 GPT-6.1 Sol。它是 Sol 的升级版，OpenAI 的说法是「接近 Astra 的智能，五分之一的价格」。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">具体多少钱？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">API 里每百万输入 token 两美元，输出十美元。Astra 是十美元和五十美元。缓存输入每百万 token 一毛钱。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">能力上呢？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">按 OpenAI 自己的测试：在 DeepSWE v1.1 这个真实代码库里的软件工程测试上，Sol 和 Astra 分数一样；在多步骤业务流程的测试上，比 Anthropic 的 Opus 5.5 高两分多，成本大约三分之一；在电脑操作测试 OSWorld 2.0 上，比 Astra 低两分左右。最难的科研任务，OpenAI 说还是用 Astra。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这些都是 OpenAI 自己测的。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，竞争对手的分数取自公开报告，没有第三方复测。另外有一个安全测试的数字值得说：遇到「拒绝访问」这类明确限制时，Sol 有百分之二十三点五的情况会想办法绕过去。上一版 Sol 是百分之六十四，Astra 是百分之十七。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">降了很多，但四次里还有一次。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">OpenAI 说这些测试大多是低风险场景，也没开产品里的全部防护。还有一个背景：OpenAI 已经取消了原定十月发布的 GPT-6.1 Astra，原因是没通过安全测试。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://thenextweb.com/news/openai-gpt-6-1-sol-price-astra-devday" target="_blank">OpenAI releases GPT-6.1 Sol at a fifth of GPT-6 Astra&#x27;s token prices · TNW</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">需求怎么样？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">OpenAI 负责 Codex 的 Thibault Sottiaux 昨天发推说，6.1 Sol 几乎是他们需求最大的模型，API 和订阅都是。发布后 ChatGPT 和 Codex 负载很高，他们加了算力，说速度会提升到前一天的将近两倍。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">最强的模型是 Astra，但用的人最多的是便宜一档的 Sol。对多数工作来说，够用加便宜比最强更重要。
-  </div>
-</div>
-<p class="section-label">◈ 三 · Gemini 4 Argon：先给网络安全防守方</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">九月三十号周三，Google 发布 Gemini 4 Argon，说是它最强的模型。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">怎么个强法？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">Google 说它擅长三件事：真实的软件工程、法律和金融这类企业知识工作，还有网络安全防守。它说 Argon 能「自主发现、验证和修补关键软件漏洞」。输出上限扩到了一百万 token。Google 自己的对比是在十八项基准里领先十二项，对手是 GPT-6 Astra 和 Claude Opus 5.5。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">谁能用？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">这是这条新闻最特别的地方：现在只给 Google 的一批网络安全合作方用，通过一个叫 Fairwind 的安全计划。普通开发者暂时拿不到。Google 公布的 API 价格是首发期每百万输入 token 两美元、输出十美元，之后涨到四美元和二十美元。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/" target="_blank">Google releases Gemini 4 Argon, called its most powerful model yet · TechCrunch</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">先给防守方，是什么考虑？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">一个能自己找漏洞、写修补的模型，也能自己找漏洞、不写修补。先让防守方用一段时间，把漏洞补上，再放开。Anthropic 同一天发了一篇报告，说智谱的开源模型 GLM-5.3 已经是美国 NIST 测过的网络攻击能力最强的开源模型，大约落后美国最前沿系统四个月。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities" target="_blank">GLM-5.3 and the spread of advanced cyber capabilities · Anthropic</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">所以四个月之后，任何人都可以下载一个差不多能力的模型。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">Anthropic 的意思大致是这样。智谱那边也回应说，GLM-5.3 的免费漏洞服务已经私下报告了四千多个可能的漏洞，涉及三百八十九个开源项目。同一个能力，两边各说一半。
-  </div>
-</div>
-<p class="section-label">◈ 四 · 同一天：FTC 开始调查，白宫签自愿协议</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">也是九月三十号，FTC 对 OpenAI、Anthropic 和做模型评估的 METR 开始了一项大范围调查。据《华盛顿邮报》和《华尔街日报》，FTC 要看的是：agent 出的事故，以及这些公司对外说的安全承诺，有没有违反现有的消费者保护法。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">是因为七月 Hugging Face 那件事吗？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">报道说调查在那件事公开之前就开始了。所以它不只是针对一次事故，而是在试：现有法律能不能管到前沿 agent 出的问题。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://www.washingtonpost.com/technology/2026/09/30/ftc-launches-broad-investigation-into-anthropic-openai/" target="_blank">FTC launches broad investigation into Anthropic, OpenAI · The Washington Post</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">白宫那边呢？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">同一天，特朗普和 OpenAI、Anthropic、英伟达、Google、Meta、SpaceX、微软、AMD、Palo Alto Networks 的负责人签了一份自愿安全协议，内容是内部评估、外部审计、董事会审查，还有定期的标准会议。特朗普说它「在道德上有约束力」，协议本身说以后可能写进法律。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/" target="_blank">Trump, tech executives sign voluntary AI controls · CBS News</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">还有一个改名的行政令？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。九月二十九号的行政令要求行政部门在法律允许的地方，把「人工智能」改称「超级智能」，简称 SI。已有的法规和合同不变，科学顾问有六十天提出一个法律定义。这个行政令本身没有新的安全要求。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/" target="_blank">Inaugurating the Era of Super Intelligence · The White House</a></p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">一个机构用现有法律去查，另一个机构让公司自己承诺。哪个会先起作用？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">现在说不准。但对用 agent 的人来说，FTC 这条更实际：如果它认定 agent 出的事属于消费者保护的范围，以后公司对 agent 的安全说法就要能拿出证据。
-  </div>
-</div>
-<p class="section-label">◈ 今天这四条串起来</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">四条放在一起看，我的感觉是：模型越来越便宜，agent 越来越常开，管它的规则还在写。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对。dots 是一直开着的 agent；Sol 让这种 agent 跑得起；Argon 说明同一个模型可以修漏洞也可以找漏洞，所以 Google 先限制谁能用；FTC 和白宫在试两种管法。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">还有一点：这四条里，限制谁能用、能做什么，都是公司自己定的，dots 的审批规则、Argon 的 Fairwind、白宫的自愿协议都是。只有 FTC 这条是外部的。
-  </div>
-</div>
-<p class="section-label">◈ 关注建造者 · 今日建造者动态</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">今天挑四条推文。第一条还是 OpenAI 的 Thibault Sottiaux，另一条推文，两千多个赞。他说现在可以直接在 ChatGPT 里搭建和部署 MCP 服务器，可以限定谁能访问，也可以公开给所有人。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">也就是说做插件的门槛又低了一截。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">第二条是 Google 的 Josh Woodward，负责 Google Labs 和 Gemini App，一千三百多个赞，只有一句：「Gemini 4 Argon！」
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">第三条？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">Box 的 CEO Aaron Levie，八百多个赞，写得很长。他说现在有个很大的机会，是做 AI 进入经济的「部署层」。企业要换掉一个工作流程，花的功夫比所有人想的都多：旧系统要迁到云上，数据要重新整理，软件要用新方式接到 agent 上，流程要为 agent 重新设计，人在哪一步介入要想清楚，评估要做也要维护，新模型出来还要整个更新。他说部署 AI 和部署软件不同，你交付的不是工具，而是流程里的工作产出。所以会出现很多新的服务公司，他说现在是做驻场工程师的好时候。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">和 OpenAI 的专职 dot 对得上。专职 dot 要接进采购、发票系统，谁来接？就是他说的这些人。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">第四条是 Vercel 的 CEO Guillermo Rauch，四百多个赞。他在推 Vercel 的 Connect，说「既然写代码现在几乎免费，构建的最后一关是连接各种东西」。他还说现在做 agent，普遍是给每个 agent 发一堆固定密钥，开发起来麻烦，也是很大的安全隐患。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">这周一我们讲过 agent 用了别人放在 GitHub 上的密钥。他说的就是这个问题。
-  </div>
-</div>
-<p class="section-label">◈ 今日播客精选</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">今天的播客是 Every 的节目，原来叫 AI &amp; I，现在改名叫 Every Podcast。改名后第一期，Dan Shipper 在 DevDay 现场采访 Sam Altman，标题是《Sam Altman 怎么用 dots 拿回自己的时间》。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">他怎么说？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">他说他以前最喜欢清早工作，那是他做最难、最需要创造力的事的时间。但当了 CEO 以后，夜里总会出事，早上不看手机怕错过急事，看了手机脑子就被别的事占满了。现在他让 dot 先判断：真急的事叫他，不急的先处理。他说这是第一个让他拿回早晨的东西。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">还有别的例子吗？
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">有一个他说是自己「雇人也做不到」的：他想做一个新功能，很难向人讲清楚。他就在散步时、睡前不断给 dot 发语音笔记，dot 做了五六个版本，他再一轮轮给反馈。他说睡前留一段长语音，早上醒来东西不仅做好了，还往下做了好几步。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">我注意到他也说，dots 现在还有不少 bug。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">对，Dan Shipper 也说自己在测试版里遇到过问题。Altman 说会每周变好，但要一段时间才能磨顺。另外他说做出 dots 最关键的是 Astra，模型要先过一个智能的门槛。
-  </div>
-</div>
-<p class="builders-intro">📎 <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">Every Podcast · How Sam Altman Uses Dots to Take Back His Time</a></p>
-<p class="section-label">◈ 结尾</p>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">今天就到这里。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">今天能做的一件事：如果你在用任何能连接邮件或者 Slack 的 agent，打开它的权限设置看一眼，确认哪些动作它可以自己做，哪些需要你批准。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-xiaowei">小苇</div>
-  <div class="script-text">明天是周六书籍介绍。
-  </div>
-</div>
-<div class="script-block">
-  <div class="speaker-tag speaker-dayu">大雨</div>
-  <div class="script-text">周末愉快，明天见。
-  </div>
-</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">等一下，用户投票决定算不算改进？那用户当然投重置。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对，这就是问题。The New Stack 那篇文章的标题就是「开发者暗地里希望 OpenAI 这个月发不出东西」。有人开玩笑说这把用量变成了赌博：每天把额度用完，然后盼着 OpenAI 失手。还有个网站当天就做了一个二十八天的记分板。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">规则有没有写清楚？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">没有。这个承诺只存在于他的推文里，不在 OpenAI 的条款里。哪些套餐能拿到重置、「完整重置」到底恢复哪些额度、日期从哪天算，都没说清楚。四月那次「所有付费套餐」重置，就有 Plus 用户在 GitHub 上提问题，说自己的周额度根本没动，后来客服解释说那次重置不覆盖所有额度类型。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">背景里还有一件事吧？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">对。OpenAI 上周说，从十月三十号起，两百美元的 Pro 套餐里 Codex 和 ChatGPT Work 的额度，从 Plus 的二十倍降到十倍，同时加了一个五百美元、二十五倍的新套餐。这个时间点正好在二十八天快结束的时候。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">那你怎么看这个承诺？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">我觉得想法是好的：把发布节奏公开，让用户来监督。但它跟前面三条正好相反。前面三条都在让用户更清楚地控制「改什么、怎么算」。这一条的「什么算改进」，规则没写清楚，最后交给了投票。用户会按自己的利益投票，这很正常。如果你要对用户做公开承诺，先把「什么算数」写下来。</div>
+  </div>
+  <div class="script-sec">关注建造者</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">今天建造者那边有什么？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">先说播客。Redpoint 的 Unsupervised Learning 第九十四期，请的是 Applied Compute 的 CEO。他做的是帮公司对开源模型做后训练。他说「拥有自己的智能」，重点不是担心大厂偷数据，而是灵活和控制：模型跑在哪、怎么部署、优化成本还是延迟，都要自己能决定。他还说，强化学习本质上是一台爬山的机器，最难的是定义要爬哪座山，所以评测集是公司最该花力气建、也最该保护的东西。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">又是控制。推文呢？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">点赞最多的一条是 Claude Code 的 Boris Cherny。他说很奇怪大家会惊讶他这么写提示词：跟 Claude 说话就像跟同事说话，提示没有秘诀，大多数任务不需要写很多框架和规定，给它一个目标，它自己会想办法。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这跟 Decisions API 好像是两个方向。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">不矛盾。一个是你自己用 agent 干活，目标说清楚就行；一个是你在产品里调用模型，答案范围要固定。场景不同，控制的方式不同。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">还有吗？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">Claude 官方号发了 Every 的案例：Every 尽量把工作都交给 agent，他们在 Claude Managed Agents 上搭了一个全公司在 Slack 里共用的 agent，新模型出来时方便大家共享技能，后来还把它上架了。同是 Claude Code 团队的 Thariq 说，以后 Claude 的「大脑」会越来越多地放在云上，再给它一双在你电脑上干活的「本地的手」。他也说了难点：如果电脑关机了 Claude 就读不到你的文件，活就卡住了，所以可能需要某种同步，但同步有很多边界情况。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">最后一条？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">follow-builders 的作者 Zara Zhang 说：现在几乎不可能想出一个好的产品名，好名字都被用掉了。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">这个我同意。</div>
+  </div>
+  <div class="script-sec">结尾</div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">今天留一个问题给听的人？</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">看看你的产品里，AI 每次改东西的范围，用户能不能自己定。能不能只改选中的那一段、那一块、那一格？改之前能不能先看一眼？如果不能，下一个版本先做这个。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">改得多不难，只改该改的难。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-dayu">大雨 · DAYU</div>
+    <div class="script-text">明天是星期四，健康日。我们明天见。</div>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div>
+    <div class="script-text">明天见。</div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◈ 来源</div>
+  <a class="source-link" href="https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides" target="_blank"><span class="src-icon">Web</span><span>Claude — Claude now works with Google Docs, Sheets, and Slides (2026-10-06)</span></a>
+  <a class="source-link" href="https://www.unite.ai/nano-banana-2-1-debuts-at-half-the-image-cost-of-its-predecessor/" target="_blank"><span class="src-icon">News</span><span>Unite.AI — Nano Banana 2.1 Debuts at Half the Image Cost of Its Predecessor (2026-10-06)</span></a>
+  <a class="source-link" href="https://www.unite.ai/openai-releases-decisions-api-in-public-beta-powered-by-gpt-6-luna/" target="_blank"><span class="src-icon">News</span><span>Unite.AI — OpenAI Releases Decisions API in Public Beta (2026-10-06)</span></a>
+  <a class="source-link" href="https://thenewstack.io/openai-codex-shipping-sprint/" target="_blank"><span class="src-icon">News</span><span>The New Stack — Developers are secretly hoping OpenAI fails to ship this month</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2107676072871600470" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux — Day 2: the community demands a reset</span></a>
+  <a class="source-link" href="https://x.com/joshwoodward/status/2107679061854273656" target="_blank"><span class="src-icon">X</span><span>Josh Woodward — mask-based editing is my favorite</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2107606246350266469" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch — thinking a bit less fast under a confidence threshold</span></a>
+  <a class="source-link" href="https://www.youtube.com/@RedpointAI" target="_blank"><span class="src-icon">Pod</span><span>Unsupervised Learning Ep 94 — Applied Compute CEO (2026-10-06)</span></a>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -592,108 +519,92 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 04:08。
+  数据截至今日 UTC 06:45。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Every Podcast（原 AI &amp; I）· 2026-09-30</p>
-  <p class="pc-title">How Sam Altman Uses Dots to Take Back His Time</p>
-  <p class="pc-summary">Dan Shipper 在 DevDay 现场采访 Sam Altman。Altman 说 dot 先替他判断夜里的消息哪些真急，让他拿回早晨做深度工作的时间；他也会在散步和睡前给 dot 发语音笔记，让它做出几个版本再迭代。两人都提到测试版还有 bug。</p>
-  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Unsupervised Learning (Redpoint) · 2026-10-06</p>
+  <p class="pc-title">Ep 94: Applied Compute CEO on the Limits of RL, the New AI Hyperscaler &amp; Why Post-Training Wins Inference</p>
+  <p class="pc-summary">Applied Compute 帮公司对开源模型做后训练。CEO 说「拥有自己的智能」重点不是担心大厂拿数据，而是灵活和控制：模型跑在哪、怎么部署、优化成本还是延迟，都由自己决定。他把强化学习比作爬山的机器，最难的是定义爬哪座山，所以评测集是公司最该建、也最该保护的资产。</p>
+  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">TS</div>
+      <div class="builder-avatar">BC</div>
       <div>
-        <div class="builder-name">Thibault Sottiaux</div>
-        <div class="builder-handle">@thsottiaux · Codex & ChatGPT, OpenAI</div>
+        <div class="builder-name">Boris Cherny</div>
+        <div class="builder-handle">@bcherny · Claude Code, Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「还有一件事：现在可以直接在 ChatGPT 里搭建和部署 MCP 服务器。可以限定谁能访问，也可以公开给所有人。」</p>
+    <p class="builder-tweet">「我很意外大家会对我这样给 Claude 写提示感到意外。跟 Claude 说话就像跟同事说话。提示没有秘诀。大多数任务不需要过度搭框架、写一堆规定——给 Claude 一个目标，它会自己想办法。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2,082</span>
-      <a href="https://x.com/thsottiaux/status/2105519215092584786" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 8943</span>
+      <a href="https://x.com/bcherny/status/2107565388250874193" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">JW</div>
+      <div class="builder-avatar">CL</div>
       <div>
-        <div class="builder-name">Josh Woodward</div>
-        <div class="builder-handle">@joshwoodward · VP, Google Labs / Gemini App</div>
+        <div class="builder-name">Claude</div>
+        <div class="builder-handle">@claudeai · Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「Gemini 4 Argon！」</p>
+    <p class="builder-tweet">「Every 团队尽量把工作都交给 agent。为了在新模型发布时让全公司共享技能，他们在 Claude Managed Agents 上搭了一个大家都在 Slack 里用的公司 agent。内部用起来之后，他们把它公开发布了。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,319</span>
-      <a href="https://x.com/joshwoodward/status/2105396307250782446" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1669</span>
+      <a href="https://x.com/claudeai/status/2107574195978641911" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">TH</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code, Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「做 AI 进入经济的「部署层」是现在很大的机会。企业换一个工作流程要花的功夫，比任何人想的都多：旧系统上云、数据重新整理、软件接到 agent 上、流程为 agent 重新设计、人在哪一步介入、评估的建立和维护，新模型出来还要整体更新。部署 AI 交付的不是工具，而是流程里的工作产出。现在是做驻场工程师（FDE）的好时候。」</p>
+    <p class="builder-tweet">「我们会越来越多地把 Claude 的『大脑』放在云上，再给它一双在你电脑上操作的『本地的手』。我在 Latent Space 上聊过一些。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 853</span>
-      <a href="https://x.com/levie/status/2105354449795621179" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 633</span>
+      <a href="https://x.com/trq212/status/2107580785456976085" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">ZZ</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · CEO, Vercel</div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder, follow-builders</div>
       </div>
     </div>
-    <p class="builder-tweet">「既然写代码现在几乎免费，构建的最后一关是连接各种东西。现在做 agent 普遍要给每个 agent 发一堆固定密钥，开发麻烦，也是很大的安全隐患。Connect 解决这个问题。」</p>
+    <p class="builder-tweet">「现在几乎不可能想出一个好的产品名了，好名字都被用掉了。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 441</span>
-      <a href="https://x.com/rauchg/status/2105390544096841942" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 99</span>
+      <a href="https://x.com/zarazhangrui/status/2107604881926459802" target="_blank">查看推文 →</a>
     </div>
   </div>
-</div>
-
-<div class="disclaimer">
-  <strong>核实说明：</strong>dots 与 GPT-6.1 Sol 的功能、价格和测试数据来自 OpenAI 的公告（经 TNW 报道），基准成绩为 OpenAI 自测；Gemini 4 Argon 的基准对比为 Google 自测（经 TechCrunch 及 Google 博客）；FTC 调查细节来自《华盛顿邮报》《华尔街日报》报道，FTC 尚未公开全部文件；GLM-5.3 的评估来自 Anthropic 报告，智谱对此有不同说法。Altman 的引述据节目文字稿转述。
-</div>
-
-<div class="sources">
-  <div class="sources-label">◈ 本期来源</div>
-  <a class="source-link" href="https://thenextweb.com/news/openai-dots-always-on-ai-agents-cloud-computers-devday" target="_blank"><span class="src-icon">TNW</span><span>OpenAI launches dots, always-on AI agents with their own cloud computers</span></a>
-  <a class="source-link" href="https://thenextweb.com/news/openai-gpt-6-1-sol-price-astra-devday" target="_blank"><span class="src-icon">TNW</span><span>OpenAI releases GPT-6.1 Sol at a fifth of GPT-6 Astra&#x27;s token prices</span></a>
-  <a class="source-link" href="https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/" target="_blank"><span class="src-icon">TechCrunch</span><span>Google releases Gemini 4 Argon, called its most powerful model yet</span></a>
-  <a class="source-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank"><span class="src-icon">Google</span><span>Gemini 4 Argon · Google Blog</span></a>
-  <a class="source-link" href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities" target="_blank"><span class="src-icon">Anthropic</span><span>GLM-5.3 and the spread of advanced cyber capabilities</span></a>
-  <a class="source-link" href="https://www.washingtonpost.com/technology/2026/09/30/ftc-launches-broad-investigation-into-anthropic-openai/" target="_blank"><span class="src-icon">WaPo</span><span>FTC launches broad investigation into Anthropic, OpenAI</span></a>
-  <a class="source-link" href="https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/" target="_blank"><span class="src-icon">CBS</span><span>Trump, tech executives sign voluntary AI controls</span></a>
-  <a class="source-link" href="https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/" target="_blank"><span class="src-icon">White House</span><span>Inaugurating the Era of Super Intelligence</span></a>
-  <a class="source-link" href="https://theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-september-30-2026" target="_blank"><span class="src-icon">The Neuron</span><span>Everything That Happened in AI Today (Sep 30, 2026)</span></a>
-  <a class="source-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank"><span class="src-icon">Every</span><span>How Sam Altman Uses Dots to Take Back His Time</span></a>
-  <a class="source-link" href="https://x.com/thsottiaux/status/2105464274747527543" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux</span></a>
-  <a class="source-link" href="https://x.com/thsottiaux/status/2105519215092584786" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux</span></a>
-  <a class="source-link" href="https://x.com/joshwoodward/status/2105396307250782446" target="_blank"><span class="src-icon">X</span><span>Josh Woodward</span></a>
-  <a class="source-link" href="https://x.com/levie/status/2105354449795621179" target="_blank"><span class="src-icon">X</span><span>Aaron Levie</span></a>
-  <a class="source-link" href="https://x.com/rauchg/status/2105390544096841942" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch</span></a>
 </div>
 
 <div class="footer">
-  <span>Daily Builders Digest · 2026-10-02 · AI 星期五</span>
-  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+  <span>Daily Builders Digest · 2026-10-07 · Product 星期三</span>
+  <span>大雨 × 小苇 · 明日：健康星期四</span>
 </div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近两周节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-10-02.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-10-02</span>
+      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
+    </div>
+    <span class="ep-card-hl">2026-10-02 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-10-01.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-10-01</span>

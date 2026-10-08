@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-08",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "2026-10-08 今日快报",
+    "html": "episodes/2026-10-08.html",
+    "mp3": "episodes/2026-10-08.mp3",
+    "headlines": []
+  },
+  {
     "date": "2026-10-07",
     "dow": 3,
     "topic": "Product",

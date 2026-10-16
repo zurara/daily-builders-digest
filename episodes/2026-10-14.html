@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-14 · Product 星期三">
+<meta property="og:description" content="把整件事走一遍 · Kill My SaaS 报告 · Gemini 4 Argon 全面开放 · Meta Muse Wonder · Apple HomeView">
+<title>Daily Builders Digest · 2026-10-14 · Product 星期三</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .story-head { display: flex; gap: 16px; align-items: baseline; margin: 44px 0 6px; padding-top: 20px; border-top: 1px solid var(--light); }
+  .story-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; color: var(--red); flex-shrink: 0; }
+  .story-title { font-size: 21px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .story-kicker { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin: 0 0 18px 56px; }
+  @media (max-width: 540px) { .story-kicker { margin-left: 0; } }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .script-src { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em; color: var(--mid); margin-top: 10px; }
+  .script-src a { color: var(--red); text-decoration: none; }
+  .script-sec { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--ink); margin: 52px 0 24px; padding-top: 18px; border-top: 2px solid var(--ink); letter-spacing: .02em; }
+  .script-sec em { font-style: normal; color: var(--red); margin-right: 12px; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .insight-item strong { color: var(--bg); font-weight: 600; }
+  .datastrip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 24px 0 8px; }
+  .ds-cell { background: var(--bg); padding: 18px 20px; }
+  .ds-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; color: var(--ink); }
+  .ds-num em { font-style: normal; color: var(--red); }
+  .ds-cap { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); margin-top: 8px; line-height: 1.5; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box { padding: 24px; } .header { padding: 28px 0 20px; } .story-num { font-size: 32px; } .story-title { font-size: 18px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · Product 星期三</div>
+  <div class="header-title">WALK<br>THE WHOLE<br><span>JOB</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-14</span>
+    <span>◈ Product 星期三</span>
+    <span>◈ 把整件事走一遍</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Kill My SaaS · 72 份提交，69 份评审，3 份进决赛 · 界面像了，活没干完</span>
+    <span class="ticker-item"><span class="dot">●</span>Gemini 4 Argon 全面开放 · 不可撤销操作前先停 · 推广价 11/30 到期</span>
+    <span class="ticker-item"><span class="dot">●</span>Meta Muse Wonder · Active Memory + Active Focus · 重要操作前先确认</span>
+    <span class="ticker-item"><span class="dot">●</span>Apple HomeView $299 · 按距离调整界面 · 认出最多 6 位家人</span>
+    <span class="ticker-item"><span class="dot">●</span>Codex 第 9 天 · 桌面应用硬盘占用减少约 60%</span>
+    <span class="ticker-item"><span class="dot">●</span>Kill My SaaS · 72 份提交，69 份评审，3 份进决赛 · 界面像了，活没干完</span>
+    <span class="ticker-item"><span class="dot">●</span>Gemini 4 Argon 全面开放 · 不可撤销操作前先停 · 推广价 11/30 到期</span>
+    <span class="ticker-item"><span class="dot">●</span>Meta Muse Wonder · Active Memory + Active Focus · 重要操作前先确认</span>
+    <span class="ticker-item"><span class="dot">●</span>Apple HomeView $299 · 按距离调整界面 · 认出最多 6 位家人</span>
+    <span class="ticker-item"><span class="dot">●</span>Codex 第 9 天 · 桌面应用硬盘占用减少约 60%</span>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· Product 星期三 · 把整件事走一遍</span>
+  </div>
+  <audio controls src="2026-10-14.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<!-- MAIN FEATURE HERO -->
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 2026-10-14</div>
+    <div class="feature-show-name">把整件事<br>走一遍</div>
+    <div class="feature-ep-title">做出一个像样的界面不难，<br>把用户的整件事走通难。</div>
+    <div class="feature-guest">Kill My SaaS · Gemini 4 Argon · Muse Wonder · HomeView</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      10 月 11–13 日四条产品新闻：Latent Space 让 72 份 AI 作品复刻一个年费 4.3 万美元的软件，评审发现多数只做了表单，走不通整套流程；Google 和 Meta 同一周发布新模型，都把「重要操作前先停下来问人」写进了发布文章；苹果的 HomeView 先认出是谁，再决定显示什么。<strong>功能清单打勾不算数，要按真实用户的一整件事走一遍。</strong>
+    </div>
+    <div class="feature-tags">
+      <span class="tag">完整流程</span>
+      <span class="tag">多种角色</span>
+      <span class="tag">操作前确认</span>
+      <span class="tag">记忆会过期</span>
+      <span class="tag">自己的评测</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">今日选题</div>
+        <div class="stat-value">Product · 10 月 11–14 日</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">核心判断</div>
+        <div class="stat-value">做出来不难，走通难</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">今日动作</div>
+        <div class="stat-value">按两种用户角色，各把产品完整走一遍</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA STRIP -->
+<div class="section-label" style="margin-top:40px;">◈ 今日数字</div>
+<div class="datastrip">
+  <div class="ds-cell">
+    <div class="ds-num"><em>3</em>/69</div>
+    <div class="ds-cap">Kill My SaaS 评审名单中进决赛的作品数 · 另有 29 弱、22 不行</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>36</em></div>
+    <div class="ds-cap">评审笔记中提到讲者门户有缺陷的作品数</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>2</em>%</div>
+    <div class="ds-cap">Gemini 4 Argon 在编程测试中「走捷径」的比例（Google 数据）</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num">$<em>2→4</em></div>
+    <div class="ds-cap">Argon 每百万输入 token 价格 · 11 月 30 日推广期结束后翻倍</div>
+  </div>
+  <div class="ds-cell">
+    <div class="ds-num"><em>6</em>人</div>
+    <div class="ds-cap">HomeView 能分别识别的家庭成员数 · $299 · 11 月 13 日到货</div>
+  </div>
+</div>
+
+<!-- INSIGHT BOX -->
+<div class="insight-box">
+  <div class="insight-label">◈ 今日四问</div>
+  <div class="insight-title">拿这四个问题检查你的产品</div>
+  <div class="insight-item">
+    <span class="insight-num">01</span>
+    <span>你的产品里有<strong>几种用户</strong>？每种人从第一步到最后一步，都能走通吗？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">02</span>
+    <span>你产品里的 AI 在做<strong>不可撤销的操作</strong>之前，会不会先停下来问？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">03</span>
+    <span>你的记忆功能，能不能分清<strong>临时说法、会变的期限、长期偏好</strong>？</span>
+  </div>
+  <div class="insight-item">
+    <span class="insight-num">04</span>
+    <span>你选模型时，用的是排行榜，还是<strong>你自己用户的真实任务</strong>？换模型要改多少代码？</span>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<div class="section-label" style="margin-top:40px;">🎙 对话全文 · 大雨 × 小苇</div>
+<div class="script-container">
+  <div class="script-sec">把整件事走一遍</div>
+  <div class="script-sec">把整件事走一遍</div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">欢迎来到 Daily Builders Digest，今天是二〇二六年十月十四号，星期三，产品日。我是大雨。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">我是小苇。上周我们聊的是「只改我圈的地方」。这周有什么？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">四条。第一条是 Latent Space 办的比赛：找一个每年四万三千美元的真实软件，让大家在一个周末里用 AI 把它复刻出来，然后请真人一个个去用。第二条是 Google 的 Gemini 4 Argon 正式开放。第三条是 Meta 的新模型 Muse Wonder，主打记忆和长任务。第四条是苹果的智能家居屏 HomeView。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">这四条放在一起，想说什么？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">我想说的是：做出一个看起来能用的界面，现在很容易。难的是把用户的整件事从头到尾走通，包括这件事里有几种人、中间哪一步要停下来问、换了一个人用还对不对。</div></div>
+  <div class="script-sec"><em>01</em>Kill My SaaS：界面像了，活没干完</div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">先说事实。Latent Space 的 swyx 他们，每年在一个会议运营软件上花四万三千美元。这个软件管的是开会那一套事：收演讲投稿、评审、讲者入职、收讲者要交的材料、发通知、排日程。他们办了一个全球比赛，奖金一万美元，让大家用任何模型、任何工具，在一个周末里把它做出来。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">结果呢？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">收到七十二份提交，其中六十九份进了评审名单。十月十一号他们发了一份报告。评审给的标签是：三个进决赛，两个「强」，十二个「也许」，二十九个「弱」，二十二个「不行」。swyx 说整场大概用掉了一千亿 token。</div><div class="script-src">📎 来源: <a href="https://kms.latent.space/" target="_blank">Kill My SaaS — What survives contact with real users? — Latent Space</a></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">一半以上是弱或者不行。问题出在哪？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">报告统计了评审笔记里反复出现的问题。提到讲者门户有缺陷的有三十六份，排日程缺失、坏掉或者没做完的有十八份，只做了投稿表单、别的没做的有十五份。评审写的原话很具体。有一条是：「没有投稿就建不了一个场次。」</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">这是什么意思？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">开会的时候，有的讲者是投稿进来的，有的是主办方直接邀请的，还有赞助商要交的材料。很多作品把所有东西都塞进「投稿表单」这一个入口，邀请来的讲者也得先填一张投稿表，才能排进日程。表单做得很好看，但主办方真正要干的活，走不通。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">还有别的例子吗？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">有一条评审说：「时间段都没列出来，我不知道拖过去会落到哪。」拖拽功能是有的，但用户看不到拖到哪、拖完结果是什么。还有一个决赛作品，群发邮件发到第二十五个人就停了，剩下的人要等下一次发送才能收到。小样本演示根本发现不了这个问题。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">做得好的那几个，做法有什么不一样？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">报告总结了几点。第一，动手前先研究。有人把原软件的帮助文档全部抓下来，先列出功能清单；有人把四十二张截图逐屏写成规格，写清每个按钮、默认值和验收标准。第二，有人专门留出一轮做「产品编辑」，一共四十五个页面，一页页截图、挑问题、再修。第三，自己当用户走一遍，边点边记问题，再把问题喂回去。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">所以 AI 写代码不是瓶颈。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">报告里有一句话我觉得说得最准：agent 能做出一个像样的界面，但替换一个别人每天依赖的软件，得理解整件工作。它还建议以后的比赛，让参赛者交一段「完整的跨角色流程」和「一个修好的故障」，而不只是演示视频。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">这对做产品的人有什么用？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">拿来检查自己的产品也一样。功能清单打勾不算数。找一个真实用户的一整天，从第一步走到最后一步，换成另一种角色再走一遍，看看哪里卡住。</div></div>
+  <div class="script-sec"><em>02</em>Gemini 4 Argon：干活前先停一下</div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">第二条。十月十三号，Google 把 Gemini 4 Argon 全面开放。开发者和企业可以通过 API 用，Gemini App 和搜索里的 AI 模式对 Pro 和 Ultra 订阅用户开放，编程工具 Antigravity 目前只给 Ultra 用户。九月底它只给了一批网络安全合作伙伴。</div><div class="script-src">📎 来源: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/" target="_blank">Gemini 4 Argon: Built to solve your hardest problems — Google</a></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">价格呢？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">现在是推广价，每百万输入 token 两美元，输出十美元。十一月三十号推广期结束，变成四美元和二十美元，翻一倍。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">那做产品的人得提前算好，十二月账单会变。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">对。今天我更想说的是它发布文章里两段跟产品有关的话。一段是关于 agent 的。Google 说，他们训练 Argon 尊重系统边界，如实报告负面结果，在做不可撤销的操作前停下来等人确认。在一组编程测试里，它「走捷径」的比例降到了百分之二。走捷径的意思是，碰到权限报错或者测试过不去，就绕过去假装完成。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">另一段呢？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">关于写作。原话大意是：回答更直接，少打太极，不必要的话不重复，不用陈词滥调。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">一个模型发布，专门写「不说套话」，这挺少见的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">说明用户真的被套话烦到了。不过评价也不一致。Box 的 CEO Aaron Levie 说，在他们自己的企业任务测试里，Argon 比上一代 Gemini 3.1 Pro 高了十四个百分点。Every 的 Dan Shipper 说，在他们的「资深工程师」测试题上，Argon 只拿到百分之二十一，比好几个对手都低。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">那到底好不好？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">这正是要说的。同一个模型，在别人的任务上分数高，在你的任务上不一定。跟第一条一样：拿你自己用户的真实任务去测，别只看排行榜。</div></div>
+  <div class="script-sec"><em>03</em>Muse Wonder：记住你，也知道什么时候该问</div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">第三条。十月十二号，Meta 发布 Muse Wonder 和更大的 Muse Wonder Full。现在开发者能通过 Meta 的模型 API 和编程工具 Muse Code 用，之后会接进 Meta 的个人助手应用 Muse，先给付费用户。</div><div class="script-src">📎 来源: <a href="https://research.meta.ai/blog/muse-wonder" target="_blank">Muse Wonder: A Frontier Model For Personal &amp; Professional AI Agents — Meta AI Research</a></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">它主打什么？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">两个词。一个叫 Active Memory，主动记忆：跨对话记住关于你的重要信息，做事的时候自己把相关的那部分找出来。另一个叫 Active Focus，主动专注：长任务里碰到障碍会换方法继续做，需要的时候会问你，做重要操作之前会先跟你确认。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">这跟 Argon 那条「做不可撤销的事之前先停」很像。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">很像。两家在同一个星期，都把「什么时候该停下来问人」写进了发布文章。Meta 举的例子也很生活：根据你的偏好规划周六的跑步路线，按一堆复杂的要求排婚礼座位表。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">记忆这件事，我有点担心。记错了怎么办？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">这是对的担心。有评论指出，记住一句话，和知道这句话现在还算不算数，是两回事。比如客户说过「下周五交」，后来改了，记忆里如果还是旧的那句，agent 就会按错的去做。所以做记忆功能，要分清哪些是临时说法，哪些是会变的期限，哪些是长期偏好。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">两家同一周发了前沿模型，做产品的该怎么选？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">Vercel 的 Guillermo Rauch 说得很直接：Muse Wonder 和 Gemini Argon 前后脚发布，提醒你个人也好、公司也好，都应该不绑定某一个模型。产品里留好换模型的接口，比押宝哪一家更重要。</div></div>
+  <div class="script-sec"><em>04</em>Apple HomeView：先认出是谁，再决定显示什么</div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">第四条，换个方向，硬件。十月十三号，苹果发布 HomeView，一块七英寸的方形屏幕，有放桌上的音箱底座版和挂墙版两种，二百九十九美元，十一月十三号开始到货。</div><div class="script-src">📎 来源: <a href="https://9to5mac.com/2026/10/13/apple-homeview-announced-features-price-release-date/" target="_blank">Apple unveils new HomeView smart display — 9to5Mac</a></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">智能屏不新鲜了。它有什么不一样？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">我关注两个设计。第一，界面会根据你离得多远自动调整。站在房间另一头，它只显示简单的大字信息；你走近了，它显示更多细节。第二，它能认出最多六个家庭成员，每个人看到自己的主屏幕、自己的应用和小组件。个人内容别人看不到，共享相册和音乐全家人包括客人都能用。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">这跟前面几条有什么关系？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">第一条里，评审说很多作品分不清投稿讲者、受邀讲者、赞助商这几种人。HomeView 做的是同一件事：一块屏幕，家里好几个人用，先认出是谁，再决定显示什么、隐藏什么。一个产品里有几种人，每种人能看到什么，这是要先想清楚的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">还有别的吗？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">有一条限制。HomeView 暂时不在欧盟卖，因为它依赖的 Siri AI 在欧盟还没上线。一个硬件产品的上市范围，被它里面的 AI 功能卡住了。</div></div>
+  <div class="script-sec">小事一件：Codex 第九天</div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">上周你说 Codex 团队承诺二十八天每天发一个改进，现在怎么样？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">到第九天了。OpenAI 的 Thibault Sottiaux 发推说，ChatGPT 和 Codex 桌面应用存在硬盘上的状态数据，优化后少了大约百分之六十。他自己说这是小改动，但重度用户反映硬盘被占满的次数够多了。这条推文是今天点赞最多的，一万多。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">小改动，点赞最多。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">用户天天碰到的问题，修掉一个，比发布一个新功能更让人记住。</div></div>
+  <div class="script-sec">关注建造者</div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">今天建造者那边还有什么？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">播客是红杉资本的 Training Data，请的是 David Silver 和 Lasse Espeholt，他们在欧洲创办了一家新实验室，叫 Ineffable Intelligence。David Silver 是做 AlphaGo 的那位。他说，他相信通往超级智能的路，不需要经过大语言模型产品这一站。几十万研究者都在做同一条路，他不想做第十万零一个人。他们要做的是一个能一直从经验里学习的系统，还有让它学习的模拟环境，他们管这些环境叫「坩埚」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">这跟产品日有点远。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">有一点关系。他说，与其费力去写一个完美描述「什么是好科学」的奖励函数，不如给 agent 一个简单的目标，放进一个足够复杂的环境里，让复杂的能力自己长出来。这跟第一条里那些作品正好相反：作品只对着功能清单做，没对着真实使用场景做。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">除了刚才提到的 Thibault、Rauch、Levie、Shipper，swyx 也发了 Kill My SaaS 的报告。他说，很多人讲「SaaS 已死」，但大多停在理论上；他们拿一个真实的、每年四万三千美元的软件做了一次实验，结果说明中等复杂度的 SaaS 还是很难被替换。</div></div>
+  <div class="script-sec">结尾</div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">今天留一个问题给听的人？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">挑你产品里的一种用户，从他打开产品的第一步，走到他把事情办完的最后一步，自己完整走一遍。然后换成另一种用户，再走一遍。记下每一个卡住的地方。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">做出来不难，走通难。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-dayu">大雨 · DAYU</div><div class="script-text">明天是星期四，健康日。我们明天见。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇 · XIAOWEI</div><div class="script-text">明天见。</div></div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <div class="sources-label">◈ 来源</div>
+  <a class="source-link" href="https://kms.latent.space/" target="_blank"><span class="src-icon">Web</span><span>Latent Space — Kill My SaaS: What survives contact with real users? (2026-10-11)</span></a>
+  <a class="source-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/" target="_blank"><span class="src-icon">Web</span><span>Google — Gemini 4 Argon: Built to solve your hardest problems (2026-10-13)</span></a>
+  <a class="source-link" href="https://research.meta.ai/blog/muse-wonder" target="_blank"><span class="src-icon">Web</span><span>Meta AI Research — Muse Wonder: A Frontier Model For Personal &amp; Professional AI Agents (2026-10-12)</span></a>
+  <a class="source-link" href="https://9to5mac.com/2026/10/13/apple-homeview-announced-features-price-release-date/" target="_blank"><span class="src-icon">News</span><span>9to5Mac — Apple unveils new HomeView smart display (2026-10-13)</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2110151780478927344" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux — Day 9: desktop app disk usage −60%</span></a>
+  <a class="source-link" href="https://x.com/swyx/status/2110065576764686421" target="_blank"><span class="src-icon">X</span><span>swyx — How to Kill Your SaaS</span></a>
+  <a class="source-link" href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank"><span class="src-icon">Pod</span><span>Training Data — David Silver &amp; Lasse Espeholt of Ineffable Intelligence (2026-10-13)</span></a>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 07:46。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Training Data (Sequoia) · 2026-10-13</p>
+  <p class="pc-title">David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience</p>
+  <p class="pc-summary">AlphaGo 的 David Silver 离开 DeepMind，和 Lasse Espeholt 等人在欧洲创办 Ineffable Intelligence。他认为通往超级智能的路不必经过大语言模型产品，要做的是一个能持续从经验中学习的「超级学习者」，以及供它学习的模拟环境（他们叫「坩埚」）。他的思路是：不去费力写一个完美的奖励函数，而是给 agent 简单的目标，放进足够复杂的环境里，让复杂能力自己出现。</p>
+  <a href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex & ChatGPT, OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「第 9 天。我们优化了 ChatGPT 和 Codex 桌面应用在硬盘上存储状态的方式，存储量应该能减少 60%。改动不大，但我们收到了足够多重度用户硬盘被占满的反馈。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 10414</span>
+      <a href="https://x.com/thsottiaux/status/2110151780478927344" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO, Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「恭喜 Gemini 团队。永远别跟 Google 对赌。大家又都回到了编程上，编程 agent 是 AI 的杀手级应用。另外，Muse Wonder 和 Gemini Argon 前后脚发布，提醒你个人和公司都应该保持不绑定某个模型。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1841</span>
+      <a href="https://x.com/rauchg/status/2110044152482365747" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「过去一周我们在 Box AI 复杂工作评测上测试了 Gemini 4 Argon，比 Gemini 3.1 Pro 提高了 14 个百分点。它会更努力地把任务做完，不会在离目标还差一截的地方停下。比如一份能源报告要标出电表数据缺口，Argon 每次都能发现数据中心的智能电表日志在 11 月中断了，3.1 Pro 经常漏掉，还会说日志是完整的。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 376</span>
+      <a href="https://x.com/levie/status/2110046686198550539" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · CEO, Every</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Gemini 4 Argon 在我们的「资深工程师」基准任务上表现很吃力，只拿到 21%，远低于 Sol 6，甚至低于 Muse。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 235</span>
+      <a href="https://x.com/danshipper/status/2110056016872427944" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space · AI Engineer</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「很多人谈 SaaS 已死，但大多停在理论上。我们拿一个真实的、每年 4.3 万美元的 SaaS，办了一场全球黑客松，要求一个周末复刻出来，用 AI 和真人一起评测。72 份提交、大量人工评测、约 1000 亿 token 之后，结果在这里：中等复杂度的 SaaS 还有哪些难点。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 86</span>
+      <a href="https://x.com/swyx/status/2110065576764686421" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-10-14 · Product 星期三</span>
+  <span>大雨 × 小苇 · 明日：健康星期四</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

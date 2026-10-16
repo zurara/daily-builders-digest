@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-16",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "2026-10-16 今日快报",
+    "html": "episodes/2026-10-16.html",
+    "mp3": "episodes/2026-10-16.mp3",
+    "headlines": []
+  },
+  {
     "date": "2026-10-15",
     "dow": 4,
     "topic": "Health",

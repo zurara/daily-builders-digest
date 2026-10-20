@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-20 · 机器人星期二">
+<meta property="og:description" content="Kodama 林业机器人融资 700 万美元 · Laplace 用 AI 测试机器人 · RoboBusiness 第 20 年开幕 · OpenAI 人形机器人（旧消息）">
+<title>Daily Builders Digest · 2026-10-20 · 机器人星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
+  <div class="header-title">ROBOTICS<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-20</span>
+    <span>🧭 机器人星期二</span>
+    <span>◇ 先让人在回路里，再慢慢撤出来</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Kodama · 林业机器人融资 700 万美元 · 累计 1400 万</span>
+    <span class="ticker-item"><span class="dot">●</span>先遥控、再自主 · 每台每天约 1 TB 训练数据</span>
+    <span class="ticker-item"><span class="dot">●</span>过去 6 个月搬运 10 万多吨木材</span>
+    <span class="ticker-item"><span class="dot">●</span>Laplace Intelligence · 用 AI agent 给机器人做红队测试</span>
+    <span class="ticker-item"><span class="dot">●</span>底层是后训练的 NVIDIA Cosmos · 已盈利</span>
+    <span class="ticker-item"><span class="dot">●</span>RoboBusiness 2026 今日开幕 · 第 20 年 · 圣克拉拉</span>
+    <span class="ticker-item"><span class="dot">●</span>OpenAI 人形机器人 2027 年演示 · 原话出自 9 月</span>
+    <span class="ticker-item"><span class="dot">●</span>Kodama · 林业机器人融资 700 万美元 · 累计 1400 万</span>
+    <span class="ticker-item"><span class="dot">●</span>先遥控、再自主 · 每台每天约 1 TB 训练数据</span>
+    <span class="ticker-item"><span class="dot">●</span>过去 6 个月搬运 10 万多吨木材</span>
+    <span class="ticker-item"><span class="dot">●</span>Laplace Intelligence · 用 AI agent 给机器人做红队测试</span>
+    <span class="ticker-item"><span class="dot">●</span>底层是后训练的 NVIDIA Cosmos · 已盈利</span>
+    <span class="ticker-item"><span class="dot">●</span>RoboBusiness 2026 今日开幕 · 第 20 年 · 圣克拉拉</span>
+    <span class="ticker-item"><span class="dot">●</span>OpenAI 人形机器人 2027 年演示 · 原话出自 9 月</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 机器人星期二 · 先让人在回路里，再慢慢撤出来</span>
+  </div>
+  <audio controls src="2026-10-20.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 人还在回路里</div>
+    <div class="feature-show-name">TELEOP<br>RED TEAM<br><span style="color:#dd1111">SHOW FLOOR</span></div>
+    <div class="feature-ep-title">林业机器人先遥控再自主，<br>测试公司用 AI 找机器人的毛病</div>
+    <div class="feature-guest">Kodama · Laplace Intelligence · RoboBusiness 2026 · OpenAI · 2026-10-17 / 10-20</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这周的机器人新闻里，人都还在回路里。<strong>Kodama 先让人远程开集材机，每天攒 1 TB 数据，再一点点加自主；Laplace 让 AI agent 在仿真里找边缘案例，最后要说服的是保险和监管。</strong>OpenAI 的人形机器人这周被大量转载，但原话出自九月。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Kodama</span><span class="tag">Teleoperation</span><span class="tag">Forestry</span><span class="tag">Laplace Intelligence</span><span class="tag">Red Teaming</span><span class="tag">NVIDIA Cosmos</span><span class="tag">RoboBusiness 2026</span><span class="tag">OpenAI Humanoid</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Kodama · 10/19</div><div class="stat-value">融资 700 万美元 · 6 个月搬运 10 万多吨木材 · 每天约 1 TB 数据</div></div>
+      <div class="stat-item"><div class="stat-label">Laplace Intelligence · 10/19</div><div class="stat-value">AI agent 自动设计边缘案例 · 已有收入并小幅盈利</div></div>
+      <div class="stat-item"><div class="stat-label">RoboBusiness · 10/20–10/21</div><div class="stat-value">第 20 年 · 1600+ 人 · 40+ 场分论坛 · 五条主线</div></div>
+      <div class="stat-item"><div class="stat-label">OpenAI · 10/19 转载</div><div class="stat-value">2027 年演示 · 原话出自 9/3 播客和 9/12 Fortune 采访</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">周二好，欢迎回到每日快报。今天是十月二十号，机器人星期二。上周我们讲的是机器人开始干无聊的活：搬箱子、补货、写工具链。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周的新闻有一个共同点：人还在回路里。第一条是一家做林业机器人的公司 Kodama 融了七百万美元，它的路线是先远程遥控，再一点点加自动驾驶。第二条是一家叫 Laplace Intelligence 的公司，用 AI agent 在仿真里专门找机器人和自动驾驶的毛病。第三条是 RoboBusiness 今天在加州圣克拉拉开幕，今年是第二十年。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第四条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条是 OpenAI 要做人形机器人。这个周末很多媒体在报，但我先说清楚：这不是新消息。Altman 的原话是九月份说的。我们最后讲它，也讲一下为什么它又被翻出来。</div></div>
+</div>
+<div class="section-label">一 · Kodama 融资七百万美元，先遥控、再自主</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条。十月十九号，Kodama Systems 宣布融资七百万美元，由 Konvoy Ventures 和 Breakwater Ventures 领投，Breakthrough Energy Ventures 等跟投。加上这一轮，Kodama 一共融了一千四百万美元。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">做林业的机器人，具体干什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在主要是集材机，英文叫 skidder。树砍倒以后，集材机用一个大抓斗把树抓起来，拖到装车的地方。Kodama 给这种车加上远程操作和监督式自主驾驶。它的系统已经在美国东南部的商业伐木场里用了，过去六个月搬了十万多吨木材，每天在工地上跑十到十四个小时。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么是伐木？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为招不到人。CEO Merritt Jenkins 说，一个二十多岁的年轻人想当伐木工，早上五点半就得到工地，四点多就要出门，然后在驾驶室里坐九到十个小时，一路压过树桩、石头和车辙。他们见过有的伐木公司一年换了八个集材机司机。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那远程操作能解决什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两件事。一是人可以不坐在驾驶室里，安全很多。他们的员工说，每个伐木工都有一个认识的人翻车或者被飞出来的树砸到的故事。二是数据。Jenkins 说，每天远程操作一台机器，大约产生一 TB 的训练数据。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一 TB 一天。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是这条新闻里我觉得最重要的一句话。他说两年半前，他们明确选了一条路：先做遥控，再一点点加自动化，而不是先做自动驾驶、遥控只当故障兜底。他说事实证明这个选择是对的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟人形机器人公司现在的做法其实一样。都是先让人遥控，拿数据，再训模型。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，区别是 Kodama 的遥控已经在挣钱。人形机器人很多是专门雇人在实验室里做示范动作，花钱采数据。Kodama 是客户付钱让它干活，数据是副产品。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有别的值得说的吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有一点。Kodama 跟三大林业设备厂商里的两家直接集成，不是做后装套件。Jenkins 说跟原厂合作，可以直接用机器上已有的传感器和故障检测。他还对比了一下工程机械：卡特彼勒这类厂商的系统是封闭的，外人没法直接合作，所以那边多数只能做后装。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以林业反而比工地更容易做自动化。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">至少在接口这件事上是。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.therobotreport.com/kodama-raises-7m-bring-robotics-forestry/" target="_blank">Kodama raises $7M to bring robotics to forestry</a></span>
+</div>
+<div class="section-label">二 · Laplace Intelligence，用 AI 测 AI</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。TechCrunch 十月十九号报道了一家叫 Laplace Intelligence 的初创公司。它是密歇根大学孵化出来的，总部在安娜堡，做的事情叫自动化红队测试：故意想办法让机器人和自动驾驶系统出错，在它们上路之前把问题找出来。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">怎么找？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两部分。第一部分是一个从真实世界重建出来的仿真环境，底层是在英伟达 Cosmos 世界模型上做了后训练。给它一张街景图，再结合真实地图数据，就能生成一条比例正确的街道。开发者可以用文字改场景，比如加上下午的车流。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二部分？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二部分是这家公司真正要卖的东西：一个 AI agent，自动去设计那些少见、刁钻的场景，也就是边缘案例。CEO Howie Sun 说，这个 agent 可以从新闻、从警察的事故报告里找素材，主动去挑战被测的自动驾驶系统。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">仿真里的其他车会躲吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">会。演示的时候，Sun 让被测车辆故意转进对向车道，迎面那辆车让开了。很多生成式世界模型里，车会直接穿过去。他说这是一个交互式的仿真，里面每个参与者都会对别人的动作做出反应。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">生意怎么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">已经有收入，而且小有盈利。大部分钱来自自动驾驶：客户有德州的自动驾驶卡车公司 Bot Auto，还有一家日本大车厂。他们也在跟几家做仓库人形机器人的公司做早期合作。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么人形机器人更需要这个？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Sun 自己说了：通用机器人的数据更少，没人知道它在真实世界里会碰到什么边缘案例。自动驾驶至少有几十年的行车记录和事故数据。人形机器人进厨房、进仓库，没有这种积累。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那我的问题是：用 AI 测 AI，谁来测那个测试的 AI？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这个问题文章里没有回答。Sun 的说法是，长期目标是攒出一套客户、保险公司和监管机构都能信的证据。所以至少他知道，最后要说服的不是工程师，是保险和监管。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">竞争对手呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">最大的是 Applied Intuition，融了十二亿美元，估值一百五十亿。Laplace 现在的合同大多按项目收费，下一步是转成订阅收入，再去融资。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/10/19/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/" target="_blank">Laplace Intelligence red-teams robots and self-driving cars before they hit the real world</a></span>
+</div>
+<div class="section-label">三 · RoboBusiness 第二十年，今天开幕</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条是一个展会。RoboBusiness 2026 今天，十月二十号，在加州圣克拉拉会展中心开幕，开两天。主办方预计一千六百多人参加，四十多场分论坛，分五条线：AI、商业与开发、野外机器人、人形机器人、使能技术。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有什么值得盯的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三场。第一场是今天早上的开幕主题演讲，题目叫「机器人的下一个二十年」。台上是三个人：Robust AI 的联合创始人 Rodney Brooks，Agility Robotics 的联合创始人 Jonathan Hurst，还有伯克利的 Ken Goldberg。主办方说演讲最后会有一个特别宣布，还没说是什么。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Brooks 一直对人形机器人很冷淡。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，他公开写过好几次，说人形机器人的灵巧手离实用还很远。Hurst 那边的 Agility 是做人形机器人 Digit 的。这两个人放在一个台上，应该会有分歧。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二场？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天下午的主题演讲，叫「Beyond the Demo」，讲 AI 在生产环境里的机器人上怎么用。台上有亚马逊机器人、泰瑞达、ABB 的人。第三场是明天早上的「人形机器人现状」圆桌，Agility 的 CTO、Apptronik 的产品负责人、Persona AI，还有做仿生手的 PSYONIC 的 CEO。主办方给这场的说明是：今天人形机器人到底能做什么，还剩哪些技术和运营问题，早期工业部署学到了什么。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">感觉这几年展会的题目都在往「别只给我看演示」这个方向走。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。The Robot Report 自己的播客上上期，题目就是「为什么人形机器人的演示还是过不了泛化测试」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那我们下周可以看看这三场里到底说了什么。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，记下了。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.therobotreport.com/a-guide-to-everything-happening-at-robobusiness-2026/" target="_blank">A guide to everything happening at RoboBusiness 2026</a></span>
+</div>
+<div class="section-label">四 · OpenAI 要做人形机器人，但这不是新消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。这个周末，Tech Times、India TV 等很多媒体都在报：OpenAI 确认要做自己的人形机器人，2027 年会有一个演示。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">你开头说这不是新消息。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。Tech Times 那篇自己写了时间线。九月三号，Altman 在 Sources 播客上被问到 OpenAI 的机器人会不会包括人形，他说：「我们肯定会做人形，也会做别的形态。」九月十二号，Fortune 发了对他的采访，他说：「2027 年我们会有一个很酷的演示。」这些都是一个多月以前的话。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那为什么现在又被报出来？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我没找到一个明确的触发事件。可能是 OpenAI 的招聘页面上机器人岗位变多了，有报道说是二十七个；也可能就是一轮转载。所以这条我只讲两件确定的事。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">哪两件？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一，OpenAI 到现在没有公布这台机器人长什么样、能干什么、什么时候卖、找谁代工。只有一个时间点：2027 年演示。Altman 自己也说，人形机器人在街上常见还要好几年。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二，这件事改变了 OpenAI 跟别的机器人公司的关系。Figure 在 2025 年二月就结束了跟 OpenAI 的合作，当时 CEO Brett Adcock 的理由是大模型越来越聪明、也越来越同质化，Figure 必须有自己的模型。OpenAI 2023 年领投过挪威的 1X。现在 OpenAI 自己做整机，1X 就要考虑：继续用一个竞争对手的模型，还是自己做。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟前面三条连起来看，OpenAI 缺的是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我觉得是 Kodama 说的那个东西：每天一 TB、有人付钱的真实操作数据。Altman 说机器人的「大脑」比外形重要。但训练大脑的数据，现在在那些已经在干活的机器人手里。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techtimes.com/articles/329197/20261019/openai-confirms-humanoid-robot-2027-demo-competing-companies-it-once-backed.htm" target="_blank">OpenAI Confirms Humanoid Robot With 2027 Demo, Competing With Companies It Once Backed</a></span>
+</div>
+<div class="section-label">关注建造者</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后是关注建造者。今天 follow-builders 抓到的推文里，还是没有专门讲机器人的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，我挑了三条能跟今天对上的。第一条是 Thibault Sottiaux，OpenAI 做 Codex 的，三千八百多赞。他说 OpenAI 团队跟 OpenCode 一起，让那些也是 OpenAI API 客户的 OpenCode 用户恢复了使用，被攻击盗刷的额度全部退还。他还说，可以申请他们一个叫 Daybreak Blue 的防御用安全配置，「别等出了事才来」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Laplace 是一个意思。先找漏洞，别等出事。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条是 Aaron Levie，Box 的 CEO。他说 agent 集群会是一件大事，因为很多工作——研究、数据处理、跑测试——过去受限于人能投入的时间，现在可以并行，唯一的参数就是你投入多少算力。他点名的领域里有一个是 QA 测试。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Laplace 那个找边缘案例的 agent，就是这种算力换测试覆盖率的思路。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第三条是 Thariq，Anthropic 做 Claude Code 的，一千四百多赞。他说他现在经常更愿意用 AI 写游戏里的一小部分，而不是真的去玩游戏，尤其是《英雄联盟》这种要动脑子的。他说不确定这对游戏意味着什么，但觉得很重要。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这条跟机器人有关系吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">关系比较远。我选它是因为 Laplace 的仿真也是一样的事：做一个世界，改规则，看里面的东西怎么反应。造世界本身成了工作的一部分。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">播客推荐今天是 The Robot Report Podcast 第 266 期，十月十六号上线。嘉宾是 WiBotic 的 CEO Ben Waters，讲机器人车队的「机会充电」：机器人在干活的间隙随时充一点，而不是排队等满电。新闻环节还讲了费城有人因为阻挡和抗议送货机器人被捕，以及一份 NHTSA 请愿书说特斯拉 Robotaxi 闯学校区域。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">充电这件事跟 Kodama 那句「每天跑十到十四小时」能对上。机器人要一直干活，电池就是瓶颈。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.therobotreport.com/why-opportunity-charging-is-winning-as-robot-fleets-scale/" target="_blank">The Robot Report Podcast · Why opportunity charging is winning as robot fleets scale</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的问题留给大家：如果一份工作先由人远程操作、慢慢交给机器，你觉得哪一步该由人说「可以撤了」？是看数据，看保险公司，还是看监管？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们下周二见。今天是十月二十号，这里是每日快报。</div></div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本期要点</div>
+  <div class="insight-title">人还在回路里</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>Kodama 两年半前选了先遥控、再加自主。遥控已经在挣钱，每台机器每天约产生 1 TB 训练数据。它与三大林业设备厂商中的两家直接集成。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Laplace 用后训练的 NVIDIA Cosmos 重建真实场景，再用 AI agent 自动设计边缘案例。收入主要来自自动驾驶，人形机器人合作还在早期。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>RoboBusiness 今天开幕，值得看的三场：开幕主题演讲（Brooks / Hurst / Goldberg）、「Beyond the Demo」、明天的「人形机器人现状」圆桌。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>OpenAI 人形机器人：只有 2027 年演示这一个时间点，没有设计、能力、价格或代工方信息。原话出自九月。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:09。今天抓到的推文里没有专门讲机器人的，下面选的是跟今天话题能对上的几条。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">The Robot Report Podcast · 2026-10-16</p>
+  <p class="pc-title">Episode 266 · Why Opportunity Charging Is Winning as Robot Fleets Scale</p>
+  <p class="pc-summary">嘉宾是 WiBotic 的 CEO Ben Waters，讲机器人车队的「机会充电」：机器人在干活的间隙随时充一点，而不是排队等满电。新闻环节讲了费城有人因阻挡、抗议送货机器人被捕，以及一份 NHTSA 请愿书称特斯拉 Robotaxi 闯学校区域。</p>
+  <a href="https://www.therobotreport.com/why-opportunity-charging-is-winning-as-robot-fleets-scale/" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex &amp; ChatGPT @OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们团队和 OpenCode 一起，让同时是 OpenAI API 客户的 OpenCode 用户恢复使用，被攻击盗刷的额度全部退还。也可以申请 Daybreak Blue，用我们面向防御的安全配置。别等到出了事才来找我们。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">对应 Laplace：先找漏洞，别等出事。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3,862</span>
+      <a href="https://x.com/thsottiaux/status/2112034063934742720" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「agent 集群会是一件大事。很多工作——研究、数据处理、跑测试——过去受限于人能投入的时间。agent 集群第一次让这些工作可以并行，理论上唯一的参数就是你投入多少算力。网络安全、生命科学、材料研究、交易、QA 测试，在模型够好以后都是受算力约束的问题。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">Laplace 用 agent 自动生成边缘案例，就是用算力换测试覆盖率。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 121</span>
+      <a href="https://x.com/levie/status/2112051081014649303" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TH</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code @AnthropicAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我发现我现在经常更愿意用 AI 写游戏里的一小部分，而不是真的去玩游戏，尤其是《英雄联盟》这种要动脑子的。我不太确定这对游戏意味着什么，但我觉得这很重要。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">关系较远。仿真测试也是同一件事：造一个世界，改规则，看里面的东西怎么反应。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,469</span>
+      <a href="https://x.com/trq212/status/2111945336537420259" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ℹ️ 本期内容基于媒体报道整理。Kodama 的数据（10 万吨木材、每天约 1 TB）来自公司说法，经 The Robot Report 转述；Laplace 的盈利与客户信息来自 TechCrunch 对 CEO 的采访；RoboBusiness 议程来自主办方 The Robot Report，开幕「特别宣布」内容发稿时未知；OpenAI 相关原话出自 2026 年 9 月 3 日 Sources 播客和 9 月 12 日 Fortune 采访，10 月 19 日的报道是转载，「27 个机器人岗位」为媒体说法。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.therobotreport.com/kodama-raises-7m-bring-robotics-forestry/" target="_blank"><span class="src-icon">LINK</span><span>Kodama raises $7M to bring robotics to forestry</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/10/19/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/" target="_blank"><span class="src-icon">LINK</span><span>Laplace Intelligence red-teams robots and self-driving cars before they hit the real world</span></a>
+  <a class="source-link" href="https://www.therobotreport.com/a-guide-to-everything-happening-at-robobusiness-2026/" target="_blank"><span class="src-icon">LINK</span><span>A guide to everything happening at RoboBusiness 2026</span></a>
+  <a class="source-link" href="https://techtimes.com/articles/329197/20261019/openai-confirms-humanoid-robot-2027-demo-competing-companies-it-once-backed.htm" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Confirms Humanoid Robot With 2027 Demo, Competing With Companies It Once Backed</span></a>
+  <a class="source-link" href="https://www.indiatvnews.com/technology/news/sam-altman-confirms-humanoid-robot-plans-says-demo-could-arrive-in-2027-2026-10-19-1057348" target="_blank"><span class="src-icon">LINK</span><span>Sam Altman confirms humanoid robot plans, says demo could arrive in 2027</span></a>
+  <a class="source-link" href="https://www.therobotreport.com/why-opportunity-charging-is-winning-as-robot-fleets-scale/" target="_blank"><span class="src-icon">LINK</span><span>The Robot Report Podcast · Why opportunity charging is winning as robot fleets scale</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2112034063934742720" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux · @thsottiaux</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2112051081014649303" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2111945336537420259" target="_blank"><span class="src-icon">X</span><span>Thariq · @trq212</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-10-20 · 机器人星期二</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

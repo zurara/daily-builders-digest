@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-06",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "GPT-6 Cyber：948 个能用的提权漏洞 · OpenAI 收购 Pierre：代理写的代码放在哪",
+    "html": "episodes/2026-11-06.html",
+    "mp3": "episodes/2026-11-06.mp3",
+    "headlines": [
+      "GPT-6 Cyber：948 个能用的提权漏洞",
+      "OpenAI 收购 Pierre：代理写的代码放在哪",
+      "数据中心上了选票，OpenAI 发了一份承诺"
+    ]
+  },
+  {
     "date": "2026-11-05",
     "dow": 4,
     "topic": "Health",

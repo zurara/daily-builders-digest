@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-03 · 机器人星期二">
+<meta property="og:description" content="Agility SPAC 投票通过 · 北美 Q3 机器人订单涨 25% · Meta × 傅利叶家用人形机器人 Max · 英国首份家用人形机器人保险">
+<title>Daily Builders Digest · 2026-11-03 · 机器人星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
+  <div class="header-title">ROBOTICS<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-03</span>
+    <span>🧭 机器人星期二</span>
+    <span>◇ 机器人要上市，也要上保险</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Agility × Churchill XI · 11/2 股东投票通过 · 赞成票 84% 以上</span>
+    <span class="ticker-item"><span class="dot">●</span>Agility 预计 11/4 完成合并 · 11/5 起纳斯达克交易 · 代码 AGLT</span>
+    <span class="ticker-item"><span class="dot">●</span>Agility 总募资约 4.65 亿美元 · 原计划 6.2 亿以上</span>
+    <span class="ticker-item"><span class="dot">●</span>A3 · 北美 Q3 机器人订单 10,989 台 · 同比 +24.8%</span>
+    <span class="ticker-item"><span class="dot">●</span>半导体与电子订单 +97.6% · 汽车零部件 +90.4% · 协作机器人 +56%</span>
+    <span class="ticker-item"><span class="dot">●</span>Meta × 傅利叶 · 家用人形机器人原型 Max · 约 3 个月造出（据 The Information）</span>
+    <span class="ticker-item"><span class="dot">●</span>英国首份家用人形机器人保险 · Adrian Flux × 东京海上 HCC</span>
+    <span class="ticker-item"><span class="dot">●</span>Foundry Robotics · A 轮 1 亿美元 · 自建无人装配工厂</span>
+    <span class="ticker-item"><span class="dot">●</span>Agility × Churchill XI · 11/2 股东投票通过 · 赞成票 84% 以上</span>
+    <span class="ticker-item"><span class="dot">●</span>Agility 预计 11/4 完成合并 · 11/5 起纳斯达克交易 · 代码 AGLT</span>
+    <span class="ticker-item"><span class="dot">●</span>Agility 总募资约 4.65 亿美元 · 原计划 6.2 亿以上</span>
+    <span class="ticker-item"><span class="dot">●</span>A3 · 北美 Q3 机器人订单 10,989 台 · 同比 +24.8%</span>
+    <span class="ticker-item"><span class="dot">●</span>半导体与电子订单 +97.6% · 汽车零部件 +90.4% · 协作机器人 +56%</span>
+    <span class="ticker-item"><span class="dot">●</span>Meta × 傅利叶 · 家用人形机器人原型 Max · 约 3 个月造出（据 The Information）</span>
+    <span class="ticker-item"><span class="dot">●</span>英国首份家用人形机器人保险 · Adrian Flux × 东京海上 HCC</span>
+    <span class="ticker-item"><span class="dot">●</span>Foundry Robotics · A 轮 1 亿美元 · 自建无人装配工厂</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 机器人星期二 · 机器人要上市，也要上保险</span>
+  </div>
+  <audio controls src="2026-11-03.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 资本、工厂、家里</div>
+    <div class="feature-show-name">NASDAQ<br>FACTORY<br><span style="color:#dd1111">HOME</span></div>
+    <div class="feature-ep-title">Agility 拿到上市投票，<br>北美工厂多买了四分之一的机器人，<br>Meta 在上海造了一台家用原型</div>
+    <div class="feature-guest">Agility · A3 · Meta × Fourier · Adrian Flux · Foundry · 2026-10-28 / 11-02</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这周的机器人新闻分三个地方：<strong>资本市场、工厂、家里。</strong>Agility 的 SPAC 投票通过，但赎回之后募资从 6.2 亿降到约 4.65 亿美元；北美第三季度机器人订单同比涨了近 25%，增长来自半导体、汽车零部件和制药；Meta 据报道和傅利叶三个月造出家用人形机器人原型，英国已经有保险公司为家用人形机器人定价。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Agility Robotics</span><span class="tag">SPAC</span><span class="tag">AGLT</span><span class="tag">A3</span><span class="tag">Cobots</span><span class="tag">Meta Max</span><span class="tag">Fourier</span><span class="tag">Insurance</span><span class="tag">Foundry</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Agility SPAC · 11/2</div><div class="stat-value">赞成票 84%+ · 募资约 4.65 亿美元 · 11/5 上市</div></div>
+      <div class="stat-item"><div class="stat-label">A3 北美订单 · Q3</div><div class="stat-value">10,989 台 · 7.235 亿美元 · 台数 +24.8%</div></div>
+      <div class="stat-item"><div class="stat-label">Meta × 傅利叶 · 10/31 报道</div><div class="stat-value">约 1.5 米 · 约 48 公斤 · Jetson Thor · 不对外销售</div></div>
+      <div class="stat-item"><div class="stat-label">Foundry · 10/28</div><div class="stat-value">A 轮 1 亿美元 · 约 1.2 万平米装配工厂</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">周二好，欢迎回到每日快报。今天是十一月三号，机器人星期二。上周我们讲 GXO 把 Digit 从一个仓库扩到三个，结尾提了一句：Agility 正在通过 SPAC 上市。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周有结果了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有。十一月二号，SPAC 的股东投票通过了。这是第一条。第二条，美国自动化协会 A3 发布第三季度数据，北美工业机器人订单同比涨了将近百分之二十五。第三条，据 The Information 报道，Meta 和中国公司傅利叶一起造了一台家用人形机器人原型，叫 Max。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一条资本市场，一条工厂，一条家里。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。最后补两条稍早的：英国出了第一份给家用人形机器人的保险，还有一家叫 Foundry 的公司融了一亿美元，自己开无人装配工厂。</div></div>
+</div>
+<div class="section-label">一 · Agility 的 SPAC 投票通过，筹到的钱比计划少</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条。十一月二号，Churchill Capital Corp XI 开股东特别大会，投票批准和 Agility Robotics 合并。投出的票里百分之八十四以上赞成。按公告，交易预计十一月四号完成，五号起在纳斯达克交易，股票代码 AGLT。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/" target="_blank">Agility Robotics shareholders approve $2.5B humanoid SPAC</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">估值多少？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还是六月宣布时的数字：交易前股权价值二十五亿美元。但有一个数变了。六月的时候说总共能筹到六亿两千万美元以上，十月三十号的公告改成了大约四亿六千五百万。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.globenewswire.com/news-release/2026/10/30/3392148/0/en/agility-robotics-and-churchill-capital-corp-xi-announce-expected-gross-capital-raise-of-approximately-465-million-and-anticipated-closing-of-business-combination.html" target="_blank">Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">少了一亿五千多万。为什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">SPAC 有一个机制：股东投票时可以选择把钱拿回去，叫赎回。这次信托账户里赎回后只剩大约一亿六千四百万。另外两块是 Agility 已经收到的一亿，和富士康领投的大约两亿零一百万私募。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">也就是说，不少原来的 SPAC 股东选择拿钱走人，但富士康那部分没少。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">私募那部分基本还在。这也说得通：富士康是制造方，它投钱是为了以后有机器人可造、可用，跟只想短期赚一笔的股东想法不一样。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 Agility 这几天还有别的消息吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">十一月二号它又公布了一批客户信息。除了上周说的 GXO，还有三家制造业客户在做付费项目，公司没点名，只描述为一家年销量三百万辆以上的全球车企、一家全球最大之一的汽车零部件供应商、一家消费品制造商。另外说正在和三十多家潜在客户谈。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/11/02/agility-robotics-says-more-than-30-companies-considering-digit-humanoid-robot/106595/" target="_blank">Agility Robotics says more than 30 companies considering Digit humanoid robot</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">三十多家「在谈」，这个词很宽。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">很宽。Agility 自己也说了，之前公布的三亿多美元 Digit 5 多年订单，是「预计未来实现的价值」，要看合同节点和产品规格，不是现在的收入。Digit 5 要到 2027 年上半年才给早期客户，年底才全面供货。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以上市时卖的主要还是明年和后年。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。上市以后每个季度都要发财报，到时候我们就能看到实际交付了多少台。</div></div>
+</div>
+<div class="section-label">二 · 北美机器人订单第三季度涨了四分之一</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条是数据。十一月二号，A3，也就是美国自动化促进协会，发布第三季度北美机器人订单：一万零九百八十九台，金额七亿两千三百五十万美元。台数同比涨百分之二十四点八，金额涨百分之二十六点一，是今年最强的一个季度。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/11/02/north-american-robot-orders-increase-25-percent-in-third-quarter-of-2026/106606/" target="_blank">North American robot orders increase 25 percent in third quarter of 2026</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">谁在买？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">涨得最多的是半导体和电子，台数涨了百分之九十七点六，差不多翻倍。汽车零部件涨了百分之九十点四。塑料橡胶涨六成多，生命科学和制药涨近四成。反过来，食品和消费品跌了百分之二十三点七。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">半导体涨那么多，跟 AI 有关吧。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">A3 的解释是美国在继续投半导体制造，AI 带动电子产品需求，还有制药生产回流美国。还有一点值得注意：整车厂的订单上半年在跌，第三季度才转正，涨了百分之七点五，但前九个月加起来还是比去年少百分之十七。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">以前工业机器人最大的买家就是汽车厂。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，所以 A3 的副总裁 Alex Shikany 说，这个季度重要的不是涨了多少，是涨得很分散，市场在往更多行业铺开。还有一个数：协作机器人，就是能在人旁边工作的那种，订单涨了百分之五十六，占所有台数的百分之十六点七。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟人形机器人比起来，这些数字都很具体。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。一万多台，一个季度。人形机器人那边，大家还在讨论几百台、几千台。这些协作机器人和机械臂才是现在工厂里真正在装的东西。</div></div>
+</div>
+<div class="section-label">三 · Meta 和傅利叶造了一台家用人形机器人</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，先说清楚：这是报道，Meta 没有正式发布。十月三十一号 The Information 报道，Meta 和上海的人形机器人公司傅利叶合作，做了一台原型机，内部叫 Max，大约三个月做出来。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://za.investing.com/news/stock-market-news/meta-builds-humanoid-robot-with-chinas-fourier-as-home-robot-push-expands-report-4540821" target="_blank">Meta builds humanoid robot with China&#x27;s Fourier as home robot push expands: report</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">长什么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道说大约一米五高，重约一百零六磅，四十八公斤左右。用英伟达的 Jetson Thor 芯片，有一块屏幕可以模仿面部表情，有扬声器，手是五指的，可以拿小东西。八月底在 Meta 内部的机器人峰会上给部分员工演示过。九月开始做第二代 Max 2，会改躯干和手，加一个投影仪，加传感器帮它上下楼梯。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Meta 为什么要做家用机器人？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道的说法是，Meta 把人形机器人看成它的 AI 助手 Muse 的身体延伸，长期目标是帮人做家务。五月它还收购了一家做机器人行为模型的初创公司 Assured Robot Intelligence。但 Meta 对 The Information 说，和傅利叶的合作是内部研究，不打算卖这批机器人。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一家美国大公司，让负责机器人产品的副总裁去上海工厂待了快两个月。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道里确实有这个细节。我觉得这说明一件事：现在要快速做出一台人形机器人的硬件，中国的供应链是最快的路。三个月做出一台原型，在别的地方很难。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">但这也会是一个敏感的点。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">会。所以 Meta 强调是内部研究、不卖。这跟 Agility 正好对照：Agility 在俄勒冈自己建了工厂，说年产能可以到一万台，这次私募又是富士康领投。硬件从哪里来，会是这个行业接下来几年一直要回答的问题。</div></div>
+</div>
+<div class="section-label">补充两条：家用机器人的保险，自己开工厂的机器人公司</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">最后补两条，比七十二小时早一点。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，十月底，英国保险经纪 Adrian Flux 和东京海上 HCC 国际推出了英国第一份家用人形机器人保险，作为家财险的附加险。保三件事：机器人在家里造成的损坏，机器人自己的损坏，以及它出故障时把它安全关掉的费用。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.insurancebusinessmag.com/uk/news/property-insurance/adrian-flux-and-tmhcc-launch-uk-home-cover-for-humanoid-robots-595551.aspx" target="_blank">Adrian Flux and TMHCC launch UK home cover for humanoid robots</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">现在英国家里有人形机器人吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">基本没有。他们预计 2027 年开始进家庭。Adrian Flux 的总经理说，想先把「出了事谁负责」讲清楚。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 Meta 那条接上了。机器人还没进家门，保险先到了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。保险公司愿意定价，说明它们觉得这件事会发生。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，十月二十八号，加州 Emeryville 的 Foundry Robotics 宣布一亿美元 A 轮，Marlinspike 领投。它不卖机器人，自己开工厂，客户付钱让它组装产品，比如无人机、水下航行器、卫星和线束。这笔钱用来建一座约一万二千平方米的自动化装配工厂。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/10/31/foundry-robotics-raises-100-million-to-build-americas-first-autonomous-factory-for-assembly/106564/" target="_blank">Foundry Robotics raises $100 million to build &#x27;America&#x27;s first autonomous factory for assembly&#x27;</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">卖机器人不如自己用机器人干活收钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是它的赌注。公司没有给产能目标，也没有给更多工厂的时间表，所以现在还只能看方向。</div></div>
+</div>
+<div class="section-label">关注建造者</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后是关注建造者。今天抓到的推文里，有一条直接讲机器人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是 YC 的 Garry Tan，近三百个赞，原话只有一句：「实用机器人快来了。」推文里只有一个链接，我们看不到他指的是什么。他前一条推文是「YC 是硬科技的 YC」，将近五百赞，同样只有一个链接。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两条连起来看，YC 在往硬件那边站。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">可以这么读，但他没说细节，我们就不替他补了。第二条是 Box 的 CEO Aaron Levie。他说越来越多的岗位会变成这样：不再是 agent 帮我们干活，而是我们帮 agent 干活。每个人都会变成一个 agent 团队的经理，产出不再跟工作小时数挂钩。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Foundry 有点像。Foundry 的员工也是在管一个机器人工厂，而不是自己拧螺丝。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条是 Andrej Karpathy，三万六千多赞，今天最高。他周末用 Claude 做了一个叫 HackerTube 的小网站：把 Hacker News 二十年里四千三百万条评论筛一遍，找出被反复推荐的六千四百多个视频，大约两个小时做完。他说自己只做了三件手工的事：在谷歌云里建一个 API key，开一台服务器，买域名。其余全是 Claude 做的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">软件这边两个小时，硬件那边 Meta 做一台原型要三个月，还得派人去上海。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这就是今天几条新闻共同的背景。软件越来越快，机器人慢在硬件、供应链和真实世界的数据。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">播客推荐今天是 Unsupervised Learning 第九十五期，嘉宾是云计算平台 Modal 的 CEO。不是讲机器人的，但他提到，Modal 有不少机器人客户，比如 1X，用它训练机器人模型，批量处理视频。他还说现在 GPU 不是买不到，而是要看得更远、接受更高的价格和更长的合同，Modal 每周要谈两三笔算力交易。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/@RedpointAI" target="_blank">Unsupervised Learning · Ep 95: Modal CEO on the Future of Inference, the Chaos of the GPU Market &amp; Origins of the Sandbox Bet</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">机器人公司也在抢算力。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。造机器人要钱，训练机器人的模型也要钱。这大概也是 Agility 要上市的原因之一。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的问题留给大家：如果家里真来了一台人形机器人，你最想先确定的是它能干什么，还是出了事谁负责？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们下周二见。今天是十一月三号，这里是每日快报。</div></div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本期要点</div>
+  <div class="insight-title">机器人要上市，也要上保险</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>Churchill Capital Corp XI 股东 11 月 2 日以 84% 以上赞成票批准与 Agility 合并，预计 11 月 5 日以 AGLT 在纳斯达克交易。赎回后募资约 4.65 亿美元，低于 6 月预计的 6.2 亿以上；富士康领投的私募约 2.01 亿美元。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Agility 新披露三家未具名制造业付费客户和 30 多家潜在客户；3 亿多美元的 Digit 5 订单是「预计未来实现的价值」，Digit 5 要到 2027 年才全面供货。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>A3：北美 Q3 机器人订单 10,989 台、7.235 亿美元，台数同比 +24.8%。半导体电子 +97.6%，汽车零部件 +90.4%，协作机器人 +56%；整车厂前九个月仍比去年少 17%。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>据 The Information，Meta 和傅利叶约三个月造出家用人形机器人原型 Max，Max 2 九月开始开发；Meta 称是内部研究、不对外销售。英国已出现首份家用人形机器人保险。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Unsupervised Learning · 2026-10-28</p>
+  <p class="pc-title">Ep 95: Modal CEO on the Future of Inference, the Chaos of the GPU Market &amp; Origins of the Sandbox Bet</p>
+  <p class="pc-summary">Modal 的 CEO 说，现在 GPU 不是买不到，而是要看得更远、接受更高的价格和更长的合同，Modal 每周要谈两三笔算力交易，已经接入 25 家云。客户里有不少机器人公司，比如 1X，用 Modal 训练机器人模型、批量处理视频；Cognition 用它的沙箱跑强化学习。</p>
+  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President &amp; CEO @ycombinator</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「实用机器人快来了。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">推文只有一句话和一个链接，链接内容未能查看。同日另一条「YC 是硬科技的 YC」获 498 赞。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 296</span>
+      <a href="https://x.com/garrytan/status/2116941191526895975" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「越来越多的岗位会变成这样，不只是写代码。我们正在从 agent 帮我们把工作做得更好更快，转向我们帮 agent 做它们的工作。每个人都会变成一个 agent 团队的经理……你的产出将开始和工作小时数脱钩。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">对应 Foundry：员工管的是一座机器人工厂，不是自己拧螺丝。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 67</span>
+      <a href="https://x.com/levie/status/2117134917847093491" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AK</div>
+      <div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · 前 OpenAI / Tesla AI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「周末小项目：HackerTube。我让 Claude 把 Hacker News 20 年里的 4300 万条评论筛到 6454 个反复被推荐的视频，用 Opus 5.5 大约两小时。我只手动做了三件事：在谷歌云建 API key、开一台服务器、买域名。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">软件两小时，硬件原型三个月：机器人慢在硬件、供应链和真实数据。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 36,797</span>
+      <a href="https://x.com/karpathy/status/2116957135661945283" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ℹ️ 本期内容基于媒体报道和公司公告整理。Agility 投票结果和募资构成来自 The Robot Report 及双方 10 月 30 日公告，截至本期发布合并尚未完成；客户信息来自 Agility 说法，三家制造业客户未具名。A3 数据来自 Robotics &amp; Automation News 转述的协会发布。Meta × 傅利叶 的内容全部来自 The Information 报道（经 Investing.com 转述），Meta 未正式发布。Foundry 未公布产能目标。Garry Tan 的推文只有链接，内容未能查看。播客链接只有频道页。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/" target="_blank"><span class="src-icon">LINK</span><span>Agility Robotics shareholders approve $2.5B humanoid SPAC</span></a>
+  <a class="source-link" href="https://www.globenewswire.com/news-release/2026/10/30/3392148/0/en/agility-robotics-and-churchill-capital-corp-xi-announce-expected-gross-capital-raise-of-approximately-465-million-and-anticipated-closing-of-business-combination.html" target="_blank"><span class="src-icon">LINK</span><span>Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/11/02/agility-robotics-says-more-than-30-companies-considering-digit-humanoid-robot/106595/" target="_blank"><span class="src-icon">LINK</span><span>Agility Robotics says more than 30 companies considering Digit humanoid robot</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/11/02/north-american-robot-orders-increase-25-percent-in-third-quarter-of-2026/106606/" target="_blank"><span class="src-icon">LINK</span><span>North American robot orders increase 25 percent in third quarter of 2026</span></a>
+  <a class="source-link" href="https://za.investing.com/news/stock-market-news/meta-builds-humanoid-robot-with-chinas-fourier-as-home-robot-push-expands-report-4540821" target="_blank"><span class="src-icon">LINK</span><span>Meta builds humanoid robot with China&#x27;s Fourier as home robot push expands: report</span></a>
+  <a class="source-link" href="https://www.insurancebusinessmag.com/uk/news/property-insurance/adrian-flux-and-tmhcc-launch-uk-home-cover-for-humanoid-robots-595551.aspx" target="_blank"><span class="src-icon">LINK</span><span>Adrian Flux and TMHCC launch UK home cover for humanoid robots</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/10/31/foundry-robotics-raises-100-million-to-build-americas-first-autonomous-factory-for-assembly/106564/" target="_blank"><span class="src-icon">LINK</span><span>Foundry Robotics raises $100 million to build &#x27;America&#x27;s first autonomous factory for assembly&#x27;</span></a>
+  <a class="source-link" href="https://www.youtube.com/@RedpointAI" target="_blank"><span class="src-icon">LINK</span><span>Unsupervised Learning · Ep 95: Modal CEO on the Future of Inference, the Chaos of the GPU Market &amp; Origins of the Sandbox Bet</span></a>
+  <a class="source-link" href="https://x.com/garrytan/status/2116941191526895975" target="_blank"><span class="src-icon">X</span><span>Garry Tan · @garrytan</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2117134917847093491" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/karpathy/status/2116957135661945283" target="_blank"><span class="src-icon">X</span><span>Andrej Karpathy · @karpathy</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-03 · 机器人星期二</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

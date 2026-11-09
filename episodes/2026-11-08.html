@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-01 · 周日播客精选">
+<meta property="og:description" content="No Priors × Serval CEO Jake Stauch · 给 IT 部门的编程智能体 · 智能体越强，权限越收越紧">
+<title>周日播客精选 · 2026-11-08 · 虚拟细胞与实验室在环</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<body>
+
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">LAB IN<br><span>THE LOOP</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-08</span>
+    <span>🎙 周日播客精选</span>
+    <span>◇ 画地图 → 预测 → 指挥下一个实验</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track"><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Fabian Theis · 2026-11-06</span><span class="ticker-item"><span class="dot">●</span>画地图 → 预测 → 指挥下一个实验</span><span class="ticker-item"><span class="dot">●</span>每个细胞 = 一个两万维的向量</span><span class="ticker-item"><span class="dot">●</span>细胞类型预测：逻辑回归仍接近最好</span><span class="ticker-item"><span class="dot">●</span>Arc 虚拟细胞挑战赛：指标可被钻空子</span><span class="ticker-item"><span class="dot">●</span>scConcert · 3.5 亿细胞 · 约 1 亿参数 · 16 个物种</span><span class="ticker-item"><span class="dot">●</span>Lab Compass · 反向生成模型 · 3–4 轮实验室在环</span><span class="ticker-item"><span class="dot">●</span>Legora · 看不到数据，就自己造评测环境</span><span class="ticker-item"><span class="dot">●</span>Anthropic S-1 · Latent Space 每周跟进</span><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Fabian Theis · 2026-11-06</span><span class="ticker-item"><span class="dot">●</span>画地图 → 预测 → 指挥下一个实验</span><span class="ticker-item"><span class="dot">●</span>每个细胞 = 一个两万维的向量</span><span class="ticker-item"><span class="dot">●</span>细胞类型预测：逻辑回归仍接近最好</span><span class="ticker-item"><span class="dot">●</span>Arc 虚拟细胞挑战赛：指标可被钻空子</span><span class="ticker-item"><span class="dot">●</span>scConcert · 3.5 亿细胞 · 约 1 亿参数 · 16 个物种</span><span class="ticker-item"><span class="dot">●</span>Lab Compass · 反向生成模型 · 3–4 轮实验室在环</span><span class="ticker-item"><span class="dot">●</span>Legora · 看不到数据，就自己造评测环境</span><span class="ticker-item"><span class="dot">●</span>Anthropic S-1 · Latent Space 每周跟进</span></div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · 虚拟细胞与实验室在环</span>
+  </div>
+  <audio controls src="2026-11-08.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · Latent Space</div>
+    <div class="feature-show-name">LATENT SPACE<br><span style="color:#dd1111">× FABIAN THEIS</span></div>
+    <div class="feature-ep-title">Controlling Biology —<br>Fabian Theis, Helmholtz Munich</div>
+    <div class="feature-guest">Latent Space AI for Science × Fabian Theis · 2026-11-06</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Scanpy 和 AnnData 的作者讲虚拟细胞的现状：数据终于够了，但简单任务上<strong>线性基线仍然很强</strong>，比赛指标可以被钻空子。他认为下一步是让模型<strong>决定下一个实验做什么</strong>，并用反向生成模型 Lab Compass 做了三到四轮实验室在环。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">虚拟细胞</span>
+      <span class="tag">扰动预测</span>
+      <span class="tag">线性基线</span>
+      <span class="tag">评估指标</span>
+      <span class="tag">世界模型</span>
+      <span class="tag">flow matching</span>
+      <span class="tag">实验室在环</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><span class="stat-label">单次实验规模</span><span class="stat-value">1000 万个细胞转录组</span></div>
+      <div class="stat-item"><span class="stat-label">scConcert 模型</span><span class="stat-value">3.5 亿细胞 · 约 1 亿参数</span></div>
+      <div class="stat-item"><span class="stat-label">Lab Compass</span><span class="stat-value">3–4 轮实验室在环</span></div>
+      <div class="stat-item"><span class="stat-label">计算健康中心</span><span class="stat-value">约 45 位组长 · 500–600 人</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本周几集的共同点</div>
+  <div class="insight-title">谁定义了指标，谁就掌握了改进的方向</div>
+  <div class="insight-item"><span class="insight-num">01</span><span><strong>先打败基线。</strong>Theis：细胞类型预测里，逻辑回归仍接近最好；扰动预测的简单场景里，线性模型一直很强。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span><strong>指标是人的工作。</strong>Theis：以后智能体会去试所有算法组合，留给人的最重要工作可能是定义指标。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span><strong>看不到数据，就造环境。</strong>Legora：三个工程师加三个律师，照着客户的工作搭模拟评测环境。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span><strong>评测决定删什么。</strong>Garry Tan：新模型更强，靠评测循环删掉不再需要的技能。</span></div>
+</div>
+
+<div class="script-container">
+<p class="section-label">◈ 本周主推 · Latent Space × Fabian Theis</p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《Latent Space》的 AI for Science 系列，十一月六号上线，五十一分钟。嘉宾是 Fabian Theis，他在德国 Helmholtz 慕尼黑研究中心负责计算健康中心，单细胞分析里最常用的开源工具 Scanpy 和 AnnData 就出自他的实验室。题目叫 Controlling Biology，控制生物学。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/" target="_blank">Controlling Biology - Fabian Theis, Helmholtz Munich · Latent Space</a></span></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周 AI 圈的大新闻明明是 Anthropic 的 S-1，你为什么挑一集讲细胞的？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">两个原因。第一，S-1 那集一百零二分钟，我们这次没有拿到文字稿，不想凭标题去讲。第二，这一集讲的问题其实跟做智能体的人很接近：你有了一个能预测的模型，下一步怎么让它去决定该做什么实验，而且一轮一轮地改进。这跟大家在软件里做的评测循环是同一个结构。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">先从最基础的说吧。"虚拟细胞"到底是什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Theis 自己的定义是：给一个细胞施加各种干扰，你能不能预测它会变成什么样。人体每个细胞的基因组几乎一样，但不同细胞从基因组上读出来的东西不一样。读出来的信使 RNA 叫转录本，一个细胞的全部转录本叫转录组。在人身上大约两万个基因，所以<strong>每个细胞可以表示成一个两万维的向量</strong>，大部分是零，剩下的是每种转录本的数量。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">主持人有个比喻我觉得挺好懂。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，Brandon Anderson 说，DNA 像一本菜谱，每个细胞是一道菜，转录组分析就是拿到一道菜，倒推里面放了哪些配料。Theis 说他家孩子都是吃货，以后就用这个比喻了。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那"干扰"是什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">最硬的一种是用 CRISPR 把一个基因敲掉，看细胞怎么变。但 Theis 说他理解的干扰范围要大得多：旁边细胞发来的信号、激素、药物、培养液的配方，甚至人与人之间的基因差异，都算。<strong>干扰空间就是"所有能对细胞做的事"的输入空间。</strong>一个好的虚拟细胞模型应该能吃下所有这些输入，以及它们的组合。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这个概念不新吧？为什么现在又热起来了？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说最主要的原因是数据。他的实验室 2019 年就做过一个叫 scGen 的扰动预测模型，在隐空间里做近似线性的平移，效果还不错。但那时候的问题在于，细胞的数量很多，<strong>干扰的种类很少</strong>，常常只有"对照组和病人组"两种。</p><p class="script-text">现在变了。他提到 Parse Biosciences 有一次实验，<strong>一次测了一千万个细胞的转录组</strong>。现在有人拿一百种细胞系，每种都做全基因组敲除，或者一次加上千种药物。干扰这一维也开始变得很密，才有条件去做像样的扰动预测。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">节目开头也提到，Biohub 刚宣布了一个十八亿美元的合作。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">主持人说的是 Biohub 跟美国能源部、NIH、Meta 和 Google 合作，收集并开放多尺度的生物数据，用来做新一代虚拟细胞。Theis 说这个项目跟人类细胞图谱联系很紧。他认为药企会重新关注虚拟细胞，因为<strong>药企现在非常需要按细胞类型、按具体情境去做筛选，而现在的规模还做不到。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我知道这个领域有个尴尬的事：花哨的大模型，有时候打不过线性模型。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这一段我觉得是整集最值得听的。Theis 很直接地讲了这件事。</p><p class="script-text">最简单的任务，给一个转录组，判断它是什么细胞类型。到今天，<strong>接近最好的方法之一还是逻辑回归。</strong>他们五六年前发过一篇论文，标题就叫"细胞类型预测不需要深度学习"。在同一个器官里这是对的；跨器官时情况复杂一些，非线性模型才开始有优势。</p><p class="script-text">扰动预测也一样。一开始大家对大规模基础模型很兴奋，他说"可能买得有点多了"，然后就是清醒期，一批论文出来说近似线性的模型也做得不错。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">节目里提到 Arc Institute 那个比赛。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，Arc 办了一个"虚拟细胞挑战赛"。主持人说那是泼在大家脸上的一杯冷水。Theis 的说法是，这个比赛定的指标不够针对单细胞数据，<strong>可以被钻空子</strong>。去掉钻空子的提交以后，真正赢的是一个基于 flow matching 的非线性模型。</p><p class="script-text">他自己参与的 Open Problems 联盟的做法是：<strong>参赛者除了交模型，还要交自己的评估指标</strong>，用来量化那些组织者事先没想到的细节。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">所以结论是线性模型赢了，还是非线性模型赢了？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他的回答比较细。少量细胞系、单个基因敲除、效果又很弱的时候，复杂模型容易过拟合，<strong>线性基线一直很强</strong>。问题一难，非线性模型才有用。他举了自己的 Nicheformer：给一个细胞的转录组，去预测它旁边那些细胞的状态。因为细胞之间一直在通信，一个细胞里会留下邻居的痕迹。这个任务就需要更强的非线性模型。</p><p class="script-text">他还说了一句我很想记下来的话：以后会有智能体去试所有能想到的算法组合，<strong>留给人的、最重要的想法，可能就是怎么定义指标。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这听起来就是做 AI 产品的人天天在吵的事：先有评测，再谈模型。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，结构一模一样。还有一个相似点：<strong>规模定律。</strong>Theis 说早期那批生物基础模型的论文，最大的缺陷是没有认真展示规模定律，没有证明你真的需要这么大的复杂度。现在审稿人看得很严。</p><p class="script-text">他们自己的对比学习模型叫 scConcert，论文里训练到三千万个细胞左右，Hugging Face 上已经放了一个<strong>三亿五千万个细胞、大约一亿参数</strong>的版本，覆盖十六个物种，他说已经看到不错的规模化表现。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那有了好的表示，就有了虚拟细胞？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说不是。基础模型学到的是"状态空间"，也就是细胞可能长什么样。<strong>虚拟细胞需要的是 f(x, a)</strong>：当前状态 x，加上一个动作 a，预测下一个状态 x'。这就是机器学习里说的世界模型。他们的做法是先用 scConcert 学表示，再在上面放一个生成模型，用 flow matching 推演"施加某个干扰之后细胞会怎么走"。这个叫 CellFlow，刚被《Nature Methods》接收。他强调这种方法效果好，但<strong>很依赖隐空间的质量</strong>。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那标题里的"控制"是什么意思？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这是他认为最激动人心的方向。他把这个领域分成三步：<strong>先是画地图</strong>，就是人类细胞图谱；<strong>然后是预测</strong>，就是世界模型；<strong>现在可以开始指挥下一个实验。</strong></p><p class="script-text">他说得很坦白：以前很多论文最后就是一个模型、一张概念图，加一点验证，然后就开始下一个项目了。学到了一点东西，但不是持续学习。</p><p class="script-text">他们这周放出了一个叫 Lab Compass 的东西，是一个<strong>反向生成模型</strong>：有了前向的世界模型以后，你告诉它想让细胞到达什么状态，它告诉你该做什么。他们跟剑桥大学一个做造血研究的实验室合作，<strong>做了三到四轮"实验室在环"</strong>，每轮都用新数据改进模型。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">难点在模型还是在人？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说一大半难点在人。模型预测说"你去做一个新细胞系，加这几样奇怪的东西"，实验的人要花几周甚至几个月去做，凭什么信你？如果是设计分子，风险小一点；换成细胞实验，<strong>人很容易说"要不还是按我的直觉来"</strong>。所以要建立一种文化，让计算的人和做实验的人真的愿意一起跑好几轮。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他会不会说要上机器人实验室？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说现在谈机器人有点早，因为实验周期还是太长。现在更像主动学习，<strong>最终目标是"把一切都 RL 化"</strong>，把实验室本身也放进强化学习的循环里。他自己也说"这有点远"。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他对生意怎么看？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说了一个很多人都见过的现象：很多公司一开始说"我们要做生物学的基础模型"，但说不清拿它干什么。投资人能理解的是"你最后会做出一个药"，所以<strong>很多平台公司后来都转去做药了</strong>，虚拟细胞成了附带业务。</p><p class="script-text">他认为好位置是<strong>模型加独有数据</strong>。比如他们和多家药企搞了一个"癌症类器官扰动图谱"联盟，药企出钱，换取数据的早期使用权。他觉得越来越多公司的护城河不是模型本身，而是模型加上别人拿不到的数据。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他还讲了欧洲创业环境吧。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">讲了。他说欧盟新创公司的数量跟美国差不多，<strong>掉队的是规模化阶段</strong>，A 轮、B 轮那种大额风险投资不够，所以很多团队那时候就去了美国。他在自己的部门里给每个课题组长定了一个目标：三年内至少出一个衍生公司。</p><p class="script-text">还有一个培养学生的做法：每个博士生有两个导师，一个管方法，一个管具体的生物或医学问题，学生两边的组会都要去。他管这个叫 Y 模型。两个学生共用一组导师，就是 Y 加 Y 等于 H。他说上几个月 NVIDIA 一个月里从他组里挖走了两个人。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我觉得最有用的是那条路线：<strong>画地图、预测、指挥实验。</strong>这三步不只适用于生物学。很多 AI 产品现在停在第二步，模型能预测，但没有接回去决定下一步做什么，也没有一轮一轮地改。</p><p class="script-text">也要说两点保留。第一，Theis 说自己的看法"比较学术"，对创业公司的判断他也承认看得没那么全。第二，Lab Compass 和 CellFlow 的效果都是他自己的说法，节目里没给具体数字，Lab Compass 的论文要等 bioRxiv 上线再看。</p></div>
+<p class="section-label">◈ 本周其他集数</p>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集还是《Latent Space》，十一月二号，Legora 的 CTO Jacob Lauritzen。Legora 做法律 AI，从斯德哥尔摩一个地下室起步。这集最有意思的问题是：<strong>数据属于律所的客户，Legora 一条智能体的运行记录都不能看，那怎么做评测？</strong>他们的办法是让三个工程师加三个律师，照着客户的工作搭模拟环境，像强化学习里的"世界"。他们还把运行记录改写成摘要，把失败归到十到二十种类型。有一个细节：引用的正确率原来是百分之七十，新模型发布后变成百分之九十九，他们什么都没改。他估计模型已经能做好六成左右的法律工作。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_blank">Building Legal Agents When You Can&#x27;t See the Data - Jacob Lauritzen, CTO of Legora · Latent Space</a></span></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">S-1 那集呢？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">十一月七号，《Latent Space》拆解 Anthropic 的 S-1 招股书，嘉宾是 Altimeter 的 Jamin Ball，一百零二分钟。我们没听到具体内容，只说一点：swyx 在 X 上说，他们会<strong>每周跟进 Anthropic 上市这件事，直到上市或者不上市</strong>。想跟这件事的可以订阅。</p><span class="source-inline">📎 来源：<a href="https://www.youtube.com/watch?v=P735f1xlpL0" target="_blank">Deep Dive: Anthropic S-1 Myths and Mythos — Jamin Ball, Altimeter · Latent Space</a></span></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">两集简单提一下。一是《Latent Space》十一月三号，Warp 的 Zach Lloyd，三十五分钟，讲 2026 年"软件工厂"需要什么样的基础设施。二是 Lenny's Podcast 十一月一号，Wispr Flow 的内容负责人 Hector Serrano，他十九岁进公司做实习生，后来管着五十个创作者，<strong>每个月产出五六百条付费用户生成内容广告</strong>。做增长的人可以听。这两集我们都只看到了简介。</p><span class="source-inline">📎 来源：<a href="https://www.youtube.com/watch?v=LL0YmIyBKSU" target="_blank">The 2026 Software Factory Infra Stack — Zach Lloyd, Warp.dev · Latent Space</a></span><span class="source-inline">📎 来源：<a href="https://podwise.ai/podcasts/16123" target="_blank">How a 19-year-old intern built the growth engine behind this $2B AI company · Lenny&#x27;s Podcast</a></span></div>
+<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">跟主推那集最接近的一条来自 YC 的 Garry Tan：<strong>"智能体技能必须用评测驱动的开发循环。每个新模型都更强，你可以删掉不再需要的东西。"</strong>他说他刚把 /investigate 这个技能删了，因为 Opus 5.5 不用它做得更好。这跟 Theis 说的"先把基线和指标定好"是一回事：有了评测，你才知道什么可以删。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">点赞最高的呢？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Vercel 的 CEO Guillermo Rauch，一千一百多个赞。他说用 AI SDK、Chat SDK 和 json-render 组合，<strong>可以从大模型直接生成界面，放到 Slack、Teams 这些平台上</strong>。他认为这会成为人和智能体交互的主流方式。</p><p class="script-text">前 Claude Code 团队的 Thariq 也有一条，一千一百多个赞：他喜欢一种做法，<strong>Instagram Edits、Roblox Studio 这类创作工具自带 MCP</strong>，智能体先做一部分，专业用户再在自己熟悉的工具里接着做。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">跟 S-1 有关的呢？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">就是刚才说的 swyx 那条。他说自己以前做过股票对冲基金分析师，看过阿里巴巴、Atlassian 这些大型上市，这次要和 Jamin Ball 一起把分析师的帽子再戴上。</p></div>
+<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起，有一条共同的线：<strong>谁定义了指标，谁就掌握了改进的方向。</strong>Theis 说留给人的最重要的工作是定义指标；Legora 看不到数据，就自己造评测环境；Garry Tan 靠评测决定删掉哪个技能。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">找一个你们团队现在用的 AI 功能，问一句：有没有一个最简单的基线？比如规则、关键词匹配、或者一个小模型。拿它跟现在的方案比一次。如果差距很小，先别加复杂度。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听 Theis 那集的中段，讲线性基线和 Arc 比赛那部分，然后听最后十分钟讲 Lab Compass 的部分。再听 Legora 那集讲评测的前半小时。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周你打算听哪一集？我们下周见。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
+
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Latent Space · 2026-11-06</p>
+  <p class="pc-title">Controlling Biology - Fabian Theis, Helmholtz Munich</p>
+  <p class="pc-summary">Theis 把虚拟细胞研究分成三步：画地图（人类细胞图谱）、预测（扰动世界模型）、指挥下一个实验。他坦白讲了线性基线为什么一直很强、Arc 挑战赛的指标为什么能被钻空子，并介绍了反向生成模型 Lab Compass：告诉它目标细胞状态，它告诉你该做什么实验。</p>
+  <a href="https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「用 AI SDK、Chat SDK 和 json-render 组合做对话智能体的生成式界面，可以从大模型直接生成界面，放到 Slack、Teams 这些平台上。我认为这会成为人和智能体交互的主流方式。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,147</span>
+      <a href="https://x.com/rauchg/status/2118856239719608353" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · formerly Claude Code @anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我喜欢的一种做法：Instagram Edits、Roblox Studio 这类创作工具自带 MCP，智能体可以先做一部分，专业用户再在自己熟悉的工具里一起接着做。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,130</span>
+      <a href="https://x.com/trq212/status/2118822238262853904" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President & CEO @ycombinator</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「智能体技能必须用评测驱动的开发循环。每个新模型都更强，你可以删掉不再需要的东西。我刚删掉了 /investigate 这个技能，因为 Opus 5.5 不用它做得更好。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 217</span>
+      <a href="https://x.com/garrytan/status/2118920030243139596" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们会每周跟进 Anthropic 上市这件事，直到它上市或者不上市。我报道过从阿里巴巴到 Atlassian 的大型上市，这次要把股票对冲基金分析师的帽子和 AI 工程师的帽子一起戴上，搭档是 Jamin Ball。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 78</span>
+      <a href="https://x.com/swyx/status/2118905788915982341" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/" target="_blank"><span class="src-icon">Podcast</span><span>Controlling Biology - Fabian Theis, Helmholtz Munich · Latent Space · 2026-11-06</span></a>
+  <a class="source-link" href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_blank"><span class="src-icon">Podcast</span><span>Building Legal Agents When You Can&#x27;t See the Data - Jacob Lauritzen, CTO of Legora · Latent Space · 2026-11-02</span></a>
+  <a class="source-link" href="https://www.youtube.com/watch?v=P735f1xlpL0" target="_blank"><span class="src-icon">Podcast</span><span>Deep Dive: Anthropic S-1 Myths and Mythos — Jamin Ball, Altimeter · Latent Space · 2026-11-07</span></a>
+  <a class="source-link" href="https://www.youtube.com/watch?v=LL0YmIyBKSU" target="_blank"><span class="src-icon">Podcast</span><span>The 2026 Software Factory Infra Stack — Zach Lloyd, Warp.dev · Latent Space · 2026-11-03</span></a>
+  <a class="source-link" href="https://podwise.ai/podcasts/16123" target="_blank"><span class="src-icon">Podcast</span><span>Lenny&#x27;s Podcast · Hector Serrano (Wispr Flow) · 2026-11-01</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2118856239719608353" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch — 用 AI SDK、Chat SDK 和 js…</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2118822238262853904" target="_blank"><span class="src-icon">X</span><span>Thariq — 我喜欢的一种做法：Instagram Edi…</span></a>
+  <a class="source-link" href="https://x.com/garrytan/status/2118920030243139596" target="_blank"><span class="src-icon">X</span><span>Garry Tan — 智能体技能必须用评测驱动的开发循环。每个新模…</span></a>
+  <a class="source-link" href="https://x.com/swyx/status/2118905788915982341" target="_blank"><span class="src-icon">X</span><span>Swyx — 我们会每周跟进 Anthropic 上市这件…</span></a>
+  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-08 · 周日播客精选</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

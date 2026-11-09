@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-25 · 周日播客精选">
+<meta property="og:description" content="No Priors × Cloudflare CTO Dane Knecht · 漏洞爆发的十八个月 · 智能体流量的付费通道 · 三个团队变成一个工具">
+<title>周日播客精选 · 2026-10-25 · 漏洞爆发的十八个月</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">THE VULN<br><span>APOCALYPSE</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-25</span>
+    <span>🎙 周日播客精选</span>
+    <span>◇ 接下来十八个月，一半工程时间花在安全上</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>主推 · No Priors × Cloudflare CTO Dane Knecht · 2026-10-23</span>
+    <span class="ticker-item"><span class="dot">●</span>Log4j 级别的漏洞：以前一年一次 → 现在几乎每周</span>
+    <span class="ticker-item"><span class="dot">●</span>预测：未来 18 个月超过 50% 工程时间花在安全上</span>
+    <span class="ticker-item"><span class="dot">●</span>agent kiddies · 国家级能力到了普通人手里</span>
+    <span class="ticker-item"><span class="dot">●</span>现阶段的 AI 很啰嗦，喜欢制造复杂度 · 第一原则：减少攻击面</span>
+    <span class="ticker-item"><span class="dot">●</span>智能体读内容按 CPM 付费 · x402 · HTTP 402</span>
+    <span class="ticker-item"><span class="dot">●</span>三个团队 → 一个工具 · Cloudflare OS</span>
+    <span class="ticker-item"><span class="dot">●</span>5000 人的公司，一年招 1000 个实习生</span>
+    <span class="ticker-item"><span class="dot">●</span>Modal · 年化收入 10 亿美元 · 沙盒约占三分之一收入</span>
+    <span class="ticker-item"><span class="dot">●</span>Levie · 智能体集群做网络防御会成为 AI 最大品类之一</span>
+    <span class="ticker-item"><span class="dot">●</span>主推 · No Priors × Cloudflare CTO Dane Knecht · 2026-10-23</span>
+    <span class="ticker-item"><span class="dot">●</span>Log4j 级别的漏洞：以前一年一次 → 现在几乎每周</span>
+    <span class="ticker-item"><span class="dot">●</span>预测：未来 18 个月超过 50% 工程时间花在安全上</span>
+    <span class="ticker-item"><span class="dot">●</span>agent kiddies · 国家级能力到了普通人手里</span>
+    <span class="ticker-item"><span class="dot">●</span>现阶段的 AI 很啰嗦，喜欢制造复杂度 · 第一原则：减少攻击面</span>
+    <span class="ticker-item"><span class="dot">●</span>智能体读内容按 CPM 付费 · x402 · HTTP 402</span>
+    <span class="ticker-item"><span class="dot">●</span>三个团队 → 一个工具 · Cloudflare OS</span>
+    <span class="ticker-item"><span class="dot">●</span>5000 人的公司，一年招 1000 个实习生</span>
+    <span class="ticker-item"><span class="dot">●</span>Modal · 年化收入 10 亿美元 · 沙盒约占三分之一收入</span>
+    <span class="ticker-item"><span class="dot">●</span>Levie · 智能体集群做网络防御会成为 AI 最大品类之一</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · 漏洞爆发的十八个月</span>
+  </div>
+  <audio controls src="2026-10-25.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · No Priors</div>
+    <div class="feature-show-name">NO PRIORS<br><span style="color:#dd1111">× DANE KNECHT</span></div>
+    <div class="feature-ep-title">Democratizing Security for the Agentic Web —<br>with Cloudflare CTO Dane Knecht</div>
+    <div class="feature-guest">No Priors × Dane Knecht · 2026-10-23</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Cloudflare CTO Dane Knecht 说，Log4j 级别的漏洞以前一年一次，现在几乎每周都有，发现者常常是拿着智能体的高中生。他预计<strong>接下来十八个月一半工程时间会花在安全上</strong>，之后生产力会大幅回升。节目还讲了智能体按 CPM 付费读内容的新通道、Cloudflare 内部"三个团队变成一个工具"的重组，以及一年招一千个实习生的做法。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">漏洞爆发</span>
+      <span class="tag">减少攻击面</span>
+      <span class="tag">对抗性审查</span>
+      <span class="tag">小额支付</span>
+      <span class="tag">x402</span>
+      <span class="tag">Cloudflare OS</span>
+      <span class="tag">AI 原生实习生</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><span class="stat-label">严重漏洞频率</span><span class="stat-value">一年一次 → 几乎每周</span></div>
+      <div class="stat-item"><span class="stat-label">安全占工程时间</span><span class="stat-value">&gt;50%（未来 18 个月）</span></div>
+      <div class="stat-item"><span class="stat-label">红队数量</span><span class="stat-value">1 个 → 4–5 个（明年底）</span></div>
+      <div class="stat-item"><span class="stat-label">实习生</span><span class="stat-value">一年 1000 人 / 公司约 5000 人</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本周几集的共同点</div>
+  <div class="insight-title">智能体让攻击和防御都变便宜了</div>
+  <div class="insight-item"><span class="insight-num">01</span><span><strong>十八个月的时间框。</strong>Knecht：先补七十年积累的软件漏洞，AI 扫完大部分代码后，人力回到新功能上。期间不停发布，"不发布就是在等死"。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span><strong>AI 写的代码太啰嗦。</strong>第一原则是减少攻击面；Cloudflare 把内部 RFC 压成十条左右的规则，让智能体在每一步审查里执行。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span><strong>沙盒的规模和风险。</strong>Modal 的沙盒约占三分之一收入；Rauch 讲同机智能体可以通过 CPU 缓存计时互相探测，彻底的办法是独占硬件。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span><strong>保留意见。</strong>Knecht 卖安全和网络基础设施，"漏洞爆发"的叙事对他的生意有利；节目里部分例子没有给出处，按他的说法转述。</span></div>
+</div>
+
+<div class="script-container">
+
+<p class="section-label">◈ 本周主推：《No Priors》× Dane Knecht——漏洞爆发的十八个月</p>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《No Priors》，十月二十三号上线，嘉宾是 Cloudflare 的 CTO Dane Knecht。题目叫"为智能体时代的网络普及安全"。这一集讲了四件事：AI 让漏洞数量突然暴涨，智能体流量需要新的付费方式，Cloudflare 内部怎么用 AI 改造工作，以及他们为什么一年要招一千个实习生。</p></div>
+
+<span class="source-inline">📎 来源：<a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht · No Priors</a></span>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">先说漏洞。暴涨到什么程度？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他给的说法是：以前像 Log4j、Shellshock 这种级别的漏洞，大概一年出一次，每次出来 Cloudflare 内部都是全员上阵。<strong>现在这种级别的事几乎每周都有</strong>，只是很多没有公开报道。他说过去三到六个月，公开登记的漏洞数量是指数级往上走的。</p><p class="script-text">他举了两个例子。一个是保护 TLS 和网页证书体系的某个密钥，生成时用的随机种子居然是数字"4"，这种东西会被反推出来。另一个是他说上周 OpenAI 找到了 2000 年前后发布的 NIST 曲线的种子。这两件事节目里没有展开，我们就按他的原话转述。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">谁在找这些漏洞？国家级黑客？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说最近几个大漏洞，<strong>发现者反而不是国家</strong>，有的是高中生。这些人以前打 CTF 安全比赛，现在把智能体指向一个区域让它去找，找到了拿漏洞赏金。主持人给这类人起了个名字叫"agent kiddies"，就是以前"脚本小子"的智能体版本。他的判断是：<strong>国家级攻击者早就有的能力，现在普通人也有了。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那该怎么办？主持人提到有人说要把重要系统全部物理隔离。</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他没那么悲观。他说人适应得很快，出事的时候竞争对手也会一起合作保护关键基础设施。而且过去五到十年行业从"城堡加护城河"转向零信任，很多公司的底子比以前好。</p><p class="script-text">但他的预测很具体：<strong>接下来十八个月，大部分工程团队的时间会花在安全上。</strong>他们当天主题演讲上给的数字是超过百分之五十的工程时间。主持人补了一句，上周 Greg Brockman 在同一个节目里说，2027 年大家花在安全上的 token 会和花在写代码上的一样多。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">一半工程师去做安全，那新功能还做不做？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说一定要两个都做，"不发布就是在等死"。他的看法是这是一个过渡期：现在是在给七十年积累下来的软件打补丁，等 AI 把大部分代码扫过一遍、找到大部分问题，大概十八个月后，这批人力会回到写新东西上，<strong>软件生产力会大幅上升。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">怎么从一开始就写出更安全的软件？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他的第一原则很朴素：<strong>减少攻击面。</strong>代码越少，能出问题的地方越少。然后才是形式化验证、更安全的编程语言、运行时自带的保护。</p><p class="script-text">这里他说了一句挺实在的话：<strong>现阶段的 AI 很啰嗦，喜欢制造复杂度。</strong>所以到目前为止，AI 写代码其实没让软件更安全。主持人也说自己经常跟模型说"同样的事，用十分之一的复杂度再写一遍"。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这要靠模型自己改进，还是靠人？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说各个层面都要做，跟没有智能体时一样。Cloudflare 内部有一份文档叫 "Codex"，是很多团队写的 RFC 汇总起来的：怎么写安全的软件、怎么写高可用的软件。然后再压缩成十条左右的规则，<strong>让智能体在每一步代码审查里都照着执行。</strong></p><p class="script-text">他描述的流水线是这样：前面有智能体大量写代码，他自己用的词是"slop"；后面有人和智能体专门跑性能测试和安全测试，做对抗性审查。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">内部红队会怎么变？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说现在 Cloudflare 有一个红队，到明年年底大概会有四五个，专门主动去找漏洞。主持人问为什么不是先把补丁流程修好，他的回答是：<strong>流程是在危机里变好的。</strong>漏洞量大到工程团队用老办法处理不过来时，工程师自然会把修补自动化。所以重点应该放在"发现"这一侧。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第二块是智能体流量。他怎么看？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说现在是"混乱的中间阶段"：人和智能体走在同一套网络上。网页是为人设计的，人会看页面、看广告，参与原来的商业模式；智能体同样的时间能读一千个网页，但不看广告。现在有很多公司专门帮智能体"看"网页，他说<strong>这些都是在额外烧 token，本来不需要。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那网站靠什么赚钱？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他给的方案很直接：一个内容网站，比如一个 Substack，知道自己每千次展示的广告收入是多少。智能体来读的时候，可以自己决定要不要读，<strong>要读就按这个价格付钱。</strong>这就需要一套每秒能处理几百万笔小额支付的新支付通道。</p><p class="script-text">他说小额支付这件事大家讲了很多年，一直"还差两年"。他认为<strong>智能体会真正把它推起来。</strong>他还提到 Stripe 推的 x402，用的是 HTTP 402 状态码，这个"需要付款"的状态码三十多年前就定义了，一直没真正用起来。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">Cloudflare 自己在做什么？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说了两个。一个是内容变现网关：网站放在 Cloudflare 后面，智能体来读要付小额费用，Cloudflare 给智能体提供钱包，还有一个稳定币来结算。另一个是和 OpenAI 合作的项目叫 Signals，<strong>让智能体知道哪些内容是新的，不用把整个互联网反复爬一遍。</strong>对 AI 实验室省钱，对网站也省掉被反复爬的带宽成本。</p><p class="script-text">他说成功的标准是：<strong>以前是网站付钱给我们，以后是我们付钱给网站。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他有提到有人拒绝智能体吗？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有。他提到亚马逊最近表态不让个人购物智能体进来。他理解这种做法：每次技术转型，大家都担心被取代，先把门关上，保住谈判筹码。他认为最终像 Dots、Muse 这类个人智能体能像人一样顺利地办事，但<strong>技术和商业模式现在都还没跟上。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第三块，Cloudflare 内部怎么用 AI？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他们发布了一个叫 Cloudflare OS 的东西，是员工日常用 AI 的内部平台。出发点还是安全：员工想用各种新模型和工具，公司要知道数据怎么流动。另一个目的是<strong>把"Cloudflare 怎么做事"写下来教给智能体</strong>，以前这些靠入职培训和跟同事一起工作来传递。</p><p class="script-text">有意思的是，他说<strong>用得最多的不是工程师，是销售、市场和行政团队。</strong>市场团队做了几百个内部工具，以前这些要找外包公司。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">有具体例子吗？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有一个很清楚的。以前产品经理想给一批客户发邮件，要找三个团队：数据团队圈出人群，市场团队改文案，市场运营团队负责发送。现在是一个工具：产品经理描述人群、写邮件，工具按 Cloudflare 的语气改写，发给经理，经理点"批准"就发出去。</p><p class="script-text">他强调的是：<strong>不是三个团队各自变快，而是三个团队变成一个工具。</strong>他也承认今年五月那次重组很难，是 Cloudflare 第一次裁员。他的理由是，不做硬性的调整，大家不会真正重新想流程。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">token 预算怎么管？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说让人来决定每个任务用哪个模型本身就不合理，以后应该自动路由。现在还是手动的：规划用最强的前沿模型，计划定下来后用开源模型执行，最后再用前沿模型做审查和红队测试。</p><p class="script-text">他们<strong>不做 token 排行榜</strong>，考核看的是交付了什么，不看用了多少。但有提醒机制：一个人一天用到三百美元左右会收到邮件提醒，五百会抄送经理，一千会到副总裁。他说这种情况很少，而且大部分人收到提醒是高兴的，因为自己没意识到。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">一千个实习生那段是怎么回事？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">两年前他们有大约两百个实习生，发现这批人是<strong>完全 AI 原生的</strong>，把 AI 拿走他们可能就没法工作了。主持人问这是好事吗，他说是好事，就像把 Google 从他身上拿走他也没法学东西。而且他们发现，<strong>带过实习生的经理，自己用 AI 也用得更快。</strong>所以今年他们决定招一千个实习生，公司总共大约五千人。</p><p class="script-text">还有一个细节：今年一月，他们开了一个邮件地址叫 agents@cloudflare，员工把"这件事能不能用 AI 做"发过去，回复是一个技能文件。很多人以为是全自动的，<strong>其实背后是一群实习生在帮忙写。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">招人看什么？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说最看重好奇心。<strong>如果一个人在自己生活里都不用 AI，这是很大的危险信号。</strong></p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">最后他有没有谈开源和闭源？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">谈了。主持人的问题是：同一个模型，防御能力和攻击能力是分不开的，开源了坏人也能用；不开源，需要防御的人又拿不到。他的回答是：<strong>坏人总会拿到，排除掉的只是那些真正需要它的普通人。</strong>所以他倾向开放。</p><p class="script-text">对没钱养红队的小机构，他的答案当然是"放到 Cloudflare 后面"。但他说的那个事实是对的：去年 React 那个漏洞出来时，Cloudflare 把防护规则给了所有用户，包括免费用户。他说 Cloudflare 出现之前，全世界大概只有三千个网站有大规模 CDN，现在是几亿个。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我觉得最有用的是"十八个月"这个时间框。如果他说得对，接下来一年多，安全会从一个专门团队的事，变成每个工程团队的主要工作。另外要保留两点意见：第一，他卖的是安全和网络基础设施，"漏洞爆发"这个叙事对他的生意有利；第二，节目里一些例子没有给出处，比如那个用"4"当种子的密钥，听的时候当作他的说法。</p></div>
+
+<p class="section-label">◈ 本周其他集数 · 算力、企业落地、可解释性</p>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集是《Latent Space》，十月二十二号，Modal 的 CEO Erik Bernhardsson。Modal 刚宣布年化收入过十亿美元，D 轮融了七亿五千万美元，估值一百六十亿。题目叫"为什么 AI 算力是长方形的"：传统合同是固定数量的 GPU 用固定时长，画出来是一个长方形，<strong>但真实的需求有涨有落，不是长方形。</strong>Modal 的做法是把几千个客户的需求汇在一起，让每个客户按需使用。还有一个故事：Modal 的沙盒产品早期用的人少，团队一度讨论要不要砍掉，后来编程智能体和强化学习起来了，<strong>沙盒现在占他们大约三分之一的收入。</strong>这跟后面 Rauch 那条推文讲的同机智能体安全问题正好相关。</p></div>
+
+<span class="source-inline">📎 来源：<a href="https://latent.space/p/modal-d/" target="_blank">Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO · Latent Space</a></span>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第二集？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">还是《Latent Space》，十月二十一号，Tenex 的 Alex Lieberman 和 CJ Hess，在 AI Engineer 纽约大会现场录的。讲他们怎么给大企业做 AI 原生的软件开发流程，<strong>按结果收费</strong>，以及企业落地 AI 的最后一公里。跟 Cloudflare 那个"三个团队变成一个工具"的例子可以对照着听。</p></div>
+
+<span class="source-inline">📎 来源：<a href="https://latent.space/p/tenex/" target="_blank">AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC · Latent Space</a></span>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有一集？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Lenny's Podcast，十月十八号，比这周早几天，嘉宾是 Anthropic 的可解释性研究员 Emmanuel Ameisen。他讲为什么"预测下一个词"这个说法低估了模型：<strong>模型会提前好几个词做规划，只是不说出来；</strong>模型是"长"出来的，不是"造"出来的；还有能力看起来突然跃升，背后其实是一条平滑的曲线。一小时十二分钟，适合想知道模型内部在发生什么的人。</p></div>
+
+<span class="source-inline">📎 来源：<a href="https://podcasts.apple.com/us/podcast/inside-the-black-box-of-ai-how-ai-models-actually/id1627920305?i=1000796921555" target="_blank">Inside the black box of AI: How AI models actually think | Emmanuel Ameisen · Lenny&#x27;s Podcast</a></span>
+
+<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">点赞最高的是 Claude Code 团队的 Thariq，一万多个赞。他宣布<strong>离开 Anthropic</strong>，在 Claude Code 做了一年多。他说最喜欢的是"向上竞争"这个想法，接下来先休息一阵，再做新的事。他还推荐大家关注 Boris Cherny 等几位继续做 Claude Code 的人。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">跟主推那集有关的呢？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有两条直接相关。第一条是 Box 的 CEO Aaron Levie：他说<strong>用智能体集群做网络防御，会成为 AI 里最大的品类之一。</strong>理由是安全是"投入越多算力，产出越多价值"最明显的领域，很多测试人永远做不完，智能体可以去做。这跟 Knecht 说的"一半工程时间花在安全上"是同一件事的两面。</p><p class="script-text">第二条是 Vercel 的 CEO Guillermo Rauch，讲的是 OpenAI 发现的一类攻击。他叫它"邻居噪音攻击"：<strong>两个智能体跑在同一台机器上，一个可以通过 CPU 缓存制造干扰，另一个通过计时自己的计算来感知这些干扰。</strong>这类攻击 2015 年就有人提出，一直没有完整的解法。他说以前大家觉得"理论上可能，但谁会费这么大劲"，现在智能体会去试。唯一彻底的办法是每个智能体单独一台硬件，成本很高。Vercel 的沙盒做了能做的缓解措施，加上持续监控和红队测试。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这正好对上 Modal 那集，沙盒占三分之一收入。</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。沙盒越多，同机隔离的问题就越现实。</p><p class="script-text">还有一条是 Replit 的 CEO Amjad Masad：向量数据库 Chroma 的团队加入了 Replit，<strong>要解决智能体的上下文和记忆问题。</strong></p><p class="script-text">最后提一条 OpenAI Codex 负责人 Tibo Sottiaux 的短句，四千多个赞：<strong>"拥有一个工具和成为一个工具，现在差别很微妙，一不小心就把自己做成了工具。别当工具。"</strong></p></div>
+
+<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起看，讲的是同一件事：<strong>智能体让攻击变便宜了，也让防御变便宜了，谁先把防御跑起来是接下来一年半的主要问题。</strong>Knecht 给的是时间框和组织做法；Levie 说这是一个新品类；Rauch 说明了沙盒共享硬件的风险；Modal 那集说明了沙盒的规模。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Knecht 那句最朴素：减少攻击面。下次让智能体写代码，加一句"用最少的代码实现"，然后让另一个模型专门做安全审查。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听主推那一集，前十五分钟讲漏洞，后半段讲 Cloudflare 内部重组和实习生。时间够的话再听 Modal 那集。</p></div>
+
+<div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我们下周见。</p></div>
+
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
+
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · 2026-10-23</p>
+  <p class="pc-title">Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht</p>
+  <p class="pc-summary">Knecht 说 Log4j 级别的漏洞已经从一年一次变成几乎每周一次，发现者常常是用智能体参加漏洞赏金的普通人；他预计未来十八个月一半以上工程时间会花在安全上，第一原则是减少攻击面。他还提出智能体按 CPM 付费读内容的小额支付通道，并介绍了 Cloudflare 把"三个团队"压成"一个工具"的内部重组，以及一年招一千个 AI 原生实习生的做法。</p>
+  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TH</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · Claude Code @anthropicai</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我在 Claude Code 工作了一年多，看着它的规模超出我的想象，现在我离开了 Anthropic。我最认同的是“向上竞争”这个想法：如果我们努力、负责地工作，就能抬高标准，带动别人做出好的结果。接下来我先休息一阵，再开始新的事情。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 10,516</span>
+      <a href="https://x.com/trq212/status/2113844051938054167" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「用智能体集群做网络防御，即将成为 AI 里最大的品类之一。智能体会审查我们的代码和基础设施，测试每一种风险组合，处理海量数据。安全是集群最好的用例之一，因为在这里投入更多算力就明显换来更多价值。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 358</span>
+      <a href="https://x.com/levie/status/2113738768645808277" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「智能体可以在云上玩“通灵板”。这类针对共享主机虚拟机的计时攻击至少从 2015 年就为人所知，至今没有完整解法。OpenAI 这次发现的是“邻居噪音”攻击：两个智能体在同一台机器上，一个通过 CPU 缓存制造噪音，另一个通过计时自己的计算就能察觉。唯一彻底的办法是每个智能体独占硬件，代价很大。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 169</span>
+      <a href="https://x.com/rauchg/status/2113759533801877920" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · CEO @replit</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「欢迎 Jeff 和 Chroma 团队加入 Replit！他们在 RAG 这个词流行之前就在做 RAG。在 Replit，他们会帮助解决 AI 里最难的问题之一：给智能体真正干活所需的上下文和记忆。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 330</span>
+      <a href="https://x.com/amasad/status/2113736007111827606" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank"><span class="src-icon">Podcast</span><span>Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht · No Priors · 2026-10-23</span></a>
+  <a class="source-link" href="https://latent.space/p/modal-d/" target="_blank"><span class="src-icon">Podcast</span><span>Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO · Latent Space · 2026-10-22</span></a>
+  <a class="source-link" href="https://latent.space/p/tenex/" target="_blank"><span class="src-icon">Podcast</span><span>AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC · Latent Space · 2026-10-21</span></a>
+  <a class="source-link" href="https://podcasts.apple.com/us/podcast/inside-the-black-box-of-ai-how-ai-models-actually/id1627920305?i=1000796921555" target="_blank"><span class="src-icon">Podcast</span><span>Inside the black box of AI: How AI models actually think · Emmanuel Ameisen · Lenny&#x27;s Podcast · 2026-10-18</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2113844051938054167" target="_blank"><span class="src-icon">X</span><span>Thariq — trq212</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2113738768645808277" target="_blank"><span class="src-icon">X</span><span>Aaron Levie — levie</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2113759533801877920" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch — rauchg</span></a>
+  <a class="source-link" href="https://x.com/amasad/status/2113736007111827606" target="_blank"><span class="src-icon">X</span><span>Amjad Masad — amasad</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2113838156193894447" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux — Don&#x27;t be a tool</span></a>
+  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-10-25 · 周日播客精选</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

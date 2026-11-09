@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-10-28",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "GPT-6.1 Terra：会用电脑的中档模型 · Replit：「自动驾驶公司」",
+    "html": "episodes/2026-10-28.html",
+    "mp3": "episodes/2026-10-28.mp3",
+    "headlines": [
+      "GPT-6.1 Terra：会用电脑的中档模型",
+      "Replit：「自动驾驶公司」",
+      "Akamai Agent Sandbox，和 Guillermo Rauch 的 cpu-chat",
+      "苹果「Pro and tell」：一周每天发一款"
+    ]
+  },
+  {
     "date": "2026-10-27",
     "dow": 2,
     "topic": "Robotics",

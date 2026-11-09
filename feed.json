@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-11-04",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "OpenAI Pando：agent 把 Git 挤爆了 · ChatGPT Dots：模型由它自己选",
+    "html": "episodes/2026-11-04.html",
+    "mp3": "episodes/2026-11-04.mp3",
+    "headlines": [
+      "OpenAI Pando：agent 把 Git 挤爆了",
+      "ChatGPT Dots：模型由它自己选",
+      "Apple Watch：Live Rewind 和 Siri Recap 进入测试",
+      "App Store：AI 伴侣 app 要申报，最低 18+"
+    ]
+  },
+  {
     "date": "2026-11-03",
     "dow": 2,
     "topic": "Robotics",

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-10-27",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "GXO 和 Agility，从一个仓库到三个 · Bedrock 融资六亿美元，挖掘机自己干活",
+    "html": "episodes/2026-10-27.html",
+    "mp3": "episodes/2026-10-27.mp3",
+    "headlines": [
+      "GXO 和 Agility，从一个仓库到三个",
+      "Bedrock 融资六亿美元，挖掘机自己干活",
+      "舍弗勒太仓工厂，人形机器人装人形机器人",
+      "宇树股价七天涨六成多，公司自己提示风险",
+      "补充两条：看视频学动作，Optimus 早期生产"
+    ]
+  },
+  {
     "date": "2026-10-26",
     "dow": 1,
     "topic": "AI",

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-27 · 机器人星期二">
+<meta property="og:description" content="GXO × Agility 扩到三个仓库 · Bedrock 融资 6 亿美元 · 舍弗勒太仓人形机器人工厂 · 宇树股价七天涨六成多">
+<title>Daily Builders Digest · 2026-10-27 · 机器人星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
+  <div class="header-title">ROBOTICS<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-27</span>
+    <span>🧭 机器人星期二</span>
+    <span>◇ 从一个仓库到很多个仓库</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>GXO × Agility · Digit 扩到北卡、田纳西两个新仓库 · 2027 年初部署</span>
+    <span class="ticker-item"><span class="dot">●</span>Digit 已搬 10 万多个周转箱 · 累计运行 6.5 万小时</span>
+    <span class="ticker-item"><span class="dot">●</span>Bedrock Robotics · C 轮 6 亿美元 · 投后估值 41 亿</span>
+    <span class="ticker-item"><span class="dot">●</span>自动驾驶挖掘机 8 月起在商业工地干活 · 客户量比 2025 年翻倍</span>
+    <span class="ticker-item"><span class="dot">●</span>舍弗勒太仓灯塔工厂 · 6 台人形机器人在 5 个工位装执行器</span>
+    <span class="ticker-item"><span class="dot">●</span>舍弗勒人形机器人订单累计约 4 亿欧元</span>
+    <span class="ticker-item"><span class="dot">●</span>宇树 7 个交易日涨超 65% · 市盈率 465 倍 · 公司提示估值风险</span>
+    <span class="ticker-item"><span class="dot">●</span>DeepMind Gemini 4 Argon · 看视频学投沙包 · Apollo 连中 7 次</span>
+    <span class="ticker-item"><span class="dot">●</span>GXO × Agility · Digit 扩到北卡、田纳西两个新仓库 · 2027 年初部署</span>
+    <span class="ticker-item"><span class="dot">●</span>Digit 已搬 10 万多个周转箱 · 累计运行 6.5 万小时</span>
+    <span class="ticker-item"><span class="dot">●</span>Bedrock Robotics · C 轮 6 亿美元 · 投后估值 41 亿</span>
+    <span class="ticker-item"><span class="dot">●</span>自动驾驶挖掘机 8 月起在商业工地干活 · 客户量比 2025 年翻倍</span>
+    <span class="ticker-item"><span class="dot">●</span>舍弗勒太仓灯塔工厂 · 6 台人形机器人在 5 个工位装执行器</span>
+    <span class="ticker-item"><span class="dot">●</span>舍弗勒人形机器人订单累计约 4 亿欧元</span>
+    <span class="ticker-item"><span class="dot">●</span>宇树 7 个交易日涨超 65% · 市盈率 465 倍 · 公司提示估值风险</span>
+    <span class="ticker-item"><span class="dot">●</span>DeepMind Gemini 4 Argon · 看视频学投沙包 · Apollo 连中 7 次</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 机器人星期二 · 从一个仓库到很多个仓库</span>
+  </div>
+  <audio controls src="2026-10-27.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 从试点到很多个现场</div>
+    <div class="feature-show-name">WAREHOUSE<br>JOB SITE<br><span style="color:#dd1111">FACTORY</span></div>
+    <div class="feature-ep-title">人形机器人进了第二、第三个仓库，<br>挖掘机自己干活，机器人开始装机器人</div>
+    <div class="feature-guest">GXO · Agility · Bedrock · Schaeffler · Unitree · 2026-10-24 / 10-27</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这周的机器人新闻讲的是规模。<strong>GXO 把 Digit 从一个仓库扩到三个；Bedrock 的自动驾驶挖掘机拿到六亿美元去更多工地；舍弗勒在太仓开始量产人形机器人关节。</strong>宇树的股价涨了六成多，但涨的理由是一个 2028 年的预测和一份券商报告。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Agility Digit</span><span class="tag">GXO</span><span class="tag">RaaS</span><span class="tag">Bedrock Robotics</span><span class="tag">Construction</span><span class="tag">Schaeffler</span><span class="tag">Actuators</span><span class="tag">Unitree</span><span class="tag">Gemini 4 Argon</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">GXO × Agility · 10/26</div><div class="stat-value">新增 2 个仓库 · 10 万多个周转箱 · 6.5 万小时</div></div>
+      <div class="stat-item"><div class="stat-label">Bedrock · 10/26</div><div class="stat-value">C 轮 6 亿美元 · 估值 41 亿 · 累计近 10 亿</div></div>
+      <div class="stat-item"><div class="stat-label">Schaeffler · 10/26</div><div class="stat-value">7500 平米 · 6 台人形机器人 · 订单约 4 亿欧元</div></div>
+      <div class="stat-item"><div class="stat-label">Unitree · 10/26–27</div><div class="stat-value">7 日涨超 65% · 市盈率 465 倍（行业 38 倍）</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">周二好，欢迎回到每日快报。今天是十月二十七号，机器人星期二。上周我们讲的是人还在回路里：先遥控，再慢慢撤出来。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周撤出来了吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周的新闻是另一个阶段：从一个试点变成很多个现场。第一条，GXO 和 Agility 把 Digit 人形机器人从一个仓库扩到三个。第二条，做自动驾驶挖掘机的 Bedrock 融了六亿美元。第三条，舍弗勒在江苏太仓开了一座工厂，让人形机器人组装人形机器人的零件。第四条，宇树的股价七个交易日涨了六成多，公司自己出来提示风险。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">四条都跟规模有关。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。最后再补两条稍早一点的：谷歌 DeepMind 让机器人看视频学投沙包，特斯拉说 Optimus 开始早期生产。</div></div>
+</div>
+<div class="section-label">一 · GXO 和 Agility，从一个仓库到三个</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条。十月二十六号，全球最大的合同物流公司 GXO 和 Agility Robotics 宣布扩大合作。Agility 的 Digit 人形机器人会进 GXO 在北卡罗来纳州 Statesville 和田纳西州 Lebanon 的两个仓库，做电商履约里重复搬运的活，2027 年初开始部署。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.globenewswire.com/news-release/2026/10/26/3387960/0/en/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations.html" target="_blank">GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">之前是一个仓库？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一个，在佐治亚州 Flowery Branch。2023 年底先做概念验证，2024 年六月签了多年合同，按「机器人即服务」收费，也就是 GXO 不买机器人，按使用付钱。新闻稿说，这是人形机器人第一份正式商业部署合同。到现在 Digit 在那里搬了十万多个周转箱。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">十万个箱子，听起来多，其实一个大仓库一天就能搬这么多吧。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">你说得对，这个数字本身不大。我觉得重要的是另一句话。Agility 的 CEO Peggy Johnson 说，客户已经不再问人形机器人能不能干活，而是在决定在哪里扩。还有一个数：Digit 在所有客户那里累计跑了六万五千多小时。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那这次用的是哪一代机器人？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先用 Digit 4，等 Digit 5 能商用了再换。Digit 5 是九月十五号发布的，设计目标是可以在人旁边近距离安全工作。现在的 Digit 4 多数时候要跟人隔开。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以这份合同其实是先签下场地，等新机器人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">可以这么理解。还有一个背景要说：Agility 正在通过和 Churchill Capital Corp XI 合并上市，预计第四季度完成，股票代码 AGLT。上市前发一条「老客户续约扩大」的新闻，时机很合适。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这不影响它是真的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不影响。GXO 是上市公司，它愿意署名发这条稿子，说明它对这项技术有信心。只是听的时候要知道，双方都有理由把它说得好一点。</div></div>
+</div>
+<div class="section-label">二 · Bedrock 融资六亿美元，挖掘机自己干活</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。同一天，Bedrock Robotics 宣布完成六亿美元 C 轮融资，投后估值四十一亿美元，CapitalG 和 Emergence Capital 联合领投。CapitalG 是 Alphabet 旗下的成长基金。加上这一轮，Bedrock 总共融了将近十亿美元。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/10/26/bedrock-robotics-raises-600-million-to-scale-autonomous-excavators-across-the-us/106337/" target="_blank">Bedrock Robotics raises $600 million to scale autonomous excavators across the US</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Bedrock 做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">给已有的挖掘机装一套改装套件，让它自己挖土。创始人 Boris Sofman 以前在 Waymo。今年八月中，他们的全自动挖掘机开始在真实的商业工地上干有人付钱的活。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟上周的 Kodama 一样，都是改装别人的机器。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，上周 Kodama 的 CEO 还专门说过，卡特彼勒这类工程机械厂的系统是封闭的，外人只能做后装。Bedrock 就是走后装这条路，而且做大了。今年二月它的 B 轮是两亿七千万美元，估值大约十七亿五千万，八个月估值翻了一倍多。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">钱拿来干什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">扩部署。新闻稿说客户量比 2025 年翻了一倍多。最新的客户是亚利桑那州一家员工持股的大承包商 Haydon，在德州一个偏远工地用它做全自动土方。另外新增了明尼苏达、佛罗里达、弗吉尼亚、科罗拉多、密苏里、佐治亚、阿肯色的客户。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我注意到它还招了两个高管。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这个我觉得最能说明它现在在想什么。一个运营副总裁，以前在亚马逊、Nuro 和 Uber 部署过复杂的物理系统；一个总法律顾问，以前是 Uber 自动驾驶和配送业务的法务负责人，管过无人车进入各个市场的监管路径。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">技术做出来了，下一个难题是运营和监管。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。CapitalG 的合伙人说了一句：建筑业是美国几乎所有经济目标的地基，不能花几十年慢慢开发这类机器人。这话是投资人说的，但招人的方向跟这句话是一致的。</div></div>
+</div>
+<div class="section-label">三 · 舍弗勒太仓工厂，人形机器人装人形机器人</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。德国的舍弗勒，做轴承和传动部件的，十月二十六号在江苏太仓开了一座人形机器人「灯塔工厂」，大约七千五百平米。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/10/26/schaeffler-opens-lighthouse-factory-in-taicang-where-humanoids-will-make-humanoids/106303/" target="_blank">Schaeffler opens lighthouse factory in Taicang where &#x27;humanoids will make humanoids&#x27;</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">灯塔工厂是什么意思？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">就是示范工厂，给别的工厂打样用的。这座工厂的核心是一条装配线，生产人形机器人关节里的执行器，就是让关节转动和伸缩的那个部件。线上有五个工位，六台人形机器人在干活：备料、分拣、装配、检测、贴标、包装。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">机器人在装给下一代机器人用的关节。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，舍弗勒管这个叫闭环制造。另外三块是一个训练和数据采集中心、一个数字孪生平台、一个数据中心。数字孪生会实时复制这条线的状态，记录装配精度、每一步花多长时间、耗电多少，改动先在虚拟线上试。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">训练中心训什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">目视检查零件、包装、搬运、搬料箱、给产线补料。训练环境是照着舍弗勒全球大约一百家工厂的真实条件搭的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这条新闻里有没有钱的数字？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有一个。舍弗勒说第三季度在大中华区新拿了两个客户，人形机器人业务的全球订单累计到大约四亿欧元。而且这座工厂标志着这些零部件开始量产。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我觉得这条比「人形机器人装人形机器人」这个标题更重要的是：一家做了几十年零部件的德国供应商，把人形机器人当成一个正经的生意在做。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">同意。整机公司谁能活下来还不好说，但不管谁赢，关节都得有人造。舍弗勒选的是卖铲子。</div></div>
+</div>
+<div class="section-label">四 · 宇树股价七天涨六成多，公司自己提示风险</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。财新十月二十七号报道，宇树科技的股价七个交易日涨了超过百分之六十五，公司发公告提示估值风险。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.caixinglobal.com/2026-10-27/unitree-warns-of-valuation-risks-after-shares-surge-more-than-65-102497621.html" target="_blank">Unitree Warns of Valuation Risks After Shares Surge More Than 65%</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么涨？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两个原因。一是十月二十五号摩根大通把宇树的评级连升两档，从「减持」直接到「增持」，2027 年十二月的目标价是九百九十五元。二是十月二十二号宇树在杭州办了一场物理 AI 大会，王兴兴在会上讲了很多让市场兴奋的话。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/unitree-rehearsal-self-improving-robots-2028-breakthrough" target="_blank">Unitree is building AI that lets its humanoid robots improve themselves</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他说了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">据彭博社和南华早报的报道，他宣布了一个叫 Unitree Rehearsal 的项目，说是公司今年最重要的项目：让 AI 自己查论文、写代码、在仿真里测试，再拿到真机上试，然后根据结果改进模型。他还把时间表提前了，说最快 2028 年，人形机器人能完成百分之八十用语音布置的任务。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">八月他好像还说要十年。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，八月在北京世界机器人大会上，他说在工厂和家庭里大规模使用可能要十年。这次他说改变看法的原因是 GPT-6 这类模型的进步。他自己也说，现在把人形机器人带回家让它收拾房间，他不认为能做到。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那公司的风险提示说了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">财新给的数字是：十月二十六号宇树涨了百分之七点七，盘中最高七百三十七块五，换手率百分之三十七点七。按过去十二个月的利润算，市盈率四百六十五倍，行业平均是三十八倍。公司在公告里说，人形机器人的商业化还在早期，大规模应用还有技术障碍。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">四百六十五倍。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还有一个细节。同一天卖出最多的五个席位一共卖了八亿一千六百万元，买入最多的两个机构席位只买了两亿四千九百万。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">也就是说，有人在借这波上涨卖。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">至少数据是这样。我想把这条跟前面三条放在一起看。GXO 和 Agility、Bedrock、舍弗勒，说的都是已经发生的部署和订单。宇树这条，涨的原因是一个对 2028 年的预测，和一份券商报告。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一边是做了多少，一边是将来可能做多少。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。宇树本身是一家真的在卖机器人的公司，一年做几万台，只是现在主要卖给研究机构和爱好者。股价反映的是后面那部分。</div></div>
+</div>
+<div class="section-label">补充两条：看视频学动作，Optimus 早期生产</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">最后补两条，都比七十二小时早一点，但跟今天的话题有关。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，十月二十二号，谷歌 DeepMind 发布 Gemini 4 Argon 时演示了一件事：给模型看一段人玩沙包投掷游戏的普通视频，模型自己算出场景的空间坐标和全身关节动作，自己写出仿真代码，在仿真里练好，再迁移到 Apptronik 的 Apollo 人形机器人上。真机测试里 Apollo 连续投中七次。谷歌把它叫「视频到仿真到真机」，说能把几周的人工仿真建模压缩到几个小时。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/10/22/google-deepmind-uses-gemini-4-argon-to-teach-apptroniks-apollo-humanoid-new-skills-from-video/106227/" target="_blank">Google DeepMind uses Gemini 4 Argon to teach Apptronik&#x27;s Apollo humanoid new skills from video</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">连续七次，那一共投了多少次？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌没说，也没说板子离多远。Interesting Engineering 也指出了这一点。所以这个结果先当演示看。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，十月二十一号特斯拉第三季度财报。马斯克说 Optimus 在加州弗里蒙特的大批量产线上开始了「早期生产」，股东信说这是他们造出的第一批量产级机器人。但特斯拉没有给产量、价格或者交付日期。马斯克说爬坡会很慢，而且会颠簸。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/10/21/tesla-stars-optimus-robot-production-in-california-as-profit-falls-43/" target="_blank">Tesla starts Optimus robot production in California as profit falls 43%</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">又是一个没有数字的里程碑。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。跟 GXO 那条比，GXO 至少给了十万个箱子和六万五千小时。</div></div>
+</div>
+<div class="section-label">关注建造者</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后是关注建造者。今天抓到的推文里，还是没有专门讲机器人的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，我挑了三条能跟今天对上的。第一条是 Zara Zhang，也就是 follow-builders 这个项目的作者，两百五十多赞。她说大多数人高估了一次大发布的重要性，低估了每天出现的力量。每天做一条视频，比花几万美元做一条发布视频好。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Agility 一样。十万个箱子是一天一天搬出来的，换来的是第二份、第三份合同。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条是 Peter Yang，两百四十多赞。他转了一个视频工具 HyperFrames 的功能：上传一段参考短视频，用文字描述你想改什么，Claude 就能照着它的风格做一条新的，字体和颜色可以换，结构还是同一个。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 DeepMind 那个很像，都是看一段视频，学它的结构，再换一个地方用。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，一个学的是剪辑风格，一个学的是全身动作。第三条是 Aaron Levie，Box 的 CEO，两百四十多赞。他说大企业的安全状况很碎片化，数据散在各处，你根本不知道某一刻风险在哪里。先把数据和基础设施整理好，agent 才有机会帮你做安全。他的结论是：每个人都得先把基础打好。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">舍弗勒那条线上装了那么多传感器，做数字孪生，也是先把数据整理好，再让 AI 进来。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">播客推荐今天是 No Priors，十月十五号那一期，嘉宾是 OpenAI 总裁 Greg Brockman。节目不是讲机器人的，但有一段能对上。他说 AI 在数学上已经能产生新知识，但换到生物和药物研发，问题变成了：我们有没有数据，能不能拿到数据。有些地方数据根本不存在，所以湿实验和仿真的创新会变得很重要。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">No Priors · The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman</a></span>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">换成机器人也一样。模型够聪明了，缺的是真实世界的数据。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。他还说了一个观点：软件越来越便宜，安全上的花费应该远远超过软件本身的花费。这跟 Levie 那条可以一起听。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的问题留给大家：如果你是 GXO，看到 Digit 搬了十万个箱子，你还要看到什么数字，才会在下一个仓库也用它？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们下周二见。今天是十月二十七号，这里是每日快报。</div></div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本期要点</div>
+  <div class="insight-title">从一个仓库到很多个仓库</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>GXO 和 Agility 把 Digit 扩到 Statesville 和 Lebanon 两个新仓库，2027 年初先用 Digit 4，之后换 Digit 5。Agility 正在通过 SPAC 上市，预计第四季度完成。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Bedrock 八个月估值翻倍多。新招的运营副总裁和总法律顾问都来自 Uber 等自动驾驶业务，说明下一个难题是运营和监管。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>舍弗勒的太仓工厂开始量产人形机器人执行器，人形机器人订单累计约 4 亿欧元。整机谁赢还不确定，关节总得有人造。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>宇树七天涨超 65%，市盈率 465 倍。驱动因素是摩根大通连升两档，以及王兴兴「最快 2028 年完成 80% 语音任务」的预测。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。今天抓到的推文里没有专门讲机器人的，下面选的是跟今天话题能对上的几条。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · 2026-10-15</p>
+  <p class="pc-title">The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman</p>
+  <p class="pc-summary">Greg Brockman 认为 AI 在数学上已经能产生新知识；换到药物研发，瓶颈变成「有没有数据、能不能拿到数据」，有些数据根本不存在，所以湿实验和仿真的创新会很重要。他还认为，软件越来越便宜，安全上的花费应该远远超过软件本身。</p>
+  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">ZZ</div>
+      <div>
+        <div class="builder-name">Zara Zhang</div>
+        <div class="builder-handle">@zarazhangrui · Builder · follow-builders 作者</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「很棒的访谈。大多数人高估了一次大发布的重要性，低估了每天在时间线上出现的力量。建立一个每天做一条视频的系统，比花几万美元做一条发布视频好。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">对应 Agility：十万个箱子是一天一天搬出来的，换来了第二、第三个仓库。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 256</span>
+      <a href="https://x.com/zarazhangrui/status/2114255477907570865" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI 教程与访谈</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「用 Claude 几分钟复制任何短视频的风格。HyperFrames 把它做成了原生功能：上传或选一段参考视频，在提示里描述你想改什么。你能看到借鉴的来源，换字体、换颜色，结构还是同一个。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">对应 DeepMind：看一段视频，学它的结构，换个地方用。一个学剪辑，一个学动作。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 245</span>
+      <a href="https://x.com/petergyang/status/2114507378532229214" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「大多数大企业的安全现状很碎片化。数据分散，你根本不知道某一刻的风险在哪里。先把数据和基础设施整理好，agent 才有机会帮你守住环境：并行调用安全工具、模拟各种攻击、读日志。但每个人都得先把基础打好。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">对应舍弗勒：先用传感器和数字孪生把产线数据整理好，再让 AI 进来。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 244</span>
+      <a href="https://x.com/levie/status/2114391265655816315" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ℹ️ 本期内容基于媒体报道和公司新闻稿整理。GXO × Agility 的数据（10 万多个周转箱、6.5 万小时）来自双方联合新闻稿；Bedrock 融资信息来自 Robotics &amp; Automation News 转述的公司公告，B 轮估值约 17.5 亿美元来自 Sacra；舍弗勒的订单数字来自公司说法；宇树的盘面数据（涨幅、市盈率、席位买卖额）来自财新报道及其页面摘要，王兴兴的发言来自 TNW 转述彭博社和南华早报；DeepMind 的投掷结果未公布总投掷次数和距离；特斯拉未公布 Optimus 产量。播客为 feed 中唯一一期，发布于 10 月 15 日，早于本期覆盖范围。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.globenewswire.com/news-release/2026/10/26/3387960/0/en/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations.html" target="_blank"><span class="src-icon">LINK</span><span>GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/10/26/bedrock-robotics-raises-600-million-to-scale-autonomous-excavators-across-the-us/106337/" target="_blank"><span class="src-icon">LINK</span><span>Bedrock Robotics raises $600 million to scale autonomous excavators across the US</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/10/26/schaeffler-opens-lighthouse-factory-in-taicang-where-humanoids-will-make-humanoids/106303/" target="_blank"><span class="src-icon">LINK</span><span>Schaeffler opens lighthouse factory in Taicang where &#x27;humanoids will make humanoids&#x27;</span></a>
+  <a class="source-link" href="https://www.caixinglobal.com/2026-10-27/unitree-warns-of-valuation-risks-after-shares-surge-more-than-65-102497621.html" target="_blank"><span class="src-icon">LINK</span><span>Unitree Warns of Valuation Risks After Shares Surge More Than 65%</span></a>
+  <a class="source-link" href="https://thenextweb.com/news/unitree-rehearsal-self-improving-robots-2028-breakthrough" target="_blank"><span class="src-icon">LINK</span><span>Unitree is building AI that lets its humanoid robots improve themselves</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/10/22/google-deepmind-uses-gemini-4-argon-to-teach-apptroniks-apollo-humanoid-new-skills-from-video/106227/" target="_blank"><span class="src-icon">LINK</span><span>Google DeepMind uses Gemini 4 Argon to teach Apptronik&#x27;s Apollo humanoid new skills from video</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/10/21/tesla-stars-optimus-robot-production-in-california-as-profit-falls-43/" target="_blank"><span class="src-icon">LINK</span><span>Tesla starts Optimus robot production in California as profit falls 43%</span></a>
+  <a class="source-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank"><span class="src-icon">LINK</span><span>No Priors · The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman</span></a>
+  <a class="source-link" href="https://x.com/zarazhangrui/status/2114255477907570865" target="_blank"><span class="src-icon">X</span><span>Zara Zhang · @zarazhangrui</span></a>
+  <a class="source-link" href="https://x.com/petergyang/status/2114507378532229214" target="_blank"><span class="src-icon">X</span><span>Peter Yang · @petergyang</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2114391265655816315" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-10-27 · 机器人星期二</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

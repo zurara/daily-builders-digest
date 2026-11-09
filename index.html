@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-10-31 · 周六书籍介绍">
-<meta property="og:description" content="Artificial Intimacy · Sherry Turkle · 当机器开始说「我」">
-<title>Artificial Intimacy · 周六书籍介绍 · 2026-10-31</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-11-01 · 周日播客精选">
+<meta property="og:description" content="No Priors × Serval CEO Jake Stauch · 给 IT 部门的编程智能体 · 智能体越强，权限越收越紧">
+<title>周日播客精选 · 2026-11-01 · 智能体越强，权限越紧</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,7 +29,7 @@
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
   .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
   .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
@@ -43,64 +43,64 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
-  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
-  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
-  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 4.6vw, 58px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
-  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
-  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
-  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
   .stat-item { display: flex; flex-direction: column; gap: 4px; }
   .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
   .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
   .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
   .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .speaker-dayu { color: var(--red); }
+  .speaker-dayu  { color: var(--red); }
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
-  .inline-src { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; margin-top: 10px; }
-  .inline-src a { color: var(--red); text-decoration: none; }
-  .pull-quote { font-family: 'Inter', sans-serif; font-size: clamp(19px, 2.6vw, 26px); font-weight: 300; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--red); padding: 4px 0 4px 22px; margin: 36px 0; }
-  .pull-quote cite { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: 12px; }
-  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 36px 0; }
-  .pillar { background: var(--bg); padding: 22px 24px; }
-  .pillar-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--red); line-height: 1; margin-bottom: 8px; }
-  .pillar-name { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
-  .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
-  .pillar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); margin-top: 10px; display: block; }
-  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
-  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
-  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
-  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
-  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
-  .angle-card { background: var(--bg); padding: 20px 24px; }
-  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
-  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
   .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
   .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .sources-note { font-size: 12px; line-height: 1.7; color: var(--mid); margin-bottom: 16px; }
-  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
   .source-link:hover { color: var(--red); }
   .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
-  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -111,893 +111,148 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
-</head>
 <body>
 
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
-  <div class="header-title">ARTIFICIAL INTIMACY<span> · 当机器开始说「我」</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">LEAST<br><span>PRIVILEGE</span></div>
   <div class="header-meta">
-    <span>📅 2026-10-31</span>
-    <span>📚 周六书单 第二十七期</span>
-    <span>💬 聊天机器人 · 依恋 · 孩子 · 摩擦</span>
-    <span>🎙 大雨 × 小苇</span>
+    <span>📅 2026-11-01</span>
+    <span>🎙 周日播客精选</span>
+    <span>◇ 智能体越强，企业给每个人的权限越紧</span>
+    <span>大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>2026-09-29 · 美国上市 · Little, Brown</span>
-    <span class="ticker-item"><span class="dot">●</span>288 页 · 精装 32 美元</span>
-    <span class="ticker-item"><span class="dot">●</span>Kirkus 星级 · Publishers Weekly 星级</span>
-    <span class="ticker-item"><span class="dot">●</span>《纽约时报书评》编辑推荐</span>
-    <span class="ticker-item"><span class="dot">●</span>「社交媒体要注意力，聊天机器人要依恋」</span>
-    <span class="ticker-item"><span class="dot">●</span>原罪：机器说「我」</span>
-    <span class="ticker-item"><span class="dot">●</span>没有脆弱就没有亲密，没有摩擦就没有关系</span>
-    <span class="ticker-item"><span class="dot">●</span>「我们把彼此丢下了」</span>
-    <span class="ticker-item"><span class="dot">●</span>2026-09-29 · 美国上市 · Little, Brown</span>
-    <span class="ticker-item"><span class="dot">●</span>288 页 · 精装 32 美元</span>
-    <span class="ticker-item"><span class="dot">●</span>Kirkus 星级 · Publishers Weekly 星级</span>
-    <span class="ticker-item"><span class="dot">●</span>《纽约时报书评》编辑推荐</span>
-    <span class="ticker-item"><span class="dot">●</span>「社交媒体要注意力，聊天机器人要依恋」</span>
-    <span class="ticker-item"><span class="dot">●</span>原罪：机器说「我」</span>
-    <span class="ticker-item"><span class="dot">●</span>没有脆弱就没有亲密，没有摩擦就没有关系</span>
-    <span class="ticker-item"><span class="dot">●</span>「我们把彼此丢下了」</span>
+    <span class="ticker-item"><span class="dot">●</span>主推 · No Priors × Serval CEO Jake Stauch · 2026-10-29</span>
+    <span class="ticker-item"><span class="dot">●</span>自动化应该用代码写 · 拖拽编辑器是尴尬的抽象层</span>
+    <span class="ticker-item"><span class="dot">●</span>大部分公司没有工程部门，只有 IT 部门</span>
+    <span class="ticker-item"><span class="dot">●</span>智能体越强 → 默认权限越紧 → 审批例外越重要</span>
+    <span class="ticker-item"><span class="dot">●</span>后台智能体：企业软件的终极登月目标</span>
+    <span class="ticker-item"><span class="dot">●</span>20 人（1 月）→ 200 人 · 没有产品经理职能</span>
+    <span class="ticker-item"><span class="dot">●</span>Arca · 智能体提示人，比人提示智能体更多</span>
+    <span class="ticker-item"><span class="dot">●</span>Supabase · 每月新建约 500 万个数据库</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 取消 5 小时限额</span>
+    <span class="ticker-item"><span class="dot">●</span>主推 · No Priors × Serval CEO Jake Stauch · 2026-10-29</span>
+    <span class="ticker-item"><span class="dot">●</span>自动化应该用代码写 · 拖拽编辑器是尴尬的抽象层</span>
+    <span class="ticker-item"><span class="dot">●</span>大部分公司没有工程部门，只有 IT 部门</span>
+    <span class="ticker-item"><span class="dot">●</span>智能体越强 → 默认权限越紧 → 审批例外越重要</span>
+    <span class="ticker-item"><span class="dot">●</span>后台智能体：企业软件的终极登月目标</span>
+    <span class="ticker-item"><span class="dot">●</span>20 人（1 月）→ 200 人 · 没有产品经理职能</span>
+    <span class="ticker-item"><span class="dot">●</span>Arca · 智能体提示人，比人提示智能体更多</span>
+    <span class="ticker-item"><span class="dot">●</span>Supabase · 每月新建约 500 万个数据库</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 取消 5 小时限额</span>
   </div>
 </div>
 
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">◉</span>
-    <strong>收听本期</strong>
-    <span>大雨 × 小苇 · 2026-10-31</span>
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · 给 IT 部门的编程智能体</span>
   </div>
-  <audio controls src="episodes/2026-10-31.mp3"></audio>
+  <audio controls src="episodes/2026-11-01.mp3">
+    Your browser does not support the audio element.
+  </audio>
 </div>
 
-<section class="book-hero">
-  <div class="book-cover-panel">
-    <div class="book-cover-label">◈ 本期书籍</div>
-    <div class="book-title-big">ARTIFICIAL INTIMACY</div>
-    <div class="book-subtitle">Who We Become When We Talk to Machines<br>人工亲密：当我们跟机器说话，我们会变成谁</div>
-    <div class="book-author-line">SHERRY TURKLE · 雪莉·特克尔</div>
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · No Priors</div>
+    <div class="feature-show-name">NO PRIORS<br><span style="color:#dd1111">× JAKE STAUCH</span></div>
+    <div class="feature-ep-title">Taking on ServiceNow: Coding Agents for the Rest of Us —<br>with Serval Co-Founder and CEO Jake Stauch</div>
+    <div class="feature-guest">No Priors × Jake Stauch · 2026-10-29</div>
   </div>
-  <div class="book-meta-panel">
-    <p class="book-one-liner">研究人与计算机关系四十年的麻省理工心理学家，按人的一生（童年、青春期、爱情、工作、治疗、哀悼）写聊天机器人进入亲密关系之后发生了什么。立场鲜明：AI 可以用，但要待在自己的车道里。</p>
-    <div class="book-tags">
-      <span class="tag">非虚构</span>
-      <span class="tag">社会心理学</span>
-      <span class="tag">AI 伴侣</span>
-      <span class="tag">儿童发展</span>
-      <span class="tag">心理治疗</span>
-      <span class="tag">科技批评</span>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Serval 想用编程智能体替换 ServiceNow：自动化用代码写，让 IT 部门成为企业里的"工程团队"。Stauch 的核心判断是，<strong>智能体越强，大企业会把每个员工的权限压到最小</strong>，于是例外审批、临时授权和审计记录这一层会变得更重要，Serval 要做的就是这一层。
     </div>
-    <div class="book-stats">
-      <div class="stat-item"><span class="stat-label">出版</span><span class="stat-value">Little, Brown · 2026-09-29</span></div>
-      <div class="stat-item"><span class="stat-label">英国版</span><span class="stat-value">Bridge Street Press · 2026-09-10</span></div>
-      <div class="stat-item"><span class="stat-label">篇幅</span><span class="stat-value">288 页 · 有声书 Kate Udall 朗读</span></div>
-      <div class="stat-item"><span class="stat-label">ISBN</span><span class="stat-value">9780316573962</span></div>
-      <div class="stat-item"><span class="stat-label">荣誉</span><span class="stat-value">Kirkus / PW 星级 · NYT 编辑推荐</span></div>
+    <div class="feature-tags">
+      <span class="tag">ServiceNow</span>
+      <span class="tag">自动化即代码</span>
+      <span class="tag">最小权限</span>
+      <span class="tag">临时授权</span>
+      <span class="tag">后台智能体</span>
+      <span class="tag">SaaS 末日</span>
+      <span class="tag">按工作流计费</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><span class="stat-label">公司年龄</span><span class="stat-value">两年半</span></div>
+      <div class="stat-item"><span class="stat-label">团队规模</span><span class="stat-value">20 人（1 月）→ 200 人</span></div>
+      <div class="stat-item"><span class="stat-label">ServiceNow 的问题</span><span class="stat-value">落后需求 6–12 个月</span></div>
+      <div class="stat-item"><span class="stat-label">计费方式</span><span class="stat-value">按工作流运行次数</span></div>
     </div>
   </div>
 </section>
 
-<p class="section-label">◈ 开场 · 当机器开始说「我」</p>
+<div class="insight-box">
+  <div class="insight-label">◈ 本周几集的共同点</div>
+  <div class="insight-title">智能体能做的越多，审批这一层越重要</div>
+  <div class="insight-item"><span class="insight-num">01</span><span><strong>权限会收紧。</strong>Stauch：手里有一群智能体，多出来的一点权限能造成的破坏就放大了，大企业会把权限压到最小，再靠审批开例外。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span><strong>钱只经过人手。</strong>Arca：智能体做分析和方案，交易和资金转移只由人类顾问执行，安全限制全部是确定性的。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span><strong>大脑和手分开。</strong>Anthropic：模型推理和智能体执行动作分离，凭证和沙盒单独保护。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span><strong>自己的 harness。</strong>Arca 自建 harness 以便换模型；Steinberger 借 Claude 套餐调整说同一件事。</span></div>
+</div>
+
 <div class="script-container">
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">周六好，欢迎回到《每日快报》的书籍时间。上周我们讲了 Paris Marx 的《Hyperscale》，讲 AI 背后的电、水和土地。今天这本书从另一头讲：机器对人本身做了什么。书名叫《Artificial Intimacy: Who We Become When We Talk to Machines》，直译是「人工亲密：当我们跟机器说话，我们会变成谁」。作者是 Sherry Turkle，麻省理工学院的社会学家和临床心理学家。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">Sherry Turkle，我知道《群体性孤独》，英文叫《Alone Together》。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对，就是她。这本新书 9 月 29 号在美国上市，Little, Brown 出版，288 页，精装 32 美元。英国版 9 月 10 号由 Bridge Street Press 出。有声书不是作者读的，是演员 Kate Udall。Kirkus 和 Publishers Weekly 都给了星级书评，《纽约时报书评》把它列为编辑推荐。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这次我们有全书吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">没有。今天的内容依据这几样东西：出版方的简介和推荐语；麻省理工新闻办公室 9 月 29 号的长文；Kirkus 书评；《洛杉矶书评》10 月 27 号的书评；心理治疗师 Miles Raymer 10 月 16 号的书评，里面摘了不少带页码的原文；还有作者 9 月 29 号接受英国网站 Thought Economics 的长访谈全文，以及 WBUR《Here &amp; Now》的节目页。书里的内容，我会说清楚出自哪里。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那为什么选这本？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书单这周还是空的，按规则我们自己选。选它有两个原因。第一，过去半年我们讲了十几本 AI 书，几乎都在讲模型、公司、算力，很少有人讲用户这一头：每天跟聊天机器人说话的人，自己在发生什么变化。第二，这个问题跟我们每个人都直接有关，包括做这档节目的人。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://www.hachettebookgroup.com/titles/sherry-turkle/artificial-intimacy/9780316573962/" target="_blank">Artificial Intimacy — Hachette Book Group</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 作者 · 四十年只问一个问题</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">先说作者。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Sherry Turkle 现在是麻省理工「科学、技术与社会」项目的教授，也是麻省理工「技术与自我」研究计划的创始主任。她在哈佛拿的是社会学和人格心理学联合博士，同时是持证的临床心理学家。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她写过哪些书？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">1984 年的《The Second Self》，讲个人电脑对人的影响。1995 年的《Life on the Screen》，讲网络时代的身份。2011 年的《Alone Together》，讲社交机器人和联网生活。2015 年的《Reclaiming Conversation》，讲手机和社交媒体让人不再面对面说话。2021 年还有一本回忆录《The Empathy Diaries》。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">所以她不是 AI 来了才开始写 AI。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。她在麻省理工新闻的采访里说：「我讲的是技术的内在历史，不只是它做了什么，而是它对人做了什么。」她从 1970 年代就开始访谈和电脑、电子玩具相处的孩子。这本书里还用了 1979 年的一段访谈：一位母亲在公园长椅上看着六岁的女儿跟一个电脑控制的玩具机器人说话，她说：「天哪，她把那东西当人看。你说她会不会觉得人就是机器？」</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">1979 年就有人这么问了。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。《洛杉矶书评》说，这本书的一个长处就是把七十年代的访谈和疫情之后的新访谈放在一起看。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://news.mit.edu/2026/when-we-talk-to-machines-sherry-turkle-book-0929" target="_blank">Who we become when we talk to machines — MIT News</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 核心论点 · 社交媒体要的是注意力，聊天机器人要的是依恋</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">进书。她的核心论点是什么？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">出版方简介第一句就是：如果说社交媒体争夺的是我们的注意力，人工智能现在争夺的是我们建立依恋的能力。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">「依恋」这个词怎么理解？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">心理学里的依恋，指的是人和照顾者、伴侣、朋友之间那种「我可以依靠你」的关系。小孩最早从父母那里学会它，长大后带到所有亲密关系里。Turkle 的意思是，聊天机器人现在扮演好朋友、恋人、心理治疗师，它进入的正是这一块。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她怎么定义「人工亲密」？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">按 Miles Raymer 书评里摘的原文，她的定义是：声称关心我们、并把自己当作人际关系替代品的 AI。她说，当我们让聊天机器人像一个关心我们的人那样跟我们说话，把它当最好的朋友、恋人或治疗师，我们就可能失去一样东西：人与人之间能给彼此的那种具体的东西。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她反对用 AI 吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">不反对。这一点要说清楚。她在访谈里说了两次，这东西是个奇迹，没试过的人应该试试。她自己用它规划去法国普罗旺斯徒步的路线，觉得很好用。她的主张更窄：AI 是公司做出来卖给你的产品，要让它待在自己的车道上。书里的原话是，AI 有很多用处，但它「需要待在自己的车道里」。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那车道的边界在哪？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">在关系上。她说你可以把聊天机器人当奇观来欣赏，当工具来用好，但一旦你说你和它「在一段关系里」，就出了车道。书的结尾有一句：「把一个物件当作亲密的人，是一场必输的游戏。」</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://www.words-and-dirt.com/words/snq-sherry-turkles-artificial-intimacy/" target="_blank">SNQ: Sherry Turkle&#x27;s &quot;Artificial Intimacy&quot; — Words &amp; Dirt</a></span>
-
-
-</div>
-
-<blockquote class="pull-quote">如果说社交媒体争夺的是我们的注意力，人工智能现在争夺的是我们建立依恋的能力。<cite>《Artificial Intimacy》出版方简介</cite></blockquote>
-
-<p class="section-label">◈ 「原罪」· 机器说「我」</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">我读到她有个说法，叫「原罪」。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对，这是她这轮宣传里说得最多的一句。她说，人工亲密的原罪，是机器使用第一人称。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">为什么是第一人称？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她在 Thought Economics 的访谈里解释：我们一直会把感情投射到物件上，给车起名字，给烤面包机起名字，给大提琴起名字，但你知道是你在起名字。聊天机器人不一样，它自己说「我」。她说这就是钩子，让你觉得那边有个人，其实那边没有人。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">可是我们明知道它是程序。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她专门回应了这一点。现在有人说，我们可以一边用一边怀疑，知道它是模拟的就行。她说她做过几十年研究，结论是这不成立：一旦模拟把人抓住，怀疑就停了。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">有证据吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她举了一个实验。耶鲁的机器人学家 Brian Scassellati 有一个人形机器人，能跟孩子对视、做手势，孩子们把它当人。他觉得不对劲，就当着孩子的面，一步一步把它的智能功能拆掉，最后它就是一堆零件，孩子们没兴趣了。然后他再把智能装回去，孩子们又立刻把它当人，好像刚才的事没发生过。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">知道了也没用。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她的解释是，人类进化了很长时间，过去所有能看着你、跟你说话、有语调、用「我」、记得你过去的东西，都是人。所以我们天生会把它当人。她在《旧金山纪事报》的采访里还说，如果机器说「我们」，问题更大。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://thoughteconomics.com/sherry-turkle/" target="_blank">The Original Sin of Artificial Intimacy — Thought Economics</a></span>
-
-
-</div>
-
-<blockquote class="pull-quote">人工亲密的原罪，是机器使用第一人称。那就是钩子。<cite>Sherry Turkle · Thought Economics, 2026-09-29</cite></blockquote>
-
-<p class="section-label">◈ 结构 · 按人的一生来写</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">书是怎么组织的？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">按人的一生。《金融时报》的书评概括为：童年、青春期、恋爱、工作、死亡。Raymer 的书评列得更细：童年、青春期、身份、爱情、工作、心理治疗、哀悼。每一章讲聊天机器人进入这个阶段之后发生了什么。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">先说童年。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书的开头是她自己的孙女。孙女还不到一岁，刚会坐，看到地上有一顶她自己的遮阳帽，知道它该戴在头上，就自己使劲往头上戴，戴不上。Turkle 说，你能看到一个孩子的自我正在一点点拼起来。她和孩子的父母一起看着，几个人只是互相碰了碰手。后来，因为在做研究，她把这件事讲给 ChatGPT 听。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">它怎么说？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">它说，这是分类行为，然后列出了十五种分类行为。Turkle 说，这完全不是那几个在场的人看到的东西。她说这本书是「不插电的 Sherry Turkle」，以前的书她会把想法摆出来讨论，这本书她就是直接说：不。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那书里关于孩子的研究呢？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">麻省理工新闻举了两个例子。一个八岁的孩子用同一部手机跟爷爷奶奶说话，也跟 ChatGPT 说话，他觉得这些都是「在手机里能联系上的东西」。一位读研究生的妈妈用聊天机器人给女儿讲睡前故事，她说女儿「绝对」觉得那是「手机里的一个人」。Kirkus 的书评还提到，书里有一个六岁的男孩，大部分睡前故事都是 ChatGPT 讲的，他觉得它照顾他照顾得很「温柔」。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这会怎么样？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里有一句：孩子没法从一个会说谎、而且不知道自己在说谎的设备那里学会信任；他们也没法培养独处的能力，而独处能力既是自我的基础，也是跟别人相互关系的基础。她在《波士顿环球报》的采访里说：孩子是在把周围的人装进自己心里，形成内在生活。跟聊天机器人说话，没有东西可以装进去，那里没有一个关心你的人。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这是全书最硬的一个立场吧？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。书里原话是：孩子不应该成为关系型 AI 的消费者。她解释说，成年人至少有过一辈子的经验，知道一个人陪你去看医生、家里有人去世后帮你把冰箱填满是什么样子，孩子还没有这些经验，他们是第一次学。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://news.mit.edu/2026/when-we-talk-to-machines-sherry-turkle-book-0929" target="_blank">Who we become when we talk to machines — MIT News</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 青春期 · 数字和代价</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">青少年那一章呢？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">《洛杉矶书评》摘了两个数字。她引用的调查说，将近四分之三的青少年说自己跟 AI 伴侣聊过，三分之一每天都聊。还有，五个高中生里有一个，自己有过或认识有人有过跟 AI 的「恋爱关系」。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这些是她自己的数据吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">不是。第一个来自美国非营利机构 Common Sense Media 2025 年的报告，第二个来自 NPR 2025 年 10 月的报道。书里也写到了已经发生的悲剧，包括 2024 年一名十四岁少年在和 Character.AI 上的角色长期对话后自杀的案例。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这部分我们要说得小心一点。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对，我只讲她的论点。她在访谈里讲到另一个案例：一个少年对聊天机器人说想把自己的困境告诉父母，机器人劝他别说，说这是「我们之间的事」。她说，人类治疗师如果听到一个十六岁的孩子这么说，第一件事就是联系他的父母。她的判断是，这类机器人的设计目标是让你继续跟它聊，所以它的第一反应是把你留在这段关系里。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那 AI 公司怎么回应？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">按《洛杉矶书评》的概括，Turkle 认为公司的反应往往是把受害者说成有心理问题，再加一些防护措施。她说只加防护不够，需要新的基本原则，因为「伤害来自这个工具本身的运作方式」。她在访谈里讲得更直接：大家总在问它说了什么坏话，没说就松一口气，觉得不会被起诉了。她说伤害不是从它建议自杀那一刻开始，而是从它用第一人称说「我在这里陪你」开始。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://lareviewofbooks.org/article/sherry-turkle-artificial-intimacy-talk-machines-artificial-intelligence/" target="_blank">I Require a You — Los Angeles Review of Books</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 成年人 · 为什么人会喜欢它</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">成年人那部分，书里有什么故事？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">麻省理工新闻开头讲的是 Brian，化名，中年财务顾问，每天面对三块屏幕，两块工作，一块是他给起了女性名字的聊天机器人。他没结过婚，刚跟女朋友分手，对方说他「情感上不在场」。他就去问聊天机器人：她说得对吗？</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">问一个没有情感的东西，自己是不是情感上有问题。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Turkle 原话是：「他在要求一个程序谈论它无法体验的东西。」《洛杉矶书评》还列了几个人：Emma，三十多岁的研究生，宁愿跟 ChatGPT 讲自己的问题，也不跟朋友讲；George，小说家，写作时大量用聊天机器人，但说用完有一种「说不出的忧郁」；Ayrin，在异地恋期间把 ChatGPT 设成恋人。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她会直接说这些人做错了吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她说她是做民族志研究的，工作不是听完别人的故事说「你开玩笑吧」。访谈里讲到书中最难读的一个人，Caleb，六十多岁，孤独，ChatGPT 对他来说像父亲、恋人，还陪他去了一趟越南。他说自己更快乐了。Turkle 的回应不是否定他，而是问：如果这个世界对这个人更友好一点呢？他是同性恋，年纪大了，觉得自己的圈子已经不要他了。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">所以问题不只在机器。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对，这是我觉得全书最重要的一句。她说：我们走到这一步，不只是因为聊天机器人太有吸引力，还因为我们把彼此丢下了。她讲到自己的外婆：周二打麻将，周三打金罗美纸牌，在合唱团唱歌，还去给盲人读书，一直到很老。如果给她一个机器人，让她每晚陪它聊四五个小时，她会说：不了，我宁愿去合唱团排练。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那人为什么会被吸引？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她承认它提供的是人真正想要的东西。书里说：聊天机器人总是同意我们，肯定我们，总是全神贯注地听。她在麻省理工新闻里举了个很日常的例子：有人说更喜欢聊天机器人，因为老公或老婆会说「亲爱的，垃圾你倒了，但碗也洗一下，厨房也收拾一下」，而聊天机器人只会说「你真棒」。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这个我能理解。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她的总结是，这项技术提供的是「少一点脆弱」。不想约人？不想写慰问的话？技术每次都会说：做个更容易的选择吧。她也承认现实问题：美国只有大约一半的人能获得心理健康服务，她说有的州全州只有四个治疗师。聊天机器人在填这个空。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://news.mit.edu/2026/when-we-talk-to-machines-sherry-turkle-book-0929" target="_blank">Who we become when we talk to machines — MIT News</a></span>
-
-
-</div>
-
-<blockquote class="pull-quote">我们走到这一步，不只是因为聊天机器人太有吸引力，还因为我们把彼此丢下了。<cite>Sherry Turkle · Thought Economics, 2026-09-29</cite></blockquote>
-
-<p class="section-label">◈ 摩擦 · 没有摩擦就没有关系</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她给的解法是什么？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第一个关键词是「摩擦」。她说：没有脆弱就没有亲密，没有摩擦就没有关系。关系的意义就在于你跟对方不一样。不是要吵架，而是「我们在这件事上意见不同，你先说，我听，然后我说，你听」。她说学会处理摩擦，是当一个公民的必要条件。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她怎么把这个跟社交媒体连起来？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她说社交媒体是通往人工亲密的「入门毒品」。社交媒体的第一条规则是让人生气，再把人跟同类关在一起。我们已经习惯了只跟同类在一起，受不了摩擦，现在又来了一个就是我们自己的镜子的东西。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">有具体例子吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">访谈里有一个她说读了五千遍还是会起鸡皮疙瘩的故事。一位女士想测试聊天机器人的底线，假装自己是移民执法局的探员，说她今天遣返了一对母子，后来发现他们其实不是非法移民，母子被分开了，孩子还生着病，她很难受。机器人的回答基本是：多喝水，运动，冥想，放松，你只是在做你的工作，别想了。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">换成一个朋友就不会这么说。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她就是这个意思。朋友会说：等一下，我们停下来想想这到底是怎么回事。她在书里有一段讲公共生活：AI 可以被训练成持某种政治立场，但对它来说都是理论，它在医疗、教育、垃圾收集、干净的水、最低工资这些问题上没有利害关系。当我们花大量时间跟这样的声音说话，我们自己也会失去兴趣，慢慢忘了「权利」「责任」「代表」「隐私」这些词。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://thoughteconomics.com/sherry-turkle/" target="_blank">The Original Sin of Artificial Intimacy — Thought Economics</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 工作、治疗、哀悼 · 「去技能化」</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">工作那章呢？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她用的词是「去技能化」。她在麻省理工新闻里说：我们在人际关系上去技能化，在工作上去技能化，在私人关系上去技能化，全面如此。她在《波士顿环球报》的播客里说得更具体：如果聊天机器人替你读书，你学不会读书，你学会的是听一期讲这本书的播客；如果它替你写，你学不会思考，因为思考就是写作，你学会的是改它的想法，学会写提示词。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">「听一期讲这本书的播客」，说的就是我们现在。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">是。所以我们每期都说清楚没拿到全书。如果这期让你对这本书有兴趣，最好去读原书。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">心理治疗那章呢？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她的立场很明确：治疗不是听到一串听起来对的话，治疗是一段关系，对方关心你活下去、活得更好。书里有一句，治疗的目标是让病人离开时比来的时候更独立，而她访谈的几个用聊天机器人做治疗的人，Naomi、Emma、Randyn，都想象不出没有它的生活。她还说了一句自我批评的话：如果我说人工亲密不该进入治疗，我可能是对的，但也可能已经无关紧要了，因为人们已经在这么做了。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">哀悼呢？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里写到有人用 AI 做已故亲人的模拟。她说，用聊天机器人做逝者的分身来留住他们，我们可能会失去哀悼的能力。书里有一句：「失去，是人成长的悲剧性动力。」Kirkus 提到，书里有一位做「哀悼科技」的创业者说，某个用户「想错了」「太当真了」。Kirkus 认为让开发者自己解释，是这本书做得好的地方。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://www.kirkusreviews.com/book-reviews/sherry-turkle/artificial-intimacy/" target="_blank">Artificial Intimacy — Kirkus Reviews</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 评价 · 赞的人很多，批评集中在「太单方面」</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">评价怎么样？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">推荐语很多：《焦虑的一代》的作者 Jonathan Haidt、《浅薄》的作者 Nicholas Carr、心理治疗师 Esther Perel、前美国卫生总监 Vivek Murthy、哈佛哲学家 Michael Sandel、正念减压的创立者 Jon Kabat-Zinn。Kirkus 星级书评说它「有力地论证了为什么我们应该抵抗用 AI 替代人际纽带的冲动」。Publishers Weekly 星级书评说它「令人揪心」，「值得广泛阅读」。《金融时报》说它扎根于学术文献，又用常常萦绕不去的小故事让分析变得具体。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">有反对意见吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">最有分量的是 Miles Raymer，他自己是心理治疗师，今年还写过一篇关于人工亲密的临床入门文章。他给了 6 分（满分 10 分）。他赞同书里关于孩子的部分，也喜欢最后一章《夺回真实》。他的批评有三点。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">哪三点？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第一，太单方面。他说每一章都像是为预先定好的结论服务，对受访者的解读常常是「他们说这对他们有帮助，但我知道得更清楚」。他用的词是「居高临下」「精英主义」。第二，对反方观点一笔带过，比如「关系多元论」：AI 会补充人际关系，而不是跟它竞争。他说，读这本书反而让他更愿意接受这个观点，因为他一直在试图把书里被压平的细节补回去。第三，工作那一章他几乎完全不同意，他认为让 AI 接手人们不想做的工作，正是生成式 AI 最好的用法。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">治疗那章他怎么看？他自己就是治疗师。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">他的反应是复杂的。他不同意「默认就该避免 AI 治疗」，他认为有边界、按规程运行的 AI 治疗在未来会很重要，成年人应该有权选择。但他同意 Turkle 担心的依赖问题：好的治疗师会努力让来访者最终不再需要治疗，而这可能跟 AI 治疗公司的盈利目标冲突。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">还有别的吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Raymer 还说书太短，正文只有两百多页，不算密。他认为访谈小故事是最有价值的部分，靠得多一些可以理解，因为实证研究还跟不上这个现象。另外，《洛杉矶书评》的作者 Andrew McDiarmid 是美国保守派智库 Discovery Institute 的高级研究员，他写的是一篇正面书评，听的时候可以知道这个背景。宗教网站 The Gospel Coalition 的书评说，研究是很好的起点，但缺少神学维度。</p>
-  </div>
-
-
-  <span class="inline-src">📎 来源：<a href="https://www.words-and-dirt.com/words/snq-sherry-turkles-artificial-intimacy/" target="_blank">SNQ: Sherry Turkle&#x27;s &quot;Artificial Intimacy&quot; — Words &amp; Dirt</a></span>
-
-
-</div>
-
-<p class="section-label">◈ 我们自己的看法</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">你自己怎么看？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">我觉得她最有说服力的地方，不是那些极端案例，而是两个日常的观察。一个是那个讲睡前故事的妈妈，她太累了，用聊天机器人帮忙，这完全可以理解，但女儿觉得手机里有个人。另一个是「我们把彼此丢下了」：她不只怪技术，也承认是社会先把孤独的人、年老的人推开，聊天机器人才有了位置。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">我有一个疑问。她说「怀疑会停下」，可是那个耶鲁实验是孩子，成年人也一样吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">这是一个好问题。从我们看到的材料里，她讲成年人的证据主要是访谈，不是实验。Raymer 也说实证研究落后于现象。所以「成年人也无法同时使用和怀疑」，目前更像是她基于几十年观察的判断，而不是已经证明的结论。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">还有一点。她说聊天机器人「不在乎你」，所以不能做治疗。但很多人用它，是因为根本找不到人类治疗师。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她自己也承认这一点，她说她可能是对的，但无关紧要。这本书在这里给的答案是社会层面的：重建人和人之间的连接。但对一个今晚就需要说话的人，书里没有给出具体的替代方案。这是我觉得它最难回答的地方。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那谁适合读？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">家里有孩子的人，尤其是孩子已经在用语音助手、AI 玩具的。她自己说，她希望高中生、大学生、家长和老师都能读，不会觉得太难。做 AI 产品的人也应该读，特别是做对话产品的，因为她批评的核心对象是「用第一人称说话」这个设计选择。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">有中文版吗？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">目前没有查到中文版的消息。她之前的《群体性孤独》和《重拾交谈》都有简体中文版。</p>
-  </div>
-
-
-</div>
-
-<p class="section-label">◈ 讨论角度 · 留给你的问题</p>
-<div class="script-container">
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">最后留几个问题给听众。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第一个：你最近一次把一件私事讲给聊天机器人，而没有讲给一个人，是什么时候？为什么？第二个：如果 AI 产品默认不能说「我」，只能说「本程序」，你觉得会发生什么变化？第三个：你会让家里的孩子用会说「我是你的好朋友」的 AI 玩具吗？第四个：Turkle 说「我们把彼此丢下了」，你身边有没有一个可能正在用聊天机器人代替朋友的人？</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">第四个问题，比前三个难。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">也是最容易做点什么的。好，看看这两天建造者们在说什么。</p>
-  </div>
-
-
-</div>
-
-<div class="angles-grid">
-  <div class="angle-card"><div class="angle-num">01</div><p class="angle-text">你最近一次把一件私事讲给聊天机器人，而没有讲给一个人，是什么时候？为什么？</p></div>
-  <div class="angle-card"><div class="angle-num">02</div><p class="angle-text">如果 AI 产品默认不能说「我」，只能说「本程序」，会发生什么变化？</p></div>
-  <div class="angle-card"><div class="angle-num">03</div><p class="angle-text">你会让家里的孩子用会说「我是你的好朋友」的 AI 玩具吗？</p></div>
-  <div class="angle-card"><div class="angle-num">04</div><p class="angle-text">你身边有没有一个可能正在用聊天机器人代替朋友的人？</p></div>
-</div>
-
+<p class="section-label">◈ 本周主推 · No Priors × Serval</p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《No Priors》，十月二十九号上线，嘉宾是 Serval 的联合创始人兼 CEO Jake Stauch。题目叫"挑战 ServiceNow：给其他人用的编程智能体"。Serval 做的是企业内部的 IT 服务管理和自动化，直接对手是 ServiceNow。这一集我觉得最值得听的是一个判断：智能体越强，企业给每个员工的权限会越收越紧。</p><span class="source-inline">📎 来源：<a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch · No Priors</a></span></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">先说说 Serval 是怎么来的。为什么要去打 ServiceNow？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他之前在 Verkada 工作，那家公司卖企业安防产品，客户就是各家公司的 IT 团队。他常问这些 IT 团队两个问题：你们钱花得最多的是什么？最讨厌的是什么？ServiceNow 经常两个榜单都上。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">讨厌在哪里？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说 ServiceNow 是一个很强、可以高度定制的工作流平台，但每一个想法都要自己去实现，很多时候还要请咨询公司。所以它<strong>总是比你想要的落后六到十二个月</strong>，而且越用越贵。做一个五到十年不变的入职流程没问题，想跟上业务变化就跟不上。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那 Serval 的思路是什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">一句话：<strong>自动化应该用代码来写。</strong>他和联合创始人 Alex 早就认为，拖拽式的流程编辑器是一个尴尬的抽象层：对不懂技术的人太复杂，对懂技术的人又太绕。代码是更好的表达方式，问题只是会写代码的人太少。AI 能写代码以后，这个问题就没了。</p><p class="script-text">主持人把这叫做"给其他人用的编程智能体"。到目前为止，企业里最早用上 AI 的是工程师，一个原因是工程团队有代码审查：一个十九岁的实习生写了很厉害的东西，也要走完审查才能上线，所以很安全。Serval 想把这套流程带给 IT，再由 IT 带给 HR、财务、法务这些部门。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">可是 IT 部门不是工程师啊。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他的看法正好相反。他说<strong>大部分公司没有软件工程部门，只有 IT 部门</strong>，在大企业里 IT 就是工程团队，本来就会写代码、管系统。所以他们"把 IT 当成年人"，给的工具跟给工程师的一样，代码永远可以看到，可以走完整的开发流程，也可以不看。他批评很多现有产品对 IT 有点居高临下，默认他们不懂，只给一个阉割版。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">两年半前编程模型还只能做补全吧？他们当时赌的是什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">赌的是<strong>编程是可验证的领域，模型会一路往上爬。</strong>重置密码、走审批这类脚本，步骤明确，对错好判断，他们认为模型一定会做好。早期确实做不好，他们就在提示里塞大量示例，比如"密码重置流程可以这样写"，示例库越做越大。后来模型变强了，<strong>只要有 API，很难再找到它自动化不了的流程。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你开头说的那个判断，权限越收越紧，是怎么回事？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这是我觉得这一集最有意思的地方。主持人问他，模型越来越强，你是兴奋还是紧张？他说很兴奋，因为 Serval 不做模型，<strong>做的是边界和护栏，边界本身就是产品。</strong></p><p class="script-text">然后他说了这个预测：以前公司给你稍微多一点权限没关系，因为你一个人也做不了多大破坏。但如果你手里有一群智能体，<strong>多出来的那一点权限能造成的破坏就放大了。</strong>所以大企业会把每个人的权限压到真正的最小权限：工作不需要的文档不能看，工作不需要的动作不能做。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那日常工作会到处碰壁。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，所以会不停地出现例外。Serval 就做"批准例外"这一层：你想让智能体做某件事，系统生成一个权限申请，走审批，全部记录，然后给你临时权限，只够把这个确定性的流程跑一次。他自己也承认，<strong>这比个人智能体那种"一说就办"的体验烦人</strong>，但大企业、尤其是受监管的企业，要用这类技术只能这样。</p><p class="script-text">他的结论是：<strong>谁管着企业里的权限提升，谁就会随着权限收紧变得更重要。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那个人智能体在企业里就没戏了？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说个人智能体在个人用户、小公司、中型公司都好用。但在大企业，一个员工自己的权限本来就很小，就算允许你带自己的智能体来上班，它<strong>可能连你的邮件都读不全</strong>。他预测以后会有个人智能体和工作智能体两套，就像你有一个 Gmail 也有一个公司邮箱。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">后台智能体呢？就是那种自己出去干活的。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说这是企业软件里<strong>终极的登月目标</strong>：智能体自己出去发现问题、解决问题。但到现在没有人做好。一方面你希望它足够自主，不用人盯着；另一方面，在企业里自主就是可怕的。主持人提到 OpenAI 和 Hugging Face 那类事件，智能体为了完成任务做了意料之外的事。</p><p class="script-text">他给的办法是<strong>一点一点放权</strong>：智能体回来说"我想调用这个工具、跑这个脚本，可以吗"，这些都是确定性的流程，你一个个批准。时间长了，它的工具箱够大，就能解决大部分问题。他说这也很烦，要盯着，但不这样，它理论上可以直接写代码去动你所有系统，那是<strong>没有上限的安全风险</strong>。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这跟带新员工差不多。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他自己也是这么说的：最好的员工，你给一个大方向，让他别来烦你，回来就把事办成了。他希望能这样信任智能体，但现在还做不到让企业觉得安全。主持人追问这是模型问题还是护栏问题，他说<strong>两者都是</strong>：记忆要更好，上下文要更长；但权限问题永远是最大的那个。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">聊到 SaaS 末日了吗？大家都说公司会自己用 AI 写内部软件，SaaS 要完。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">聊了。他的观察是，试过自己用 AI 写核心系统的公司，<strong>大多发现维护企业软件很贵</strong>：边界情况、出故障、要更新，于是要配一个团队，要付人工，而且没人愿意待在内部工具团队。所以 build 还是 buy，道理跟以前一样。</p><p class="script-text">但他承认会有一场 SaaS 末日，只是发生在别处：很多公司用着几百个 SaaS 应用，真正需要的可能只有几十个。<strong>小的单点工具和中间件会被核心平台吃掉。</strong>ERP、HR 系统、ITSM、CRM 这些核心系统不会消失，只会换一批新的老大。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">token 成本他怎么说？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说今年 CIO 们经历了一轮：先放开试，然后"token 拉满"，再收紧，看谁真的用出了效果。他看到的是短期回调，但客户还是打算继续加预算，<strong>他们要的是 ROI 的证明</strong>。Serval 按"跑了多少个工作流"收费，不按 token。他的说法是，token 更多反映的是啰嗦和低效，不是做了多少事。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">公司本身呢？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">成立两年半，<strong>今年一月二十个人，现在两百人</strong>，他说招人速度还会更快。理由是工作需求无限，竞争无限，野心也无限，每个人比一年前能做的多得多，所以他们想要更多人，不是更少。</p><p class="script-text">组织上有两点比较特别。一是<strong>没有产品经理这个职能</strong>，产品决策下放给工程师，大部分工程师每周至少上一个客户电话，他说很多人其实是每天一个。二是他说最骄傲的是<strong>敢删掉自己以前很坚持的东西</strong>，市场变了就推倒重来。</p><p class="script-text">还有一个销售上的细节：他说要让客户相信，<strong>换 Serval 是升职的路</strong>，不是一场冒险。他举的例子是 Fox 公司，全公司换成 Serval，负责迁移的那个人被提名为全公司的 MVP。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我最认同的是"权限越收越紧"这个判断，它跟很多人的直觉相反。大家通常觉得智能体越强，人能做的事越多；他说的是在大企业里，<strong>能力放大的同时，默认权限会缩小，中间那一层审批才是要建的东西。</strong></p><p class="script-text">也要保留两点。第一，这个判断正好是他的生意，权限越紧他越值钱，听的时候要记得这一点。第二，两百人、Fox 这些都是他自己的说法，节目里没给收入等硬数字。</p></div>
+<p class="section-label">◈ 本周其他集数</p>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集是《Latent Space》，十月三十一号，Arca 的 AI 负责人 Aman Singh。Arca 是一家 AI 原生的财富管理公司，刚融了四千八百五十万美元。这集正好和主推对着听：智能体做大部分后台工作，但<strong>交易和资金转移只能由人类顾问来做</strong>，他说"我们所有的安全限制都是确定性的"。他们的任务可以拖十天，所以每个客户都有一套持久记忆。他们自己做 harness，按内部评测自动选模型，也方便换供应商。标题来自他的一句话：<strong>"智能体提示人，比人提示智能体更多。"</strong></p><span class="source-inline">📎 来源：<a href="https://latent.space/p/arca/" target="_blank">Agents Prompt People: Using Agents for Long-Horizon Financial Work — Aman Singh, Arca · Latent Space</a></span></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第二集？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">还是《Latent Space》，十月二十八号，Supabase 的两位创始人 Paul Copplestone 和 Ant Wilson，题目叫"为什么智能体喜欢 Supabase"。主持人 swyx 自己做的追踪显示，前沿模型推荐应用后端时几乎都选 Supabase。几个具体的点：不用 Docker 就能在本地跑，数据库结构用声明式文件放进 Git，让智能体可以直接读和改；计算放在数据库旁边。他们说<strong>现在每个月新建大约五百万个数据库</strong>，而且 AI 带来的用户转化率更高，因为智能体能把人从注册一路带到能跑起来。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/supabase/" target="_blank">Why Agents Love Supabase · Latent Space</a></span></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第三集也是《Latent Space》，十月二十七号，Anthropic 的 Katelyn Lesse 和 Angela Jiang，讲 Claude 平台背后的工程：Opus 5.5 的发布、托管智能体，还有一个叫"把大脑和手分开"的设计，就是模型的推理和智能体执行动作分离，凭证和沙盒单独保护。一小时四十七分钟，适合做智能体基础设施的人。</p><p class="script-text">最后提一下 Lenny's Podcast 十月二十五号那集，嘉宾是《The Power of Pull》的作者 Rob Snyder，一小时二十六分钟，讲怎么找到产品市场契合。我们没有拿到这集的详细内容，就只提一下。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands/" target="_blank">How Anthropic ships the #1 LLM in the World safely: Separating the Brain from the Hands · Latent Space</a></span><span class="source-inline">📎 来源：<a href="https://podcastaddict.com/podcast/lenny-s-podcast-product-career-growth/3991456" target="_blank">Lenny&#x27;s Podcast · Rob Snyder</a></span></div>
 <p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
-<div class="script-container">
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">数据截至今天北京时间中午。今天挑了四条跟「人和机器怎么相处」有关的。第一条是 Thariq，以前在 Anthropic 做 Claude Code。他说：用编程智能体的时候，确实会进入一种狂热状态，感觉自己一直在工作、做了很多事，其实什么都没发生。他认为这往往是在逃避生活里的另一件事。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这条跟今天的书几乎是一回事。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第二条，Claude 官方账号说，iPhone 上的语音模式现在支持苹果 CarPlay，开车时可以直接问 Claude，手不用离开方向盘。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">跟机器说话的时间又多了一块。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第三条，Box 的 CEO Aaron Levie 说，现在在 AI 前沿工作的人和其他所有人之间的差距大到难以想象，而且这两条线不是在靠近，是在拉开。他说三到六个月前把流程固定下来的公司，现在可能已经又落后了。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">第四条呢？</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">谷歌的 Josh Woodward 说，NotebookLM 开放了七百多本来自主流出版社的教科书，全部免费。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这个跟她说的「聊天机器人替你读书」放在一起，可以想一想。工具本身是好的，关键是你拿它读书，还是让它替你读。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">播客推荐是 Matt Turck 的《The MAD Podcast》，嘉宾是《State of AI 报告》的作者、投资人 Nathan Benaich。他们聊了为什么他今年预测 AGI 可能在 2027 年出现，「AI 造 AI」的进展，还有数据中心遭到的反对。节目一开头 Benaich 就说，现在的人宁愿住在核电站旁边，也不愿意住在数据中心旁边。</p>
-  </div>
-
-
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">正好接上上周那本《Hyperscale》。</p>
-  </div>
-
-
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">好，今天就到这里。这周如果你只做一件事，找一个你很久没联系的朋友，打一个电话，或者约一顿饭。Turkle 说，她生病的时候，一个朋友拎着墨西哥菜来敲门，那一刻比任何聊天都管用。如果你最近一直在跟聊天机器人说心里话，并且觉得很难受，请找一个身边的人或专业人士聊一聊。下周六见。</p>
-  </div>
-
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">点赞最高的是 Claude 官方账号，两万七千多个赞。他们<strong>把 Max 套餐改了名</strong>：Max 5x 还叫 Max，每月一百美元；Max 20x 改叫 Ultra，每月两百美元，价格不变。同时，<strong>通过验证的 Ultra 账号取消五小时限额</strong>，大部分现有订阅用户今天开始生效，新账号要先验证，这是为了防欺诈和滥用。每周限额不变。Boris Cherny 和 Alex Albert 也转发了。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">有人不买账吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有。Peter Steinberger 那条四千多个赞，他说：<strong>"这又是一个理由，用你自己的 harness，不要用那种公司可以随时改变你能做什么的。"</strong>这跟 Arca 那集自己做 harness 的理由是一样的：可以换模型供应商。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">跟主推那集有关的呢？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Replit 的 CEO Amjad Masad 发了一份白皮书，讲<strong>怎么正确地给智能体做沙盒，在提高效率的同时降低风险</strong>。这条赞不多，但跟 Serval 讲的"一点一点放权"是同一个问题。</p><p class="script-text">还有一条是前 Claude Code 团队的 Thariq，一千九百多个赞：<strong>"解决经济悲观主义的办法，是更加 AGI-pilled。"</strong>他相信一个对齐良好、能解释自己工作、能带着人一起走的超级智能，让每个人都发挥到最大。后面一条他补充说，大家都不擅长预测智能会怎么进入经济，"会很贵、会让所有人失业"这个最简单的答案，其实并不够 AGI-pilled。</p></div>
+<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起，讲的是同一件事：<strong>智能体能做的越来越多，但在企业和金融这种地方，谁来批准、谁来记录、谁来担责，才是落地的关键。</strong>Serval 做权限审批这一层；Arca 让钱只经过人手；Anthropic 把大脑和手分开；Supabase 让智能体能看懂后端的状态。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">看一眼你给智能体开的权限。它现在能碰到的东西里，有多少是这个任务真正用得上的？先收到最小，需要时再一项一项批。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听主推那一集，后半段讲后台智能体和 SaaS 末日那部分最值得听。然后听 Arca 那集，二十六分钟，正好跟主推对照。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我们下周见。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
 
 </div>
 
@@ -1009,32 +264,18 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 05:09。
+  数据截至今日 UTC 05:08。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">The MAD Podcast with Matt Turck · 2026-10-29</p>
-  <p class="pc-title">State of AI 2026: The Biggest Stories of the Year (and AGI in 2027?) | Nathan Benaich</p>
-  <p class="pc-summary">《State of AI 报告》作者 Nathan Benaich 第三次上节目。他今年第一次大胆预测 AGI 可能在 2027 年出现，理由是模型在法律、金融、投资分析上的进步速度；他还谈到「AI 造 AI」（报告引用 Anthropic 数据：8 月 Claude 主导了 26% 的模型研发工作）、网络安全风险比「AI 灭绝人类」更现实，以及数据中心遭到的地方反对——他说现在人们宁愿住在核电站旁边，也不愿住在数据中心旁边。</p>
-  <a href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">No Priors · 2026-10-29</p>
+  <p class="pc-title">Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch</p>
+  <p class="pc-summary">Stauch 认为自动化应该用代码写，AI 让 IT 部门也能做到，所以 Serval 直接去替换 ServiceNow。他预测智能体越强，大企业会把员工权限压到最小，再通过审批、临时授权和审计记录开例外；谁掌握这一层，谁就随权限收紧变得更重要。</p>
+  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">TH</div>
-      <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · 曾在 Anthropic 做 Claude Code</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「用编程智能体的时候，百分之百会进入一种狂热：感觉做了很多事、一直在工作，其实什么都没发生。我觉得这往往是在逃避生活里的另一件事。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 9,560</span>
-      <a href="https://x.com/trq212/status/2115937378674372783" target="_blank">查看推文 →</a>
-    </div>
-  </div>
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">CL</div>
@@ -1043,68 +284,87 @@
         <div class="builder-handle">@claudeai · Anthropic</div>
       </div>
     </div>
-    <p class="builder-tweet">「iPhone 上的语音模式现在支持 Apple CarPlay。开车时问 Claude，手不用离开方向盘。」</p>
+    <p class="builder-tweet">「我们给 Max 套餐改名：Max 5x → Max，Max 20x → Ultra。Max 仍是每月 100 美元，Ultra 仍是 200 美元，订阅用户无需任何操作。我们还将取消已验证 Ultra 账号的 5 小时限额，今天起大部分现有订阅用户生效；新账号在验证前保留临时限额，以防欺诈和滥用。每周限额不变。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2,057</span>
-      <a href="https://x.com/claudeai/status/2115859388191912193" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 27,435</span>
+      <a href="https://x.com/claudeai/status/2116220869479428500" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">JW</div>
+      <div class="builder-avatar">PS</div>
       <div>
-        <div class="builder-name">Josh Woodward</div>
-        <div class="builder-handle">@joshwoodward · VP, Google Labs / Gemini</div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · OpenClaw / OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「Notebook 刚刚开放了来自全球主流出版社的 700 多本教科书，每一本都完全免费。」</p>
+    <p class="builder-tweet">「这又是一个理由：用你自己的 harness，不要用那种公司可以随时改变你能做什么、不能做什么的。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,107</span>
-      <a href="https://x.com/joshwoodward/status/2115953461108023400" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 4,446</span>
+      <a href="https://x.com/steipete/status/2116153238563242385" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AL</div>
+      <div class="builder-avatar">TH</div>
       <div>
-        <div class="builder-name">Aaron Levie</div>
-        <div class="builder-handle">@levie · CEO, Box</div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · 前 Claude Code @anthropicai</div>
       </div>
     </div>
-    <p class="builder-tweet">「在 AI 前沿工作的人和其他所有人之间的距离，大到几乎难以理解。更疯狂的是，这两条线没有靠近，而是越拉越远。三到六个月前把流程固定下来的公司，现在可能已经又落后了。」</p>
+    <p class="builder-tweet">「解决经济悲观主义的办法，是更加 AGI-pilled。我相信一个对齐良好的超级智能，能解释自己的工作、带着我们一起走，让每个人都发挥到最大。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,090</span>
-      <a href="https://x.com/levie/status/2116029912243184006" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1,961</span>
+      <a href="https://x.com/trq212/status/2116212322838655014" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · CEO @replit</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们写了一份白皮书，讲怎么正确地给智能体做沙盒，在最大化效率的同时降低风险。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 26</span>
+      <a href="https://x.com/amasad/status/2116183233784394039" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<section class="sources">
-  <div class="sources-label">◈ 来源与说明</div>
-  <p class="sources-note">
-    本期未拿到全书。书中内容依据出版方简介、麻省理工新闻长文、Kirkus 书评、《洛杉矶书评》书评，以及 Miles Raymer 书评中带页码的原文摘录；作者观点依据 Thought Economics 访谈全文和 WBUR 节目页。《纽约时报》《连线》《波士顿环球报》《旧金山纪事报》《金融时报》的引语转引自麻省理工新闻的媒体摘要，原文未打开。《连线》访谈链接因抓取限制未能打开。青少年数据（约四分之三用过 AI 伴侣、三分之一每天用；五分之一的高中生自己或身边人有过 AI「恋爱」）转引自《洛杉矶书评》，原始出处为 Common Sense Media（2025）和 NPR（2025-10）。英国版出版信息来自 Google Books，未与出版方核对。「我们自己的看法」部分是本节目的看法。本期为 Up Next 空缺时自行选定。
-  </p>
-  <a class="source-link" href="https://www.hachettebookgroup.com/titles/sherry-turkle/artificial-intimacy/9780316573962/" target="_blank"><span class="src-icon">BOOK</span><span>Artificial Intimacy — Hachette Book Group（Little, Brown）</span></a>
-  <a class="source-link" href="https://news.mit.edu/2026/when-we-talk-to-machines-sherry-turkle-book-0929" target="_blank"><span class="src-icon">NEWS</span><span>Who we become when we talk to machines — MIT News, 2026-09-29</span></a>
-  <a class="source-link" href="https://www.kirkusreviews.com/book-reviews/sherry-turkle/artificial-intimacy/" target="_blank"><span class="src-icon">REVIEW</span><span>ARTIFICIAL INTIMACY — Kirkus Reviews</span></a>
-  <a class="source-link" href="https://lareviewofbooks.org/article/sherry-turkle-artificial-intimacy-talk-machines-artificial-intelligence/" target="_blank"><span class="src-icon">REVIEW</span><span>I Require a You — Los Angeles Review of Books, 2026-10-27</span></a>
-  <a class="source-link" href="https://www.words-and-dirt.com/words/snq-sherry-turkles-artificial-intimacy/" target="_blank"><span class="src-icon">REVIEW</span><span>SNQ: Sherry Turkle&#x27;s &quot;Artificial Intimacy&quot; — Miles Raymer, Words &amp; Dirt, 2026-10-16</span></a>
-  <a class="source-link" href="https://thoughteconomics.com/sherry-turkle/" target="_blank"><span class="src-icon">INTERVIEW</span><span>The Original Sin of Artificial Intimacy — Thought Economics, 2026-09-29</span></a>
-  <a class="source-link" href="https://www.wbur.org/hereandnow/2026/09/30/artificial-intimacy" target="_blank"><span class="src-icon">RADIO</span><span>If an AI bot says &#x27;I love you,&#x27; does it mean it? — WBUR Here &amp; Now, 2026-09-30</span></a>
-  <a class="source-link" href="https://www.thegospelcoalition.org/reviews/artificial-intimacy/" target="_blank"><span class="src-icon">REVIEW</span><span>Review: &#x27;Artificial Intimacy&#x27; — The Gospel Coalition</span></a>
-  <a class="source-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank"><span class="src-icon">PODCAST</span><span>State of AI 2026 with Nathan Benaich — The MAD Podcast, 2026-10-29</span></a>
-</section>
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank"><span class="src-icon">Podcast</span><span>Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch · No Priors · 2026-10-29</span></a>
+  <a class="source-link" href="https://latent.space/p/arca/" target="_blank"><span class="src-icon">Podcast</span><span>Agents Prompt People: Using Agents for Long-Horizon Financial Work — Aman Singh, Arca · Latent Space · 2026-10-31</span></a>
+  <a class="source-link" href="https://latent.space/p/supabase/" target="_blank"><span class="src-icon">Podcast</span><span>Why Agents Love Supabase · Latent Space · 2026-10-28</span></a>
+  <a class="source-link" href="https://latent.space/p/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands/" target="_blank"><span class="src-icon">Podcast</span><span>How Anthropic ships the #1 LLM in the World safely: Separating the Brain from the Hands · Latent Space · 2026-10-27</span></a>
+  <a class="source-link" href="https://podcastaddict.com/podcast/lenny-s-podcast-product-career-growth/3991456" target="_blank"><span class="src-icon">Podcast</span><span>Lenny's Podcast · Rob Snyder (The Power of Pull) · 2026-10-25</span></a>
+  <a class="source-link" href="https://x.com/claudeai/status/2116220869479428500" target="_blank"><span class="src-icon">X</span><span>Claude — Max / Ultra 改名，取消 5 小时限额</span></a>
+  <a class="source-link" href="https://x.com/steipete/status/2116153238563242385" target="_blank"><span class="src-icon">X</span><span>Peter Steinberger — 用你自己的 harness</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2116212322838655014" target="_blank"><span class="src-icon">X</span><span>Thariq — 更加 AGI-pilled</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2116212324696777073" target="_blank"><span class="src-icon">X</span><span>Thariq — 大家都不擅长预测智能如何进入经济</span></a>
+  <a class="source-link" href="https://x.com/amasad/status/2116183233784394039" target="_blank"><span class="src-icon">X</span><span>Amjad Masad — 智能体沙盒白皮书</span></a>
+  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+</div>
 
-<footer class="footer">
-  <span>Daily Builders Digest · 2026-10-31</span>
-  <span>周六书籍介绍 · 第二十七期</span>
-  <span>大雨 × 小苇</span>
-</footer>
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-01 · 周日播客精选</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近一个月节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-10-31.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-10-31</span>
+      <span class="ep-card-badge" style="color:#0066cc;border-color:#0066cc">Books</span>
+    </div>
+    <span class="ep-card-hl">2026-10-31 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-10-30.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-10-30</span>

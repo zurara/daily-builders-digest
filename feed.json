@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-11-05",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "The Drive #414：年纪越大，越要会挑动作 · Huberman Lab：Robert Greene，注意力和「慢」",
+    "html": "episodes/2026-11-05.html",
+    "mp3": "episodes/2026-11-05.mp3",
+    "headlines": [
+      "The Drive #414：年纪越大，越要会挑动作",
+      "Huberman Lab：Robert Greene，注意力和「慢」",
+      "FoundMyFitness Aliquot #153：常规验血会漏掉什么",
+      "女性健康：两点补充"
+    ]
+  },
+  {
     "date": "2026-11-04",
     "dow": 3,
     "topic": "Product",

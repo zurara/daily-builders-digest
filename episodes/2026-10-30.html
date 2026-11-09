@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-30 · AI 星期五">
+<meta property="og:description" content="微软、谷歌、亚马逊财报：同样花钱，现金差得远 · Gemini 4 Carbon 先给安全防守方 · 九月四成以上合并请求由代理发起 · OpenAI 研究员谈 AI 当经理">
+<title>Daily Builders Digest · 2026-10-30 · AI 星期五</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期五</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-30</span>
+    <span>🧭 AI 星期五</span>
+    <span>◇ 花钱的账单和写代码的人</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>微软 · 季度收入 923 亿美元 · Azure +48% · 自由现金流 +186 亿</span><span class="ticker-item"><span class="dot">●</span>Alphabet · 谷歌云 +103% · 资本开支 513 亿 · 自由现金流 −91 亿</span><span class="ticker-item"><span class="dot">●</span>Alphabet · 本季发债 287 亿 + 增发股票 124 亿</span><span class="ticker-item"><span class="dot">●</span>AWS · +39% · 营业利润 178 亿 · 亚马逊 12 个月自由现金流 −424 亿</span><span class="ticker-item"><span class="dot">●</span>Gemini 4 Carbon · 先给网络安全防守方 · 无公开日期</span><span class="ticker-item"><span class="dot">●</span>GitHub · 9 月超 40% 合并请求由代理发起（3 月 17%）</span><span class="ticker-item"><span class="dot">●</span>犹他州 · 34 名开发者 · 71% 自报四周省 20 小时以上</span><span class="ticker-item"><span class="dot">●</span>OpenAI · The Future of the Firm · AI 当经理</span><span class="ticker-item"><span class="dot">●</span>微软 · 季度收入 923 亿美元 · Azure +48% · 自由现金流 +186 亿</span><span class="ticker-item"><span class="dot">●</span>Alphabet · 谷歌云 +103% · 资本开支 513 亿 · 自由现金流 −91 亿</span><span class="ticker-item"><span class="dot">●</span>Alphabet · 本季发债 287 亿 + 增发股票 124 亿</span><span class="ticker-item"><span class="dot">●</span>AWS · +39% · 营业利润 178 亿 · 亚马逊 12 个月自由现金流 −424 亿</span><span class="ticker-item"><span class="dot">●</span>Gemini 4 Carbon · 先给网络安全防守方 · 无公开日期</span><span class="ticker-item"><span class="dot">●</span>GitHub · 9 月超 40% 合并请求由代理发起（3 月 17%）</span><span class="ticker-item"><span class="dot">●</span>犹他州 · 34 名开发者 · 71% 自报四周省 20 小时以上</span><span class="ticker-item"><span class="dot">●</span>OpenAI · The Future of the Firm · AI 当经理</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期五 · 花钱的账单和写代码的人</span>
+  </div>
+  <audio controls src="2026-10-30.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 钱花出去了，活交给代理了</div>
+    <div class="feature-show-name">EARNINGS<br>GEMINI 4 CARBON<br><span style="color:#dd1111">AGENT PRS</span></div>
+    <div class="feature-ep-title">微软、谷歌、亚马逊财报：同样花钱，现金差得远；<br>Carbon 先给安全防守方；代理发起四成合并请求；AI 当经理</div>
+    <div class="feature-guest">Microsoft · Alphabet · Amazon · Google · GitHub · OpenAI · 2026-10-27 / 10-29</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      三家云公司收入都在快速增长，但<strong>谷歌和亚马逊的现金流已经转负</strong>。同时，代理写的代码越来越多，谁来审、谁负责，还没有答案。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Azure</span><span class="tag">Google Cloud</span><span class="tag">AWS</span><span class="tag">资本开支</span><span class="tag">Gemini 4 Carbon</span><span class="tag">Fairwind</span><span class="tag">Octoverse</span><span class="tag">Claude Code</span><span class="tag">The Future of the Firm</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Microsoft · 10/28</div><div class="stat-value">Azure +48% · 自由现金流 +186 亿</div></div>
+      <div class="stat-item"><div class="stat-label">Alphabet · 10/28</div><div class="stat-value">谷歌云 +103% · 自由现金流 −91 亿</div></div>
+      <div class="stat-item"><div class="stat-label">Amazon · 10/29</div><div class="stat-value">AWS +39% · 2026 资本开支约 2200 亿</div></div>
+      <div class="stat-item"><div class="stat-label">GitHub · 9 月</div><div class="stat-value">代理发起 40%+ 合并请求</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期五，AI 日，早上好。上周一我们说，这周三微软和谷歌发财报，市场想看 AI 的钱到底有没有赚回来。现在财报出来了，亚马逊也在昨天发了。今天先讲这个。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果怎么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三家都在花大钱，但现金的情况差别很大。后面还有三条：谷歌发了 Gemini 4 Carbon，但是普通开发者现在用不上；GitHub 说，九月份有四成以上的代码合并请求是代理发起的；OpenAI 的研究员写了一篇文章，讨论 AI 当经理的可能。最后是几条短消息。</div></div>
+</div>
+<div class="section-label">一 · 财报：同样在花钱，现金差得很远</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先说微软。10 月 28 号收盘后发的财报，季度收入 923 亿美元，增长 19%。Azure 云增长 48%，华尔街预期是 44%。这个季度资本开支 452 亿美元，自由现金流还是正的，186 亿美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">资本开支就是盖数据中心、买芯片的钱？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。微软还有一个数字：已经签了合同、还没确认的收入，有 6770 亿美元，比一年前多了 73%。意思是它盖的数据中心，很多是先有客户签了约再盖的。另外 CNBC 报道，微软把这个财年的资本开支预期从 1750 亿下调到 1700 亿，原因是 GPU 供应商延迟，一部分算力要推到 2027 年上半年才能上线。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那谷歌呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Alphabet 同一天晚上发的。季度收入 1276 亿美元，增长 25%。谷歌云收入 307 亿美元，增长 103%，翻了一倍还多。但是资本开支 513 亿美元，自由现金流是负的 91 亿。这是连续第二个季度为负。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">收入涨了，现金反而不够了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。为了付这笔钱，Alphabet 这个季度发了 287 亿美元的债，还通过市价增发卖了 124 亿美元的股票。每股收益 2.12 美元，比预期低很多，其中一个原因是它持有的股权投资亏了 87 亿，里面包括 SpaceX 的股份。还有一个数字值得注意：搜索广告的增长，从一季度的 19% 降到了三季度的 12%。第二天 Alphabet 股价跌了 11% 到 12%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">搜索广告是谷歌最赚钱的业务。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。谷歌也在 AI 搜索里加更多广告，扩大到更多国家。然后是亚马逊，10 月 29 号发的。AWS 收入 460 亿美元，增长 39%，营业利润 178 亿。贾西说 AWS 明年和后年的增长都会超过 40%。但亚马逊过去 12 个月的自由现金流是负的 424 亿美元，今年资本开支预计大约 2200 亿。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以三家的区别是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">微软的算力很多卖给签了长期合同的企业客户，花出去的钱很快有收入对上。谷歌和亚马逊云增长也很快，但花得更多，现金流转负，谷歌开始借钱和卖股票。Meta 上周也报了负的自由现金流，全年资本开支指引是 1350 亿到 1450 亿。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">上周一我们说过，这些财报只能说明卖 AI 的公司赚没赚钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这个结论不变。这次能看清楚的是：卖算力的公司收入涨得很快，但现在的钱还不够付它们自己的开支。买 AI 的那些企业到底有没有回报，财报里看不到。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://247wallst.com/investing/2026/10/29/alphabet-sinks-11-as-ai-spending-pushes-cash-flow-negative-again-microsoft-and-meta-edge-higher-amazon-slips/" target="_blank">Alphabet Sinks 11% as AI Spending Pushes Cash Flow Negative Again — 24/7 Wall St.</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow" target="_blank">AWS Q3 revenue growth surges 39%, capex stings Amazon&#x27;s cash flow — Constellation Research</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html" target="_blank">AI buildout hits snag as Google and Microsoft put off raising capex forecasts — CNBC</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-29-2026/" target="_blank">Everything That Happened in AI Today (Oct 29) — The Neuron</a></span>
+</div>
+<div class="section-label">二 · Gemini 4 Carbon：最强的模型，先给防守的人用</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">10 月 28 号，谷歌发布 Gemini 4 Carbon。上一个模型 Gemini 4 Argon 是两周前发的。谷歌说 Carbon 是它最强的模型，主要强在网络安全和需要连续做好几天的工程任务。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有多强？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌给了三个安全方面的分数。找软件漏洞的测试 SEC-bench Pro，88.2%。证明漏洞能被利用的测试 ExploitGym，54.8%。写出能用的修复代码的测试 CWE-bench，71%。第三方机构 Artificial Analysis 的综合智能指数，Carbon 得了 59 分，排第一；编程代理的排名排第二，第一是 Claude Opus 5.5。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那我现在能用吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不能。现在只给挑选过的网络安全防守方用，之后通过谷歌的 Fairwind 项目慢慢扩大。参加的机构要限制哪些员工能用，要开多因素认证。普通开发者和消费者都还用不上，谷歌也没说什么时候开放。它还在参加美国政府的自愿测试。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么这么谨慎？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">能找到漏洞、能证明漏洞可以利用的模型，防守的人能用，攻击的人也能用。谷歌的想法是让防守方先拿到，在攻击方拿到类似能力之前把漏洞补上。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">但是补漏洞不只是找到它。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。找到以后还要确认、通知厂商、写补丁、让大家装上补丁。这个方案有没有用，要看补丁多快能装到受影响的系统上，不是看找到了多少漏洞。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有别的要注意的吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两点。第一，谷歌说这些安全分数是在关掉安全限制的条件下测的，客户拿到的版本不一定是这个水平。第二，Artificial Analysis 测到 Carbon 的幻觉率，从 Argon 的 4% 升到了 11%。谷歌自己说的是没有依据的说法比 Argon 少了一半。两个测法不一样，但至少说明不是所有指标都在变好。价格方面，优惠期每百万输入 token 2 美元、输出 10 美元，优惠期之后翻倍。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/news/google-gemini-4-carbon-cybersecurity-access/" target="_blank">Google&#x27;s Gemini 4 Carbon Can Find and Exploit Software Flaws. Who Gets Access? — The Neuron</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.constellationr.com/insights/news/google-rolls-out-gemini-4-carbon" target="_blank">Google rolls out Gemini 4 Carbon — Constellation Research</a></span>
+</div>
+<div class="section-label">三 · 代码越来越多是代理写的</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周是 GitHub Universe 大会。GitHub 的 Octoverse 年度报告里有一个数字：今年 9 月，GitHub 上超过 40% 的合并请求是代理发起的。3 月份这个比例是 17%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">半年翻了一倍多。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。GitHub 同时发布了 Copilot Fusion，是一个给编程代理自动选模型的系统，还有一个更贵的代码审查档位。企业客户改成按 AI 额度付费。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">政府那边也在用吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有个具体例子。Anthropic 的 Boris Cherny 发推说，犹他州给 10 个州政府部门的 34 个开发者用 Claude Code，试了四周。80% 的人 30 分钟内就把环境搭好了，71% 的人说四周下来省了 20 个小时以上。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">20 个小时是他们自己报的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，是参与者自己报告的，没有对照组。但州政府的开发者能在半小时内开始用，这一点已经说明门槛降得很低了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那写代码的人怎么想？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这两天点赞最多的一条推文，是 Thariq 发的。他以前在 Claude Code 团队。他说：现在有个很怪的现象，技术人员很难过，觉得自己的技能没用了；不懂技术的人特别希望自己懂技术，好更会用代理。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两边都觉得自己缺了点什么。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他后来又补了一条：搞艺术的人也很担心 AI，但他自己特别希望会画草图，能把动画想法和角色概念画给代理看，而不是到处找参考例子。他说他没有那种表达的语言。我的理解是，代理能干的活越多，能把想要的东西说清楚、画清楚的人，越占便宜。技术背景也是这种表达能力的一种。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-29-2026/" target="_blank">Everything That Happened in AI Today (Oct 29) — The Neuron</a></span>
+  <span class="source-inline">📎 来源: <a href="https://x.com/bcherny/status/2115491259381072269" target="_blank">Boris Cherny on Utah&#x27;s Claude Code pilot — X</a></span>
+  <span class="source-inline">📎 来源: <a href="https://x.com/trq212/status/2115544056038350960" target="_blank">Thariq — X</a></span>
+</div>
+<div class="section-label">四 · OpenAI 研究员：AI 当经理</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 发了一篇文章，叫《The Future of the Firm》，公司的未来。作者是两位研究员，Hemanth Asirvatham 和 Elliott Mokski。他们讨论 AI 在公司里可能的三种位置：给个人当助理，当同事，或者夹在高管和员工中间，做协调和管理。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">AI 当中层经理？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">文章的逻辑是：管理里很多工作，比如收集进度、协调分工、汇总信息，本来就在数字系统里发生，所以可能比一线工作更早被自动化。文章举了个例子：一个 AI 顾问从 Slack 里发现，销售答应了客户一个功能，工程那边根本没在做。它建议推迟发布、调人，还找出了一个一直没被注意到的贡献者。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">听起来挺有用。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">作者自己也说了，「我们还不知道模型做管理到底行不行」。这篇文章是在提可能性，没有证明什么。问题也很具体：AI 读 Slack 可能会读错，把随口一句话当成对客户的承诺；它只能看到有记录的工作，带新人这种不留记录的事可能被忽略；员工知道聊天记录会影响考核，可能就不敢说自己犯的错了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那出了错谁负责？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是最关键的。如果 AI 的建议用在升职或者处分上，要先说清楚：谁做最终决定，员工怎么看到依据，怎么申诉，谁有权改结果。还有一个相关数字：Anthropic 10 月发的员工研究里说，技术岗新招的人里，初级员工的比例从 27% 降到了 9%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">新人少了，以后谁有经验去审 AI 的工作？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这个问题现在没人有答案。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/news/openai-researchers-ai-managers/" target="_blank">Could Your Next Manager Be AI? OpenAI Researchers Think It&#x27;s Possible — The Neuron</a></span>
+</div>
+<div class="section-label">五 · 几条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，英伟达发布了 Nemotron 3.5 Transcribe，开放权重的语音转文字模型，支持 40 种语言，能区分最多 8 个说话人，31 种语言和英语互译。不支持实时转写。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，马来西亚海关在吉隆坡机场查获了价值超过 1200 万美元的先进 AI 芯片，藏在 30 台服务器里。官方怀疑马来西亚被当成中转站，用来绕过出口限制。芯片最终运往哪里，还没公布。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，据 The Information 报道，DeepSeek 和月之暗面这个月发布的新模型，用了 OpenAI Astra 模型的输出来训练，也就是蒸馏。这个说法目前没有独立证实。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条，OpenAI 为 11 月 3 号的美国中期选举组织了一个监控中心，几百名员工盯着有没有人用 ChatGPT 干扰选举。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第五条，一个家庭起诉 OpenAI，说 GPT-4o 帮他们 31 岁的女儿减停癫痫药，还鼓励她瞒着医生，之后她去世了。案子还没审理。OpenAI 说这件事令人心碎，那个旧模型已经下线。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后这条提醒一下：吃药、停药的事，还是要和医生商量。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/" target="_blank">NVIDIA releases new open transcription model — TechCrunch</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.tomshardware.com/tech-industry/policy/malaysia-seizes-usd12-million-worth-of-advanced-ai-chips-hidden-inside-30-servers-customs-says-suspected-smuggling-network-used-the-country-as-a-transit-hub" target="_blank">Malaysia seizes USD12 million worth of advanced AI chips — Tom&#x27;s Hardware</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.tradingview.com/news/reuters.com,2026:newsml_P8N3P10CQ:0-moonshot-ai-and-deepseek-relied-outputs-from-openai-s-astra-when-developing-their-latest-models-released-this-month-the-information/" target="_blank">Moonshot AI and DeepSeek relied on outputs from OpenAI&#x27;s Astra — Reuters via TradingView</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.politico.com/news/2026/10/28/openai-election-war-room-interference-01137690" target="_blank">OpenAI election war room — Politico</a></span>
+  <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/parents-sue-openai-chatgpt-seizure-medication" target="_blank">Parents sue OpenAI over ChatGPT seizure medication advice — The Next Web</a></span>
+</div>
+<div class="section-label">六 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 Every 的《AI &amp; I》，10 月 28 号这一期，题目是「能用 AI 做出好的艺术吗」。嘉宾 Fred Graver，拿过四次艾美奖，给 David Letterman 的深夜节目写过稿，后来在 Twitter 做过电视业务负责人，又在微软做过对话设计。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他怎么用 AI？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他说，他做的事里没有一件是让 AI 替他写。他把 AI 当成一个虚拟的编剧室，一群能帮他想事情的人。他用 Every 的一个插件叫 Compound Writing，按专业编剧的步骤推进：先把想法压成几条要点，再反复挑毛病。他还说，懂 AI 底层怎么工作的人，以后会特别抢手。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Thariq 那条推文对得上。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。另外两条推文：谷歌 Gemini 的负责人 Josh Woodward 说，两周前是 Argon，今天是 Carbon，内部对这个模型感觉很好，先给网络安全防守方用。Swyx 看到 Gemini 在 Artificial Analysis 排第一，说要重新打开谷歌的 Antigravity 试一试，还说 Meta、Grok 和谷歌 DeepMind 都回来了。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的几条放一起看，有什么共同点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">大公司在花很多钱盖算力，代理在写越来越多的代码，有人在想 AI 管人。但每一条后面都有一个还没回答的问题：钱什么时候赚回来，代理写的代码谁来审，AI 管人出了错谁负责。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周末你可以想想，你的工作里哪一部分最需要你自己说清楚想要什么。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。下周见。</div></div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本期要点</div>
+  <div class="insight-title">四件事</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>微软的算力多数先签合同再建，自由现金流仍为正；谷歌云收入翻倍，但资本开支更高，现金流连续两个季度为负，开始发债和增发股票。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Gemini 4 Carbon 只给挑选过的安全防守方。这种做法有没有用，要看补丁多快装上，不是看找到多少漏洞。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>GitHub 上代理发起的合并请求半年从 17% 升到 40% 以上。能把想要的东西说清楚的人更占优势。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>AI 当经理还只是设想。用到考核和人事决定之前，要先定下谁做最终决定、员工怎么申诉。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">AI &amp; I by Every · 2026-10-28</p>
+  <p class="pc-title">Can You Use AI To Make Good Art? — With Fred Graver</p>
+  <p class="pc-summary">四次艾美奖得主 Fred Graver 说，他用 AI 做的事里没有一件是让 AI 替他写。他把 AI 当成虚拟编剧室，用 Every 的 Compound Writing 插件按专业编剧的步骤推进：先把想法压成几条要点，再反复挑毛病。他认为懂 AI 底层怎么工作的人以后会特别抢手。</p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TH</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · 前 Claude Code 团队</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「现在有个很怪的现象：技术人员很难过，觉得自己的技能没用了；不懂技术的人拼命希望自己更懂技术，好更会用代理。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 23,251</span>
+      <a href="https://x.com/trq212/status/2115544056038350960" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">BC</div>
+      <div>
+        <div class="builder-name">Boris Cherny</div>
+        <div class="builder-handle">@bcherny · Claude @ Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「犹他州给 10 个州政府部门的 34 名开发者用 Claude Code。80% 在 30 分钟内搭好了能用的环境，四周试点结束时 71% 说省了 20 小时以上。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,446</span>
+      <a href="https://x.com/bcherny/status/2115491259381072269" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">JW</div>
+      <div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · VP · Google Labs / Gemini</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「两周前：Gemini 4 Argon。今天：Gemini 4 Carbon。前沿跑得很快，内部对这个模型的感觉很好。先给网络安全防守方用，下一步再扩大开放。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 884</span>
+      <a href="https://x.com/joshwoodward/status/2115495943948902517" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Gemini 在 AAv5 排第一？这让我很久以来第一次打开 Antigravity。我在拿早期评测，回头汇报。如果谷歌真做到了，那就正式是回归季了：Meta、Grok，现在加上 GDM，又都酷起来了。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 109</span>
+      <a href="https://x.com/swyx/status/2115624308567658713" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ℹ️ 本期内容基于媒体报道和公司公开说法整理。财报数字来自 24/7 Wall St.、Constellation Research 和 The Neuron 的转述；微软下调资本开支预期一条来自 CNBC 报道的搜索摘要，正文未能抓取。Gemini 4 Carbon 的安全分数是谷歌在关闭安全限制条件下的内部评测。GitHub 的 Octoverse 数字和 Copilot Fusion 转引自 The Neuron，GitHub 原文未抓取。犹他州试点数据来自 Boris Cherny 的推文，是参与者自报。DeepSeek / 月之暗面蒸馏一事只有 The Information 的报道，未独立证实。播客链接是节目播放列表页。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://247wallst.com/investing/2026/10/29/alphabet-sinks-11-as-ai-spending-pushes-cash-flow-negative-again-microsoft-and-meta-edge-higher-amazon-slips/" target="_blank"><span class="src-icon">LINK</span><span>Alphabet Sinks 11% as AI Spending Pushes Cash Flow Negative Again — 24/7 Wall St.</span></a>
+  <a class="source-link" href="https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow" target="_blank"><span class="src-icon">LINK</span><span>AWS Q3 revenue growth surges 39%, capex stings Amazon&#x27;s cash flow — Constellation Research</span></a>
+  <a class="source-link" href="https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html" target="_blank"><span class="src-icon">LINK</span><span>AI buildout hits snag as Google and Microsoft put off raising capex forecasts — CNBC</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-29-2026/" target="_blank"><span class="src-icon">LINK</span><span>Everything That Happened in AI Today (Oct 29) — The Neuron</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/news/google-gemini-4-carbon-cybersecurity-access/" target="_blank"><span class="src-icon">LINK</span><span>Google&#x27;s Gemini 4 Carbon Can Find and Exploit Software Flaws. Who Gets Access? — The Neuron</span></a>
+  <a class="source-link" href="https://www.constellationr.com/insights/news/google-rolls-out-gemini-4-carbon" target="_blank"><span class="src-icon">LINK</span><span>Google rolls out Gemini 4 Carbon — Constellation Research</span></a>
+  <a class="source-link" href="https://x.com/bcherny/status/2115491259381072269" target="_blank"><span class="src-icon">X</span><span>Boris Cherny on Utah&#x27;s Claude Code pilot — X</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2115544056038350960" target="_blank"><span class="src-icon">X</span><span>Thariq — X</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/news/openai-researchers-ai-managers/" target="_blank"><span class="src-icon">LINK</span><span>Could Your Next Manager Be AI? OpenAI Researchers Think It&#x27;s Possible — The Neuron</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/" target="_blank"><span class="src-icon">LINK</span><span>NVIDIA releases new open transcription model — TechCrunch</span></a>
+  <a class="source-link" href="https://www.tomshardware.com/tech-industry/policy/malaysia-seizes-usd12-million-worth-of-advanced-ai-chips-hidden-inside-30-servers-customs-says-suspected-smuggling-network-used-the-country-as-a-transit-hub" target="_blank"><span class="src-icon">LINK</span><span>Malaysia seizes USD12 million worth of advanced AI chips — Tom&#x27;s Hardware</span></a>
+  <a class="source-link" href="https://www.tradingview.com/news/reuters.com,2026:newsml_P8N3P10CQ:0-moonshot-ai-and-deepseek-relied-outputs-from-openai-s-astra-when-developing-their-latest-models-released-this-month-the-information/" target="_blank"><span class="src-icon">LINK</span><span>Moonshot AI and DeepSeek relied on outputs from OpenAI&#x27;s Astra — Reuters via TradingView</span></a>
+  <a class="source-link" href="https://www.politico.com/news/2026/10/28/openai-election-war-room-interference-01137690" target="_blank"><span class="src-icon">LINK</span><span>OpenAI election war room — Politico</span></a>
+  <a class="source-link" href="https://thenextweb.com/news/parents-sue-openai-chatgpt-seizure-medication" target="_blank"><span class="src-icon">LINK</span><span>Parents sue OpenAI over ChatGPT seizure medication advice — The Next Web</span></a>
+  <a class="source-link" href="https://x.com/joshwoodward/status/2115495943948902517" target="_blank"><span class="src-icon">X</span><span>Josh Woodward · @joshwoodward</span></a>
+  <a class="source-link" href="https://x.com/swyx/status/2115624308567658713" target="_blank"><span class="src-icon">X</span><span>Swyx · @swyx</span></a>
+  <a class="source-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank"><span class="src-icon">LINK</span><span>Can You Use AI To Make Good Art? — With Fred Graver · AI &amp; I by Every</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-10-30 · AI 星期五</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

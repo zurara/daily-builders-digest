@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-09",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "安全：代理去攻，代理去守 · 钱：OpenAI 估值降了一档，Anthropic 上市时间不确定",
+    "html": "episodes/2026-11-09.html",
+    "mp3": "episodes/2026-11-09.mp3",
+    "headlines": [
+      "安全：代理去攻，代理去守",
+      "钱：OpenAI 估值降了一档，Anthropic 上市时间不确定",
+      "BioBasicsBench：代理能看懂实验室的原始数据吗"
+    ]
+  },
+  {
     "date": "2026-11-08",
     "dow": 7,
     "topic": "Podcasts",
@@ -249,20 +263,6 @@
     "headlines": [
       "◈ 今日数字",
       "🎙 对话全文 · 大雨 × 小苇"
-    ]
-  },
-  {
-    "date": "2026-11-09",
-    "dow": 1,
-    "topic": "AI",
-    "format": "新闻快报",
-    "title": "安全：代理去攻，代理去守 · 钱：OpenAI 估值降了一档，Anthropic 上市时间不确定",
-    "html": "episodes/2026-11-09.html",
-    "mp3": "episodes/2026-11-09.mp3",
-    "headlines": [
-      "安全：代理去攻，代理去守",
-      "钱：OpenAI 估值降了一档，Anthropic 上市时间不确定",
-      "BioBasicsBench：代理能看懂实验室的原始数据吗"
     ]
   },
   {

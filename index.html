@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-11-01 · 周日播客精选">
-<meta property="og:description" content="No Priors × Serval CEO Jake Stauch · 给 IT 部门的编程智能体 · 智能体越强，权限越收越紧">
-<title>周日播客精选 · 2026-11-08 · 虚拟细胞与实验室在环</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-11-09 · AI 星期一">
+<meta property="og:description" content="微软：攻击者用 ARTEX 代理五分钟从 GitHub 摸到 Azure Key Vault · DeepMind 代理找到 RSA-1024 两个弱点 · OpenAI 110 亿美元融资估值 1.25 万亿 · BioBasicsBench">
+<title>Daily Builders Digest · 2026-11-09 · AI 星期一</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -115,134 +115,158 @@
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
   @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
-<body>
+</head>
 
+<body>
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
-  <div class="header-title">LAB IN<br><span>THE LOOP</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期一</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
   <div class="header-meta">
-    <span>📅 2026-11-08</span>
-    <span>🎙 周日播客精选</span>
-    <span>◇ 画地图 → 预测 → 指挥下一个实验</span>
+    <span>📅 2026-11-09</span>
+    <span>🧭 AI 星期一</span>
+    <span>◇ 代理去攻，代理去守，融资变难</span>
     <span>大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
-  <div class="ticker-track"><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Fabian Theis · 2026-11-06</span><span class="ticker-item"><span class="dot">●</span>画地图 → 预测 → 指挥下一个实验</span><span class="ticker-item"><span class="dot">●</span>每个细胞 = 一个两万维的向量</span><span class="ticker-item"><span class="dot">●</span>细胞类型预测：逻辑回归仍接近最好</span><span class="ticker-item"><span class="dot">●</span>Arc 虚拟细胞挑战赛：指标可被钻空子</span><span class="ticker-item"><span class="dot">●</span>scConcert · 3.5 亿细胞 · 约 1 亿参数 · 16 个物种</span><span class="ticker-item"><span class="dot">●</span>Lab Compass · 反向生成模型 · 3–4 轮实验室在环</span><span class="ticker-item"><span class="dot">●</span>Legora · 看不到数据，就自己造评测环境</span><span class="ticker-item"><span class="dot">●</span>Anthropic S-1 · Latent Space 每周跟进</span><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Fabian Theis · 2026-11-06</span><span class="ticker-item"><span class="dot">●</span>画地图 → 预测 → 指挥下一个实验</span><span class="ticker-item"><span class="dot">●</span>每个细胞 = 一个两万维的向量</span><span class="ticker-item"><span class="dot">●</span>细胞类型预测：逻辑回归仍接近最好</span><span class="ticker-item"><span class="dot">●</span>Arc 虚拟细胞挑战赛：指标可被钻空子</span><span class="ticker-item"><span class="dot">●</span>scConcert · 3.5 亿细胞 · 约 1 亿参数 · 16 个物种</span><span class="ticker-item"><span class="dot">●</span>Lab Compass · 反向生成模型 · 3–4 轮实验室在环</span><span class="ticker-item"><span class="dot">●</span>Legora · 看不到数据，就自己造评测环境</span><span class="ticker-item"><span class="dot">●</span>Anthropic S-1 · Latent Space 每周跟进</span></div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>微软 · ARTEX 代理 · GitHub → Key Vault 约 5 分钟</span><span class="ticker-item"><span class="dot">●</span>DeepMind · RSA-1024 两个弱点 · 批量分解成本降约 30 倍</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 先融 110 亿美元 · 估值 1.25 万亿</span><span class="ticker-item"><span class="dot">●</span>Anthropic · 路演原定本周 · 投资人存疑</span><span class="ticker-item"><span class="dot">●</span>BioBasicsBench · 100 个湿实验任务 · GPT-6 Astra 66.7%</span><span class="ticker-item"><span class="dot">●</span>Inkling 2 Small · 5940 亿参数 · 激活 170 亿</span><span class="ticker-item"><span class="dot">●</span>Robinhood · 15 万代理交易账户</span><span class="ticker-item"><span class="dot">●</span>微软 · ARTEX 代理 · GitHub → Key Vault 约 5 分钟</span><span class="ticker-item"><span class="dot">●</span>DeepMind · RSA-1024 两个弱点 · 批量分解成本降约 30 倍</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 先融 110 亿美元 · 估值 1.25 万亿</span><span class="ticker-item"><span class="dot">●</span>Anthropic · 路演原定本周 · 投资人存疑</span><span class="ticker-item"><span class="dot">●</span>BioBasicsBench · 100 个湿实验任务 · GPT-6 Astra 66.7%</span><span class="ticker-item"><span class="dot">●</span>Inkling 2 Small · 5940 亿参数 · 激活 170 亿</span><span class="ticker-item"><span class="dot">●</span>Robinhood · 15 万代理交易账户</span>
+  </div>
 </div>
 
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· 周日播客精选 · 虚拟细胞与实验室在环</span>
+    <span>· AI 星期一 · 代理去攻，代理去守，融资变难</span>
   </div>
-  <audio controls src="episodes/2026-11-08.mp3">
+  <audio controls src="episodes/2026-11-09.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
 <section class="feature-hero">
   <div class="feature-left">
-    <div class="feature-eyebrow">本周主推 · Latent Space</div>
-    <div class="feature-show-name">LATENT SPACE<br><span style="color:#dd1111">× FABIAN THEIS</span></div>
-    <div class="feature-ep-title">Controlling Biology —<br>Fabian Theis, Helmholtz Munich</div>
-    <div class="feature-guest">Latent Space AI for Science × Fabian Theis · 2026-11-06</div>
+    <div class="feature-eyebrow">今日主线 · 安全、融资、实验室</div>
+    <div class="feature-show-name">ARTEX<br>RSA-1024<br><span style="color:#dd1111">$1.25T</span></div>
+    <div class="feature-ep-title">攻击者用代理五分钟从 GitHub 摸进 Azure；<br>DeepMind 代理找到 RSA-1024 两个弱点；OpenAI 估值降一档，Anthropic 上市时间不确定</div>
+    <div class="feature-guest">Microsoft · Google DeepMind · OpenAI · Anthropic · Thinking Machines · 2026-11-05 / 11-08</div>
   </div>
   <div class="feature-right">
     <div class="feature-lede">
-      Scanpy 和 AnnData 的作者讲虚拟细胞的现状：数据终于够了，但简单任务上<strong>线性基线仍然很强</strong>，比赛指标可以被钻空子。他认为下一步是让模型<strong>决定下一个实验做什么</strong>，并用反向生成模型 Lab Compass 做了三到四轮实验室在环。
+      这几天的 AI 新闻：<strong>代理同时被用来攻击和做安全研究</strong>；前沿模型公司的融资和上市比几个月前难了一点；OpenAI 发布了测试代理看懂湿实验数据的基准。
     </div>
     <div class="feature-tags">
-      <span class="tag">虚拟细胞</span>
-      <span class="tag">扰动预测</span>
-      <span class="tag">线性基线</span>
-      <span class="tag">评估指标</span>
-      <span class="tag">世界模型</span>
-      <span class="tag">flow matching</span>
-      <span class="tag">实验室在环</span>
+      <span class="tag">ARTEX</span><span class="tag">GitHub 密钥</span><span class="tag">RSA-1024</span><span class="tag">Hacktron</span><span class="tag">OpenAI 融资</span><span class="tag">Anthropic IPO</span><span class="tag">BioBasicsBench</span><span class="tag">Inkling 2 Small</span><span class="tag">Vera CPU</span><span class="tag">Robinhood Agents</span>
     </div>
     <div class="feature-stats">
-      <div class="stat-item"><span class="stat-label">单次实验规模</span><span class="stat-value">1000 万个细胞转录组</span></div>
-      <div class="stat-item"><span class="stat-label">scConcert 模型</span><span class="stat-value">3.5 亿细胞 · 约 1 亿参数</span></div>
-      <div class="stat-item"><span class="stat-label">Lab Compass</span><span class="stat-value">3–4 轮实验室在环</span></div>
-      <div class="stat-item"><span class="stat-label">计算健康中心</span><span class="stat-value">约 45 位组长 · 500–600 人</span></div>
+      <div class="stat-item"><div class="stat-label">微软 · 11/5</div><div class="stat-value">GitHub → Azure Key Vault 约 5 分钟</div></div>
+      <div class="stat-item"><div class="stat-label">DeepMind · 11/6</div><div class="stat-value">RSA-1024 两个弱点 · 2048 位不受影响</div></div>
+      <div class="stat-item"><div class="stat-label">OpenAI · 11/6</div><div class="stat-value">110 亿美元 · 估值 1.25 万亿</div></div>
+      <div class="stat-item"><div class="stat-label">BioBasicsBench · 11/6</div><div class="stat-value">GPT-6 Astra 66.7% · 无人类基线</div></div>
     </div>
   </div>
 </section>
 
-<div class="insight-box">
-  <div class="insight-label">◈ 本周几集的共同点</div>
-  <div class="insight-title">谁定义了指标，谁就掌握了改进的方向</div>
-  <div class="insight-item"><span class="insight-num">01</span><span><strong>先打败基线。</strong>Theis：细胞类型预测里，逻辑回归仍接近最好；扰动预测的简单场景里，线性模型一直很强。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span><strong>指标是人的工作。</strong>Theis：以后智能体会去试所有算法组合，留给人的最重要工作可能是定义指标。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span><strong>看不到数据，就造环境。</strong>Legora：三个工程师加三个律师，照着客户的工作搭模拟评测环境。</span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span><strong>评测决定删什么。</strong>Garry Tan：新模型更强，靠评测循环删掉不再需要的技能。</span></div>
-</div>
-
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
 <div class="script-container">
-<p class="section-label">◈ 本周主推 · Latent Space × Fabian Theis</p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《Latent Space》的 AI for Science 系列，十一月六号上线，五十一分钟。嘉宾是 Fabian Theis，他在德国 Helmholtz 慕尼黑研究中心负责计算健康中心，单细胞分析里最常用的开源工具 Scanpy 和 AnnData 就出自他的实验室。题目叫 Controlling Biology，控制生物学。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/" target="_blank">Controlling Biology - Fabian Theis, Helmholtz Munich · Latent Space</a></span></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周 AI 圈的大新闻明明是 Anthropic 的 S-1，你为什么挑一集讲细胞的？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">两个原因。第一，S-1 那集一百零二分钟，我们这次没有拿到文字稿，不想凭标题去讲。第二，这一集讲的问题其实跟做智能体的人很接近：你有了一个能预测的模型，下一步怎么让它去决定该做什么实验，而且一轮一轮地改进。这跟大家在软件里做的评测循环是同一个结构。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">先从最基础的说吧。"虚拟细胞"到底是什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Theis 自己的定义是：给一个细胞施加各种干扰，你能不能预测它会变成什么样。人体每个细胞的基因组几乎一样，但不同细胞从基因组上读出来的东西不一样。读出来的信使 RNA 叫转录本，一个细胞的全部转录本叫转录组。在人身上大约两万个基因，所以<strong>每个细胞可以表示成一个两万维的向量</strong>，大部分是零，剩下的是每种转录本的数量。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">主持人有个比喻我觉得挺好懂。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，Brandon Anderson 说，DNA 像一本菜谱，每个细胞是一道菜，转录组分析就是拿到一道菜，倒推里面放了哪些配料。Theis 说他家孩子都是吃货，以后就用这个比喻了。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那"干扰"是什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">最硬的一种是用 CRISPR 把一个基因敲掉，看细胞怎么变。但 Theis 说他理解的干扰范围要大得多：旁边细胞发来的信号、激素、药物、培养液的配方，甚至人与人之间的基因差异，都算。<strong>干扰空间就是"所有能对细胞做的事"的输入空间。</strong>一个好的虚拟细胞模型应该能吃下所有这些输入，以及它们的组合。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这个概念不新吧？为什么现在又热起来了？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说最主要的原因是数据。他的实验室 2019 年就做过一个叫 scGen 的扰动预测模型，在隐空间里做近似线性的平移，效果还不错。但那时候的问题在于，细胞的数量很多，<strong>干扰的种类很少</strong>，常常只有"对照组和病人组"两种。</p><p class="script-text">现在变了。他提到 Parse Biosciences 有一次实验，<strong>一次测了一千万个细胞的转录组</strong>。现在有人拿一百种细胞系，每种都做全基因组敲除，或者一次加上千种药物。干扰这一维也开始变得很密，才有条件去做像样的扰动预测。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">节目开头也提到，Biohub 刚宣布了一个十八亿美元的合作。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">主持人说的是 Biohub 跟美国能源部、NIH、Meta 和 Google 合作，收集并开放多尺度的生物数据，用来做新一代虚拟细胞。Theis 说这个项目跟人类细胞图谱联系很紧。他认为药企会重新关注虚拟细胞，因为<strong>药企现在非常需要按细胞类型、按具体情境去做筛选，而现在的规模还做不到。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我知道这个领域有个尴尬的事：花哨的大模型，有时候打不过线性模型。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这一段我觉得是整集最值得听的。Theis 很直接地讲了这件事。</p><p class="script-text">最简单的任务，给一个转录组，判断它是什么细胞类型。到今天，<strong>接近最好的方法之一还是逻辑回归。</strong>他们五六年前发过一篇论文，标题就叫"细胞类型预测不需要深度学习"。在同一个器官里这是对的；跨器官时情况复杂一些，非线性模型才开始有优势。</p><p class="script-text">扰动预测也一样。一开始大家对大规模基础模型很兴奋，他说"可能买得有点多了"，然后就是清醒期，一批论文出来说近似线性的模型也做得不错。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">节目里提到 Arc Institute 那个比赛。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，Arc 办了一个"虚拟细胞挑战赛"。主持人说那是泼在大家脸上的一杯冷水。Theis 的说法是，这个比赛定的指标不够针对单细胞数据，<strong>可以被钻空子</strong>。去掉钻空子的提交以后，真正赢的是一个基于 flow matching 的非线性模型。</p><p class="script-text">他自己参与的 Open Problems 联盟的做法是：<strong>参赛者除了交模型，还要交自己的评估指标</strong>，用来量化那些组织者事先没想到的细节。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">所以结论是线性模型赢了，还是非线性模型赢了？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他的回答比较细。少量细胞系、单个基因敲除、效果又很弱的时候，复杂模型容易过拟合，<strong>线性基线一直很强</strong>。问题一难，非线性模型才有用。他举了自己的 Nicheformer：给一个细胞的转录组，去预测它旁边那些细胞的状态。因为细胞之间一直在通信，一个细胞里会留下邻居的痕迹。这个任务就需要更强的非线性模型。</p><p class="script-text">他还说了一句我很想记下来的话：以后会有智能体去试所有能想到的算法组合，<strong>留给人的、最重要的想法，可能就是怎么定义指标。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这听起来就是做 AI 产品的人天天在吵的事：先有评测，再谈模型。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，结构一模一样。还有一个相似点：<strong>规模定律。</strong>Theis 说早期那批生物基础模型的论文，最大的缺陷是没有认真展示规模定律，没有证明你真的需要这么大的复杂度。现在审稿人看得很严。</p><p class="script-text">他们自己的对比学习模型叫 scConcert，论文里训练到三千万个细胞左右，Hugging Face 上已经放了一个<strong>三亿五千万个细胞、大约一亿参数</strong>的版本，覆盖十六个物种，他说已经看到不错的规模化表现。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那有了好的表示，就有了虚拟细胞？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说不是。基础模型学到的是"状态空间"，也就是细胞可能长什么样。<strong>虚拟细胞需要的是 f(x, a)</strong>：当前状态 x，加上一个动作 a，预测下一个状态 x'。这就是机器学习里说的世界模型。他们的做法是先用 scConcert 学表示，再在上面放一个生成模型，用 flow matching 推演"施加某个干扰之后细胞会怎么走"。这个叫 CellFlow，刚被《Nature Methods》接收。他强调这种方法效果好，但<strong>很依赖隐空间的质量</strong>。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那标题里的"控制"是什么意思？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这是他认为最激动人心的方向。他把这个领域分成三步：<strong>先是画地图</strong>，就是人类细胞图谱；<strong>然后是预测</strong>，就是世界模型；<strong>现在可以开始指挥下一个实验。</strong></p><p class="script-text">他说得很坦白：以前很多论文最后就是一个模型、一张概念图，加一点验证，然后就开始下一个项目了。学到了一点东西，但不是持续学习。</p><p class="script-text">他们这周放出了一个叫 Lab Compass 的东西，是一个<strong>反向生成模型</strong>：有了前向的世界模型以后，你告诉它想让细胞到达什么状态，它告诉你该做什么。他们跟剑桥大学一个做造血研究的实验室合作，<strong>做了三到四轮"实验室在环"</strong>，每轮都用新数据改进模型。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">难点在模型还是在人？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说一大半难点在人。模型预测说"你去做一个新细胞系，加这几样奇怪的东西"，实验的人要花几周甚至几个月去做，凭什么信你？如果是设计分子，风险小一点；换成细胞实验，<strong>人很容易说"要不还是按我的直觉来"</strong>。所以要建立一种文化，让计算的人和做实验的人真的愿意一起跑好几轮。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他会不会说要上机器人实验室？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说现在谈机器人有点早，因为实验周期还是太长。现在更像主动学习，<strong>最终目标是"把一切都 RL 化"</strong>，把实验室本身也放进强化学习的循环里。他自己也说"这有点远"。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他对生意怎么看？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说了一个很多人都见过的现象：很多公司一开始说"我们要做生物学的基础模型"，但说不清拿它干什么。投资人能理解的是"你最后会做出一个药"，所以<strong>很多平台公司后来都转去做药了</strong>，虚拟细胞成了附带业务。</p><p class="script-text">他认为好位置是<strong>模型加独有数据</strong>。比如他们和多家药企搞了一个"癌症类器官扰动图谱"联盟，药企出钱，换取数据的早期使用权。他觉得越来越多公司的护城河不是模型本身，而是模型加上别人拿不到的数据。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他还讲了欧洲创业环境吧。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">讲了。他说欧盟新创公司的数量跟美国差不多，<strong>掉队的是规模化阶段</strong>，A 轮、B 轮那种大额风险投资不够，所以很多团队那时候就去了美国。他在自己的部门里给每个课题组长定了一个目标：三年内至少出一个衍生公司。</p><p class="script-text">还有一个培养学生的做法：每个博士生有两个导师，一个管方法，一个管具体的生物或医学问题，学生两边的组会都要去。他管这个叫 Y 模型。两个学生共用一组导师，就是 Y 加 Y 等于 H。他说上几个月 NVIDIA 一个月里从他组里挖走了两个人。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我觉得最有用的是那条路线：<strong>画地图、预测、指挥实验。</strong>这三步不只适用于生物学。很多 AI 产品现在停在第二步，模型能预测，但没有接回去决定下一步做什么，也没有一轮一轮地改。</p><p class="script-text">也要说两点保留。第一，Theis 说自己的看法"比较学术"，对创业公司的判断他也承认看得没那么全。第二，Lab Compass 和 CellFlow 的效果都是他自己的说法，节目里没给具体数字，Lab Compass 的论文要等 bioRxiv 上线再看。</p></div>
-<p class="section-label">◈ 本周其他集数</p>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集还是《Latent Space》，十一月二号，Legora 的 CTO Jacob Lauritzen。Legora 做法律 AI，从斯德哥尔摩一个地下室起步。这集最有意思的问题是：<strong>数据属于律所的客户，Legora 一条智能体的运行记录都不能看，那怎么做评测？</strong>他们的办法是让三个工程师加三个律师，照着客户的工作搭模拟环境，像强化学习里的"世界"。他们还把运行记录改写成摘要，把失败归到十到二十种类型。有一个细节：引用的正确率原来是百分之七十，新模型发布后变成百分之九十九，他们什么都没改。他估计模型已经能做好六成左右的法律工作。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_blank">Building Legal Agents When You Can&#x27;t See the Data - Jacob Lauritzen, CTO of Legora · Latent Space</a></span></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">S-1 那集呢？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">十一月七号，《Latent Space》拆解 Anthropic 的 S-1 招股书，嘉宾是 Altimeter 的 Jamin Ball，一百零二分钟。我们没听到具体内容，只说一点：swyx 在 X 上说，他们会<strong>每周跟进 Anthropic 上市这件事，直到上市或者不上市</strong>。想跟这件事的可以订阅。</p><span class="source-inline">📎 来源：<a href="https://www.youtube.com/watch?v=P735f1xlpL0" target="_blank">Deep Dive: Anthropic S-1 Myths and Mythos — Jamin Ball, Altimeter · Latent Space</a></span></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">两集简单提一下。一是《Latent Space》十一月三号，Warp 的 Zach Lloyd，三十五分钟，讲 2026 年"软件工厂"需要什么样的基础设施。二是 Lenny's Podcast 十一月一号，Wispr Flow 的内容负责人 Hector Serrano，他十九岁进公司做实习生，后来管着五十个创作者，<strong>每个月产出五六百条付费用户生成内容广告</strong>。做增长的人可以听。这两集我们都只看到了简介。</p><span class="source-inline">📎 来源：<a href="https://www.youtube.com/watch?v=LL0YmIyBKSU" target="_blank">The 2026 Software Factory Infra Stack — Zach Lloyd, Warp.dev · Latent Space</a></span><span class="source-inline">📎 来源：<a href="https://podwise.ai/podcasts/16123" target="_blank">How a 19-year-old intern built the growth engine behind this $2B AI company · Lenny&#x27;s Podcast</a></span></div>
-<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">跟主推那集最接近的一条来自 YC 的 Garry Tan：<strong>"智能体技能必须用评测驱动的开发循环。每个新模型都更强，你可以删掉不再需要的东西。"</strong>他说他刚把 /investigate 这个技能删了，因为 Opus 5.5 不用它做得更好。这跟 Theis 说的"先把基线和指标定好"是一回事：有了评测，你才知道什么可以删。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">点赞最高的呢？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Vercel 的 CEO Guillermo Rauch，一千一百多个赞。他说用 AI SDK、Chat SDK 和 json-render 组合，<strong>可以从大模型直接生成界面，放到 Slack、Teams 这些平台上</strong>。他认为这会成为人和智能体交互的主流方式。</p><p class="script-text">前 Claude Code 团队的 Thariq 也有一条，一千一百多个赞：他喜欢一种做法，<strong>Instagram Edits、Roblox Studio 这类创作工具自带 MCP</strong>，智能体先做一部分，专业用户再在自己熟悉的工具里接着做。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">跟 S-1 有关的呢？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">就是刚才说的 swyx 那条。他说自己以前做过股票对冲基金分析师，看过阿里巴巴、Atlassian 这些大型上市，这次要和 Jamin Ball 一起把分析师的帽子再戴上。</p></div>
-<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起，有一条共同的线：<strong>谁定义了指标，谁就掌握了改进的方向。</strong>Theis 说留给人的最重要的工作是定义指标；Legora 看不到数据，就自己造评测环境；Garry Tan 靠评测决定删掉哪个技能。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">找一个你们团队现在用的 AI 功能，问一句：有没有一个最简单的基线？比如规则、关键词匹配、或者一个小模型。拿它跟现在的方案比一次。如果差距很小，先别加复杂度。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听 Theis 那集的中段，讲线性基线和 Arc 比赛那部分，然后听最后十分钟讲 Lab Compass 的部分。再听 Legora 那集讲评测的前半小时。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周你打算听哪一集？我们下周见。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
-
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期一，AI 日，早上好。上周五我们讲了 GPT-6 Cyber，今天安全这条线还在继续。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天讲几条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三条主要的。第一，安全：微软发现攻击者用 AI 代理从 GitHub 一路摸进云端，DeepMind 用代理在 RSA-1024 里找到两个弱点，OpenAI 请外部团队用代理攻击自己。第二，钱：OpenAI 新一轮融资先拿到 110 亿美元，估值比原来想要的低；Anthropic 上市的时间也不确定了。第三，OpenAI 发了一个测试代理能不能看懂湿实验数据的基准。最后是几条短消息和建造者动态。</div></div>
 </div>
-
+<div class="section-label">一 · 安全：代理去攻，代理去守</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先说攻击这边。11 月 5 号，微软威胁情报团队发了一篇报告。攻击者用一个叫 ARTEX 的代理框架，自动在公开的 GitHub 仓库里找泄露的密钥和 API key。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">找密钥的脚本早就有了，这次有什么不同？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不同在于找到之后不停。代理会判断这个密钥能干什么，接着去登录云服务、翻 Key Vault 和存储账户、下载 SharePoint 和 OneDrive 里的文件，再去找更多凭据。微软记录到一个案例，从在 GitHub 上搜到密钥，到从 Azure Key Vault 里拿走数据，大约五分钟。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">五分钟，人基本来不及反应。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。所以微软的建议很直接：只要密钥在公开仓库里出现过，就当它已经泄露了。删掉那次提交没用，密钥本身还有效，必须轮换。另外要查 Entra ID 登录日志、Azure 活动日志和 Key Vault 访问记录，能用托管身份的地方就别用长期密钥。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">防守这边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 6 号，Google DeepMind 公布了一项研究：研究人员带着 AI 代理，在 1024 位 RSA 上找到两个弱点。一个跟签名有关，一个是批量分解，就是一次分解很多个 1024 位的密钥时，每多一个的平均成本降了大约 30 倍。还有一个小实验：两个代理用不到四天，自己设计、运行、调试了一次计算，复现了一个已知结果，用的 CPU 时间是原来的三分之一左右。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这是说 RSA 被破了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不是。1024 位早就被认为不够安全了，现在主流是 2048 位以上，这项研究没说 2048 位有问题。签名那个弱点有一个 1600 倍的数字，原文也说是理论估计。我们看到的都是二手报道，没读到 DeepMind 的原文。值得记住的是 Pushmeet Kohli 的说法：这类进展过去要几年，这次代理用了几周。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 OpenAI 那条呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">同一天，OpenAI 宣布和一家叫 Hacktron 的安全公司合作。Hacktron 做代码审查和渗透测试的代理，OpenAI 给它开放前沿模型，让它重点测 OpenAI 自己的系统跟第三方服务连接的地方。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">三件事放在一起，攻和守用的是同一类工具。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。区别只在谁先用。对普通开发者，今天能做的事就是微软那条：查一下自己的公开仓库，有没有提交过密钥。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://letsdatascience.com/news/microsoft-reports-threat-actors-using-artex-agentic-tooling-15b88fc8" target="_blank">Microsoft Reports Threat Actors Using ARTEX Agentic Tooling to Abuse Exposed Secrets — Let&#x27;s Data Science</a></span>
+  <span class="source-inline">📎 来源: <a href="https://cybersecuritydive.com/news/hackers-artex-github-repositories-exposed-secrets/874007" target="_blank">Hackers turn to agentic AI to find exposed secrets on GitHub — Cybersecurity Dive</a></span>
+  <span class="source-inline">📎 来源: <a href="https://runtimewire.com/article/google-deepmind-ai-agents-1024-bit-rsa-weaknesses" target="_blank">Google DeepMind says AI agents found two weaknesses in legacy 1024-bit RSA — Runtime Wire</a></span>
+  <span class="source-inline">📎 来源: <a href="https://aidapted.ro/en/articles/ai-news-8-november-2026/" target="_blank">AI News of the Day – 8 November 2026 — AIdapted</a></span>
+</div>
+<div class="section-label">二 · 钱：OpenAI 估值降了一档，Anthropic 上市时间不确定</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。11 月 6 号，路透转述彭博的消息：OpenAI 新一轮融资先拿到了 110 亿美元，估值 1.25 万亿美元。投资方有软银和 MGX。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">1.25 万亿，听起来还是很多。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">数字本身是。但有几家报道说，这一轮原本想按 1.4 万亿左右估值，总额原本想融 300 亿，现在降到 200 亿左右。作为对比，今年 3 月底 OpenAI 上一轮是 1220 亿美元，投后估值 8520 亿。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么降？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道给的理由是投资人对 AI 基础设施的投入更谨慎了。机房、芯片、电都要钱，投入回报的时间越来越长。上周五我们讲过，美国好几个地方投票限制建数据中心，也是同一个背景。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Anthropic 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Anthropic 在准备上市。路透之前报道，路演原计划就是这周，11 月 9 号这一周开始，下一周定价。但路透后来又报道，有投资人怀疑 Anthropic 能不能按这个时间走完。估值方面，各家说法不一样，之前流传的是 2 万亿左右，也有更低的说法。Anthropic 自己没确认日期。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">收入呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有报道说上个季度收入接近 170 亿美元，但增速放慢了，算力成本也多了一大块。这些是从报道里来的，没有官方文件可以核对。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两家公司放一起，看出什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">私募市场和公开市场开始给同一个问题打分：前沿模型公司到底值多少钱。Anthropic 一旦上市，每天都有一个公开价格。建造者 Aditya Agarwal 发了一条推文，说如果新建数据中心越来越难，手上已经有算力的大云厂商会占便宜，受影响的是新模型训练的速度。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://gvwire.com/2026/11/06/openai-secures-11-billion-funding-at-1-25-trillion-valuation-bloomberg-news-reports/" target="_blank">OpenAI Secures $11 Billion Funding at $1.25 Trillion Valuation, Bloomberg News Reports — GV Wire (Reuters)</a></span>
+  <span class="source-inline">📎 来源: <a href="https://hyper.ai/en/stories/af9b0088b111d33d828d51381ca04638" target="_blank">OpenAI Raises Less Than Half of $30 Billion Target at $1.25 Trillion — Hyper.ai</a></span>
+  <span class="source-inline">📎 来源: <a href="https://letsdatascience.com/news/investors-doubt-anthropic-can-hold-november-ipo-roadshow-reu-a69a034f" target="_blank">Investors Doubt Anthropic Can Hold November IPO Roadshow, Reuters Reports — Let&#x27;s Data Science</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.khaleejtimes.com/business/anthropic-says-revenue-jumped-to-nearly-17b-last-quarter-reports-2?amp=1" target="_blank">Anthropic says revenue jumped to nearly $17b last quarter — Khaleej Times</a></span>
+</div>
+<div class="section-label">三 · BioBasicsBench：代理能看懂实验室的原始数据吗</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。11 月 6 号前后，OpenAI 发布了一个基准，叫 BioBasicsBench，跟酶设计公司 Ligo 一起做的。100 个任务，测的是 AI 代理能不能看懂湿实验的原始数据。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">原始数据指什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">电泳胶图、细胞培养的照片、显微镜图像、仪器读数，还有失败的实验、看不清的图、互相矛盾的结果。OpenAI 的理由是：论文里挑出来的图都是干净的，真实实验室每天面对的是不干净的东西。评分也不只看答案对不对，还看模型能不能发现错误，能不能说出「证据不够，下不了结论」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">成绩怎么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">GPT-6 Astra 在最高推理设置下拿到 66.7% 的分。上一代 GPT-5.6 Sol 是 43.8%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">66.7% 算高吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不好判断，因为 OpenAI 没给人类基线，也没测别家的模型。OpenAI 自己写了一个失败案例：数菌落，模型分不开挨得很近的菌落，漏数了看得见的，还在空的琼脂上标了菌落，最后多数了大约 12%。OpenAI 也说，分数高不代表模型已经能在实验室里可靠判断。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个基准不管动手的部分？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，移液、操作仪器、机器人执行都不在里面。只管看数据、下判断这一步。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.rdworldonline.com/openai-unveils-biobasicsbench-a-benchmark-to-gauge-how-well-ai-agents-read-raw-experimental-data-across-100-routine-wet-lab-tasks/" target="_blank">OpenAI unveils BioBasicsBench — R&amp;D World</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.winzheng.com/en/article/openai-biobasicsbench-wet-lab-benchmark-gpt6-astra" target="_blank">OpenAI Releases BioBasicsBench: GPT-6 Astra Scores 66.7% on 100 Wet-Lab Tasks but Still Miscounts Colonies — Winzheng</a></span>
+</div>
+<div class="section-label">四 · 几条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，Thinking Machines，就是 Mira Murati 的公司，11 月 5 号发布了 Inkling 2 Small。混合专家模型，总参数 5940 亿，每个 token 激活 170 亿，能看图，主要面向编程代理和长时间自主任务。现在在他们的 Tinker 平台上用。权重是不是已经公开，各家报道不一致，有的说要等外部安全测试之后再按 Apache 2.0 发布。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">名字叫 Small，五千多亿参数。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，Small 是相对 7 月那个 9750 亿参数的版本说的。第二条，英伟达在推它的 Vera CPU，说这是给代理工作负载设计的。代理不是一直在 GPU 上跑，它要执行代码、查数据库、调工具，这些活在 CPU 上。英伟达说在 100 兆瓦的数据中心里，Vera 每瓦能支撑的代理比测试的 x86 处理器多，Perplexity 在编程代理任务上快了大约 1.5 倍。这些是英伟达自己的数字。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 Aaron Levie 那条推文能对上。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">等会儿说。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://runtimewire.com/article/mira-murati-thinking-machines-inkling-small-open-weight-model" target="_blank">Mira Murati&#x27;s Thinking Machines Inkling Small open-weight model — Runtime Wire</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.vals.ai/models/thinkingmachines_inkling-2-small" target="_blank">Inkling 2 Small — Vals AI</a></span>
+  <span class="source-inline">📎 来源: <a href="https://aidapted.ro/en/articles/ai-news-8-november-2026/" target="_blank">AI News of the Day – 8 November 2026 — AIdapted</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 No Priors，11 月 5 号这一期，嘉宾是 Robinhood 的 CEO Vlad Tenev。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 AI 有什么关系？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">关系挺大。Robinhood 今年早些时候上线了一个 MCP，他们叫 Agentic Trading，就是让代理帮你执行交易策略。他说几个月里有超过 15 万个客户开了代理交易账户，工具调用每天大约 3000 万次。几周前他们又发布了 Robinhood Agents，把整个代理的运行环境搬进 Robinhood 账户，他自己的比喻是：像 Claude Code 或 Codex，但专门为交易做的。可以每天定时跑你的策略、调仓，还有一个应用商店，比如接卫星数据去数零售商停车场里的车。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这不就是把对冲基金的工具给散户吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他就是这么说的，目标是把对冲基金和量化公司的能力放进普通人口袋。他也承认，一开始受益的是一小部分本来就懂的人，他们的交易量会大涨，然后才慢慢扩散。跟编程代理一样，先用上的是本来就会写代码的人。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还聊了别的吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">聊了预测市场。他说预测市场是新闻的下一种形态，很多人打开 App 不交易，只是看赔率，了解接下来可能发生什么。还聊了他做的数学 AI 公司 Harmonic。他觉得现在 AI 做数学太集中了，都是大公司用自己的机房和不公开的模型在做。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">点赞最多的是 Karpathy，六千四百多。有人发了自己最喜欢的 YouTube 频道列表，他用 Claude Code 三分钟做成了一个网站，叫 TristanTube，4.7 万个视频，还有一个躺着看的电视模式。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">三分钟，一次做成。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二条是 OpenAI Codex 的 Thibault Sottiaux。他澄清 Pro 套餐都没有 5 小时限额，Pro 100 是 Plus 的 10 倍用量，Pro 200 是 20 倍，Pro 500 是 50 倍，还能用 ultrafast。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条是 Levie？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是 Box 的 CEO Aaron Levie，两条。一条说，他开始看到有人用 AI 后的产出比以前高一到两个数量级，条件是：好的运行环境、对自己领域很熟、代码库比较新、会同时带多个代理、测试和部署没什么阻力。他说这个差距没有缩小，反而在拉大，原来功底越深，现在杠杆越大。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">另一条呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">另一条就是刚才说的。他说代理对延迟不敏感，一个任务值 500 美元，晚一秒返回没关系。所以推理不用放在用户旁边，数据中心可以建在任何愿意建的地方。愿意建的州和国家有机会，不愿意的就错过。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟前面数据中心那些投票正好相反的意见。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，两边都摆在这里了。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天几条放一起看呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">代理已经被拿来攻击，也被拿来做安全研究和看实验数据。同时，造这些代理的公司，融资和上市都比几个月前难了一点。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天可以做一件事：去 GitHub 搜一下自己的公开仓库，看看有没有提交过 .env 文件或者 API key。有的话，马上轮换。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。明天机器人日见。</div></div>
+</div>
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
 <p class="section-label">◈ Follow Builders · 今日建造者动态</p>
@@ -256,87 +280,94 @@
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Latent Space · 2026-11-06</p>
-  <p class="pc-title">Controlling Biology - Fabian Theis, Helmholtz Munich</p>
-  <p class="pc-summary">Theis 把虚拟细胞研究分成三步：画地图（人类细胞图谱）、预测（扰动世界模型）、指挥下一个实验。他坦白讲了线性基线为什么一直很强、Arc 挑战赛的指标为什么能被钻空子，并介绍了反向生成模型 Lab Compass：告诉它目标细胞状态，它告诉你该做什么实验。</p>
-  <a href="https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">No Priors · 2026-11-05</p>
+  <p class="pc-title">Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev</p>
+  <p class="pc-summary">Robinhood 的代理交易（一个 MCP）上线几个月，超过 15 万客户开户，工具调用每天约 3000 万次；新发布的 Robinhood Agents 把代理运行环境放进账户，可以定时跑策略、调仓。Tenev 的目标是把对冲基金的能力交给普通人，也承认先受益的是本来就懂的人。他还谈了预测市场是「新闻的下一种形态」，以及数学 AI 公司 Harmonic。</p>
+  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GR</div>
+      <div class="builder-avatar">AK</div>
       <div>
-        <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · CEO @vercel</div>
+        <div class="builder-name">Andrej Karpathy</div>
+        <div class="builder-handle">@karpathy · Eureka Labs，前 OpenAI / Tesla</div>
       </div>
     </div>
-    <p class="builder-tweet">「用 AI SDK、Chat SDK 和 json-render 组合做对话智能体的生成式界面，可以从大模型直接生成界面，放到 Slack、Teams 这些平台上。我认为这会成为人和智能体交互的主流方式。」</p>
+    <p class="builder-tweet">「这周 Tristan 发了他最喜欢的 YouTube 频道列表，看起来很棒，我就把它做成了 TristanTube：4.7 万个很硬核的视频，外加一个躺着看的电视模式。（用 Claude Code 三分钟一次做成）」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,147</span>
-      <a href="https://x.com/rauchg/status/2118856239719608353" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 6,445</span>
+      <a href="https://x.com/karpathy/status/2119114537442189652" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
       <div class="builder-avatar">TS</div>
       <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · formerly Claude Code @anthropic</div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex &amp; ChatGPT @ OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「我喜欢的一种做法：Instagram Edits、Roblox Studio 这类创作工具自带 MCP，智能体可以先做一部分，专业用户再在自己熟悉的工具里一起接着做。」</p>
+    <p class="builder-tweet">「看到有些误解：所有 Pro 套餐都没有 5 小时限额，用量相对 Plus 分别是：Pro 100 = 10 倍，Pro 200 = 20 倍，Pro 500 = 50 倍，并可使用 ultrafast。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,130</span>
-      <a href="https://x.com/trq212/status/2118822238262853904" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 2,756</span>
+      <a href="https://x.com/thsottiaux/status/2119296267545419987" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · President & CEO @ycombinator</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「智能体技能必须用评测驱动的开发循环。每个新模型都更强，你可以删掉不再需要的东西。我刚删掉了 /investigate 这个技能，因为 Opus 5.5 不用它做得更好。」</p>
+    <p class="builder-tweet">「一年前我不会相信，但我们开始看到很多例子：用 AI 后的产出比以前高一到两个数量级。条件是好的运行环境、对领域很深的理解、比较新的代码库、能同时带多个代理、测试部署阻力小。这个差距没有缩小，原来功底越深，现在杠杆越大。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 217</span>
-      <a href="https://x.com/garrytan/status/2118920030243139596" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 582</span>
+      <a href="https://x.com/levie/status/2119111328099168409" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SW</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Swyx</div>
-        <div class="builder-handle">@swyx · Latent Space</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们会每周跟进 Anthropic 上市这件事，直到它上市或者不上市。我报道过从阿里巴巴到 Atlassian 的大型上市，这次要把股票对冲基金分析师的帽子和 AI 工程师的帽子一起戴上，搭档是 Jamin Ball。」</p>
+    <p class="builder-tweet">「AI 代理的推理理论上可以在任何地方运行，它对返回给用户的延迟不那么敏感。一个任务值 500 美元，晚一秒返回没关系。所以 AI 数据中心可以建在更多地方，愿意建的州和国家有机会，放弃的就错过。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 78</span>
-      <a href="https://x.com/swyx/status/2118905788915982341" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 256</span>
+      <a href="https://x.com/levie/status/2118953909524050288" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
 <div class="sources">
   <div class="sources-label">◈ 本期来源</div>
-  <a class="source-link" href="https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/" target="_blank"><span class="src-icon">Podcast</span><span>Controlling Biology - Fabian Theis, Helmholtz Munich · Latent Space · 2026-11-06</span></a>
-  <a class="source-link" href="https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/" target="_blank"><span class="src-icon">Podcast</span><span>Building Legal Agents When You Can&#x27;t See the Data - Jacob Lauritzen, CTO of Legora · Latent Space · 2026-11-02</span></a>
-  <a class="source-link" href="https://www.youtube.com/watch?v=P735f1xlpL0" target="_blank"><span class="src-icon">Podcast</span><span>Deep Dive: Anthropic S-1 Myths and Mythos — Jamin Ball, Altimeter · Latent Space · 2026-11-07</span></a>
-  <a class="source-link" href="https://www.youtube.com/watch?v=LL0YmIyBKSU" target="_blank"><span class="src-icon">Podcast</span><span>The 2026 Software Factory Infra Stack — Zach Lloyd, Warp.dev · Latent Space · 2026-11-03</span></a>
-  <a class="source-link" href="https://podwise.ai/podcasts/16123" target="_blank"><span class="src-icon">Podcast</span><span>Lenny&#x27;s Podcast · Hector Serrano (Wispr Flow) · 2026-11-01</span></a>
-  <a class="source-link" href="https://x.com/rauchg/status/2118856239719608353" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch — 用 AI SDK、Chat SDK 和 js…</span></a>
-  <a class="source-link" href="https://x.com/trq212/status/2118822238262853904" target="_blank"><span class="src-icon">X</span><span>Thariq — 我喜欢的一种做法：Instagram Edi…</span></a>
-  <a class="source-link" href="https://x.com/garrytan/status/2118920030243139596" target="_blank"><span class="src-icon">X</span><span>Garry Tan — 智能体技能必须用评测驱动的开发循环。每个新模…</span></a>
-  <a class="source-link" href="https://x.com/swyx/status/2118905788915982341" target="_blank"><span class="src-icon">X</span><span>Swyx — 我们会每周跟进 Anthropic 上市这件…</span></a>
-  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+  <a class="source-link" href="https://letsdatascience.com/news/microsoft-reports-threat-actors-using-artex-agentic-tooling-15b88fc8" target="_blank"><span class="src-icon">LINK</span><span>Microsoft Reports Threat Actors Using ARTEX Agentic Tooling to Abuse Exposed Secrets — Let&#x27;s Data Science</span></a>
+  <a class="source-link" href="https://cybersecuritydive.com/news/hackers-artex-github-repositories-exposed-secrets/874007" target="_blank"><span class="src-icon">LINK</span><span>Hackers turn to agentic AI to find exposed secrets on GitHub — Cybersecurity Dive</span></a>
+  <a class="source-link" href="https://runtimewire.com/article/google-deepmind-ai-agents-1024-bit-rsa-weaknesses" target="_blank"><span class="src-icon">LINK</span><span>Google DeepMind says AI agents found two weaknesses in legacy 1024-bit RSA — Runtime Wire</span></a>
+  <a class="source-link" href="https://aidapted.ro/en/articles/ai-news-8-november-2026/" target="_blank"><span class="src-icon">LINK</span><span>AI News of the Day – 8 November 2026 — AIdapted</span></a>
+  <a class="source-link" href="https://gvwire.com/2026/11/06/openai-secures-11-billion-funding-at-1-25-trillion-valuation-bloomberg-news-reports/" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Secures $11 Billion Funding at $1.25 Trillion Valuation, Bloomberg News Reports — GV Wire (Reuters)</span></a>
+  <a class="source-link" href="https://hyper.ai/en/stories/af9b0088b111d33d828d51381ca04638" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Raises Less Than Half of $30 Billion Target at $1.25 Trillion — Hyper.ai</span></a>
+  <a class="source-link" href="https://letsdatascience.com/news/investors-doubt-anthropic-can-hold-november-ipo-roadshow-reu-a69a034f" target="_blank"><span class="src-icon">LINK</span><span>Investors Doubt Anthropic Can Hold November IPO Roadshow, Reuters Reports — Let&#x27;s Data Science</span></a>
+  <a class="source-link" href="https://www.khaleejtimes.com/business/anthropic-says-revenue-jumped-to-nearly-17b-last-quarter-reports-2?amp=1" target="_blank"><span class="src-icon">LINK</span><span>Anthropic says revenue jumped to nearly $17b last quarter — Khaleej Times</span></a>
+  <a class="source-link" href="https://www.rdworldonline.com/openai-unveils-biobasicsbench-a-benchmark-to-gauge-how-well-ai-agents-read-raw-experimental-data-across-100-routine-wet-lab-tasks/" target="_blank"><span class="src-icon">LINK</span><span>OpenAI unveils BioBasicsBench — R&amp;D World</span></a>
+  <a class="source-link" href="https://www.winzheng.com/en/article/openai-biobasicsbench-wet-lab-benchmark-gpt6-astra" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Releases BioBasicsBench: GPT-6 Astra Scores 66.7% on 100 Wet-Lab Tasks but Still Miscounts Colonies — Winzheng</span></a>
+  <a class="source-link" href="https://runtimewire.com/article/mira-murati-thinking-machines-inkling-small-open-weight-model" target="_blank"><span class="src-icon">LINK</span><span>Mira Murati&#x27;s Thinking Machines Inkling Small open-weight model — Runtime Wire</span></a>
+  <a class="source-link" href="https://www.vals.ai/models/thinkingmachines_inkling-2-small" target="_blank"><span class="src-icon">LINK</span><span>Inkling 2 Small — Vals AI</span></a>
+  <a class="source-link" href="https://x.com/karpathy/status/2119114537442189652" target="_blank"><span class="src-icon">X</span><span>Andrej Karpathy · @karpathy</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2119296267545419987" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux · @thsottiaux</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2119111328099168409" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2118953909524050288" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank"><span class="src-icon">LINK</span><span>Tokenization, Agentic Trading, Harmonic: Robinhood&#x27;s Mission to Expand Ownership with CEO Vlad Tenev — No Priors</span></a>
 </div>
 
 <div class="footer">
-  <span>Daily Builders Digest · 2026-11-08 · 周日播客精选</span>
+  <span>Daily Builders Digest · 2026-11-09 · AI 星期一</span>
   <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
 </div>
 
@@ -344,6 +375,13 @@
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近一个月节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-11-08.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-11-08</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-11-08 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-11-07.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-11-07</span>
@@ -469,13 +507,6 @@
       <span class="ep-card-badge" style="color:#004488;border-color:#004488">Product</span>
     </div>
     <span class="ep-card-hl">◈ 今日数字</span>
-  </a>
-  <a class="ep-card" href="/episodes/2026-11-09.html">
-    <div class="ep-card-top">
-      <span class="ep-card-date">2026-11-09</span>
-      <span class="ep-card-badge" style="color:#dd1111;border-color:#dd1111">AI</span>
-    </div>
-    <span class="ep-card-hl">安全：代理去攻，代理去守</span>
   </a>
   <a class="ep-card" href="/episodes/2026-10-20.html">
     <div class="ep-card-top">

@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-10-21",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "◈ 今日数字 · 🎙 对话全文 · 大雨 × 小苇",
+    "html": "episodes/2026-10-21.html",
+    "mp3": "episodes/2026-10-21.mp3",
+    "headlines": [
+      "◈ 今日数字",
+      "🎙 对话全文 · 大雨 × 小苇"
+    ]
+  },
+  {
     "date": "2026-11-09",
     "dow": 1,
     "topic": "AI",

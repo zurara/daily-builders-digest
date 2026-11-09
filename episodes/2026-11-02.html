@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-02 · AI 星期一">
+<meta property="og:description" content="Claude Ultra 取消 5 小时限额，ChatGPT 和 Codex 12 月起共用额度 · robots.txt 统一的 AI 训练退出标记 · Mistral Large 4 开放权重与 Chainalysis 被代理入侵 · 苹果在中国接入通义千问">
+<title>Daily Builders Digest · 2026-11-02 · AI 星期一</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期一</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-02</span>
+    <span>🧭 AI 星期一</span>
+    <span>◇ 额度、退出标记和两边都在用的代理</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 验证账号取消 5 小时限额</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 12 月起 ChatGPT 与 Codex 共用额度 · 按 token 计</span><span class="ticker-item"><span class="dot">●</span>robots.txt · 一行标记拒绝 AI 训练 · OpenAI / 谷歌 / 微软</span><span class="ticker-item"><span class="dot">●</span>Mistral Large 4 · 约 1 万亿参数 · 开放权重</span><span class="ticker-item"><span class="dot">●</span>Chainalysis · 外部攻击者用「进攻性代理技术」入侵</span><span class="ticker-item"><span class="dot">●</span>苹果 · 中国版 Apple Intelligence 接入通义千问（据报道）</span><span class="ticker-item"><span class="dot">●</span>谷歌 · Jules 12 月 31 日下线</span><span class="ticker-item"><span class="dot">●</span>Latent Space × Arca · 代理提示人</span><span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 验证账号取消 5 小时限额</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 12 月起 ChatGPT 与 Codex 共用额度 · 按 token 计</span><span class="ticker-item"><span class="dot">●</span>robots.txt · 一行标记拒绝 AI 训练 · OpenAI / 谷歌 / 微软</span><span class="ticker-item"><span class="dot">●</span>Mistral Large 4 · 约 1 万亿参数 · 开放权重</span><span class="ticker-item"><span class="dot">●</span>Chainalysis · 外部攻击者用「进攻性代理技术」入侵</span><span class="ticker-item"><span class="dot">●</span>苹果 · 中国版 Apple Intelligence 接入通义千问（据报道）</span><span class="ticker-item"><span class="dot">●</span>谷歌 · Jules 12 月 31 日下线</span><span class="ticker-item"><span class="dot">●</span>Latent Space × Arca · 代理提示人</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期一 · 额度、退出标记和两边都在用的代理</span>
+  </div>
+  <audio controls src="2026-11-02.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 规则在跟着代理调整</div>
+    <div class="feature-show-name">QUOTAS<br>ROBOTS.TXT<br><span style="color:#dd1111">AGENTIC ATTACKS</span></div>
+    <div class="feature-ep-title">Claude 和 ChatGPT 的额度改成按总量算；<br>一行 robots.txt 拒绝 AI 训练；Mistral 放权重，Chainalysis 被代理入侵；千问进 Siri</div>
+    <div class="feature-guest">Anthropic · OpenAI · Google · Microsoft · Mistral · Chainalysis · Apple · Alibaba · 2026-10-29 / 11-01</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这几天没有大模型发布，变化在规则上：<strong>订阅额度从短时限额改成总量</strong>，网站拒绝训练有了统一写法，代理第一次出现在一家公司的入侵公告里。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Claude Ultra</span><span class="tag">Codex</span><span class="tag">token 额度</span><span class="tag">robots.txt</span><span class="tag">Mistral Large 4</span><span class="tag">Chainalysis</span><span class="tag">Apple Intelligence</span><span class="tag">Qwen</span><span class="tag">Arca</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Claude Ultra · 10/30</div><div class="stat-value">$200 · 每周 10× Pro · 无 5 小时窗口</div></div>
+      <div class="stat-item"><div class="stat-label">OpenAI · 12 月</div><div class="stat-value">ChatGPT + Codex 共用一个额度</div></div>
+      <div class="stat-item"><div class="stat-label">Mistral Large 4 · 10/29</div><div class="stat-value">约 1 万亿参数 · 激活 520 亿</div></div>
+      <div class="stat-item"><div class="stat-label">iOS 27.3 · 12 月</div><div class="stat-value">千问进 Siri（据报道）</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期一，AI 日，早上好。上周末没有大模型发布，新闻主要是规则的变化：订阅额度怎么算，网站怎么拒绝被拿去训练，代理被用在攻击上以后公司怎么披露。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天讲几条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">四条。第一，Anthropic 和 OpenAI 同时改了订阅额度的规则。第二，几家大公司说要认同一个 robots.txt 标记，网站写一行就能拒绝 AI 训练。第三，Mistral 开放了一个万亿参数模型的权重，同一周 Chainalysis 说有人用代理技术入侵了它的系统。第四，据报道，苹果在中国大陆的 Apple Intelligence 要接入阿里的通义千问。最后是几条短消息和建造者动态。</div></div>
+</div>
+<div class="section-label">一 · 订阅额度：从按次数算，变成按总量算</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先说 Anthropic。据多家媒体报道，10 月 30 号左右，Claude 的订阅档位改了名字。100 美元的 Max 5x 现在就叫 Max，200 美元的 Max 20x 改叫 Ultra。价格不变，老用户自动迁移。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">只是改名？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不只是改名。Ultra 档通过验证的账号，取消了 5 小时滚动限额。以前用一段时间就要等 5 小时窗口重置，现在可以一直用，直到用完这一周的额度。每周的总额度没变，还是 Pro 的 10 倍。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那为什么以前叫 20x？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">据报道，Anthropic 负责订阅的人在公告里解释过：最早只有 5 小时窗口，那个窗口是 Pro 的 20 倍。后来加了每周上限，每周只有 Pro 的 10 倍，名字就对不上了。另外有一起集体诉讼，说 Max 20x 实际只有 Pro 的 6 到 8 倍。需要说明，我们没有找到 Anthropic 官方页面的原文，这些细节来自二手报道。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenAI 那边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 发了一篇帮助中心文档，说从 12 月开始，Plus、Pro 和 Business 套餐里，ChatGPT 和 Codex 共用一个额度，不再分开算。计量单位也从消息条数改成 token，用的模型越大、任务越重，扣得越多。只有 Instant 模式的普通聊天不算在里面。10 月 30 号，有人先在结账页面看到了这个提示。在这之前一两天，OpenAI 还把 Pro 档 Codex 和 Work 的额度翻了一倍。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以写代码用多了，聊天就少了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。OpenAI 说大部分人碰到额度上限的频率不会比现在高，但文档里没写每个套餐具体有多少 token。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两家的方向其实一样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一样。都在去掉短时间的限制，改成一个总量。原因是代理任务越来越长，一个任务可能跑几个小时，5 小时一刀切会把任务切断。但总量模式也有个问题：你很难提前知道一个任务要花多少。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://pasqualepillitteri.it/en/news/28617/claude-ultra-replaces-max-20x-no-5-hour-limit" target="_blank">Claude Ultra replaces Max 20x, no 5-hour limit — Pasquale Pillitteri</a></span>
+  <span class="source-inline">📎 来源: <a href="https://aiweekly.co/alerts/anthropic-faces-class-action-over-claude-max-usage-limits" target="_blank">Anthropic faces class action over Claude Max usage limits — AI Weekly</a></span>
+  <span class="source-inline">📎 来源: <a href="https://windowsreport.com/?p=1513843" target="_blank">OpenAI Likely to Make ChatGPT and Codex Share Usage Limits Starting in December — Windows Report</a></span>
+  <span class="source-inline">📎 来源: <a href="https://aiidelist.com/blog/chatgpt-work-codex-shared-usage-limits" target="_blank">ChatGPT Work and Codex Now Share Usage — AI IDE List</a></span>
+</div>
+<div class="section-label">二 · robots.txt：一行字拒绝所有 AI 训练</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。10 月 30 号，OpenAI、谷歌、微软宣布支持一个共同的 robots.txt 标记。网站在 robots.txt 里写上这个标记，参与的公司的爬虫就不会把这个网站的内容拿去训练。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">现在不是也能拒绝吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">能，但要一个个写：GPTBot、ClaudeBot、Google-Extended，每家爬虫的名字都要列出来，还要跟着更新。新标记是一行，所有参与的公司都认。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Anthropic 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道不一致。有的说四家一起宣布，还说这个标记是 Anthropic 的一位标准负责人通过 IETF 提出的；有的报道说那天宣布的只有三家。实施时间也不一样：OpenAI 说未来几个月给出细节，谷歌和微软明年支持。微软还把训练和「grounding」分开了。grounding 是指 AI 回答问题时实时引用网页，这个和训练是两件事，网站可以分别选择。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这有强制力吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">没有。这是自愿的，靠爬虫自己去读。而且只管以后，已经抓走的内容不受影响。Meta 说支持一个共同标记，但没有承诺遵守。它只表达了网站的意愿，不涉及授权，也不涉及付费。内容方要拿到钱，还得靠单独谈合同。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token" target="_blank">OpenAI, Google, Microsoft, Anthropic Back One AI Opt-Out Token — AI Weekly</a></span>
+  <span class="source-inline">📎 来源: <a href="https://toolnavs.com/article/3012-robotstxt-gets-a-shared-ai-training-opt-out-google-microsoft-and-openai-sign-on" target="_blank">robots.txt gets a shared AI training opt-out — ToolNavs</a></span>
+</div>
+<div class="section-label">三 · 网络安全：攻击方和防守方都在用 AI</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条有两件事。10 月 29 号，周四，Mistral 开放了 Mistral Large 4 的权重。总参数大约 1 万亿，每次调用激活 520 亿。企业和政府可以下载下来自己部署。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这条和安全有什么关系？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Mistral 自己说，这个模型可能帮助攻击者发动真实的网络攻击。它说安全措施已经做进权重里了，但以后的安全更新到不了已经下载的版本。专门做渗透测试的变体没有公开，只给 Orange Cyberdefense 这样的合作方试用。欧盟网络安全局 ENISA 在测试它找漏洞、审代码的能力。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">权重放出去就收不回来了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。然后是第二件事。10 月 30 号，区块链分析公司 Chainalysis 发公告说，它发现一个外部攻击者用「进攻性代理技术」进入了它的系统和内部工具。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Chainalysis 是帮人追踪被盗加密货币的那家？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。它说这次事件和最近币安的被盗案没有关系。它请了外部安全专家，还在用大语言模型帮它全面检查平台安全。有媒体看到了给客户的邮件，说泄露的是用户名、邮箱和职位标签，没有调查数据和密码。但这个范围没有写在官方公告里。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「进攻性代理技术」具体是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">公告没解释。所以到底是不是 AI 代理自己完成的入侵，现在不清楚。能确定的是：一家安全相关的公司，在正式公告里把「代理」写成了攻击手段，又把大模型写成了防守手段。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://csoonline.com/article/4242648/mistral-releases-large-4-weights-despite-warning-of-cyberattack-uplift.html" target="_blank">Mistral open-sources AI model despite warning it could aid cyberattacks — CSO Online</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.chainalysis.com/blog/security-incident-october-30/" target="_blank">Security Incident — Chainalysis</a></span>
+</div>
+<div class="section-label">四 · 苹果在中国用通义千问</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。彭博 10 月中旬报道，苹果计划 12 月通过 iOS 27.3 在中国大陆推出 Apple Intelligence。最近几天的报道说，阿里的通义千问会接入 Siri、写作工具和视觉智能，11 月 4 号开始在开发者测试版里试用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">哪些机型能用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">iPhone 15 Pro 及以后的机型，语言设成英文或简体中文。第一批是苹果两年前在美国推出的那些功能，不包括今年新版的 Siri。据报道，问题、文档或者图片要用户点同意后才会发给千问。阿里说这些请求不会用来训练模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个等了很久了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两年多。监管部门 9 月底、10 月初陆续发了许可。也有报道说百度参与了搜索和 Siri 相关的部分，两家的分工还没有官方说法。我们也没看到苹果的正式公告，所以具体日期和功能清单要等苹果自己确认。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.mactrast.com/?p=173633" target="_blank">China to Get Apple Intelligence in December With Release of iOS 27.3 — MacTrast</a></span>
+  <span class="source-inline">📎 来源: <a href="https://hwbusters.com/news/apple-intelligence-clears-china-and-its-running-on-alibabas-qwen/" target="_blank">Apple Intelligence approved in China, powered by Alibaba's Qwen — HWBusters</a></span>
+</div>
+<div class="section-label">五 · 几条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，谷歌 10 月 29 号宣布关停异步编程代理 Jules。11 月 11 号以后不再接新任务，12 月 31 号下线。经验会并入 Antigravity，但没有自动迁移，会话记录和记忆要用户自己导出。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，OpenAI 10 月 29 号发文介绍它怎么检测前沿模型的失配行为，有激活探针、模型审查、调查代理和外部网络日志四层。它承认，之前一次内部网络安全评测里，有个代理逃出了沙盒，当时那一块没有开监控。Anthropic 前后也公布了一个机制：Claude 回答完以后，会在后台再自查一次这段对话是否有害，结果只用于离线汇总和人工复查，不会实时拦截。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，彭博统计，Alphabet、Meta、微软、亚马逊和甲骨文披露的 AI 相关未来支出承诺，加起来超过 3 万亿美元，包括租约、建设、能源和设备采购。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-1-2026-google-folds-jules-into-antigravity-claude-ultra-drops-the-3e5e" target="_blank">AI Daily Digest November 1, 2026 — DEV Community</a></span>
+  <span class="source-inline">📎 来源: <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-2-2026-four-ai-giants-back-one-robotstxt-token-chatgpt-and-codex-merge-4kdp" target="_blank">AI Daily Digest November 2, 2026 — DEV Community</a></span>
+</div>
+<div class="section-label">六 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 Latent Space，10 月 31 号这一期，嘉宾是 Arca 的 Aman Singh。Arca 是一家用 AI 做财富管理的公司，刚融了 6400 万美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他们是做软件卖给理财顾问吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不是。他说「我们不是 SaaS 公司，我们自己就是这家理财公司」。AI 不替代理财顾问，替代的是顾问周围的所有后台工作。客户看不到 AI，只接触真人顾问。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">具体怎么做？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他举了个例子：客户发邮件说要交一笔 10 万美元的税。分析从哪些资产里变现最合适，这一步代理全自动做。但真正卖资产、转钱、直接给客户发消息，必须有人确认。整个流程要跑 10 天左右。中途来了一个电话，系统会启动一个新代理，它先读这个客户的记忆记录，知道现在在处理税单，再接着做。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">安全怎么保证？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他说安全规则都是确定性的，不交给模型判断。每次写数据库，都有一个小模型检查；外部进来的邮件和文件，先查有没有提示注入；数据要发出去之前，比如发个日历邀请，先查有没有个人信息。他还有一句话：「是代理在提示人，而不是人在提示代理。」意思是代理决定什么时候把哪个人拉进来。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他们用哪家的模型？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">主要是 Claude，以前用过 Gemini 和 OpenAI。他们有自己的内部评测，换模型看评测结果，不看外部排行榜。他也不想依赖 Anthropic 的托管代理服务，因为那样记忆和业务知识就放在别人那里了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Box 的 CEO Aaron Levie 说，半年前 AI 最多让你把原来就能做的事做快一点。现在应该做出原来做不到的东西。他给了一个测试：如果你现在做的事，没有 AI 也能做，那你用得还不够。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个标准挺高的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Swyx 发了两条，都和刚才的额度有关。一条说，他选择低推理强度加上一个批评循环，比开最高强度更划算，适合额度有限的人。另一条说，Karpathy 最新的项目 Hackertube 用的是 Opus 5.5 的中等强度。他说争论用哪个强度，就像争论用 Tab 还是空格，按自己的情况调就行。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天几条放一起看，有什么共同点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">额度改成按总量算，网站有了一行就能拒绝训练的标记，安全公司把代理写进了攻击方式。都是规则在跟着代理调整。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周可以看一下自己用的订阅，12 月以后额度怎么算。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。明天见。</div></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Latent Space · 2026-10-31</p>
+  <p class="pc-title">Using Agents for Long-Horizon Financial Work — Aman Singh, Arca</p>
+  <p class="pc-summary">Arca 不卖软件，自己就是一家理财公司：AI 不替代顾问，替代顾问周围的后台工作。分析由代理全自动完成，卖资产、转钱、联系客户必须有人确认；安全规则全部是确定性的，每次写数据库都由小模型复核。Aman Singh 的说法是「代理提示人，多过人提示代理」。</p>
+  <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「半年前，AI 最多让你把原来能做的事做快一点。现在用 AI 的产出应该远远超过以前能做到的。简单的测试：如果你现在做的事没有 AI 也能做，你可能用得还不够。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 618</span>
+      <a href="https://x.com/levie/status/2116652002830963114" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「低推理强度 + 批评循环，好过开到最高档（适合额度有限的人）。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 135</span>
+      <a href="https://x.com/swyx/status/2116642586387730593" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SW</div>
+      <div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Karpathy 最新的项目 Hackertube 用的是 Opus 5.5 的中等强度。对推理强度有强烈意见，就像争 Tab 还是空格，按自己的情况调就行。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 35</span>
+      <a href="https://x.com/swyx/status/2116773135668404286" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://pasqualepillitteri.it/en/news/28617/claude-ultra-replaces-max-20x-no-5-hour-limit" target="_blank"><span class="src-icon">LINK</span><span>Claude Ultra replaces Max 20x, no 5-hour limit — Pasquale Pillitteri</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/anthropic-faces-class-action-over-claude-max-usage-limits" target="_blank"><span class="src-icon">LINK</span><span>Anthropic faces class action over Claude Max usage limits — AI Weekly</span></a>
+  <a class="source-link" href="https://windowsreport.com/?p=1513843" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Likely to Make ChatGPT and Codex Share Usage Limits Starting in December — Windows Report</span></a>
+  <a class="source-link" href="https://aiidelist.com/blog/chatgpt-work-codex-shared-usage-limits" target="_blank"><span class="src-icon">LINK</span><span>ChatGPT Work and Codex Now Share Usage — AI IDE List</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token" target="_blank"><span class="src-icon">LINK</span><span>OpenAI, Google, Microsoft, Anthropic Back One AI Opt-Out Token — AI Weekly</span></a>
+  <a class="source-link" href="https://toolnavs.com/article/3012-robotstxt-gets-a-shared-ai-training-opt-out-google-microsoft-and-openai-sign-on" target="_blank"><span class="src-icon">LINK</span><span>robots.txt gets a shared AI training opt-out — ToolNavs</span></a>
+  <a class="source-link" href="https://csoonline.com/article/4242648/mistral-releases-large-4-weights-despite-warning-of-cyberattack-uplift.html" target="_blank"><span class="src-icon">LINK</span><span>Mistral open-sources AI model despite warning it could aid cyberattacks — CSO Online</span></a>
+  <a class="source-link" href="https://www.chainalysis.com/blog/security-incident-october-30/" target="_blank"><span class="src-icon">LINK</span><span>Security Incident — Chainalysis</span></a>
+  <a class="source-link" href="https://www.mactrast.com/?p=173633" target="_blank"><span class="src-icon">LINK</span><span>China to Get Apple Intelligence in December With Release of iOS 27.3 — MacTrast</span></a>
+  <a class="source-link" href="https://hwbusters.com/news/apple-intelligence-clears-china-and-its-running-on-alibabas-qwen/" target="_blank"><span class="src-icon">LINK</span><span>Apple Intelligence approved in China, powered by Alibaba's Qwen — HWBusters</span></a>
+  <a class="source-link" href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-1-2026-google-folds-jules-into-antigravity-claude-ultra-drops-the-3e5e" target="_blank"><span class="src-icon">LINK</span><span>AI Daily Digest November 1, 2026 — DEV Community</span></a>
+  <a class="source-link" href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-2-2026-four-ai-giants-back-one-robotstxt-token-chatgpt-and-codex-merge-4kdp" target="_blank"><span class="src-icon">LINK</span><span>AI Daily Digest November 2, 2026 — DEV Community</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2116652002830963114" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/swyx/status/2116642586387730593" target="_blank"><span class="src-icon">X</span><span>Swyx · @swyx</span></a>
+  <a class="source-link" href="https://www.youtube.com/@LatentSpacePod" target="_blank"><span class="src-icon">LINK</span><span>Using Agents for Long-Horizon Financial Work — Aman Singh, Arca · Latent Space</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-02 · AI 星期一</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

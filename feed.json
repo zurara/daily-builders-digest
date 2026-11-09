@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-11-02",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "订阅额度：从按次数算，变成按总量算 · robots.txt：一行字拒绝所有 AI 训练",
+    "html": "episodes/2026-11-02.html",
+    "mp3": "episodes/2026-11-02.mp3",
+    "headlines": [
+      "订阅额度：从按次数算，变成按总量算",
+      "robots.txt：一行字拒绝所有 AI 训练",
+      "网络安全：攻击方和防守方都在用 AI",
+      "苹果在中国用通义千问"
+    ]
+  },
+  {
     "date": "2026-11-01",
     "dow": 7,
     "topic": "Podcasts",

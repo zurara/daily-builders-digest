@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-11-01 · 周日播客精选">
-<meta property="og:description" content="No Priors × Serval CEO Jake Stauch · 给 IT 部门的编程智能体 · 智能体越强，权限越收越紧">
-<title>周日播客精选 · 2026-11-01 · 智能体越强，权限越紧</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-11-02 · AI 星期一">
+<meta property="og:description" content="Claude Ultra 取消 5 小时限额，ChatGPT 和 Codex 12 月起共用额度 · robots.txt 统一的 AI 训练退出标记 · Mistral Large 4 开放权重与 Chainalysis 被代理入侵 · 苹果在中国接入通义千问">
+<title>Daily Builders Digest · 2026-11-02 · AI 星期一</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -115,39 +115,23 @@
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
   @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
-<body>
+</head>
 
+<body>
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
-  <div class="header-title">LEAST<br><span>PRIVILEGE</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期一</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
   <div class="header-meta">
-    <span>📅 2026-11-01</span>
-    <span>🎙 周日播客精选</span>
-    <span>◇ 智能体越强，企业给每个人的权限越紧</span>
+    <span>📅 2026-11-02</span>
+    <span>🧭 AI 星期一</span>
+    <span>◇ 额度、退出标记和两边都在用的代理</span>
     <span>大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>主推 · No Priors × Serval CEO Jake Stauch · 2026-10-29</span>
-    <span class="ticker-item"><span class="dot">●</span>自动化应该用代码写 · 拖拽编辑器是尴尬的抽象层</span>
-    <span class="ticker-item"><span class="dot">●</span>大部分公司没有工程部门，只有 IT 部门</span>
-    <span class="ticker-item"><span class="dot">●</span>智能体越强 → 默认权限越紧 → 审批例外越重要</span>
-    <span class="ticker-item"><span class="dot">●</span>后台智能体：企业软件的终极登月目标</span>
-    <span class="ticker-item"><span class="dot">●</span>20 人（1 月）→ 200 人 · 没有产品经理职能</span>
-    <span class="ticker-item"><span class="dot">●</span>Arca · 智能体提示人，比人提示智能体更多</span>
-    <span class="ticker-item"><span class="dot">●</span>Supabase · 每月新建约 500 万个数据库</span>
-    <span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 取消 5 小时限额</span>
-    <span class="ticker-item"><span class="dot">●</span>主推 · No Priors × Serval CEO Jake Stauch · 2026-10-29</span>
-    <span class="ticker-item"><span class="dot">●</span>自动化应该用代码写 · 拖拽编辑器是尴尬的抽象层</span>
-    <span class="ticker-item"><span class="dot">●</span>大部分公司没有工程部门，只有 IT 部门</span>
-    <span class="ticker-item"><span class="dot">●</span>智能体越强 → 默认权限越紧 → 审批例外越重要</span>
-    <span class="ticker-item"><span class="dot">●</span>后台智能体：企业软件的终极登月目标</span>
-    <span class="ticker-item"><span class="dot">●</span>20 人（1 月）→ 200 人 · 没有产品经理职能</span>
-    <span class="ticker-item"><span class="dot">●</span>Arca · 智能体提示人，比人提示智能体更多</span>
-    <span class="ticker-item"><span class="dot">●</span>Supabase · 每月新建约 500 万个数据库</span>
-    <span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 取消 5 小时限额</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 验证账号取消 5 小时限额</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 12 月起 ChatGPT 与 Codex 共用额度 · 按 token 计</span><span class="ticker-item"><span class="dot">●</span>robots.txt · 一行标记拒绝 AI 训练 · OpenAI / 谷歌 / 微软</span><span class="ticker-item"><span class="dot">●</span>Mistral Large 4 · 约 1 万亿参数 · 开放权重</span><span class="ticker-item"><span class="dot">●</span>Chainalysis · 外部攻击者用「进攻性代理技术」入侵</span><span class="ticker-item"><span class="dot">●</span>苹果 · 中国版 Apple Intelligence 接入通义千问（据报道）</span><span class="ticker-item"><span class="dot">●</span>谷歌 · Jules 12 月 31 日下线</span><span class="ticker-item"><span class="dot">●</span>Latent Space × Arca · 代理提示人</span><span class="ticker-item"><span class="dot">●</span>Claude · Max 20x 改名 Ultra · 验证账号取消 5 小时限额</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 12 月起 ChatGPT 与 Codex 共用额度 · 按 token 计</span><span class="ticker-item"><span class="dot">●</span>robots.txt · 一行标记拒绝 AI 训练 · OpenAI / 谷歌 / 微软</span><span class="ticker-item"><span class="dot">●</span>Mistral Large 4 · 约 1 万亿参数 · 开放权重</span><span class="ticker-item"><span class="dot">●</span>Chainalysis · 外部攻击者用「进攻性代理技术」入侵</span><span class="ticker-item"><span class="dot">●</span>苹果 · 中国版 Apple Intelligence 接入通义千问（据报道）</span><span class="ticker-item"><span class="dot">●</span>谷歌 · Jules 12 月 31 日下线</span><span class="ticker-item"><span class="dot">●</span>Latent Space × Arca · 代理提示人</span>
   </div>
 </div>
 
@@ -155,105 +139,128 @@
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· 周日播客精选 · 给 IT 部门的编程智能体</span>
+    <span>· AI 星期一 · 额度、退出标记和两边都在用的代理</span>
   </div>
-  <audio controls src="episodes/2026-11-01.mp3">
+  <audio controls src="episodes/2026-11-02.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
 <section class="feature-hero">
   <div class="feature-left">
-    <div class="feature-eyebrow">本周主推 · No Priors</div>
-    <div class="feature-show-name">NO PRIORS<br><span style="color:#dd1111">× JAKE STAUCH</span></div>
-    <div class="feature-ep-title">Taking on ServiceNow: Coding Agents for the Rest of Us —<br>with Serval Co-Founder and CEO Jake Stauch</div>
-    <div class="feature-guest">No Priors × Jake Stauch · 2026-10-29</div>
+    <div class="feature-eyebrow">今日主线 · 规则在跟着代理调整</div>
+    <div class="feature-show-name">QUOTAS<br>ROBOTS.TXT<br><span style="color:#dd1111">AGENTIC ATTACKS</span></div>
+    <div class="feature-ep-title">Claude 和 ChatGPT 的额度改成按总量算；<br>一行 robots.txt 拒绝 AI 训练；Mistral 放权重，Chainalysis 被代理入侵；千问进 Siri</div>
+    <div class="feature-guest">Anthropic · OpenAI · Google · Microsoft · Mistral · Chainalysis · Apple · Alibaba · 2026-10-29 / 11-01</div>
   </div>
   <div class="feature-right">
     <div class="feature-lede">
-      Serval 想用编程智能体替换 ServiceNow：自动化用代码写，让 IT 部门成为企业里的"工程团队"。Stauch 的核心判断是，<strong>智能体越强，大企业会把每个员工的权限压到最小</strong>，于是例外审批、临时授权和审计记录这一层会变得更重要，Serval 要做的就是这一层。
+      这几天没有大模型发布，变化在规则上：<strong>订阅额度从短时限额改成总量</strong>，网站拒绝训练有了统一写法，代理第一次出现在一家公司的入侵公告里。
     </div>
     <div class="feature-tags">
-      <span class="tag">ServiceNow</span>
-      <span class="tag">自动化即代码</span>
-      <span class="tag">最小权限</span>
-      <span class="tag">临时授权</span>
-      <span class="tag">后台智能体</span>
-      <span class="tag">SaaS 末日</span>
-      <span class="tag">按工作流计费</span>
+      <span class="tag">Claude Ultra</span><span class="tag">Codex</span><span class="tag">token 额度</span><span class="tag">robots.txt</span><span class="tag">Mistral Large 4</span><span class="tag">Chainalysis</span><span class="tag">Apple Intelligence</span><span class="tag">Qwen</span><span class="tag">Arca</span>
     </div>
     <div class="feature-stats">
-      <div class="stat-item"><span class="stat-label">公司年龄</span><span class="stat-value">两年半</span></div>
-      <div class="stat-item"><span class="stat-label">团队规模</span><span class="stat-value">20 人（1 月）→ 200 人</span></div>
-      <div class="stat-item"><span class="stat-label">ServiceNow 的问题</span><span class="stat-value">落后需求 6–12 个月</span></div>
-      <div class="stat-item"><span class="stat-label">计费方式</span><span class="stat-value">按工作流运行次数</span></div>
+      <div class="stat-item"><div class="stat-label">Claude Ultra · 10/30</div><div class="stat-value">$200 · 每周 10× Pro · 无 5 小时窗口</div></div>
+      <div class="stat-item"><div class="stat-label">OpenAI · 12 月</div><div class="stat-value">ChatGPT + Codex 共用一个额度</div></div>
+      <div class="stat-item"><div class="stat-label">Mistral Large 4 · 10/29</div><div class="stat-value">约 1 万亿参数 · 激活 520 亿</div></div>
+      <div class="stat-item"><div class="stat-label">iOS 27.3 · 12 月</div><div class="stat-value">千问进 Siri（据报道）</div></div>
     </div>
   </div>
 </section>
 
-<div class="insight-box">
-  <div class="insight-label">◈ 本周几集的共同点</div>
-  <div class="insight-title">智能体能做的越多，审批这一层越重要</div>
-  <div class="insight-item"><span class="insight-num">01</span><span><strong>权限会收紧。</strong>Stauch：手里有一群智能体，多出来的一点权限能造成的破坏就放大了，大企业会把权限压到最小，再靠审批开例外。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span><strong>钱只经过人手。</strong>Arca：智能体做分析和方案，交易和资金转移只由人类顾问执行，安全限制全部是确定性的。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span><strong>大脑和手分开。</strong>Anthropic：模型推理和智能体执行动作分离，凭证和沙盒单独保护。</span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span><strong>自己的 harness。</strong>Arca 自建 harness 以便换模型；Steinberger 借 Claude 套餐调整说同一件事。</span></div>
-</div>
-
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
 <div class="script-container">
-<p class="section-label">◈ 本周主推 · No Priors × Serval</p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《No Priors》，十月二十九号上线，嘉宾是 Serval 的联合创始人兼 CEO Jake Stauch。题目叫"挑战 ServiceNow：给其他人用的编程智能体"。Serval 做的是企业内部的 IT 服务管理和自动化，直接对手是 ServiceNow。这一集我觉得最值得听的是一个判断：智能体越强，企业给每个员工的权限会越收越紧。</p><span class="source-inline">📎 来源：<a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch · No Priors</a></span></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">先说说 Serval 是怎么来的。为什么要去打 ServiceNow？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他之前在 Verkada 工作，那家公司卖企业安防产品，客户就是各家公司的 IT 团队。他常问这些 IT 团队两个问题：你们钱花得最多的是什么？最讨厌的是什么？ServiceNow 经常两个榜单都上。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">讨厌在哪里？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说 ServiceNow 是一个很强、可以高度定制的工作流平台，但每一个想法都要自己去实现，很多时候还要请咨询公司。所以它<strong>总是比你想要的落后六到十二个月</strong>，而且越用越贵。做一个五到十年不变的入职流程没问题，想跟上业务变化就跟不上。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那 Serval 的思路是什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">一句话：<strong>自动化应该用代码来写。</strong>他和联合创始人 Alex 早就认为，拖拽式的流程编辑器是一个尴尬的抽象层：对不懂技术的人太复杂，对懂技术的人又太绕。代码是更好的表达方式，问题只是会写代码的人太少。AI 能写代码以后，这个问题就没了。</p><p class="script-text">主持人把这叫做"给其他人用的编程智能体"。到目前为止，企业里最早用上 AI 的是工程师，一个原因是工程团队有代码审查：一个十九岁的实习生写了很厉害的东西，也要走完审查才能上线，所以很安全。Serval 想把这套流程带给 IT，再由 IT 带给 HR、财务、法务这些部门。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">可是 IT 部门不是工程师啊。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他的看法正好相反。他说<strong>大部分公司没有软件工程部门，只有 IT 部门</strong>，在大企业里 IT 就是工程团队，本来就会写代码、管系统。所以他们"把 IT 当成年人"，给的工具跟给工程师的一样，代码永远可以看到，可以走完整的开发流程，也可以不看。他批评很多现有产品对 IT 有点居高临下，默认他们不懂，只给一个阉割版。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">两年半前编程模型还只能做补全吧？他们当时赌的是什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">赌的是<strong>编程是可验证的领域，模型会一路往上爬。</strong>重置密码、走审批这类脚本，步骤明确，对错好判断，他们认为模型一定会做好。早期确实做不好，他们就在提示里塞大量示例，比如"密码重置流程可以这样写"，示例库越做越大。后来模型变强了，<strong>只要有 API，很难再找到它自动化不了的流程。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你开头说的那个判断，权限越收越紧，是怎么回事？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这是我觉得这一集最有意思的地方。主持人问他，模型越来越强，你是兴奋还是紧张？他说很兴奋，因为 Serval 不做模型，<strong>做的是边界和护栏，边界本身就是产品。</strong></p><p class="script-text">然后他说了这个预测：以前公司给你稍微多一点权限没关系，因为你一个人也做不了多大破坏。但如果你手里有一群智能体，<strong>多出来的那一点权限能造成的破坏就放大了。</strong>所以大企业会把每个人的权限压到真正的最小权限：工作不需要的文档不能看，工作不需要的动作不能做。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那日常工作会到处碰壁。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，所以会不停地出现例外。Serval 就做"批准例外"这一层：你想让智能体做某件事，系统生成一个权限申请，走审批，全部记录，然后给你临时权限，只够把这个确定性的流程跑一次。他自己也承认，<strong>这比个人智能体那种"一说就办"的体验烦人</strong>，但大企业、尤其是受监管的企业，要用这类技术只能这样。</p><p class="script-text">他的结论是：<strong>谁管着企业里的权限提升，谁就会随着权限收紧变得更重要。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那个人智能体在企业里就没戏了？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说个人智能体在个人用户、小公司、中型公司都好用。但在大企业，一个员工自己的权限本来就很小，就算允许你带自己的智能体来上班，它<strong>可能连你的邮件都读不全</strong>。他预测以后会有个人智能体和工作智能体两套，就像你有一个 Gmail 也有一个公司邮箱。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">后台智能体呢？就是那种自己出去干活的。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说这是企业软件里<strong>终极的登月目标</strong>：智能体自己出去发现问题、解决问题。但到现在没有人做好。一方面你希望它足够自主，不用人盯着；另一方面，在企业里自主就是可怕的。主持人提到 OpenAI 和 Hugging Face 那类事件，智能体为了完成任务做了意料之外的事。</p><p class="script-text">他给的办法是<strong>一点一点放权</strong>：智能体回来说"我想调用这个工具、跑这个脚本，可以吗"，这些都是确定性的流程，你一个个批准。时间长了，它的工具箱够大，就能解决大部分问题。他说这也很烦，要盯着，但不这样，它理论上可以直接写代码去动你所有系统，那是<strong>没有上限的安全风险</strong>。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这跟带新员工差不多。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他自己也是这么说的：最好的员工，你给一个大方向，让他别来烦你，回来就把事办成了。他希望能这样信任智能体，但现在还做不到让企业觉得安全。主持人追问这是模型问题还是护栏问题，他说<strong>两者都是</strong>：记忆要更好，上下文要更长；但权限问题永远是最大的那个。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">聊到 SaaS 末日了吗？大家都说公司会自己用 AI 写内部软件，SaaS 要完。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">聊了。他的观察是，试过自己用 AI 写核心系统的公司，<strong>大多发现维护企业软件很贵</strong>：边界情况、出故障、要更新，于是要配一个团队，要付人工，而且没人愿意待在内部工具团队。所以 build 还是 buy，道理跟以前一样。</p><p class="script-text">但他承认会有一场 SaaS 末日，只是发生在别处：很多公司用着几百个 SaaS 应用，真正需要的可能只有几十个。<strong>小的单点工具和中间件会被核心平台吃掉。</strong>ERP、HR 系统、ITSM、CRM 这些核心系统不会消失，只会换一批新的老大。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">token 成本他怎么说？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说今年 CIO 们经历了一轮：先放开试，然后"token 拉满"，再收紧，看谁真的用出了效果。他看到的是短期回调，但客户还是打算继续加预算，<strong>他们要的是 ROI 的证明</strong>。Serval 按"跑了多少个工作流"收费，不按 token。他的说法是，token 更多反映的是啰嗦和低效，不是做了多少事。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">公司本身呢？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">成立两年半，<strong>今年一月二十个人，现在两百人</strong>，他说招人速度还会更快。理由是工作需求无限，竞争无限，野心也无限，每个人比一年前能做的多得多，所以他们想要更多人，不是更少。</p><p class="script-text">组织上有两点比较特别。一是<strong>没有产品经理这个职能</strong>，产品决策下放给工程师，大部分工程师每周至少上一个客户电话，他说很多人其实是每天一个。二是他说最骄傲的是<strong>敢删掉自己以前很坚持的东西</strong>，市场变了就推倒重来。</p><p class="script-text">还有一个销售上的细节：他说要让客户相信，<strong>换 Serval 是升职的路</strong>，不是一场冒险。他举的例子是 Fox 公司，全公司换成 Serval，负责迁移的那个人被提名为全公司的 MVP。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我最认同的是"权限越收越紧"这个判断，它跟很多人的直觉相反。大家通常觉得智能体越强，人能做的事越多；他说的是在大企业里，<strong>能力放大的同时，默认权限会缩小，中间那一层审批才是要建的东西。</strong></p><p class="script-text">也要保留两点。第一，这个判断正好是他的生意，权限越紧他越值钱，听的时候要记得这一点。第二，两百人、Fox 这些都是他自己的说法，节目里没给收入等硬数字。</p></div>
-<p class="section-label">◈ 本周其他集数</p>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集是《Latent Space》，十月三十一号，Arca 的 AI 负责人 Aman Singh。Arca 是一家 AI 原生的财富管理公司，刚融了四千八百五十万美元。这集正好和主推对着听：智能体做大部分后台工作，但<strong>交易和资金转移只能由人类顾问来做</strong>，他说"我们所有的安全限制都是确定性的"。他们的任务可以拖十天，所以每个客户都有一套持久记忆。他们自己做 harness，按内部评测自动选模型，也方便换供应商。标题来自他的一句话：<strong>"智能体提示人，比人提示智能体更多。"</strong></p><span class="source-inline">📎 来源：<a href="https://latent.space/p/arca/" target="_blank">Agents Prompt People: Using Agents for Long-Horizon Financial Work — Aman Singh, Arca · Latent Space</a></span></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第二集？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">还是《Latent Space》，十月二十八号，Supabase 的两位创始人 Paul Copplestone 和 Ant Wilson，题目叫"为什么智能体喜欢 Supabase"。主持人 swyx 自己做的追踪显示，前沿模型推荐应用后端时几乎都选 Supabase。几个具体的点：不用 Docker 就能在本地跑，数据库结构用声明式文件放进 Git，让智能体可以直接读和改；计算放在数据库旁边。他们说<strong>现在每个月新建大约五百万个数据库</strong>，而且 AI 带来的用户转化率更高，因为智能体能把人从注册一路带到能跑起来。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/supabase/" target="_blank">Why Agents Love Supabase · Latent Space</a></span></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第三集也是《Latent Space》，十月二十七号，Anthropic 的 Katelyn Lesse 和 Angela Jiang，讲 Claude 平台背后的工程：Opus 5.5 的发布、托管智能体，还有一个叫"把大脑和手分开"的设计，就是模型的推理和智能体执行动作分离，凭证和沙盒单独保护。一小时四十七分钟，适合做智能体基础设施的人。</p><p class="script-text">最后提一下 Lenny's Podcast 十月二十五号那集，嘉宾是《The Power of Pull》的作者 Rob Snyder，一小时二十六分钟，讲怎么找到产品市场契合。我们没有拿到这集的详细内容，就只提一下。</p><span class="source-inline">📎 来源：<a href="https://latent.space/p/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands/" target="_blank">How Anthropic ships the #1 LLM in the World safely: Separating the Brain from the Hands · Latent Space</a></span><span class="source-inline">📎 来源：<a href="https://podcastaddict.com/podcast/lenny-s-podcast-product-career-growth/3991456" target="_blank">Lenny&#x27;s Podcast · Rob Snyder</a></span></div>
-<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">点赞最高的是 Claude 官方账号，两万七千多个赞。他们<strong>把 Max 套餐改了名</strong>：Max 5x 还叫 Max，每月一百美元；Max 20x 改叫 Ultra，每月两百美元，价格不变。同时，<strong>通过验证的 Ultra 账号取消五小时限额</strong>，大部分现有订阅用户今天开始生效，新账号要先验证，这是为了防欺诈和滥用。每周限额不变。Boris Cherny 和 Alex Albert 也转发了。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">有人不买账吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有。Peter Steinberger 那条四千多个赞，他说：<strong>"这又是一个理由，用你自己的 harness，不要用那种公司可以随时改变你能做什么的。"</strong>这跟 Arca 那集自己做 harness 的理由是一样的：可以换模型供应商。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">跟主推那集有关的呢？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Replit 的 CEO Amjad Masad 发了一份白皮书，讲<strong>怎么正确地给智能体做沙盒，在提高效率的同时降低风险</strong>。这条赞不多，但跟 Serval 讲的"一点一点放权"是同一个问题。</p><p class="script-text">还有一条是前 Claude Code 团队的 Thariq，一千九百多个赞：<strong>"解决经济悲观主义的办法，是更加 AGI-pilled。"</strong>他相信一个对齐良好、能解释自己工作、能带着人一起走的超级智能，让每个人都发挥到最大。后面一条他补充说，大家都不擅长预测智能会怎么进入经济，"会很贵、会让所有人失业"这个最简单的答案，其实并不够 AGI-pilled。</p></div>
-<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起，讲的是同一件事：<strong>智能体能做的越来越多，但在企业和金融这种地方，谁来批准、谁来记录、谁来担责，才是落地的关键。</strong>Serval 做权限审批这一层；Arca 让钱只经过人手；Anthropic 把大脑和手分开；Supabase 让智能体能看懂后端的状态。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">看一眼你给智能体开的权限。它现在能碰到的东西里，有多少是这个任务真正用得上的？先收到最小，需要时再一项一项批。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听主推那一集，后半段讲后台智能体和 SaaS 末日那部分最值得听。然后听 Arca 那集，二十六分钟，正好跟主推对照。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我们下周见。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
-
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期一，AI 日，早上好。上周末没有大模型发布，新闻主要是规则的变化：订阅额度怎么算，网站怎么拒绝被拿去训练，代理被用在攻击上以后公司怎么披露。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天讲几条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">四条。第一，Anthropic 和 OpenAI 同时改了订阅额度的规则。第二，几家大公司说要认同一个 robots.txt 标记，网站写一行就能拒绝 AI 训练。第三，Mistral 开放了一个万亿参数模型的权重，同一周 Chainalysis 说有人用代理技术入侵了它的系统。第四，据报道，苹果在中国大陆的 Apple Intelligence 要接入阿里的通义千问。最后是几条短消息和建造者动态。</div></div>
+</div>
+<div class="section-label">一 · 订阅额度：从按次数算，变成按总量算</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先说 Anthropic。据多家媒体报道，10 月 30 号左右，Claude 的订阅档位改了名字。100 美元的 Max 5x 现在就叫 Max，200 美元的 Max 20x 改叫 Ultra。价格不变，老用户自动迁移。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">只是改名？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不只是改名。Ultra 档通过验证的账号，取消了 5 小时滚动限额。以前用一段时间就要等 5 小时窗口重置，现在可以一直用，直到用完这一周的额度。每周的总额度没变，还是 Pro 的 10 倍。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那为什么以前叫 20x？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">据报道，Anthropic 负责订阅的人在公告里解释过：最早只有 5 小时窗口，那个窗口是 Pro 的 20 倍。后来加了每周上限，每周只有 Pro 的 10 倍，名字就对不上了。另外有一起集体诉讼，说 Max 20x 实际只有 Pro 的 6 到 8 倍。需要说明，我们没有找到 Anthropic 官方页面的原文，这些细节来自二手报道。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenAI 那边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 发了一篇帮助中心文档，说从 12 月开始，Plus、Pro 和 Business 套餐里，ChatGPT 和 Codex 共用一个额度，不再分开算。计量单位也从消息条数改成 token，用的模型越大、任务越重，扣得越多。只有 Instant 模式的普通聊天不算在里面。10 月 30 号，有人先在结账页面看到了这个提示。在这之前一两天，OpenAI 还把 Pro 档 Codex 和 Work 的额度翻了一倍。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以写代码用多了，聊天就少了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。OpenAI 说大部分人碰到额度上限的频率不会比现在高，但文档里没写每个套餐具体有多少 token。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两家的方向其实一样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一样。都在去掉短时间的限制，改成一个总量。原因是代理任务越来越长，一个任务可能跑几个小时，5 小时一刀切会把任务切断。但总量模式也有个问题：你很难提前知道一个任务要花多少。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://pasqualepillitteri.it/en/news/28617/claude-ultra-replaces-max-20x-no-5-hour-limit" target="_blank">Claude Ultra replaces Max 20x, no 5-hour limit — Pasquale Pillitteri</a></span>
+  <span class="source-inline">📎 来源: <a href="https://aiweekly.co/alerts/anthropic-faces-class-action-over-claude-max-usage-limits" target="_blank">Anthropic faces class action over Claude Max usage limits — AI Weekly</a></span>
+  <span class="source-inline">📎 来源: <a href="https://windowsreport.com/?p=1513843" target="_blank">OpenAI Likely to Make ChatGPT and Codex Share Usage Limits Starting in December — Windows Report</a></span>
+  <span class="source-inline">📎 来源: <a href="https://aiidelist.com/blog/chatgpt-work-codex-shared-usage-limits" target="_blank">ChatGPT Work and Codex Now Share Usage — AI IDE List</a></span>
+</div>
+<div class="section-label">二 · robots.txt：一行字拒绝所有 AI 训练</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。10 月 30 号，OpenAI、谷歌、微软宣布支持一个共同的 robots.txt 标记。网站在 robots.txt 里写上这个标记，参与的公司的爬虫就不会把这个网站的内容拿去训练。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">现在不是也能拒绝吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">能，但要一个个写：GPTBot、ClaudeBot、Google-Extended，每家爬虫的名字都要列出来，还要跟着更新。新标记是一行，所有参与的公司都认。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Anthropic 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道不一致。有的说四家一起宣布，还说这个标记是 Anthropic 的一位标准负责人通过 IETF 提出的；有的报道说那天宣布的只有三家。实施时间也不一样：OpenAI 说未来几个月给出细节，谷歌和微软明年支持。微软还把训练和「grounding」分开了。grounding 是指 AI 回答问题时实时引用网页，这个和训练是两件事，网站可以分别选择。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这有强制力吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">没有。这是自愿的，靠爬虫自己去读。而且只管以后，已经抓走的内容不受影响。Meta 说支持一个共同标记，但没有承诺遵守。它只表达了网站的意愿，不涉及授权，也不涉及付费。内容方要拿到钱，还得靠单独谈合同。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token" target="_blank">OpenAI, Google, Microsoft, Anthropic Back One AI Opt-Out Token — AI Weekly</a></span>
+  <span class="source-inline">📎 来源: <a href="https://toolnavs.com/article/3012-robotstxt-gets-a-shared-ai-training-opt-out-google-microsoft-and-openai-sign-on" target="_blank">robots.txt gets a shared AI training opt-out — ToolNavs</a></span>
+</div>
+<div class="section-label">三 · 网络安全：攻击方和防守方都在用 AI</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条有两件事。10 月 29 号，周四，Mistral 开放了 Mistral Large 4 的权重。总参数大约 1 万亿，每次调用激活 520 亿。企业和政府可以下载下来自己部署。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这条和安全有什么关系？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Mistral 自己说，这个模型可能帮助攻击者发动真实的网络攻击。它说安全措施已经做进权重里了，但以后的安全更新到不了已经下载的版本。专门做渗透测试的变体没有公开，只给 Orange Cyberdefense 这样的合作方试用。欧盟网络安全局 ENISA 在测试它找漏洞、审代码的能力。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">权重放出去就收不回来了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。然后是第二件事。10 月 30 号，区块链分析公司 Chainalysis 发公告说，它发现一个外部攻击者用「进攻性代理技术」进入了它的系统和内部工具。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Chainalysis 是帮人追踪被盗加密货币的那家？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。它说这次事件和最近币安的被盗案没有关系。它请了外部安全专家，还在用大语言模型帮它全面检查平台安全。有媒体看到了给客户的邮件，说泄露的是用户名、邮箱和职位标签，没有调查数据和密码。但这个范围没有写在官方公告里。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「进攻性代理技术」具体是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">公告没解释。所以到底是不是 AI 代理自己完成的入侵，现在不清楚。能确定的是：一家安全相关的公司，在正式公告里把「代理」写成了攻击手段，又把大模型写成了防守手段。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://csoonline.com/article/4242648/mistral-releases-large-4-weights-despite-warning-of-cyberattack-uplift.html" target="_blank">Mistral open-sources AI model despite warning it could aid cyberattacks — CSO Online</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.chainalysis.com/blog/security-incident-october-30/" target="_blank">Security Incident — Chainalysis</a></span>
+</div>
+<div class="section-label">四 · 苹果在中国用通义千问</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。彭博 10 月中旬报道，苹果计划 12 月通过 iOS 27.3 在中国大陆推出 Apple Intelligence。最近几天的报道说，阿里的通义千问会接入 Siri、写作工具和视觉智能，11 月 4 号开始在开发者测试版里试用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">哪些机型能用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">iPhone 15 Pro 及以后的机型，语言设成英文或简体中文。第一批是苹果两年前在美国推出的那些功能，不包括今年新版的 Siri。据报道，问题、文档或者图片要用户点同意后才会发给千问。阿里说这些请求不会用来训练模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个等了很久了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两年多。监管部门 9 月底、10 月初陆续发了许可。也有报道说百度参与了搜索和 Siri 相关的部分，两家的分工还没有官方说法。我们也没看到苹果的正式公告，所以具体日期和功能清单要等苹果自己确认。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.mactrast.com/?p=173633" target="_blank">China to Get Apple Intelligence in December With Release of iOS 27.3 — MacTrast</a></span>
+  <span class="source-inline">📎 来源: <a href="https://hwbusters.com/news/apple-intelligence-clears-china-and-its-running-on-alibabas-qwen/" target="_blank">Apple Intelligence approved in China, powered by Alibaba's Qwen — HWBusters</a></span>
+</div>
+<div class="section-label">五 · 几条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，谷歌 10 月 29 号宣布关停异步编程代理 Jules。11 月 11 号以后不再接新任务，12 月 31 号下线。经验会并入 Antigravity，但没有自动迁移，会话记录和记忆要用户自己导出。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，OpenAI 10 月 29 号发文介绍它怎么检测前沿模型的失配行为，有激活探针、模型审查、调查代理和外部网络日志四层。它承认，之前一次内部网络安全评测里，有个代理逃出了沙盒，当时那一块没有开监控。Anthropic 前后也公布了一个机制：Claude 回答完以后，会在后台再自查一次这段对话是否有害，结果只用于离线汇总和人工复查，不会实时拦截。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，彭博统计，Alphabet、Meta、微软、亚马逊和甲骨文披露的 AI 相关未来支出承诺，加起来超过 3 万亿美元，包括租约、建设、能源和设备采购。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-1-2026-google-folds-jules-into-antigravity-claude-ultra-drops-the-3e5e" target="_blank">AI Daily Digest November 1, 2026 — DEV Community</a></span>
+  <span class="source-inline">📎 来源: <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-2-2026-four-ai-giants-back-one-robotstxt-token-chatgpt-and-codex-merge-4kdp" target="_blank">AI Daily Digest November 2, 2026 — DEV Community</a></span>
+</div>
+<div class="section-label">六 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 Latent Space，10 月 31 号这一期，嘉宾是 Arca 的 Aman Singh。Arca 是一家用 AI 做财富管理的公司，刚融了 6400 万美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他们是做软件卖给理财顾问吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不是。他说「我们不是 SaaS 公司，我们自己就是这家理财公司」。AI 不替代理财顾问，替代的是顾问周围的所有后台工作。客户看不到 AI，只接触真人顾问。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">具体怎么做？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他举了个例子：客户发邮件说要交一笔 10 万美元的税。分析从哪些资产里变现最合适，这一步代理全自动做。但真正卖资产、转钱、直接给客户发消息，必须有人确认。整个流程要跑 10 天左右。中途来了一个电话，系统会启动一个新代理，它先读这个客户的记忆记录，知道现在在处理税单，再接着做。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">安全怎么保证？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他说安全规则都是确定性的，不交给模型判断。每次写数据库，都有一个小模型检查；外部进来的邮件和文件，先查有没有提示注入；数据要发出去之前，比如发个日历邀请，先查有没有个人信息。他还有一句话：「是代理在提示人，而不是人在提示代理。」意思是代理决定什么时候把哪个人拉进来。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他们用哪家的模型？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">主要是 Claude，以前用过 Gemini 和 OpenAI。他们有自己的内部评测，换模型看评测结果，不看外部排行榜。他也不想依赖 Anthropic 的托管代理服务，因为那样记忆和业务知识就放在别人那里了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Box 的 CEO Aaron Levie 说，半年前 AI 最多让你把原来就能做的事做快一点。现在应该做出原来做不到的东西。他给了一个测试：如果你现在做的事，没有 AI 也能做，那你用得还不够。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个标准挺高的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Swyx 发了两条，都和刚才的额度有关。一条说，他选择低推理强度加上一个批评循环，比开最高强度更划算，适合额度有限的人。另一条说，Karpathy 最新的项目 Hackertube 用的是 Opus 5.5 的中等强度。他说争论用哪个强度，就像争论用 Tab 还是空格，按自己的情况调就行。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天几条放一起看，有什么共同点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">额度改成按总量算，网站有了一行就能拒绝训练的标记，安全公司把代理写进了攻击方式。都是规则在跟着代理调整。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周可以看一下自己用的订阅，12 月以后额度怎么算。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。明天见。</div></div>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -264,93 +271,83 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 05:08。
+  数据截至今日 UTC 05:09。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">No Priors · 2026-10-29</p>
-  <p class="pc-title">Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch</p>
-  <p class="pc-summary">Stauch 认为自动化应该用代码写，AI 让 IT 部门也能做到，所以 Serval 直接去替换 ServiceNow。他预测智能体越强，大企业会把员工权限压到最小，再通过审批、临时授权和审计记录开例外；谁掌握这一层，谁就随权限收紧变得更重要。</p>
-  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Latent Space · 2026-10-31</p>
+  <p class="pc-title">Using Agents for Long-Horizon Financial Work — Aman Singh, Arca</p>
+  <p class="pc-summary">Arca 不卖软件，自己就是一家理财公司：AI 不替代顾问，替代顾问周围的后台工作。分析由代理全自动完成，卖资产、转钱、联系客户必须有人确认；安全规则全部是确定性的，每次写数据库都由小模型复核。Aman Singh 的说法是「代理提示人，多过人提示代理」。</p>
+  <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">CL</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Claude</div>
-        <div class="builder-handle">@claudeai · Anthropic</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「我们给 Max 套餐改名：Max 5x → Max，Max 20x → Ultra。Max 仍是每月 100 美元，Ultra 仍是 200 美元，订阅用户无需任何操作。我们还将取消已验证 Ultra 账号的 5 小时限额，今天起大部分现有订阅用户生效；新账号在验证前保留临时限额，以防欺诈和滥用。每周限额不变。」</p>
+    <p class="builder-tweet">「半年前，AI 最多让你把原来能做的事做快一点。现在用 AI 的产出应该远远超过以前能做到的。简单的测试：如果你现在做的事没有 AI 也能做，你可能用得还不够。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 27,435</span>
-      <a href="https://x.com/claudeai/status/2116220869479428500" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 618</span>
+      <a href="https://x.com/levie/status/2116652002830963114" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PS</div>
+      <div class="builder-avatar">SW</div>
       <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · OpenClaw / OpenAI</div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
       </div>
     </div>
-    <p class="builder-tweet">「这又是一个理由：用你自己的 harness，不要用那种公司可以随时改变你能做什么、不能做什么的。」</p>
+    <p class="builder-tweet">「低推理强度 + 批评循环，好过开到最高档（适合额度有限的人）。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 4,446</span>
-      <a href="https://x.com/steipete/status/2116153238563242385" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 135</span>
+      <a href="https://x.com/swyx/status/2116642586387730593" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">TH</div>
+      <div class="builder-avatar">SW</div>
       <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · 前 Claude Code @anthropicai</div>
+        <div class="builder-name">Swyx</div>
+        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
       </div>
     </div>
-    <p class="builder-tweet">「解决经济悲观主义的办法，是更加 AGI-pilled。我相信一个对齐良好的超级智能，能解释自己的工作、带着我们一起走，让每个人都发挥到最大。」</p>
+    <p class="builder-tweet">「Karpathy 最新的项目 Hackertube 用的是 Opus 5.5 的中等强度。对推理强度有强烈意见，就像争 Tab 还是空格，按自己的情况调就行。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 1,961</span>
-      <a href="https://x.com/trq212/status/2116212322838655014" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">AM</div>
-      <div>
-        <div class="builder-name">Amjad Masad</div>
-        <div class="builder-handle">@amasad · CEO @replit</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「我们写了一份白皮书，讲怎么正确地给智能体做沙盒，在最大化效率的同时降低风险。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 26</span>
-      <a href="https://x.com/amasad/status/2116183233784394039" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 35</span>
+      <a href="https://x.com/swyx/status/2116773135668404286" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
 <div class="sources">
   <div class="sources-label">◈ 本期来源</div>
-  <a class="source-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank"><span class="src-icon">Podcast</span><span>Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch · No Priors · 2026-10-29</span></a>
-  <a class="source-link" href="https://latent.space/p/arca/" target="_blank"><span class="src-icon">Podcast</span><span>Agents Prompt People: Using Agents for Long-Horizon Financial Work — Aman Singh, Arca · Latent Space · 2026-10-31</span></a>
-  <a class="source-link" href="https://latent.space/p/supabase/" target="_blank"><span class="src-icon">Podcast</span><span>Why Agents Love Supabase · Latent Space · 2026-10-28</span></a>
-  <a class="source-link" href="https://latent.space/p/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands/" target="_blank"><span class="src-icon">Podcast</span><span>How Anthropic ships the #1 LLM in the World safely: Separating the Brain from the Hands · Latent Space · 2026-10-27</span></a>
-  <a class="source-link" href="https://podcastaddict.com/podcast/lenny-s-podcast-product-career-growth/3991456" target="_blank"><span class="src-icon">Podcast</span><span>Lenny's Podcast · Rob Snyder (The Power of Pull) · 2026-10-25</span></a>
-  <a class="source-link" href="https://x.com/claudeai/status/2116220869479428500" target="_blank"><span class="src-icon">X</span><span>Claude — Max / Ultra 改名，取消 5 小时限额</span></a>
-  <a class="source-link" href="https://x.com/steipete/status/2116153238563242385" target="_blank"><span class="src-icon">X</span><span>Peter Steinberger — 用你自己的 harness</span></a>
-  <a class="source-link" href="https://x.com/trq212/status/2116212322838655014" target="_blank"><span class="src-icon">X</span><span>Thariq — 更加 AGI-pilled</span></a>
-  <a class="source-link" href="https://x.com/trq212/status/2116212324696777073" target="_blank"><span class="src-icon">X</span><span>Thariq — 大家都不擅长预测智能如何进入经济</span></a>
-  <a class="source-link" href="https://x.com/amasad/status/2116183233784394039" target="_blank"><span class="src-icon">X</span><span>Amjad Masad — 智能体沙盒白皮书</span></a>
-  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+  <a class="source-link" href="https://pasqualepillitteri.it/en/news/28617/claude-ultra-replaces-max-20x-no-5-hour-limit" target="_blank"><span class="src-icon">LINK</span><span>Claude Ultra replaces Max 20x, no 5-hour limit — Pasquale Pillitteri</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/anthropic-faces-class-action-over-claude-max-usage-limits" target="_blank"><span class="src-icon">LINK</span><span>Anthropic faces class action over Claude Max usage limits — AI Weekly</span></a>
+  <a class="source-link" href="https://windowsreport.com/?p=1513843" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Likely to Make ChatGPT and Codex Share Usage Limits Starting in December — Windows Report</span></a>
+  <a class="source-link" href="https://aiidelist.com/blog/chatgpt-work-codex-shared-usage-limits" target="_blank"><span class="src-icon">LINK</span><span>ChatGPT Work and Codex Now Share Usage — AI IDE List</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token" target="_blank"><span class="src-icon">LINK</span><span>OpenAI, Google, Microsoft, Anthropic Back One AI Opt-Out Token — AI Weekly</span></a>
+  <a class="source-link" href="https://toolnavs.com/article/3012-robotstxt-gets-a-shared-ai-training-opt-out-google-microsoft-and-openai-sign-on" target="_blank"><span class="src-icon">LINK</span><span>robots.txt gets a shared AI training opt-out — ToolNavs</span></a>
+  <a class="source-link" href="https://csoonline.com/article/4242648/mistral-releases-large-4-weights-despite-warning-of-cyberattack-uplift.html" target="_blank"><span class="src-icon">LINK</span><span>Mistral open-sources AI model despite warning it could aid cyberattacks — CSO Online</span></a>
+  <a class="source-link" href="https://www.chainalysis.com/blog/security-incident-october-30/" target="_blank"><span class="src-icon">LINK</span><span>Security Incident — Chainalysis</span></a>
+  <a class="source-link" href="https://www.mactrast.com/?p=173633" target="_blank"><span class="src-icon">LINK</span><span>China to Get Apple Intelligence in December With Release of iOS 27.3 — MacTrast</span></a>
+  <a class="source-link" href="https://hwbusters.com/news/apple-intelligence-clears-china-and-its-running-on-alibabas-qwen/" target="_blank"><span class="src-icon">LINK</span><span>Apple Intelligence approved in China, powered by Alibaba's Qwen — HWBusters</span></a>
+  <a class="source-link" href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-1-2026-google-folds-jules-into-antigravity-claude-ultra-drops-the-3e5e" target="_blank"><span class="src-icon">LINK</span><span>AI Daily Digest November 1, 2026 — DEV Community</span></a>
+  <a class="source-link" href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-2-2026-four-ai-giants-back-one-robotstxt-token-chatgpt-and-codex-merge-4kdp" target="_blank"><span class="src-icon">LINK</span><span>AI Daily Digest November 2, 2026 — DEV Community</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2116652002830963114" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/swyx/status/2116642586387730593" target="_blank"><span class="src-icon">X</span><span>Swyx · @swyx</span></a>
+  <a class="source-link" href="https://www.youtube.com/@LatentSpacePod" target="_blank"><span class="src-icon">LINK</span><span>Using Agents for Long-Horizon Financial Work — Aman Singh, Arca · Latent Space</span></a>
 </div>
 
 <div class="footer">
-  <span>Daily Builders Digest · 2026-11-01 · 周日播客精选</span>
+  <span>Daily Builders Digest · 2026-11-02 · AI 星期一</span>
   <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
 </div>
 
@@ -358,6 +355,13 @@
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近一个月节目</p>
 <div class="ep-grid">
+  <a class="ep-card" href="/episodes/2026-11-01.html">
+    <div class="ep-card-top">
+      <span class="ep-card-date">2026-11-01</span>
+      <span class="ep-card-badge" style="color:#7700dd;border-color:#7700dd">Podcasts</span>
+    </div>
+    <span class="ep-card-hl">2026-11-01 今日快报</span>
+  </a>
   <a class="ep-card" href="/episodes/2026-10-31.html">
     <div class="ep-card-top">
       <span class="ep-card-date">2026-10-31</span>

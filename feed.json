@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-29",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "The Drive #413：情绪是大脑做出来的预测 · Huberman Lab：Ross Edgley，怎么一直游下去",
+    "html": "episodes/2026-10-29.html",
+    "mp3": "episodes/2026-10-29.mp3",
+    "headlines": [
+      "The Drive #413：情绪是大脑做出来的预测",
+      "Huberman Lab：Ross Edgley，怎么一直游下去",
+      "FoundMyFitness Q&amp;A #86：记忆、骨头和肌腱"
+    ]
+  },
+  {
     "date": "2026-10-28",
     "dow": 3,
     "topic": "Product",

@@ -11,7 +11,8 @@
       "安全：代理去攻，代理去守",
       "钱：OpenAI 估值降了一档，Anthropic 上市时间不确定",
       "BioBasicsBench：代理能看懂实验室的原始数据吗"
-    ]
+    ],
+    "theme": "代理去攻，代理去守，融资变难"
   },
   {
     "date": "2026-11-08",
@@ -21,7 +22,8 @@
     "title": "2026-11-08 今日快报",
     "html": "episodes/2026-11-08.html",
     "mp3": "episodes/2026-11-08.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "画地图 → 预测 → 指挥下一个实验"
   },
   {
     "date": "2026-11-07",
@@ -31,7 +33,8 @@
     "title": "2026-11-07 今日快报",
     "html": "episodes/2026-11-07.html",
     "mp3": "episodes/2026-11-07.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "Beautiful Particulars"
   },
   {
     "date": "2026-11-06",
@@ -45,7 +48,8 @@
       "GPT-6 Cyber：948 个能用的提权漏洞",
       "OpenAI 收购 Pierre：代理写的代码放在哪",
       "数据中心上了选票，OpenAI 发了一份承诺"
-    ]
+    ],
+    "theme": "找漏洞的模型、放代码的地方、建机房的条件"
   },
   {
     "date": "2026-11-05",
@@ -60,7 +64,8 @@
       "Huberman Lab：Robert Greene，注意力和「慢」",
       "FoundMyFitness Aliquot #153：常规验血会漏掉什么",
       "女性健康：两点补充"
-    ]
+    ],
+    "theme": "练力量，受伤了也别全停"
   },
   {
     "date": "2026-11-04",
@@ -75,7 +80,8 @@
       "ChatGPT Dots：模型由它自己选",
       "Apple Watch：Live Rewind 和 Siri Recap 进入测试",
       "App Store：AI 伴侣 app 要申报，最低 18+"
-    ]
+    ],
+    "theme": "默认值是谁定的"
   },
   {
     "date": "2026-11-03",
@@ -90,7 +96,8 @@
       "北美机器人订单第三季度涨了四分之一",
       "Meta 和傅利叶造了一台家用人形机器人",
       "补充两条：家用机器人的保险，自己开工厂的机器人公司"
-    ]
+    ],
+    "theme": "机器人要上市，也要上保险"
   },
   {
     "date": "2026-11-02",
@@ -105,7 +112,8 @@
       "robots.txt：一行字拒绝所有 AI 训练",
       "网络安全：攻击方和防守方都在用 AI",
       "苹果在中国用通义千问"
-    ]
+    ],
+    "theme": "额度、退出标记和两边都在用的代理"
   },
   {
     "date": "2026-11-01",
@@ -115,7 +123,8 @@
     "title": "2026-11-01 今日快报",
     "html": "episodes/2026-11-01.html",
     "mp3": "episodes/2026-11-01.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "智能体越强，企业给每个人的权限越紧"
   },
   {
     "date": "2026-10-31",
@@ -125,7 +134,8 @@
     "title": "2026-10-31 今日快报",
     "html": "episodes/2026-10-31.html",
     "mp3": "episodes/2026-10-31.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "Artificial Intimacy"
   },
   {
     "date": "2026-10-30",
@@ -140,7 +150,8 @@
       "Gemini 4 Carbon：最强的模型，先给防守的人用",
       "代码越来越多是代理写的",
       "OpenAI 研究员：AI 当经理"
-    ]
+    ],
+    "theme": "花钱的账单和写代码的人"
   },
   {
     "date": "2026-10-29",
@@ -154,7 +165,8 @@
       "The Drive #413：情绪是大脑做出来的预测",
       "Huberman Lab：Ross Edgley，怎么一直游下去",
       "FoundMyFitness Q&amp;A #86：记忆、骨头和肌腱"
-    ]
+    ],
+    "theme": "情绪是大脑做出来的预测"
   },
   {
     "date": "2026-10-28",
@@ -169,7 +181,8 @@
       "Replit：「自动驾驶公司」",
       "Akamai Agent Sandbox，和 Guillermo Rauch 的 cpu-chat",
       "苹果「Pro and tell」：一周每天发一款"
-    ]
+    ],
+    "theme": "agent 开始用电脑，人管什么"
   },
   {
     "date": "2026-10-27",
@@ -185,7 +198,8 @@
       "舍弗勒太仓工厂，人形机器人装人形机器人",
       "宇树股价七天涨六成多，公司自己提示风险",
       "补充两条：看视频学动作，Optimus 早期生产"
-    ]
+    ],
+    "theme": "从一个仓库到很多个仓库"
   },
   {
     "date": "2026-10-26",
@@ -200,7 +214,8 @@
       "外部审计：OpenAI 的监控系统也有洞",
       "Claude 自己去申请了佐治亚州的选票数据",
       "这周三：AI 的钱赚回来了吗"
-    ]
+    ],
+    "theme": "把代理关在笼子里"
   },
   {
     "date": "2026-10-25",
@@ -210,7 +225,8 @@
     "title": "2026-10-25 今日快报",
     "html": "episodes/2026-10-25.html",
     "mp3": "episodes/2026-10-25.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "接下来十八个月，一半工程时间花在安全上"
   },
   {
     "date": "2026-10-24",
@@ -220,7 +236,8 @@
     "title": "2026-10-24 今日快报",
     "html": "episodes/2026-10-24.html",
     "mp3": "episodes/2026-10-24.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "Hyperscale"
   },
   {
     "date": "2026-10-23",
@@ -236,7 +253,8 @@
       "Claude Duet：一个会主动找活的代理",
       "沃尔玛给 AI 代理开门，亚马逊在关门",
       "两条小消息"
-    ]
+    ],
+    "theme": "AI 找漏洞，也替你找活"
   },
   {
     "date": "2026-10-22",
@@ -250,7 +268,8 @@
       "The Drive #412：癌症这十五年变了什么",
       "Huberman Lab：Jared Diamond，89 岁还在学",
       "Huberman Essentials：Neuralink 和脑机接口"
-    ]
+    ],
+    "theme": "癌症这十五年变了什么"
   },
   {
     "date": "2026-10-21",
@@ -263,7 +282,8 @@
     "headlines": [
       "◈ 今日数字",
       "🎙 对话全文 · 大雨 × 小苇"
-    ]
+    ],
+    "theme": "一个人用，还是一起用"
   },
   {
     "date": "2026-10-20",
@@ -273,7 +293,8 @@
     "title": "2026-10-20 今日快报",
     "html": "episodes/2026-10-20.html",
     "mp3": "episodes/2026-10-20.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "先让人在回路里，再慢慢撤出来"
   },
   {
     "date": "2026-10-17",
@@ -283,7 +304,8 @@
     "title": "2026-10-17 今日快报",
     "html": "episodes/2026-10-17.html",
     "mp3": "episodes/2026-10-17.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "Apple: The First 50 Years"
   },
   {
     "date": "2026-10-16",
@@ -293,7 +315,8 @@
     "title": "2026-10-16 今日快报",
     "html": "episodes/2026-10-16.html",
     "mp3": "episodes/2026-10-16.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "跑出去的代理，借来的钱"
   },
   {
     "date": "2026-10-15",
@@ -303,7 +326,8 @@
     "title": "2026-10-15 今日快报",
     "html": "episodes/2026-10-15.html",
     "mp3": "episodes/2026-10-15.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "大脑记得你吃过什么"
   },
   {
     "date": "2026-10-14",
@@ -313,7 +337,8 @@
     "title": "2026-10-14 今日快报",
     "html": "episodes/2026-10-14.html",
     "mp3": "episodes/2026-10-14.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "把整件事走一遍"
   },
   {
     "date": "2026-10-13",
@@ -323,7 +348,8 @@
     "title": "2026-10-13 今日快报",
     "html": "episodes/2026-10-13.html",
     "mp3": "episodes/2026-10-13.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "机器人开始干无聊的活"
   },
   {
     "date": "2026-10-12",
@@ -333,7 +359,8 @@
     "title": "2026-10-12 今日快报",
     "html": "episodes/2026-10-12.html",
     "mp3": "episodes/2026-10-12.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "给代理装刹车"
   },
   {
     "date": "2026-10-11",
@@ -343,7 +370,8 @@
     "title": "2026-10-11 今日快报",
     "html": "episodes/2026-10-11.html",
     "mp3": "episodes/2026-10-11.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "你买一个 token，是在租一整套东西"
   },
   {
     "date": "2026-10-10",
@@ -353,7 +381,8 @@
     "title": "2026-10-10 今日快报",
     "html": "episodes/2026-10-10.html",
     "mp3": "episodes/2026-10-10.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "Apple: The First 50 Years"
   },
   {
     "date": "2026-10-09",
@@ -363,6 +392,7 @@
     "title": "2026-10-09 今日快报",
     "html": "episodes/2026-10-09.html",
     "mp3": "episodes/2026-10-09.mp3",
-    "headlines": []
+    "headlines": [],
+    "theme": "回答变成界面，证明没人读懂"
   }
 ]

@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-10-26",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "OpenAI：最强的模型，训练时不再连互联网 · 外部审计：OpenAI 的监控系统也有洞",
+    "html": "episodes/2026-10-26.html",
+    "mp3": "episodes/2026-10-26.mp3",
+    "headlines": [
+      "OpenAI：最强的模型，训练时不再连互联网",
+      "外部审计：OpenAI 的监控系统也有洞",
+      "Claude 自己去申请了佐治亚州的选票数据",
+      "这周三：AI 的钱赚回来了吗"
+    ]
+  },
+  {
     "date": "2026-10-25",
     "dow": 7,
     "topic": "Podcasts",

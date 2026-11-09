@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-24 · 周六书籍介绍">
+<meta property="og:description" content="Hyperscale · Paris Marx · AI 的账单，落在谁家门口">
+<title>Hyperscale · 周六书籍介绍 · 2026-10-24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
+  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 4.6vw, 58px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
+  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
+  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .inline-src { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; margin-top: 10px; }
+  .inline-src a { color: var(--red); text-decoration: none; }
+  .pull-quote { font-family: 'Inter', sans-serif; font-size: clamp(19px, 2.6vw, 26px); font-weight: 300; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--red); padding: 4px 0 4px 22px; margin: 36px 0; }
+  .pull-quote cite { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: 12px; }
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 36px 0; }
+  .pillar { background: var(--bg); padding: 22px 24px; }
+  .pillar-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--red); line-height: 1; margin-bottom: 8px; }
+  .pillar-name { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
+  .pillar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); margin-top: 10px; display: block; }
+  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
+  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
+  .angle-card { background: var(--bg); padding: 20px 24px; }
+  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
+  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .sources-note { font-size: 12px; line-height: 1.7; color: var(--mid); margin-bottom: 16px; }
+  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">HYPERSCALE<span> · AI 的账单</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-24</span>
+    <span>📚 周六书单 第二十六期</span>
+    <span>⚡ 电 · 水 · 土地 · 保密协议</span>
+    <span>🎙 大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>2026-10-20 · 美国上市 · Riverhead Books</span>
+    <span class="ticker-item"><span class="dot">●</span>320 页 · 有声书作者自读 6 小时 58 分</span>
+    <span class="ticker-item"><span class="dot">●</span>FT 年度商业书奖 2026 长名单</span>
+    <span class="ticker-item"><span class="dot">●</span>Memphis 仓库 785,000 平方英尺</span>
+    <span class="ticker-item"><span class="dot">●</span>路易斯安那 · 2,700 个足球场 + 10 座电厂</span>
+    <span class="ticker-item"><span class="dot">●</span>「钱在绕一个大圈」</span>
+    <span class="ticker-item"><span class="dot">●</span>效率 ↑ · 总量 ↑</span>
+    <span class="ticker-item"><span class="dot">●</span>最大的威胁不是 AI 霸主，而是已经开始的环境灾难</span>
+    <span class="ticker-item"><span class="dot">●</span>2026-10-20 · 美国上市 · Riverhead Books</span>
+    <span class="ticker-item"><span class="dot">●</span>320 页 · 有声书作者自读 6 小时 58 分</span>
+    <span class="ticker-item"><span class="dot">●</span>FT 年度商业书奖 2026 长名单</span>
+    <span class="ticker-item"><span class="dot">●</span>Memphis 仓库 785,000 平方英尺</span>
+    <span class="ticker-item"><span class="dot">●</span>路易斯安那 · 2,700 个足球场 + 10 座电厂</span>
+    <span class="ticker-item"><span class="dot">●</span>「钱在绕一个大圈」</span>
+    <span class="ticker-item"><span class="dot">●</span>效率 ↑ · 总量 ↑</span>
+    <span class="ticker-item"><span class="dot">●</span>最大的威胁不是 AI 霸主，而是已经开始的环境灾难</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">◉</span>
+    <strong>收听本期</strong>
+    <span>大雨 × 小苇 · 2026-10-24</span>
+  </div>
+  <audio controls src="2026-10-24.mp3"></audio>
+</div>
+
+<section class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">◈ 本期书籍</div>
+    <div class="book-title-big">HYPERSCALE</div>
+    <div class="book-subtitle">The Ambition and Excess of Big Tech's Data Empires<br>超大规模：大科技公司数据帝国的野心与过度</div>
+    <div class="book-author-line">PARIS MARX · 帕里斯·马克思</div>
+  </div>
+  <div class="book-meta-panel">
+    <p class="book-one-liner">《Tech Won't Save Us》主持人写 AI 竞赛的物理成本：电、水、土地，以及在保密协议下被决定的社区。立场明确，问题问得准。</p>
+    <div class="book-tags">
+      <span class="tag">非虚构</span>
+      <span class="tag">数据中心</span>
+      <span class="tag">AI 基础设施</span>
+      <span class="tag">气候</span>
+      <span class="tag">科技批评</span>
+      <span class="tag">倡导新闻</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item"><span class="stat-label">出版</span><span class="stat-value">Riverhead Books · 2026-10-20</span></div>
+      <div class="stat-item"><span class="stat-label">英国版</span><span class="stat-value">Profile Books</span></div>
+      <div class="stat-item"><span class="stat-label">篇幅</span><span class="stat-value">320 页 · 有声书 6 时 58 分</span></div>
+      <div class="stat-item"><span class="stat-label">ISBN</span><span class="stat-value">9798217048526</span></div>
+      <div class="stat-item"><span class="stat-label">荣誉</span><span class="stat-value">FT 年度商业书奖 2026 长名单</span></div>
+    </div>
+  </div>
+</section>
+
+<p class="section-label">◈ 开场 · AI 的账单，落在谁家门口</p>
+<div class="script-container">
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">周六好，欢迎回到《每日快报》的书籍时间。这个月我们讲过 Kevin Roose 的《The AGI Chronicles》，讲的是实验室里谁跟谁竞赛。今天这本书换一个角度：竞赛要用的电、水和土地，从哪里来。书名叫《Hyperscale: The Ambition and Excess of Big Tech's Data Empires》，直译是「超大规模：大科技公司数据帝国的野心与过度」。作者是 Paris Marx，加拿大的科技记者，播客《Tech Won't Save Us》的主持人。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Hyperscale 这个词，我在云计算的财报里见过。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，这是行业自己的词。AWS、微软、谷歌这类公司被叫作 hyperscaler，就是「超大规模云服务商」。书名直接借了这个词。这本书 10 月 20 号上市，也就是这周二。美国是企鹅兰登旗下的 Riverhead Books 出版，320 页，精装 31 美元。英国是 Profile Books 出版，副标题换成了「野心、权力与数据帝国的无情扩张」。有声书是作者自己读的，将近七个小时。上市前它已经进了 2026 年《金融时报》年度商业书奖的长名单，英国出版方还说它是《新科学家》杂志 10 月的推荐书。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这次我们有全书吗？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">没有。书刚上市四天，深度书评也还很少。今天的内容依据这几样东西：出版方和作者官网的简介与推荐语；Kirkus 的书评，里面有不少书里的具体数字；作者 10 月 15 号上《Democracy Now!》的完整访谈文字稿；9 月 22 号英国《Computer Weekly》的长访谈；还有他自己播客 10 月 22 号那期，由另一位作者 Ingrid Burrington 反过来采访他。书里的内容，我会说清楚出自哪里。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那为什么选这本？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">书单这周是空的，按规则我们自己选。选它有两个原因。第一，过去半年我们讲的 AI 书，大多从实验室、公司和创始人的角度写，这本是从被建数据中心的社区写。第二，这本书刚好碰上美国中期选举，数据中心已经变成选举议题，下周就要投票。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://hyperscalebook.com/" target="_blank">Hyperscale by Paris Marx — 作者官网</a></span>
+
+</div>
+
+<p class="section-label">◈ 作者 · 一个研究交通的人，怎么写到了机房</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">先说作者。Paris Marx 这个名字，听起来像笔名。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">维基百科上就是这个名字，我们按它来。他是加拿大人，现在住在纽芬兰的圣约翰斯。在麦吉尔大学读的城市地理硕士，论文研究的是硅谷怎么影响交通。他还在新西兰奥克兰大学读过博士，不过维基百科这一条标了「需要来源」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">研究交通的。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。他 2015 年开始写一个叫 Radical Urbanist 的博客，2020 年开了播客《Tech Won't Save Us》，意思是「科技救不了我们」。英国出版方的介绍说，这个播客每期有两万五千名听众。他还写一份叫 Disconnect 的通讯。2022 年他在 Verso 出了第一本书《Road to Nowhere》，讲硅谷在交通上犯的错：自动驾驶、Hyperloop 这些项目为什么没兑现，为什么科技不能替代公共交通。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">我记得他批评马斯克很多。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">维基百科里有人半开玩笑地叫他 Muskologist，「马斯克学家」。他 2022 年给《时代》杂志写过一篇文章，标题是「马斯克确信他就是未来，我们需要看得比他更远」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那这本书是怎么来的？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">2024 年他做了一个四集的播客系列，叫《Data Vampires》，「数据吸血鬼」，专门讲超大规模数据中心。这本书是从那个系列扩展出来的。今年 9 月，为了给新书预热，他把这四集重新播了一遍。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">所以先有播客，再有书。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。这里要先说清楚他的立场。维基百科对他播客的描述是，从左翼视角看科技行业和数字文化的阴暗面。Kirkus 给这本书的定性是「科技与倡导新闻」。所以这本书本身就是一本立场明确的书，不是中立的行业报告。听的时候要记住这一点。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://en.wikipedia.org/wiki/Paris_Marx" target="_blank">Paris Marx — Wikipedia</a></span>
+
+</div>
+
+<p class="section-label">◈ 核心论点 · 从一间机房，到 2700 个足球场</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">进书。他的核心论点是什么？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">出版方简介的最后一句是：最大的威胁不是 AI 霸主这个幻影，而是一场已经开始的全球环境灾难。他想把大家的注意力，从「AI 会不会毁灭人类」移到「造 AI 的过程正在消耗什么」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">书是怎么讲的？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">按 Kirkus 的书评，他先讲历史。半个世纪前，计算机刚开始联网的时候，一组服务器可能就占办公楼里的一个房间或者一层楼。后来出现了专门的建筑，把服务器集中放在一起，把存储空间租给用户，这就是数据中心。现在因为 AI，出现了一个全新的类别：超大规模数据中心。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">「超大规模」到底有多大？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Kirkus 引了书里两个例子。马斯克在田纳西州孟菲斯买了一个七十八万五千平方英尺的仓库，大约七万三千平方米，用来放 xAI 的芯片。扎克伯格在路易斯安那州买了一块地，大到能放下两千七百个足球场，要在上面建一个 AI 数据中心，外加十座发电厂，书里说这些发电厂「能给五百万户家庭供电」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">一个数据中心，配十座发电厂。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">在《Democracy Now!》上，他把这个变化讲得更直接。以前的数据中心多建在工业园区，跟园区里别的租户差不多大。超大规模数据中心对资源的需求完全是另一个量级。他说，数据中心在过去四五年明显加速，2023 年生成式 AI 起来以后更快。主持人在节目里给了一个数字：美国现在有三千多个在运营的数据中心，还有大约一千五百个在规划中。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">为什么一定要这么多？我每天用的东西，看起来没变多少。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他的回答是：生成式 AI 的计算量比以前的服务大得多。回答一句提问、生成一张图、一段视频，要的算力都比搜索、看网页多很多。他也说得很清楚，不是说一个数据中心都不要，我们现在连线做节目，信号很可能就经过某个数据中心。他反对的是这一轮为生成式 AI 的扩张。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://www.kirkusreviews.com/book-reviews/paris-marx/hyperscale/" target="_blank">HYPERSCALE — Kirkus Reviews</a></span>
+
+</div>
+<div class="pillars">
+  <div class="pillar"><div class="pillar-num">01</div><div class="pillar-name">一个房间 → 一栋楼</div><p class="pillar-body">半个世纪前，一组服务器占办公楼里一个房间或一层楼；后来有了专门建筑，按空间出租。</p><span class="pillar-status">据 Kirkus 书评</span></div>
+  <div class="pillar"><div class="pillar-num">02</div><div class="pillar-name">785,000 平方英尺</div><p class="pillar-body">马斯克在孟菲斯买下的仓库，约 7.3 万平方米，用来放 xAI 的芯片。</p><span class="pillar-status">据 Kirkus 书评</span></div>
+  <div class="pillar"><div class="pillar-num">03</div><div class="pillar-name">2,700 个足球场 + 10 座电厂</div><p class="pillar-body">Meta 在路易斯安那买下的地块；配套电厂「能给五百万户家庭供电」。</p><span class="pillar-status">据 Kirkus 书评</span></div>
+  <div class="pillar"><div class="pillar-num">04</div><div class="pillar-name">3,000+ 运营 · ~1,500 规划</div><p class="pillar-body">美国数据中心数量。数字由《Democracy Now!》主持人在节目中给出。</p><span class="pillar-status">据 Democracy Now!, 2026-10-15</span></div>
+</div>
+
+<p class="section-label">◈ 社区 · 电费、水和保密协议</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">「被建数据中心的社区」，具体发生了什么？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Kirkus 总结了三样：电费上涨，地下水位下降，房产贬值。他在访谈里还加了噪音和光污染，住在旁边的人能听到巨大的空调机组一直在响。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那地方政府为什么还要引进？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">按 Kirkus 的转述，很多地方政府用税收优惠去吸引谷歌、亚马逊、微软。而这些公司会要求地方官员签保密协议，书里认为这违反了公开会议的法律，结果是居民在数据中心已经成了定局之后才知道。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这一点我觉得最值得说。电费和水都可以算账，但居民连算账的机会都没有。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。书的地理范围也很广。按《出版人周刊》书评的摘要，书里从爱尔兰写到智利，从美国写到台湾。《Computer Weekly》的访谈里，他举了英国的例子：北德文郡的 Great Torrington，在联合国教科文组织认定的生物圈保护区里，有人提议建一个数据园区，当地居民今年把镇政厅挤满了去反对。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">美国最集中的地方在哪？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">北弗吉尼亚。他在节目里解释，这是历史原因：早期互联网的很多工作在那里做，有大量军方投入，光纤和连接设施都在那里，后来数据中心也越建越多。那里不是穷地方，但居民同样感受到了影响。还有孟菲斯，因为马斯克的 xAI 在那里，引起了更多人注意。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他说居民在算一笔账。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在《Computer Weekly》上的原话大意是：居民在问，「这么大的设施放在我们旁边，我们到底得到了什么？这个交换值不值？」越来越多的社区的答案是不值。一是数据中心本身的成本，二是有些居民觉得，它驱动的东西，也就是生成式 AI，社会价值本来就不清楚。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://www.computerweekly.com/feature/Interview-Paris-Marx-on-why-hyperscale-datacentres-pose-greater-threat-than-AI-science-fiction" target="_blank">Interview: Paris Marx on why hyperscale datacentres pose greater threat than AI 'science fiction' — Computer Weekly, 2026-09-22</a></span>
+
+</div>
+
+<p class="section-label">◈ 气候 · 效率在提高，总量也在提高</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">气候那部分呢？科技公司不是一直说自己用可再生能源吗？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这是全书很重要的一章。他在访谈里说了三层。第一层：2019、2020 年前后，这些公司都想让大家把它们看作气候行动的领导者。现在为了生成式 AI，它们基本把自己的目标扔掉了。他在《Computer Weekly》上举的数字是，谷歌说自己 2025 年的排放增加了 18%，微软增加了 25%。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第二层？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">电网接不上了。2023、2024 年，公司在各地抢电网接入。很多地方的接入容量已经用完，等不及，于是过去一年明显转向在数据中心旁边自建燃气电厂。他在节目里引了一份报告，说美国规划中专门给数据中心供电的新燃气发电容量大约有 189 吉瓦。孟菲斯那边一开始是用一大批燃气发电机直接在现场发电。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">189 吉瓦是什么概念？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我们没法在节目里核对这份报告，这个数字是他在节目里说的。我只能说，按常用的估算，一吉瓦大约是一座大型核电机组的规模。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第三层呢？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第三层是我觉得最有用的一个分析框架：单个效率和总量的区别。他说，公司会强调，单个数据中心每单位算力用的水在减少，排放强度在下降。这可能是真的。但两年里它们又建了几十个新数据中心，总的用电量和用水量还是在大幅上升。他的原话是：如果你在数据中心行业，想找一个正面的说法来淡化成本，「效率」是很好用的一个，它让事情看起来在变好，实际上用的比以前多得多。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这在经济学里有个名字，杰文斯悖论：效率提高了，用的反而更多。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，他在我们找到的材料里没用这个词，但讲的是同一件事。《Computer Weekly》还举了一个例子：伦敦 Brick Lane 的 Truman 啤酒厂旧址要改建数据中心，规划上诉文件里「可持续」这个词出现了 65 次。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那他也承认，气候是最难讲清楚的一条？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他自己说了。在所有 AI 的问题里，气候是最抽象的。你没法指着一个数据中心说，它导致了路那头的山火。但你可以指着它说，它可能让我的电费涨了，它用了很多水，我在家能听到它的空调声。所以居民更容易抓住电、水、噪音这些直接的问题。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://www.democracynow.org/2026/10/15/hyperscale_paris_marx" target="_blank">「Hyperscale」: Paris Marx on Excess of Big Tech Data Empires — Democracy Now!, 2026-10-15</a></span>
+
+</div>
+<blockquote class="pull-quote">如果你在数据中心行业，想找一个正面的说法来淡化成本，「效率」是很好用的一个。它让事情看起来在变好，实际上用的比以前多得多。<cite>Paris Marx · Computer Weekly, 2026-09-22</cite></blockquote>
+
+<p class="section-label">◈ 钱 · 「钱在绕一个大圈」</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">谁从中得利？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">按 Kirkus 的转述，书里说得利的首先是谷歌、亚马逊、微软这三家，还有 OpenAI、甲骨文、英伟达。这几家公司之间互相签单、互相投资，书里的说法是：「你看到的是钱在绕一个大圈流动」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这句话这一年在财经新闻里也常见。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。这周 Ingrid Burrington 采访他的那期播客，节目简介把这个论点概括成：超大规模数据中心不是必然要有的基础设施，而是资本金融化的产物。公司在掩盖真实的社会和环境成本，想在泡沫破裂前把利润最大化。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他认为是泡沫。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在《Democracy Now!》上说，科技行业靠夸大来吸引投资、制造炒作。等市场调整以后，很多科技行业说生成式 AI 有用的地方，最后不会兑现。会有一些行业、一些公司觉得它有用，但用法会跟今天很不一样。他预测，企业会更多用开源权重的小模型，针对具体场景，资源消耗也小。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这个预测倒是挺具体的，可以检验。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在《Computer Weekly》上还给了一个更近的依据：很多公司今年在收缩 AI 支出。一方面是 AI 公司在涨价，另一方面涨价逼着企业去算投资回报，很多企业发现效率和生产力没有达到预期。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://techwontsave.us/episode/351_too_much_computer_ingrid_burrington_discusses_hyperscale_with_paris_marx/" target="_blank">Too Much Computer: Ingrid Burrington discusses Hyperscale with Paris Marx — Tech Won't Save Us, 2026-10-22</a></span>
+
+</div>
+
+<p class="section-label">◈ 另一个靶子 · 「超级智能」是分散注意力</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他上《Democracy Now!》那期，标题里还有桑德斯的法案。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，这一段跟我们上个月讲的几本书正好相反。参议员桑德斯和众议员 Greg Casar 提了一个法案，叫「禁止人工超级智能法案」。内容是永久禁止开发和部署超级智能，在联邦监管机构定出安全规则之前暂停先进 AI 的开发，还要求美国推动国际协议。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他批评这个？他不是也反对 AI 公司吗？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他的态度分两半。桑德斯推动全国性的数据中心暂停令，他支持。限制更大模型的开发，他也可以接受，但理由不一样。他说，AI 会在十年内决定消灭人类这种说法，是「科幻和妄想的混合」，同时也是一种很有效的方式，把注意力从今天生成式 AI 已经造成的伤害上移开。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他说的今天的伤害是哪些？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他列了几样：有人依赖聊天机器人以后心理健康出问题；今年年初 Grok 生成未经同意的裸露深度伪造图片；依赖聊天机器人对学习和批判性思考能力的影响；数据中心对环境的影响。他还提到加拿大不列颠哥伦比亚省今年的一起大规模枪击案，他说枪手在作案前八个月一直用 ChatGPT 策划。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">我们讲过 Yudkowsky 的《If Anyone Builds It, Everyone Dies》，讲过 Roose 的《AGI Chronicles》。这本书等于说，那些书的前提本身就是问题。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。他在《Computer Weekly》上把相信末日论的人分成几种：有人是真的相信，他举了 Yudkowsky 在《时代》杂志上写的文章；有人在公司里工作，相信 AGI 快到了，但觉得值得冒这个险。他自己的判断是，这个方向不太可能，也不符合技术实际的工作方式。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这里我得替另一边问一句。担心超级智能和担心数据中心，不一定是二选一。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">是的，这是我们自己的看法，不是书里的。一个人可以同时担心长期风险和今天的电费。他把两者说成是互相竞争注意力，这个判断本身是可以争论的。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://www.penguinrandomhouse.com/books/797020/hyperscale-by-paris-marx/" target="_blank">Hyperscale — Penguin Random House</a></span>
+
+</div>
+<blockquote class="pull-quote">AI 会在十年内决定消灭人类——这是科幻和妄想的混合，也是一种很有效的方式，把注意力从今天的伤害上移开。<cite>Paris Marx · Democracy Now!, 2026-10-15</cite></blockquote>
+
+<p class="section-label">◈ 评价 · 赞的人很多，反对的书评还没出现</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">评价怎么样？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">推荐语的阵容很整齐。Naomi Klein 说它是「对一场与我们所有人生死攸关的辩论的巨大贡献」。《Empire of AI》的作者 Karen Hao 说它是一本「出色、及时的汇编」，讲清了数据中心的历史，以及层层叠加的社会、环境和健康影响。Timnit Gebru 说它「现实，也鼓舞人」，因为书里也写了在做「人的尺度」的技术的运动。Malcolm Harris 说：「这是一本大科技公司不想让你读的书」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Karen Hao 那本我们 4 月讲过。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，Marx 在节目里也提到了她，说他从她的书里得到的一个观点是：AI 有很多别的做法，只是大部分钱都投进了生成式 AI。专业书评方面，Kirkus 说它「及时，调研扎实，写得有力」；《出版人周刊》说它「及时、有说服力」；《金融时报》的评语是「一项带论战色彩的实地调查」；《卫报》把它列进了「必读 AI 书」。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">批评呢？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这次我得照实说：我们没找到成体系的反对书评。书刚上市四天，大报的长书评可能还没出来。但评语里有几个信号可以注意。《金融时报》用了「论战色彩」这个词。Kirkus 用了「倡导新闻」。Malcolm Harris 的完整推荐语，开头是「一份数据中心开发弊端的清单」。这三处都在说，这本书是从一边讲的。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那我们自己能提什么问题？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我列三个，都是我们的追问，不是别人对这本书的批评。第一，收益那一侧。地方政府为什么要引进？书里写了税收优惠，但数据中心给地方带来的税收和工作岗位，书里有多少篇幅？我们没看到全书，不知道。第二，AI 在科学上的用处。《Democracy Now!》的主持人当场就问了 AlphaFold。他的回答是怀疑，举的例子是安大略省审计长调查 AI 病历记录工具，发现一半以上的案例插入了错误信息。但病历转写和蛋白质结构预测是两件很不一样的事，用前者回答后者，说服力不够。第三，他预测开源小模型会成为主流，这需要时间来检验。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">还有一点：他的很多数字来自他转述的报告，189 吉瓦、谷歌 18%、微软 25%。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，这些我们在节目里没有逐一核对原始报告。想引用的听众，最好去查原始出处。</p>
+  </div>
+
+  <span class="inline-src">📎 来源：<a href="https://profilebooks.com/work/hyperscale/" target="_blank">Hyperscale — Profile Books</a></span>
+
+</div>
+
+<p class="section-label">◈ 结论 · 这本书适合谁</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那这本书值得读吗？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我的结论是：如果你只读过从实验室和公司角度写的 AI 书，这本值得读，它补上了物理的那一半：电从哪来，水从哪来，地是谁的，谁事先知道。它最有用的不是结论，是几个问题的问法：单个效率和总量分开看；问一个项目给当地带来了什么、拿走了什么；问决定是谁做的、公开过没有。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">不适合谁？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">想看中立行业分析的人，这本书不是。它立场明确，作者站在反对数据中心扩张的社区一边。他在加拿大的几场新书活动，就是跟当地反对 AI 数据中心的组织者一起办的。还有想要一本「AI 到底有没有用」的平衡讨论的人，他对生成式 AI 的价值评价很低，这个判断你不一定同意。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">跟这个月讲的书怎么搭配？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我会把它跟 Roose 的《AGI Chronicles》放在一起读。一本讲竞赛里的人怎么想，一本讲竞赛的账单落在哪里。两本书对同一件事的判断几乎相反，一起读能看出各自漏掉了什么。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">有中文版吗？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">目前没有查到中文版的消息。</p>
+  </div>
+
+</div>
+<div class="takeaways">
+  <div class="takeaways-label">◈ Key Takeaways</div>
+  <div class="takeaways-title">这本书留下的四件事</div>
+  <div class="takeaway-item"><span class="takeaway-num">01</span><span>AI 有物理的一半：电、水、土地。从实验室角度写的 AI 书，大多没写这一半。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">02</span><span>单个效率和总量分开看。每个数据中心更省水，不代表总用水在减少。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">03</span><span>问一个项目：给当地带来了什么、拿走了什么、决定是谁做的、事先公开过没有。保密协议让居民连算账的机会都没有。</span></div>
+  <div class="takeaway-item"><span class="takeaway-num">04</span><span>这是一本立场明确的倡导新闻。收益一侧、AI 在科学上的用处、开源小模型会成为主流的预测，需要读者自己补上另一边。</span></div>
+</div>
+
+<p class="section-label">◈ 讨论角度 · 留给你的问题</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">最后留几个问题给听众。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第一个：如果你所在的城市要建一个大型数据中心，你想在投票前知道哪三个数字？第二个：一项服务的单位效率在提高，总消耗却在上升，你会怎么判断它是在变好还是变坏？第三个：担心超级智能和担心今天的电费、水，你觉得它们是在争夺注意力，还是可以同时关心？第四个：你每天用的 AI 工具，如果把它背后的电和水标在价格上，你还会用得一样多吗？</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第四个我得想想。我会少开几个让它在后台一直跑的任务。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这也是这周建造者们在讨论的事，我们接着说。</p>
+  </div>
+
+</div>
+<div class="angles-grid">
+  <div class="angle-card"><div class="angle-num">01</div><p class="angle-text">如果你所在的城市要建一个大型数据中心，你想在投票前知道哪三个数字？</p></div>
+  <div class="angle-card"><div class="angle-num">02</div><p class="angle-text">单位效率在提高，总消耗却在上升。你怎么判断它是在变好还是变坏？</p></div>
+  <div class="angle-card"><div class="angle-num">03</div><p class="angle-text">担心超级智能和担心今天的电费、水，是在争夺注意力，还是可以同时关心？</p></div>
+  <div class="angle-card"><div class="angle-num">04</div><p class="angle-text">如果把 AI 工具背后的电和水标在价格上，你还会用得一样多吗？</p></div>
+</div>
+
+<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
+<div class="script-container">
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">照例看看建造者们这两天在说什么。数据截至今天北京时间中午。今天挑了四条跟云和基础设施有关的。第一条是 Claude 官方账号：Anthropic 托管的 Claude 模型在谷歌云上正式可用了，可以用谷歌云的身份权限、账单和已承诺的用量来付费。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这正好是书里说的那张网：模型公司和云公司互相绑在一起。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第二条，Anthropic 的 Boris Cherny 说，Agent Skills 一开始是 Claude Code 里的一个实验，后来业内很多人都在用，所以他们把它捐给了 Agentic AI 基金会，跟 MCP 放在一起。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">把标准交给中立机构，这是基础设施成熟的一个信号。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第三条，Vercel 的 CEO Guillermo Rauch 说，是时候淘汰「静态凭证」了。攻击和泄露总会发生，但如果小偷只能偷到「会自毁的钥匙」，损失就小得多。他说，行业曾经一起让每个网站都用上了 TLS 加密，现在应该一起推 OIDC。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第四条呢？</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">FirstMark 的投资人 Matt Turck 说，AI 里现在人人都在跟人人竞争：芯片公司跟推理服务商竞争，推理服务商跟新兴云和后训练公司竞争，模型跟应用、跟芯片竞争，应用也跟模型竞争。最后一句是：英伟达卖给所有人。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">跟书里那句「钱在绕一个大圈」放在一起，挺有意思。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">播客推荐是红杉资本的《Training Data》，这期请来 David Silver 和 Lasse Espeholt，他们从 DeepMind 出来，一起创办了 Ineffable Intelligence。Silver 做过 AlphaGo。他说，他们不走大语言模型靠人类数据的路线，而是让智能体从经验里自己学习、自己发现知识。他说这是通往超级智能的关键，人类自己也是从一无所知，一点点发现了语言、科学和数学。他们还说，现在手里的算力，可以把过去这类实验的规模放大到十万倍。</p>
+  </div>
+
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">又是算力。今天这期，从头到尾都绕不开它。</p>
+  </div>
+
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">好，今天就到这里。这周如果你只做一件事，去查一下你所在的地方有没有规划中的数据中心，有没有公开过听证会。下周六见。</p>
+  </div>
+
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Training Data（Sequoia Capital）· 2026-10-13</p>
+  <p class="pc-title">David Silver and Lasse Espeholt of Ineffable Intelligence: A Superlearner for the Age of Experience</p>
+  <p class="pc-summary">AlphaGo 的主要作者 David Silver 和 Lasse Espeholt 离开 DeepMind，创办 Ineffable Intelligence。他们不走大语言模型依赖人类数据的路线，而是给智能体简单的目标，让它从经验里自己学习、自己发现知识。Espeholt 说，他们现有的算力能把过去这类自主发现实验的规模放大约十万倍。</p>
+  <a href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">CL</div>
+      <div>
+        <div class="builder-name">Claude</div>
+        <div class="builder-handle">@claudeai · Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Anthropic 托管的 Claude 模型现已在谷歌云上正式可用。在谷歌云上使用完整的 Claude Platform 功能，用谷歌云 IAM 凭证、账单和已承诺用量付费。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 4,120</span>
+      <a href="https://x.com/claudeai/status/2113380122468454765" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">BC</div>
+      <div>
+        <div class="builder-name">Boris Cherny</div>
+        <div class="builder-handle">@bcherny · Claude Code, Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Agent Skills 最初是 Claude Code 里的一个实验。业内很多人都采用了它，所以我们觉得更合适的做法是把它捐给 Agentic AI 基金会，跟 MCP 放在一起。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,697</span>
+      <a href="https://x.com/bcherny/status/2113333859907747871" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO, Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「是时候淘汰「静态凭证」了。攻击和泄露总会发生，但想象一下，如果小偷只能偷到「会自毁的钥匙」。行业曾经一起让每个网站都用上了 TLS 加密，现在让我们为 OIDC 做同样的事。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,268</span>
+      <a href="https://x.com/rauchg/status/2113399539227136084" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MT</div>
+      <div>
+        <div class="builder-name">Matt Turck</div>
+        <div class="builder-handle">@mattturck · VC, FirstMark</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「AI 里人人都在跟人人竞争：芯片公司跟推理服务商竞争，推理服务商跟新兴云和后训练公司竞争，模型跟应用和芯片竞争，应用跟模型竞争。英伟达卖给所有人，哈哈。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 24</span>
+      <a href="https://x.com/mattturck/status/2113263905950568730" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+
+<section class="sources">
+  <div class="sources-label">◈ 来源与说明</div>
+  <p class="sources-note">
+    本期未拿到全书（上市第四天）。书中具体内容主要依据 Kirkus 书评的转述；作者观点依据《Democracy Now!》访谈文字稿（2026-10-15）、《Computer Weekly》访谈（2026-09-22）和《Tech Won't Save Us》节目简介。189 吉瓦燃气容量、谷歌排放 +18%、微软 +25% 均为作者在访谈中转述的数字，本期未核对原始报告。「从爱尔兰到智利、从美国到台湾」出自《出版人周刊》书评摘要，未能打开原文。未找到成体系的反对书评；「我们的追问」部分是本节目自己的看法。本期为 Up Next 空缺时自行选定。
+  </p>
+  <a class="source-link" href="https://hyperscalebook.com/" target="_blank"><span class="src-icon">BOOK</span><span>Hyperscale by Paris Marx — 作者官网</span></a>
+  <a class="source-link" href="https://www.penguinrandomhouse.com/books/797020/hyperscale-by-paris-marx/" target="_blank"><span class="src-icon">BOOK</span><span>Hyperscale — Penguin Random House（Riverhead Books）</span></a>
+  <a class="source-link" href="https://profilebooks.com/work/hyperscale/" target="_blank"><span class="src-icon">BOOK</span><span>Hyperscale — Profile Books（英国版）</span></a>
+  <a class="source-link" href="https://www.kirkusreviews.com/book-reviews/paris-marx/hyperscale/" target="_blank"><span class="src-icon">REVIEW</span><span>HYPERSCALE — Kirkus Reviews</span></a>
+  <a class="source-link" href="https://www.democracynow.org/2026/10/15/hyperscale_paris_marx" target="_blank"><span class="src-icon">INTERVIEW</span><span>「Hyperscale」: Paris Marx on Excess of Big Tech Data Empires &amp; His Critique of Bernie Sanders' AI Bill — Democracy Now!, 2026-10-15</span></a>
+  <a class="source-link" href="https://www.computerweekly.com/feature/Interview-Paris-Marx-on-why-hyperscale-datacentres-pose-greater-threat-than-AI-science-fiction" target="_blank"><span class="src-icon">INTERVIEW</span><span>Interview: Paris Marx on why hyperscale datacentres pose greater threat than AI 'science fiction' — Computer Weekly, 2026-09-22</span></a>
+  <a class="source-link" href="https://techwontsave.us/episode/351_too_much_computer_ingrid_burrington_discusses_hyperscale_with_paris_marx/" target="_blank"><span class="src-icon">PODCAST</span><span>Too Much Computer: Ingrid Burrington discusses Hyperscale with Paris Marx — Tech Won't Save Us, 2026-10-22</span></a>
+  <a class="source-link" href="https://techwontsave.us/episode/344_data_vampires_redux_going_hyperscale_episode_1" target="_blank"><span class="src-icon">PODCAST</span><span>Data Vampires Redux: Going Hyperscale (Episode 1) — Tech Won't Save Us, 2026-09-03</span></a>
+  <a class="source-link" href="https://en.wikipedia.org/wiki/Paris_Marx" target="_blank"><span class="src-icon">BIO</span><span>Paris Marx — Wikipedia</span></a>
+  <a class="source-link" href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank"><span class="src-icon">PODCAST</span><span>A Superlearner for the Age of Experience — Training Data, 2026-10-13</span></a>
+</section>
+
+<footer class="footer">
+  <span>Daily Builders Digest · 2026-10-24</span>
+  <span>周六书籍介绍 · 第二十六期</span>
+  <span>大雨 × 小苇</span>
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

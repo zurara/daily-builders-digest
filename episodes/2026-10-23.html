@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-10-23 · AI 星期五">
+<meta property="og:description" content="PHP2Shell：AI 帮忙找到的漏洞 · 黑客用 AI 代理三小时拿到云权限 · Claude Duet · 沃尔玛 Agent Gateway">
+<title>Daily Builders Digest · 2026-10-23 · AI 星期五</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期五</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-10-23</span>
+    <span>🧭 AI 星期五</span>
+    <span>◇ AI 找漏洞，也替你找活</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>PHP2Shell · CVE-2026-109618 / 109619 · CVSS 9.2</span>
+    <span class="ticker-item"><span class="dot">●</span>修复版本 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span>
+    <span class="ticker-item"><span class="dot">●</span>Calif 用 GPT-5.6 Sol 找到漏洞 · Wiz 独立发现两个</span>
+    <span class="ticker-item"><span class="dot">●</span>PHP 基金会：7 月以来 15 个 CVE，100+ 份无效报告</span>
+    <span class="ticker-item"><span class="dot">●</span>Storm-0940 用 ARTEX 代理 · 不到 3 小时拿到云权限</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude Duet 研究预览 · 美国 Pro / Max 排队</span>
+    <span class="ticker-item"><span class="dot">●</span>沃尔玛 Agent Gateway · 代理有独立账户和消费上限</span>
+    <span class="ticker-item"><span class="dot">●</span>PHP2Shell · CVE-2026-109618 / 109619 · CVSS 9.2</span>
+    <span class="ticker-item"><span class="dot">●</span>修复版本 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35</span>
+    <span class="ticker-item"><span class="dot">●</span>Calif 用 GPT-5.6 Sol 找到漏洞 · Wiz 独立发现两个</span>
+    <span class="ticker-item"><span class="dot">●</span>PHP 基金会：7 月以来 15 个 CVE，100+ 份无效报告</span>
+    <span class="ticker-item"><span class="dot">●</span>Storm-0940 用 ARTEX 代理 · 不到 3 小时拿到云权限</span>
+    <span class="ticker-item"><span class="dot">●</span>Claude Duet 研究预览 · 美国 Pro / Max 排队</span>
+    <span class="ticker-item"><span class="dot">●</span>沃尔玛 Agent Gateway · 代理有独立账户和消费上限</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期五 · AI 找漏洞，也替你找活</span>
+  </div>
+  <audio controls src="2026-10-23.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 代理做得越来越多，人在哪一步把关</div>
+    <div class="feature-show-name">PHP2SHELL<br>AGENT ATTACKS<br><span style="color:#dd1111">PROACTIVE AGENTS</span></div>
+    <div class="feature-ep-title">AI 帮忙找到 PHP 严重漏洞，黑客用 AI 代理做供应链攻击，<br>Claude Duet 主动找活，沃尔玛给代理开正门</div>
+    <div class="feature-guest">PHP · Wiz · OpenAI · Microsoft · Anthropic · Walmart · 2026-10-20 / 10-22</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      AI 让<strong>找漏洞、写攻击代码都变快了</strong>，攻防两边都在用代理；同一周，主动替人干活的代理开始上线。共同的问题是：哪些事必须等人批准。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">PHP2Shell</span><span class="tag">GPT-5.6 Sol</span><span class="tag">Wiz</span><span class="tag">Storm-0940</span><span class="tag">ARTEX</span><span class="tag">Claude Duet</span><span class="tag">Walmart</span><span class="tag">MCP</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">PHP · 10/21</div><div class="stat-value">两个远程代码执行漏洞 · 只能升级修复 · 细节提前泄露</div></div>
+      <div class="stat-item"><div class="stat-label">Microsoft · 10/21</div><div class="stat-value">15 万次失败登录 · 不到 3 小时拿到云高权限</div></div>
+      <div class="stat-item"><div class="stat-label">Anthropic · 10/21</div><div class="stat-value">Duet 每几小时检查一次 · 发消息、付款要人批准</div></div>
+      <div class="stat-item"><div class="stat-label">Walmart · 10/21</div><div class="stat-value">MCP 服务器 · 代理独立账户 · 消费上限 + 逐单批准</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期五，AI 日，早上好。这周 AI 新闻里最大的一件事是安全。PHP 出了两个严重漏洞，找到漏洞、写出攻击代码的过程里都用了 AI，全世界的网站周三都在紧急打补丁。同一天，微软说一个国家背景的黑客组织用 AI 代理做了一次供应链攻击。后面两条是产品：Anthropic 发了一个会主动替你找活干的代理 Claude Duet；沃尔玛开放了一个入口，让 AI 代理可以替顾客下单。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">前两条是 AI 在攻防两边干活，后两条是 AI 替人干活。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。四条连起来看，问的是同一件事：代理做得越来越多，人在哪一步把关。我们一条一条讲。</div></div>
+</div>
+<div class="section-label">一 · PHP2Shell：AI 帮忙找到的漏洞，全世界一起打补丁</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">10 月 21 号，PHP 发布了紧急安全更新，修两个漏洞，编号 CVE-2026-109618 和 109619，被叫做 PHP2Shell。PHP 自己打的分是 9.2 分，满分 10 分。安全公司 watchTowr 打了 10 分。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">PHP 有多常用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">非常常用。WordPress、Drupal、Joomla 都跑在 PHP 上。Wiz 估计全世界大约七成网站用 PHP。但它也说明，这不等于七成网站都中招，要看版本和配置。问题出在 PHP 的核心引擎里，所以就算你的网站代码一点问题都没有，也可能受影响。攻击者不用登录，就能在服务器上执行代码。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">修好的办法是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">只有一个：升级 PHP 本身。8.5.12、8.4.27、8.3.36、8.2.35，对应你在用的分支。PHP 官方说，改配置不能完全堵住。插件更新也没用，因为毛病在引擎里。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">AI 在里面做了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有两拨人发现了这些漏洞。OpenAI 说，安全公司 Calif 用 GPT-5.6 Sol 找到了一个严重漏洞，8 月 11 号报给了 PHP。Wiz 那边独立找到了两个，8 月 19 号发现，24 号报告。Wiz 说它用了自己的 Atlas 系统，加上谷歌的 Gemini 4 Argon 和 GPT-5.6 Sol，帮忙找漏洞、写攻击代码、验证补丁。它说 AI 帮研究者分析失败的尝试，几个小时就能把攻击方法改到适配不同的网站程序上。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">原本几个小时做不完的事？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。内存类的漏洞，攻击能不能成功要看目标怎么分配内存，以前要花很多时间调试。不过要说清楚，Wiz 的研究是经验很丰富的安全研究者带着做的，不能说明新手拿 AI 也能做到。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么有的网站直接关了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为补丁还没发，细节就泄露了。10 月 20 号，漏洞信息提前流到网上。PHP 本来计划 22 号发布，提前了一天。英国国家网络安全中心建议，来不及打补丁的就考虑先下线。芬兰临时关了政府网站，维基媒体基金会也做了预防性关闭。亚马逊对 FT 说，漏洞已经被大范围利用，最早一次攻击尝试在公开披露前四天。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这里面我觉得最值得注意的是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是维护者那一头。PHP 基金会说，其中一个内存问题 2024 年就有人注意到了，但当时没有证明能被攻击，修起来又怕破坏兼容性，人手也不够，就一直拖着。还有一个数字：从 7 月 1 号到现在，PHP 基金会发了 15 个 CVE，同时处理了一百多份无效、重复或者复现不了的报告。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">AI 让找漏洞变快了，但修漏洞的人没有变多。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。OpenAI 把从 AI 发现漏洞到公开之间的这段时间叫「防守方窗口」，意思是趁攻击者还没有同样的能力，先把补丁准备好。这次窗口被泄露截短了。以后这样的事会更多，开源项目的维护者能不能接住，是个实际问题。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/news/php2shell-ai-bug-hunting-maintenance-challenge/" target="_blank">PHP2Shell Exposes the Maintenance Challenge Behind AI Bug Hunting — The Neuron</a> · <a href="https://www.helpnetsecurity.com/2026/10/21/php2shell-php-vulnerabilities-patched-cve-2026-109618-cve-2026-109619/" target="_blank">PHP2Shell: Critical PHP vulnerabilities patched — Help Net Security</a> · <a href="https://www.cnbc.com/2026/10/22/php2shell-vulnerability-what-is-it-and-is-your-data-at-risk.html" target="_blank">&#x27;PHP2Shell&#x27; vulnerability: What is it, and is your data at risk? — CNBC</a></span>
+</div>
+<div class="section-label">二 · 微软：黑客组织用 AI 代理，三小时拿到云权限</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条是攻击方。周三，微软说上个月 ConnectWise 云备份服务被入侵，是一个它叫 Storm-0940 的组织干的，微软说这个组织跟中国国家背景有关。他们用的工具是一个叫 ARTEX 的 AI 代理渗透测试框架。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">渗透测试框架，本来是给防守方测自己系统用的吧？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，本来是。ARTEX 之前被拿去攻击韩国的金融机构，后来就改成不开源了。这次的过程是这样：10 月 10 号到 14 号，攻击方对八家机构的 327 个账号做密码喷洒，就是拿常见密码一个个试，失败的登录超过 15 万次，最高一分钟 2900 次。15 号，代理拿到了 ConnectWise 几个云应用的身份，再用这些身份进入客户的环境。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「三小时」是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">微软说，有些案例里，从开始瞄准到拿到云基础设施的高权限，不到三小时。因为攻击方用的是那些已经被客户授权过的应用，所以不需要人交互登录。微软的原话是，代理不受人的限制，可以全天候、周末、节假日都干，同时试很多条路。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">用的是哪家的模型？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Zscaler 的研究者看到，ARTEX 的配置指向 DeepSeek、GLM 和 Grok，通过兼容 OpenAI 接口的网关调用。提示词让几个模型分工调查，再互相检查对方的结果。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟第一条放一起看，攻防两边都在用代理。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第一条是防守方用 AI 抢时间，这条是攻击方用 AI 抢时间。三小时拿到权限，意味着靠人工值班、第二天上班再看告警的响应方式，已经太慢了。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://aiweekly.co/alerts/microsoft-ties-storm-0940-to-artex-driven-connectwise-hack" target="_blank">Microsoft Ties Storm-0940 to ARTEX-Driven ConnectWise Hack — AI Weekly / The Hacker News</a></span>
+</div>
+<div class="section-label">三 · Claude Duet：一个会主动找活的代理</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条换个方向。10 月 21 号，Anthropic 发布了 Claude Duet，研究预览版，美国的 Pro 和 Max 用户可以排队申请。它是一个单独的应用，有 iOS、安卓和网页版，背后是 Claude Opus 5.5。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟平时用的 Claude 有什么区别？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">平时是你问它答。Duet 是它自己去看你连接的应用，比如邮箱、日历、记账软件，每隔几个小时看一次，看到需要处理的事就先准备好。早上给你一份简报，草拟回复，查哪些发票没收款。它在云端有一台虚拟机，你的设备关了，它也能继续跑浏览器任务。它会沿用你 Claude 账号里的记忆、技能和已连接的应用。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">它能直接替我发邮件、付钱吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不能直接做。发消息、付款、签协议、删文件，都要你先批准。证券交易和账户之间转账，就算你允许也不行。Anthropic 说它不直接看到你的密码，还有一个新的分类器防止泄露敏感信息。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">听起来很谨慎。缺点呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Anthropic 自己说了几条：它可能判断错什么事紧急；每几个小时才看一次，不是实时的，临时取消的会议可能要等下一轮才发现；你现在还不能查看它在浏览器里做了什么。还有，它在后台跑的任务，用的是你 Claude 套餐的额度。The Neuron 提了一个问题，我觉得问得对：如果它准备的每一件事，你都要打开原来的应用再核对一遍，那省下的时间可能就没了。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">别家有类似的吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有。OpenAI 的 Dots，Meta 给小企业的 Muse，都是主动型代理，也都要求重要操作先让人批准。Every 的 CEO Dan Shipper 测了两周，他说这是他觉得第一个能算专业工具的个人代理，他用 ChatGPT 和 Claude 的时间变成了一半一半。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的问题是，它判断「什么事需要你」，这个判断准不准，现在没有数据。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，现在还没有独立的评测。值得看的是三个数：它找出的待办准不准，你要改它多少次，它漏掉了多少紧急的事。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/news/claude-duet-work-human-review/" target="_blank">Claude Duet Can Prepare Your Work. How Much Will You Need to Check? — The Neuron</a> · <a href="https://aiweekly.co/ai-news-today/edition/2026-10-22" target="_blank">Anthropic Opens Claude Duet to US Pro and Max — AI Weekly</a></span>
+</div>
+<div class="section-label">四 · 沃尔玛给 AI 代理开门，亚马逊在关门</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。10 月 21 号，沃尔玛 CEO John Furner 在 Masters of Scale 大会上发布了 Agent Gateway。它是一个 MCP 服务器，让经过批准的 AI 代理可以搜沃尔玛的库存、替顾客下单。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">MCP 简单说是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一套让 AI 代理接入外部工具的标准接口。沃尔玛等于给代理开了一个正门，不用代理去模仿人点网页。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那怎么管住代理乱买东西？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">配套的是 Agent Profiles，每个代理在你的账户下有自己的一块空间，可以设消费上限，每次购买要你批准。代理看不到你的支付信息和购买记录。不合规的代理会被拦掉。山姆会员店也支持，不需要 Walmart+ 会员。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">亚马逊呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">亚马逊在主动拦第三方 AI 购物代理。两家走的是相反的路。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 Duet 的设计有点像，都是「代理可以准备，人来批准」。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。而且沃尔玛这个做法有一点值得注意：它把代理当成一个单独的身份来管，有自己的账户、自己的额度。第二条里攻击者就是冒用了已授权应用的身份。给代理一个独立、权限有限的身份，出了事能查、能关，这比让代理拿着你的账号密码去点网页安全得多。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/" target="_blank">While Amazon blocks AI agents, Walmart rolls out the welcome mat — TechCrunch</a> · <a href="https://aiweekly.co/alerts/walmart-debuts-agent-gateway-mcp-server-and-agent-profiles-for-approved-ai" target="_blank">Walmart Debuts Agent Gateway MCP Server and Agent Profiles — AI Weekly</a></span>
+</div>
+<div class="section-label">五 · 两条小消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还有两条短的。第一，Recursive 发布了第一个模型 Flint，一个本地跑的写代码模型，总参数 398 亿，每个 token 只激活 25 亿，Apache 2.0 开源。它说在 M4 Pro 的 MacBook 上每秒能出 125 个 token。它报的 SWE-bench Verified 是 74.2%。这些都是自己报的数，还没有第三方复测。它还说这个模型的大部分开发是它的自动化研究系统做的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 的模型和 Codex 要上谷歌云了，通过 Model Garden 提供，企业可以用已经承诺给谷歌云的预算来买，未来几周正式上线。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://aiweekly.co/alerts/recursive-opens-flint-a-40b25b-moe-coder-hitting-897-on-swe-bench-pro-v2-under" target="_blank">Recursive Opens Flint — AI Weekly / Hugging Face</a> · <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-22-2026/" target="_blank">Everything That Happened in AI Today (Oct 22) — The Neuron</a></span>
+</div>
+<div class="section-label">六 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客还是 Every 的 AI &amp; I，10 月 21 号这期，讲他们公司的「前沿小组」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">前沿小组做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Dan Shipper 说，现在公司里每个人都卡在一个两难里：是先把手上的活干完，还是花时间跟上 AI 的新工具。前沿小组把这两件事分开：一小组人专门试新模型、新工具，其他人专心干活，等小组试出有用的东西再推给大家。他说小组里要有两种人，「海盗」和「建筑师」。海盗跑得快，几天试一大堆东西，很乱；建筑师把乱的东西收拾成别人能用、能维护的系统。他们的评测负责人 Mike Taylor 说，模型能做的事比大家来得及试的多得多。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推特这边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">点赞最多的一条是 Peter Steinberger，一万一千多赞，他说这周会造成大麻烦的那个 PHP 漏洞，是用 GPT-5.6 Sol 找到的。Vercel 的 CEO Guillermo Rauch 发了两条：一条说他们已经在防火墙层面挡住了针对 PHP 的攻击尝试，提醒大家后面还会有更多漏洞，要练好「打补丁、重新部署」这个动作；另一条说，同一周还有一个 Node.js 的远程代码执行漏洞，Vercel 在官方补丁发布前就在防火墙上做了防护。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Box 的 Aaron Levie 也说了安全。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。他说网络安全会是 AI 影响最深的领域之一，现在有了一支不知疲倦的队伍，可以去找、去修、也可以去攻击任何系统。后来他又补了一条：如果想知道 AI 会创造哪些工作，看网络安全就知道了，就算工作越来越自动化，也需要更多人去指挥代理、审查结果、打补丁、处理事故。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">正好接上第一条，找漏洞变快了，修漏洞的人得更多。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">How a Frontier Team Can Help Your Company Keep Up With AI — AI &amp; I by Every</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">总结一下今天？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">AI 帮研究者在 PHP 里找到了严重漏洞，补丁还没发细节就泄露了，全世界一起赶工；攻击方也在用 AI 代理，三小时拿到云权限；Anthropic 发了会主动找活的 Claude Duet，重要操作要人批准；沃尔玛给 AI 代理开了正门，每个代理有自己的身份和额度。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">如果你的网站或者公司用 PHP，今天先查一下版本号，看看是不是已经升到修复版本。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。明天是周六书籍介绍，我们明天见。</div></div>
+</div>
+<div class="insight-box">
+  <div class="insight-label">◈ 本期要点</div>
+  <div class="insight-title">代理能做更多，人把关的那一步要设计好</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>PHP2Shell 只能靠升级 PHP 本身修复（8.5.12 / 8.4.27 / 8.3.36 / 8.2.35），改配置和更新插件都不够。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>AI 让找漏洞变快，但开源维护者的人手没有变多。PHP 基金会 7 月以来处理了 100 多份无效报告。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>攻击方的代理不到 3 小时拿到云权限，靠人工第二天看告警已经太慢。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>Claude Duet 和沃尔玛的做法一致：代理准备，人批准；给代理独立、有限的身份，而不是你的账号密码。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 04:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">AI &amp; I by Every · 2026-10-21</p>
+  <p class="pc-title">How a Frontier Team Can Help Your Company Keep Up With AI</p>
+  <p class="pc-summary">Dan Shipper 说每个员工都卡在「先干活」还是「先跟上 AI」之间。Every 的做法是成立前沿小组：一小组人专门试新模型和新工具，其他人专心干活，试出有用的再推给全公司。小组里要有「海盗」（跑得快、试得多、很乱）和「建筑师」（把乱的东西收拾成能维护的系统）。评测负责人 Mike Taylor：模型能做的事比大家来得及试的多得多。</p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PS</div>
+      <div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · OpenClaw</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「这周会造成大麻烦的那个 PHP 漏洞，是用……GPT-5.6 Sol 找到的。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 11,229</span>
+      <a href="https://x.com/steipete/status/2112913060709228764" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Vercel 已经在防火墙层面主动挡住今天的 Node.js 远程代码执行漏洞，比官方补丁更早。所有部署的流量都自动受保护。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">另一条讲 PHP2Shell：「假设后面还有更多漏洞。练好『打补丁 → 重新部署』这个动作。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,449</span>
+      <a href="https://x.com/rauchg/status/2113050053724221732" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · CEO @Every</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Anthropic 刚发布了 Duet，一个一直在线的个人代理。这是我第一个愿意称为专业工具的个人代理。我们测了两周，我用 ChatGPT 和 Claude 的时间大约变成了一半一半。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 670</span>
+      <a href="https://x.com/danshipper/status/2112997559463506059" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「网络安全会是 AI 影响最深的领域之一。我们现在有了一支不知疲倦的队伍，可以去找、去修、也可以去攻击任何系统和软件。」</p>
+    <p style="font-size:12px;line-height:1.65;color:#666;margin-bottom:8px;">次日补充：即使工作越来越自动化，也需要更多人去指挥代理、审查结果、打补丁、处理事故。</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 418</span>
+      <a href="https://x.com/levie/status/2112964214818283917" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ℹ️ 本期内容基于媒体报道、安全公司和厂商公开说法整理。GPT-5.6 Sol 在发现漏洞中的作用来自 OpenAI 和 Wiz 的说法，各模型的具体贡献没有量化；PHP2Shell 是否被大范围利用，各方说法不一；Storm-0940 的归属来自微软；Claude Duet 目前没有独立评测；Flint 的跑分是厂商自报。Node.js 漏洞仅见于 Guillermo Rauch 的推文。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.theneuron.ai/news/php2shell-ai-bug-hunting-maintenance-challenge/" target="_blank"><span class="src-icon">LINK</span><span>PHP2Shell Exposes the Maintenance Challenge Behind AI Bug Hunting — The Neuron</span></a>
+  <a class="source-link" href="https://www.helpnetsecurity.com/2026/10/21/php2shell-php-vulnerabilities-patched-cve-2026-109618-cve-2026-109619/" target="_blank"><span class="src-icon">LINK</span><span>PHP2Shell: Critical PHP vulnerabilities patched — Help Net Security</span></a>
+  <a class="source-link" href="https://www.cnbc.com/2026/10/22/php2shell-vulnerability-what-is-it-and-is-your-data-at-risk.html" target="_blank"><span class="src-icon">LINK</span><span>&#x27;PHP2Shell&#x27; vulnerability: What is it, and is your data at risk? — CNBC</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/microsoft-ties-storm-0940-to-artex-driven-connectwise-hack" target="_blank"><span class="src-icon">LINK</span><span>Microsoft Ties Storm-0940 to ARTEX-Driven ConnectWise Hack — AI Weekly / The Hacker News</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/news/claude-duet-work-human-review/" target="_blank"><span class="src-icon">LINK</span><span>Claude Duet Can Prepare Your Work. How Much Will You Need to Check? — The Neuron</span></a>
+  <a class="source-link" href="https://aiweekly.co/ai-news-today/edition/2026-10-22" target="_blank"><span class="src-icon">LINK</span><span>Anthropic Opens Claude Duet to US Pro and Max — AI Weekly</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/" target="_blank"><span class="src-icon">LINK</span><span>While Amazon blocks AI agents, Walmart rolls out the welcome mat — TechCrunch</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/walmart-debuts-agent-gateway-mcp-server-and-agent-profiles-for-approved-ai" target="_blank"><span class="src-icon">LINK</span><span>Walmart Debuts Agent Gateway MCP Server and Agent Profiles — AI Weekly</span></a>
+  <a class="source-link" href="https://aiweekly.co/alerts/recursive-opens-flint-a-40b25b-moe-coder-hitting-897-on-swe-bench-pro-v2-under" target="_blank"><span class="src-icon">LINK</span><span>Recursive Opens Flint — AI Weekly / Hugging Face</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-october-22-2026/" target="_blank"><span class="src-icon">LINK</span><span>Everything That Happened in AI Today (Oct 22) — The Neuron</span></a>
+  <a class="source-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank"><span class="src-icon">LINK</span><span>How a Frontier Team Can Help Your Company Keep Up With AI — AI &amp; I by Every</span></a>
+  <a class="source-link" href="https://x.com/steipete/status/2112913060709228764" target="_blank"><span class="src-icon">X</span><span>Peter Steinberger · @steipete</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2113050053724221732" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/danshipper/status/2112997559463506059" target="_blank"><span class="src-icon">X</span><span>Dan Shipper · @danshipper</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2112964214818283917" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-10-23 · AI 星期五</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

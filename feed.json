@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-10-23",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "PHP2Shell：AI 帮忙找到的漏洞，全世界一起打补丁 · 微软：黑客组织用 AI 代理，三小时拿到云权限",
+    "html": "episodes/2026-10-23.html",
+    "mp3": "episodes/2026-10-23.mp3",
+    "headlines": [
+      "PHP2Shell：AI 帮忙找到的漏洞，全世界一起打补丁",
+      "微软：黑客组织用 AI 代理，三小时拿到云权限",
+      "Claude Duet：一个会主动找活的代理",
+      "沃尔玛给 AI 代理开门，亚马逊在关门",
+      "两条小消息"
+    ]
+  },
+  {
     "date": "2026-10-22",
     "dow": 4,
     "topic": "Health",

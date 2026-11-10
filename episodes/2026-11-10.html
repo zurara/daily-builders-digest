@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-10 · 机器人星期二">
+<meta property="og:description" content="英伟达 GR00T 2：五个示范微调后 50 个任务平均 95% · 中国叫停软银 54 亿美元收购 ABB 机器人 · Agility Robotics 纳斯达克上市 · Embodied AI AIR · A3 三季度订单 +24.8%">
+<title>Daily Builders Digest · 2026-11-10 · 机器人星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
+  <div class="header-title">ROBOTICS<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-10</span>
+    <span>🧭 机器人星期二</span>
+    <span>◇ 数据：人类视频、审查、财报</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>英伟达 · GR00T 2 · 5 个示范 · 50 任务平均 95%</span><span class="ticker-item"><span class="dot">●</span>GR00T 2 · 40 万小时人类视频</span><span class="ticker-item"><span class="dot">●</span>中国 · 叫停软银收购 ABB 机器人 · 约 54 亿美元</span><span class="ticker-item"><span class="dot">●</span>Agility Robotics · 纳斯达克 AGLT · 募资约 4.65 亿美元</span><span class="ticker-item"><span class="dot">●</span>Embodied AI · AIR · 线驱动双臂 · 无围栏</span><span class="ticker-item"><span class="dot">●</span>A3 · 北美 Q3 订单 10989 台 · +24.8%</span><span class="ticker-item"><span class="dot">●</span>协作机器人 · Q3 +56%</span><span class="ticker-item"><span class="dot">●</span>英伟达 · GR00T 2 · 5 个示范 · 50 任务平均 95%</span><span class="ticker-item"><span class="dot">●</span>GR00T 2 · 40 万小时人类视频</span><span class="ticker-item"><span class="dot">●</span>中国 · 叫停软银收购 ABB 机器人 · 约 54 亿美元</span><span class="ticker-item"><span class="dot">●</span>Agility Robotics · 纳斯达克 AGLT · 募资约 4.65 亿美元</span><span class="ticker-item"><span class="dot">●</span>Embodied AI · AIR · 线驱动双臂 · 无围栏</span><span class="ticker-item"><span class="dot">●</span>A3 · 北美 Q3 订单 10989 台 · +24.8%</span><span class="ticker-item"><span class="dot">●</span>协作机器人 · Q3 +56%</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 机器人星期二 · 数据：人类视频、审查、财报</span>
+  </div>
+  <audio controls src="2026-11-10.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 机器人数据</div>
+    <div class="feature-show-name">GR00T 2<br>ABB × 软银<br><span style="color:#dd1111">AGLT</span></div>
+    <div class="feature-ep-title">英伟达让机器人从人类视频里学新任务；<br>中国以数据安全为由叫停软银收购 ABB 机器人；Agility Robotics 上市</div>
+    <div class="feature-guest">NVIDIA · SoftBank · ABB · Agility Robotics · Embodied AI · A3 · 2026-11-04 / 11-10</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这几天的机器人新闻都跟<strong>数据</strong>有关：英伟达用 40 万小时人类视频训练 GR00T 2；中国担心机器人数据流到海外，叫停了一笔 54 亿美元的收购；Agility 上市后，人形机器人公司的出货和收入第一次要按季度公开。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">GR00T 2</span><span class="tag">X-Adapt</span><span class="tag">CoRL 2026</span><span class="tag">Unitree G1</span><span class="tag">SoftBank</span><span class="tag">ABB Robotics</span><span class="tag">Agility Digit</span><span class="tag">SPAC</span><span class="tag">Embodied AI AIR</span><span class="tag">A3</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">英伟达 · 11/9</div><div class="stat-value">5 个示范 + 30 分钟微调 → 95%</div></div>
+      <div class="stat-item"><div class="stat-label">软银 / ABB · 11/5</div><div class="stat-value">约 54 亿美元 · 中国禁止</div></div>
+      <div class="stat-item"><div class="stat-label">Agility · 11/5</div><div class="stat-value">估值约 25 亿 · 募资约 4.65 亿美元</div></div>
+      <div class="stat-item"><div class="stat-label">A3 · Q3</div><div class="stat-value">10989 台 · +24.8%</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期二，机器人日，早上好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天讲几条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三条主要的。第一，英伟达在 CoRL 上发布了 GR00T 2，机器人看人做几遍就能学会一件新任务。第二，中国叫停了软银收购 ABB 机器人业务，理由跟机器人数据有关。第三，Agility Robotics 在纳斯达克上市了，是第一家以人形机器人为主业的上市公司。后面还有两条短消息：一台瑞士的双臂机器人，和北美第三季度的机器人订单数字。最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · 英伟达 GR00T 2：五个示范，一个新任务</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 9 号，英伟达在奥斯汀的机器人学习会议 CoRL 上发布了 GR00T 2。它是一个机器人基础模型，英伟达叫它 world-action model，意思是同时预测接下来的画面和机器人该怎么动。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">同时预测画面，有什么用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">模型要先知道"我这么动，东西会变成什么样"，才能倒推出该怎么动。只学动作的模型，学到的是"在这个画面下手往哪走"，不太懂物体之间怎么互相作用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那具体效果呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">英伟达测了 50 个任务，这些任务在目标机器人上都没人演示过。什么都不教，直接做，平均成功率 40%。每个任务给五个示范，在一张 RTX 5090 上微调 30 分钟，平均成功率到 95%。每个任务需要的机器人数据不到三分钟。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">示范是谁做的？人还是机器人？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是重点。英伟达叫这个方法 X-Adapt，示范可以来自别的身体。有一个实验，只让人演示怎么在漏斗里垫滤纸、再用洗瓶把滤纸打湿，没有遥控过目标机器人。五指机器人手照着做，成功率 65%。另一个实验，用一个手持夹爪演示怎么拼一辆玩具翻斗车，换另一台机械臂去拼，成功率 60%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">训练数据有多少？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">40 万 2730 小时的第一视角人类视频，1 万多小时手持夹爪的演示，2 万 3500 小时机器人遥操作数据。人类视频是机器人数据的十几倍。英伟达说其中 10 万小时的人类视频数据集会公开。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">能在真的人形机器人上跑吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有一个小一点的版本叫 GR00T 2 Turbo，跑在宇树 G1 上，用机身里的 Jetson Thor，每次预测 124 毫秒。端爆米花的任务 48 次全部完成，清理桌面 93%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我注意到 95% 这个数，今天后面还会出现。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。要记住这些都是英伟达自己报的数字，任务是它选的。但方向很清楚：机器人数据贵，人类视频便宜。如果机器人能从人类视频里学，数据这个瓶颈会松很多。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://interestingengineering.com/ai-robotics/nvidia-groot-2-human-robot-skill-transfer" target="_blank">NVIDIA&#x27;s GR00T 2 transfers human skills to robots with just five task demonstrations — Interesting Engineering</a></span>
+</div>
+<div class="section-label">二 · 中国叫停软银收购 ABB 机器人</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。11 月 5 号，ABB 确认，软银通知它，中国的外商投资安全审查办公室禁止了软银在中国收购 ABB 机器人业务。这笔交易总价大约 54 亿美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">只禁止中国这一块？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。但中国是 ABB 机器人最大的市场，大约占三成。没有中国这块，整笔交易就很难按原样做下去。ABB 和软银说还在沟通，软银在评估能不能重新申请。欧盟今年 3 月已经无条件批准了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">理由是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道说，担心机器人数据流到海外，被拿去训练 AI 模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟第一条连上了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。一台工业机器人在工厂里每天都在产生数据：抓什么、怎么抓、哪里出错。以前这些数据没人当回事，现在大家都知道它能训练模型，它就成了要审查的东西。这是今年中国叫停的第二笔大交易，前一笔是让 Meta 退回对 AI 公司 Manus 的收购。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">软银那边损失大吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">软银把这笔收购当作它做物理 AI 的一大块。现在它得想别的办法。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division" target="_blank">China blocks SoftBank&#x27;s US$5.4 billion takeover of ABB&#x27;s robotics division — SCMP</a></span>
+  <span class="source-inline">📎 来源: <a href="https://supplychaindigital.com/news/china-blocks-softbanks-us-5-37bn-bid-for-abb-robotics" target="_blank">China blocks SoftBank&#x27;s US$5.37bn bid for ABB Robotics — Supply Chain Digital</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.automate.org/robotics/industry-insights/china-blocks-softbanks-planned-abb-robotics-acquisition" target="_blank">China blocks SoftBank&#x27;s planned ABB robotics acquisition — A3</a></span>
+</div>
+<div class="section-label">三 · Agility Robotics 上市</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。Agility Robotics 跟 SPAC 公司 Churchill Capital Corp XI 的合并 11 月 4 号完成，11 月 5 号在纳斯达克开始交易，代码 AGLT。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Agility 就是做 Digit 的那家？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，Digit 是双足人形机器人，主要用在仓库里搬箱子。今年 9 月刚发了 Digit 5。这次合并对 Agility 原有股权的估值大约 25 亿美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">拿到多少钱？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">毛收入 4 亿 6500 万美元左右。其中 SPAC 信托账户里大约 1 亿 6400 万，私募 2 亿多，还有之前已经到账的 1 亿。6 月宣布的时候预计是 6 亿 2000 万以上，少了大约 1 亿 5500 万。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么少了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">6 月那个数假设 SPAC 股东一个都不赎回，信托里 4 亿 2000 万全留下。实际上很多人选择了赎回，只留下 1 亿 6400 万。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">公司本身的收入呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">SEC 文件里写去年收入 180 万美元。Business Insider 报道去年净亏损 1 亿 3810 万美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">收入 180 万，估值 25 亿。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。买的人买的是以后。这件事的意义在于，人形机器人公司第一次要按季度公开财报了。以后出货多少台、每台多少钱、客户续不续约，大家都能看到。这对整个行业是一个参照。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.supplychain247.com/article/agility-robotics-debuts-on-nasdaq-after-raising-about-465-million/ifs" target="_blank">Agility Robotics Debuts on Nasdaq After Raising About $465 Million — Supply Chain 24/7</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.willkie.com/news/2026/11/churchill-capital-corp-xi-and-agility-robotics-complete-business-combination" target="_blank">Churchill Capital Corp XI and Agility Robotics Complete Business Combination — Willkie</a></span>
+</div>
+<div class="section-label">四 · 两条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，瑞士公司 Embodied AI 发布了一台叫 AIR 的机器人。它是 EPFL 分出来的团队，25 个人。AIR 是轮式底盘加躯干加两只手臂，没有腿。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有什么特别的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">手臂是线驱动的。电机都放在躯干里，用线把力传到手臂上，所以手臂很轻，一只大约 2 公斤，能举 5 公斤。碰到人或障碍物会让开。他们的目标是不用安全围栏，直接跟工人在一起干活。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">怎么学会干活？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先由人远程遥控它干几个班，这些操作变成训练数据，大约一个月后自己干。他们说在付费试点里平均任务成功率 95%，客户有一家消费电子厂和一家汽车零部件供应商。但没说测了多少任务、测了多久、95% 怎么算的。价格和交货时间也没公布。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">又是 95%。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，北美的机器人订单。行业协会 A3 公布，第三季度北美公司订购了 10989 台机器人，比去年同期多 24.8%，金额 7 亿 2350 万美元，多 26.1%。协作机器人涨了大约 56%，1831 台。增长最快的是半导体和电子行业，几乎翻倍；汽车零部件涨了 90%；汽车整车厂恢复增长，涨了 7.5%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">整年呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">前九个月 28984 台，涨 9.6%。A3 也提醒，原材料成本、贸易的不确定和大项目的时间点，都可能让后面的数字波动。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://interestingengineering.com/ai-robotics/wheeled-humanoid-robot-for-factory-tasks" target="_blank">New wheeled factory robot works alongside humans without safety cages — Interesting Engineering</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.therobotreport.com/north-american-robot-orders-climb-24-8-q3-2026-says-a3/" target="_blank">North American robot orders climb 24.8% in Q3 2026, says A3 — The Robot Report</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">建造者那边今天有什么跟机器人有关的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">昨天 Anthropic 发了 Claude Fable 5.2，所以大部分推文在讲新模型。跟机器人直接相关的一条是 Alex Albert 的，他在 Anthropic 做研究。他只写了一句：机器人也会被"苦涩的教训"拿下。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">苦涩的教训是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Rich Sutton 2019 年的一篇短文。意思是，长期看，靠堆计算和数据的通用方法，最后都会赢过人精心设计的方法。放到机器人上，就是别给每个任务手写规则，去攒大量数据、训大模型。GR00T 2 用 40 万小时人类视频，就是这个路子。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Aaron Levie，Box 的 CEO。他说编程和电脑操作上的进展，加上行业知识和推理，会让很多还没有"Claude Code 时刻"的行业也开始自动化。他列的行业里有制造、产品设计和机器人。他的意思是这些工作的需求没有上限，产出可以像软件一样涨上去。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 的 Thibault Sottiaux 说，他们的 Dots 现在除了默认给的那台云电脑，还能控制很多台别的机器。还有 Vercel 的 Guillermo Rauch，他提前测了新模型，说新一代模型能同时接很多并行的活，要用上它，得有云沙箱，一台电脑不够。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个模型指挥很多台机器。现在是电脑，以后可能是机器人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">播客今天选 Latent Space 新的一期，嘉宾是 Handshake AI 的 Garrett Lord 和团队，讲前沿实验室买什么样的数据。他们说三年前这是一个 10 亿美元的市场，现在 100 亿。标注的人从十美元一小时的大学生，变成了教授和博士。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟机器人有什么关系？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">里面有一句话：如果它 95% 是对的，那它就是 100% 错的，因为修一个有错的结果，花的时间跟从头做差不多，甚至更多。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那今天这几个 95% 就要重新看了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。在工厂里，每 20 次出错 1 次，就得有人在旁边守着。所以 95% 是一个起点。真正能替人干活，要到 99% 以上，还要看出错的时候会不会伤人、会不会弄坏东西。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天几条放一起看呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三条都绕着数据。英伟达想用人类视频补机器人数据；中国审查机器人数据会不会流出去；Agility 上市以后，它的出货和收入数据会公开。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">下次看到机器人公司说成功率 95%，可以问三个问题：测了多少个任务，测了多久，出错的时候发生了什么。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。明天产品日见。</div></div>
+</div>
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 08:31。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Latent Space · 2026-11-09</p>
+  <p class="pc-title">What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord &amp; Team</p>
+  <p class="pc-summary">Handshake AI 团队说，前沿实验室买的训练数据三年前是 10 亿美元的市场，现在是 100 亿；标注的人从十美元一小时的大学生变成了教授和博士。他们认为合成数据要么真实、要么难，很少既真实又难，所以仍要靠真人的工作流程。节目里有一句：「如果它 95% 是对的，那它就是 100% 错的」，因为修一个有错的结果，花的时间跟从头做差不多。</p>
+  <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Alex Albert</div>
+        <div class="builder-handle">@alexalbert__ · Research @ Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「顺便说一句，机器人也会被『苦涩的教训』拿下。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,790</span>
+      <a href="https://x.com/alexalbert__/status/2119869925288558799" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @ Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们在 Vercel 提前测了这个模型。很明显，新一代模型能接下前所未有的大量并行工作。要用上它，你需要云沙箱。模型能分派和调度的活，远超一台电脑能处理的。你的瓶颈现在是：一，你的野心；二，你的并行算力。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,907</span>
+      <a href="https://x.com/rauchg/status/2119878364794372162" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex &amp; ChatGPT @ OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Dots 现在除了我们默认提供的那台小云电脑，还能控制很多台别的机器。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,438</span>
+      <a href="https://x.com/thsottiaux/status/2120021043876106429" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「编程和电脑操作上的进展，加上行业知识和通用推理，能把自动化带到大量知识工作里。很多行业还没有它们的 Claude Code 或 Codex 时刻，但现在要来了：动画、影视制作、游戏、制造、建筑、产品设计、机器人等等。这些工作的需求没有天然的上限。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 227</span>
+      <a href="https://x.com/levie/status/2119987129204047894" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://interestingengineering.com/ai-robotics/nvidia-groot-2-human-robot-skill-transfer" target="_blank"><span class="src-icon">LINK</span><span>NVIDIA&#x27;s GR00T 2 transfers human skills to robots with just five task demonstrations — Interesting Engineering</span></a>
+  <a class="source-link" href="https://scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division" target="_blank"><span class="src-icon">LINK</span><span>China blocks SoftBank&#x27;s US$5.4 billion takeover of ABB&#x27;s robotics division — SCMP</span></a>
+  <a class="source-link" href="https://supplychaindigital.com/news/china-blocks-softbanks-us-5-37bn-bid-for-abb-robotics" target="_blank"><span class="src-icon">LINK</span><span>China blocks SoftBank&#x27;s US$5.37bn bid for ABB Robotics — Supply Chain Digital</span></a>
+  <a class="source-link" href="https://www.automate.org/robotics/industry-insights/china-blocks-softbanks-planned-abb-robotics-acquisition" target="_blank"><span class="src-icon">LINK</span><span>China blocks SoftBank&#x27;s planned ABB robotics acquisition — A3</span></a>
+  <a class="source-link" href="https://www.supplychain247.com/article/agility-robotics-debuts-on-nasdaq-after-raising-about-465-million/ifs" target="_blank"><span class="src-icon">LINK</span><span>Agility Robotics Debuts on Nasdaq After Raising About $465 Million — Supply Chain 24/7</span></a>
+  <a class="source-link" href="https://www.willkie.com/news/2026/11/churchill-capital-corp-xi-and-agility-robotics-complete-business-combination" target="_blank"><span class="src-icon">LINK</span><span>Churchill Capital Corp XI and Agility Robotics Complete Business Combination — Willkie</span></a>
+  <a class="source-link" href="https://interestingengineering.com/ai-robotics/wheeled-humanoid-robot-for-factory-tasks" target="_blank"><span class="src-icon">LINK</span><span>New wheeled factory robot works alongside humans without safety cages — Interesting Engineering</span></a>
+  <a class="source-link" href="https://www.therobotreport.com/north-american-robot-orders-climb-24-8-q3-2026-says-a3/" target="_blank"><span class="src-icon">LINK</span><span>North American robot orders climb 24.8% in Q3 2026, says A3 — The Robot Report</span></a>
+  <a class="source-link" href="https://x.com/alexalbert__/status/2119869925288558799" target="_blank"><span class="src-icon">X</span><span>Alex Albert · @alexalbert__</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2119878364794372162" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2120021043876106429" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux · @thsottiaux</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2119987129204047894" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://www.youtube.com/@LatentSpacePod" target="_blank"><span class="src-icon">LINK</span><span>What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Latent Space</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-10 · 机器人星期二</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-10",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "英伟达 GR00T 2：五个示范，一个新任务 · 中国叫停软银收购 ABB 机器人",
+    "html": "episodes/2026-11-10.html",
+    "mp3": "episodes/2026-11-10.mp3",
+    "headlines": [
+      "英伟达 GR00T 2：五个示范，一个新任务",
+      "中国叫停软银收购 ABB 机器人",
+      "Agility Robotics 上市",
+      "两条短消息"
+    ],
+    "theme": "数据：人类视频、审查、财报"
+  },
+  {
     "date": "2026-11-09",
     "dow": 1,
     "topic": "AI",
@@ -383,16 +399,5 @@
     "mp3": "episodes/2026-10-10.mp3",
     "headlines": [],
     "theme": "Apple: The First 50 Years"
-  },
-  {
-    "date": "2026-10-09",
-    "dow": 5,
-    "topic": "AI",
-    "format": "新闻快报",
-    "title": "2026-10-09 今日快报",
-    "html": "episodes/2026-10-09.html",
-    "mp3": "episodes/2026-10-09.mp3",
-    "headlines": [],
-    "theme": "回答变成界面，证明没人读懂"
   }
 ]

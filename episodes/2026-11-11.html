@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-10 · 机器人星期二">
+<meta property="og:description" content="英伟达 GR00T 2：五个示范微调后 50 个任务平均 95% · 中国叫停软银 54 亿美元收购 ABB 机器人 · Agility Robotics 纳斯达克上市 · Embodied AI AIR · A3 三季度订单 +24.8%">
+<title>Daily Builders Digest · 2026-11-11 · 产品星期三</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 产品星期三</div>
+  <div class="header-title">PRODUCT<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-11</span>
+    <span>🧭 产品星期三</span>
+    <span>◇ 额度也是产品</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Claude Fable 5.2 · 输出最快 +30% · API $8/$40</span><span class="ticker-item"><span class="dot">●</span>Fable 重置 · Pro 1 次 · Max/Ultra/Team Premium 最多 3 次</span><span class="ticker-item"><span class="dot">●</span>Fable · Pro 最多占每周额度 50%</span><span class="ticker-item"><span class="dot">●</span>Apple Intelligence · 每日上限 · 扩展用量将进 iCloud+</span><span class="ticker-item"><span class="dot">●</span>Logic Pro AI 助手 · 用量包 $49.99/年 · Gemini 提供</span><span class="ticker-item"><span class="dot">●</span>Ableton Live 13 公测 · 步进音序器 · ARA 2 · 无 AI</span><span class="ticker-item"><span class="dot">●</span>Pixel Drop · Create My Widget · Gemini 代打电话</span><span class="ticker-item"><span class="dot">●</span>Dots · 可控制多台机器</span><span class="ticker-item"><span class="dot">●</span>Meta Muse · 上 Apple Watch</span><span class="ticker-item"><span class="dot">●</span>Claude Fable 5.2 · 输出最快 +30% · API $8/$40</span><span class="ticker-item"><span class="dot">●</span>Fable 重置 · Pro 1 次 · Max/Ultra/Team Premium 最多 3 次</span><span class="ticker-item"><span class="dot">●</span>Fable · Pro 最多占每周额度 50%</span><span class="ticker-item"><span class="dot">●</span>Apple Intelligence · 每日上限 · 扩展用量将进 iCloud+</span><span class="ticker-item"><span class="dot">●</span>Logic Pro AI 助手 · 用量包 $49.99/年 · Gemini 提供</span><span class="ticker-item"><span class="dot">●</span>Ableton Live 13 公测 · 步进音序器 · ARA 2 · 无 AI</span><span class="ticker-item"><span class="dot">●</span>Pixel Drop · Create My Widget · Gemini 代打电话</span><span class="ticker-item"><span class="dot">●</span>Dots · 可控制多台机器</span><span class="ticker-item"><span class="dot">●</span>Meta Muse · 上 Apple Watch</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 产品星期三 · 额度也是产品</span>
+  </div>
+  <audio controls src="2026-11-11.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · AI 用量</div>
+    <div class="feature-show-name">FABLE 5.2<br>iCLOUD+<br><span style="color:#dd1111">LIVE 13</span></div>
+    <div class="feature-ep-title">Anthropic 按订阅时长发 Fable 重置；苹果把 AI 扩展用量放进 iCloud+；<br>Ableton Live 13 不加 AI；Pixel 按机型分发 AI 功能</div>
+    <div class="feature-guest">Anthropic · Apple · Ableton · Google · OpenAI · Meta · 2026-11-09 / 11-10</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      AI 功能每用一次都有成本，所以<strong>谁能用、能用多少、超了怎么办</strong>成了产品设计的一部分。这周四家给了四种做法：按订阅时长、按存储套餐、按手机型号，还有一家干脆不加。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Claude Fable 5.2</span><span class="tag">Mythos 5.2</span><span class="tag">Apple Intelligence</span><span class="tag">iCloud+</span><span class="tag">Logic Pro</span><span class="tag">Ableton Live 13</span><span class="tag">Create My Widget</span><span class="tag">Pixel Drop</span><span class="tag">ChatGPT Dots</span><span class="tag">Meta Muse</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Anthropic · 11/9</div><div class="stat-value">Fable 重置 1–3 次 · 按订阅时长</div></div>
+      <div class="stat-item"><div class="stat-label">Apple · 11/9</div><div class="stat-value">每日上限 · 扩展用量进 iCloud+</div></div>
+      <div class="stat-item"><div class="stat-label">Ableton · 11/10</div><div class="stat-value">Live 13 公测 · 0 个 AI 功能</div></div>
+      <div class="stat-item"><div class="stat-label">Google · 11/10</div><div class="stat-value">Pixel 10/11 · 生成式小组件</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">欢迎来到 Daily Builders Digest，今天是二〇二六年十一月十一号，星期三，产品日。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。上周我们聊的是默认值是谁定的。这周呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周四条，加两条短消息。第一条，Anthropic 发了 Claude Fable 5.2，订阅用户按订阅时间长短，多拿一到三次 Fable 额度重置。第二条，苹果再次提醒，Apple Intelligence 的一些功能有每日用量上限，以后加量要通过 iCloud+。Logic Pro 新的 AI 助手已经开始单独卖用量包。第三条，Ableton 发了 Live 13 公开测试版，里面一个 AI 功能都没有。第四条，谷歌十一月的 Pixel Drop，Create My Widget 上了手机，Gemini 可以替你打电话。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">前两条都是在讲「用多少」。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。我把这四条放一起，是因为 AI 功能有一个以前的软件功能没有的特点：每用一次都有成本。所以「谁能用、能用多少、超了怎么办」变成了产品设计的一部分，不只是定价页上的一行字。今天想看看各家是怎么处理的，还有一家选择干脆不加。</div></div>
+</div>
+<div class="section-label">01 · Fable 5.2：订阅越久，重置越多</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">十一月九号，Anthropic 发布了 Claude Fable 5.2 和 Claude Mythos 5.2。两个是同一个底层模型，Fable 是公开版，带网络安全和生物方面的防护；Mythos 没有这些限制，只通过 Anthropic 的生命科学和网络安全验证项目，以及企业版的 Claude Security 提供。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">模型本身变了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Anthropic 自己的说法：编码、推理、视觉都有提升，输出最多快 30%，中等 effort 下难任务比 5.1 用的 token 少。被安全防护误拦的情况比 5.1 少大约 55%。API 价格据 Yahoo Finance 报道是每百万输入 8 美元、输出 40 美元，比 5.1 的 10 美元和 50 美元便宜。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">但你今天想讲的不是模型。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，是额度。Pro 套餐和 Team 标准席位，Fable 最多占每周用量上限的 50%。发布这一周，付费用户额外拿到一到三次 Fable 重置，次数按订阅时长定。Claude Code 负责人 Boris Cherny 发推说：「我们想为跟我们最久的用户多做一点。所以 Fable 5.2 上，订阅越久，Fable 重置越多。」一万四千多赞。后面一条补充：Pro 用户一次，Max、Ultra 和 Team Premium 最多三次。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">按订阅时长给东西，这个做法不新。航空里程、会员等级都是这样。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不新，但放在 AI 额度上有一个区别。以前的会员福利大多是边际成本很低的东西，比如优先登机。AI 的重置是真金白银的算力。所以「重置」本身就是一种可以发放的货币。Anthropic 等于说：新模型发布这一周算力最紧，我把有限的额度优先给老用户。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">新用户会觉得不公平吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">可能会。但换个角度，这是在新模型发布时给老用户一个不退订的理由。今年夏天 Fable 5 的额度来回改了好几次，有用户很不满。这次把额度规则直接写进发布公告，至少说得清楚。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我记一个问题：额度变成会员福利以后，用户会不会开始计算「这次重置值不值得用」？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">会。这就是今天的主题。用户在用之前先算一下，这本身就是产品体验的一部分。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.macrumors.com/2026/11/09/anthropic-launches-claude-fable-5-2/" target="_blank">Anthropic Launches Claude Fable 5.2 and Mythos 5.2 — MacRumors</a></span>
+  <span class="source-inline">📎 来源: <a href="https://x.com/bcherny/status/2119873095129550880" target="_blank">Boris Cherny on X</a></span>
+</div>
+<div class="section-label">02 · 苹果：每日上限，以后用 iCloud+ 加量</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。十一月九号 MacRumors 整理了一件事：苹果在过去几个月的新闻稿里反复写一句话，依赖服务器端 Private Cloud Compute 的 Apple Intelligence 功能有每日用量上限，扩展用量「将来会收费提供」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">哪些功能？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Siri AI、Image Playground、照片 app 里的扩展和重新构图、快捷指令里用自然语言创建的指令，等等。苹果说上限会因功能、请求复杂度、系统负载、系统策略等因素变化。具体价格和时间都没给，但确认了一点：扩展用量会放进「大部分」iCloud+ 套餐，不单独收费。MacRumors 推测，每月 0.99 美元的 50GB 档可能不包括。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 Logic Pro 是怎么回事？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">上周苹果给 Mac 版 Logic Pro 加了一个 AI 助手，可以帮你开始一首新歌、用一句话设置人声轨道、调整正在做的工程。这个助手有每月上限，Apple Creator Studio 订阅用户可以买扩展用量包，美国价格 49.99 美元，有效期一年。苹果的支持文档写着，这个助手「由 Google Gemini 提供」，所以不算 Apple Intelligence，iCloud+ 的扩展用量也不包括它。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以同一台 Mac 上，有两套额度。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">至少两套。Apple Intelligence 的额度走 iCloud+，Logic 助手的额度走 Creator Studio 加用量包。用户看到的都是「AI 功能」，后面是两个供应商、两种计费。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">苹果以前很少这样。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。苹果的传统是买了设备，系统功能就是你的。现在服务器端 AI 打破了这个习惯，因为每次请求都要花苹果的钱。我觉得值得注意的是苹果选的放法：不做单独的「AI 订阅」，而是塞进 iCloud+。用户感知上是「我的存储套餐变得更值了」，而不是「又多了一个订阅」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">但「上限会根据系统策略变化」这句话，用户没法预期。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。这是今天四条里说得最模糊的一条。Anthropic 至少给了数字：50%、一到三次。苹果目前只说了「有上限」。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.macrumors.com/2026/11/09/apple-intelligence-extra-usage-fees-planned/" target="_blank">Apple Continues to Say Some AI Features Will Have Fees for Extra Usage — MacRumors</a></span>
+</div>
+<div class="section-label">03 · Ableton Live 13：没有 AI</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，反过来的例子。十一月十号，Ableton 发布了 Live 13 公开测试版。MusicRadar 的标题副句写得很直接：「没有任何 AI。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那它加了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">最大的是步进音序器。以前在 Live 里写 MIDI 只能用钢琴卷帘，现在可以用经典的一格一格的步进方式，每条轨道可以有自己的步数、速度、方向和摇摆，能做出多节奏叠加。还有一个鼓合成器，25 个预设，覆盖 808、909 这些经典鼓机音色。然后是 ARA 2 支持，用户等了很久，意思是 Melodyne 这类插件可以直接在时间线上改音频，不用先录进插件再导出来。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有没有哪个功能让你觉得设计得好？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有一个叫 Capture Automation。你拧了几个旋钮，觉得声音不错，但忘了按录音。按一下 Capture，刚才的操作就变成可以编辑的自动化曲线。它在后台一直记，你事后决定要不要。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个思路跟 AI 无关，但解决的是同一类问题：减少「想到了但没记下来」的损失。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。MusicRadar 的评价是：在大部分音频软件忙着塞用户没要求的 AI 功能的时候，Ableton 不跟，Live 13 因此更好。差不多同时，苹果的 Logic Pro 加了 AI 助手；Suno 的 Studio 2.0 也加了能控制工程的聊天机器人。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我不太想把它说成「AI 好还是不好」。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我也不想。我想说的是成本结构。Ableton 加的每个功能，用户用一万次，Ableton 的成本是零。所以它不需要额度、不需要用量包、不需要跟哪家模型公司分账。这在今天变成了一种可以拿来说的产品特点。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「没有额度」本身成了卖点。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">至少对 Ableton 的用户是。做音乐的人很在意「我的工具是我的」，不想做到一半提示用量不足。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.musicradar.com/music-tech/ableton-live-13-is-here-everything-you-need-to-know-about-lives-latest-update" target="_blank">Ableton Live 13 is here — MusicRadar</a></span>
+</div>
+<div class="section-label">04 · Pixel Drop：生成式小组件，Gemini 替你打电话</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。十一月十号，谷歌开始推送十一月的 Pixel Drop，跟 Android 17 QPR2 一起。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">重点是哪些？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我挑三个。第一个是 Create My Widget，用自然语言生成主屏小组件，比如一个体育比分小组件，或者一个活动倒计时。这个功能五月在 Android Show 上宣布，先上了 Googlebooks，现在到 Pixel 11 和 Pixel 10。第二个是 Gemini app 自动化，Pixel 10 系列可以让 Gemini 帮你买菜、叫车、点外卖、订位。第三个是 Gemini 替你打电话，Pixel 10 以上、美国，用来改预订、让店家留货、问有没有库存。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">生成小组件，这个我挺好奇的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是一个很小的「生成式界面」的落地。以前小组件是开发者做好的，你只能选。现在你描述想要什么，系统现做一个。产品上的问题是：生成出来的东西谁维护？数据源断了、样式不对，用户找谁？9to5Google 的报道里没提这些，我们后面可以看实际用的反馈。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那这条跟今天的主题怎么接？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌的方式是按设备分。同一个 Pixel Drop，Rambler 和 Gemini 自动化只给 Pixel 10，Gemini Call Screen 只给 Pixel 11，Create My Widget 给 10 和 11，新图标样式给 Pixel 6a 以上。谷歌没有在用户面前放「额度」，它用的是机型。你买哪台手机，就决定了你能用哪些 AI。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以三种做法：Anthropic 按订阅时长发额度，苹果按 iCloud+ 套餐，谷歌按机型。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。再加 Ableton，第四种：不加，所以不用分。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://9to5google.com/2026/11/10/november-2026-pixel-feature-drop/" target="_blank">November 2026 Pixel Drop — 9to5Google</a></span>
+</div>
+<div class="section-label">05 · 两条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，OpenAI 的 Thibault Sottiaux 十一月十号发推：「Dots 现在除了我们默认提供的那台小云电脑，还可以控制很多台机器。」一千四百多赞。上周我们讲过 Dots 会自己选模型，现在它能动的机器也多了。OpenAI 帮助文档里写了，企业管理员可以控制谁能用 Dots、允许哪些电脑操作，企业版默认关闭。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">能控制的机器越多，管理员那边的开关就越重要。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，十一月九号，Meta 的 Muse app 加了 Apple Watch 支持，可以在手表上给 Muse 发消息、语音输入或者直接打电话，还有表盘组件。Muse 是 Meta 的个人 agent，也内置在 Instagram 和 Facebook 里。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenAI 有 Dots，Anthropic 有 Duet，Meta 有 Muse，现在主动型 agent 三家都有了，开始抢入口。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，手表是离人最近的入口之一。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://x.com/thsottiaux/status/2120021043876106429" target="_blank">Thibault Sottiaux on X</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.macrumors.com/2026/11/09/meta-muse-apple-watch/" target="_blank">Meta&#x27;s Muse AI Agent Comes to Apple Watch — MacRumors</a></span>
+</div>
+<div class="section-label">06 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后是关注建造者。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天挑四条。第一条是 Anthropic 的 Alex Albert，六千三百多赞：「每次有新模型，我都会在所有项目上跑同一个简单的提示：读完整个项目，找出所有坏掉的、不一致的、低效的、不再需要的东西。确定的直接修，其余的列出来给我看。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这条可以直接抄。而且「确定的修、不确定的列出来」这个分法很好。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，把判断权留给人。第二条是 Vercel 的 Guillermo Rauch，一千九百多赞。他们提前测了 Fable 5.2，说新一代模型能接下大量并行的工作，「要用好这种智能，你需要云端沙盒。模型能委派和编排的工作，远超一台电脑能承受的。你的瓶颈现在是两样：你的野心，和你的并行算力。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 Dots 能控制多台机器是同一个方向。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。第三条是 Box 的 Aaron Levie，两百多赞：「很多还没有经历过 Claude Code 或 Codex 时刻的行业，会迎来自主协作者。动画、影视制作、游戏、制造、建筑、产品设计、机器人。这些领域的工作需求没有天然上限。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">听到产品设计在里面，我们这期的听众应该会注意。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条是 Meta 的 AI 高级总监 Madhu Guru，六十多赞，赞不多但很适合产品日。他说：产品负责人可以做个练习，把你的产品生命周期画出来，从市场理解、设计、开发到上市。你会发现 PM 在某些阶段花的时间多，某些阶段少，交接多、损耗大。现在问自己：用 AI，PM 在每个阶段能深入多少？比如自己做原型、自己读代码看技术约束、自己跑数据分析。他强调这不是让 PM 替代别的角色，而是让 PM 在广度之外多一些深度。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个练习我想自己做一下。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">播客是 Latent Space 十一月九号那一期，嘉宾是 Handshake AI 的 Garrett Lord 和团队，标题是「前沿实验室买什么数据」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">讲了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">几个点。一是市场规模：他们说三年前这是十亿美元的市场，现在是一百亿，三年后很难想象不到一千亿。二是标注的人变了：二〇二二年做 RLHF，大学生时薪十美元就够；现在要投行、律师、医生这样的专业人士。他们说「标注」这个词已经不对了，现在是专家在「编写」数据：搭一个模拟的工作环境，写任务，然后最难的一步，定义什么叫做得好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">定义什么叫好，为什么最难？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为大部分知识工作没法简单验证对错，有程度之分。他们有一句话我记下来了：「如果它有百分之九十五是对的，那就是百分之百错的。」因为修一份有错的输出，花的时间不比从头做或者套模板少。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这句话对做产品的人也适用。用户不会给你九十五分，他们看到错就不用了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">Latent Space · What Frontier Labs Buy: A Data Deep Dive with Handshake AI</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的问题留给大家：如果你的产品里有 AI 功能，用户用到上限的那一刻，他看到的是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们下周三见。今天是十一月十一号，这里是每日快报。</div></div>
+</div>
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Latent Space · 2026-11-09</p>
+  <p class="pc-title">What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord &amp; Team</p>
+  <p class="pc-summary">Handshake AI 团队说，训练数据市场三年前约 10 亿美元，现在约 100 亿。做数据的人从大学生变成了投行、律师、医生这样的专业人士，工作也从「标注」变成「编写」：搭模拟工作环境、写任务、定义什么叫做得好。节目里有一句：「如果它 95% 是对的，那就是 100% 错的」，因为修一份有错的输出，花的时间不比从头做少。</p>
+  <a href="https://www.youtube.com/@LatentSpacePod" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Alex Albert</div>
+        <div class="builder-handle">@alexalbert__ · Research @ Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「每次有新模型，我都会在所有项目上跑同一个简单的提示：『读完整个项目，找出所有坏掉的、不一致的、低效的、不再需要的东西。确定的直接修，其余的列出来给我审。』强烈推荐试试。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 6,350</span>
+      <a href="https://x.com/alexalbert__/status/2119884951550386671" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @ Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们在 Vercel 提前测了这个模型。一句话总结：聪明得惊人。很明显，新一代模型能接下前所未有的大量并行工作。要用好这种智能，你需要云端沙盒，就这样。你的瓶颈现在是两样：你的野心，和你的并行算力。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,907</span>
+      <a href="https://x.com/rauchg/status/2119878364794372162" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「很多还没有经历 Claude Code 或 Codex 时刻的行业，会迎来自主协作者：动画、影视制作、游戏、制造、建筑、产品设计、机器人。这些工作的需求没有天然上限。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 227</span>
+      <a href="https://x.com/levie/status/2119987129204047894" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">MG</div>
+      <div>
+        <div class="builder-name">Madhu Guru</div>
+        <div class="builder-handle">@realmadhuguru · Sr Director, AI @ Meta</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「给产品负责人一个练习：把你的产品生命周期画出来，从市场理解、设计、开发到上市。PM 在某些阶段花的时间更多，整个过程交接多、损耗大。现在问自己：用 AI，PM 在每个阶段能深入多少？这不是让 PM 替代每个角色，而是在广度之外加上深度。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 61</span>
+      <a href="https://x.com/realmadhuguru/status/2119999748086362466" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.macrumors.com/2026/11/09/anthropic-launches-claude-fable-5-2/" target="_blank"><span class="src-icon">LINK</span><span>Anthropic Launches Claude Fable 5.2 and Mythos 5.2 — MacRumors</span></a>
+  <a class="source-link" href="https://x.com/bcherny/status/2119873095129550880" target="_blank"><span class="src-icon">X</span><span>Boris Cherny on X</span></a>
+  <a class="source-link" href="https://www.macrumors.com/2026/11/09/apple-intelligence-extra-usage-fees-planned/" target="_blank"><span class="src-icon">LINK</span><span>Apple Continues to Say Some AI Features Will Have Fees for Extra Usage — MacRumors</span></a>
+  <a class="source-link" href="https://www.musicradar.com/music-tech/ableton-live-13-is-here-everything-you-need-to-know-about-lives-latest-update" target="_blank"><span class="src-icon">LINK</span><span>Ableton Live 13 is here — MusicRadar</span></a>
+  <a class="source-link" href="https://9to5google.com/2026/11/10/november-2026-pixel-feature-drop/" target="_blank"><span class="src-icon">LINK</span><span>November 2026 Pixel Drop — 9to5Google</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2120021043876106429" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux on X</span></a>
+  <a class="source-link" href="https://www.macrumors.com/2026/11/09/meta-muse-apple-watch/" target="_blank"><span class="src-icon">LINK</span><span>Meta&#x27;s Muse AI Agent Comes to Apple Watch — MacRumors</span></a>
+  <a class="source-link" href="https://www.youtube.com/@LatentSpacePod" target="_blank"><span class="src-icon">LINK</span><span>Latent Space · What Frontier Labs Buy: A Data Deep Dive with Handshake AI</span></a>
+  <a class="source-link" href="https://x.com/alexalbert__/status/2119884951550386671" target="_blank"><span class="src-icon">X</span><span>Alex Albert · @alexalbert__</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2119878364794372162" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2119987129204047894" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/realmadhuguru/status/2119999748086362466" target="_blank"><span class="src-icon">X</span><span>Madhu Guru · @realmadhuguru</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-11 · 产品星期三</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

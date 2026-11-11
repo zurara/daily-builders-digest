@@ -1,5 +1,22 @@
 [
   {
+    "date": "2026-11-11",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "01 · Fable 5.2：订阅越久，重置越多 · 02 · 苹果：每日上限，以后用 iCloud+ 加量",
+    "html": "episodes/2026-11-11.html",
+    "mp3": "episodes/2026-11-11.mp3",
+    "headlines": [
+      "01 · Fable 5.2：订阅越久，重置越多",
+      "02 · 苹果：每日上限，以后用 iCloud+ 加量",
+      "03 · Ableton Live 13：没有 AI",
+      "04 · Pixel Drop：生成式小组件，Gemini 替你打电话",
+      "05 · 两条短消息"
+    ],
+    "theme": "额度也是产品"
+  },
+  {
     "date": "2026-11-10",
     "dow": 2,
     "topic": "Robotics",
@@ -388,16 +405,5 @@
     "mp3": "episodes/2026-10-11.mp3",
     "headlines": [],
     "theme": "你买一个 token，是在租一整套东西"
-  },
-  {
-    "date": "2026-10-10",
-    "dow": 6,
-    "topic": "Books",
-    "format": "新闻快报",
-    "title": "2026-10-10 今日快报",
-    "html": "episodes/2026-10-10.html",
-    "mp3": "episodes/2026-10-10.mp3",
-    "headlines": [],
-    "theme": "Apple: The First 50 Years"
   }
 ]

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-12 · Health 星期四">
+<meta property="og:description" content="数字之外：Attia 讲验血只能看到约四分之一 · Mozaffarian 讲饱和脂肪、红肉和种子油 · Anna Lembke 讲成瘾和控制欲">
+<title>Daily Builders Digest · 2026-11-12 · Health 星期四</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · Health 星期四</div>
+  <div class="header-title">HEALTH<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-12</span>
+    <span>🧭 Health 星期四</span>
+    <span>◇ 数字之外</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>The Drive AMA #91 · 最全面的血检也只给你约 25%–30% 的信息</span>
+    <span class="ticker-item"><span class="dot">●</span>没有指标标红 ≠ 健康</span>
+    <span class="ticker-item"><span class="dot">●</span>脂蛋白亚组、生物年龄评分、睡眠评分：测了不知道怎么办</span>
+    <span class="ticker-item"><span class="dot">●</span>看趋势，不看单次</span>
+    <span class="ticker-item"><span class="dot">●</span>Mozaffarian：同样的乳脂，黄油比奶酪更升 LDL</span>
+    <span class="ticker-item"><span class="dot">●</span>一周一到两份未加工红肉可以；加工肉排最后</span>
+    <span class="ticker-item"><span class="dot">●</span>种子油：做饭用菜籽油、大豆油没问题</span>
+    <span class="ticker-item"><span class="dot">●</span>标签法：每 10 克碳水至少 1 克纤维</span>
+    <span class="ticker-item"><span class="dot">●</span>Anna Lembke：对控制的成瘾</span>
+    <span class="ticker-item"><span class="dot">●</span>戒断 10–14 天最难，三四周后约 80% 明显好转</span>
+    <span class="ticker-item"><span class="dot">●</span>做下一件对的事</span>
+    <span class="ticker-item"><span class="dot">●</span>The Drive AMA #91 · 最全面的血检也只给你约 25%–30% 的信息</span>
+    <span class="ticker-item"><span class="dot">●</span>没有指标标红 ≠ 健康</span>
+    <span class="ticker-item"><span class="dot">●</span>脂蛋白亚组、生物年龄评分、睡眠评分：测了不知道怎么办</span>
+    <span class="ticker-item"><span class="dot">●</span>看趋势，不看单次</span>
+    <span class="ticker-item"><span class="dot">●</span>Mozaffarian：同样的乳脂，黄油比奶酪更升 LDL</span>
+    <span class="ticker-item"><span class="dot">●</span>一周一到两份未加工红肉可以；加工肉排最后</span>
+    <span class="ticker-item"><span class="dot">●</span>种子油：做饭用菜籽油、大豆油没问题</span>
+    <span class="ticker-item"><span class="dot">●</span>标签法：每 10 克碳水至少 1 克纤维</span>
+    <span class="ticker-item"><span class="dot">●</span>Anna Lembke：对控制的成瘾</span>
+    <span class="ticker-item"><span class="dot">●</span>戒断 10–14 天最难，三四周后约 80% 明显好转</span>
+    <span class="ticker-item"><span class="dot">●</span>做下一件对的事</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· Health 星期四 · 数字之外</span>
+  </div>
+  <audio controls src="2026-11-12.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 验血、脂肪与控制欲</div>
+    <div class="feature-show-name">BEYOND<br>THE<br><span style="color:#dd1111">NUMBERS</span></div>
+    <div class="feature-ep-title">化验单只是四分之一，<br>标签上的克数也不是全部</div>
+    <div class="feature-guest">The Peter Attia Drive · FoundMyFitness · Huberman Lab · 2026-11-09 / 11-10</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Peter Attia 说，<strong>最全面的血检也只能给出约 25%–30% 的信息</strong>，身体功能、认知和情绪都测不出来；不能指导决定的精细检测意义有限。Dariush Mozaffarian 说只看饱和脂肪克数会漏掉「食物基质」：同样的乳脂，黄油比奶酪更升 LDL；加工肉风险高于未加工红肉；用种子油做饭没问题。Anna Lembke 讲成瘾的「四个 C」和对控制的成瘾，工具是「做下一件对的事」。女性健康：三期都没专门讲，补充两点。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">血检</span><span class="tag">参考范围</span><span class="tag">纵向数据</span><span class="tag">生物年龄</span><span class="tag">食物基质</span><span class="tag">乳制品</span><span class="tag">加工肉</span><span class="tag">种子油</span><span class="tag">超加工食品</span><span class="tag">膳食纤维</span><span class="tag">成瘾</span><span class="tag">共依赖</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">The Peter Attia Drive #415 · AMA #91 · 11/09</div>
+        <div class="stat-value">Peter Attia 单人问答 · 验血能/不能告诉你什么 · 四大慢病的血检盲点 · 直销检测套餐 · 缺乏可操作性的检测 · 评估任何检测的框架（会员内容，公开的是简介、目录和笔记预览）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">FoundMyFitness #116 · 11/10</div>
+        <div class="stat-value">Dariush Mozaffarian（塔夫茨大学「食物即医疗」研究所主任）· 乳制品与食物基质 · 红肉与加工肉 · 种子油 · 超加工食品 · 10:1 纤维法 · 肥胖与基础代谢 · 新版美国膳食指南（免费完整节目）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Huberman Lab · 11/09</div>
+        <div class="stat-value">Anna Lembke（斯坦福成瘾医学双重诊断门诊主任，新书《彻底放手》）· 四个 C · 快乐-痛苦天平 · 30 天停用实验 · 对控制的成瘾 · 共依赖 · GLP-1 与酒精（文字稿为会员内容）</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">健康星期四，早上好。今天三期节目，我发现它们讲的是同一件事：我们太相信一个数字了。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">什么数字？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一个是体检报告。Peter Attia 这周说，<strong>就算是最全面的血检，也只能给你大约 25% 到 30% 的信息</strong>。第二个是食品标签上的「饱和脂肪多少克」。Rhonda Patrick 请了营养学家 Dariush Mozaffarian，他说同样克数的饱和脂肪，放在黄油里和放在奶酪里，对胆固醇的影响不一样。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三个呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三个不是数字，是一种想法：什么都要自己控制。Huberman 请了斯坦福的成瘾医学专家 Anna Lembke，她说现在最常见的成瘾，是对控制的成瘾。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">女性健康这周有吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三期都没有专门讲。第四节我会补两点，说清楚哪些是节目里的，哪些是我们加的。</div></div>
+  <div class="section-label">一 · The Drive AMA #91：验血能告诉你什么，不能告诉你什么</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The Peter Attia Drive 第 415 期，也是会员问答 AMA 第 91 期，11 月 9 号上线。这一期没有嘉宾，Attia 自己讲一个问题：验血到底能告诉你什么。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我每年体检，所有指标都在正常范围，没有一个箭头。我就觉得自己挺健康的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Attia 说的就是你这种想法。他说病人拿到化验单，心里想的问题其实是：「我健康吗？」化验结果是客观的数字，有参考范围，所以感觉很完整。没有指标标红，就像汽车的故障灯没亮，大家就觉得一切正常。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那他的回答呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他的原话是：<strong>化验结果大概能显示我们想了解的 25%。这 25% 很重要，但要真正搞清楚风险，还有很多工作要做。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">剩下的 75% 在哪儿？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目目录里分了几块。心血管病：血检有用，但也有盲点。代谢健康：除了血检，还要看身体成分、生活习惯和功能测试。癌症：血检和基因检测能看到一部分。神经退行性疾病，比如阿尔茨海默：要看基因、心血管和代谢指标，还有一些新出现的血液标志物。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那运动能力、脑子好不好使，这些血检测不出来吧？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这是专门一节：<strong>化验对身体功能、认知功能和情绪健康，能说明的很少。</strong> 而 Attia 一直说，这几样是「健康寿命」的核心。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">现在有很多直接卖给个人的检测套餐，一次测一百多项。这期怎么说？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他专门讲了怎么评估这种大套餐，还点名了几个他觉得「很精细，但测了也不知道该怎么办」的项目：<strong>脂蛋白亚组分析、生物年龄评分、睡眠评分。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">生物年龄上周 Rhonda 那期也讲过。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，两期可以连起来听。Attia 的标准很简单：一个检测结果出来，你能不能据此做出不同的决定？如果不能，测得再精细，意义也有限。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有别的重点吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还有一个：<strong>看趋势，不要只看一次的结果。</strong> 同一个指标，连续几年的变化，比某一次是否落在参考范围里更有用。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这期是会员内容吧？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。公开的是简介、章节目录和开头一段笔记，后面的细节我们没看到，就不替他补了。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://peterattiamd.com/ama91/" target="_blank" style="color:var(--red);text-decoration:none;">📎 #415 ‒ AMA #91: Understanding lab testing: what blood work can and cannot tell you about your health and disease risk — The Peter Attia Drive, 2026-11-09</a></span></div>
+  <div class="section-label">二 · FoundMyFitness：Dariush Mozaffarian 讲饱和脂肪、红肉和种子油</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二期，FoundMyFitness，11 月 10 号上线，免费的完整访谈。嘉宾 Dariush Mozaffarian，心内科医生、营养学家，塔夫茨大学「食物即医疗」研究所的主任。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">题目是「饱和脂肪、红肉和种子油：炒作和数据」。这三个话题现在吵得最凶。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。他的核心观点是：<strong>只看一种营养素的克数，会漏掉很多东西。</strong> 他用了一个词，叫「食物基质」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">什么意思？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">就是食物的物理结构，以及营养素周围的蛋白质、矿物质和其他成分。拿乳制品举例：牛奶里的脂肪是一颗颗小油滴，外面包着一层膜。做奶油的时候，这层膜大部分保留下来；做黄油的时候，搅拌会把这层膜大部分分到酪乳里去。做奶酪，脂肪被锁在蛋白质和钙的结构里。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对照喂养研究里，<strong>同样多的乳脂，黄油让低密度脂蛋白胆固醇升得比奶酪多。</strong> 奶油的升幅，也比几乎去掉了那层膜的无水黄油小很多。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那我们是不是该改吃全脂乳制品？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目笔记的结论很克制：证据让我们不必一概怀疑乳脂，但也没有证明全脂一定比低脂好。比较清楚的一点是，<strong>酸奶和较低的二型糖尿病风险有关联。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">红肉呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他有一个排序。最上面是少加工的植物性食物：坚果、豆类、水果、蔬菜。动物性食物里，发酵乳制品排在前面，尤其是酸奶；然后是鸡蛋、禽肉、黄油；再往下是没加工的红肉；最底下是加工肉，比如培根、香肠、火腿。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">加工肉为什么最差？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">在他的研究里，加工肉跟冠心病和糖尿病的关联更强。两项美国长期队列里，<strong>每天多吃一份加工红肉，结直肠癌的相对风险高 15%</strong>，没加工的红肉，结果不那么一致。他的实际建议是：整体饮食健康的话，<strong>一周一到两份没加工的红肉，没问题。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">烤肉呢？我很爱吃烤得焦一点的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他特别提醒，高温煎烤会产生杂环胺，会损伤 DNA。他担心的是经常吃烤焦、烤黑的肉。有一个小研究，吃高温烹调的肉的同时，加上西兰花这类十字花科蔬菜和酸奶，两周后结直肠细胞的 DNA 损伤大约少了一半。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">种子油呢？网上很多人说种子油致炎。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他不同意。他说人体研究里，用富含 omega-6 的植物油替换饱和脂肪，肝脏脂肪还改善了，并没有出现预想的炎症上升。他的原话是：<strong>如果你因为口味或者价格，喜欢用菜籽油或者大豆油做饭，完全没问题。</strong> 他也提醒，零食里有种子油，不能说明那包零食哪里不健康，问题可能在别的地方。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有超加工食品。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。有一个实验，同样的营养设计，吃超加工饮食的人，<strong>每天大约多吃 500 大卡</strong>，自己并没有觉得在多吃。他还给了一个看标签的方法，我觉得特别实用：<strong>每 10 克碳水，至少要有 1 克膳食纤维。</strong> 他们查了两千多种美国食品，只有 23% 达标。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后讲肥胖，有什么新东西？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有一个我没想到的数据。美国和欧洲三十年里，人们运动消耗的能量其实增加了，但每天总消耗反而下降了：<strong>男性少了大约 220 大卡，女性少了大约 120 大卡</strong>，下降来自基础代谢，也就是身体静止时的消耗。原因还不清楚，他提到可能跟产热、肠道菌群有关，但这还是早期科学。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.foundmyfitness.com/episodes/dariush-mozaffarian" target="_blank" style="color:var(--red);text-decoration:none;">📎 The Hype vs. Data on Saturated Fat, Red Meat, &amp; Seed Oils | Dr. Dariush Mozaffarian — FoundMyFitness, 2026-11-10</a></span></div>
+  <div class="section-label">三 · Huberman Lab：Anna Lembke，成瘾和「控制欲」</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三期，Huberman Lab，11 月 9 号，嘉宾 Anna Lembke，斯坦福成瘾医学双重诊断门诊的主任，写过《多巴胺国度》。她新书《彻底放手》（Radical Surrender）11 月 10 号出版。我们看的是官网简介和第三方整理的章节笔记，文字稿是会员内容。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先说基本的：什么时候一个习惯算成瘾？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她用「四个 C」：失控地用，强迫地用，渴求，明知有坏处还继续用。另外，耐受和戒断也算：需要越来越多才有同样的感觉，停下来就难受。她说她们青少年门诊的转诊，<strong>现在大约一半跟数字媒体成瘾有关。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一半，这个数字很高。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她解释机制用的是「快乐和痛苦的天平」。一件快乐的事让天平往一边倾，大脑会往反方向压回来。反复大量使用以后，<strong>你需要它，已经不是为了开心，而是为了感觉正常。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">戒的话要多久？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她给了一个大概的时间线：前 10 到 14 天是急性戒断期，会觉得永远好不了。到第三、第四周，<strong>大约 80% 的人说感觉明显好了。</strong> 所以她常用的办法是让病人先停 30 天，当成一个实验，而不是要求他想象一辈子不碰。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那「对控制成瘾」是什么意思？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她说重度成瘾的人，其实是在用一种东西控制自己的感受：做这一件事，状态就变了。她把这个和一种更普遍的压力连起来：睡眠、外貌、事业、关系，什么都要优化。<strong>如果你相信每个结果都应该由你来设计，那犯一个错，就像证明你整个人生失败了。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以她让人放弃控制？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她说得很小心。想要控制本身不是坏事，计划、减少不确定性，能让我们正常生活。问题是把这种力气用在不可能确定的事情上。<strong>她不是让人放弃责任，是让人别把每一个让人难受的未知，都当成必须解决的问题。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这里面有个人经历吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有。她的儿子因为白血病去世。之后她读了很多论文，做了很多小时的心理治疗，还是想不通。她告诉丈夫应该怎么悲伤，还想马上再要一个孩子。最后她走到一句话：「我控制不了。」之后她不再试图安排一切，只是去面对每一天。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那普通人能做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她的建议都很具体。一个是「做下一件对的事」。她举的例子很普通：你不知道未来会怎样，但你可以先把垃圾倒了。另外几条：<strong>每天有一段时间离开屏幕；出门不带手机；跟人聊天，不预设聊到哪里；做一件你不擅长的事，哪怕永远做不好。</strong> Huberman 补了一句：做一件你不打算发到网上的事。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">她自己呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她早上做完运动、吃完早饭、收拾好之前，不看屏幕。白天她会留意自己用手机，是当工具、当娱乐，还是为了改变心情。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还提到「共依赖」？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。共依赖的意思是：<strong>用另一个人的行为来管理自己的情绪。</strong> 比如家人今天没喝酒，你就觉得还好；他喝了，你就很糟糕。她说放下控制不等于不关心，而是承认关心并不让你有权力管理别人的生活。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后还有什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两点。一是她说有些重度酒精成瘾、别的治疗都没用的病人，用了 GLP-1 类药物以后有改善，说喝酒没那么有意思了。这是她的临床观察，不是定论。二是节目里讲了不少宗教和祈祷，她也说清楚：不是每个人都需要宗教信仰才能康复，这是她个人的临床和哲学看法。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.hubermanlab.com/episode/overcome-addictions-and-obsessions-of-all-kinds-anna-lembke" target="_blank" style="color:var(--red);text-decoration:none;">📎 Overcome Addictions &amp; Obsessions of All Kinds | Dr. Anna Lembke — Huberman Lab, 2026-11-09</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://podcastnotes.org/huberman-lab/dr-anna-lembke-overcome-addictions-and-obsessions-of-all-kinds-huberman-lab/" target="_blank" style="color:var(--red);text-decoration:none;">📎 Podcast Notes · Dr. Anna Lembke: Overcome Addictions and Obsessions of All Kinds</a></span></div>
+  <div class="section-label">四 · 女性健康：两点补充</div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">女性这块，你说是补充的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一半是节目里的，一半是我们加的，我分开说。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一点来自节目。Mozaffarian 那期引用的数据：三十年里每天的总能量消耗，男性降了大约 220 大卡，<strong>女性降了大约 120 大卡。</strong> 原因还不清楚。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二点是我们的补充，接 Attia 那期。他在节目开头提到，每年做乳腺 X 光检查的女性，会把它当作常规体检的一部分，但它属于影像检查，不在化验单上。顺着他的思路，<strong>乳腺筛查、宫颈癌筛查、骨密度检查，都不在血检里。</strong> 血检全部正常，不代表这些可以跳过。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">该什么时候查呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">各个国家的指南不一样，跟年龄、家族史有关，具体请问你的医生。</div></div>
+  <div class="section-label">五 · 关注建造者</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">建造者这边，这两天大家主要在聊新模型和工具。跟今天话题接得上的，我挑了三条。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第一条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Peter Yang，做 AI 教程和访谈的。他说他不太在乎股价，<strong>但如果 Anthropic 能加快治愈那些可怕的疾病，它会成为历史上影响最大的公司之一。</strong> 他很高兴 Dario 专注在这件事上，而不是去做爆款短视频。四百多个赞。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Aditya Agarwal，South Park Commons 的合伙人。他引用了一条帖子，说「非常同意」，然后补了一句：<strong>我最成功的朋友，爱好也最投入。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Lembke 说的「做一件你不擅长的事」有点像。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是的。爱好不一定要做出成绩，也不一定要发出来。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Ryo Lu，设计过 Cursor、Notion 和 Stripe。他说：<strong>和别人一起工作才是有意思的地方，而不是每个人各自带着一支 agent 大军，各干各的。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这也接上 Lembke 了：跟人聊天，不预设聊到哪里。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://x.com/petergyang/status/2120320377163501817" target="_blank" style="color:var(--red);text-decoration:none;">📎 Peter Yang on X</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://x.com/adityaag/status/2120249412685607254" target="_blank" style="color:var(--red);text-decoration:none;">📎 Aditya Agarwal on X</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://x.com/ryolu_/status/2120337691661443081" target="_blank" style="color:var(--red);text-decoration:none;">📎 Ryo Lu on X</a></span></div>
+</div>
+<div class="diary-box">
+  <div class="diary-label">◈ 六 · 今日健康行动</div>
+  <div class="diary-title">看一眼标签：每 10 克碳水，至少 1 克纤维</div>
+  <div class="diary-sub">2026-11-12 · Health 星期四</div>
+  <div class="diary-cols">
+    <span class="diary-col hl">碳水 ÷ 10 ≤ 纤维</span>
+    <span class="diary-col">30 克碳水要 3 克纤维</span>
+    <span class="diary-col">明早收拾好前不看手机</span>
+  </div>
+  <div class="diary-note">
+    <strong>大雨：</strong>今天的行动来自 Mozaffarian：<strong>今天买或者吃一样包装好的主食、麦片或者面包时，看一下标签：碳水除以 10，膳食纤维有没有达到这个数。</strong> 比如 30 克碳水，至少要有 3 克纤维。<br><br><strong>小苇：</strong>如果手边没有包装食品呢？<br><br><strong>大雨：</strong>那就做 Lembke 那个：明天早上，运动、吃早饭、收拾好之前，先不看手机。<br><br><strong>小苇：</strong>好，今天就到这里。<br><br><strong>大雨：</strong>健康星期四，我们下周见。<br><br>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 今日五条要点</div>
+  <div class="insight-title">TEST · FOOD · CONTROL</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>Peter Attia：最全面的化验也只给出约 25%–30% 的信息；没有指标标红不等于健康，看趋势比看单次结果有用。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Attia：脂蛋白亚组、生物年龄评分、睡眠评分这类检测，如果结果不能改变决定，意义有限。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>Mozaffarian：同样的乳脂，黄油比奶酪更升 LDL；加工肉风险最高，整体饮食健康时一周一到两份未加工红肉可以；种子油做饭没问题。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>Anna Lembke：戒断前 10–14 天最难，三四周后约 80% 的人明显好转；对控制成瘾的出路是「做下一件对的事」。</span></div>
+  <div class="insight-item"><span class="insight-num">05</span><span>女性：三十年间女性每日总能量消耗降了约 120 大卡（节目数据）；乳腺、宫颈癌筛查和骨密度都不在血检里（本节目补充）。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08，本期信号来自 15 位建造者的 32 条推文；播客源本期只有一期 AI 播客（Latent Space），与健康无关，播客卡改用 WebSearch 找到的 FoundMyFitness 最新一期。跟健康直接相关的推文很少，挑了三条。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">FoundMyFitness · 2026-11-10</p>
+  <p class="pc-title">The Hype vs. Data on Saturated Fat, Red Meat, &amp; Seed Oils | Dr. Dariush Mozaffarian</p>
+  <p class="pc-summary">塔夫茨大学「食物即医疗」研究所主任 Mozaffarian 认为只看饱和脂肪克数会漏掉食物结构：同样的乳脂，黄油比奶酪更升低密度脂蛋白胆固醇。他把加工肉排在最后，认为用种子油做饭没问题，并给出一个看标签的办法：每 10 克碳水至少有 1 克膳食纤维。</p>
+  <a href="https://www.foundmyfitness.com/episodes/dariush-mozaffarian" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI 教程与访谈</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我不太在乎股价，但如果 Anthropic 能加快治愈这些可怕的疾病，它会成为历史上影响最大的公司之一。我很高兴 Dario 专注在这件事上，而不是去赢爆款短视频和 TikTok 梗。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 437</span>
+      <a href="https://x.com/petergyang/status/2120320377163501817" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">RL</div>
+      <div>
+        <div class="builder-name">Ryo Lu</div>
+        <div class="builder-handle">@ryolu_ · 设计过 Cursor、Notion、Stripe</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「和其他人一起工作，才是有意思的地方，而不是每个人各自带着一支 agent 大军，各干各的。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 314</span>
+      <a href="https://x.com/ryolu_/status/2120337691661443081" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Aditya Agarwal</div>
+        <div class="builder-handle">@adityaag · General Partner @SPC</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「非常同意。我最成功的朋友，爱好也最投入。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 190</span>
+      <a href="https://x.com/adityaag/status/2120249412685607254" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本期内容基于各播客公开的节目页面、章节目录和笔记整理，属于科普性质的转述与讨论，<strong>不构成任何医疗建议、诊断或治疗方案</strong>。The Drive AMA #91 为会员内容，本文只使用公开简介、章节目录和笔记预览；FoundMyFitness 本期为免费节目，本文依据官网节目笔记；Huberman Lab 文字稿为会员内容，本文使用官网简介和 Podcast Notes 的第三方章节笔记。第四节第二点（乳腺、宫颈癌筛查和骨密度）是本节目的补充，不是嘉宾原话。如有成瘾问题，请寻求专业帮助；筛查时间请咨询医生。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://peterattiamd.com/ama91/" target="_blank"><span class="src-icon">The Drive</span><span>#415 ‒ AMA #91: Understanding lab testing: what blood work can and cannot tell you about your health and disease risk — The Peter Attia Drive, 2026-11-09</span></a>
+  <a class="source-link" href="https://www.foundmyfitness.com/episodes/dariush-mozaffarian" target="_blank"><span class="src-icon">FMF</span><span>The Hype vs. Data on Saturated Fat, Red Meat, &amp; Seed Oils | Dr. Dariush Mozaffarian — FoundMyFitness, 2026-11-10</span></a>
+  <a class="source-link" href="https://www.hubermanlab.com/episode/overcome-addictions-and-obsessions-of-all-kinds-anna-lembke" target="_blank"><span class="src-icon">Huberman</span><span>Overcome Addictions &amp; Obsessions of All Kinds | Dr. Anna Lembke — Huberman Lab, 2026-11-09</span></a>
+  <a class="source-link" href="https://podcastnotes.org/huberman-lab/dr-anna-lembke-overcome-addictions-and-obsessions-of-all-kinds-huberman-lab/" target="_blank"><span class="src-icon">Huberman</span><span>Podcast Notes · Dr. Anna Lembke: Overcome Addictions and Obsessions of All Kinds</span></a>
+  <a class="source-link" href="https://x.com/petergyang/status/2120320377163501817" target="_blank"><span class="src-icon">X</span><span>Peter Yang on X</span></a>
+  <a class="source-link" href="https://x.com/adityaag/status/2120249412685607254" target="_blank"><span class="src-icon">X</span><span>Aditya Agarwal on X</span></a>
+  <a class="source-link" href="https://x.com/ryolu_/status/2120337691661443081" target="_blank"><span class="src-icon">X</span><span>Ryo Lu on X</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-12 · Health 星期四</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

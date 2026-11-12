@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-12",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "The Drive AMA #91：验血能告诉你什么，不能告诉你什么 · FoundMyFitness：Dariush Mozaffarian 讲饱和脂肪、红肉和种子油",
+    "html": "episodes/2026-11-12.html",
+    "mp3": "episodes/2026-11-12.mp3",
+    "headlines": [
+      "The Drive AMA #91：验血能告诉你什么，不能告诉你什么",
+      "FoundMyFitness：Dariush Mozaffarian 讲饱和脂肪、红肉和种子油",
+      "Huberman Lab：Anna Lembke，成瘾和「控制欲」",
+      "女性健康：两点补充"
+    ],
+    "theme": "数字之外"
+  },
+  {
     "date": "2026-11-11",
     "dow": 3,
     "topic": "Product",
@@ -394,16 +410,5 @@
     "mp3": "episodes/2026-10-12.mp3",
     "headlines": [],
     "theme": "给代理装刹车"
-  },
-  {
-    "date": "2026-10-11",
-    "dow": 7,
-    "topic": "Podcasts",
-    "format": "新闻快报",
-    "title": "2026-10-11 今日快报",
-    "html": "episodes/2026-10-11.html",
-    "mp3": "episodes/2026-10-11.mp3",
-    "headlines": [],
-    "theme": "你买一个 token，是在租一整套东西"
   }
 ]

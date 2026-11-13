@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-13 · AI 星期五">
+<meta property="og:description" content="黄仁勋辞去英伟达 CEO，Kress 暂代 · Gemini 4 Carbon 与 Hydrogen · Anthropic 路演 70–78 美元 · OpenAI 季度收入约 100 亿美元">
+<title>Daily Builders Digest · 2026-11-13 · AI 星期五</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期五</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-13</span>
+    <span>🧭 AI 星期五</span>
+    <span>◇ 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>英伟达 · 黄仁勋辞职 · Colette Kress 临时 CEO</span><span class="ticker-item"><span class="dot">●</span>英伟达 · Harvey Jones 首任董事长 · 11/17 财报照常</span><span class="ticker-item"><span class="dot">●</span>Gemini 4 Hydrogen · AA 指数 51 · 全层级可用</span><span class="ticker-item"><span class="dot">●</span>Gemini 4 Carbon · $2/$10 每百万 token（11/30 前）</span><span class="ticker-item"><span class="dot">●</span>Anthropic · ANT · 每股 70–78 美元</span><span class="ticker-item"><span class="dot">●</span>OpenAI · Q3 收入约 100 亿美元（报道）</span><span class="ticker-item"><span class="dot">●</span>CoreWeave · 约 90 亿美元客户预付</span><span class="ticker-item"><span class="dot">●</span>美联航 · 不让 AI 代理替你付款</span><span class="ticker-item"><span class="dot">●</span>英伟达 · 黄仁勋辞职 · Colette Kress 临时 CEO</span><span class="ticker-item"><span class="dot">●</span>英伟达 · Harvey Jones 首任董事长 · 11/17 财报照常</span><span class="ticker-item"><span class="dot">●</span>Gemini 4 Hydrogen · AA 指数 51 · 全层级可用</span><span class="ticker-item"><span class="dot">●</span>Gemini 4 Carbon · $2/$10 每百万 token（11/30 前）</span><span class="ticker-item"><span class="dot">●</span>Anthropic · ANT · 每股 70–78 美元</span><span class="ticker-item"><span class="dot">●</span>OpenAI · Q3 收入约 100 亿美元（报道）</span><span class="ticker-item"><span class="dot">●</span>CoreWeave · 约 90 亿美元客户预付</span><span class="ticker-item"><span class="dot">●</span>美联航 · 不让 AI 代理替你付款</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期五 · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span>
+  </div>
+  <audio controls src="2026-11-13.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 芯片、模型、资本</div>
+    <div class="feature-show-name">NVIDIA<br>GEMINI 4<br><span style="color:#dd1111">ANT $70–78</span></div>
+    <div class="feature-ep-title">黄仁勋辞去英伟达 CEO，Kress 暂代；<br>谷歌发 Gemini 4 Carbon 和 Hydrogen；Anthropic 开始上市路演</div>
+    <div class="feature-guest">NVIDIA · Google · Anthropic · OpenAI · CoreWeave · 2026-11-10 / 11-12</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这周 AI 圈最大的新闻是<strong>英伟达换 CEO</strong>。同一周，谷歌让贵模型给便宜模型分活，Anthropic 开始路演，资本市场对 AI 的花钱速度越来越挑剔。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">NVIDIA</span><span class="tag">Colette Kress</span><span class="tag">Gemini 4 Carbon</span><span class="tag">Gemini 4 Hydrogen</span><span class="tag">Antigravity</span><span class="tag">Anthropic IPO</span><span class="tag">OpenAI Q3</span><span class="tag">CoreWeave</span><span class="tag">United</span><span class="tag">Decisions API</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">NVIDIA · 11/12</div><div class="stat-value">黄仁勋辞职 · Kress 临时 CEO</div></div>
+      <div class="stat-item"><div class="stat-label">Gemini · 11/10–12</div><div class="stat-value">Carbon $2/$10 · Hydrogen AA 51</div></div>
+      <div class="stat-item"><div class="stat-label">Anthropic · 11/10</div><div class="stat-value">ANT · 8.25 亿股 · 70–78 美元</div></div>
+      <div class="stat-item"><div class="stat-label">OpenAI · Q3</div><div class="stat-value">收入约 100 亿美元（报道）</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期五，AI 日，早上好。这周 AI 圈最大的新闻不是模型，是一家芯片公司换了 CEO。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">英伟达。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。今天三条主要的。第一，黄仁勋辞去英伟达 CEO，CFO Colette Kress 暂代。第二，谷歌这周连发两个 Gemini 4 模型，Carbon 和 Hydrogen，而且不再叫 Pro 和 Flash 了。第三，Anthropic 正式开始上市路演，同一周 OpenAI 的季度收入也被报出来了。最后是几条短消息和建造者动态。</div></div>
+</div>
+<div class="section-label">一 · 英伟达：黄仁勋辞职</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先把时间线理一下。11 月 8 号，英伟达董事会发声明，说有报道称黄仁勋是外国情报行动的目标，董事会要做独立调查，由独立董事组成的委员会负责，请外部律师协助。当时声明里还写着，董事会对黄仁勋有信心。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">四天后就变了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 12 号，英伟达发公告：黄仁勋辞去总裁、CEO 和董事职务，立即生效。CFO Colette Kress 任临时 CEO，同时继续当 CFO。董事会第一次设了董事长，由 Harvey Jones 担任，他以前是 Synopsys 的 CEO。董事会说会从内部和外部找正式的 CEO。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">原因是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">公告里没写原因。媒体报道的背景是：黄仁勋本人在 8 号给员工的信里承认了婚外情，对方是一家新加坡公司 Megaspeed 的前高管，美国官员怀疑她替中国情报机构工作，中国方面否认。董事会 8 号的声明说，目前没有理由认为国家安全或公司机密被泄露。这些指控现在都没有被证实，我们只讲公开的事实。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那为什么这件事对 AI 行业这么重要？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有三点。第一，英伟达供应了大部分训练和推理用的 GPU，半岛电视台引用的估计是 80% 到 90% 的高端 AI 芯片市场。第二，这家公司过去 33 年一直是创始人在管，没有董事长，也从没公开过接班人。半岛电视台采访的一位分析师说，这本身就是治理问题。第三，Megaspeed 这条线牵出另一个问题：据《纽约时报》，Megaspeed 从英伟达买了大约 48 亿美元的设备，美国从 2024 年起就在查它有没有帮中国绕过出口管制拿到先进芯片。这会影响接下来对华芯片出口的讨论。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">市场怎么反应？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">半岛电视台说，在辞职公告之前，这一周英伟达市值已经跌了超过 6000 亿美元。具体跌幅各家报道数字不一样，我们就不报具体数了。下一个确定的节点是 11 月 17 号，英伟达照原计划发第三季度财报，这会是 Kress 作为临时 CEO 第一次面对投资人。另外，美国众议院几个委员会要求黄仁勋接受闭门问询。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">建造者那边怎么看？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">分歧很大。YC 的 Garry Tan 在辞职公告之前说，董事会赶走黄仁勋是不明智的，他的日常工作是公司运转的核心，换人很难不伤市值。Replit 的 Amjad Masad 问了另一个问题：这些旧事为什么现在突然变成国际新闻，谁受益？他的意思是，黄仁勋一直支持开源模型，他走了，对想让 AI 更封闭的人有利。Peter Yang 则说，他对黄仁勋个人很失望，但是否该被解雇，应该先做完整调查、让股东参与。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Amjad 那个说法有证据吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">没有，他自己也是用提问的方式说的。我们把它当一种观点，不当事实。对我们普通开发者，实际影响短期内应该很小：分析师普遍认为产品路线图不会马上变。值得看的是长期：新 CEO 对开源模型、对中国市场、对跟云厂商的关系，会不会有不同的判断。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/" target="_blank">NVIDIA Announces CEO Transition — NVIDIA</a> · <a href="https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors" target="_blank">Statement From NVIDIA Board of Directors — NVIDIA</a> · <a href="https://www.aljazeera.com/news/2026/11/12/nvidia-board-weighs-jensen-huangs-future-can-it-remove-its-founder" target="_blank">Nvidia board weighs Jensen Huang&#x27;s future: Can it remove its founder? — Al Jazeera</a></span>
+</div>
+<div class="section-label">二 · 谷歌：Gemini 4 Carbon 和 Hydrogen</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条，谷歌这周发了两个模型。11 月 10 号，Gemini 4 Carbon 对 AI Ultra 用户开放，这是谷歌目前最强的模型。11 月 12 号，又发了 Gemini 4 Hydrogen，对所有用户开放。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这名字怎么回事？碳、氢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌这一代换了命名方式。以前是 Pro、Flash，现在用元素名。按 Gemini 应用里的分工：Hydrogen 是「日常帮助」，Argon 是「代码和分析」，Carbon 是「最复杂的工作」。Hydrogen 基本上就是原来 Flash 的位置。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Hydrogen 有多强？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌给的数字是，在 Artificial Analysis 的智能指数上，Hydrogen 默认设置得 51 分，比 Argon 的 50 分还高一点，开到最高思考档是 54 分。也就是说，便宜快速的那一档，已经追上了上一档的主力模型。这个数字是谷歌自己引用的，我们没看到独立复测。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Carbon 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Carbon 的定价是：11 月 30 号之前，每百万输入 token 2 美元、输出 10 美元；之后涨到 4 美元和 20 美元。谷歌自己说，大部分软件工程和知识工作用 Argon 就够了，Carbon 留给多步骤的复杂代码、调试和科研。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那开发者怎么选？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌给了一个思路，我觉得比模型本身更值得注意。在它的编程工具 Antigravity 里，有一个模式叫 Orchestrator：Carbon 负责规划，把常规步骤交给 Hydrogen 去做，谷歌说质量接近 Carbon，token 用得更少。另外还在预览一个 /swarm 功能，一个提示变成一组代理并行干活，Carbon 负责架构、协调和审查，轻一点的模型干具体的活，还有专门找茬的验证代理。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">也就是说，以后不是选一个模型，是排一个班。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。贵的模型做判断，便宜的模型干活。周三产品日讲 Fable 5.2 的时候，Vercel 的 Guillermo Rauch 也说过，新一代模型能接下大量并行的工作。几家在往同一个方向走。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://9to5google.com/2026/11/12/gemini-4-hydrogen-launch/" target="_blank">Google announces Gemini 4 Hydrogen — 9to5Google</a> · <a href="https://9to5google.com/2026/11/10/gemini-app-4-carbon/" target="_blank">Gemini 4 Carbon rolling out to Gemini app for AI Ultra — 9to5Google</a></span>
+</div>
+<div class="section-label">三 · 钱：Anthropic 路演，OpenAI 季度收入，美联储的提醒</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。周一我们说 Anthropic 上市时间不确定，现在确定了。11 月 10 号，Anthropic 宣布开始路演，计划在纳斯达克上市，股票代码 ANT，预计每股 70 到 78 美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">卖多少股？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">初步是 8.25 亿股，其中大约 8.014 亿股是 Anthropic 新发的，2360 万股是老股东卖的。按 78 美元的上限算，总额大约 644 亿美元，这是承销费用之前的数字。要注意，注册文件还没生效，现在还不能正式卖，最终价格要等定价那天。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">同一周 OpenAI 那边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The Information 报道，OpenAI 第三季度收入大约 100 亿美元，比上季度增长将近 50%，主要来自企业产品和新模型。但运营亏损仍然很大。这是媒体报道，OpenAI 没有正式公布。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个要上市，一个亏损在扩大，市场怎么看？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有两个信号。一个是美联储理事 Michelle Bowman 11 号说，如果 AI 投资的回报达不到预期，可能引发市场调整，她提到了 AI 相关的债务和估值。另一个是 CoreWeave，它在财报里说要让客户预付、缩短合同，用这些钱来建算力。它预计未来三个月有大约 90 亿美元的客户预付款和押金。季度收入涨了 168%，到 36.6 亿美元，但净亏损 7.09 亿美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">让客户先付钱，说明借钱变难了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">至少说明它在换一种融资方式。周一我们讲过，OpenAI 这一轮融资额也比原来想要的少。几条放在一起看：收入在涨，花钱更快，资本市场开始挑剔。Anthropic 下周定价的结果，会是这个判断的一个直接测试。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-november-11-2026/" target="_blank">Everything That Happened in AI Today (Wednesday, November 11, 2026) — The Neuron</a> · <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-12-2026/" target="_blank">Everything That Happened in AI Today (Thursday, November 12, 2026) — The Neuron</a></span>
+</div>
+<div class="section-label">四 · 短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">最后几条短的。第一，美联航不让未经授权的 AI 代理替用户订机票。代理可以帮你查航班、比价格，但最后付款要用户自己点。美联航给的理由是个人信息、误订，还有航空法规要求的申报，比如确认托运行李里没有爆炸物。CEO Scott Kirby 也说，不想在航空公司和客户之间再多一个中间商。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">后半句才是真正的原因吧。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两个都是。第二，谷歌发布了 Gemini Decisions API，专门做判断题：一次请求最多评估 1000 个是非题、选择题或打分标准，返回置信度，输入价格每百万 token 0.1 美元起。做内容审核、数据标注、自动评测的人可以看看。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">亚马逊发布了 AWS Emulator，一个免费的本地测试工具，模拟 200 多个 AWS 服务。亚马逊说，所有代码都是 AI 代理写的、代理维护的，工程师没有人工审代码。它还有局限，比如不能完整模拟故障和服务限额。第四条，DeepMind 用 AI 生成了六百多万行数学证明，花四周验证了 Signal 加密协议的部分安全性质。范围是指定的性质和代码，不是整个 Signal。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-12-2026/" target="_blank">Everything That Happened in AI Today (Thursday, November 12, 2026) — The Neuron</a> · <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-november-11-2026/" target="_blank">Everything That Happened in AI Today (Wednesday, November 11, 2026) — The Neuron</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 Every 的 AI &amp; I，11 月 11 号这期，是 Dan Shipper 在 Every 第一次大会上的闭幕演讲，题目是「自动化之后，人的好工作是什么样的」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他怎么回答？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他先举自己的例子：用一个 Claude 订阅，在一周的会议间隙，分析了客户调查、做了一个小游戏、做了一个 CRM、联系了一批客户。放在以前，这要五个人、二十万美元。然后他让团队每个人用同样的调查数据、同样的 AI 去分析。结果每个人发现的东西都不一样：有人发现新订阅用户因为邮件太多而退订，有人发现很多读者觉得孤独，因为身边的人觉得他们用 AI 用得太疯了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那直接问 Claude 不就行了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他们做了实验。Every 负责评测的 Mike Taylor 试着让 Claude 预测 Dan 在 Slack 里会说什么。给 Claude 400 次机会，93% 的情况下能生成一个跟 Dan 相似的答案。但让 Claude 自己从这些答案里挑，Dan 的真实答案只有大约 60% 的时候排进前 10%。Dan 的结论是：生成可能性很便宜，知道哪个重要很难。所以他认为衡量 AI 不该只问它在大家公认的题目上做得多好，还要问它从我的角度做我的工作做得多好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">除了刚才英伟达那几条，我挑了四条。第一条，Vercel 的 Guillermo Rauch，三千二百多赞：做出好产品仍然需要极大的专注、努力、动力和爱，还有注意力。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 Dan 的演讲是一个意思。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二条，South Park Commons 的 Aditya Agarwal，两百四十赞。他说现在基本只有两类公司可做。一类是 AI 扩散，就是把 AI 送到具体干活的地方，比如 Harvey、Cognition，相当于今天的垂直 SaaS。另一类是 AI 前沿，用 AI 加速科学，再从科学成果做产品，比如设计新的蛋白质构件、用毒液做药物发现、给半导体做多物理场建模。他认为大部分模型带来的回报会出在第二类，但外面讨论得很少。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Dan Shipper 自己的推文，就是演讲的文字版。第四条是 FPV Ventures 的 Nikunj Kothari，赞不多但数据很实在。他爬了 803 家公司公开的子处理方名单，看 AI 原生公司用什么基础设施。44% 的公司列了两家以上的模型供应商，3 月是 33%；样本小，但 Anthropic 增长速度是 OpenAI 的两倍。列了推理服务商的公司从 22% 涨到 33%，Modal 最多。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">子处理方名单是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">公司按隐私法规必须公开的、会接触用户数据的第三方服务商名单。他自己也说，这是滞后指标，但写在名单上就说明真的在用。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">AI &amp; I by Every — A New Vision for Human Work After Automation</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天三条，你最想让听众记住哪个？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Dan 那句：生成可能性很便宜，知道哪个重要很难。英伟达换 CEO、谷歌让贵模型管便宜模型、资本市场开始挑剔，其实都是在问同一件事：判断由谁来做。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">下周一见。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">周末愉快，下周一见。</div></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">AI &amp; I by Every · 2026-11-11</p>
+  <p class="pc-title">A New Vision for Human Work After Automation（Dan Shipper 在 Every 首届大会的闭幕演讲）</p>
+  <p class="pc-summary">Dan Shipper 用一周会议间隙、一个 Claude 订阅，做完了以前要五个人的活。但他的重点是：团队用同样的数据和模型，各自发现了完全不同的东西。生成答案已经很便宜，难的是判断哪个重要，所以衡量 AI 也该问「它从我的角度做我的工作做得多好」。</p>
+  <a href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「提醒一句：做出好产品，仍然需要极大的专注、努力、动力和爱。还有注意力。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3,292</span>
+      <a href="https://x.com/rauchg/status/2120601000176439478" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AA</div>
+      <div>
+        <div class="builder-name">Aditya Agarwal</div>
+        <div class="builder-handle">@adityaag · South Park Commons</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「现在基本只有两类公司可做。一是 AI 扩散：把 AI 送到干活的地方，相当于今天的垂直 SaaS。二是 AI 前沿：用 AI 加速科学，再从科学成果做产品。第二类外面讨论得很少，但我认为大部分模型带来的回报会出在这里。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 240</span>
+      <a href="https://x.com/adityaag/status/2120578134177464356" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">DS</div>
+      <div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · Every CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「同样的调查、同样的 AI，团队里每个人发现的东西都不一样。Claude 有 400 次机会时，93% 能写出跟我相似的答案；但让它自己排序，我的答案只有约 60% 的时候进前 10%。生成可能性很便宜，知道哪个重要很难。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 118</span>
+      <a href="https://x.com/danshipper/status/2120539547620790424" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NK</div>
+      <div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · FPV Ventures</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我爬了 803 家公司的子处理方名单：44% 列了两家以上模型供应商（3 月是 33%），Anthropic 增长速度是 OpenAI 的两倍；列推理服务商的从 22% 升到 33%，Modal 最多。名单是滞后指标，但写上了就说明真在用。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 32</span>
+      <a href="https://x.com/nikunj/status/2120669243918418237" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/" target="_blank"><span class="src-icon">LINK</span><span>NVIDIA Announces CEO Transition — NVIDIA</span></a>
+  <a class="source-link" href="https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors" target="_blank"><span class="src-icon">LINK</span><span>Statement From NVIDIA Board of Directors — NVIDIA</span></a>
+  <a class="source-link" href="https://www.aljazeera.com/news/2026/11/12/nvidia-board-weighs-jensen-huangs-future-can-it-remove-its-founder" target="_blank"><span class="src-icon">LINK</span><span>Nvidia board weighs Jensen Huang&#x27;s future: Can it remove its founder? — Al Jazeera</span></a>
+  <a class="source-link" href="https://9to5google.com/2026/11/12/gemini-4-hydrogen-launch/" target="_blank"><span class="src-icon">LINK</span><span>Google announces Gemini 4 Hydrogen — 9to5Google</span></a>
+  <a class="source-link" href="https://9to5google.com/2026/11/10/gemini-app-4-carbon/" target="_blank"><span class="src-icon">LINK</span><span>Gemini 4 Carbon rolling out to Gemini app for AI Ultra — 9to5Google</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-november-11-2026/" target="_blank"><span class="src-icon">LINK</span><span>Everything That Happened in AI Today (Wednesday, November 11, 2026) — The Neuron</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-12-2026/" target="_blank"><span class="src-icon">LINK</span><span>Everything That Happened in AI Today (Thursday, November 12, 2026) — The Neuron</span></a>
+  <a class="source-link" href="https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL" target="_blank"><span class="src-icon">LINK</span><span>AI &amp; I by Every — A New Vision for Human Work After Automation</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2120601000176439478" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/adityaag/status/2120578134177464356" target="_blank"><span class="src-icon">X</span><span>Aditya Agarwal · @adityaag</span></a>
+  <a class="source-link" href="https://x.com/danshipper/status/2120539547620790424" target="_blank"><span class="src-icon">X</span><span>Dan Shipper · @danshipper</span></a>
+  <a class="source-link" href="https://x.com/nikunj/status/2120669243918418237" target="_blank"><span class="src-icon">X</span><span>Nikunj Kothari · @nikunj</span></a>
+</div>
+
+<div class="disclaimer">关于英伟达：本期只引用英伟达公告和公开报道。关于黄仁勋的情报相关指控目前未被证实，中国方面否认。市值跌幅各家报道数字不一，正文未给具体数。OpenAI 季度收入来自 The Information 报道，未经公司确认。</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-13 · AI 星期五</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

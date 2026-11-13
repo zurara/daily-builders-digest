@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-13",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "英伟达：黄仁勋辞职 · 谷歌：Gemini 4 Carbon 和 Hydrogen",
+    "html": "episodes/2026-11-13.html",
+    "mp3": "episodes/2026-11-13.mp3",
+    "headlines": [
+      "英伟达：黄仁勋辞职",
+      "谷歌：Gemini 4 Carbon 和 Hydrogen",
+      "钱：Anthropic 路演，OpenAI 季度收入，美联储的提醒",
+      "短消息"
+    ],
+    "theme": "英伟达换 CEO，谷歌换模型名，Anthropic 开始路演"
+  },
+  {
     "date": "2026-11-12",
     "dow": 4,
     "topic": "Health",
@@ -399,16 +415,5 @@
     "mp3": "episodes/2026-10-13.mp3",
     "headlines": [],
     "theme": "机器人开始干无聊的活"
-  },
-  {
-    "date": "2026-10-12",
-    "dow": 1,
-    "topic": "AI",
-    "format": "新闻快报",
-    "title": "2026-10-12 今日快报",
-    "html": "episodes/2026-10-12.html",
-    "mp3": "episodes/2026-10-12.mp3",
-    "headlines": [],
-    "theme": "给代理装刹车"
   }
 ]

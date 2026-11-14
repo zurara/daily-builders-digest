@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-14",
+    "dow": 6,
+    "topic": "Books",
+    "format": "新闻快报",
+    "title": "2026-11-14 今日快报",
+    "html": "episodes/2026-11-14.html",
+    "mp3": "episodes/2026-11-14.mp3",
+    "headlines": [],
+    "theme": "Big Math"
+  },
+  {
     "date": "2026-11-13",
     "dow": 5,
     "topic": "AI",
@@ -404,16 +415,5 @@
     "mp3": "episodes/2026-10-14.mp3",
     "headlines": [],
     "theme": "把整件事走一遍"
-  },
-  {
-    "date": "2026-10-13",
-    "dow": 2,
-    "topic": "Robotics",
-    "format": "新闻快报",
-    "title": "2026-10-13 今日快报",
-    "html": "episodes/2026-10-13.html",
-    "mp3": "episodes/2026-10-13.mp3",
-    "headlines": [],
-    "theme": "机器人开始干无聊的活"
   }
 ]

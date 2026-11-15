@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-11-14 · 周六书籍介绍">
-<meta property="og:description" content="Big Math · Steven Strogatz & Alex Townsend · 跑在我们生活底下的数学">
-<title>Big Math · 周六书籍介绍 · 2026-11-14</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-11-15 · 周日播客精选">
+<meta property="og:description" content="Latent Space × Resend CEO Zeno Rocha · 为智能体设计产品 · 当买家先去问模型">
+<title>周日播客精选 · 2026-11-15 · 为智能体设计</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,7 +29,7 @@
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
   .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
   .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
@@ -43,64 +43,64 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
-  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
-  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
-  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 4.6vw, 58px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
-  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
-  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
-  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
   .stat-item { display: flex; flex-direction: column; gap: 4px; }
   .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
   .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
   .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
   .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .speaker-dayu { color: var(--red); }
+  .speaker-dayu  { color: var(--red); }
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
-  .inline-src { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; margin-top: 10px; }
-  .inline-src a { color: var(--red); text-decoration: none; }
-  .pull-quote { font-family: 'Inter', sans-serif; font-size: clamp(19px, 2.6vw, 26px); font-weight: 300; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--red); padding: 4px 0 4px 22px; margin: 36px 0; }
-  .pull-quote cite { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: 12px; }
-  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 36px 0; }
-  .pillar { background: var(--bg); padding: 22px 24px; }
-  .pillar-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--red); line-height: 1; margin-bottom: 8px; }
-  .pillar-name { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
-  .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
-  .pillar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); margin-top: 10px; display: block; }
-  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
-  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
-  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
-  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
-  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
-  .angle-card { background: var(--bg); padding: 20px 24px; }
-  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
-  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
   .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
   .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .sources-note { font-size: 12px; line-height: 1.7; color: var(--mid); margin-bottom: 16px; }
-  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
   .source-link:hover { color: var(--red); }
   .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
-  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
-  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
-  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
-  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -111,571 +111,154 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
-</head>
 <body>
 
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
-  <div class="header-title">BIG MATH<span> · 跑在我们生活底下的数学</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
+  <div class="header-title">DESIGN FOR<br><span>AGENTS</span></div>
   <div class="header-meta">
-    <span>📅 2026-11-14</span>
-    <span>📚 周六书单 第二十九期</span>
-    <span>💬 线性代数 · 网络 · 机器学习 · 可理解性 · AI 与数学</span>
-    <span>🎙 大雨 × 小苇</span>
+    <span>📅 2026-11-15</span>
+    <span>🎙 周日播客精选</span>
+    <span>◇ 当买家先去问模型</span>
+    <span>大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>2026-11-10 · Little, Brown 出版</span>
-    <span class="ticker-item"><span class="dot">●</span>304 页 · 精装 32 美元</span>
-    <span class="ticker-item"><span class="dot">●</span>作者：康奈尔数学教授 Strogatz × Townsend</span>
-    <span class="ticker-item"><span class="dot">●</span>只有计算机才算得动的数学</span>
-    <span class="ticker-item"><span class="dot">●</span>Netflix 那张大部分是空格的表</span>
-    <span class="ticker-item"><span class="dot">●</span>两千年前的竹签算板</span>
-    <span class="ticker-item"><span class="dot">●</span>Mirai：提前五年估计乳腺癌风险</span>
-    <span class="ticker-item"><span class="dot">●</span>浮士德的交易</span>
-    <span class="ticker-item"><span class="dot">●</span>推荐：James Gleick · Jordan Ellenberg · Kirkus</span>
-    <span class="ticker-item"><span class="dot">●</span>2026-11-10 · Little, Brown 出版</span>
-    <span class="ticker-item"><span class="dot">●</span>304 页 · 精装 32 美元</span>
-    <span class="ticker-item"><span class="dot">●</span>作者：康奈尔数学教授 Strogatz × Townsend</span>
-    <span class="ticker-item"><span class="dot">●</span>只有计算机才算得动的数学</span>
-    <span class="ticker-item"><span class="dot">●</span>Netflix 那张大部分是空格的表</span>
-    <span class="ticker-item"><span class="dot">●</span>两千年前的竹签算板</span>
-    <span class="ticker-item"><span class="dot">●</span>Mirai：提前五年估计乳腺癌风险</span>
-    <span class="ticker-item"><span class="dot">●</span>浮士德的交易</span>
-    <span class="ticker-item"><span class="dot">●</span>推荐：James Gleick · Jordan Ellenberg · Kirkus</span>
-  </div>
+  <div class="ticker-track"><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Zeno Rocha (Resend) · 2026-11-10</span><span class="ticker-item"><span class="dot">●</span>Claude Code 推荐邮件服务：Resend 第一 64/102 次</span><span class="ticker-item"><span class="dot">●</span>每个营销页面都有 .md 版本</span><span class="ticker-item"><span class="dot">●</span>定价滑块模型读不到 → 用文字写出来</span><span class="ticker-item"><span class="dot">●</span>MCP 工具：约 20 个 → 80 多个</span><span class="ticker-item"><span class="dot">●</span>8 月 MCP 调用约 120 万次</span><span class="ticker-item"><span class="dot">●</span>430 万用户 · 12 万付费客户</span><span class="ticker-item"><span class="dot">●</span>Handshake AI · 一年做到 10 亿美元年化收入</span><span class="ticker-item"><span class="dot">●</span>Tulsee Doshi · 60-20-20 框架</span><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Zeno Rocha (Resend) · 2026-11-10</span><span class="ticker-item"><span class="dot">●</span>Claude Code 推荐邮件服务：Resend 第一 64/102 次</span><span class="ticker-item"><span class="dot">●</span>每个营销页面都有 .md 版本</span><span class="ticker-item"><span class="dot">●</span>定价滑块模型读不到 → 用文字写出来</span><span class="ticker-item"><span class="dot">●</span>MCP 工具：约 20 个 → 80 多个</span><span class="ticker-item"><span class="dot">●</span>8 月 MCP 调用约 120 万次</span><span class="ticker-item"><span class="dot">●</span>430 万用户 · 12 万付费客户</span><span class="ticker-item"><span class="dot">●</span>Handshake AI · 一年做到 10 亿美元年化收入</span><span class="ticker-item"><span class="dot">●</span>Tulsee Doshi · 60-20-20 框架</span></div>
 </div>
 
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">◉</span>
-    <strong>收听本期</strong>
-    <span>大雨 × 小苇 · 2026-11-14</span>
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 周日播客精选 · 为智能体设计</span>
   </div>
-  <audio controls src="episodes/2026-11-14.mp3"></audio>
+  <audio controls src="episodes/2026-11-15.mp3">
+    Your browser does not support the audio element.
+  </audio>
 </div>
 
-<section class="book-hero">
-  <div class="book-cover-panel">
-    <div class="book-cover-label">◈ 本期书籍</div>
-    <div class="book-title-big">BIG MATH</div>
-    <div class="book-subtitle">The Hidden Codes That Run Our World<br>大数学：运行我们世界的隐藏代码</div>
-    <div class="book-author-line">STEVEN STROGATZ · ALEX TOWNSEND</div>
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">本周主推 · Latent Space</div>
+    <div class="feature-show-name">LATENT SPACE<br><span style="color:#dd1111">× ZENO ROCHA</span></div>
+    <div class="feature-ep-title">Designing for Agents —<br>Zeno Rocha, Resend</div>
+    <div class="feature-guest">Latent Space × Resend 联合创始人兼 CEO · 2026-11-10 · 86 分钟</div>
   </div>
-  <div class="book-meta-panel">
-    <p class="book-one-liner">两位康奈尔数学教授讲矩阵、网络、马尔可夫链和优化这几样老工具，怎样在计算机的帮助下变成推荐算法、医学影像、摩天楼设计和 AI 的底层，又怎样开始超出人的理解。</p>
-    <div class="book-tags">
-      <span class="tag">非虚构</span>
-      <span class="tag">数学科普</span>
-      <span class="tag">线性代数</span>
-      <span class="tag">算法</span>
-      <span class="tag">机器学习</span>
-      <span class="tag">数学史</span>
+  <div class="feature-right">
+    <div class="feature-lede">
+      编程智能体为什么总推荐 Resend？Zeno Rocha 讲了他做的事：给长尾组合写短文档，<strong>每个页面都有模型能读的 Markdown 版本</strong>，把定价滑块里的数字用文字写出来，MCP 服务器覆盖仪表盘能做的一切。买家的第一个问题现在先问模型，<strong>而模型只给一个答案</strong>。
     </div>
-    <div class="book-stats">
-      <div class="stat-item"><span class="stat-label">出版</span><span class="stat-value">Little, Brown · 2026-11-10</span></div>
-      <div class="stat-item"><span class="stat-label">篇幅</span><span class="stat-value">304 页 · 精装 $32</span></div>
-      <div class="stat-item"><span class="stat-label">ISBN</span><span class="stat-value">9780316581585</span></div>
-      <div class="stat-item"><span class="stat-label">推荐</span><span class="stat-value">Gleick · Ellenberg · Kirkus</span></div>
+    <div class="feature-tags">
+      <span class="tag">AEO</span>
+      <span class="tag">智能体体验</span>
+      <span class="tag">MCP</span>
+      <span class="tag">llms.txt</span>
+      <span class="tag">送达率</span>
+      <span class="tag">反滥用</span>
+      <span class="tag">开发者分发</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><span class="stat-label">Claude Code 首推</span><span class="stat-value">64 / 102 次</span></div>
+      <div class="stat-item"><span class="stat-label">MCP 工具数</span><span class="stat-value">约 20 → 80 多个</span></div>
+      <div class="stat-item"><span class="stat-label">MCP 调用（8 月）</span><span class="stat-value">约 120 万次</span></div>
+      <div class="stat-item"><span class="stat-label">用户 / 付费客户</span><span class="stat-value">430 万 / 12 万</span></div>
     </div>
   </div>
 </section>
-<p class="section-label">◈ 开场 · 跑在我们生活底下的数学</p>
-<div class="script-container">
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">周六好，欢迎回到《每日快报》的书籍时间。上周我们讲了 David Weinberger 的《Beautiful Particulars》，他说机器学习不靠定律，靠大量具体数据之间的关系。今天这本书往下挖一层：这些机器到底在算什么？书名叫《Big Math》，副标题是「The Hidden Codes That Run Our World」，直译是「大数学：运行我们世界的隐藏代码」。作者是两位康奈尔大学的数学教授，Steven Strogatz 和 Alex Townsend。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">什么时候出的？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">11 月 10 号，就是这周二，Little, Brown 出版。精装 304 页，定价 32 美元。有声书同一天上市，由演员 George Newbern 朗读。英国版由 John Murray 出，11 月 19 号上市。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">我们有全书吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">没有。今天的内容依据这几样东西：出版方简介和推荐语；Science Friday 11 月 6 号发布的书摘，是这本书的引言部分；同一天 Science Friday 对 Strogatz 的采访文字稿；康奈尔大学新闻网 11 月 10 号对两位作者的采访；还有 Kirkus 的书评。书里的内容，凡是我说「书里写」，都来自书摘或者书评的转述。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">为什么选这本？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书单这周还是空的，按规则我们自己选。理由有两个。第一，过去几个月讲的 AI 书，讲公司、讲风险、讲哲学，都没有讲过 AI 里面是什么。这本书讲的是矩阵、网络、优化这些工具，是 AI 和很多别的技术共用的底层。第二，时间点。今年夏天到秋天，AI 解出了一批数学难题，数学界自己都在问「我们还要做什么」。Strogatz 正好站在这个问题的中间。</p><span class="inline-src">📎 来源: <a href="https://www.hachettebookgroup.com/titles/steven-strogatz-2/big-math/9781668659335/?lens=little-brown" target="_blank">Big Math — Hachette Book Group</a></span>
-  </div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 本周几集的共同点</div>
+  <div class="insight-title">读你产品的，越来越多是模型</div>
+  <div class="insight-item"><span class="insight-num">01</span><span><strong>把数据写成文字。</strong>Resend：JavaScript 组件不会被执行，定价滑块里的数字要在 Markdown 版本里写清楚。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span><strong>自己去问模型。</strong>Zeno 自己跑了一次竞品对比才发现定价被算错；Garry Tan 用自己的 52 个任务比较模型。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span><strong>看返回值，不只数工具。</strong>80 个工具还是 2 个？展开一次每天都用的工具调用，看模型需要多少。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span><strong>模型错在"认出规则该用在哪"。</strong>Handshake：模型能讲清税务处理，却在代码里直接减掉了商誉。</span></div>
 </div>
-<p class="section-label">◈ 作者 · 一个导师和一个学生，每周三吃午饭</p>
+
 <div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">先说作者。Strogatz 我听过，Townsend 没听过。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Steven Strogatz 是康奈尔的数学教授，他的教席名称里就写着「公众理解科学与数学」。他研究非线性动力学和网络，1998 年他和当时的学生 Duncan Watts 在《自然》上发了一篇「小世界网络」的论文，就是解释为什么任何两个人之间只隔几个人。出版方说他是全世界被引用最多的数学家之一，美国国家科学院院士。他写过好几本科普书：《Sync》讲同步，《The Joy of x》，还有讲微积分的《Infinite Powers》，那本上过纽约时报畅销榜，进了英国皇家学会科学图书奖的决选名单。他也常上 Radiolab 和 Science Friday。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">Townsend 呢？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Alex Townsend 是康奈尔的副教授，研究数值线性代数、科学计算和用于科学的 AI。他在牛津跟着数值分析学家 Nick Trefethen 学习，2015 年还在麻省理工的时候，拿了数值分析领域的 Leslie Fox 奖一等奖。后来又拿了美国工业与应用数学学会的两个奖。他在康奈尔也拿过本科教学奖。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">两个人怎么凑到一起的？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Strogatz 在 Science Friday 上讲了。Townsend 比他小 28 岁，刚到康奈尔当教授的时候，学校安排 Strogatz 当他的导师，帮他熟悉环境。Townsend 当时开了一门课，叫「20 世纪十大算法」。Strogatz 听了说：你应该把这个写成书。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">结果写成了这本？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">不完全是。他们每周三在康奈尔的 Risley 食堂吃午饭。书里专门描写了这个食堂：哥特式的建筑，木头屋顶，墙上挂着老教授的画像，像哈利·波特里的大厅。两个人先聊孩子和学校的八卦，然后就开始聊这本书。他们想过写矩阵，想过写算法，最后定在「数学和计算机」。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">学者写科普，有什么难的？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Strogatz 跟康奈尔新闻网说，学者习惯按主题组织内容，一个概念接一个概念，因为课程就是这样排的。但读者喜欢故事。编辑建议他们多加历史上的例子，用故事带出概念。Townsend 说，书里几乎每一节都是两个人来回改，互相回应。</p><span class="inline-src">📎 来源: <a href="https://news.cornell.edu/stories/2026/11/big-math-reveals-hidden-codes-run-our-algorithm-driven-world" target="_blank">‘Big Math’ reveals the hidden codes that run our algorithm-driven world — Cornell Chronicle</a></span><span class="inline-src">📎 来源: <a href="https://www.sciencefriday.com/segments/big-math-shines-a-light-on-the-hidden-math-that-runs-our-world/" target="_blank">‘Big Math’ shines a light on the hidden math that runs our world — Science Friday</a></span>
-  </div>
-</div>
-<p class="section-label">◈ 什么是 Big Math · 只有计算机才算得动的数学</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">「Big Math」这个词是他们造的？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。他们的定义是：只能靠计算机来计算、可能也只能靠计算机来「理解」的数学。书里说，这些突破分散在很多领域，名字也各不相同，深度学习、压缩感知、线性代数，所以人们看到的是一棵棵树，看不到森林。他们想给这片森林起个名字。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">具体在哪儿？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里列了几个你每天都在用的：Instagram 上发照片用的 JPEG 压缩；Netflix 给你推荐下一部剧；Google 不到一秒找到你要的网页；实时翻译。Townsend 在采访里说得更直接：它在你的 iPhone 里；它在决定你能不能拿到房贷；它让你做核磁共振只需要躺一半的时间；它是 TikTok 让人停不下来的原因。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">核磁共振那个是怎么回事？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书摘里没有展开。按常见的说法，这类技术叫压缩感知：只采一部分数据，再用数学把完整的图像算回来。这个解释是我们补的，不是书里的原话。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">还有吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">康奈尔的文章开头举了一个例子：一个病人需要做颅骨畸形矫正手术，外科医生先在电脑上用一个极其精细的头部模型把手术演练一遍，里面有几百英里长的血管、神经、肌肉和肌腱。整个手术精确到毫米，全靠计算机解大量方程。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这听起来像「大数据」或者「大科技」换了个名字。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里自己承认这一点。他们说亚马逊、Facebook、ChatGPT、英伟达，这当然是大数据和大科技，但幕后运行的是大数学。Strogatz 说，人们以为这是科技公司的本事、或者是现代医学，其实底下全是数学。</p><span class="inline-src">📎 来源: <a href="https://www.sciencefriday.com/articles/big-math-book-excerpt/" target="_blank">‘Big Math’ is here, and humans can shape its potential — Science Friday 书摘</a></span>
-  </div>
-</div>
-<p class="section-label">◈ 工具箱 · 几个很老、很简单的想法</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这些数学难吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里的说法正好相反。出版方简介第一句就说，这是一个关于「几个出奇简单的数学想法」怎样引发今天技术突破的故事。书摘里列出来的核心工具是：矩阵和向量、网络、马尔可夫链、优化。他们说，这些想法在计算机出现之前就有了，计算机让它们的力量放大了很多倍。核心工具很少，像一把瑞士军刀。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">举一个讲清楚的例子。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Strogatz 在 Science Friday 讲了 Netflix。Netflix 还在用红色信封寄 DVD 的年代，办过一个比赛，悬赏改进推荐算法。你可以把数据想成一张大表：一行是一个用户，一列是一部电影，格子里是这个人给这部电影打的分。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这张表大部分是空的。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对，因为没有人看过所有电影。问题就变成：怎么把空格填上，猜出你会给一部没看过的电影打几分。听起来不可能。数学上，这张表就是一个矩阵，用到的工具叫奇异值分解，是线性代数里的一个方法。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">奇异值分解大概在做什么？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">简单说，它把一张很大的表拆成几个「主要因素」。比如喜欢动作片的程度、喜欢文艺片的程度。每个人在这几个因素上有个分数，每部电影也有，两个一乘就能估出空格。这段解释是我们自己补的，便于理解。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">还有一个跟生活离得远一点的。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">迪拜的哈利法塔，世界最高的楼，差不多是帝国大厦的两倍高。工程师先在电脑里造一个模型，把楼拆成很多小块，算每一块受的力和变形，这叫有限元分析。用的还是牛顿定律，力等于质量乘加速度，只是规模巨大，最后还是落到矩阵上。Strogatz 说，跟 Netflix 用的是差不多的数学。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">一个推荐电影，一个让楼不倒。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">这就是这本书想让你看到的东西。</p><span class="inline-src">📎 来源: <a href="https://www.sciencefriday.com/segments/big-math-shines-a-light-on-the-hidden-math-that-runs-our-world/" target="_blank">‘Big Math’ shines a light on the hidden math that runs our world — Science Friday</a></span>
-  </div>
-</div>
-<p class="section-label">◈ 历史 · 从竹签到超级计算机</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">书里有很多历史？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">有。康奈尔的文章说，这本书从伊斯兰继承法里的线性代数，一直讲到 Strogatz 自己研究的混沌理论，再到今天的计算机。Strogatz 在 Science Friday 讲了一个他自己写书时才知道的事。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">什么事？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">高中代数课上那种烦人的应用题，两千年前就有了。中国古代的数学书里有一道题：稻田分上、中、下三等，按三种不同的组合种，各收多少粮食，问每一等田单独能收多少。今天这叫三元一次方程组。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">《九章算术》？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书摘里说的是「一本比基督诞生早一个世纪的中国算题书」，Strogatz 在采访里说的是公元前 200 年左右的中国手稿，没有说书名。按年代和内容，应该是《九章算术》里的「方程」章，这是我们的判断。有意思的是怎么算：在一块画了格子的木板上，每个格子里放竹签表示数字，然后用手挪竹签，一个一个消去未知数。这就是今天的消元法。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">像算盘。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Strogatz 也这么说。他的结论是：人类一直在把数学交给外面的东西去做。我们脑子里装不下大问题，所以从竹签算板一路做到超级计算机。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">伊斯兰继承法那个呢？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">九世纪的巴格达，花拉子米，就是「算法」这个词的来源，他讲怎么按伊斯兰法分遗产，用的就是线性方程，简单、有系统。书里还有一个很意外的人物：爵士歌手 Ella Fitzgerald。她十五岁的时候被关在纽约州北部一所很严苛的少年感化学校，书里说那里是社会网络理论意想不到的诞生地。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">为什么？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书摘只说了这一句，没有展开。我们不猜。Strogatz 在采访里说，写一本「白人、男性、欧洲中心」的数学书很容易，大部分数学书都是这样；他们的书从中国开始，然后到阿拉伯世界，这不是偶然。</p><span class="inline-src">📎 来源: <a href="https://www.sciencefriday.com/articles/big-math-book-excerpt/" target="_blank">‘Big Math’ is here, and humans can shape its potential — Science Friday 书摘</a></span>
-  </div>
-</div>
-<p class="section-label">◈ 为什么是现在 · 人脑的上限</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">既然这些工具都很老，为什么现在才「大」起来？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里的回答是规模。人脑很厉害，但不是为特别大的系统造的。他们列了几个数：人类学家 Robin Dunbar 提出，一个人能维持的有意义的关系大约 150 个；Facebook 有将近 30 亿活跃用户。我们是三维生物，四维就很难想象了。视觉研究显示，人一般只能同时追踪四五个移动的物体。短期记忆大约能装七样东西。而大数学处理的问题，动辄几十亿、几万亿个未知数。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">所以必须靠计算机。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。书里说，计算机一开始是给军方用的，破译密码、计算弹道、模拟原子弹爆炸。二战后进入民用，航班排班、电信。从那以后，数学出脑子，计算机出力气。</p>
-  </div>
-</div>
-<p class="section-label">◈ 转折 · 工具开始超出我们的理解</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那问题在哪儿？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里分了两个阶段。一开始，人牢牢掌握着缰绳。计算机像驮东西的牲口，帮我们算太长太烦的东西。就算它算出了我们算不出的答案，我们也知道它是怎么走到那一步的，它的逻辑就是我们的逻辑，只是放大了。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">后来呢？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">后来平衡开始变了。计算机开始做出我们没法完全跟上的发现。先是发现我们没想到的现象，然后开始从数据里学习，学的方式让人更不安。书里的说法是：大数学正在超出它的创造者。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">有具体例子吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书的引言就是用一个人的故事开头的。Regina Barzilay，麻省理工的计算机教授，原来研究计算语言学，专门破译没有罗塞塔石碑可以对照的古代文字。2014 年 4 月，她 43 岁，被诊断出乳腺癌。家里没有人得过任何癌症，她也不知道自己有任何风险因素。后来她才知道，确诊乳腺癌的女性里，八成以上没有家族史。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">她后来做了什么？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">治疗结束后，她回到麻省理工，挨个找医院的医生，说我不要经费，能不能帮你们分析数据。医生都笑着说不用。她在治疗时问过医生一个简单的问题：像我这样的病人，在这家医院一般结果怎么样？没有人能回答。她说，这不是机器学习的问题，是最基本的数据分析都没有。我们把推荐电影和网购的技术做到了极致，最需要它的人却没用上。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">然后呢？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">她想到：乳腺癌大多长得慢，女性四十岁以后每年都拍乳腺 X 光片，所以早期信号应该早就在片子里了，只是还小到看不见。她和合作者收集了大约 25 万张乳腺 X 光片，每张都配上病人后来几年的结果，训练了一个模型，叫 Mirai，日语「未来」的意思。它能从一张片子估计一个女性未来五年内患乳腺癌的风险。这个模型在美国、瑞典、台湾等地的医院都测过，准确度比医生几十年来用的方法高。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">但没人知道它看到了什么。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。书里说，这个模型看到了某种真实的东西，但没有人能说清那是什么。Barzilay 自己不担心。她的观点是：只要模型经过了充分验证，就不应该要求它只做人类现在能理解的事。理解很重要，但救命更急。她后来做了一个预测肺癌的模型，起名叫 Sybil，古希腊的女先知，看得比人能解释的更远。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">作者同意她吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">书里没有直接反驳，而是提了一串问题：电脑发现了我们感知不到的规律，那「理解」还意味着什么？工具用我们跟不上的方式从数据里学习，我们该多信任它？如果看不透就是获得力量的代价，我们欠自己什么？</p><span class="inline-src">📎 来源: <a href="https://www.sciencefriday.com/articles/big-math-book-excerpt/" target="_blank">‘Big Math’ is here, and humans can shape its potential — Science Friday 书摘</a></span>
-  </div>
-</div>
-<p class="section-label">◈ 今年的数学界 · 五个阶段的哀伤</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">书外面，数学界今年发生了什么？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Strogatz 在 Science Friday 上说，2026 年的夏天和秋天，数学家永远忘不了。有人用「哀伤的五个阶段」来形容；也有人很乐观，说这是一台新的望远镜、新的显微镜，我们只需要想清楚往哪儿看。他提到，10 月 6 号前后，OpenAI 宣布解出了三百多个前沿数学问题，有些悬了几十年。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">哀伤具体是什么？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">他说他有点不敢讲得太有说服力，怕劝退年轻人。很多人学数学是因为喜欢解谜，喜欢跟同事或学生一起卡在同一个问题上，然后某个人突然看懂了的那一刻。如果 AI 抄近路，这种时刻就没了。他说也许未来人类会变成「数学欣赏者」，而不是「数学发现者」。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">AI 的证明人能看懂吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">他的回答比较细。AI 会写出一份证明，但写法「不像人」：在显而易见的地方花很多篇幅，在最难的地方又走得太快。他的同行花两三周、几个人一起读，才能读懂。读懂之后，这些证明都很漂亮。他还举了一个例子：一个叫「准黎曼猜想」的问题，AI 解出来之后，人类数学家在它的基础上改进了结果。他说，给了提示之后，人在 AI 擅长的游戏里赢了它。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">那人还能做什么？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">他的看法是：纯数学，就是数学内部自己跟自己玩的那部分，对 AI 来说太容易了，像国际象棋和写代码一样，是一个封闭的世界。应用数学可能会迎来黄金时代，治癌症、气候、储能。还有一件 AI 目前不擅长的事：提出新问题。他说，就我们所知，AI 还没有好奇心。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">Townsend 怎么看？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Townsend 对康奈尔新闻网说了一个区分：AI 现在在回答伟大数学家提出过的问题，这非常了不起，但它还不是神谕。大数学更乱，它要处理真实世界，要处理数据，要采样、要建模。他还说：我们能理解 AI 的机制，但不理解它为什么做得这么好，为什么那些数字最后正好起作用。</p><span class="inline-src">📎 来源: <a href="https://www.sciencefriday.com/segments/big-math-shines-a-light-on-the-hidden-math-that-runs-our-world/" target="_blank">‘Big Math’ shines a light on the hidden math that runs our world — Science Friday</a></span><span class="inline-src">📎 来源: <a href="https://podcasts.happyscribe.com/radiolab/math-vs-machine" target="_blank">Math Vs Machine — Radiolab（2026-10-09）</a></span>
-  </div>
-</div>
-<p class="section-label">◈ 浮士德的交易</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">写完这本书，作者自己的看法有变化吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Strogatz 说有。他说他和 Townsend 都意识到，人类不知不觉做了一笔浮士德式的交易。浮士德是德国民间传说里的人物，为了无限的知识把灵魂卖给魔鬼。有两个版本：Marlowe 写的版本很吓人，浮士德最后下地狱；两百年后歌德写的版本，浮士德最后被天使救了，因为「不断努力的人，我们可以拯救」。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">对应到今天？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">我们跟计算机和 AI 做了交易，它们越来越强，我们有可能失去理解它们的能力，它们在超出创造者。结果会是黄金时代，所有疾病都被治好，还是被拖进地狱，现在不知道。他说要非常小心，控制一个可能比我们更聪明的系统非常难。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">书的结尾怎么落？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Kirkus 的书评引了书里的两句话。一句大意是：我们造了更大的计算机、更精确的代码、喂了更多数据，机器开始推理我们，开始计算怎么用它们的自由；我们还不知道怎么衡量它们的行为和我们的价值观是否一致，更不知道怎么保证。另一句是结尾的落点：我们也许永远无法完全理解自己造的神谕，但我们可以继续做代码背后的良心。</p>
-  </div>
-</div>
-<p class="section-label">◈ 推荐语与反响</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">评价怎么样？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Kirkus 的总评是：一个引人入胜、带警示意味的故事，讲数学概念怎样成为管理现代生活的必要工具。它说作者写得清楚、有魅力，用故事和例子把大想法拉回地面。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">推荐语呢？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">出版方页面上有两条。写《信息简史》的 James Gleick 说，这本书在一片关于 AI 的神秘化里，把人重新放回了等式的中心。写《魔鬼数学》的 Jordan Ellenberg 说，两位作者自己就在做世界上规模最大的一些数学问题，从量子计算到亚马逊仓库怎么堆箱子，是一份友好又权威的指南。零售商页面还列了经济学家 Steven Levitt 和 AI 研究者 Melanie Mitchell 的推荐，原文我们没看到。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">有批评吗？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">上市第四天，还没有找到《纽约时报》、《卫报》、Publishers Weekly 这类的书评，也没有看到成体系的反对意见。下面是我们自己的几点疑问。</p>
-  </div>
-</div>
-<p class="section-label">◈ 我们自己的看法</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">第一点？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第一点是名字。「Big Math」这个词的好处是把分散的东西串起来，让普通读者看到推荐算法、核磁共振、摩天楼、ChatGPT 用的是同一套工具。但它也有风险：「大数据」「大科技」都是先有现象、再有名字，「大数学」是先有名字，再去找它包含什么。这个词能不能流行，要看别人用不用。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">第二点？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第二点是「看不懂」这个词被用在了两种不同的东西上。哈利法塔的有限元模型，我们原则上知道每一步在算什么，只是太大，人算不过来。Mirai 那种神经网络，我们知道每一步在算什么，但不知道它为什么能预测得准。Townsend 自己在采访里就区分了「机制」和「为什么有效」。前一种「看不懂」从竹签算板就开始了，后一种才是新的。书摘里把两种放在一条线上讲「超出创造者」，我们希望正文能把这条线分清楚。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">第三点？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第三点是 Barzilay 的说法：只要验证充分，就不必要求模型可解释。这听起来合理，但「验证」本身也是一件数学的事：在谁的数据上验证？换了一家医院、一种 X 光机、一个人群，还准吗？Mirai 在几个国家测过，这正是在回答这个问题。所以「做代码背后的良心」，落到具体工作上，可能就是认真设计验证。这一点书里有没有讲，我们不知道。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">第四点？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">时间。书摘里说他们 2025 年秋天采访了 Barzilay，所以书大概在那之后不久完稿。今年夏天到 10 月 AI 解数学题的那一波，很可能来不及写进书里。Strogatz 关于「哀伤」和「数学欣赏者」的说法，主要来自最近的采访。想听这部分的人，可以去听 Science Friday 和 Radiolab。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">跟上周那本书怎么连起来？</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">Weinberger 说，机器学习告诉我们，具体的东西比普遍规律更重要。这本书告诉你，机器在处理那些具体东西时，用的是两千年前就有的、非常普遍的工具：矩阵、消元、优化。规律没有消失，它从世界的描述里，搬到了工具里。</p>
-  </div>
-</div>
-<p class="section-label">◈ 讨论角度 · 留给你的问题</p>
-<div class="script-container">
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">留几个问题给听众。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第一个：你每天用的一个 App，你能猜出它背后用的是矩阵、网络、马尔可夫链，还是优化吗？第二个：如果一个模型能提前五年预测你得某种病的风险，但没人能说清它看到了什么，你会要求它先解释，还是先用？第三个：Strogatz 说人类可能会从「数学发现者」变成「数学欣赏者」。在你自己的工作里，有没有一部分正在发生同样的事？第四个：「做代码背后的良心」，如果落到你身上，你会做的第一件具体的事是什么？</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">好，看看这几天建造者们在说什么。</p>
-  </div>
-</div>
+<p class="section-label">◈ 本周主推 · Latent Space × Zeno Rocha (Resend)</p>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://latent.space/p/resend/" target="_blank" style="color:var(--red);text-decoration:none;">Designing for Agents — Zeno Rocha, Resend · Latent Space</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《Latent Space》十一月十号上线的一集，八十六分钟，题目叫 Designing for Agents，为智能体设计。嘉宾是 Resend 的联合创始人兼 CEO Zeno Rocha。Resend 是一家做邮件发送 API 的公司，2023 年 YC 冬季批次。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">一家发邮件的公司，为什么值得做主推？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">因为这集是从一个很具体的疑问开始的。主持人 swyx 自己的域名都在 Cloudflare 上，Cloudflare 也有邮件服务，用起来很顺手。可是他让编程智能体帮忙接邮件功能，<strong>智能体一次次推荐 Resend</strong>，而不是他已经在用的 Cloudflare，也不是更老牌的 SendGrid。他们就把 Resend 的 CEO 请来问：你到底做了什么？</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">有数据吗，还是只是感觉？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">节目页面引用了一项研究。研究者从 Claude Code 的回答里提取出 102 次邮件服务推荐，<strong>Resend 排第一的有 64 次</strong>。SendGrid 排第一只有 7 次，但作为"备选"出现了 55 次。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">备选出现 55 次，听起来也不少。</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://amplifying.ai/research/claude-code-picks/report" target="_blank" style="color:var(--red);text-decoration:none;">Claude Code Picks · Amplifying research</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">主持人在这里问了一个关键问题：开发者让智能体实现邮件功能，接受了补丁，<strong>之后有多少人会回头去试第二个选项？</strong>大概很少。所以排第一和排第二，差别非常大。</p><p class="script-text">公平起见也要说，Latent Space 自己后来做了一次更全面的测试，结果竞争激烈得多，<strong>多数模型排第一的是 Postmark</strong>，不是 Resend。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那 Resend 具体做了什么？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">先讲背景。Resend 2023 年才上线，比 SendGrid、Postmark、Mailgun 晚了差不多十年，搜索排名上完全没有优势。Zeno 的第一个办法是<strong>给每一种长尾组合都写一篇短文档</strong>。不只写"用 Python 发邮件"，还写"用 Django 发邮件"，诸如此类。</p><p class="script-text">后来大家开始问模型而不是问 Google，他就改了页面的格式。现在 Resend <strong>几乎每个页面结尾都有一段常见问题</strong>，文档和官网都发布了 llms.txt，<strong>每个营销页面都有一个 Markdown 版本</strong>，在网址后面加 .md 就能拿到。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这个 .md 的做法，节目里有个例子吧？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，定价页。Resend 的定价页有一个滑块，人拖到自己的发送量，就能看到价格。Zeno 有一次让模型比较"每月发 120 万封邮件，Resend 和竞品各要多少钱"。<strong>模型把 Resend 的价格算错了很多，还说 Resend 的定价不透明。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">因为模型不会拖滑块。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。那是一个 JavaScript 计算器，智能体抓页面时不会执行它。他说的原话大意是：<strong>JavaScript 组件不会被执行，所以我把同样的数据用文字写出来。</strong>他做了一个 Markdown 版本，把价格表直接写清楚。几天后再问，模型答对了。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他怎么知道有没有智能体来读这些页面？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他在 Datadog 里看这些 Markdown 页面的访问量，因为普通的网站分析工具根本看不到这类请求。另外 Resend 还付费用了四个 AEO 追踪工具。AEO 是 answer engine optimization，答案引擎优化。但他说这些工具<strong>只告诉你被提到了几次，不告诉你该做什么</strong>。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那该怎么做？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">最简单的一步是自己去问。他发现定价错误，就是某个周日自己跑了一遍竞品对比。主持人也给了一个可以马上做的检查：<strong>打开你自己的定价页，看模型能不能用它回答一个客户的真实问题。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">节目里有一段讲 MCP 工具数量，我挺好奇。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这段很有意思。Resend 的 MCP 服务器刚推出时<strong>大概二十个工具或更少，现在超过八十个</strong>。他想做到的是：在聊天客户端里，能完成仪表盘上能做的所有事。不只是发邮件，还有邀请同事、看用量、管账单，甚至删除账号。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">八十个工具，模型不会挑花眼吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这正是主持人拿来对比的。Cloudflare 的 Code Mode 服务器只暴露两个工具，search 和 execute，让模型自己写代码去调 API。两种思路正好相反。Zeno 的看法是，<strong>他已经看不到模型因为工具太多而犯糊涂了</strong>，所以每次发布都多开放一部分产品。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那谁对？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">节目没有给结论，但给了一个更实用的观察。Zeno 会把自己会话里折叠起来的工具调用展开，看智能体实际干了什么。有一次，<strong>一个工具返回的结果太大，塞不进上下文。</strong>减少工具数量并不能让这个返回值变小。</p><p class="script-text">所以主持人建议：<strong>挑一个你每天都会调的工具，展开它的返回结果，看看模型到底需要其中多少。</strong>这比争论"二个还是八十个"更有用。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">MCP 的使用量有多大？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说调用量至少每个月翻一倍，<strong>八月份大约 120 万次</strong>。还有个小故事：Resend 第一个 MCP 服务器其实是投资方 a16z 的一个人写的开源项目，后来 Zeno 请她把项目转给了 Resend。做远程托管版本之前，他们得先加 OAuth、重做权限模型。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他自己作为买家，会因为 MCP 选产品吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">会，而且很坚决。他把网站分析从 Plausible 换成了 PostHog，原因是 <strong>PostHog 自己维护官方 MCP 服务器，而 Plausible 的是第三方做的。</strong>他选消费类应用也一样，原话是：<strong>如果它不在那里，我就不用。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这对做 B2B 软件的人是个信号。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。他想让产品变成"没有固定形态"的：先有 API，然后是为每种语言手写的 SDK，他拒绝了自动生成的 SDK，再然后是命令行工具和 MCP。<strong>现在有客户告诉他，从来没打开过他花了很多心思设计的仪表盘。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">智能体选了 SDK，事情就结束了吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">没有。邮件最难的部分在"发送"之后，就是能不能进收件箱。节目讲了一个例子：点击追踪。服务商会把邮件里的链接改写成经过一个<strong>共享的追踪域名</strong>，用来统计点击。如果某个客户用这个域名发钓鱼邮件，域名被拉黑，<strong>其他客户完全正常的邮件也会受影响</strong>。所以 Resend 推出了自定义追踪域名。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">免费套餐不会招来很多发垃圾邮件的人吗？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">会。老牌服务商的做法是新账号填表，等两天人工审核。Resend 反过来：<strong>先让所有人进来，然后盯退信率、投诉率和域名信号</strong>，比如一个两天前才注册的域名，或者一个打不开的网站。他说曾经有一伙人带着大约两万个域名来注册。他还说，被封的账号大多数其实是<strong>误用，不是恶意滥用</strong>。</p><p class="script-text">一位 Mailgun 创始人曾经提醒他，Mailgun 九成的研发都花在对付滥用者上。所以 Resend 很早就把这部分做成自动化。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">支持团队怎么撑住这么多用户？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Resend 现在有 430 万用户、12 万付费客户，去年十二月还只有 100 万用户。早期有一条规则对知识库帮助最大：<strong>回复工单只能贴链接。</strong>如果文档还不存在，客服就先去写文档，哪怕要写一个半小时。</p><p class="script-text">现在大部分工单还是 DNS 配置问题，而且越来越多来自用 Lovable、Bolt、v0 做应用的人，<strong>他们以前从没见过 CNAME 记录</strong>。Resend 接入了一个用的人不多的协议，叫 Domain Connect，作用有点像域名版的 OAuth，Cloudflare 已经支持，他又说服了 Vercel 也支持。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他有没有说哪件事做错了？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有一个。Resend 当初做的是迁移页面，带一个代码转换器，帮你从别家迁过来，<strong>而没有做正面对比页</strong>。他现在觉得这是个错误，因为竞争对手的对比页更容易被模型推荐。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我觉得这集最有用的一句话不是 Zeno 说的，是背后的那个变化：<strong>买家的第一个问题现在先问模型，而模型只给一个答案，不像 Google 给十条链接。</strong></p><p class="script-text">要成为那个答案，Resend 做的事都很朴素：每个页面都有模型能读的文字，官方 MCP 覆盖整个产品，免费套餐不设门槛。没有哪一步是花招。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我会补一句：React Email 那段也很值得想。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。Resend 最早的分发不是靠发送 API，而是 React Email 这个模板工具。你可以用它做模板，再通过 SendGrid 发出去，他们甚至写了文档教你这么做。<strong>等开发者需要换服务商时，Resend 的代码已经在他的仓库里了。</strong>这在智能体时代可能更重要：模型在你的代码库里看到什么，就更可能推荐什么。</p></div>
+<p class="section-label">◈ 本周其他集数</p>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://latent.space/p/handshake/" target="_blank" style="color:var(--red);text-decoration:none;">What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord &amp; Team · Latent Space</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集还是《Latent Space》，十一月九号，Handshake AI 的 Garrett Lord 和团队，一百六十四分钟。Handshake 的 AI 训练数据业务<strong>大约一年从零做到 10 亿美元年化总收入</strong>。这集现场演示了他们给前沿实验室做的强化学习环境：一个模拟投行，智能体要从邮件里找到任务、算出一个财务模型；一组脑肿瘤切片，要找出坏死最严重的两张。人选了两张，模型选了那两张又多加了一张。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">投行那个例子模型错在哪？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">客户邮件里有一行关于已有商誉的说明，智能体把这个数字带进 Python 直接减掉了。嘉宾说，<strong>你直接问模型税务处理，它能讲清楚</strong>；它错在没认出"这一行代码就是该用这条规则的地方"。我觉得这对做垂直领域智能体的人很有参考价值。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第二集呢？</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier" target="_blank" style="color:var(--red);text-decoration:none;">Why PMs are suddenly valuable again | Tulsee Doshi · Lenny&#x27;s Podcast</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Lenny's Podcast，十一月八号，Google 前沿模型产品负责人 Tulsee Doshi，五十九分钟。她负责 Gemini，以及 Nano Banana、Veo、Lyria 这些多模态模型。重点有两个：一是她的 <strong>60-20-20 框架</strong>，用来平衡"现在能用的"和"快能用的"；二是<strong>怎么写你的第一个评测</strong>。她说做模型开发有点像斯内普的魔药课，加了配料不一定得到你想要的结果。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有吗？</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/" target="_blank" style="color:var(--red);text-decoration:none;">How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco · Latent Space</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">简单提一集。《Latent Space》十一月八号，Stanford CS146S 课程的老师 Mihail Eric，一百二十一分钟。问题很直接：<strong>编程智能体一个提示就能做完去年的作业，那该布置什么？</strong>他的答案是请开源项目维护者进课堂，学生要读懂一个陌生仓库、提出改动、再向可能合并它的人解释这个补丁。节目里还有一句他团队的原则：<strong>买是为了学，建是为了留。</strong></p></div>
 <p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
-<div class="script-container">
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">数据截至北京时间今天下午一点。挑了四条跟今天的书有关的。第一条是 OpenAI 负责 Codex 的 Thibault Sottiaux，五千多个赞。他问大家：Codex 怎样才能变得更好？尽量别说「模型」。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">意思是，模型之外的部分也很重要。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">对。第二条是 Google 的 Josh Woodward，宣布 Gemini 4 Hydrogen 在 Gemini 应用里上线，说是给所有人用的前沿智能，快、聪明、进步很大。第三条是 Anthropic 的 Alex Albert。他说现在想让 Claude 做出好的工作，很大一部分就是找到它缺的上下文，然后把这个缺口补上。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这跟 Netflix 那张表有点像，都是在补空格。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">第四条赞很少，但跟今天的书最贴：Latent Space 的 swyx 在 AI 工程师大会现场发的，说主题演讲用费马的证明开场，「AIE Code 现在变成 AIE Math 了」。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">程序员大会开始讲数学了。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">播客推荐是 No Priors，11 月 12 号这一集，嘉宾是 Isomorphic Labs 的总裁 Max Jaderberg。Isomorphic 是 Alphabet 支持的公司，从 DeepMind 的 AlphaFold 发展出来，目标是「解决所有疾病」。他说，今天做药很大程度上靠经验，最大的失败发生在临床，因为要等到药用在病人身上，才发现有没想到的毒性。机会在于把药物研发尽量搬到计算机上，在进入人体之前就有更多理解。他说，如果五年后我们对疾病生物学的预测能力还没有大幅跃升，他会很失望。</p>
-  </div>
-  <div class="script-block">
-    <div class="speaker-tag speaker-xiaowei">小苇</div>
-    <p class="script-text">这正是书里说的：先在电脑里把手术演练一遍，再在真人身上做。</p>
-  </div>
-  <div class="script-block lead-block">
-    <div class="speaker-tag speaker-dayu">大雨</div>
-    <p class="script-text">好，今天就到这里。这周如果你只做一件事：打开你最常用的一个推荐，比如视频网站的「猜你喜欢」，想一想那张大部分是空格的表，你自己是其中一行。下周六见。</p>
-  </div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/garrytan/status/2121464508225053153" target="_blank" style="color:var(--red);text-decoration:none;">Garry Tan on X</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">跟主推最接近的一条来自 YC 的 Garry Tan。他用自己开源的评测仓库，在 Claude Code 里跑了 52 个编程任务：<strong>Fable 5.2 解出的数量跟 Opus 5.5 差不多，82.7% 对 84.6%，但每解出一个任务的成本是 2.8 倍。</strong>所以他建议把 Opus 5.5 留作编程默认模型。他也说了，这些任务 Opus 已经大多能解，要分出高下得用更难的题。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这跟 Zeno 那个"自己去问模型"是一回事。</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/nikunj/status/2121320899161010360" target="_blank" style="color:var(--red);text-decoration:none;">Nikunj Kothari on X</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，都是<strong>别只看别人的榜单，用你自己的任务去测。</strong>FPV Ventures 的 Nikunj Kothari 也说了类似的话：他以为 Llama 4 之后大家不再拿刷榜当卖点了，结果又回来了；<strong>要知道哪个模型好用，只能拿它跑你自己的工作流。</strong></p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">点赞高的呢？</p></div>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/rauchg/status/2121277727940776114" target="_blank" style="color:var(--red);text-decoration:none;">Guillermo Rauch on X</a></p>
+<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/danshipper/status/2121248233510818003" target="_blank" style="color:var(--red);text-decoration:none;">Dan Shipper on X</a></p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Vercel 的 CEO Guillermo Rauch 发布了 <strong>Workflow SDK 5 和 Vercel Workflows</strong>。他说智能体执行时"到第一步的时间"和"步与步之间的时间"都大幅缩短，加强了加密和安全，可靠性也在大规模下验证过。</p><p class="script-text">还有 Every 的 Dan Shipper，写了一篇文章讲：<strong>就算 Fable 5.2 什么都能用 vibe coding 写出来，为什么团队还在为软件付钱。</strong>这跟 Zeno 说的正好呼应：客户付钱买的不只是代码，还有送达率、反滥用、支持这些代码之外的东西。</p></div>
+<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起，有一条共同的线：<strong>读你产品的，越来越多是模型。</strong>Resend 给每个页面写 Markdown 版本；Handshake 给模型造模拟投行；Stanford 的课在智能体能做完作业以后，改成让学生读懂陌生仓库、把补丁讲给维护者听。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">今天就做一件事：打开你们产品的定价页或者文档首页，复制网址，让一个智能体去回答"我每月要用多少，要付多少钱"。如果它答错了，看看是不是关键信息藏在 JavaScript 组件里。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听 Resend 那集里讲 MCP 设计和定价页的两段，大概第三十八分钟和第五十八分钟开始。然后听 Handshake 那集讲投行环境和评分的部分，从一小时十二分开始。</p></div>
+<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周你打算听哪一集？我们下周见。</p></div>
+<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
 </div>
+
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
 <p class="section-label">◈ Follow Builders · 今日建造者动态</p>
@@ -684,107 +267,107 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 05:09。
+  数据截至今日 UTC 05:08。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">No Priors · 2026-11-12</p>
-  <p class="pc-title">Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg</p>
-  <p class="pc-summary">Isomorphic Labs 从 DeepMind 的 AlphaFold 发展而来，目标是「解决所有疾病」。Max Jaderberg 说，今天做药很大程度靠经验，最大的失败发生在临床，要等药用在病人身上才发现没想到的毒性；机会在于把药物研发尽量搬到计算机上。他说，如果五年后对疾病生物学的预测能力还没有大幅跃升，他会很失望。</p>
-  <a href="https://www.youtube.com/@NoPriorsPodcast" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Latent Space · 2026-11-10</p>
+  <p class="pc-title">Designing for Agents — Zeno Rocha, Resend</p>
+  <p class="pc-summary">Resend 比老牌对手晚十年上线，却成了编程智能体最常推荐的邮件 API 之一。Zeno Rocha 讲了具体做法：长尾短文档、每页一个 Markdown 版本、把 JavaScript 定价计算器里的数字写成文字、把 MCP 工具从约 20 个扩到 80 多个。后半段讲送达率、共享追踪域名的风险和免费套餐的反滥用。</p>
+  <a href="https://latent.space/p/resend/" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">TS</div>
+      <div class="builder-avatar">GT</div>
       <div>
-        <div class="builder-name">Thibault Sottiaux</div>
-        <div class="builder-handle">@thsottiaux · Codex &amp; ChatGPT, OpenAI</div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President & CEO @ycombinator</div>
       </div>
     </div>
-    <p class="builder-tweet">「Codex 怎样才能变得更好？尽量别说「模型」。」</p>
+    <p class="builder-tweet">「Claude Code 里的编程默认模型继续用 Opus 5.5。在 Claude Code 2.1.322 上跑 52 个编程任务，Fable 5.2 解出的数量差不多（82.7% 对 84.6%），但每解出一个任务的成本是 2.8 倍。不过这些任务 Opus 已经大多能解，要分出高下得用更难的题。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 5486</span>
-      <a href="https://x.com/thsottiaux/status/2121062974161092792" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 154</span>
+      <a href="https://x.com/garrytan/status/2121464508225053153" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">JW</div>
+      <div class="builder-avatar">GR</div>
       <div>
-        <div class="builder-name">Josh Woodward</div>
-        <div class="builder-handle">@joshwoodward · VP, Google Labs / Gemini</div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @vercel</div>
       </div>
     </div>
-    <p class="builder-tweet">「推出 Gemini 4 Hydrogen，给所有人用的前沿智能，现已在 Gemini 应用上线。快，聪明，进步很大。」</p>
+    <p class="builder-tweet">「Workflow SDK 5 和 Vercel Workflows 是智能体的一大进步：「到第一步的时间」和「步与步之间的时间」大幅改善；我们加强了加密和安全；整个系统的可靠性已经在大规模下验证过。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 847</span>
-      <a href="https://x.com/joshwoodward/status/2120942262054232392" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 345</span>
+      <a href="https://x.com/rauchg/status/2121277727940776114" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">AA</div>
+      <div class="builder-avatar">DS</div>
       <div>
-        <div class="builder-name">Alex Albert</div>
-        <div class="builder-handle">@alexalbert__ · Research, Anthropic</div>
+        <div class="builder-name">Dan Shipper</div>
+        <div class="builder-handle">@danshipper · CEO @every</div>
       </div>
     </div>
-    <p class="builder-tweet">「现在想让 Claude 做出好的工作，很大一部分就是找到它缺的上下文，然后把这个缺口补上。」</p>
+    <p class="builder-tweet">「就算 Fable 5.2 什么都能 vibe code 出来，为什么团队还在为软件付钱。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 386</span>
-      <a href="https://x.com/alexalbert__/status/2120983722182988206" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 83</span>
+      <a href="https://x.com/danshipper/status/2121248233510818003" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">SW</div>
+      <div class="builder-avatar">NK</div>
       <div>
-        <div class="builder-name">Swyx</div>
-        <div class="builder-handle">@swyx · Latent Space / AI Engineer</div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner @fpvventures</div>
       </div>
     </div>
-    <p class="builder-tweet">「Lance 的主题演讲用费马的证明开场。AIE Code 现在变成 AIE Math 了。」</p>
+    <p class="builder-tweet">「我以为 Llama 4 之后大家不再拿刷榜当卖点了，结果这一套又回来了。要知道哪个模型适合你，只能拿它跑你自己的工作流，没有别的替代办法。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2</span>
-      <a href="https://x.com/swyx/status/2120981552561844593" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 5</span>
+      <a href="https://x.com/nikunj/status/2121320899161010360" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<section class="sources">
-  <div class="sources-label">◈ 来源与说明</div>
-  <p class="sources-note">
-    本期未拿到全书。书的内容依据出版方简介、Science Friday 发布的书摘（引言部分）和 Kirkus 书评；作者观点依据 Science Friday 采访文字稿（2026-11-06）和康奈尔新闻网采访（2026-11-10）。上市第四天未找到《纽约时报》、《卫报》、Publishers Weekly 书评。Steven Levitt 与 Melanie Mitchell 的推荐语见于零售商页面，原文未核对。《九章算术》「方程」章、压缩感知和奇异值分解的解释是本节目补充的，不是书中原话。「AI 解出三百多个问题」「准黎曼猜想」等均为 Strogatz 采访中的说法，本节目未逐一核对。本期为 Up Next 空缺时自行选定。
-  </p>
-  <a class="source-link" href="https://www.hachettebookgroup.com/titles/steven-strogatz-2/big-math/9781668659335/?lens=little-brown" target="_blank"><span class="src-icon">BOOK</span><span>Big Math — Hachette Book Group 出版方页面（简介、作者介绍、推荐语）</span></a>
-  <a class="source-link" href="https://www.sciencefriday.com/articles/big-math-book-excerpt/" target="_blank"><span class="src-icon">EXCERPT</span><span>‘Big Math’ is here, and humans can shape its potential — Science Friday 书摘，2026-11-06</span></a>
-  <a class="source-link" href="https://www.sciencefriday.com/segments/big-math-shines-a-light-on-the-hidden-math-that-runs-our-world/" target="_blank"><span class="src-icon">INTERVIEW</span><span>‘Big Math’ shines a light on the hidden math that runs our world — Science Friday 采访文字稿</span></a>
-  <a class="source-link" href="https://news.cornell.edu/stories/2026/11/big-math-reveals-hidden-codes-run-our-algorithm-driven-world" target="_blank"><span class="src-icon">INTERVIEW</span><span>‘Big Math’ reveals the hidden codes that run our algorithm-driven world — Cornell Chronicle，2026-11-10</span></a>
-  <a class="source-link" href="https://www.kirkusreviews.com/book-reviews/steven-strogatz/big-math/" target="_blank"><span class="src-icon">REVIEW</span><span>BIG MATH — Kirkus Reviews</span></a>
-  <a class="source-link" href="https://podcasts.happyscribe.com/radiolab/math-vs-machine" target="_blank"><span class="src-icon">PODCAST</span><span>Math Vs Machine — Radiolab，2026-10-09</span></a>
-  <a class="source-link" href="https://pi.math.cornell.edu/m/node/7506" target="_blank"><span class="src-icon">BIO</span><span>Alex Townsend wins the Leslie Fox Prize — Cornell Math</span></a>
-</section>
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://latent.space/p/resend/" target="_blank"><span class="src-icon">Link</span><span>Designing for Agents — Zeno Rocha, Resend · Latent Space</span></a>
+  <a class="source-link" href="https://amplifying.ai/research/claude-code-picks/report" target="_blank"><span class="src-icon">Link</span><span>Claude Code Picks · Amplifying research</span></a>
+  <a class="source-link" href="https://latent.space/p/handshake/" target="_blank"><span class="src-icon">Link</span><span>What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord &amp; Team · Latent Space</span></a>
+  <a class="source-link" href="https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier" target="_blank"><span class="src-icon">Link</span><span>Why PMs are suddenly valuable again | Tulsee Doshi · Lenny&#x27;s Podcast</span></a>
+  <a class="source-link" href="https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/" target="_blank"><span class="src-icon">Link</span><span>How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco · Latent Space</span></a>
+  <a class="source-link" href="https://x.com/garrytan/status/2121464508225053153" target="_blank"><span class="src-icon">X</span><span>Garry Tan on X</span></a>
+  <a class="source-link" href="https://x.com/nikunj/status/2121320899161010360" target="_blank"><span class="src-icon">X</span><span>Nikunj Kothari on X</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2121277727940776114" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch on X</span></a>
+  <a class="source-link" href="https://x.com/danshipper/status/2121248233510818003" target="_blank"><span class="src-icon">X</span><span>Dan Shipper on X</span></a>
+  <a class="source-link" href="https://www.teamday.ai/ai/zeno-rocha-resend-80-mcp-tools-designing-for-agents" target="_blank"><span class="src-icon">Link</span><span>Resend's Zeno Rocha: 80 MCP Tools, Pages Agents Can Read · Teamday 节目摘要</span></a>
+  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+</div>
 
-<footer class="footer">
-  <span>Daily Builders Digest · 2026-11-14</span>
-  <span>周六书籍介绍 · 第二十九期</span>
-  <span>大雨 × 小苇</span>
-</footer>
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-15 · 周日播客精选</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近一个月节目</p>
 <div class="cal-card">
   <div class="cal-head">
-    <span class="cal-range">2026.10.14 — 2026.11.14</span>
+    <span class="cal-range">2026.10.15 — 2026.11.15</span>
     <span class="cal-count">30 期</span>
   </div>
-  <div class="cal-grid"><span class="cal-wd">一</span><span class="cal-wd">二</span><span class="cal-wd">三</span><span class="cal-wd">四</span><span class="cal-wd">五</span><span class="cal-wd">六</span><span class="cal-wd">日</span><span class="cal-day off"><span class="cal-num">10月</span></span><span class="cal-day off"><span class="cal-num">13</span></span><a class="cal-day has-ep" href="/episodes/2026-10-14.html" title="2026-10-14 · Product · 把整件事走一遍" style="--c:#004488"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">产品</span></span><span class="cal-theme">把整件事走一遍</span></a><a class="cal-day has-ep" href="/episodes/2026-10-15.html" title="2026-10-15 · Health · 大脑记得你吃过什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">健康</span></span><span class="cal-theme">大脑记得你吃过什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-16.html" title="2026-10-16 · AI · 跑出去的代理，借来的钱" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">跑出去的代理，借来的钱</span></a><a class="cal-day has-ep" href="/episodes/2026-10-17.html" title="2026-10-17 · Books · Apple: The First 50 Years" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">17</span><span class="cal-topic">书</span></span><span class="cal-theme">Apple: The First 50 Years</span></a><span class="cal-day empty"><span class="cal-num">18</span></span><span class="cal-day empty"><span class="cal-num">19</span></span><a class="cal-day has-ep" href="/episodes/2026-10-20.html" title="2026-10-20 · Robotics · 先让人在回路里，再慢慢撤出来" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">20</span><span class="cal-topic">机器人</span></span><span class="cal-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-day has-ep" href="/episodes/2026-10-21.html" title="2026-10-21 · Product · 一个人用，还是一起用" style="--c:#004488"><span class="cal-top"><span class="cal-num">21</span><span class="cal-topic">产品</span></span><span class="cal-theme">一个人用，还是一起用</span></a><a class="cal-day has-ep" href="/episodes/2026-10-22.html" title="2026-10-22 · Health · 癌症这十五年变了什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">22</span><span class="cal-topic">健康</span></span><span class="cal-theme">癌症这十五年变了什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-23.html" title="2026-10-23 · AI · AI 找漏洞，也替你找活" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">23</span><span class="cal-topic">AI</span></span><span class="cal-theme">AI 找漏洞，也替你找活</span></a><a class="cal-day has-ep" href="/episodes/2026-10-24.html" title="2026-10-24 · Books · Hyperscale" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">24</span><span class="cal-topic">书</span></span><span class="cal-theme">Hyperscale</span></a><a class="cal-day has-ep" href="/episodes/2026-10-25.html" title="2026-10-25 · Podcasts · 接下来十八个月，一半工程时间花在安全上" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">25</span><span class="cal-topic">播客</span></span><span class="cal-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-day has-ep" href="/episodes/2026-10-26.html" title="2026-10-26 · AI · 把代理关在笼子里" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">26</span><span class="cal-topic">AI</span></span><span class="cal-theme">把代理关在笼子里</span></a><a class="cal-day has-ep" href="/episodes/2026-10-27.html" title="2026-10-27 · Robotics · 从一个仓库到很多个仓库" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">27</span><span class="cal-topic">机器人</span></span><span class="cal-theme">从一个仓库到很多个仓库</span></a><a class="cal-day has-ep" href="/episodes/2026-10-28.html" title="2026-10-28 · Product · agent 开始用电脑，人管什么" style="--c:#004488"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">产品</span></span><span class="cal-theme">agent 开始用电脑，人管什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-29.html" title="2026-10-29 · Health · 情绪是大脑做出来的预测" style="--c:#007744"><span class="cal-top"><span class="cal-num">29</span><span class="cal-topic">健康</span></span><span class="cal-theme">情绪是大脑做出来的预测</span></a><a class="cal-day has-ep" href="/episodes/2026-10-30.html" title="2026-10-30 · AI · 花钱的账单和写代码的人" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">30</span><span class="cal-topic">AI</span></span><span class="cal-theme">花钱的账单和写代码的人</span></a><a class="cal-day has-ep" href="/episodes/2026-10-31.html" title="2026-10-31 · Books · Artificial Intimacy" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">31</span><span class="cal-topic">书</span></span><span class="cal-theme">Artificial Intimacy</span></a><a class="cal-day has-ep" href="/episodes/2026-11-01.html" title="2026-11-01 · Podcasts · 智能体越强，企业给每个人的权限越紧" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">11月</span><span class="cal-topic">播客</span></span><span class="cal-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-day has-ep" href="/episodes/2026-11-02.html" title="2026-11-02 · AI · 额度、退出标记和两边都在用的代理" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">2</span><span class="cal-topic">AI</span></span><span class="cal-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-day has-ep" href="/episodes/2026-11-03.html" title="2026-11-03 · Robotics · 机器人要上市，也要上保险" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">3</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人要上市，也要上保险</span></a><a class="cal-day has-ep" href="/episodes/2026-11-04.html" title="2026-11-04 · Product · 默认值是谁定的" style="--c:#004488"><span class="cal-top"><span class="cal-num">4</span><span class="cal-topic">产品</span></span><span class="cal-theme">默认值是谁定的</span></a><a class="cal-day has-ep" href="/episodes/2026-11-05.html" title="2026-11-05 · Health · 练力量，受伤了也别全停" style="--c:#007744"><span class="cal-top"><span class="cal-num">5</span><span class="cal-topic">健康</span></span><span class="cal-theme">练力量，受伤了也别全停</span></a><a class="cal-day has-ep" href="/episodes/2026-11-06.html" title="2026-11-06 · AI · 找漏洞的模型、放代码的地方、建机房的条件" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">6</span><span class="cal-topic">AI</span></span><span class="cal-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-day has-ep" href="/episodes/2026-11-07.html" title="2026-11-07 · Books · Beautiful Particulars" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">7</span><span class="cal-topic">书</span></span><span class="cal-theme">Beautiful Particulars</span></a><a class="cal-day has-ep" href="/episodes/2026-11-08.html" title="2026-11-08 · Podcasts · 画地图 → 预测 → 指挥下一个实验" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">8</span><span class="cal-topic">播客</span></span><span class="cal-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-day has-ep" href="/episodes/2026-11-09.html" title="2026-11-09 · AI · 代理去攻，代理去守，融资变难" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">9</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-day has-ep" href="/episodes/2026-11-10.html" title="2026-11-10 · Robotics · 数据：人类视频、审查、财报" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">10</span><span class="cal-topic">机器人</span></span><span class="cal-theme">数据：人类视频、审查、财报</span></a><a class="cal-day has-ep" href="/episodes/2026-11-11.html" title="2026-11-11 · Product · 额度也是产品" style="--c:#004488"><span class="cal-top"><span class="cal-num">11</span><span class="cal-topic">产品</span></span><span class="cal-theme">额度也是产品</span></a><a class="cal-day has-ep" href="/episodes/2026-11-12.html" title="2026-11-12 · Health · 数字之外" style="--c:#007744"><span class="cal-top"><span class="cal-num">12</span><span class="cal-topic">健康</span></span><span class="cal-theme">数字之外</span></a><a class="cal-day has-ep" href="/episodes/2026-11-13.html" title="2026-11-13 · AI · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">13</span><span class="cal-topic">AI</span></span><span class="cal-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-day has-ep is-today" href="/episodes/2026-11-14.html" title="2026-11-14 · Books · Big Math" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">书</span></span><span class="cal-theme">Big Math</span></a><span class="cal-day off"><span class="cal-num">15</span></span></div>
-  <div class="cal-legend"><span class="cal-leg"><i style="background:#0066cc"></i>书</span><span class="cal-leg"><i style="background:#dd1111"></i>AI</span><span class="cal-leg"><i style="background:#007744"></i>健康</span><span class="cal-leg"><i style="background:#004488"></i>产品</span><span class="cal-leg"><i style="background:#cc5500"></i>机器人</span><span class="cal-leg"><i style="background:#7700dd"></i>播客</span></div>
-  <div class="cal-list"><a class="cal-row" href="/episodes/2026-11-14.html" style="--c:#0066cc"><span class="cal-row-date">11/14</span><span class="cal-row-theme">Big Math</span></a><a class="cal-row" href="/episodes/2026-11-13.html" style="--c:#dd1111"><span class="cal-row-date">11/13</span><span class="cal-row-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-row" href="/episodes/2026-11-12.html" style="--c:#007744"><span class="cal-row-date">11/12</span><span class="cal-row-theme">数字之外</span></a><a class="cal-row" href="/episodes/2026-11-11.html" style="--c:#004488"><span class="cal-row-date">11/11</span><span class="cal-row-theme">额度也是产品</span></a><a class="cal-row" href="/episodes/2026-11-10.html" style="--c:#cc5500"><span class="cal-row-date">11/10</span><span class="cal-row-theme">数据：人类视频、审查、财报</span></a><a class="cal-row" href="/episodes/2026-11-09.html" style="--c:#dd1111"><span class="cal-row-date">11/9</span><span class="cal-row-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-row" href="/episodes/2026-11-08.html" style="--c:#7700dd"><span class="cal-row-date">11/8</span><span class="cal-row-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-row" href="/episodes/2026-11-07.html" style="--c:#0066cc"><span class="cal-row-date">11/7</span><span class="cal-row-theme">Beautiful Particulars</span></a><a class="cal-row" href="/episodes/2026-11-06.html" style="--c:#dd1111"><span class="cal-row-date">11/6</span><span class="cal-row-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-row" href="/episodes/2026-11-05.html" style="--c:#007744"><span class="cal-row-date">11/5</span><span class="cal-row-theme">练力量，受伤了也别全停</span></a><a class="cal-row" href="/episodes/2026-11-04.html" style="--c:#004488"><span class="cal-row-date">11/4</span><span class="cal-row-theme">默认值是谁定的</span></a><a class="cal-row" href="/episodes/2026-11-03.html" style="--c:#cc5500"><span class="cal-row-date">11/3</span><span class="cal-row-theme">机器人要上市，也要上保险</span></a><a class="cal-row" href="/episodes/2026-11-02.html" style="--c:#dd1111"><span class="cal-row-date">11/2</span><span class="cal-row-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-row" href="/episodes/2026-11-01.html" style="--c:#7700dd"><span class="cal-row-date">11/1</span><span class="cal-row-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-row" href="/episodes/2026-10-31.html" style="--c:#0066cc"><span class="cal-row-date">10/31</span><span class="cal-row-theme">Artificial Intimacy</span></a><a class="cal-row" href="/episodes/2026-10-30.html" style="--c:#dd1111"><span class="cal-row-date">10/30</span><span class="cal-row-theme">花钱的账单和写代码的人</span></a><a class="cal-row" href="/episodes/2026-10-29.html" style="--c:#007744"><span class="cal-row-date">10/29</span><span class="cal-row-theme">情绪是大脑做出来的预测</span></a><a class="cal-row" href="/episodes/2026-10-28.html" style="--c:#004488"><span class="cal-row-date">10/28</span><span class="cal-row-theme">agent 开始用电脑，人管什么</span></a><a class="cal-row" href="/episodes/2026-10-27.html" style="--c:#cc5500"><span class="cal-row-date">10/27</span><span class="cal-row-theme">从一个仓库到很多个仓库</span></a><a class="cal-row" href="/episodes/2026-10-26.html" style="--c:#dd1111"><span class="cal-row-date">10/26</span><span class="cal-row-theme">把代理关在笼子里</span></a><a class="cal-row" href="/episodes/2026-10-25.html" style="--c:#7700dd"><span class="cal-row-date">10/25</span><span class="cal-row-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-row" href="/episodes/2026-10-24.html" style="--c:#0066cc"><span class="cal-row-date">10/24</span><span class="cal-row-theme">Hyperscale</span></a><a class="cal-row" href="/episodes/2026-10-23.html" style="--c:#dd1111"><span class="cal-row-date">10/23</span><span class="cal-row-theme">AI 找漏洞，也替你找活</span></a><a class="cal-row" href="/episodes/2026-10-22.html" style="--c:#007744"><span class="cal-row-date">10/22</span><span class="cal-row-theme">癌症这十五年变了什么</span></a><a class="cal-row" href="/episodes/2026-10-21.html" style="--c:#004488"><span class="cal-row-date">10/21</span><span class="cal-row-theme">一个人用，还是一起用</span></a><a class="cal-row" href="/episodes/2026-10-20.html" style="--c:#cc5500"><span class="cal-row-date">10/20</span><span class="cal-row-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-row" href="/episodes/2026-10-17.html" style="--c:#0066cc"><span class="cal-row-date">10/17</span><span class="cal-row-theme">Apple: The First 50 Years</span></a><a class="cal-row" href="/episodes/2026-10-16.html" style="--c:#dd1111"><span class="cal-row-date">10/16</span><span class="cal-row-theme">跑出去的代理，借来的钱</span></a><a class="cal-row" href="/episodes/2026-10-15.html" style="--c:#007744"><span class="cal-row-date">10/15</span><span class="cal-row-theme">大脑记得你吃过什么</span></a><a class="cal-row" href="/episodes/2026-10-14.html" style="--c:#004488"><span class="cal-row-date">10/14</span><span class="cal-row-theme">把整件事走一遍</span></a></div>
+  <div class="cal-grid"><span class="cal-wd">一</span><span class="cal-wd">二</span><span class="cal-wd">三</span><span class="cal-wd">四</span><span class="cal-wd">五</span><span class="cal-wd">六</span><span class="cal-wd">日</span><span class="cal-day off"><span class="cal-num">10月</span></span><span class="cal-day off"><span class="cal-num">13</span></span><span class="cal-day off"><span class="cal-num">14</span></span><a class="cal-day has-ep" href="/episodes/2026-10-15.html" title="2026-10-15 · Health · 大脑记得你吃过什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">健康</span></span><span class="cal-theme">大脑记得你吃过什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-16.html" title="2026-10-16 · AI · 跑出去的代理，借来的钱" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">跑出去的代理，借来的钱</span></a><a class="cal-day has-ep" href="/episodes/2026-10-17.html" title="2026-10-17 · Books · Apple: The First 50 Years" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">17</span><span class="cal-topic">书</span></span><span class="cal-theme">Apple: The First 50 Years</span></a><span class="cal-day empty"><span class="cal-num">18</span></span><span class="cal-day empty"><span class="cal-num">19</span></span><a class="cal-day has-ep" href="/episodes/2026-10-20.html" title="2026-10-20 · Robotics · 先让人在回路里，再慢慢撤出来" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">20</span><span class="cal-topic">机器人</span></span><span class="cal-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-day has-ep" href="/episodes/2026-10-21.html" title="2026-10-21 · Product · 一个人用，还是一起用" style="--c:#004488"><span class="cal-top"><span class="cal-num">21</span><span class="cal-topic">产品</span></span><span class="cal-theme">一个人用，还是一起用</span></a><a class="cal-day has-ep" href="/episodes/2026-10-22.html" title="2026-10-22 · Health · 癌症这十五年变了什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">22</span><span class="cal-topic">健康</span></span><span class="cal-theme">癌症这十五年变了什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-23.html" title="2026-10-23 · AI · AI 找漏洞，也替你找活" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">23</span><span class="cal-topic">AI</span></span><span class="cal-theme">AI 找漏洞，也替你找活</span></a><a class="cal-day has-ep" href="/episodes/2026-10-24.html" title="2026-10-24 · Books · Hyperscale" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">24</span><span class="cal-topic">书</span></span><span class="cal-theme">Hyperscale</span></a><a class="cal-day has-ep" href="/episodes/2026-10-25.html" title="2026-10-25 · Podcasts · 接下来十八个月，一半工程时间花在安全上" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">25</span><span class="cal-topic">播客</span></span><span class="cal-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-day has-ep" href="/episodes/2026-10-26.html" title="2026-10-26 · AI · 把代理关在笼子里" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">26</span><span class="cal-topic">AI</span></span><span class="cal-theme">把代理关在笼子里</span></a><a class="cal-day has-ep" href="/episodes/2026-10-27.html" title="2026-10-27 · Robotics · 从一个仓库到很多个仓库" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">27</span><span class="cal-topic">机器人</span></span><span class="cal-theme">从一个仓库到很多个仓库</span></a><a class="cal-day has-ep" href="/episodes/2026-10-28.html" title="2026-10-28 · Product · agent 开始用电脑，人管什么" style="--c:#004488"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">产品</span></span><span class="cal-theme">agent 开始用电脑，人管什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-29.html" title="2026-10-29 · Health · 情绪是大脑做出来的预测" style="--c:#007744"><span class="cal-top"><span class="cal-num">29</span><span class="cal-topic">健康</span></span><span class="cal-theme">情绪是大脑做出来的预测</span></a><a class="cal-day has-ep" href="/episodes/2026-10-30.html" title="2026-10-30 · AI · 花钱的账单和写代码的人" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">30</span><span class="cal-topic">AI</span></span><span class="cal-theme">花钱的账单和写代码的人</span></a><a class="cal-day has-ep" href="/episodes/2026-10-31.html" title="2026-10-31 · Books · Artificial Intimacy" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">31</span><span class="cal-topic">书</span></span><span class="cal-theme">Artificial Intimacy</span></a><a class="cal-day has-ep" href="/episodes/2026-11-01.html" title="2026-11-01 · Podcasts · 智能体越强，企业给每个人的权限越紧" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">11月</span><span class="cal-topic">播客</span></span><span class="cal-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-day has-ep" href="/episodes/2026-11-02.html" title="2026-11-02 · AI · 额度、退出标记和两边都在用的代理" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">2</span><span class="cal-topic">AI</span></span><span class="cal-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-day has-ep" href="/episodes/2026-11-03.html" title="2026-11-03 · Robotics · 机器人要上市，也要上保险" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">3</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人要上市，也要上保险</span></a><a class="cal-day has-ep" href="/episodes/2026-11-04.html" title="2026-11-04 · Product · 默认值是谁定的" style="--c:#004488"><span class="cal-top"><span class="cal-num">4</span><span class="cal-topic">产品</span></span><span class="cal-theme">默认值是谁定的</span></a><a class="cal-day has-ep" href="/episodes/2026-11-05.html" title="2026-11-05 · Health · 练力量，受伤了也别全停" style="--c:#007744"><span class="cal-top"><span class="cal-num">5</span><span class="cal-topic">健康</span></span><span class="cal-theme">练力量，受伤了也别全停</span></a><a class="cal-day has-ep" href="/episodes/2026-11-06.html" title="2026-11-06 · AI · 找漏洞的模型、放代码的地方、建机房的条件" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">6</span><span class="cal-topic">AI</span></span><span class="cal-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-day has-ep" href="/episodes/2026-11-07.html" title="2026-11-07 · Books · Beautiful Particulars" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">7</span><span class="cal-topic">书</span></span><span class="cal-theme">Beautiful Particulars</span></a><a class="cal-day has-ep" href="/episodes/2026-11-08.html" title="2026-11-08 · Podcasts · 画地图 → 预测 → 指挥下一个实验" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">8</span><span class="cal-topic">播客</span></span><span class="cal-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-day has-ep" href="/episodes/2026-11-09.html" title="2026-11-09 · AI · 代理去攻，代理去守，融资变难" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">9</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-day has-ep" href="/episodes/2026-11-10.html" title="2026-11-10 · Robotics · 数据：人类视频、审查、财报" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">10</span><span class="cal-topic">机器人</span></span><span class="cal-theme">数据：人类视频、审查、财报</span></a><a class="cal-day has-ep" href="/episodes/2026-11-11.html" title="2026-11-11 · Product · 额度也是产品" style="--c:#004488"><span class="cal-top"><span class="cal-num">11</span><span class="cal-topic">产品</span></span><span class="cal-theme">额度也是产品</span></a><a class="cal-day has-ep" href="/episodes/2026-11-12.html" title="2026-11-12 · Health · 数字之外" style="--c:#007744"><span class="cal-top"><span class="cal-num">12</span><span class="cal-topic">健康</span></span><span class="cal-theme">数字之外</span></a><a class="cal-day has-ep" href="/episodes/2026-11-13.html" title="2026-11-13 · AI · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">13</span><span class="cal-topic">AI</span></span><span class="cal-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-day has-ep" href="/episodes/2026-11-14.html" title="2026-11-14 · Books · Big Math" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">书</span></span><span class="cal-theme">Big Math</span></a><a class="cal-day has-ep is-today" href="/episodes/2026-11-15.html" title="2026-11-15 · Podcasts · 当买家先去问模型" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">播客</span></span><span class="cal-theme">当买家先去问模型</span></a></div>
+  <div class="cal-legend"><span class="cal-leg"><i style="background:#7700dd"></i>播客</span><span class="cal-leg"><i style="background:#0066cc"></i>书</span><span class="cal-leg"><i style="background:#dd1111"></i>AI</span><span class="cal-leg"><i style="background:#007744"></i>健康</span><span class="cal-leg"><i style="background:#004488"></i>产品</span><span class="cal-leg"><i style="background:#cc5500"></i>机器人</span></div>
+  <div class="cal-list"><a class="cal-row" href="/episodes/2026-11-15.html" style="--c:#7700dd"><span class="cal-row-date">11/15</span><span class="cal-row-theme">当买家先去问模型</span></a><a class="cal-row" href="/episodes/2026-11-14.html" style="--c:#0066cc"><span class="cal-row-date">11/14</span><span class="cal-row-theme">Big Math</span></a><a class="cal-row" href="/episodes/2026-11-13.html" style="--c:#dd1111"><span class="cal-row-date">11/13</span><span class="cal-row-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-row" href="/episodes/2026-11-12.html" style="--c:#007744"><span class="cal-row-date">11/12</span><span class="cal-row-theme">数字之外</span></a><a class="cal-row" href="/episodes/2026-11-11.html" style="--c:#004488"><span class="cal-row-date">11/11</span><span class="cal-row-theme">额度也是产品</span></a><a class="cal-row" href="/episodes/2026-11-10.html" style="--c:#cc5500"><span class="cal-row-date">11/10</span><span class="cal-row-theme">数据：人类视频、审查、财报</span></a><a class="cal-row" href="/episodes/2026-11-09.html" style="--c:#dd1111"><span class="cal-row-date">11/9</span><span class="cal-row-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-row" href="/episodes/2026-11-08.html" style="--c:#7700dd"><span class="cal-row-date">11/8</span><span class="cal-row-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-row" href="/episodes/2026-11-07.html" style="--c:#0066cc"><span class="cal-row-date">11/7</span><span class="cal-row-theme">Beautiful Particulars</span></a><a class="cal-row" href="/episodes/2026-11-06.html" style="--c:#dd1111"><span class="cal-row-date">11/6</span><span class="cal-row-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-row" href="/episodes/2026-11-05.html" style="--c:#007744"><span class="cal-row-date">11/5</span><span class="cal-row-theme">练力量，受伤了也别全停</span></a><a class="cal-row" href="/episodes/2026-11-04.html" style="--c:#004488"><span class="cal-row-date">11/4</span><span class="cal-row-theme">默认值是谁定的</span></a><a class="cal-row" href="/episodes/2026-11-03.html" style="--c:#cc5500"><span class="cal-row-date">11/3</span><span class="cal-row-theme">机器人要上市，也要上保险</span></a><a class="cal-row" href="/episodes/2026-11-02.html" style="--c:#dd1111"><span class="cal-row-date">11/2</span><span class="cal-row-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-row" href="/episodes/2026-11-01.html" style="--c:#7700dd"><span class="cal-row-date">11/1</span><span class="cal-row-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-row" href="/episodes/2026-10-31.html" style="--c:#0066cc"><span class="cal-row-date">10/31</span><span class="cal-row-theme">Artificial Intimacy</span></a><a class="cal-row" href="/episodes/2026-10-30.html" style="--c:#dd1111"><span class="cal-row-date">10/30</span><span class="cal-row-theme">花钱的账单和写代码的人</span></a><a class="cal-row" href="/episodes/2026-10-29.html" style="--c:#007744"><span class="cal-row-date">10/29</span><span class="cal-row-theme">情绪是大脑做出来的预测</span></a><a class="cal-row" href="/episodes/2026-10-28.html" style="--c:#004488"><span class="cal-row-date">10/28</span><span class="cal-row-theme">agent 开始用电脑，人管什么</span></a><a class="cal-row" href="/episodes/2026-10-27.html" style="--c:#cc5500"><span class="cal-row-date">10/27</span><span class="cal-row-theme">从一个仓库到很多个仓库</span></a><a class="cal-row" href="/episodes/2026-10-26.html" style="--c:#dd1111"><span class="cal-row-date">10/26</span><span class="cal-row-theme">把代理关在笼子里</span></a><a class="cal-row" href="/episodes/2026-10-25.html" style="--c:#7700dd"><span class="cal-row-date">10/25</span><span class="cal-row-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-row" href="/episodes/2026-10-24.html" style="--c:#0066cc"><span class="cal-row-date">10/24</span><span class="cal-row-theme">Hyperscale</span></a><a class="cal-row" href="/episodes/2026-10-23.html" style="--c:#dd1111"><span class="cal-row-date">10/23</span><span class="cal-row-theme">AI 找漏洞，也替你找活</span></a><a class="cal-row" href="/episodes/2026-10-22.html" style="--c:#007744"><span class="cal-row-date">10/22</span><span class="cal-row-theme">癌症这十五年变了什么</span></a><a class="cal-row" href="/episodes/2026-10-21.html" style="--c:#004488"><span class="cal-row-date">10/21</span><span class="cal-row-theme">一个人用，还是一起用</span></a><a class="cal-row" href="/episodes/2026-10-20.html" style="--c:#cc5500"><span class="cal-row-date">10/20</span><span class="cal-row-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-row" href="/episodes/2026-10-17.html" style="--c:#0066cc"><span class="cal-row-date">10/17</span><span class="cal-row-theme">Apple: The First 50 Years</span></a><a class="cal-row" href="/episodes/2026-10-16.html" style="--c:#dd1111"><span class="cal-row-date">10/16</span><span class="cal-row-theme">跑出去的代理，借来的钱</span></a><a class="cal-row" href="/episodes/2026-10-15.html" style="--c:#007744"><span class="cal-row-date">10/15</span><span class="cal-row-theme">大脑记得你吃过什么</span></a></div>
 </div>
 <style>
 .cal-card{background:var(--card);border:1px solid var(--light);padding:20px;margin-bottom:48px;}

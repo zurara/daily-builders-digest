@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-15",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "新闻快报",
+    "title": "2026-11-15 今日快报",
+    "html": "episodes/2026-11-15.html",
+    "mp3": "episodes/2026-11-15.mp3",
+    "headlines": [],
+    "theme": "当买家先去问模型"
+  },
+  {
     "date": "2026-11-14",
     "dow": 6,
     "topic": "Books",
@@ -404,16 +415,5 @@
     "mp3": "episodes/2026-10-15.mp3",
     "headlines": [],
     "theme": "大脑记得你吃过什么"
-  },
-  {
-    "date": "2026-10-14",
-    "dow": 3,
-    "topic": "Product",
-    "format": "新闻快报",
-    "title": "2026-10-14 今日快报",
-    "html": "episodes/2026-10-14.html",
-    "mp3": "episodes/2026-10-14.mp3",
-    "headlines": [],
-    "theme": "把整件事走一遍"
   }
 ]

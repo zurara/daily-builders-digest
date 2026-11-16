@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-16",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "ChatGPT Wallet：代理可以替你付钱了 · Anthropic 研究：每人一个代理，结果更差",
+    "html": "episodes/2026-11-16.html",
+    "mp3": "episodes/2026-11-16.mp3",
+    "headlines": [
+      "ChatGPT Wallet：代理可以替你付钱了",
+      "Anthropic 研究：每人一个代理，结果更差",
+      "这周的两个日子：英伟达财报和 Anthropic 上市",
+      "短消息"
+    ],
+    "theme": "代理开始替你付钱，代理之间开始抢资源，这周看两场考试"
+  },
+  {
     "date": "2026-11-15",
     "dow": 7,
     "topic": "Podcasts",
@@ -404,16 +420,5 @@
     "mp3": "episodes/2026-10-16.mp3",
     "headlines": [],
     "theme": "跑出去的代理，借来的钱"
-  },
-  {
-    "date": "2026-10-15",
-    "dow": 4,
-    "topic": "Health",
-    "format": "新闻快报",
-    "title": "2026-10-15 今日快报",
-    "html": "episodes/2026-10-15.html",
-    "mp3": "episodes/2026-10-15.mp3",
-    "headlines": [],
-    "theme": "大脑记得你吃过什么"
   }
 ]

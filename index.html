@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-11-15 · 周日播客精选">
-<meta property="og:description" content="Latent Space × Resend CEO Zeno Rocha · 为智能体设计产品 · 当买家先去问模型">
-<title>周日播客精选 · 2026-11-15 · 为智能体设计</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-11-13 · AI 星期五">
+<meta property="og:description" content="黄仁勋辞去英伟达 CEO，Kress 暂代 · Gemini 4 Carbon 与 Hydrogen · Anthropic 路演 70–78 美元 · OpenAI 季度收入约 100 亿美元">
+<title>Daily Builders Digest · 2026-11-16 · AI 星期一</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -115,148 +115,146 @@
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
   @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
-<body>
+</head>
 
+<body>
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · 周日播客精选</div>
-  <div class="header-title">DESIGN FOR<br><span>AGENTS</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期一</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
   <div class="header-meta">
-    <span>📅 2026-11-15</span>
-    <span>🎙 周日播客精选</span>
-    <span>◇ 当买家先去问模型</span>
+    <span>📅 2026-11-16</span>
+    <span>🧭 AI 星期一</span>
+    <span>◇ 代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span>
     <span>大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
-  <div class="ticker-track"><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Zeno Rocha (Resend) · 2026-11-10</span><span class="ticker-item"><span class="dot">●</span>Claude Code 推荐邮件服务：Resend 第一 64/102 次</span><span class="ticker-item"><span class="dot">●</span>每个营销页面都有 .md 版本</span><span class="ticker-item"><span class="dot">●</span>定价滑块模型读不到 → 用文字写出来</span><span class="ticker-item"><span class="dot">●</span>MCP 工具：约 20 个 → 80 多个</span><span class="ticker-item"><span class="dot">●</span>8 月 MCP 调用约 120 万次</span><span class="ticker-item"><span class="dot">●</span>430 万用户 · 12 万付费客户</span><span class="ticker-item"><span class="dot">●</span>Handshake AI · 一年做到 10 亿美元年化收入</span><span class="ticker-item"><span class="dot">●</span>Tulsee Doshi · 60-20-20 框架</span><span class="ticker-item"><span class="dot">●</span>主推 · Latent Space × Zeno Rocha (Resend) · 2026-11-10</span><span class="ticker-item"><span class="dot">●</span>Claude Code 推荐邮件服务：Resend 第一 64/102 次</span><span class="ticker-item"><span class="dot">●</span>每个营销页面都有 .md 版本</span><span class="ticker-item"><span class="dot">●</span>定价滑块模型读不到 → 用文字写出来</span><span class="ticker-item"><span class="dot">●</span>MCP 工具：约 20 个 → 80 多个</span><span class="ticker-item"><span class="dot">●</span>8 月 MCP 调用约 120 万次</span><span class="ticker-item"><span class="dot">●</span>430 万用户 · 12 万付费客户</span><span class="ticker-item"><span class="dot">●</span>Handshake AI · 一年做到 10 亿美元年化收入</span><span class="ticker-item"><span class="dot">●</span>Tulsee Doshi · 60-20-20 框架</span></div>
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>ChatGPT Wallet · dots 代理可替你结账 · 美国 Pro 用户</span><span class="ticker-item"><span class="dot">●</span>Wallet · 支付令牌 · 每笔指纹 / Face ID 确认</span><span class="ticker-item"><span class="dot">●</span>Anthropic 研究 · 协调者 64 vs 每人一代理 30</span><span class="ticker-item"><span class="dot">●</span>代理没读完消息就下单 · 规则修复 73%</span><span class="ticker-item"><span class="dot">●</span>英伟达 · 11/17 财报 · 预期收入 1090 亿美元</span><span class="ticker-item"><span class="dot">●</span>Anthropic · ANT · 8.25 亿股 · 70–78 美元 · 11/19 交易</span><span class="ticker-item"><span class="dot">●</span>DeepSeek · App 工具全部开放给 API</span><span class="ticker-item"><span class="dot">●</span>Inkling 2 Small · 开放权重 · Apache 2.0</span><span class="ticker-item"><span class="dot">●</span>ChatGPT Wallet · dots 代理可替你结账 · 美国 Pro 用户</span><span class="ticker-item"><span class="dot">●</span>Wallet · 支付令牌 · 每笔指纹 / Face ID 确认</span><span class="ticker-item"><span class="dot">●</span>Anthropic 研究 · 协调者 64 vs 每人一代理 30</span><span class="ticker-item"><span class="dot">●</span>代理没读完消息就下单 · 规则修复 73%</span><span class="ticker-item"><span class="dot">●</span>英伟达 · 11/17 财报 · 预期收入 1090 亿美元</span><span class="ticker-item"><span class="dot">●</span>Anthropic · ANT · 8.25 亿股 · 70–78 美元 · 11/19 交易</span><span class="ticker-item"><span class="dot">●</span>DeepSeek · App 工具全部开放给 API</span><span class="ticker-item"><span class="dot">●</span>Inkling 2 Small · 开放权重 · Apache 2.0</span>
+  </div>
 </div>
 
 <div class="audio-bar">
   <div class="audio-bar-top">
     <span class="icon">▶</span>
     <strong>本期音频</strong>
-    <span>· 周日播客精选 · 为智能体设计</span>
+    <span>· AI 星期一 · 代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span>
   </div>
-  <audio controls src="episodes/2026-11-15.mp3">
+  <audio controls src="episodes/2026-11-16.mp3">
     Your browser does not support the audio element.
   </audio>
 </div>
 
 <section class="feature-hero">
   <div class="feature-left">
-    <div class="feature-eyebrow">本周主推 · Latent Space</div>
-    <div class="feature-show-name">LATENT SPACE<br><span style="color:#dd1111">× ZENO ROCHA</span></div>
-    <div class="feature-ep-title">Designing for Agents —<br>Zeno Rocha, Resend</div>
-    <div class="feature-guest">Latent Space × Resend 联合创始人兼 CEO · 2026-11-10 · 86 分钟</div>
+    <div class="feature-eyebrow">今日主线 · 代理、钱、协调</div>
+    <div class="feature-show-name">WALLET<br>WORSE<br><span style="color:#dd1111">TOGETHER</span></div>
+    <div class="feature-ep-title">ChatGPT 的代理可以替你结账；<br>Anthropic 研究：每人一个代理，团队结果更差</div>
+    <div class="feature-guest">OpenAI · Anthropic · NVIDIA · DeepSeek · Thinking Machines · 2026-11-11 / 11-16</div>
   </div>
   <div class="feature-right">
     <div class="feature-lede">
-      编程智能体为什么总推荐 Resend？Zeno Rocha 讲了他做的事：给长尾组合写短文档，<strong>每个页面都有模型能读的 Markdown 版本</strong>，把定价滑块里的数字用文字写出来，MCP 服务器覆盖仪表盘能做的一切。买家的第一个问题现在先问模型，<strong>而模型只给一个答案</strong>。
+      代理开始<strong>花真钱</strong>，也开始<strong>和别人的代理共用资源</strong>。一条「没读完消息不能下单」的平台规则，就能救回大部分失败的团体订单。这周还有英伟达财报和 Anthropic 上市两场考试。
     </div>
     <div class="feature-tags">
-      <span class="tag">AEO</span>
-      <span class="tag">智能体体验</span>
-      <span class="tag">MCP</span>
-      <span class="tag">llms.txt</span>
-      <span class="tag">送达率</span>
-      <span class="tag">反滥用</span>
-      <span class="tag">开发者分发</span>
+      <span class="tag">ChatGPT Wallet</span><span class="tag">dots</span><span class="tag">Agentic Commerce</span><span class="tag">MAMUBench</span><span class="tag">Multi-Agent</span><span class="tag">NVIDIA Q3</span><span class="tag">Anthropic IPO</span><span class="tag">DeepSeek API</span><span class="tag">Inkling 2 Small</span>
     </div>
     <div class="feature-stats">
-      <div class="stat-item"><span class="stat-label">Claude Code 首推</span><span class="stat-value">64 / 102 次</span></div>
-      <div class="stat-item"><span class="stat-label">MCP 工具数</span><span class="stat-value">约 20 → 80 多个</span></div>
-      <div class="stat-item"><span class="stat-label">MCP 调用（8 月）</span><span class="stat-value">约 120 万次</span></div>
-      <div class="stat-item"><span class="stat-label">用户 / 付费客户</span><span class="stat-value">430 万 / 12 万</span></div>
+      <div class="stat-item"><div class="stat-label">ChatGPT Wallet · 11/13</div><div class="stat-value">美国 Pro 用户 · 支付令牌 · 每笔生物识别</div></div>
+      <div class="stat-item"><div class="stat-label">Worse Together · 11/11</div><div class="stat-value">API 预算：协调者 64% vs 团队 30%</div></div>
+      <div class="stat-item"><div class="stat-label">NVIDIA · 11/17</div><div class="stat-value">Q3 收入预期 1090 亿美元</div></div>
+      <div class="stat-item"><div class="stat-label">Anthropic · 11/19</div><div class="stat-value">ANT · 70–78 美元 · 纳斯达克</div></div>
     </div>
   </div>
 </section>
 
-<div class="insight-box">
-  <div class="insight-label">◈ 本周几集的共同点</div>
-  <div class="insight-title">读你产品的，越来越多是模型</div>
-  <div class="insight-item"><span class="insight-num">01</span><span><strong>把数据写成文字。</strong>Resend：JavaScript 组件不会被执行，定价滑块里的数字要在 Markdown 版本里写清楚。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span><strong>自己去问模型。</strong>Zeno 自己跑了一次竞品对比才发现定价被算错；Garry Tan 用自己的 52 个任务比较模型。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span><strong>看返回值，不只数工具。</strong>80 个工具还是 2 个？展开一次每天都用的工具调用，看模型需要多少。</span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span><strong>模型错在"认出规则该用在哪"。</strong>Handshake：模型能讲清税务处理，却在代码里直接减掉了商誉。</span></div>
-</div>
-
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
 <div class="script-container">
-<p class="section-label">◈ 本周主推 · Latent Space × Zeno Rocha (Resend)</p>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://latent.space/p/resend/" target="_blank" style="color:var(--red);text-decoration:none;">Designing for Agents — Zeno Rocha, Resend · Latent Space</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">周日好，欢迎回到每日快报的播客时间。这周主推是《Latent Space》十一月十号上线的一集，八十六分钟，题目叫 Designing for Agents，为智能体设计。嘉宾是 Resend 的联合创始人兼 CEO Zeno Rocha。Resend 是一家做邮件发送 API 的公司，2023 年 YC 冬季批次。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">一家发邮件的公司，为什么值得做主推？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">因为这集是从一个很具体的疑问开始的。主持人 swyx 自己的域名都在 Cloudflare 上，Cloudflare 也有邮件服务，用起来很顺手。可是他让编程智能体帮忙接邮件功能，<strong>智能体一次次推荐 Resend</strong>，而不是他已经在用的 Cloudflare，也不是更老牌的 SendGrid。他们就把 Resend 的 CEO 请来问：你到底做了什么？</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">有数据吗，还是只是感觉？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">节目页面引用了一项研究。研究者从 Claude Code 的回答里提取出 102 次邮件服务推荐，<strong>Resend 排第一的有 64 次</strong>。SendGrid 排第一只有 7 次，但作为"备选"出现了 55 次。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">备选出现 55 次，听起来也不少。</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://amplifying.ai/research/claude-code-picks/report" target="_blank" style="color:var(--red);text-decoration:none;">Claude Code Picks · Amplifying research</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">主持人在这里问了一个关键问题：开发者让智能体实现邮件功能，接受了补丁，<strong>之后有多少人会回头去试第二个选项？</strong>大概很少。所以排第一和排第二，差别非常大。</p><p class="script-text">公平起见也要说，Latent Space 自己后来做了一次更全面的测试，结果竞争激烈得多，<strong>多数模型排第一的是 Postmark</strong>，不是 Resend。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那 Resend 具体做了什么？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">先讲背景。Resend 2023 年才上线，比 SendGrid、Postmark、Mailgun 晚了差不多十年，搜索排名上完全没有优势。Zeno 的第一个办法是<strong>给每一种长尾组合都写一篇短文档</strong>。不只写"用 Python 发邮件"，还写"用 Django 发邮件"，诸如此类。</p><p class="script-text">后来大家开始问模型而不是问 Google，他就改了页面的格式。现在 Resend <strong>几乎每个页面结尾都有一段常见问题</strong>，文档和官网都发布了 llms.txt，<strong>每个营销页面都有一个 Markdown 版本</strong>，在网址后面加 .md 就能拿到。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这个 .md 的做法，节目里有个例子吧？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，定价页。Resend 的定价页有一个滑块，人拖到自己的发送量，就能看到价格。Zeno 有一次让模型比较"每月发 120 万封邮件，Resend 和竞品各要多少钱"。<strong>模型把 Resend 的价格算错了很多，还说 Resend 的定价不透明。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">因为模型不会拖滑块。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。那是一个 JavaScript 计算器，智能体抓页面时不会执行它。他说的原话大意是：<strong>JavaScript 组件不会被执行，所以我把同样的数据用文字写出来。</strong>他做了一个 Markdown 版本，把价格表直接写清楚。几天后再问，模型答对了。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他怎么知道有没有智能体来读这些页面？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他在 Datadog 里看这些 Markdown 页面的访问量，因为普通的网站分析工具根本看不到这类请求。另外 Resend 还付费用了四个 AEO 追踪工具。AEO 是 answer engine optimization，答案引擎优化。但他说这些工具<strong>只告诉你被提到了几次，不告诉你该做什么</strong>。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那该怎么做？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">最简单的一步是自己去问。他发现定价错误，就是某个周日自己跑了一遍竞品对比。主持人也给了一个可以马上做的检查：<strong>打开你自己的定价页，看模型能不能用它回答一个客户的真实问题。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">节目里有一段讲 MCP 工具数量，我挺好奇。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这段很有意思。Resend 的 MCP 服务器刚推出时<strong>大概二十个工具或更少，现在超过八十个</strong>。他想做到的是：在聊天客户端里，能完成仪表盘上能做的所有事。不只是发邮件，还有邀请同事、看用量、管账单，甚至删除账号。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">八十个工具，模型不会挑花眼吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这正是主持人拿来对比的。Cloudflare 的 Code Mode 服务器只暴露两个工具，search 和 execute，让模型自己写代码去调 API。两种思路正好相反。Zeno 的看法是，<strong>他已经看不到模型因为工具太多而犯糊涂了</strong>，所以每次发布都多开放一部分产品。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那谁对？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">节目没有给结论，但给了一个更实用的观察。Zeno 会把自己会话里折叠起来的工具调用展开，看智能体实际干了什么。有一次，<strong>一个工具返回的结果太大，塞不进上下文。</strong>减少工具数量并不能让这个返回值变小。</p><p class="script-text">所以主持人建议：<strong>挑一个你每天都会调的工具，展开它的返回结果，看看模型到底需要其中多少。</strong>这比争论"二个还是八十个"更有用。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">MCP 的使用量有多大？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">他说调用量至少每个月翻一倍，<strong>八月份大约 120 万次</strong>。还有个小故事：Resend 第一个 MCP 服务器其实是投资方 a16z 的一个人写的开源项目，后来 Zeno 请她把项目转给了 Resend。做远程托管版本之前，他们得先加 OAuth、重做权限模型。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他自己作为买家，会因为 MCP 选产品吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">会，而且很坚决。他把网站分析从 Plausible 换成了 PostHog，原因是 <strong>PostHog 自己维护官方 MCP 服务器，而 Plausible 的是第三方做的。</strong>他选消费类应用也一样，原话是：<strong>如果它不在那里，我就不用。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这对做 B2B 软件的人是个信号。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。他想让产品变成"没有固定形态"的：先有 API，然后是为每种语言手写的 SDK，他拒绝了自动生成的 SDK，再然后是命令行工具和 MCP。<strong>现在有客户告诉他，从来没打开过他花了很多心思设计的仪表盘。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">智能体选了 SDK，事情就结束了吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">没有。邮件最难的部分在"发送"之后，就是能不能进收件箱。节目讲了一个例子：点击追踪。服务商会把邮件里的链接改写成经过一个<strong>共享的追踪域名</strong>，用来统计点击。如果某个客户用这个域名发钓鱼邮件，域名被拉黑，<strong>其他客户完全正常的邮件也会受影响</strong>。所以 Resend 推出了自定义追踪域名。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">免费套餐不会招来很多发垃圾邮件的人吗？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">会。老牌服务商的做法是新账号填表，等两天人工审核。Resend 反过来：<strong>先让所有人进来，然后盯退信率、投诉率和域名信号</strong>，比如一个两天前才注册的域名，或者一个打不开的网站。他说曾经有一伙人带着大约两万个域名来注册。他还说，被封的账号大多数其实是<strong>误用，不是恶意滥用</strong>。</p><p class="script-text">一位 Mailgun 创始人曾经提醒他，Mailgun 九成的研发都花在对付滥用者上。所以 Resend 很早就把这部分做成自动化。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">支持团队怎么撑住这么多用户？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Resend 现在有 430 万用户、12 万付费客户，去年十二月还只有 100 万用户。早期有一条规则对知识库帮助最大：<strong>回复工单只能贴链接。</strong>如果文档还不存在，客服就先去写文档，哪怕要写一个半小时。</p><p class="script-text">现在大部分工单还是 DNS 配置问题，而且越来越多来自用 Lovable、Bolt、v0 做应用的人，<strong>他们以前从没见过 CNAME 记录</strong>。Resend 接入了一个用的人不多的协议，叫 Domain Connect，作用有点像域名版的 OAuth，Cloudflare 已经支持，他又说服了 Vercel 也支持。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">他有没有说哪件事做错了？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">有一个。Resend 当初做的是迁移页面，带一个代码转换器，帮你从别家迁过来，<strong>而没有做正面对比页</strong>。他现在觉得这是个错误，因为竞争对手的对比页更容易被模型推荐。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">你听完怎么看？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我觉得这集最有用的一句话不是 Zeno 说的，是背后的那个变化：<strong>买家的第一个问题现在先问模型，而模型只给一个答案，不像 Google 给十条链接。</strong></p><p class="script-text">要成为那个答案，Resend 做的事都很朴素：每个页面都有模型能读的文字，官方 MCP 覆盖整个产品，免费套餐不设门槛。没有哪一步是花招。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">我会补一句：React Email 那段也很值得想。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对。Resend 最早的分发不是靠发送 API，而是 React Email 这个模板工具。你可以用它做模板，再通过 SendGrid 发出去，他们甚至写了文档教你这么做。<strong>等开发者需要换服务商时，Resend 的代码已经在他的仓库里了。</strong>这在智能体时代可能更重要：模型在你的代码库里看到什么，就更可能推荐什么。</p></div>
-<p class="section-label">◈ 本周其他集数</p>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周还有哪些值得听？</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://latent.space/p/handshake/" target="_blank" style="color:var(--red);text-decoration:none;">What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord &amp; Team · Latent Space</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">第一集还是《Latent Space》，十一月九号，Handshake AI 的 Garrett Lord 和团队，一百六十四分钟。Handshake 的 AI 训练数据业务<strong>大约一年从零做到 10 亿美元年化总收入</strong>。这集现场演示了他们给前沿实验室做的强化学习环境：一个模拟投行，智能体要从邮件里找到任务、算出一个财务模型；一组脑肿瘤切片，要找出坏死最严重的两张。人选了两张，模型选了那两张又多加了一张。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">投行那个例子模型错在哪？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">客户邮件里有一行关于已有商誉的说明，智能体把这个数字带进 Python 直接减掉了。嘉宾说，<strong>你直接问模型税务处理，它能讲清楚</strong>；它错在没认出"这一行代码就是该用这条规则的地方"。我觉得这对做垂直领域智能体的人很有参考价值。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">第二集呢？</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier" target="_blank" style="color:var(--red);text-decoration:none;">Why PMs are suddenly valuable again | Tulsee Doshi · Lenny&#x27;s Podcast</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Lenny's Podcast，十一月八号，Google 前沿模型产品负责人 Tulsee Doshi，五十九分钟。她负责 Gemini，以及 Nano Banana、Veo、Lyria 这些多模态模型。重点有两个：一是她的 <strong>60-20-20 框架</strong>，用来平衡"现在能用的"和"快能用的"；二是<strong>怎么写你的第一个评测</strong>。她说做模型开发有点像斯内普的魔药课，加了配料不一定得到你想要的结果。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">还有吗？</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/" target="_blank" style="color:var(--red);text-decoration:none;">How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco · Latent Space</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">简单提一集。《Latent Space》十一月八号，Stanford CS146S 课程的老师 Mihail Eric，一百二十一分钟。问题很直接：<strong>编程智能体一个提示就能做完去年的作业，那该布置什么？</strong>他的答案是请开源项目维护者进课堂，学生要读懂一个陌生仓库、提出改动、再向可能合并它的人解释这个补丁。节目里还有一句他团队的原则：<strong>买是为了学，建是为了留。</strong></p></div>
-<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周建造者们在说什么？</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/garrytan/status/2121464508225053153" target="_blank" style="color:var(--red);text-decoration:none;">Garry Tan on X</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">跟主推最接近的一条来自 YC 的 Garry Tan。他用自己开源的评测仓库，在 Claude Code 里跑了 52 个编程任务：<strong>Fable 5.2 解出的数量跟 Opus 5.5 差不多，82.7% 对 84.6%，但每解出一个任务的成本是 2.8 倍。</strong>所以他建议把 Opus 5.5 留作编程默认模型。他也说了，这些任务 Opus 已经大多能解，要分出高下得用更难的题。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这跟 Zeno 那个"自己去问模型"是一回事。</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/nikunj/status/2121320899161010360" target="_blank" style="color:var(--red);text-decoration:none;">Nikunj Kothari on X</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">对，都是<strong>别只看别人的榜单，用你自己的任务去测。</strong>FPV Ventures 的 Nikunj Kothari 也说了类似的话：他以为 Llama 4 之后大家不再拿刷榜当卖点了，结果又回来了；<strong>要知道哪个模型好用，只能拿它跑你自己的工作流。</strong></p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">点赞高的呢？</p></div>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/rauchg/status/2121277727940776114" target="_blank" style="color:var(--red);text-decoration:none;">Guillermo Rauch on X</a></p>
-<p class="source-inline" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin:-4px 0 18px 0;">📎 来源: <a href="https://x.com/danshipper/status/2121248233510818003" target="_blank" style="color:var(--red);text-decoration:none;">Dan Shipper on X</a></p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">Vercel 的 CEO Guillermo Rauch 发布了 <strong>Workflow SDK 5 和 Vercel Workflows</strong>。他说智能体执行时"到第一步的时间"和"步与步之间的时间"都大幅缩短，加强了加密和安全，可靠性也在大规模下验证过。</p><p class="script-text">还有 Every 的 Dan Shipper，写了一篇文章讲：<strong>就算 Fable 5.2 什么都能用 vibe coding 写出来，为什么团队还在为软件付钱。</strong>这跟 Zeno 说的正好呼应：客户付钱买的不只是代码，还有送达率、反滥用、支持这些代码之外的东西。</p></div>
-<p class="section-label">◈ 结尾 · 这周你打算听哪一集</p>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">这周几集放在一起，有一条共同的线：<strong>读你产品的，越来越多是模型。</strong>Resend 给每个页面写 Markdown 版本；Handshake 给模型造模拟投行；Stanford 的课在智能体能做完作业以后，改成让学生读懂陌生仓库、把补丁讲给维护者听。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">对普通团队有什么可以马上做的？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">今天就做一件事：打开你们产品的定价页或者文档首页，复制网址，让一个智能体去回答"我每月要用多少，要付多少钱"。如果它答错了，看看是不是关键信息藏在 JavaScript 组件里。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">那这周你打算听哪一集？</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">我会先听 Resend 那集里讲 MCP 设计和定价页的两段，大概第三十八分钟和第五十八分钟开始。然后听 Handshake 那集讲投行环境和评分的部分，从一小时十二分开始。</p></div>
-<div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><p class="script-text">这周你打算听哪一集？我们下周见。</p></div>
-<div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><p class="script-text">关注建造者，不要关注 influencer。下周见。</p></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期一，AI 日，早上好。今天的主线是代理。上周五，OpenAI 让 ChatGPT 的代理可以直接替你下单付钱。同一周，Anthropic 发了一篇研究，结论是：每个人派一个代理去协商，结果比一个代理替所有人办事更差。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个是代理能花钱了，一个是代理凑在一起会出问题。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。今天四段。第一，ChatGPT Wallet。第二，Anthropic 的多用户多代理研究。第三，这周的两个日子：周二英伟达发财报，周四 Anthropic 上市交易。第四，两条短消息，最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · ChatGPT Wallet：代理可以替你付钱了</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 13 号，OpenAI 发布 ChatGPT Wallet。你把信用卡加进去，然后让你的 dot 去买东西。dot 是 OpenAI 的个人代理。它帮你挑商品、放进购物车、完成结账。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">代理会看到我的卡号吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不会。Wallet 用的是支付令牌，也就是卡号的替代品。代理和商家都拿不到真实卡号。商家只收到发货需要的信息，比如地址和联系方式。每一笔付款前，你要看到商品、总价和用哪张卡，然后用 Face ID 或指纹确认。信用卡的积分和争议退款保护都保留。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">谁能用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在范围很小：美国的 ChatGPT Pro 用户，18 岁以上，用美国发行的 Visa、Mastercard 或美国运通卡。OpenAI 说以后会加消费上限，或者按品类、按时间段预先授权，让代理在范围内自己买。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么这件事重要？代理买东西不是早就有人做了吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有人做了，但没人用起来。TechCrunch 的报道里有两个数字：DoorDash 说只收到几百单来自 AI 代理的订单；Uber 说几乎没人用代理叫车。反过来，Meta 的 Muse 有一千万用户，购物是最常见的用法之一。所以问题不是技术能不能做，是商家和用户愿不愿意。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">商家那边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是真正的难点。上周我们讲过，美联航不让代理替用户付款。TechCrunch 这篇也提到，亚马逊是最大的屏蔽代理的零售商，它要把用户引到自己的 Alexa。OpenAI 同时发了一份商家合作手册，教网站怎么支持代理购物。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的看法是，每一笔都要按指纹，那它更像一个很会比价的助手，还不算真正的自主代理。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现阶段是这样。真正的变化要等消费上限那一步：你说「这个月日用品 300 美元以内你自己买」，代理就不用每次问你。到那时候，谁对错误订单负责，会是第一个要回答的问题。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">ChatGPT&#x27;s new Wallet lets AI agents shop and check out for you — TechCrunch</a> · <a href="https://openai.com/index/introducing-chatgpt-wallet/" target="_blank">Introducing ChatGPT Wallet — OpenAI</a></span>
+</div>
+<div class="section-label">二 · Anthropic 研究：每人一个代理，结果更差</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条是研究。Anthropic Fellows 项目 11 月 11 号发了一篇文章，叫「Worse Together」。他们问的问题是：如果几个人各自派一个代理，这些代理要共用一样东西，会怎么样？</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">比如什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他们做了四个环境。一个是几个研究员共用一笔 API token 预算，预算不够所有人用。一个是诊所的预约日历。一个是团体点餐或订机票。一个是代码合并队列，有发版截止时间。然后比较两种安排：一个协调者代理服务所有人；或者每人一个代理，代理之间可以发消息。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">四个环境里，一个协调者都更好。用 Claude Opus 5，按「达到最优结果的百分比」算：API 预算是 64 对 30，诊所 84 对 71，点餐订票 88 对 44，合并队列 92 对 81。前面是协调者，后面是每人一个代理。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">差距最大的是 API 预算和点餐。为什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">原因不一样。API 预算那个，问题是代理动得太少、太晚。预算不够，必须有人砍掉低价值的任务，但大家都在等。团队从 4 个代理变成 16 个，Sonnet 5 的代理里真正采取过行动的，从 66% 掉到 10%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">人也是这样，人一多就都等别人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。另一个极端是 GPT 和 Qwen 的代理，每一轮会不经同意取消别人的任务 3.9 到 7.1 次。Opus 5 是 0 次。研究者特别指出：取消别人的任务反而让总分更高，因为环境本来就要求砍任务。所以只看结果分数，会漏掉「别人的工作被删了而且没人同意」这件事。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">点餐那个呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">点餐的问题是抢跑。每个场景里有一个用户提了特殊要求，比如有乳糜泻，要两份无麸质配菜。这个要求 94% 到 99% 的情况下都发到了下单的那个代理。但下单那一刻，消息真正在它上下文里的只有 47% 到 67%。也就是说，消息到了，代理还没读就结账了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个好修吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他们试了一个很简单的办法：平台规定，代理读完所有未读消息之前不能结账。失败的场景重跑一遍，Opus 5 能救回 73%，Sonnet 5 救回 62%。但在 API 预算环境里，这个办法没用，有效的是指定一个组长代理，并写清楚优先级。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以不同场景要不同的规则。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这是他们的主要结论之一。还有一点我觉得值得记住：每人一个代理的时候，代理会编造关于别人的话。Claude 团队里大约一半以上的场景出现过，比如说某个用户同意了某件事，其实没有。原因是每个代理只看得到自己用户的信息，却要替整个团队说话，就会用猜测补空白。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟刚才的 Wallet 连起来就有点吓人：以后我的代理和你的代理一起订一顿饭，用的是真钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">所以研究者的建议是两条：评测要同时看结果和行为；修复要从平台层面做，比如「没读完消息不能下单」这种规则。他们把其中三个环境开源了，叫 MAMUBench。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://alignment.anthropic.com/2026/worse-together/" target="_blank">Worse Together: How Performance Breaks Down in Multi-User Multi-Agent Teams — Anthropic Alignment Science Blog</a></span>
+</div>
+<div class="section-label">三 · 这周的两个日子：英伟达财报和 Anthropic 上市</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条讲这周的日程。周二，11 月 17 号，英伟达发第三季度财报。这是黄仁勋辞职后第一次财报，临时 CEO 是 CFO Colette Kress。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">市场预期是多少？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The National 引用的预期：第三季度收入 1090 亿美元，同比增长 91.3%；每股收益 2.47 美元。第四季度指引预期收入 1250 亿美元。英伟达股价今年以来跌了大约 14%。董事会周五告诉 CNBC，正在挑选猎头公司找正式 CEO。黄仁勋和商务部长 Lutnick 都同意去国会作证。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Anthropic 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">按更新后的 S-1 文件，Anthropic 发行 8.25 亿股，每股 70 到 78 美元，对应估值 1.3 万亿到 1.45 万亿美元。报道说周三定价，周四在纳斯达克开始交易，代码 ANT。另外，谷歌、英伟达、AMD、博通、美光、微软和台积电同意以 IPO 价格买入 260 亿美元的无投票权股份。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">之前不是说估值可能到两万亿吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">早期有这个估计，后来 AI 板块整体下跌，就降下来了。财务上，Anthropic 今年前九个月收入 332.4 亿美元，比去年同期增长约 1200%；同期净亏损超过 1040 亿美元，不过公司说大部分是融资工具的估值调整，不是现金支出。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一句话总结这周？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一个是卖铲子的，一个是用铲子的，同一周给市场交成绩单。顺便说一句，这档节目是用 Claude 帮忙做的，讲 Anthropic 的部分我们只报公开文件里的数字，不做判断。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.thenationalnews.com/business/markets/2026/11/16/nvidia-earnings-anthropic-ipo/" target="_blank">Nvidia earnings and Anthropic IPO lead crucial week for AI bulls — The National</a> · <a href="https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november" target="_blank">Mind and Machine Weekly: 15 November 2026</a></span>
+</div>
+<div class="section-label">四 · 短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两条短的。第一，DeepSeek 11 月 13 号把它 App 里的工具都开放给了 API：网页搜索、文件输入、读网址、OCR、语音识别和合成。可以作为现有聊天接口的参数打开，工具调用在服务器端完成；也可以单独调用。这次没有新模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">意思是开发者不用自己搭搜索和 OCR 了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二，Thinking Machines 11 月 12 号开放了 Inkling 2 Small 的权重，Apache 2.0 协议。这个模型一周前是闭源发布的，经过外部安全测试和红队之后才放权重。它是混合专家模型，总参数 5940 亿，每个 token 激活 170 亿，可以看图。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先闭源发、测完再开源，这个顺序挺少见。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。如果效果好，其他做开源的实验室可能会学这个做法。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november" target="_blank">Mind and Machine Weekly: 15 November 2026</a> · <a href="https://api-docs.deepseek.com/updates/" target="_blank">DeepSeek API Updates</a> · <a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank">Inkling 2 Small — Thinking Machines</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 Redpoint 的 Unsupervised Learning 第 97 期，嘉宾是 Jev 这个决策模型的创造者。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">决策模型是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他的出发点是一个问题：所有调用大模型的请求里，有多少是给人看的，有多少是给程序用的？他认为绝大多数会是给程序用的。程序不需要漂亮的文字，需要的是结构化的判断。所以他要做「机器原生」的模型。他也承认模型还不成熟，所以把一些不稳定的功能也放出来，让开发者自己判断需要多高的可靠性。节目里他还谈到 Anthropic 上市，说有些估值是把「造神」当成无限价值在算，会有偏差。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">四条。第一条，Replit 的 Amjad Masad，一千一百多赞：我们进入了墨菲世界，任何可能出错的事都会出错。几十亿件事同时发生、互相依赖、还在加速，以前少见的故障现在每天都有。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">正好对应刚才那篇研究。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二条，谷歌的 Josh Woodward，四百六十赞：Gemini 现在可以连接 Google Wallet，帮你看消费，比如画支出图、找出偷偷涨价的订阅、按去年的实际花费做节日预算。先对美国所有 Gemini 用户开放。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个是代理替你花钱，一个是 AI 帮你看钱花哪了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，Vercel 的 Guillermo Rauch：他的所有项目都是用最聪明的模型做规划，再把活分给快模型的子代理。这在他的配置文件里只是一行指令。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这就是研究里说的协调者模式。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，一个人派多个代理，有一个负责规划的。第四条，Box 的 Aaron Levie：模型在写代码和用工具上进步最快，所以越来越多的工作会变成「代码形状」，去适应代理擅长的事。他认为模型不需要什么都懂，需要的是会用软件、会写软件，再加上领域专家的判断。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/@RedpointAI" target="_blank">Unsupervised Learning — Redpoint</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天你最想让听众记住哪一点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">「没读完消息不能下单」。一条很简单的规则，就能救回大部分失败的团体订单。代理越来越能花钱，平台要先把这种规则定好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周三个日子：周二英伟达，周三定价，周四 ANT 开盘。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们周五再聊结果。明天是机器人日，明天见。</div></div>
 </div>
 
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
@@ -267,30 +265,44 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 05:08。
+  数据截至今日 UTC 05:09。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Latent Space · 2026-11-10</p>
-  <p class="pc-title">Designing for Agents — Zeno Rocha, Resend</p>
-  <p class="pc-summary">Resend 比老牌对手晚十年上线，却成了编程智能体最常推荐的邮件 API 之一。Zeno Rocha 讲了具体做法：长尾短文档、每页一个 Markdown 版本、把 JavaScript 定价计算器里的数字写成文字、把 MCP 工具从约 20 个扩到 80 多个。后半段讲送达率、共享追踪域名的风险和免费套餐的反滥用。</p>
-  <a href="https://latent.space/p/resend/" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Unsupervised Learning (Redpoint) · 2026-11-05</p>
+  <p class="pc-title">Ep 97: Jev Creator on Decision Models, Benchmark Fatigue &amp; Why the Labs Missed It</p>
+  <p class="pc-summary">嘉宾的出发点：调用大模型的请求里，绝大多数最终是给程序用的，不是给人读的。程序要的是结构化判断，不是漂亮文字，所以他要做「机器原生」的决策模型，并把不稳定的功能也放出来，让开发者自己决定需要多高的可靠性。节目里他也谈到 Anthropic 上市和 AI 估值。</p>
+  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">AM</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · President & CEO @ycombinator</div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「Claude Code 里的编程默认模型继续用 Opus 5.5。在 Claude Code 2.1.322 上跑 52 个编程任务，Fable 5.2 解出的数量差不多（82.7% 对 84.6%），但每解出一个任务的成本是 2.8 倍。不过这些任务 Opus 已经大多能解，要分出高下得用更难的题。」</p>
+    <p class="builder-tweet">「我们进入了墨菲世界：任何可能出错的事都会出错。几十亿件事同时发生、互相依赖、还在加速，以前少见的故障，现在每天都有。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 154</span>
-      <a href="https://x.com/garrytan/status/2121464508225053153" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 1,115</span>
+      <a href="https://x.com/amasad/status/2121519931741127144" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">JW</div>
+      <div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · Google Labs / Gemini</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Gemini 新功能：连接 Google Wallet，看个人财务。可以马上画出消费图表、找出偷偷涨价的订阅、按去年的实际花费做节日预算。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 462</span>
+      <a href="https://x.com/joshwoodward/status/2121755282326102417" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
@@ -298,62 +310,51 @@
       <div class="builder-avatar">GR</div>
       <div>
         <div class="builder-name">Guillermo Rauch</div>
-        <div class="builder-handle">@rauchg · CEO @vercel</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「Workflow SDK 5 和 Vercel Workflows 是智能体的一大进步：「到第一步的时间」和「步与步之间的时间」大幅改善；我们加强了加密和安全；整个系统的可靠性已经在大规模下验证过。」</p>
+    <p class="builder-tweet">「子代理用起来非常顺。我所有的项目都是：用最聪明的模型做规划，再把活分给快模型的子代理。这只是 AGENTS.md 里的一行指令。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 345</span>
-      <a href="https://x.com/rauchg/status/2121277727940776114" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 275</span>
+      <a href="https://x.com/rauchg/status/2121739228698886454" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">DS</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Dan Shipper</div>
-        <div class="builder-handle">@danshipper · CEO @every</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
       </div>
     </div>
-    <p class="builder-tweet">「就算 Fable 5.2 什么都能 vibe code 出来，为什么团队还在为软件付钱。」</p>
+    <p class="builder-tweet">「模型在写代码、用工具、用电脑上会进步得最快。结果不是只有一小部分工作能自动化，而是越来越多的工作会变成「代码形状」。模型不需要什么都懂，需要的是会用软件、会写软件，再加上领域专家的判断。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 83</span>
-      <a href="https://x.com/danshipper/status/2121248233510818003" target="_blank">查看推文 →</a>
-    </div>
-  </div>
-  <div class="builder-card">
-    <div class="builder-header">
-      <div class="builder-avatar">NK</div>
-      <div>
-        <div class="builder-name">Nikunj Kothari</div>
-        <div class="builder-handle">@nikunj · Partner @fpvventures</div>
-      </div>
-    </div>
-    <p class="builder-tweet">「我以为 Llama 4 之后大家不再拿刷榜当卖点了，结果这一套又回来了。要知道哪个模型适合你，只能拿它跑你自己的工作流，没有别的替代办法。」</p>
-    <div class="builder-meta">
-      <span class="builder-likes">❤ 5</span>
-      <a href="https://x.com/nikunj/status/2121320899161010360" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 206</span>
+      <a href="https://x.com/levie/status/2121686564078297461" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
 <div class="sources">
   <div class="sources-label">◈ 本期来源</div>
-  <a class="source-link" href="https://latent.space/p/resend/" target="_blank"><span class="src-icon">Link</span><span>Designing for Agents — Zeno Rocha, Resend · Latent Space</span></a>
-  <a class="source-link" href="https://amplifying.ai/research/claude-code-picks/report" target="_blank"><span class="src-icon">Link</span><span>Claude Code Picks · Amplifying research</span></a>
-  <a class="source-link" href="https://latent.space/p/handshake/" target="_blank"><span class="src-icon">Link</span><span>What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord &amp; Team · Latent Space</span></a>
-  <a class="source-link" href="https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier" target="_blank"><span class="src-icon">Link</span><span>Why PMs are suddenly valuable again | Tulsee Doshi · Lenny&#x27;s Podcast</span></a>
-  <a class="source-link" href="https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/" target="_blank"><span class="src-icon">Link</span><span>How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco · Latent Space</span></a>
-  <a class="source-link" href="https://x.com/garrytan/status/2121464508225053153" target="_blank"><span class="src-icon">X</span><span>Garry Tan on X</span></a>
-  <a class="source-link" href="https://x.com/nikunj/status/2121320899161010360" target="_blank"><span class="src-icon">X</span><span>Nikunj Kothari on X</span></a>
-  <a class="source-link" href="https://x.com/rauchg/status/2121277727940776114" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch on X</span></a>
-  <a class="source-link" href="https://x.com/danshipper/status/2121248233510818003" target="_blank"><span class="src-icon">X</span><span>Dan Shipper on X</span></a>
-  <a class="source-link" href="https://www.teamday.ai/ai/zeno-rocha-resend-80-mcp-tools-designing-for-agents" target="_blank"><span class="src-icon">Link</span><span>Resend's Zeno Rocha: 80 MCP Tools, Pages Agents Can Read · Teamday 节目摘要</span></a>
-  <a class="source-link" href="https://github.com/zarazhangrui/follow-builders" target="_blank"><span class="src-icon">Repo</span><span>follow-builders — 建造者信号抓取项目</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank"><span class="src-icon">LINK</span><span>ChatGPT&#x27;s new Wallet lets AI agents shop and check out for you — TechCrunch</span></a>
+  <a class="source-link" href="https://openai.com/index/introducing-chatgpt-wallet/" target="_blank"><span class="src-icon">LINK</span><span>Introducing ChatGPT Wallet — OpenAI</span></a>
+  <a class="source-link" href="https://alignment.anthropic.com/2026/worse-together/" target="_blank"><span class="src-icon">LINK</span><span>Worse Together: How Performance Breaks Down in Multi-User Multi-Agent Teams — Anthropic Alignment Science Blog</span></a>
+  <a class="source-link" href="https://www.thenationalnews.com/business/markets/2026/11/16/nvidia-earnings-anthropic-ipo/" target="_blank"><span class="src-icon">LINK</span><span>Nvidia earnings and Anthropic IPO lead crucial week for AI bulls — The National</span></a>
+  <a class="source-link" href="https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november" target="_blank"><span class="src-icon">LINK</span><span>Mind and Machine Weekly: 15 November 2026</span></a>
+  <a class="source-link" href="https://api-docs.deepseek.com/updates/" target="_blank"><span class="src-icon">LINK</span><span>DeepSeek API Updates</span></a>
+  <a class="source-link" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank"><span class="src-icon">LINK</span><span>Inkling 2 Small — Thinking Machines</span></a>
+  <a class="source-link" href="https://www.youtube.com/@RedpointAI" target="_blank"><span class="src-icon">LINK</span><span>Unsupervised Learning — Redpoint</span></a>
+  <a class="source-link" href="https://x.com/amasad/status/2121519931741127144" target="_blank"><span class="src-icon">X</span><span>Amjad Masad · @amasad</span></a>
+  <a class="source-link" href="https://x.com/joshwoodward/status/2121755282326102417" target="_blank"><span class="src-icon">X</span><span>Josh Woodward · @joshwoodward</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2121739228698886454" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2121686564078297461" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
 </div>
 
+<div class="disclaimer">ChatGPT Wallet 的细节来自 OpenAI 公告和 TechCrunch 报道。Worse Together 的数字是 Anthropic Fellows 在模拟环境中的结果，不代表真实部署。英伟达财报为市场预期，Anthropic 定价和交易日期以最终公告为准。播客嘉宾姓名在自动转录中不清晰，正文只按节目标题称呼。</div>
+
 <div class="footer">
-  <span>Daily Builders Digest · 2026-11-15 · 周日播客精选</span>
+  <span>Daily Builders Digest · 2026-11-16 · AI 星期一</span>
   <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
 </div>
 
@@ -362,12 +363,12 @@
 <p class="section-label">◈ 往期回顾 · 近一个月节目</p>
 <div class="cal-card">
   <div class="cal-head">
-    <span class="cal-range">2026.10.15 — 2026.11.15</span>
+    <span class="cal-range">2026.10.16 — 2026.11.16</span>
     <span class="cal-count">30 期</span>
   </div>
-  <div class="cal-grid"><span class="cal-wd">一</span><span class="cal-wd">二</span><span class="cal-wd">三</span><span class="cal-wd">四</span><span class="cal-wd">五</span><span class="cal-wd">六</span><span class="cal-wd">日</span><span class="cal-day off"><span class="cal-num">10月</span></span><span class="cal-day off"><span class="cal-num">13</span></span><span class="cal-day off"><span class="cal-num">14</span></span><a class="cal-day has-ep" href="/episodes/2026-10-15.html" title="2026-10-15 · Health · 大脑记得你吃过什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">健康</span></span><span class="cal-theme">大脑记得你吃过什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-16.html" title="2026-10-16 · AI · 跑出去的代理，借来的钱" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">跑出去的代理，借来的钱</span></a><a class="cal-day has-ep" href="/episodes/2026-10-17.html" title="2026-10-17 · Books · Apple: The First 50 Years" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">17</span><span class="cal-topic">书</span></span><span class="cal-theme">Apple: The First 50 Years</span></a><span class="cal-day empty"><span class="cal-num">18</span></span><span class="cal-day empty"><span class="cal-num">19</span></span><a class="cal-day has-ep" href="/episodes/2026-10-20.html" title="2026-10-20 · Robotics · 先让人在回路里，再慢慢撤出来" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">20</span><span class="cal-topic">机器人</span></span><span class="cal-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-day has-ep" href="/episodes/2026-10-21.html" title="2026-10-21 · Product · 一个人用，还是一起用" style="--c:#004488"><span class="cal-top"><span class="cal-num">21</span><span class="cal-topic">产品</span></span><span class="cal-theme">一个人用，还是一起用</span></a><a class="cal-day has-ep" href="/episodes/2026-10-22.html" title="2026-10-22 · Health · 癌症这十五年变了什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">22</span><span class="cal-topic">健康</span></span><span class="cal-theme">癌症这十五年变了什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-23.html" title="2026-10-23 · AI · AI 找漏洞，也替你找活" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">23</span><span class="cal-topic">AI</span></span><span class="cal-theme">AI 找漏洞，也替你找活</span></a><a class="cal-day has-ep" href="/episodes/2026-10-24.html" title="2026-10-24 · Books · Hyperscale" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">24</span><span class="cal-topic">书</span></span><span class="cal-theme">Hyperscale</span></a><a class="cal-day has-ep" href="/episodes/2026-10-25.html" title="2026-10-25 · Podcasts · 接下来十八个月，一半工程时间花在安全上" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">25</span><span class="cal-topic">播客</span></span><span class="cal-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-day has-ep" href="/episodes/2026-10-26.html" title="2026-10-26 · AI · 把代理关在笼子里" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">26</span><span class="cal-topic">AI</span></span><span class="cal-theme">把代理关在笼子里</span></a><a class="cal-day has-ep" href="/episodes/2026-10-27.html" title="2026-10-27 · Robotics · 从一个仓库到很多个仓库" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">27</span><span class="cal-topic">机器人</span></span><span class="cal-theme">从一个仓库到很多个仓库</span></a><a class="cal-day has-ep" href="/episodes/2026-10-28.html" title="2026-10-28 · Product · agent 开始用电脑，人管什么" style="--c:#004488"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">产品</span></span><span class="cal-theme">agent 开始用电脑，人管什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-29.html" title="2026-10-29 · Health · 情绪是大脑做出来的预测" style="--c:#007744"><span class="cal-top"><span class="cal-num">29</span><span class="cal-topic">健康</span></span><span class="cal-theme">情绪是大脑做出来的预测</span></a><a class="cal-day has-ep" href="/episodes/2026-10-30.html" title="2026-10-30 · AI · 花钱的账单和写代码的人" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">30</span><span class="cal-topic">AI</span></span><span class="cal-theme">花钱的账单和写代码的人</span></a><a class="cal-day has-ep" href="/episodes/2026-10-31.html" title="2026-10-31 · Books · Artificial Intimacy" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">31</span><span class="cal-topic">书</span></span><span class="cal-theme">Artificial Intimacy</span></a><a class="cal-day has-ep" href="/episodes/2026-11-01.html" title="2026-11-01 · Podcasts · 智能体越强，企业给每个人的权限越紧" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">11月</span><span class="cal-topic">播客</span></span><span class="cal-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-day has-ep" href="/episodes/2026-11-02.html" title="2026-11-02 · AI · 额度、退出标记和两边都在用的代理" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">2</span><span class="cal-topic">AI</span></span><span class="cal-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-day has-ep" href="/episodes/2026-11-03.html" title="2026-11-03 · Robotics · 机器人要上市，也要上保险" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">3</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人要上市，也要上保险</span></a><a class="cal-day has-ep" href="/episodes/2026-11-04.html" title="2026-11-04 · Product · 默认值是谁定的" style="--c:#004488"><span class="cal-top"><span class="cal-num">4</span><span class="cal-topic">产品</span></span><span class="cal-theme">默认值是谁定的</span></a><a class="cal-day has-ep" href="/episodes/2026-11-05.html" title="2026-11-05 · Health · 练力量，受伤了也别全停" style="--c:#007744"><span class="cal-top"><span class="cal-num">5</span><span class="cal-topic">健康</span></span><span class="cal-theme">练力量，受伤了也别全停</span></a><a class="cal-day has-ep" href="/episodes/2026-11-06.html" title="2026-11-06 · AI · 找漏洞的模型、放代码的地方、建机房的条件" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">6</span><span class="cal-topic">AI</span></span><span class="cal-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-day has-ep" href="/episodes/2026-11-07.html" title="2026-11-07 · Books · Beautiful Particulars" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">7</span><span class="cal-topic">书</span></span><span class="cal-theme">Beautiful Particulars</span></a><a class="cal-day has-ep" href="/episodes/2026-11-08.html" title="2026-11-08 · Podcasts · 画地图 → 预测 → 指挥下一个实验" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">8</span><span class="cal-topic">播客</span></span><span class="cal-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-day has-ep" href="/episodes/2026-11-09.html" title="2026-11-09 · AI · 代理去攻，代理去守，融资变难" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">9</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-day has-ep" href="/episodes/2026-11-10.html" title="2026-11-10 · Robotics · 数据：人类视频、审查、财报" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">10</span><span class="cal-topic">机器人</span></span><span class="cal-theme">数据：人类视频、审查、财报</span></a><a class="cal-day has-ep" href="/episodes/2026-11-11.html" title="2026-11-11 · Product · 额度也是产品" style="--c:#004488"><span class="cal-top"><span class="cal-num">11</span><span class="cal-topic">产品</span></span><span class="cal-theme">额度也是产品</span></a><a class="cal-day has-ep" href="/episodes/2026-11-12.html" title="2026-11-12 · Health · 数字之外" style="--c:#007744"><span class="cal-top"><span class="cal-num">12</span><span class="cal-topic">健康</span></span><span class="cal-theme">数字之外</span></a><a class="cal-day has-ep" href="/episodes/2026-11-13.html" title="2026-11-13 · AI · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">13</span><span class="cal-topic">AI</span></span><span class="cal-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-day has-ep" href="/episodes/2026-11-14.html" title="2026-11-14 · Books · Big Math" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">书</span></span><span class="cal-theme">Big Math</span></a><a class="cal-day has-ep is-today" href="/episodes/2026-11-15.html" title="2026-11-15 · Podcasts · 当买家先去问模型" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">播客</span></span><span class="cal-theme">当买家先去问模型</span></a></div>
-  <div class="cal-legend"><span class="cal-leg"><i style="background:#7700dd"></i>播客</span><span class="cal-leg"><i style="background:#0066cc"></i>书</span><span class="cal-leg"><i style="background:#dd1111"></i>AI</span><span class="cal-leg"><i style="background:#007744"></i>健康</span><span class="cal-leg"><i style="background:#004488"></i>产品</span><span class="cal-leg"><i style="background:#cc5500"></i>机器人</span></div>
-  <div class="cal-list"><a class="cal-row" href="/episodes/2026-11-15.html" style="--c:#7700dd"><span class="cal-row-date">11/15</span><span class="cal-row-theme">当买家先去问模型</span></a><a class="cal-row" href="/episodes/2026-11-14.html" style="--c:#0066cc"><span class="cal-row-date">11/14</span><span class="cal-row-theme">Big Math</span></a><a class="cal-row" href="/episodes/2026-11-13.html" style="--c:#dd1111"><span class="cal-row-date">11/13</span><span class="cal-row-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-row" href="/episodes/2026-11-12.html" style="--c:#007744"><span class="cal-row-date">11/12</span><span class="cal-row-theme">数字之外</span></a><a class="cal-row" href="/episodes/2026-11-11.html" style="--c:#004488"><span class="cal-row-date">11/11</span><span class="cal-row-theme">额度也是产品</span></a><a class="cal-row" href="/episodes/2026-11-10.html" style="--c:#cc5500"><span class="cal-row-date">11/10</span><span class="cal-row-theme">数据：人类视频、审查、财报</span></a><a class="cal-row" href="/episodes/2026-11-09.html" style="--c:#dd1111"><span class="cal-row-date">11/9</span><span class="cal-row-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-row" href="/episodes/2026-11-08.html" style="--c:#7700dd"><span class="cal-row-date">11/8</span><span class="cal-row-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-row" href="/episodes/2026-11-07.html" style="--c:#0066cc"><span class="cal-row-date">11/7</span><span class="cal-row-theme">Beautiful Particulars</span></a><a class="cal-row" href="/episodes/2026-11-06.html" style="--c:#dd1111"><span class="cal-row-date">11/6</span><span class="cal-row-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-row" href="/episodes/2026-11-05.html" style="--c:#007744"><span class="cal-row-date">11/5</span><span class="cal-row-theme">练力量，受伤了也别全停</span></a><a class="cal-row" href="/episodes/2026-11-04.html" style="--c:#004488"><span class="cal-row-date">11/4</span><span class="cal-row-theme">默认值是谁定的</span></a><a class="cal-row" href="/episodes/2026-11-03.html" style="--c:#cc5500"><span class="cal-row-date">11/3</span><span class="cal-row-theme">机器人要上市，也要上保险</span></a><a class="cal-row" href="/episodes/2026-11-02.html" style="--c:#dd1111"><span class="cal-row-date">11/2</span><span class="cal-row-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-row" href="/episodes/2026-11-01.html" style="--c:#7700dd"><span class="cal-row-date">11/1</span><span class="cal-row-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-row" href="/episodes/2026-10-31.html" style="--c:#0066cc"><span class="cal-row-date">10/31</span><span class="cal-row-theme">Artificial Intimacy</span></a><a class="cal-row" href="/episodes/2026-10-30.html" style="--c:#dd1111"><span class="cal-row-date">10/30</span><span class="cal-row-theme">花钱的账单和写代码的人</span></a><a class="cal-row" href="/episodes/2026-10-29.html" style="--c:#007744"><span class="cal-row-date">10/29</span><span class="cal-row-theme">情绪是大脑做出来的预测</span></a><a class="cal-row" href="/episodes/2026-10-28.html" style="--c:#004488"><span class="cal-row-date">10/28</span><span class="cal-row-theme">agent 开始用电脑，人管什么</span></a><a class="cal-row" href="/episodes/2026-10-27.html" style="--c:#cc5500"><span class="cal-row-date">10/27</span><span class="cal-row-theme">从一个仓库到很多个仓库</span></a><a class="cal-row" href="/episodes/2026-10-26.html" style="--c:#dd1111"><span class="cal-row-date">10/26</span><span class="cal-row-theme">把代理关在笼子里</span></a><a class="cal-row" href="/episodes/2026-10-25.html" style="--c:#7700dd"><span class="cal-row-date">10/25</span><span class="cal-row-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-row" href="/episodes/2026-10-24.html" style="--c:#0066cc"><span class="cal-row-date">10/24</span><span class="cal-row-theme">Hyperscale</span></a><a class="cal-row" href="/episodes/2026-10-23.html" style="--c:#dd1111"><span class="cal-row-date">10/23</span><span class="cal-row-theme">AI 找漏洞，也替你找活</span></a><a class="cal-row" href="/episodes/2026-10-22.html" style="--c:#007744"><span class="cal-row-date">10/22</span><span class="cal-row-theme">癌症这十五年变了什么</span></a><a class="cal-row" href="/episodes/2026-10-21.html" style="--c:#004488"><span class="cal-row-date">10/21</span><span class="cal-row-theme">一个人用，还是一起用</span></a><a class="cal-row" href="/episodes/2026-10-20.html" style="--c:#cc5500"><span class="cal-row-date">10/20</span><span class="cal-row-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-row" href="/episodes/2026-10-17.html" style="--c:#0066cc"><span class="cal-row-date">10/17</span><span class="cal-row-theme">Apple: The First 50 Years</span></a><a class="cal-row" href="/episodes/2026-10-16.html" style="--c:#dd1111"><span class="cal-row-date">10/16</span><span class="cal-row-theme">跑出去的代理，借来的钱</span></a><a class="cal-row" href="/episodes/2026-10-15.html" style="--c:#007744"><span class="cal-row-date">10/15</span><span class="cal-row-theme">大脑记得你吃过什么</span></a></div>
+  <div class="cal-grid"><span class="cal-wd">一</span><span class="cal-wd">二</span><span class="cal-wd">三</span><span class="cal-wd">四</span><span class="cal-wd">五</span><span class="cal-wd">六</span><span class="cal-wd">日</span><span class="cal-day off"><span class="cal-num">10月</span></span><span class="cal-day off"><span class="cal-num">13</span></span><span class="cal-day off"><span class="cal-num">14</span></span><span class="cal-day off"><span class="cal-num">15</span></span><a class="cal-day has-ep" href="/episodes/2026-10-16.html" title="2026-10-16 · AI · 跑出去的代理，借来的钱" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">跑出去的代理，借来的钱</span></a><a class="cal-day has-ep" href="/episodes/2026-10-17.html" title="2026-10-17 · Books · Apple: The First 50 Years" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">17</span><span class="cal-topic">书</span></span><span class="cal-theme">Apple: The First 50 Years</span></a><span class="cal-day empty"><span class="cal-num">18</span></span><span class="cal-day empty"><span class="cal-num">19</span></span><a class="cal-day has-ep" href="/episodes/2026-10-20.html" title="2026-10-20 · Robotics · 先让人在回路里，再慢慢撤出来" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">20</span><span class="cal-topic">机器人</span></span><span class="cal-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-day has-ep" href="/episodes/2026-10-21.html" title="2026-10-21 · Product · 一个人用，还是一起用" style="--c:#004488"><span class="cal-top"><span class="cal-num">21</span><span class="cal-topic">产品</span></span><span class="cal-theme">一个人用，还是一起用</span></a><a class="cal-day has-ep" href="/episodes/2026-10-22.html" title="2026-10-22 · Health · 癌症这十五年变了什么" style="--c:#007744"><span class="cal-top"><span class="cal-num">22</span><span class="cal-topic">健康</span></span><span class="cal-theme">癌症这十五年变了什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-23.html" title="2026-10-23 · AI · AI 找漏洞，也替你找活" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">23</span><span class="cal-topic">AI</span></span><span class="cal-theme">AI 找漏洞，也替你找活</span></a><a class="cal-day has-ep" href="/episodes/2026-10-24.html" title="2026-10-24 · Books · Hyperscale" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">24</span><span class="cal-topic">书</span></span><span class="cal-theme">Hyperscale</span></a><a class="cal-day has-ep" href="/episodes/2026-10-25.html" title="2026-10-25 · Podcasts · 接下来十八个月，一半工程时间花在安全上" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">25</span><span class="cal-topic">播客</span></span><span class="cal-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-day has-ep" href="/episodes/2026-10-26.html" title="2026-10-26 · AI · 把代理关在笼子里" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">26</span><span class="cal-topic">AI</span></span><span class="cal-theme">把代理关在笼子里</span></a><a class="cal-day has-ep" href="/episodes/2026-10-27.html" title="2026-10-27 · Robotics · 从一个仓库到很多个仓库" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">27</span><span class="cal-topic">机器人</span></span><span class="cal-theme">从一个仓库到很多个仓库</span></a><a class="cal-day has-ep" href="/episodes/2026-10-28.html" title="2026-10-28 · Product · agent 开始用电脑，人管什么" style="--c:#004488"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">产品</span></span><span class="cal-theme">agent 开始用电脑，人管什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-29.html" title="2026-10-29 · Health · 情绪是大脑做出来的预测" style="--c:#007744"><span class="cal-top"><span class="cal-num">29</span><span class="cal-topic">健康</span></span><span class="cal-theme">情绪是大脑做出来的预测</span></a><a class="cal-day has-ep" href="/episodes/2026-10-30.html" title="2026-10-30 · AI · 花钱的账单和写代码的人" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">30</span><span class="cal-topic">AI</span></span><span class="cal-theme">花钱的账单和写代码的人</span></a><a class="cal-day has-ep" href="/episodes/2026-10-31.html" title="2026-10-31 · Books · Artificial Intimacy" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">31</span><span class="cal-topic">书</span></span><span class="cal-theme">Artificial Intimacy</span></a><a class="cal-day has-ep" href="/episodes/2026-11-01.html" title="2026-11-01 · Podcasts · 智能体越强，企业给每个人的权限越紧" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">11月</span><span class="cal-topic">播客</span></span><span class="cal-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-day has-ep" href="/episodes/2026-11-02.html" title="2026-11-02 · AI · 额度、退出标记和两边都在用的代理" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">2</span><span class="cal-topic">AI</span></span><span class="cal-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-day has-ep" href="/episodes/2026-11-03.html" title="2026-11-03 · Robotics · 机器人要上市，也要上保险" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">3</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人要上市，也要上保险</span></a><a class="cal-day has-ep" href="/episodes/2026-11-04.html" title="2026-11-04 · Product · 默认值是谁定的" style="--c:#004488"><span class="cal-top"><span class="cal-num">4</span><span class="cal-topic">产品</span></span><span class="cal-theme">默认值是谁定的</span></a><a class="cal-day has-ep" href="/episodes/2026-11-05.html" title="2026-11-05 · Health · 练力量，受伤了也别全停" style="--c:#007744"><span class="cal-top"><span class="cal-num">5</span><span class="cal-topic">健康</span></span><span class="cal-theme">练力量，受伤了也别全停</span></a><a class="cal-day has-ep" href="/episodes/2026-11-06.html" title="2026-11-06 · AI · 找漏洞的模型、放代码的地方、建机房的条件" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">6</span><span class="cal-topic">AI</span></span><span class="cal-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-day has-ep" href="/episodes/2026-11-07.html" title="2026-11-07 · Books · Beautiful Particulars" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">7</span><span class="cal-topic">书</span></span><span class="cal-theme">Beautiful Particulars</span></a><a class="cal-day has-ep" href="/episodes/2026-11-08.html" title="2026-11-08 · Podcasts · 画地图 → 预测 → 指挥下一个实验" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">8</span><span class="cal-topic">播客</span></span><span class="cal-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-day has-ep" href="/episodes/2026-11-09.html" title="2026-11-09 · AI · 代理去攻，代理去守，融资变难" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">9</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-day has-ep" href="/episodes/2026-11-10.html" title="2026-11-10 · Robotics · 数据：人类视频、审查、财报" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">10</span><span class="cal-topic">机器人</span></span><span class="cal-theme">数据：人类视频、审查、财报</span></a><a class="cal-day has-ep" href="/episodes/2026-11-11.html" title="2026-11-11 · Product · 额度也是产品" style="--c:#004488"><span class="cal-top"><span class="cal-num">11</span><span class="cal-topic">产品</span></span><span class="cal-theme">额度也是产品</span></a><a class="cal-day has-ep" href="/episodes/2026-11-12.html" title="2026-11-12 · Health · 数字之外" style="--c:#007744"><span class="cal-top"><span class="cal-num">12</span><span class="cal-topic">健康</span></span><span class="cal-theme">数字之外</span></a><a class="cal-day has-ep" href="/episodes/2026-11-13.html" title="2026-11-13 · AI · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">13</span><span class="cal-topic">AI</span></span><span class="cal-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-day has-ep" href="/episodes/2026-11-14.html" title="2026-11-14 · Books · Big Math" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">书</span></span><span class="cal-theme">Big Math</span></a><a class="cal-day has-ep" href="/episodes/2026-11-15.html" title="2026-11-15 · Podcasts · 当买家先去问模型" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">播客</span></span><span class="cal-theme">当买家先去问模型</span></a><a class="cal-day has-ep is-today" href="/episodes/2026-11-16.html" title="2026-11-16 · AI · 代理开始替你付钱，代理之间开始抢资源，这周看两场考试" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span></a><span class="cal-day off"><span class="cal-num">17</span></span><span class="cal-day off"><span class="cal-num">18</span></span><span class="cal-day off"><span class="cal-num">19</span></span><span class="cal-day off"><span class="cal-num">20</span></span><span class="cal-day off"><span class="cal-num">21</span></span><span class="cal-day off"><span class="cal-num">22</span></span></div>
+  <div class="cal-legend"><span class="cal-leg"><i style="background:#dd1111"></i>AI</span><span class="cal-leg"><i style="background:#7700dd"></i>播客</span><span class="cal-leg"><i style="background:#0066cc"></i>书</span><span class="cal-leg"><i style="background:#007744"></i>健康</span><span class="cal-leg"><i style="background:#004488"></i>产品</span><span class="cal-leg"><i style="background:#cc5500"></i>机器人</span></div>
+  <div class="cal-list"><a class="cal-row" href="/episodes/2026-11-16.html" style="--c:#dd1111"><span class="cal-row-date">11/16</span><span class="cal-row-theme">代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span></a><a class="cal-row" href="/episodes/2026-11-15.html" style="--c:#7700dd"><span class="cal-row-date">11/15</span><span class="cal-row-theme">当买家先去问模型</span></a><a class="cal-row" href="/episodes/2026-11-14.html" style="--c:#0066cc"><span class="cal-row-date">11/14</span><span class="cal-row-theme">Big Math</span></a><a class="cal-row" href="/episodes/2026-11-13.html" style="--c:#dd1111"><span class="cal-row-date">11/13</span><span class="cal-row-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-row" href="/episodes/2026-11-12.html" style="--c:#007744"><span class="cal-row-date">11/12</span><span class="cal-row-theme">数字之外</span></a><a class="cal-row" href="/episodes/2026-11-11.html" style="--c:#004488"><span class="cal-row-date">11/11</span><span class="cal-row-theme">额度也是产品</span></a><a class="cal-row" href="/episodes/2026-11-10.html" style="--c:#cc5500"><span class="cal-row-date">11/10</span><span class="cal-row-theme">数据：人类视频、审查、财报</span></a><a class="cal-row" href="/episodes/2026-11-09.html" style="--c:#dd1111"><span class="cal-row-date">11/9</span><span class="cal-row-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-row" href="/episodes/2026-11-08.html" style="--c:#7700dd"><span class="cal-row-date">11/8</span><span class="cal-row-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-row" href="/episodes/2026-11-07.html" style="--c:#0066cc"><span class="cal-row-date">11/7</span><span class="cal-row-theme">Beautiful Particulars</span></a><a class="cal-row" href="/episodes/2026-11-06.html" style="--c:#dd1111"><span class="cal-row-date">11/6</span><span class="cal-row-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-row" href="/episodes/2026-11-05.html" style="--c:#007744"><span class="cal-row-date">11/5</span><span class="cal-row-theme">练力量，受伤了也别全停</span></a><a class="cal-row" href="/episodes/2026-11-04.html" style="--c:#004488"><span class="cal-row-date">11/4</span><span class="cal-row-theme">默认值是谁定的</span></a><a class="cal-row" href="/episodes/2026-11-03.html" style="--c:#cc5500"><span class="cal-row-date">11/3</span><span class="cal-row-theme">机器人要上市，也要上保险</span></a><a class="cal-row" href="/episodes/2026-11-02.html" style="--c:#dd1111"><span class="cal-row-date">11/2</span><span class="cal-row-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-row" href="/episodes/2026-11-01.html" style="--c:#7700dd"><span class="cal-row-date">11/1</span><span class="cal-row-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-row" href="/episodes/2026-10-31.html" style="--c:#0066cc"><span class="cal-row-date">10/31</span><span class="cal-row-theme">Artificial Intimacy</span></a><a class="cal-row" href="/episodes/2026-10-30.html" style="--c:#dd1111"><span class="cal-row-date">10/30</span><span class="cal-row-theme">花钱的账单和写代码的人</span></a><a class="cal-row" href="/episodes/2026-10-29.html" style="--c:#007744"><span class="cal-row-date">10/29</span><span class="cal-row-theme">情绪是大脑做出来的预测</span></a><a class="cal-row" href="/episodes/2026-10-28.html" style="--c:#004488"><span class="cal-row-date">10/28</span><span class="cal-row-theme">agent 开始用电脑，人管什么</span></a><a class="cal-row" href="/episodes/2026-10-27.html" style="--c:#cc5500"><span class="cal-row-date">10/27</span><span class="cal-row-theme">从一个仓库到很多个仓库</span></a><a class="cal-row" href="/episodes/2026-10-26.html" style="--c:#dd1111"><span class="cal-row-date">10/26</span><span class="cal-row-theme">把代理关在笼子里</span></a><a class="cal-row" href="/episodes/2026-10-25.html" style="--c:#7700dd"><span class="cal-row-date">10/25</span><span class="cal-row-theme">接下来十八个月，一半工程时间花在安全上</span></a><a class="cal-row" href="/episodes/2026-10-24.html" style="--c:#0066cc"><span class="cal-row-date">10/24</span><span class="cal-row-theme">Hyperscale</span></a><a class="cal-row" href="/episodes/2026-10-23.html" style="--c:#dd1111"><span class="cal-row-date">10/23</span><span class="cal-row-theme">AI 找漏洞，也替你找活</span></a><a class="cal-row" href="/episodes/2026-10-22.html" style="--c:#007744"><span class="cal-row-date">10/22</span><span class="cal-row-theme">癌症这十五年变了什么</span></a><a class="cal-row" href="/episodes/2026-10-21.html" style="--c:#004488"><span class="cal-row-date">10/21</span><span class="cal-row-theme">一个人用，还是一起用</span></a><a class="cal-row" href="/episodes/2026-10-20.html" style="--c:#cc5500"><span class="cal-row-date">10/20</span><span class="cal-row-theme">先让人在回路里，再慢慢撤出来</span></a><a class="cal-row" href="/episodes/2026-10-17.html" style="--c:#0066cc"><span class="cal-row-date">10/17</span><span class="cal-row-theme">Apple: The First 50 Years</span></a><a class="cal-row" href="/episodes/2026-10-16.html" style="--c:#dd1111"><span class="cal-row-date">10/16</span><span class="cal-row-theme">跑出去的代理，借来的钱</span></a></div>
 </div>
 <style>
 .cal-card{background:var(--card);border:1px solid var(--light);padding:20px;margin-bottom:48px;}

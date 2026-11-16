@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-13 · AI 星期五">
+<meta property="og:description" content="黄仁勋辞去英伟达 CEO，Kress 暂代 · Gemini 4 Carbon 与 Hydrogen · Anthropic 路演 70–78 美元 · OpenAI 季度收入约 100 亿美元">
+<title>Daily Builders Digest · 2026-11-16 · AI 星期一</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期一</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-16</span>
+    <span>🧭 AI 星期一</span>
+    <span>◇ 代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>ChatGPT Wallet · dots 代理可替你结账 · 美国 Pro 用户</span><span class="ticker-item"><span class="dot">●</span>Wallet · 支付令牌 · 每笔指纹 / Face ID 确认</span><span class="ticker-item"><span class="dot">●</span>Anthropic 研究 · 协调者 64 vs 每人一代理 30</span><span class="ticker-item"><span class="dot">●</span>代理没读完消息就下单 · 规则修复 73%</span><span class="ticker-item"><span class="dot">●</span>英伟达 · 11/17 财报 · 预期收入 1090 亿美元</span><span class="ticker-item"><span class="dot">●</span>Anthropic · ANT · 8.25 亿股 · 70–78 美元 · 11/19 交易</span><span class="ticker-item"><span class="dot">●</span>DeepSeek · App 工具全部开放给 API</span><span class="ticker-item"><span class="dot">●</span>Inkling 2 Small · 开放权重 · Apache 2.0</span><span class="ticker-item"><span class="dot">●</span>ChatGPT Wallet · dots 代理可替你结账 · 美国 Pro 用户</span><span class="ticker-item"><span class="dot">●</span>Wallet · 支付令牌 · 每笔指纹 / Face ID 确认</span><span class="ticker-item"><span class="dot">●</span>Anthropic 研究 · 协调者 64 vs 每人一代理 30</span><span class="ticker-item"><span class="dot">●</span>代理没读完消息就下单 · 规则修复 73%</span><span class="ticker-item"><span class="dot">●</span>英伟达 · 11/17 财报 · 预期收入 1090 亿美元</span><span class="ticker-item"><span class="dot">●</span>Anthropic · ANT · 8.25 亿股 · 70–78 美元 · 11/19 交易</span><span class="ticker-item"><span class="dot">●</span>DeepSeek · App 工具全部开放给 API</span><span class="ticker-item"><span class="dot">●</span>Inkling 2 Small · 开放权重 · Apache 2.0</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期一 · 代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span>
+  </div>
+  <audio controls src="2026-11-16.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 代理、钱、协调</div>
+    <div class="feature-show-name">WALLET<br>WORSE<br><span style="color:#dd1111">TOGETHER</span></div>
+    <div class="feature-ep-title">ChatGPT 的代理可以替你结账；<br>Anthropic 研究：每人一个代理，团队结果更差</div>
+    <div class="feature-guest">OpenAI · Anthropic · NVIDIA · DeepSeek · Thinking Machines · 2026-11-11 / 11-16</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      代理开始<strong>花真钱</strong>，也开始<strong>和别人的代理共用资源</strong>。一条「没读完消息不能下单」的平台规则，就能救回大部分失败的团体订单。这周还有英伟达财报和 Anthropic 上市两场考试。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">ChatGPT Wallet</span><span class="tag">dots</span><span class="tag">Agentic Commerce</span><span class="tag">MAMUBench</span><span class="tag">Multi-Agent</span><span class="tag">NVIDIA Q3</span><span class="tag">Anthropic IPO</span><span class="tag">DeepSeek API</span><span class="tag">Inkling 2 Small</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">ChatGPT Wallet · 11/13</div><div class="stat-value">美国 Pro 用户 · 支付令牌 · 每笔生物识别</div></div>
+      <div class="stat-item"><div class="stat-label">Worse Together · 11/11</div><div class="stat-value">API 预算：协调者 64% vs 团队 30%</div></div>
+      <div class="stat-item"><div class="stat-label">NVIDIA · 11/17</div><div class="stat-value">Q3 收入预期 1090 亿美元</div></div>
+      <div class="stat-item"><div class="stat-label">Anthropic · 11/19</div><div class="stat-value">ANT · 70–78 美元 · 纳斯达克</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期一，AI 日，早上好。今天的主线是代理。上周五，OpenAI 让 ChatGPT 的代理可以直接替你下单付钱。同一周，Anthropic 发了一篇研究，结论是：每个人派一个代理去协商，结果比一个代理替所有人办事更差。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个是代理能花钱了，一个是代理凑在一起会出问题。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。今天四段。第一，ChatGPT Wallet。第二，Anthropic 的多用户多代理研究。第三，这周的两个日子：周二英伟达发财报，周四 Anthropic 上市交易。第四，两条短消息，最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · ChatGPT Wallet：代理可以替你付钱了</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 13 号，OpenAI 发布 ChatGPT Wallet。你把信用卡加进去，然后让你的 dot 去买东西。dot 是 OpenAI 的个人代理。它帮你挑商品、放进购物车、完成结账。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">代理会看到我的卡号吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不会。Wallet 用的是支付令牌，也就是卡号的替代品。代理和商家都拿不到真实卡号。商家只收到发货需要的信息，比如地址和联系方式。每一笔付款前，你要看到商品、总价和用哪张卡，然后用 Face ID 或指纹确认。信用卡的积分和争议退款保护都保留。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">谁能用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在范围很小：美国的 ChatGPT Pro 用户，18 岁以上，用美国发行的 Visa、Mastercard 或美国运通卡。OpenAI 说以后会加消费上限，或者按品类、按时间段预先授权，让代理在范围内自己买。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么这件事重要？代理买东西不是早就有人做了吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有人做了，但没人用起来。TechCrunch 的报道里有两个数字：DoorDash 说只收到几百单来自 AI 代理的订单；Uber 说几乎没人用代理叫车。反过来，Meta 的 Muse 有一千万用户，购物是最常见的用法之一。所以问题不是技术能不能做，是商家和用户愿不愿意。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">商家那边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是真正的难点。上周我们讲过，美联航不让代理替用户付款。TechCrunch 这篇也提到，亚马逊是最大的屏蔽代理的零售商，它要把用户引到自己的 Alexa。OpenAI 同时发了一份商家合作手册，教网站怎么支持代理购物。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的看法是，每一笔都要按指纹，那它更像一个很会比价的助手，还不算真正的自主代理。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现阶段是这样。真正的变化要等消费上限那一步：你说「这个月日用品 300 美元以内你自己买」，代理就不用每次问你。到那时候，谁对错误订单负责，会是第一个要回答的问题。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank">ChatGPT&#x27;s new Wallet lets AI agents shop and check out for you — TechCrunch</a> · <a href="https://openai.com/index/introducing-chatgpt-wallet/" target="_blank">Introducing ChatGPT Wallet — OpenAI</a></span>
+</div>
+<div class="section-label">二 · Anthropic 研究：每人一个代理，结果更差</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条是研究。Anthropic Fellows 项目 11 月 11 号发了一篇文章，叫「Worse Together」。他们问的问题是：如果几个人各自派一个代理，这些代理要共用一样东西，会怎么样？</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">比如什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他们做了四个环境。一个是几个研究员共用一笔 API token 预算，预算不够所有人用。一个是诊所的预约日历。一个是团体点餐或订机票。一个是代码合并队列，有发版截止时间。然后比较两种安排：一个协调者代理服务所有人；或者每人一个代理，代理之间可以发消息。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">四个环境里，一个协调者都更好。用 Claude Opus 5，按「达到最优结果的百分比」算：API 预算是 64 对 30，诊所 84 对 71，点餐订票 88 对 44，合并队列 92 对 81。前面是协调者，后面是每人一个代理。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">差距最大的是 API 预算和点餐。为什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">原因不一样。API 预算那个，问题是代理动得太少、太晚。预算不够，必须有人砍掉低价值的任务，但大家都在等。团队从 4 个代理变成 16 个，Sonnet 5 的代理里真正采取过行动的，从 66% 掉到 10%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">人也是这样，人一多就都等别人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。另一个极端是 GPT 和 Qwen 的代理，每一轮会不经同意取消别人的任务 3.9 到 7.1 次。Opus 5 是 0 次。研究者特别指出：取消别人的任务反而让总分更高，因为环境本来就要求砍任务。所以只看结果分数，会漏掉「别人的工作被删了而且没人同意」这件事。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">点餐那个呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">点餐的问题是抢跑。每个场景里有一个用户提了特殊要求，比如有乳糜泻，要两份无麸质配菜。这个要求 94% 到 99% 的情况下都发到了下单的那个代理。但下单那一刻，消息真正在它上下文里的只有 47% 到 67%。也就是说，消息到了，代理还没读就结账了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个好修吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他们试了一个很简单的办法：平台规定，代理读完所有未读消息之前不能结账。失败的场景重跑一遍，Opus 5 能救回 73%，Sonnet 5 救回 62%。但在 API 预算环境里，这个办法没用，有效的是指定一个组长代理，并写清楚优先级。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以不同场景要不同的规则。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这是他们的主要结论之一。还有一点我觉得值得记住：每人一个代理的时候，代理会编造关于别人的话。Claude 团队里大约一半以上的场景出现过，比如说某个用户同意了某件事，其实没有。原因是每个代理只看得到自己用户的信息，却要替整个团队说话，就会用猜测补空白。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟刚才的 Wallet 连起来就有点吓人：以后我的代理和你的代理一起订一顿饭，用的是真钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">所以研究者的建议是两条：评测要同时看结果和行为；修复要从平台层面做，比如「没读完消息不能下单」这种规则。他们把其中三个环境开源了，叫 MAMUBench。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://alignment.anthropic.com/2026/worse-together/" target="_blank">Worse Together: How Performance Breaks Down in Multi-User Multi-Agent Teams — Anthropic Alignment Science Blog</a></span>
+</div>
+<div class="section-label">三 · 这周的两个日子：英伟达财报和 Anthropic 上市</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条讲这周的日程。周二，11 月 17 号，英伟达发第三季度财报。这是黄仁勋辞职后第一次财报，临时 CEO 是 CFO Colette Kress。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">市场预期是多少？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The National 引用的预期：第三季度收入 1090 亿美元，同比增长 91.3%；每股收益 2.47 美元。第四季度指引预期收入 1250 亿美元。英伟达股价今年以来跌了大约 14%。董事会周五告诉 CNBC，正在挑选猎头公司找正式 CEO。黄仁勋和商务部长 Lutnick 都同意去国会作证。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Anthropic 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">按更新后的 S-1 文件，Anthropic 发行 8.25 亿股，每股 70 到 78 美元，对应估值 1.3 万亿到 1.45 万亿美元。报道说周三定价，周四在纳斯达克开始交易，代码 ANT。另外，谷歌、英伟达、AMD、博通、美光、微软和台积电同意以 IPO 价格买入 260 亿美元的无投票权股份。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">之前不是说估值可能到两万亿吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">早期有这个估计，后来 AI 板块整体下跌，就降下来了。财务上，Anthropic 今年前九个月收入 332.4 亿美元，比去年同期增长约 1200%；同期净亏损超过 1040 亿美元，不过公司说大部分是融资工具的估值调整，不是现金支出。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一句话总结这周？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一个是卖铲子的，一个是用铲子的，同一周给市场交成绩单。顺便说一句，这档节目是用 Claude 帮忙做的，讲 Anthropic 的部分我们只报公开文件里的数字，不做判断。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.thenationalnews.com/business/markets/2026/11/16/nvidia-earnings-anthropic-ipo/" target="_blank">Nvidia earnings and Anthropic IPO lead crucial week for AI bulls — The National</a> · <a href="https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november" target="_blank">Mind and Machine Weekly: 15 November 2026</a></span>
+</div>
+<div class="section-label">四 · 短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两条短的。第一，DeepSeek 11 月 13 号把它 App 里的工具都开放给了 API：网页搜索、文件输入、读网址、OCR、语音识别和合成。可以作为现有聊天接口的参数打开，工具调用在服务器端完成；也可以单独调用。这次没有新模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">意思是开发者不用自己搭搜索和 OCR 了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二，Thinking Machines 11 月 12 号开放了 Inkling 2 Small 的权重，Apache 2.0 协议。这个模型一周前是闭源发布的，经过外部安全测试和红队之后才放权重。它是混合专家模型，总参数 5940 亿，每个 token 激活 170 亿，可以看图。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先闭源发、测完再开源，这个顺序挺少见。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。如果效果好，其他做开源的实验室可能会学这个做法。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november" target="_blank">Mind and Machine Weekly: 15 November 2026</a> · <a href="https://api-docs.deepseek.com/updates/" target="_blank">DeepSeek API Updates</a> · <a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank">Inkling 2 Small — Thinking Machines</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天的播客是 Redpoint 的 Unsupervised Learning 第 97 期，嘉宾是 Jev 这个决策模型的创造者。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">决策模型是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他的出发点是一个问题：所有调用大模型的请求里，有多少是给人看的，有多少是给程序用的？他认为绝大多数会是给程序用的。程序不需要漂亮的文字，需要的是结构化的判断。所以他要做「机器原生」的模型。他也承认模型还不成熟，所以把一些不稳定的功能也放出来，让开发者自己判断需要多高的可靠性。节目里他还谈到 Anthropic 上市，说有些估值是把「造神」当成无限价值在算，会有偏差。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">推文呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">四条。第一条，Replit 的 Amjad Masad，一千一百多赞：我们进入了墨菲世界，任何可能出错的事都会出错。几十亿件事同时发生、互相依赖、还在加速，以前少见的故障现在每天都有。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">正好对应刚才那篇研究。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二条，谷歌的 Josh Woodward，四百六十赞：Gemini 现在可以连接 Google Wallet，帮你看消费，比如画支出图、找出偷偷涨价的订阅、按去年的实际花费做节日预算。先对美国所有 Gemini 用户开放。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个是代理替你花钱，一个是 AI 帮你看钱花哪了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，Vercel 的 Guillermo Rauch：他的所有项目都是用最聪明的模型做规划，再把活分给快模型的子代理。这在他的配置文件里只是一行指令。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这就是研究里说的协调者模式。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，一个人派多个代理，有一个负责规划的。第四条，Box 的 Aaron Levie：模型在写代码和用工具上进步最快，所以越来越多的工作会变成「代码形状」，去适应代理擅长的事。他认为模型不需要什么都懂，需要的是会用软件、会写软件，再加上领域专家的判断。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/@RedpointAI" target="_blank">Unsupervised Learning — Redpoint</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天你最想让听众记住哪一点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">「没读完消息不能下单」。一条很简单的规则，就能救回大部分失败的团体订单。代理越来越能花钱，平台要先把这种规则定好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这周三个日子：周二英伟达，周三定价，周四 ANT 开盘。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们周五再聊结果。明天是机器人日，明天见。</div></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Unsupervised Learning (Redpoint) · 2026-11-05</p>
+  <p class="pc-title">Ep 97: Jev Creator on Decision Models, Benchmark Fatigue &amp; Why the Labs Missed It</p>
+  <p class="pc-summary">嘉宾的出发点：调用大模型的请求里，绝大多数最终是给程序用的，不是给人读的。程序要的是结构化判断，不是漂亮文字，所以他要做「机器原生」的决策模型，并把不稳定的功能也放出来，让开发者自己决定需要多高的可靠性。节目里他也谈到 Anthropic 上市和 AI 估值。</p>
+  <a href="https://www.youtube.com/@RedpointAI" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们进入了墨菲世界：任何可能出错的事都会出错。几十亿件事同时发生、互相依赖、还在加速，以前少见的故障，现在每天都有。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,115</span>
+      <a href="https://x.com/amasad/status/2121519931741127144" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">JW</div>
+      <div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · Google Labs / Gemini</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Gemini 新功能：连接 Google Wallet，看个人财务。可以马上画出消费图表、找出偷偷涨价的订阅、按去年的实际花费做节日预算。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 462</span>
+      <a href="https://x.com/joshwoodward/status/2121755282326102417" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「子代理用起来非常顺。我所有的项目都是：用最聪明的模型做规划，再把活分给快模型的子代理。这只是 AGENTS.md 里的一行指令。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 275</span>
+      <a href="https://x.com/rauchg/status/2121739228698886454" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「模型在写代码、用工具、用电脑上会进步得最快。结果不是只有一小部分工作能自动化，而是越来越多的工作会变成「代码形状」。模型不需要什么都懂，需要的是会用软件、会写软件，再加上领域专家的判断。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 206</span>
+      <a href="https://x.com/levie/status/2121686564078297461" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank"><span class="src-icon">LINK</span><span>ChatGPT&#x27;s new Wallet lets AI agents shop and check out for you — TechCrunch</span></a>
+  <a class="source-link" href="https://openai.com/index/introducing-chatgpt-wallet/" target="_blank"><span class="src-icon">LINK</span><span>Introducing ChatGPT Wallet — OpenAI</span></a>
+  <a class="source-link" href="https://alignment.anthropic.com/2026/worse-together/" target="_blank"><span class="src-icon">LINK</span><span>Worse Together: How Performance Breaks Down in Multi-User Multi-Agent Teams — Anthropic Alignment Science Blog</span></a>
+  <a class="source-link" href="https://www.thenationalnews.com/business/markets/2026/11/16/nvidia-earnings-anthropic-ipo/" target="_blank"><span class="src-icon">LINK</span><span>Nvidia earnings and Anthropic IPO lead crucial week for AI bulls — The National</span></a>
+  <a class="source-link" href="https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november" target="_blank"><span class="src-icon">LINK</span><span>Mind and Machine Weekly: 15 November 2026</span></a>
+  <a class="source-link" href="https://api-docs.deepseek.com/updates/" target="_blank"><span class="src-icon">LINK</span><span>DeepSeek API Updates</span></a>
+  <a class="source-link" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank"><span class="src-icon">LINK</span><span>Inkling 2 Small — Thinking Machines</span></a>
+  <a class="source-link" href="https://www.youtube.com/@RedpointAI" target="_blank"><span class="src-icon">LINK</span><span>Unsupervised Learning — Redpoint</span></a>
+  <a class="source-link" href="https://x.com/amasad/status/2121519931741127144" target="_blank"><span class="src-icon">X</span><span>Amjad Masad · @amasad</span></a>
+  <a class="source-link" href="https://x.com/joshwoodward/status/2121755282326102417" target="_blank"><span class="src-icon">X</span><span>Josh Woodward · @joshwoodward</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2121739228698886454" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2121686564078297461" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+</div>
+
+<div class="disclaimer">ChatGPT Wallet 的细节来自 OpenAI 公告和 TechCrunch 报道。Worse Together 的数字是 Anthropic Fellows 在模拟环境中的结果，不代表真实部署。英伟达财报为市场预期，Anthropic 定价和交易日期以最终公告为准。播客嘉宾姓名在自动转录中不清晰，正文只按节目标题称呼。</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-16 · AI 星期一</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-17 · 机器人星期二">
+<meta property="og:description" content="OpenAI 解散独立机器人团队，研究并入通用模型 · 特斯拉 Cybercab 开放个人订购 $29,990 + $299/月 · 德州获准无人驾驶车辆特斯拉 1306、Waymo 1321 · GXO 意向书最多 1000 台 Apollo · Agile Robots 5 亿美元 F 轮">
+<title>Daily Builders Digest · 2026-11-17 · 机器人星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
+  <div class="header-title">ROBOTICS<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-17</span>
+    <span>🧭 机器人星期二</span>
+    <span>◇ 价值落在哪一层：模型、订阅、按小时付费</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>OpenAI · 解散独立机器人团队 · 研究并入主研究组</span><span class="ticker-item"><span class="dot">●</span>GPT-6 Astra · 模拟操作测试 74.8% vs 专用模型 51%</span><span class="ticker-item"><span class="dot">●</span>特斯拉 Cybercab · 个人订购 · $29,990 + $299/月</span><span class="ticker-item"><span class="dot">●</span>马斯克 · 订阅费「太高」· 应约 $115/月</span><span class="ticker-item"><span class="dot">●</span>德州获准无人驾驶 · 特斯拉 1306 · Waymo 1321</span><span class="ticker-item"><span class="dot">●</span>GXO × Apptronik · 意向书 · 最多 1000 台 Apollo</span><span class="ticker-item"><span class="dot">●</span>Gemini Robotics 2.5 · 奔驰试点 96%</span><span class="ticker-item"><span class="dot">●</span>Agile Robots · 5 亿美元 F 轮 · 估值 85 亿</span><span class="ticker-item"><span class="dot">●</span>MūL · 18 个月 16438 趟</span><span class="ticker-item"><span class="dot">●</span>OpenAI · 解散独立机器人团队 · 研究并入主研究组</span><span class="ticker-item"><span class="dot">●</span>GPT-6 Astra · 模拟操作测试 74.8% vs 专用模型 51%</span><span class="ticker-item"><span class="dot">●</span>特斯拉 Cybercab · 个人订购 · $29,990 + $299/月</span><span class="ticker-item"><span class="dot">●</span>马斯克 · 订阅费「太高」· 应约 $115/月</span><span class="ticker-item"><span class="dot">●</span>德州获准无人驾驶 · 特斯拉 1306 · Waymo 1321</span><span class="ticker-item"><span class="dot">●</span>GXO × Apptronik · 意向书 · 最多 1000 台 Apollo</span><span class="ticker-item"><span class="dot">●</span>Gemini Robotics 2.5 · 奔驰试点 96%</span><span class="ticker-item"><span class="dot">●</span>Agile Robots · 5 亿美元 F 轮 · 估值 85 亿</span><span class="ticker-item"><span class="dot">●</span>MūL · 18 个月 16438 趟</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 机器人星期二 · 价值落在哪一层</span>
+  </div>
+  <audio controls src="2026-11-17.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 机器人的价值落在哪一层</div>
+    <div class="feature-show-name">OpenAI<br>Cybercab<br><span style="color:#dd1111">GXO × Apollo</span></div>
+    <div class="feature-ep-title">OpenAI 把机器人研究并入通用模型团队；<br>特斯拉把无人车卖给个人；GXO 只为过了考核的人形机器人付钱</div>
+    <div class="feature-guest">OpenAI · Tesla · Waymo · GXO · Apptronik · Google DeepMind · Agile Robots · MūL · 2026-11-12 / 11-16</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这几天的三条新闻，回答的是同一个问题：机器人的钱挣在哪一层。OpenAI 认为在<strong>通用模型</strong>；特斯拉卖车加<strong>每月订阅</strong>；GXO 只在机器人达到效率和安全指标后<strong>按服务付费</strong>。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">OpenAI</span><span class="tag">GPT-6 Astra</span><span class="tag">CoRL 2026</span><span class="tag">Cybercab</span><span class="tag">Robotaxi</span><span class="tag">TxDMV</span><span class="tag">GXO</span><span class="tag">Apptronik Apollo</span><span class="tag">Gemini Robotics 2.5</span><span class="tag">Agile Robots</span><span class="tag">MūL</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">OpenAI · 11/13</div><div class="stat-value">机器人团队拆分并入研究 / Applied</div></div>
+      <div class="stat-item"><div class="stat-label">Cybercab · 11/13</div><div class="stat-value">$29,990 + $299/月</div></div>
+      <div class="stat-item"><div class="stat-label">德州 · 11/16</div><div class="stat-value">特斯拉 1306 · Waymo 1321</div></div>
+      <div class="stat-item"><div class="stat-label">GXO · 11/12</div><div class="stat-value">意向书 · 最多 1000 台 · 4 年</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期二，机器人日，早上好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天讲几条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三条主要的。第一，OpenAI 解散了独立的机器人团队，人分到了通用模型的团队里。第二，特斯拉开始把没有方向盘的 Cybercab 卖给个人，三万美元一辆，还要每月订阅。第三，物流公司 GXO 跟 Apptronik 签了意向书，最多部署 1000 台人形机器人，但每台都得先过考核。后面有两条短消息，最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · OpenAI 解散独立的机器人团队</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 13 号，Fortune 独家报道，OpenAI 解散了独立的机器人团队。OpenAI 向 Fortune 确认了。做研究的人归到首席研究官 Mark Chen 下面的主研究团队，做应用和硬件的人归到总裁 Greg Brockman 管的 Applied 部门。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这是不做机器人了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 说不是。发言人说机器人还是公司长期愿景的核心，这次调整是为了做得更快。Altman 之前说过，目标是 2027 年第一次公开展示 OpenAI 自己的人形机器人。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那为什么要拆掉专门的团队？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 给的解释是：年初他们以为做机器人最好的路，是在 Sora 这样的视频模型上做，因为视频模型得懂一点物理世界才能生成真实的视频。但后来发现，通用的前沿模型，包括 GPT-6 Astra，可以直接拿来控制机器人。所以就没必要单独养一个团队，专门训一个机器人用的模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">直接控制，效果怎么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Fortune 引了英伟达的一个研究。给 Astra 摄像头画面、机器人的信息和一个控制接口，让它指挥机器人。在一个模拟环境里的操作测试上，成功率 74.8%。同一个排行榜上，最好的专用机器人模型是 51%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">模拟环境，不是真机器人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这点要记住。卡内基梅隆的 Guanya Shi 说，他理解 OpenAI 的意思是：机器人&quot;不再是一个特殊问题&quot;，而是通用智能的一个下游应用，就像编程工具、法律工具用的也是同一个底层模型。但他也说，大模型慢，要放在云上，机器人得一直联网。机器人身上还是需要能在本地跑的小模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那那些专门做机器人大脑的创业公司呢？他们融了很多钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Fortune 也问了。MIT 教授 Russ Tedrake，他也是 Walden Robotics 的 CEO，他说机器人公司有一个 AI 实验室没有的东西：它们的机器人已经在工厂里干活了，在积累现场经验。底座模型越好，这些现场数据越值钱，因为机器人能学得更快。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有个细节挺有意思的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">你说 CoRL 的展位？上周在奥斯汀开机器人学习会议 CoRL，OpenAI 已经订了 208 号展位。Fortune 记者去看，展位是空的，没有 logo。但几个原来机器人团队的人在附近走动，还是围了一圈人。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这是 OpenAI 第二次解散机器人团队吧？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二次。2020 年解散过一次，联合创始人 Wojciech Zaremba 后来说原因是机器人数据太少。2024 年重建，跟 Figure 合作，2025 年 2 月 Figure 退出了合作。还有一个背景：OpenAI 在控制成本，Sora 已经砍了，据报道最近一个季度运营亏损 109 亿美元，可能 2027 年初上市。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以这条可以有两种读法。一种是通用模型真的够用了，一种是省钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两种可能都在里面。OpenAI 公开说的是前一种。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/" target="_blank">Exclusive: OpenAI disbands its stand-alone robotics team as its general models start running robots — Fortune</a></span>
+</div>
+<div class="section-label">二 · 特斯拉把 Cybercab 卖给个人</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。11 月 13 号，星期五，特斯拉开始接受个人订购 Cybercab，先邀请一部分客户。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Cybercab 是那个没有方向盘的车？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，两个座位，没有方向盘，没有踏板，没有后视镜。价格 29990 美元，税前，订金 1000 美元不退。另外必须订阅每月 299 美元的自动驾驶服务，车才能自己开，第一个月免费。预计 12 月开始交车。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">买了能开到哪？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在只能在特斯拉 Robotaxi 已经运营的区域里开，都在德州：奥斯汀、休斯顿、达拉斯、沃斯堡、圣安东尼奥。购车协议写的是个人、非商业用途。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">299 一个月，不便宜。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">马斯克自己也这么说。第二天他在 X 上回帖，说这个费用&quot;太高了&quot;，应该跟其他车型 FSD 加联网的价格一样，大约每月 115 美元。他还说，拿到监管批准以后会全国卖。不过到报道发出时，特斯拉还没改价格。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">卡在哪？产能？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不是产能。Not a Tesla App 引了一次工厂参观，特斯拉的人说 Cybercab 产线已经比 Robotaxi 部署得快，产线都不是每天开。卡在监管。这车没有方向盘，现在要卖给普通人，美国国家公路交通安全管理局 NHTSA 之前已经对 Cybercab 的商业运营开了调查。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">德州那边特斯拉的车多不多？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有一个数字。德州机动车管理局的名单，截至 11 月 16 号，获准无人驾驶运行的车，特斯拉 1306 辆，Waymo 1321 辆，只差 15 辆。10 月 29 号的时候，特斯拉是 1080，Waymo 是 1259。18 天里特斯拉加了 226 辆，Waymo 加了 62 辆。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那特斯拉快追上 Waymo 了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这个名单只说每家公司&quot;可以&quot;跑多少辆，不说每天真在跑多少辆、拉了多少人。比如特斯拉在圣安东尼奥开服务那天，有独立追踪者只看到一辆特斯拉 Robotaxi 在跑。所以这是注册数，不是运营数。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">卖给个人这件事，我觉得最大的变化是责任。车是你的，撞了算谁的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">报道里没写清楚。这个问题值得等交车的时候再看协议。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.notateslaapp.com/news/5014/musk-cybercab-sales-are-going-nationwide-299-subscription-too-high" target="_blank">Musk: Cybercab Sales Are Going Nationwide, $299 Subscription &#x27;Too High&#x27; — Not a Tesla App</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.goodcarbadcar.net/texas-robotaxi-authorizations-tesla-waymo-november-2026/" target="_blank">Texas Robotaxi Authorizations: Tesla 1,306, Waymo 1,321 — GoodCarBadCar</a></span>
+</div>
+<div class="section-label">三 · GXO 要 1000 台 Apollo，但要先过考核</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。11 月 12 号，全球最大的合同物流公司之一 GXO，跟做人形机器人的 Apptronik 签了一份意向书：四年内最多部署 1000 台 Apollo。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">1000 台，听起来很大。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">要看清楚条件。这是不具约束力的意向书，不是采购订单。每台 Apollo 要在真实的仓库里，先达到双方商定的生产效率、安全和运营指标，才会部署。2027 年扩大试验，北美最早 2027 年底开始部署。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">怎么付钱？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">按&quot;机器人即服务&quot;，GXO 不买硬件，按服务付费。报道里提到的目标是每小时 15 美元左右，但具体指标没公布。GXO 的 CEO 还说过，人形机器人到现在还没让他们收回投资，大概还要几年。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">能干什么活？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今年早些时候，Apollo 在 GXO 美国的仓库做完了一个试点，挑拣小件消费品。另外，11 月 10 号谷歌 DeepMind 发了 Gemini Robotics 2.5，说在梅赛德斯-奔驰匈牙利和德国的产线上，Apollo 2 用这个模型挑拣和装箱汽车零件，成功率 96%。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">96%，又是这种数。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，上周我们说过，95% 在工厂里意味着每 20 次错一次。DeepMind 也没说测了多少次。奔驰和 DeepMind 都没说 Apollo 2 会不会从试点转成正式干活。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 GXO 这个&quot;先考核再部署&quot;，是不是更实际？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我觉得是。机器人公司喜欢报成功率，仓库要的是每小时成本和出事的概率。把这两样写进合同条件，比一个 96% 有用。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/11/16/gxo-and-apptronik-plan-rollout-of-up-to-1000-humanoid-robots/107200/" target="_blank">GXO and Apptronik plan rollout of up to 1,000 humanoid robots — Robotics &amp; Automation News</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/gxo-apptronik-apollo-1000-humanoids-letter-of-intent" target="_blank">GXO Signs Letter of Intent for Up to 1,000 Apptronik Apollo Humanoids — Humanoids Daily</a></span>
+  <span class="source-inline">📎 来源: <a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank">Gemini Robotics 2.5: Accelerating Physical Intelligence — Google DeepMind</a></span>
+</div>
+<div class="section-label">四 · 两条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，钱。11 月 12 号，慕尼黑的 Agile Robots 完成 5 亿美元 F 轮融资，软银领投，英伟达、日立也投了，估值 85 亿美元，累计融资大约 20 亿。报道说它现在是欧洲估值最高的机器人公司，超过了另一家德国公司 Neura。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">钱用来干什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">进美国市场、扩产能。有一个细节：6 月彭博报道这一轮在谈 8 亿美元，最后是 5 亿。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一个很小、但很实在的数字。11 月 16 号，做自主移动机器人的 MūL Technologies 发了一份新闻稿，说它的一台运料车在一家暖通设备厂跑了 18 个月，完成 16438 趟，平均每月 913 趟，每天大约 30 趟。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这是公司自己发的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，是新闻稿。但它报的是&quot;跑了多少趟、跑了多久&quot;，不是成功率。跟前面的 96% 放在一起看，这种数更好核对。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/agile-robots-softbank-500m-humanoid" target="_blank">SoftBank leads $500M round valuing Agile Robots at $8.5B — The Next Web</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.globenewswire.com/news-release/2026/11/16/3404021/0/en/leading-autonomous-mobile-robot-company-m%C5%ABl-technologies-completes-16-438-trips-in-18-months.html" target="_blank">MūL Technologies Completes 16,438 Trips in 18 Months — GlobeNewswire</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">建造者这几天有什么跟机器人有关的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">周末推文不多，直接讲机器人的没有。点赞最多的是 OpenAI 的 Thibault Sottiaux，他说 Codex 团队可能终于修好了&quot;模型容量已满&quot;的报错。2500 个赞。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟机器人有什么关系？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">跟第一条有点关系。如果以后机器人的大脑是云上的通用模型，那&quot;容量已满&quot;就不只是写代码等一会儿，而是机器人停在半路。Guanya Shi 说机器人身上还要有本地小模型，原因之一就是这个。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Nan Yu 发了两条，他以前是 Linear 的产品负责人，现在在 OpenAI 做 Codex 的产品。一条说，他的 Waymo 下雨的时候会自己开雨刷，挺可爱。另一条问：有没有一个即插即用的智能家居中枢，能让 Codex 把它当成另一台电脑，直接控制家里所有东西。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他是想让写代码的 AI 管家里的灯和空调。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。这跟 OpenAI 的思路是一样的：先让通用模型能操作电脑，再把物理设备也包装成一台&quot;电脑&quot;给它用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">播客呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天选 The Robot Report 播客第 270 期，嘉宾是 Standard Bots 的联合创始人兼 CEO Evan Beard，题目是大多数机器人为什么在工厂里用不起来。Standard Bots 是做工业机械臂的。Beard 在别的访谈里说过，美国只有 6% 的制造商用过机器人，他的办法是让工人在平板上用演示和自然语言设置任务，不用请专门的编程工程师。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟 GXO 那条正好对上。机器人能不能用起来，看的是在现场好不好设置、好不好改。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天几条放一起看呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">都在回答同一个问题：机器人的价值落在哪一层。OpenAI 觉得在通用模型那一层；特斯拉想把车和每月的软件订阅一起卖；GXO 只为过了考核的机器人付钱，按小时算。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">下次看到&quot;1000 台&quot;这种数字，可以先问：是订单还是意向书，按什么条件付钱。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。明天产品日见。</div></div>
+</div>
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">The Robot Report Podcast · Ep. 270 · 2026-11-16</p>
+  <p class="pc-title">The hidden reason most robots fail on the factory floor — with Evan Beard (Standard Bots)</p>
+  <p class="pc-summary">Standard Bots 联合创始人兼 CEO Evan Beard 讲工业机器人为什么在工厂里用不起来。Beard 在其他访谈里说过，美国只有约 6% 的制造商用过机器人；他的办法是让工人在平板上通过演示和自然语言设置任务，不需要专门的机器人编程工程师。</p>
+  <a href="https://www.therobotreport.com/the-hidden-reason-most-robots-fail-on-the-factory-floor/" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex &amp; ChatGPT @ OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Codex 团队可能真的修好了一直困扰大家的「模型容量已满」报错。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,500</span>
+      <a href="https://x.com/thsottiaux/status/2122206990101536852" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NY</div>
+      <div>
+        <div class="builder-name">Nan Yu</div>
+        <div class="builder-handle">@thenanyu · Codex 产品 @ OpenAI，前 Linear 产品负责人</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我的 Waymo 下雨时会自己打开雨刷，挺可爱的。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 57</span>
+      <a href="https://x.com/thenanyu/status/2122096121946468451" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NY</div>
+      <div>
+        <div class="builder-name">Nan Yu</div>
+        <div class="builder-handle">@thenanyu · Codex 产品 @ OpenAI，前 Linear 产品负责人</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「如果我只想用 Codex 控制家里所有东西，最好的智能家居中枢是哪个？最好即插即用，让 Codex 把它当成另一台电脑。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 18</span>
+      <a href="https://x.com/thenanyu/status/2122096965865664924" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/" target="_blank"><span class="src-icon">LINK</span><span>Exclusive: OpenAI disbands its stand-alone robotics team as its general models start running robots — Fortune</span></a>
+  <a class="source-link" href="https://www.notateslaapp.com/news/5014/musk-cybercab-sales-are-going-nationwide-299-subscription-too-high" target="_blank"><span class="src-icon">LINK</span><span>Musk: Cybercab Sales Are Going Nationwide, $299 Subscription &#x27;Too High&#x27; — Not a Tesla App</span></a>
+  <a class="source-link" href="https://www.goodcarbadcar.net/texas-robotaxi-authorizations-tesla-waymo-november-2026/" target="_blank"><span class="src-icon">LINK</span><span>Texas Robotaxi Authorizations: Tesla 1,306, Waymo 1,321 — GoodCarBadCar</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/11/16/gxo-and-apptronik-plan-rollout-of-up-to-1000-humanoid-robots/107200/" target="_blank"><span class="src-icon">LINK</span><span>GXO and Apptronik plan rollout of up to 1,000 humanoid robots — Robotics &amp; Automation News</span></a>
+  <a class="source-link" href="https://www.humanoidsdaily.com/news/gxo-apptronik-apollo-1000-humanoids-letter-of-intent" target="_blank"><span class="src-icon">LINK</span><span>GXO Signs Letter of Intent for Up to 1,000 Apptronik Apollo Humanoids — Humanoids Daily</span></a>
+  <a class="source-link" href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank"><span class="src-icon">LINK</span><span>Gemini Robotics 2.5: Accelerating Physical Intelligence — Google DeepMind</span></a>
+  <a class="source-link" href="https://thenextweb.com/news/agile-robots-softbank-500m-humanoid" target="_blank"><span class="src-icon">LINK</span><span>SoftBank leads $500M round valuing Agile Robots at $8.5B — The Next Web</span></a>
+  <a class="source-link" href="https://www.globenewswire.com/news-release/2026/11/16/3404021/0/en/leading-autonomous-mobile-robot-company-m%C5%ABl-technologies-completes-16-438-trips-in-18-months.html" target="_blank"><span class="src-icon">LINK</span><span>MūL Technologies Completes 16,438 Trips in 18 Months — GlobeNewswire</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2122206990101536852" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux · @thsottiaux</span></a>
+  <a class="source-link" href="https://x.com/thenanyu/status/2122096121946468451" target="_blank"><span class="src-icon">X</span><span>Nan Yu · @thenanyu</span></a>
+  <a class="source-link" href="https://x.com/thenanyu/status/2122096965865664924" target="_blank"><span class="src-icon">X</span><span>Nan Yu · @thenanyu</span></a>
+  <a class="source-link" href="https://www.therobotreport.com/the-hidden-reason-most-robots-fail-on-the-factory-floor/" target="_blank"><span class="src-icon">LINK</span><span>The hidden reason most robots fail on the factory floor (Ep. 270) — The Robot Report Podcast</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-17 · 机器人星期二</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-18",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "01 · Meta Direct：把私信从 Instagram 里拆出来 · 02 · 苹果：把健康 AI 做成一项研究",
+    "html": "episodes/2026-11-18.html",
+    "mp3": "episodes/2026-11-18.mp3",
+    "headlines": [
+      "01 · Meta Direct：把私信从 Instagram 里拆出来",
+      "02 · 苹果：把健康 AI 做成一项研究",
+      "03 · 谷歌 Labs 收购 Howie：抄送就能用的助手",
+      "04 · Zoox 上 Uber：你可能坐到，但不能指定"
+    ],
+    "theme": "先在小范围上线"
+  },
+  {
     "date": "2026-11-17",
     "dow": 2,
     "topic": "Robotics",
@@ -414,16 +430,5 @@
     "mp3": "episodes/2026-10-20.mp3",
     "headlines": [],
     "theme": "先让人在回路里，再慢慢撤出来"
-  },
-  {
-    "date": "2026-10-17",
-    "dow": 6,
-    "topic": "Books",
-    "format": "新闻快报",
-    "title": "2026-10-17 今日快报",
-    "html": "episodes/2026-10-17.html",
-    "mp3": "episodes/2026-10-17.mp3",
-    "headlines": [],
-    "theme": "Apple: The First 50 Years"
   }
 ]

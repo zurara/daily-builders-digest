@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-10 · 机器人星期二">
+<meta property="og:description" content="英伟达 GR00T 2：五个示范微调后 50 个任务平均 95% · 中国叫停软银 54 亿美元收购 ABB 机器人 · Agility Robotics 纳斯达克上市 · Embodied AI AIR · A3 三季度订单 +24.8%">
+<title>Daily Builders Digest · 2026-11-18 · 产品星期三</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 产品星期三</div>
+  <div class="header-title">PRODUCT<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-18</span>
+    <span>🧭 产品星期三</span>
+    <span>◇ 先在小范围上线</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Meta Direct · 独立私信 app · 先上土耳其、泰国</span><span class="ticker-item"><span class="dot">●</span>Direct · 无 Instagram 账号也能用 · 聊天双向同步</span><span class="ticker-item"><span class="dot">●</span>Apple Health AI Study · 最多 20 万人 · 12 个月以上</span><span class="ticker-item"><span class="dot">●</span>OpenEvidence · NEJM / JAMA / Nature · 24 小时删除</span><span class="ticker-item"><span class="dot">●</span>Google Labs 收购 Howie · 抄送即排期 · 金额未披露</span><span class="ticker-item"><span class="dot">●</span>Howie · PitchBook 2024 估值 $14M</span><span class="ticker-item"><span class="dot">●</span>Zoox 上 Uber · 拉斯维加斯 · 乘客不能指定</span><span class="ticker-item"><span class="dot">●</span>Nevada · Uber 最多 1,000 辆无人车</span><span class="ticker-item"><span class="dot">●</span>Lenny&#x27;s Podcast · Meta Muse · Mona Sarantakos</span><span class="ticker-item"><span class="dot">●</span>Meta Direct · 独立私信 app · 先上土耳其、泰国</span><span class="ticker-item"><span class="dot">●</span>Direct · 无 Instagram 账号也能用 · 聊天双向同步</span><span class="ticker-item"><span class="dot">●</span>Apple Health AI Study · 最多 20 万人 · 12 个月以上</span><span class="ticker-item"><span class="dot">●</span>OpenEvidence · NEJM / JAMA / Nature · 24 小时删除</span><span class="ticker-item"><span class="dot">●</span>Google Labs 收购 Howie · 抄送即排期 · 金额未披露</span><span class="ticker-item"><span class="dot">●</span>Howie · PitchBook 2024 估值 $14M</span><span class="ticker-item"><span class="dot">●</span>Zoox 上 Uber · 拉斯维加斯 · 乘客不能指定</span><span class="ticker-item"><span class="dot">●</span>Nevada · Uber 最多 1,000 辆无人车</span><span class="ticker-item"><span class="dot">●</span>Lenny&#x27;s Podcast · Meta Muse · Mona Sarantakos</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 产品星期三 · 先在小范围上线</span>
+  </div>
+  <audio controls src="2026-11-18.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 有限范围上线</div>
+    <div class="feature-show-name">DIRECT<br>HOWIE<br><span style="color:#dd1111">ZOOX</span></div>
+    <div class="feature-ep-title">Meta 拆出独立私信 app，只开两国；苹果把健康 AI 做成研究；<br>谷歌 Labs 收购 Howie；Zoox 上 Uber，但不能指定</div>
+    <div class="feature-guest">Meta · Apple · OpenEvidence · Google Labs · Howie · Zoox · Uber · 2026-11-15 / 11-17</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这周四个产品都不是「全量上线」。限制放的位置各不一样：<strong>地区、人数和时间、客户范围、用户的选择权</strong>。灰度百分比之外，「小范围」还有很多种做法。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Meta Direct</span><span class="tag">Instagram</span><span class="tag">Apple Health AI Study</span><span class="tag">OpenEvidence</span><span class="tag">Google Labs</span><span class="tag">Howie</span><span class="tag">Zoox</span><span class="tag">Uber</span><span class="tag">Meta Muse</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Meta · 11/17</div><div class="stat-value">Direct · 土耳其 + 泰国</div></div>
+      <div class="stat-item"><div class="stat-label">Apple · 11/15</div><div class="stat-value">最多 20 万人 · 12 个月+</div></div>
+      <div class="stat-item"><div class="stat-label">Google Labs · 11/16</div><div class="stat-value">收购 Howie · 金额未披露</div></div>
+      <div class="stat-item"><div class="stat-label">Zoox × Uber · 11/16</div><div class="stat-value">拉斯维加斯 · 不能指定</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">欢迎来到 Daily Builders Digest，今天是二〇二六年十一月十八号，星期三，产品日。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。上周我们聊的是额度。这周呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周四条。第一条，Meta 推出独立的私信 app，叫 Direct，只在土耳其和泰国上线。第二条，苹果发了一个健康 AI 的研究 app，回答日常医疗问题，最多招二十万人，做十二个月以上。第三条，谷歌 Labs 收购了 AI 排期助手 Howie。第四条，亚马逊旗下的 Zoox 无人驾驶出租车上了 Uber，在拉斯维加斯。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这四条有什么共同点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">都是有限范围的上线。Direct 只开两个国家；苹果把产品包装成一项研究；Howie 并进谷歌以后继续只服务老客户；Zoox 上了 Uber，但乘客不能指定要它。今天想看看，每家把「限制」放在了哪里，为什么放在那里。</div></div>
+</div>
+<div class="section-label">01 · Meta Direct：把私信从 Instagram 里拆出来</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">十一月十七号，Meta 开始测试 Direct，一个只做私信的独立 app。里面就是 Instagram 的私信。先在土耳其和泰国上线，有没有 Instagram 账号都能用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">没有 Instagram 账号也能用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。可以用邮箱或手机号注册。有 Instagram 账号的，用同一套用户名密码登录，聊天记录两边同步。功能上有表情回应、语音消息，还有一个 Draw，可以在聊天里直接画画。Instagram 私信顶部那种短状态 Notes 也搬过来了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么要拆？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">TechCrunch 的解释是：很多人用 Instagram 主要就是为了发私信，网上一直有人在找「只用私信、不看信息流」的办法。Direct 是对这个需求的回应。对 Meta 来说，这些人就算不刷 Instagram，也还留在 Meta 的产品里，还能算作活跃用户。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这让我想到二〇一四年，Facebook 把 Messenger 拆成独立 app。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">很像。区别是当年 Messenger 是强制的，手机上的 Facebook 不让你在里面聊天了，你只能去装 Messenger。这次 Direct 是可选的，Instagram 里的私信还在，而且只在两个国家试。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">安全那部分怎么处理？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Meta 说只有你通讯录里的人，或者已经互相关注的人，才能给你发消息、拉你进群。会用年龄估计技术识别涉及未成年人的不当互动。家长可以看到孩子在跟谁聊、设置每日使用上限。用 Instagram 账号登录的青少年，沿用 Teen Accounts 的全部限制。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我想记一个问题：一个 app 拆成两个，用户是多了一个选择，还是多了一个要管的东西？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">看你是哪种用户。只想发私信的人是多了选择。两边都用的人，要多装一个 app。Meta 没说什么时候扩到别的国家，所以它自己也在看数据。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/11/17/meta-launches-direct-a-standalone-messaging-app-for-instagram/" target="_blank">Meta launches Direct, a standalone messaging app for Instagram — TechCrunch</a></span>
+</div>
+<div class="section-label">02 · 苹果：把健康 AI 做成一项研究</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。十一月十五号，苹果和 OpenEvidence 合作，发布了一个研究用的 app，叫 Apple Health AI Study。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenEvidence 是做什么的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一家医疗方向的 AI 公司。这个 app 能回答日常的健康问题，答案的依据来自临床资料，包括《新英格兰医学杂志》、《美国医学会杂志》和 Nature。参与条件是：在美国，二十一岁以上，iPhone 15 或更新，iOS 26 或更新，开了 Apple Intelligence。苹果计划最多招二十万人，研究时间十二个月以上。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">用户在里面做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">问问题，给回答打分、写反馈，每个月做一次问卷。你可以选择共享 HealthKit 的数据，比如静息心率、活动、睡眠、化验结果，回答会更针对你。它还能帮你准备看医生，遇到让人担心的情况，会引导你去找具体的医疗机构。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">数据怎么处理？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">苹果说数据先匿名化，再送到第三方的安全云服务商，不会用来训练任何 AI 模型。OpenEvidence 在二十四小时后删除提问和回答。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenAI 和 Anthropic 都已经直接上线了健康功能。苹果为什么不直接做，而是先做研究？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">苹果健康与健身副总裁 Sumbul Desai 的说法是：健康是很私人的事，做一项专门的研究，是理解人们日常怎么使用、理解和评价健康 AI 最审慎的方式。我的理解是，「研究」这个形式本身就是一种上线策略。它可以接触真实用户，有明确的人数上限和时间范围，用户知道自己在参与研究，反馈也有固定渠道。出了问题，这是研究；做得好，就是以后放进健康 app 或 Siri 的依据。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">不过 TechCrunch 也说了，苹果没讲会不会把这个功能放进健康 app 或者 Siri。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，这一点目前不知道。需求是确定的：OpenAI 今年说过，用户每周问 ChatGPT 的健康问题超过三亿个。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/" target="_blank">Apple launches new app to study how people use AI for health — TechCrunch</a></span>
+</div>
+<div class="section-label">03 · 谷歌 Labs 收购 Howie：抄送就能用的助手</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。十一月十六号，谷歌 Labs 和 Howie 在 X 上同时宣布，Howie 团队加入谷歌 Labs。彭博报道这是一笔收购，金额没有公开。PitchBook 二〇二四年给 Howie 的估值是一千四百万美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">Howie 是什么产品？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一个 AI 排期助手。用法很简单：你在邮件里把 Howie 加进抄送，它跟对方来回沟通，找到时间，把会议订上。就像你有一个秘书。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">没有自己的界面？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">主要的交互就是邮件。我觉得这是它最值得说的产品决定：不让用户学一个新工具，而是放进用户已经在用的地方。CEO Austin Petersmith 说，Howie 一直是建在 Gmail 和 Google 日历上的。所以被谷歌收购，从技术上看也很顺。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">谷歌说要用它做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌 Labs 说要和 Howie 团队一起，为小企业做「下一代直观的 AI 工具」。Howie 说老客户会继续服务。谷歌还没说会不会把 Howie 做进 Gmail 或日历。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么是小企业？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我的猜测是，小企业没有行政助理，排期这件事老板自己做，时间成本最高。而且小企业很多本来就用 Gmail 和谷歌日历。TNW 还提到，谷歌五月发了 Gemini Spark，一个通过邮件接任务的常驻 agent；十月给职场 agent 配了自己的邮箱地址。上周谷歌 Labs 还发了 Tabletop，一个用 AI 搭群组规划应用的工具。OpenAI 上周也收购了旅行 agent 公司 Odessia。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以这又是一个「agent 抢入口」的故事。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，只不过 Howie 的入口是邮件抄送栏。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://thenextweb.com/news/google-labs-buys-howie-ai-scheduling-agent" target="_blank">Google buys Howie, an AI assistant that books your meetings — TNW</a></span>
+</div>
+<div class="section-label">04 · Zoox 上 Uber：你可能坐到，但不能指定</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第四条。十一月十六号，Zoox 的无人驾驶出租车在拉斯维加斯正式接入 Uber app。这是 Zoox 第一次跟第三方叫车平台合作。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">怎么叫到 Zoox？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">叫不到，至少一开始不行。你叫 UberX、Uber Comfort、Uber Electric、Comfort Electric 或者 Wait and Save，系统可能给你派一辆 Zoox。想提高概率，可以在设置的「乘车偏好」里选择接受自动驾驶。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个设计挺有意思。用户不能选，只能「同意被分配」。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。Uber CEO Dara Khosrowshahi 在三季度财报会上说，会从有限的车队开始，接下来几个月扩大供给，等可用性和可靠性提高了，再在 app 里加一个专门的自动驾驶选项。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先不给按钮，因为车还不够多。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我是这么理解的。如果给了「我要 Zoox」这个按钮，车又少，用户就会等很久，体验很差。先混进普通车型里派单，供给少的问题用户就看不到。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有别的细节吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三个。一是 Uber 和 Zoox 跟美高梅签了多年合作，一起改进美高梅酒店的上下车点和指示牌，因为那些酒店太大，找车很难。二是内华达州今年批准 Uber 在克拉克县通过 Motional 和 Zoox 部署最多一千辆无人车。三是跟其他合作方不同，Uber 不给 Zoox 在拉斯维加斯提供维护服务。Zoox 在洛杉矶今年开始内部试运营，商业服务要到二〇二七年。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 Waymo 呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Waymo 跟 Uber 在奥斯汀和亚特兰大的独家合作，二〇二八年一月结束，之后 Waymo 会通过自己的 app 提供服务。Uber 说只要双方同意，会继续在 app 上放 Waymo。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以四条里的限制，放的位置都不一样。Meta 限地区，苹果限人数和时间，Howie 限客户，Zoox 限的是用户的选择权。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。我觉得这对做产品的人有用：「小范围上线」不只有灰度百分比这一种做法。你可以按地区、按人群、按时间，也可以干脆不让用户看到开关。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/11/16/zoox-robotaxis-are-now-on-the-uber-app-in-las-vegas/" target="_blank">Zoox robotaxis are now on the Uber app in Las Vegas — TechCrunch</a></span>
+</div>
+<div class="section-label">05 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后是关注建造者。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">今天挑四条。第一条是 Thariq，以前在 Anthropic 做 Claude Code，四千八百多赞：「软件工厂感觉是一个暂时的问题，模型会学会帮你搭。我更感兴趣的问题是，怎么搭一个让 agent 能和你协作的工作空间。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他后面一条附了视频，是他跟 agent 一起给自己的游戏做新角色。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。第二条是 Vercel 的 Guillermo Rauch，三千九百多赞：「软件的新时代来了。个人化、完全归你所有、开源，而且质量比它替代的东西更高。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这条跟谷歌 Play 上个月开放个人自用的 vibe coding app 是一个方向。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条也是 Rauch，五百多赞，很适合产品日：「旧的方式：用户是人，你做用户访谈，找灵感，画用户旅程。新的方式：用户是 agent，你跑评测，评测反过来驱动工程迭代。」他附了一篇 Vercel 怎么做评测的文章。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我不完全同意。用户访谈不会消失，人还是用户。但如果你的产品有一部分是给 agent 调用的，那部分确实要靠评测。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">同意。第四条是 Peter Yang，一百多赞。他总结了 Nate Parrott 讲的怎么让 Claude 做设计不出「AI 味」，五点：一，先给上下文，截图、你喜欢的页面、你以前的作品；已有产品就让 Claude 先从代码重建真实页面。二，难的布局问题，先让它研究类似的成熟产品，用用户已经熟悉的布局。三，让它知道自己的设计偏好，比如在 design.md 里写明不要衬线字体、不要米白背景、不要卡片侧边色条。四，先做线框图，把核心流程定下来，再管字体和颜色。五，每个关键页面要五个方案，挑你喜欢的部分，让它混合再出五个。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三点很实用。模型自己不知道自己有什么习惯。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">播客是 Lenny&#x27;s Podcast 十一月十五号那一期，嘉宾是 Meta 超级智能实验室的产品副总裁 Mona Sarantakos，她从第一天开始负责 Muse。这是她第一次上播客。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">讲了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">完整文字稿要付费，我只看到了节目介绍。几个题目跟今天很搭：Muse 起步比大部分对手都早，为什么等了七个月才上线；团队怎么用「agent 群」从大量用户里找洞察；一个团队里没人预料到的用法，节目章节里写的是购物；以及对一个 AI agent 来说，真正能提升激活的两个杠杆。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">等七个月才上线，正好接今天的主题。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。Muse 现在是 App Store 第一。早开始、晚上线，这本身就是一种「限制范围」，只不过限的是时间。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most" target="_blank">Meta&#x27;s Muse: How we launched the most successful consumer product this year · Lenny&#x27;s Podcast</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的问题留给大家：你下一次上线，打算把限制放在哪里？地区、人群、时间，还是用户看不到的地方？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">我们下周三见。今天是十一月十八号，这里是每日快报。</div></div>
+</div>
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:10。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Lenny's Podcast · 2026-11-15</p>
+  <p class="pc-title">Meta's Muse: How we launched the most successful consumer product this year — Mona Sarantakos</p>
+  <p class="pc-summary">Meta 超级智能实验室产品副总裁 Mona Sarantakos 第一次上播客，讲 Muse 从一个周末在树莓派上玩 OpenClaw 开始，到成为 App Store 第一。节目题目包括：起步比对手早，为什么等了七个月才上线；用「agent 群」从大量用户里找洞察；团队没预料到的购物用例；提升 AI agent 激活的两个杠杆。（文字稿需付费，以上依据节目介绍。）</p>
+  <a href="https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TQ</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · 前 Claude Code @ Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「软件工厂感觉是一个暂时的问题，模型会学会帮你搭。我更感兴趣的问题是：怎么搭一个让 agent 能和你协作的工作空间。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 4,841</span>
+      <a href="https://x.com/trq212/status/2122438326431154210" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @ Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「软件的新时代来了。个人化、完全归你所有、开源，而且质量比它替代的东西更高。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3,933</span>
+      <a href="https://x.com/rauchg/status/2122396034186014919" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · CEO @ Vercel</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「旧的方式：用户是人，你做用户访谈，找灵感，画用户旅程。新的方式：用户是 agent，你跑评测，评测驱动工程迭代。这篇讲 Vercel 怎么做评测，值得读。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 585</span>
+      <a href="https://x.com/rauchg/status/2122415506451841215" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI 教程与访谈</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Nate Parrott 讲怎么让 Claude 做设计不出 AI 味，我的五点总结：1. 先给上下文；2. 研究用户熟悉的 UX 模式；3. 让模型知道自己的设计偏好，比如衬线字体、米白背景、卡片侧边色条；4. 先做线框图；5. 要多个方案，再混合。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 138</span>
+      <a href="https://x.com/petergyang/status/2122347721298510021" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://techcrunch.com/2026/11/17/meta-launches-direct-a-standalone-messaging-app-for-instagram/" target="_blank"><span class="src-icon">LINK</span><span>Meta launches Direct, a standalone messaging app for Instagram — TechCrunch</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/" target="_blank"><span class="src-icon">LINK</span><span>Apple launches new app to study how people use AI for health — TechCrunch</span></a>
+  <a class="source-link" href="https://thenextweb.com/news/google-labs-buys-howie-ai-scheduling-agent" target="_blank"><span class="src-icon">LINK</span><span>Google buys Howie, an AI assistant that books your meetings — TNW</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/11/16/zoox-robotaxis-are-now-on-the-uber-app-in-las-vegas/" target="_blank"><span class="src-icon">LINK</span><span>Zoox robotaxis are now on the Uber app in Las Vegas — TechCrunch</span></a>
+  <a class="source-link" href="https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most" target="_blank"><span class="src-icon">LINK</span><span>Meta&#x27;s Muse: How we launched the most successful consumer product this year · Lenny&#x27;s Podcast</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2122438326431154210" target="_blank"><span class="src-icon">X</span><span>Thariq · @trq212</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2122396034186014919" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2122415506451841215" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/petergyang/status/2122347721298510021" target="_blank"><span class="src-icon">X</span><span>Peter Yang · @petergyang</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-18 · 产品星期三</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

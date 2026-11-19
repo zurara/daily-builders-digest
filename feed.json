@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-19",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "The Drive #416：线粒体不只是「发电站」 · Huberman Lab：Paul Stamets 讲蘑菇、免疫和裸盖菇素",
+    "html": "episodes/2026-11-19.html",
+    "mp3": "episodes/2026-11-19.mp3",
+    "headlines": [
+      "The Drive #416：线粒体不只是「发电站」",
+      "Huberman Lab：Paul Stamets 讲蘑菇、免疫和裸盖菇素",
+      "FoundMyFitness：你需不需要补镁？",
+      "女性健康：云芝和乳腺癌，女性的镁"
+    ],
+    "theme": "补剂和证据"
+  },
+  {
     "date": "2026-11-18",
     "dow": 3,
     "topic": "Product",

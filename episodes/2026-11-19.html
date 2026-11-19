@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-19 · Health 星期四">
+<meta property="og:description" content="数字之外：Attia 讲验血只能看到约四分之一 · Mozaffarian 讲饱和脂肪、红肉和种子油 · Anna Lembke 讲成瘾和控制欲">
+<title>Health 星期四 · 补剂和证据 · 2026-11-19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · Health 星期四</div>
+  <div class="header-title">HEALTH<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-19</span>
+    <span>🧭 Health 星期四</span>
+    <span>◇ 补剂和证据</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>The Drive #416 · 线粒体做三件事：能量、原料、信号</span>
+    <span class="ticker-item"><span class="dot">●</span>少量过氧化氢是正常信号，不只是伤害</span>
+    <span class="ticker-item"><span class="dot">●</span>「线粒体功能障碍」可能是信号出错，不只是能量不够</span>
+    <span class="ticker-item"><span class="dot">●</span>二甲双胍：癌症试验为何让人失望</span>
+    <span class="ticker-item"><span class="dot">●</span>Stamets：agarikon + 云芝，两个早期研究</span>
+    <span class="ticker-item"><span class="dot">●</span>整体提取物 vs 单个化合物：「你可以把东西拆到失效」</span>
+    <span class="ticker-item"><span class="dot">●</span>功能蘑菇要吃几周，不是吃了就见效</span>
+    <span class="ticker-item"><span class="dot">●</span>大剂量裸盖菇素需要准备和专业治疗</span>
+    <span class="ticker-item"><span class="dot">●</span>Rhonda：镁很容易搞错，验血不一定看得出</span>
+    <span class="ticker-item"><span class="dot">●</span>NIH：补剂里的镁每天不超过 350 毫克</span>
+    <span class="ticker-item"><span class="dot">●</span>女性 310–320 毫克，孕期 350–360 毫克</span>
+    <span class="ticker-item"><span class="dot">●</span>The Drive #416 · 线粒体做三件事：能量、原料、信号</span>
+    <span class="ticker-item"><span class="dot">●</span>少量过氧化氢是正常信号，不只是伤害</span>
+    <span class="ticker-item"><span class="dot">●</span>「线粒体功能障碍」可能是信号出错，不只是能量不够</span>
+    <span class="ticker-item"><span class="dot">●</span>二甲双胍：癌症试验为何让人失望</span>
+    <span class="ticker-item"><span class="dot">●</span>Stamets：agarikon + 云芝，两个早期研究</span>
+    <span class="ticker-item"><span class="dot">●</span>整体提取物 vs 单个化合物：「你可以把东西拆到失效」</span>
+    <span class="ticker-item"><span class="dot">●</span>功能蘑菇要吃几周，不是吃了就见效</span>
+    <span class="ticker-item"><span class="dot">●</span>大剂量裸盖菇素需要准备和专业治疗</span>
+    <span class="ticker-item"><span class="dot">●</span>Rhonda：镁很容易搞错，验血不一定看得出</span>
+    <span class="ticker-item"><span class="dot">●</span>NIH：补剂里的镁每天不超过 350 毫克</span>
+    <span class="ticker-item"><span class="dot">●</span>女性 310–320 毫克，孕期 350–360 毫克</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· Health 星期四 · 补剂和证据</span>
+  </div>
+  <audio controls src="2026-11-19.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 线粒体、蘑菇与镁</div>
+    <div class="feature-show-name">PILLS<br>&amp;<br><span style="color:#dd1111">PROOF</span></div>
+    <div class="feature-ep-title">补剂吃之前，<br>先问证据怎么说</div>
+    <div class="feature-guest">The Peter Attia Drive · Huberman Lab · FoundMyFitness · 2026-11-12 / 11-16</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Nav Chandel 说线粒体不只产生能量，还产生合成原料、还会<strong>发信号</strong>；所谓「线粒体功能障碍」可能是信号出错。他逐一评估了二甲双胍和一长串线粒体补剂（结论为会员内容）。Paul Stamets 讲 agarikon 和云芝的两个早期免疫研究、功能蘑菇要吃几周才起作用、裸盖菇素需要专业支持——他自己经营蘑菇补剂公司。Rhonda Patrick 讲镁：很多人吃得不够，验血不一定看得出来。女性健康：云芝乳腺癌一期试验、女性和孕期的镁需求。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">线粒体</span><span class="tag">氧化应激</span><span class="tag">二甲双胍</span><span class="tag">尿石素 A</span><span class="tag">亚甲蓝</span><span class="tag">功能蘑菇</span><span class="tag">云芝</span><span class="tag">猴头菇</span><span class="tag">裸盖菇素</span><span class="tag">镁</span><span class="tag">偏头痛</span><span class="tag">骨密度</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">The Peter Attia Drive #416 · 11/16</div>
+        <div class="stat-value">Navdeep Chandel（西北大学，线粒体信号研究）· 线粒体三件事 · 过氧化氢与抗氧化剂 · 线粒体 DNA/RNA 与炎症 · 二甲双胍 · 尿石素 A、α-酮戊二酸、NMN、亚甲蓝、高压氧、红光（会员内容，公开的是简介、目录和笔记预览）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Huberman Lab · 11/16</div>
+        <div class="stat-value">Paul Stamets（真菌学家，Host Defense 创办人）· agarikon 与云芝 · 新冠疫苗与感染的两个早期研究 · 整体提取物 · 蛹虫草/猴头菇要吃几周 · 裸盖菇素与治疗支持 · Stamets 组合 · 俯卧撑（文字稿为会员内容）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">FoundMyFitness Aliquot #154 · 11/12</div>
+        <div class="stat-value">Rhonda Patrick · 镁与 DNA 修复 · 需要多少 · 验血为何看不出 · 补多少算多 · 苏糖酸镁 vs 甘氨酸镁 · 泻盐澡 · 偏头痛（会员节目，公开的是简介和目录）</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">健康星期四，早上好。这周三期节目，都绕不开同一样东西：补剂。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">补剂？上周我们还在说验血。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">正好接得上。第一期，Peter Attia 请了西北大学的线粒体专家 Nav Chandel，讲线粒体到底在干什么，然后一样一样看市面上说能「改善线粒体」的药和补剂。第二期，Huberman 请了真菌学家 Paul Stamets，讲蘑菇和免疫、蘑菇和大脑，还有裸盖菇素。第三期，Rhonda Patrick 一期半小时的短节目，问一个问题：你需不需要补镁？</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">三个人对补剂的态度一样吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不一样，这正是今天想比较的。还有一件事要先说：Stamets 自己有一家卖蘑菇补剂的公司，节目里他也说了。我们听的时候，要把这一点放在心里。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">女性健康这周有吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有两点。一点在 Huberman 那期的参考文献里，一点是镁，我们自己补充。第四节说。</div></div>
+  <div class="section-label">一 · The Drive #416：线粒体不只是「发电站」</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The Peter Attia Drive 第 416 期，11 月 16 号上线。嘉宾 Navdeep Chandel，大家叫他 Nav，西北大学医学院教授，2000 年开始用自己的实验室研究「线粒体会发信号」这个方向。他七年前上过一次这个节目，这是第二次。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">线粒体我中学就学过，细胞的发电站，产生 ATP。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Nav 一开始就说，这个说法没错，但不完整。他说线粒体做三件事。第一，产生 ATP，也就是能量。第二，<strong>产生合成新东西需要的原料</strong>：脂肪、DNA 和 RNA 的原料、氨基酸。他说大家忘了，线粒体也是一台「合成机器」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三件呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三件是他一直在研究的：<strong>线粒体会发信号。</strong> 它会影响细胞里的很多决定，比如 mTOR 这个代谢开关，哪些基因打开、哪些关掉。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">怎么发信号？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目里讲了几种方式。一种是过氧化氢。线粒体在产生能量的时候会漏出一点电子，变成过氧化氢。以前大家觉得过氧化氢只会伤害细胞，老的衰老理论就是这么说的：年纪大了，线粒体漏得越来越多，把肌肉、神经都伤了。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">现在不这么看了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在知道，<strong>少量的过氧化氢是正常的信号。</strong> 所以节目里有一节专门讲抗氧化剂补充的局限。另外几种信号：代谢产物会影响基因的表观调控；线粒体自己的 DNA 和 RNA 如果漏出来，会激活免疫反应。他们讨论了一个问题：长期、少量的漏出，会不会是慢性炎症和衰老的一个原因。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那「线粒体功能障碍」这个词呢？现在网上到处都是。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目里专门有一节讲这个词怎么被用错了。Nav 的意思是：如果线粒体出问题跟衰老有关，<strong>不一定是能量不够，也可能是信号出了错。</strong> 节目页面上引的就是他这句话。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那能测吗？我想知道自己的线粒体好不好。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">目录里有两节：一节讲怎么评估线粒体功能，跟最大摄氧量 VO2 max 放在一起讲；另一节专门讲「那些声称能测线粒体功能的检测」。这两节的具体结论在会员笔记里，我们没看到。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">二甲双胍呢？Attia 以前吃过。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这期讲二甲双胍的篇幅最长。节目简介说：Nav 讲了它怎么作用于线粒体、代谢和炎症，它在预防衰老相关疾病上有什么证据，以及<strong>为什么癌症试验的结果让人失望</strong>。目录里写的原因是：它的效果取决于药物能不能进入肿瘤细胞。还有一节专门问：二甲双胍除了控制血糖，到底有没有真正的抗衰老作用？最后一节是吃它防衰老的好处和风险。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">最后是补剂那部分？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。一个个点名：尿石素 A、小檗碱、α-酮戊二酸、瓜氨酸、肉碱、辅酶 Q10、NR、NMN，还有 SS-31、亚甲蓝、高压氧、低氧训练、红光疗法。简介说，Nav 对这些做了「基于证据的评估」，把已经确定的科学和推测分开。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结论是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">每一样的结论，也都在会员内容里。我们不替他说。但这期的标题已经说明了方向：<strong>「证据对这些药和补剂怎么说」</strong>，而不是「怎么吃」。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://peterattiamd.com/navchandel2/" target="_blank" style="color:var(--red);text-decoration:none;">📎 #416 ‒ The science of mitochondria: their role in health, aging, and disease, and what the evidence says about drugs and supplements aimed at improving their function | Navdeep Chandel, Ph.D. — The Peter Attia Drive, 2026-11-16</a></span></div>
+  <div class="section-label">二 · Huberman Lab：Paul Stamets 讲蘑菇、免疫和裸盖菇素</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二期，Huberman Lab，11 月 16 号。嘉宾 Paul Stamets，真菌学家，71 岁。官网的文字稿还在人工校对，是会员内容。我们用的是官网简介、章节目录，还有 Podcast Notes 的第三方笔记。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先说免疫吧。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他讲了两种蘑菇：一种叫 agarikon，长在原始老林里，能活一百多年；另一种是云芝，英文叫 turkey tail。他说早年一个生物防御项目测了他收藏的很多提取物，<strong>agarikon 在实验室里对几种病毒的效果比较突出。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有人体数据吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">新冠期间，他们把这两种蘑菇放在一起，做了两个早期研究。一个是打新冠疫苗的人，一个是已经感染的人。按他的说法：打疫苗那组，副作用更少，六个月后抗体水平更高；感染那组，头痛、肌肉痛、咳嗽这些症状减轻了。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有网站说「抗体翻了三倍」。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">那是第三方 AI 摘要网站写的，我们没在原始论文里核对到这个数，就不说了。比较确定的是：这两个都是<strong>早期研究</strong>，样本不大。他自己的说法是，这些蘑菇让免疫系统处在「更警觉」的状态，他不是要替代常规医学，是想让常规医学效果更好。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他自己怎么吃？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他吃的是自己公司 Host Defense 的产品。<strong>要去人多的地方之前，提前几天加量，活动期间一直吃，结束后减下来。</strong> 他也直说了，开始卖补剂，是为了有钱做研究。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个利益关系挺重要的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，所以我开头先说了。还有一个他讲得挺好的观点：他们把 agarikon 提取物拆成单个化合物以后，<strong>单个化合物的效果反而不如整体提取物。</strong> 他的原话是：「你可以把东西拆到失效。」</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那猴头菇、冬虫夏草这种「健脑」的呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他强调一点：<strong>这类蘑菇不像咖啡，不是吃了一小时就起作用。</strong> 他提到一个蛹虫草的研究，受试者先吃两三周才做运动测试。猴头菇也一样，他说细胞分裂需要时间。灵芝对睡眠的影响可能快一些。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">然后是裸盖菇素。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两个人反复说同一件事：<strong>大剂量的使用，前、中、后都需要准备和专业治疗。</strong> Stamets 说：「这件事上，屋里得有成年人。」还有，在一些地方执法优先级降低了，不代表法律限制都没了。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">未成年人呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Huberman 说，他没见过能说服他的证据，证明裸盖菇素对 18 岁以下的人有用。他的原话是：「长大本身就是一场迷幻体验。」</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「Stamets 组合」是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他自己起的名字：小剂量的裸盖菇素，加猴头菇菌丝体，加会让人脸红的那种烟酸，也就是维生素 B3。证据来自一个让用户自己记录的手机应用，属于观察数据。用户报告情绪、焦虑、抑郁有改善，还有一个十秒内敲手指次数的测试。批评意见是：人们知道自己在吃，会不会是预期效应？他自己也说，三样东西各自起什么作用，还要拆开研究。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结尾呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">结尾很实在。他说他那天早上做了 95 个俯卧撑。他的哥哥死于心脏骤停，所以他很在意保持身体能力。节目的参考文献里也列了一篇《美国医学会杂志·网络开放》的研究：俯卧撑能力和男性未来心血管事件的关系。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.hubermanlab.com/episode/mushrooms-for-the-mind-and-immune-system-paul-stamets" target="_blank" style="color:var(--red);text-decoration:none;">📎 Mushrooms for the Mind &amp; Immune System | Paul Stamets — Huberman Lab, 2026-11-16</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://podcastnotes.org/huberman-lab/paul-stamets-mushrooms-for-the-mind-immune-system-huberman-lab/" target="_blank" style="color:var(--red);text-decoration:none;">📎 Podcast Notes · Paul Stamets: Mushrooms for the Mind &amp; Immune System</a></span></div>
+  <div class="section-label">三 · FoundMyFitness：你需不需要补镁？</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三期，FoundMyFitness 的会员短节目 Aliquot 第 154 期，11 月 12 号上线，30 分钟。公开的是简介和章节目录。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">简介怎么说？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一句就是：<strong>镁很容易搞错。</strong> 很多人从食物里吃得不够，<strong>验血也不一定能看出够不够。</strong> 补剂可以补上差距，但选起来很复杂：甘氨酸镁、苏糖酸镁这些不同形式，宣传的用途不一样，证据也不总是清楚。Rhonda 说她这期讲三件事：怎么评估自己吃得够不够，怎么从食物里多吃一点，怎么按证据而不是按广告选补剂。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">验血为什么看不出来？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这一节的细节在会员内容里。我们补充一个公开的背景：美国国立卫生研究院膳食补充剂办公室说，健康的人镁吃得少的时候，肾脏会少排一点，把镁留住，所以<strong>短期缺镁没有明显症状</strong>。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那到底要吃多少？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">也是 NIH 的数字：<strong>成年男性每天 400 到 420 毫克，成年女性 310 到 320 毫克，孕妇 350 到 360 毫克。</strong> NIH 也说，美国很多人光靠饮食达不到这个量。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">补多了会怎样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Rhonda 有一节专门讲「补多少算太多」。NIH 给的上限是：<strong>成年人从补剂和药物里来的镁，每天不超过 350 毫克。</strong> 注意，这个上限不算食物里的镁，食物里的镁不用限制。补多了常见的问题是腹泻、恶心、腹部痉挛。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">甘氨酸镁和苏糖酸镁，到底哪个好？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目里有一节就叫「苏糖酸镁和甘氨酸镁，对认知和睡眠」。她的结论我们没听到。目录里还有几个问题：泡泻盐澡能不能缓解肌肉抽筋，什么时候吃镁最好，高剂量镁能不能预防偏头痛。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那普通人能做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先从食物开始。NIH 列的来源：<strong>豆类、坚果、种子、全谷物、菠菜这样的绿叶菜</strong>，还有牛奶、酸奶。如果你在吃抗生素、治骨质疏松的双膦酸盐，或者长期吃治胃酸的药，补镁之前问一下医生或药剂师，这些跟镁有相互作用。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.foundmyfitness.com/episodes/aliquot-154-magnesium" target="_blank" style="color:var(--red);text-decoration:none;">📎 Aliquot #154: Do You Need a Magnesium Supplement? — FoundMyFitness, 2026-11-12</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://ods.od.nih.gov/factsheets/Magnesium-Consumer/" target="_blank" style="color:var(--red);text-decoration:none;">📎 Magnesium — Fact Sheet for Consumers, NIH Office of Dietary Supplements</a></span></div>
+  <div class="section-label">四 · 女性健康：云芝和乳腺癌，女性的镁</div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">女性这块，你说有两点。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一点来自 Huberman 那期的参考文献。里面列了两篇论文：<strong>云芝用于乳腺癌女性患者的一期临床试验</strong>，还有一篇综述，讲云芝和乳腺癌治疗。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果怎么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">先说清楚：节目笔记里没有展开讲这两篇，下面是我们对论文本身的补充。那个一期试验只有九位女性，都是刚做完放疗的乳腺癌患者。一期试验主要看安全性和剂量：她们每天吃不同剂量的云芝制剂，耐受良好，部分免疫指标有改善。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那就是说云芝能治乳腺癌？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不是。<strong>九个人、一期试验、看的是安全性</strong>，离「能治」差得很远。如果你或家人在做癌症治疗，想加任何补剂，先跟肿瘤科医生说。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二点是镁，也是我们的补充，数字来自 NIH。女性每天推荐 310 到 320 毫克，<strong>怀孕期间升到 350 到 360 毫克。</strong> NIH 还提到两件跟女性相关的事：一是镁对骨骼重要，<strong>多吃镁可能帮助年长女性提高骨密度</strong>，但还需要更多研究；二是一些小研究发现，补镁能小幅减少偏头痛的发作次数，而偏头痛在女性里更常见。NIH 特别说，为了偏头痛补镁，要在医生指导下做。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">正好接上 Rhonda 那期目录里那个问题：高剂量镁能不能预防偏头痛。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。她的回答在会员内容里，有兴趣的可以去听。</div></div>
+  <div class="section-label">五 · 关注建造者</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">建造者这边，这两天几乎都在聊 OpenAI 新出的 6.2 Sol 和 Astra。跟健康直接相关的不多，我挑了三条跟时间和精力有关的。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第一条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Josh Woodward，Google 负责 Gemini 应用的副总裁。他说 Gemini 现在可以在六个国家免费帮人做事，<strong>这是给那些被上课、开会、接送孩子填满一天、事情越积越多的人做的。</strong> 它能打电话给本地商家、付款、收发邮件、一次加好几个日程。将近六百个赞。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这算健康吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">算一半。很多人的压力不在某一件大事，而在一堆没做完的小事。能交出去一些，脑子会轻一点。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Nikunj Kothari，FPV Ventures 的合伙人，他过生日。他说这一年<strong>忙得只剩工作、电脑、家人，和一点点睡眠。</strong> 明年的目标是这些都要，还要练好身体、更专注当下、多玩一点。他问大家有什么办法。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「一点点睡眠」这几个字，很多人都有同感。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条，Ryo Lu，设计过 Cursor、Notion 和 Stripe。他说：<strong>疯狂的想法现在都能做出来了，但需要的用心和力气一点没少。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Stamets 说蘑菇要吃几周才起作用，有点像。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是的。新工具能让事情变快，但身体和好作品，都要时间。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://x.com/joshwoodward/status/2122737427970425171" target="_blank" style="color:var(--red);text-decoration:none;">📎 Josh Woodward on X</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://x.com/nikunj/status/2122889175053832557" target="_blank" style="color:var(--red);text-decoration:none;">📎 Nikunj Kothari on X</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://x.com/ryolu_/status/2122929249967554583" target="_blank" style="color:var(--red);text-decoration:none;">📎 Ryo Lu on X</a></span></div>
+</div>
+<div class="diary-box">
+  <div class="diary-label">◈ 六 · 今日健康行动</div>
+  <div class="diary-title">查一下你的镁补剂：每天加起来别超过 350 毫克</div>
+  <div class="diary-sub">2026-11-19 · Health 星期四</div>
+  <div class="diary-cols">
+    <span class="diary-col hl">补剂 + 药物 ≤ 350 mg/天</span>
+    <span class="diary-col">没吃补剂：一把坚果或南瓜子</span>
+    <span class="diary-col">做几个俯卧撑，记下来</span>
+  </div>
+  <div class="diary-note">
+    <strong>大雨：</strong>今天的行动：<strong>看一下你家里有没有镁补剂，或者含镁的复合维生素。如果有，看看标签上每天的量，加起来有没有超过 350 毫克。</strong> 这个上限只算补剂和药物，不算食物。<br><br><strong>小苇：</strong>如果没吃补剂呢？<br><br><strong>大雨：</strong>那就今天吃一把坚果或者南瓜子，或者在午饭里加一份豆子或者菠菜。<br><br><strong>小苇：</strong>再加一个 Stamets 的？<br><br><strong>大雨：</strong>可以。今天做几个俯卧撑，能做几个做几个，记下来，下个月再测一次。<br><br><strong>小苇：</strong>好，今天就到这里。<br><br><strong>大雨：</strong>健康星期四，我们下周见。<br><br>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 今日五条要点</div>
+  <div class="insight-title">CELLS · FUNGI · MINERALS</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>Nav Chandel：线粒体做三件事——产生能量、产生合成原料、发信号；少量过氧化氢是正常信号，所以抗氧化剂补充有局限。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Chandel：「线粒体功能障碍」如果和衰老有关，可能是信号出错，不只是能量不够。各种线粒体补剂的具体结论在会员内容里。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>Stamets：agarikon 和云芝有两个早期人体研究；功能蘑菇要连续吃几周；他自己经营补剂公司，听的时候记住这一点。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>Rhonda Patrick：很多人镁吃得不够，验血不一定看得出来；NIH：补剂和药物里的镁，成人每天不超过 350 毫克。</span></div>
+  <div class="insight-item"><span class="insight-num">05</span><span>女性：云芝乳腺癌一期试验只有九人、看的是安全性；女性每天需镁 310–320 毫克，孕期 350–360 毫克（本节目补充，数据来自 NIH）。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08，本期信号来自 13 位建造者的 33 条推文，大部分在讨论 OpenAI 6.2 Sol / Astra；播客源只有一期 AI 播客（Latent Space × Black Forest Labs），与健康无关，播客卡改用 WebSearch 找到的 The Peter Attia Drive 最新一期。跟健康直接相关的推文没有，挑了三条跟时间和精力有关的。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">The Peter Attia Drive · 2026-11-16</p>
+  <p class="pc-title">#416 ‒ The science of mitochondria: their role in health, aging, and disease, and what the evidence says about drugs and supplements aimed at improving their function | Navdeep Chandel, Ph.D.</p>
+  <p class="pc-summary">线粒体专家 Nav Chandel 说，线粒体除了产生能量，还产生合成原料，并通过过氧化氢、代谢物和线粒体 DNA/RNA 向细胞发信号；衰老相关的「线粒体功能障碍」可能是信号出错。节目后半段讲二甲双胍为什么在癌症试验里令人失望，并逐一评估尿石素 A、α-酮戊二酸、NMN、亚甲蓝、高压氧和红光疗法。</p>
+  <a href="https://peterattiamd.com/navchandel2/" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">JW</div>
+      <div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · Google · Gemini 应用副总裁</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Gemini 现在可以在六个国家免费帮你做事了！我们做它，是为了那些被上课、开会、接送孩子填满一天、事情越积越多的人。我们的目标是让 Gemini 把事办完，顺便帮你省时间、省钱。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 599</span>
+      <a href="https://x.com/joshwoodward/status/2122737427970425171" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NK</div>
+      <div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner @fpvventures</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「又绕太阳走了一圈，身边有最好的家人、朋友和创始人同事。这一年忙得一团乱，只剩工作、电脑、家人和一点点睡眠，别的都顾不上。明年的目标：这些都要，还要练好身体、更专注当下、尽量多玩。有什么兼顾一切的好办法，告诉我！」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 123</span>
+      <a href="https://x.com/nikunj/status/2122889175053832557" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">RL</div>
+      <div>
+        <div class="builder-name">Ryo Lu</div>
+        <div class="builder-handle">@ryolu_ · 设计过 Cursor、Notion、Stripe</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「疯狂的想法现在都能做出来了，但需要的用心和力气一点没少。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 87</span>
+      <a href="https://x.com/ryolu_/status/2122929249967554583" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本期内容基于各播客公开的节目页面、章节目录和笔记整理，属于科普性质的转述与讨论，<strong>不构成任何医疗建议、诊断或治疗方案</strong>。The Drive #416 为会员内容，本文只使用公开简介、章节目录和笔记预览；Huberman Lab 文字稿为会员内容，本文使用官网简介、参考文献列表和 Podcast Notes 的第三方章节笔记；FoundMyFitness Aliquot #154 为会员节目，本文只使用公开简介和目录。镁的推荐量、上限和食物来源来自 NIH 膳食补充剂办公室，不是 Rhonda Patrick 的原话；第四节关于云芝一期试验的细节是本节目对论文的补充。Paul Stamets 经营蘑菇补剂公司 Host Defense。裸盖菇素在多数地区受法律管制。补剂与药物可能相互作用，使用前请咨询医生或药剂师。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://peterattiamd.com/navchandel2/" target="_blank"><span class="src-icon">The Drive</span><span>#416 ‒ The science of mitochondria … | Navdeep Chandel, Ph.D. — The Peter Attia Drive, 2026-11-16</span></a>
+  <a class="source-link" href="https://www.hubermanlab.com/episode/mushrooms-for-the-mind-and-immune-system-paul-stamets" target="_blank"><span class="src-icon">Huberman</span><span>Mushrooms for the Mind &amp; Immune System | Paul Stamets — Huberman Lab, 2026-11-16</span></a>
+  <a class="source-link" href="https://podcastnotes.org/huberman-lab/paul-stamets-mushrooms-for-the-mind-immune-system-huberman-lab/" target="_blank"><span class="src-icon">Huberman</span><span>Podcast Notes · Paul Stamets: Mushrooms for the Mind &amp; Immune System</span></a>
+  <a class="source-link" href="https://www.foundmyfitness.com/episodes/aliquot-154-magnesium" target="_blank"><span class="src-icon">FMF</span><span>Aliquot #154: Do You Need a Magnesium Supplement? — FoundMyFitness, 2026-11-12</span></a>
+  <a class="source-link" href="https://ods.od.nih.gov/factsheets/Magnesium-Consumer/" target="_blank"><span class="src-icon">NIH</span><span>Magnesium — Fact Sheet for Consumers, NIH Office of Dietary Supplements</span></a>
+  <a class="source-link" href="https://x.com/joshwoodward/status/2122737427970425171" target="_blank"><span class="src-icon">X</span><span>Josh Woodward on X</span></a>
+  <a class="source-link" href="https://x.com/nikunj/status/2122889175053832557" target="_blank"><span class="src-icon">X</span><span>Nikunj Kothari on X</span></a>
+  <a class="source-link" href="https://x.com/ryolu_/status/2122929249967554583" target="_blank"><span class="src-icon">X</span><span>Ryo Lu on X</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-19 · Health 星期四</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

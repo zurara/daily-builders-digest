@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-20",
+    "dow": 5,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "Anthropic 上市：史上最大 IPO · 同一周两个新模型：GPT-6.2 和 Gemini 4 Neon",
+    "html": "episodes/2026-11-20.html",
+    "mp3": "episodes/2026-11-20.mp3",
+    "headlines": [
+      "Anthropic 上市：史上最大 IPO",
+      "同一周两个新模型：GPT-6.2 和 Gemini 4 Neon",
+      "银行改条款：代理出事，你自己负责",
+      "短消息"
+    ],
+    "theme": "Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责"
+  },
+  {
     "date": "2026-11-19",
     "dow": 4,
     "topic": "Health",

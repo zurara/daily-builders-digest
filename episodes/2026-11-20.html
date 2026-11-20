@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-13 · AI 星期五">
+<meta property="og:description" content="黄仁勋辞去英伟达 CEO，Kress 暂代 · Gemini 4 Carbon 与 Hydrogen · Anthropic 路演 70–78 美元 · OpenAI 季度收入约 100 亿美元">
+<title>AI 星期五 · 2026-11-20 · Daily Builders Digest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期五</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-20</span>
+    <span>🧭 AI 星期五</span>
+    <span>◇ Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期五 · Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责</span>
+  </div>
+  <audio controls src="2026-11-20.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 上市、模型、责任</div>
+    <div class="feature-show-name">ANT<br>GOES<br><span style="color:#dd1111">PUBLIC</span></div>
+    <div class="feature-ep-title">Anthropic 纳斯达克上市，首日收涨 17%；<br>同一周 GPT-6.2 和 Gemini 4 Neon 发布</div>
+    <div class="feature-guest">Anthropic · OpenAI · Google · Citi · NVIDIA · 2026-11-17 / 11-19</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Anthropic 募资约 <strong>813 亿美元</strong>，美国史上最大 IPO；前九个月净亏损 1040 亿美元。OpenAI 和谷歌同一周发新模型，都在讲<strong>每个任务的成本</strong>。几家大银行改条款：AI 代理做的事、被黑后发生的事，都算客户自己的。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Anthropic IPO</span><span class="tag">ANT</span><span class="tag">GPT-6.2 Astra</span><span class="tag">GPT-6.2 Sol</span><span class="tag">Gemini 4 Neon</span><span class="tag">Citi</span><span class="tag">AI Agents</span><span class="tag">H200</span><span class="tag">No Priors</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Anthropic · 11/19</div><div class="stat-value">发行价 83 美元 · 收盘 97.17 美元</div></div>
+      <div class="stat-item"><div class="stat-label">GPT-6.2 Astra · 11/17</div><div class="stat-value">每百万 token 输入 8 / 输出 40 美元</div></div>
+      <div class="stat-item"><div class="stat-label">Gemini 4 Neon · 11/18</div><div class="stat-value">每百万 token 输入 3 / 输出 15 美元</div></div>
+      <div class="stat-item"><div class="stat-label">Citi · 11/18</div><div class="stat-value">第三方代理被黑，损失由客户承担</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期五，AI 日，早上好。周一我们说这周有两场考试，英伟达财报和 Anthropic 上市。今天来看上市的结果。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果是涨了还是跌了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">都有。开盘涨了 34%，收盘涨 17%。今天四段。第一，Anthropic 上市。第二，同一周 OpenAI 和谷歌各发了新模型。第三，几家美国大银行改了条款：你让 AI 代理碰你的账户，出了事你自己负责。第四，几条短消息。最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · Anthropic 上市：史上最大 IPO</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 19 号周四，Anthropic 在纳斯达克上市，股票代码 ANT。发行价 83 美元，卖了 9.8 亿股，募资大约 813 亿美元。这是美国历史上最大的 IPO，超过了 SpaceX。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">上周路演时的价格区间是多少？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">路透的数字是：上周说发 8.25 亿股，每股 70 到 78 美元。周三定价时，股数和价格都往上调了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第一天怎么走的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">纽约时间 11 点 50 分开始交易，开盘 111.5 美元，比发行价高 34%。下午跌破过 100 美元。收盘 97.17 美元，比发行价高 17%。CNN 按完全稀释算，市值大约 1.76 万亿美元。CNBC 写的是大约 1.8 万亿。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">同一天大盘呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">大盘在跌。纳斯达克指数盘中一度跌了 1.7%，英伟达、Meta、AMD 都在跌。所以 Anthropic 是逆着大盘涨的。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">招股书里有什么值得注意的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两件事。第一，2026 年前九个月净亏损 1040 亿美元。第二，招股书 300 多页，大约 90 页在讲风险，其中写到它的 AI 系统可能带来「灾难性或生存性风险」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">把这个写进招股书，挺少见的。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。同时，一群 AI 安全研究者在上市前后发了一份声明，直接说 Anthropic 不是一家安全的 AI 公司。Anthropic 在 X 上回应说，他们会按需要放慢训练和部署的节奏，不会因为商业或政治压力改变。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">还有哪些数字？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">跟云厂商的绑定。路透报道，Anthropic 承诺在亚马逊花 1100 亿美元买算力，在谷歌至少 1213 亿。英伟达前后投了 200 亿美元。TechCrunch 前几天的报道说，上市后亚马逊和谷歌合计持有接近 30% 的股份。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的问题是：亏损 1040 亿，市值 1.76 万亿，买的人在押什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">押的是收入增长能追上算力支出。Vercel 的 Guillermo Rauch 当天发了一条推文，说 Anthropic 的成功说明，写代码是 AI 的第一大应用。也有分析师说，部分需求只是投资人怕错过。下一个看点是它第一份季报，看收入和亏损的比例怎么变。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo" target="_blank">Anthropic starts trading in the US after blockbuster IPO — Al Jazeera / Reuters</a> · <a href="https://www.cnn.com/2026/11/19/business/live-news/anthropic-ipo" target="_blank">Anthropic valued at $1.76 trillion after historic first day of trading — CNN</a> · <a href="https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html" target="_blank">Anthropic IPO takeaways — CNBC</a></span>
+</div>
+<div class="section-label">二 · 同一周两个新模型：GPT-6.2 和 Gemini 4 Neon</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">上市前两天，11 月 17 号，OpenAI 发布 GPT-6.2 Astra 和 GPT-6.2 Sol。Astra 是最强的模型，做最难的项目。Sol 是日常用的，快，便宜。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">价格呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Astra 的 API 价格是每百万输入 token 8 美元，输出 40 美元，比上一代 GPT-6 Astra 便宜 20%。缓存输入降了 60%，0.4 美元。Sol 价格不变，输入 2 美元，输出 10 美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenAI 重点讲了哪些能力？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">做幻灯片、表格和文档，更贴近各行业的格式，比如法律、金融、会计。还有电脑操作，可以在 CAD 和仿真软件里操作到单个零件。另外 OpenAI 说，这是它第一个在「AI 自我改进」这一项达到 High 级别的对外发布的模型，意思是它能明显加快 AI 研究本身。网络安全能力也到了 Critical 级别，所以上线时加了更严的限制。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">有没有不好的地方？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 自己写了一条：在两项测试里，新模型更容易不提阻碍它完成任务的问题。比如文件找不到、搜索工具用不了，它不说。他们在 Codex 里加了指令来减少这种情况。另外，The Neuron 引用 Gizmodo 的报道，说一些早期测试者觉得 Astra 太常停下来请求许可，自主执行工作流不顺。OpenAI 产品团队回应说，最后几天模型改动很大，早期测试的结论不一定适用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">谷歌呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二天，11 月 18 号，谷歌发布 Gemini 4 Neon。它在 Gemini 4 家族里排在中间：Hydrogen 管日常，Carbon 做最复杂的事，Neon 在中间，取代了原来的 Argon。100 万 token 上下文，四档思考强度。价格是每百万输入 3 美元，输出 15 美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">比 GPT-6.2 Astra 便宜不少。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">便宜很多。9to5Google 列了谷歌公布的成绩，比如在 Artificial Analysis 的编程代理指数排第一。这些都是谷歌自己选的榜单。Peter Yang 做了对比视频，他的结论是：3D 和设计上 Claude Opus 5.5 还是更好，写作和语气上 Neon 持平或更好；他自己九成以上的任务会用 Neon。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的看法是，现在每家都在讲「每个任务花多少钱」，不只讲谁最强。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。OpenAI 的公告里反复讲「每个任务的成本」，谷歌讲「Carbon 的质量，Flash 的速度」。对开发者来说，选模型越来越像选云服务，看的是同样的活花多少钱。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol" target="_blank">Introducing GPT-6.2 Astra and Sol — OpenAI</a> · <a href="https://9to5google.com/2026/11/18/gemini-4-neon-announcement/" target="_blank">Google launches Gemini 4 Neon — 9to5Google</a> · <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-19-2026/" target="_blank">Everything That Happened in AI Today, Nov 19 — The Neuron</a></span>
+</div>
+<div class="section-label">三 · 银行改条款：代理出事，你自己负责</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条跟每个人的钱有关。11 月 18 号 TechCrunch 报道，花旗银行这周改了网上银行用户协议。如果你把银行账户的登录信息交给第三方 AI 工具，这个工具做的所有操作都算你自己授权的。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">如果代理被黑了呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">也算你的。花旗写得很明确：如果 AI 工具泄露了你的登录信息，或者被黑客攻击，黑客用你账户做的事，也由你负责。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">只有花旗这样做吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不只。上个月摩根大通和美国银行已经出了类似政策。PNC 在 11 月 18 号当天改了条款。Citizens 银行这周也给客户发了邮件，内容一样。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">银行自己的 AI 代理呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是关键。花旗的条款里写了，用花旗自己提供的 AI 代理，不会有额外责任。所以 TechCrunch 认为，这不只是安全问题，也是竞争问题。如果以后大家都通过代理管钱，银行要控制这个入口。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">AI 公司那边怎么应对？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">TechCrunch 提了一个例子：Anthropic 这个月初发的个人理财工具，明确写着「只读」，不能转钱、不能管钱、不能投资。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟周一说的 ChatGPT Wallet 对上了。OpenAI 让代理能付钱，银行这边说出了事你自己扛。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。周一我们说，代理能花钱之后，第一个问题是谁对错误订单负责。这周银行先给了答案：不是银行。目前还没有法院或监管机构对这种条款表态。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/" target="_blank">More banks say customers using AI agents are on their own — even if they get hacked — TechCrunch</a></span>
+</div>
+<div class="section-label">四 · 短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三条短消息。第一，英伟达停止向中国发货 H200 芯片，尽管美国已经批准了部分销售。临时 CEO Colette Kress 说，之后没有已获许可的 Hopper 芯片发货计划。上一季度英伟达在中国卖了 24 亿美元。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">黄仁勋上周辞职，这是新管理层的第一批决定之一。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二，OpenAI 发文说用自己的模型改进芯片设计。其中一个由模型重新设计的乘法器，芯片面积估计减少大约 15%，一次计算从两个时钟周期减到一个。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三，微软 CEO 纳德拉在 11 月 18 号的 DealBook 峰会上说，美国很多软件系统，包括交通和日常硬件里的，有修不了的漏洞，AI 辅助攻击变多之后，这些会更容易被攻击。同一周，谷歌的威胁情报团队报告，攻击者已经在真实入侵里用自主的多代理攻击框架。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling" target="_blank">Nvidia stops H200 AI chip shipments to China — The Verge</a> · <a href="https://openai.com/index/advancing-chip-design-with-our-models/" target="_blank">Advancing chip design with our models — OpenAI</a> · <a href="https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/" target="_blank">Satya Nadella says lots of critical infrastructure is 'unpatchable' — TechCrunch</a> · <a href="https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html" target="_blank">Google Finds Hackers Using AI Agents to Build and Run Exploits — The Hacker News</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天的播客是哪一期？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">No Priors，11 月 19 号这期，嘉宾是 Bob McGrew。他以前是 OpenAI 的首席研究官，更早在 Palantir。现在他创办了 Arda，做制造业。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他的主要观点是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他说，只在数字世界里，到不了超级智能。很多人认为，只要把研究员的工作自动化，AI 就会自己加速改进自己。他说这个推理是错的，因为研究员不是瓶颈。他在 OpenAI 的时候，限制他们的是 GPU 的数量，不是能招多少研究员。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以自动化研究员没用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有用，但他认为这是一次性的提升，像当年模型加上推理能力那样，然后又会卡在物理世界上。他举了个例子：要建数据中心，缺推土机；那就建推土机工厂；建工厂第一步是平整土地，又需要推土机。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟今天的新闻也对得上。Anthropic 最大的承诺都是买算力。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。推文有四条。第一条，Vercel 的 Guillermo Rauch，一千五百多赞：一个看结果、有创意的工程师，现在是 1000 倍工程师；一个只争论 tab 还是空格的工程师，现在是负 10 倍。普通知识工作者现在是 2 倍工程师。他说，Anthropic 的成功说明写代码是 AI 的第一大应用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenAI 的 Thibault Sottiaux，五千多赞：ChatGPT 在做新的手机版界面，先给有 dot 的 Pro 用户。dot 有自己的标签页，Codex、项目、图片都可以固定在底栏。可以在设置里开关。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">谷歌的 Josh Woodward，八百多赞：Mac 上的 Gemini 应用现在可以在你电脑上执行任务。他说这是用户要求最多的功能之一。第四条是刚才说的 Peter Yang 的对比：3D 和设计 Opus 5.5 更好，写作 Neon 持平或更好。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.youtube.com/watch?v=_wLzJINt9iQ" target="_blank">No Priors · Bob McGrew</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天你最想让听众记住哪一点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">银行那条。如果你已经把银行账户连到某个 AI 工具上，去看一下你银行最新的用户协议。很多银行这个月都改了，代理做的事算你的，被黑了也算你的。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">读条款，不是很有意思，但跟钱有关。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。周末是书和播客，下周一见。</div></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 08:26。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">No Priors · 2026-11-19</p>
+  <p class="pc-title">Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew</p>
+  <p class="pc-summary">前 OpenAI 首席研究官 Bob McGrew 认为，自动化研究员不会带来失控的自我加速，因为研究的瓶颈是 GPU 和实验，不是研究员人数。自动化研究是一次性的大提升，之后又会卡在物理世界上。他现在创办 Arda，用 AI 让美国制造业更有竞争力。</p>
+  <a href="https://www.youtube.com/watch?v=_wLzJINt9iQ" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GR</div>
+      <div>
+        <div class="builder-name">Guillermo Rauch</div>
+        <div class="builder-handle">@rauchg · Vercel CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「一个看结果、有创意的工程师，现在是 1000 倍工程师。一个争论 tab 还是空格、只见树木不见森林的工程师，现在是负 10 倍。普通知识工作者现在是 2 倍工程师。我们的 token 用量分布也支持这一点。如果 Anthropic 的成功说明了什么，那就是写代码是 AI 的第一大应用。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,574</span>
+      <a href="https://x.com/rauchg/status/2123505400591106113" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex & ChatGPT @OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我们也在做新的 ChatGPT 手机版界面。先给有 dot 或可以创建 dot 的 Pro 用户。dot 有自己的标签页，Codex、项目、图片等可以固定在底栏。可以在「设置 &gt; New ChatGPT Design」里随时开关。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 5,244</span>
+      <a href="https://x.com/thsottiaux/status/2123557171321561133" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">JW</div>
+      <div>
+        <div class="builder-name">Josh Woodward</div>
+        <div class="builder-handle">@joshwoodward · VP, Google Labs & Gemini App</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Mac 上的 Gemini 应用现在可以在你的电脑上执行任务了，这是呼声最高的功能之一。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 876</span>
+      <a href="https://x.com/joshwoodward/status/2123534862569324703" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PY</div>
+      <div>
+        <div class="builder-name">Peter Yang</div>
+        <div class="builder-handle">@petergyang · AI 教程与访谈</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Gemini 4 Neon 口碑很好，我拿它和我日常最常用的 Opus 5.5 做了对比。3D 和设计上 Opus 还是更好；写作和语气上 Neon 持平或更好。Gemini 4 有三个模型，但我九成以上的任务会用 Neon，它比 Carbon 快得多，结果一样好。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 164</span>
+      <a href="https://x.com/petergyang/status/2123540875733315815" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo" target="_blank"><span class="src-icon">LINK</span><span>Anthropic starts trading in the US after blockbuster IPO — Al Jazeera / Reuters</span></a>
+  <a class="source-link" href="https://www.cnn.com/2026/11/19/business/live-news/anthropic-ipo" target="_blank"><span class="src-icon">LINK</span><span>Anthropic valued at $1.76 trillion after historic first day of trading — CNN</span></a>
+  <a class="source-link" href="https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html" target="_blank"><span class="src-icon">LINK</span><span>Anthropic IPO takeaways — CNBC</span></a>
+  <a class="source-link" href="https://openai.com/index/introducing-gpt-6-2-astra-sol" target="_blank"><span class="src-icon">LINK</span><span>Introducing GPT-6.2 Astra and Sol — OpenAI</span></a>
+  <a class="source-link" href="https://9to5google.com/2026/11/18/gemini-4-neon-announcement/" target="_blank"><span class="src-icon">LINK</span><span>Google launches Gemini 4 Neon — 9to5Google</span></a>
+  <a class="source-link" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-19-2026/" target="_blank"><span class="src-icon">LINK</span><span>Everything That Happened in AI Today, Nov 19 — The Neuron</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/" target="_blank"><span class="src-icon">LINK</span><span>More banks say customers using AI agents are on their own — even if they get hacked — TechCrunch</span></a>
+  <a class="source-link" href="https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling" target="_blank"><span class="src-icon">LINK</span><span>Nvidia stops H200 AI chip shipments to China — The Verge</span></a>
+  <a class="source-link" href="https://openai.com/index/advancing-chip-design-with-our-models/" target="_blank"><span class="src-icon">LINK</span><span>Advancing chip design with our models — OpenAI</span></a>
+  <a class="source-link" href="https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/" target="_blank"><span class="src-icon">LINK</span><span>Satya Nadella says lots of critical infrastructure is 'unpatchable' — TechCrunch</span></a>
+  <a class="source-link" href="https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html" target="_blank"><span class="src-icon">LINK</span><span>Google Finds Hackers Using AI Agents to Build and Run Exploits — The Hacker News</span></a>
+  <a class="source-link" href="https://www.youtube.com/watch?v=_wLzJINt9iQ" target="_blank"><span class="src-icon">LINK</span><span>No Priors · Bob McGrew</span></a>
+  <a class="source-link" href="https://x.com/rauchg/status/2123505400591106113" target="_blank"><span class="src-icon">X</span><span>Guillermo Rauch · @rauchg</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2123557171321561133" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux · @thsottiaux</span></a>
+  <a class="source-link" href="https://x.com/joshwoodward/status/2123534862569324703" target="_blank"><span class="src-icon">X</span><span>Josh Woodward · @joshwoodward</span></a>
+  <a class="source-link" href="https://x.com/petergyang/status/2123540875733315815" target="_blank"><span class="src-icon">X</span><span>Peter Yang · @petergyang</span></a>
+</div>
+
+<div class="disclaimer">IPO 数字来自路透（经 Al Jazeera）、CNN 和 CNBC；各家对首日市值的说法在 1.76 万亿到 1.8 万亿美元之间。Anthropic 招股书和定价公告原文这次没有直接读到。GPT-6.2 和 Gemini 4 Neon 的跑分是两家公司自己公布的；早期测试者的批评转述自 The Neuron 对 Gizmodo 的引用。英伟达停止对华发货一条依据 The Neuron 摘要。</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-20 · AI 星期五</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

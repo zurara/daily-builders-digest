@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-22",
+    "dow": 7,
+    "topic": "Podcasts",
+    "format": "新闻快报",
+    "title": "2026-11-22 今日快报",
+    "html": "episodes/2026-11-22.html",
+    "mp3": "episodes/2026-11-22.mp3",
+    "headlines": [],
+    "theme": "Linear 怎么做到一亿美元年收入"
+  },
+  {
     "date": "2026-11-20",
     "dow": 5,
     "topic": "AI",
@@ -437,30 +448,5 @@
       "Huberman Essentials：Neuralink 和脑机接口"
     ],
     "theme": "癌症这十五年变了什么"
-  },
-  {
-    "date": "2026-10-21",
-    "dow": 3,
-    "topic": "Product",
-    "format": "新闻快报",
-    "title": "◈ 今日数字 · 🎙 对话全文 · 大雨 × 小苇",
-    "html": "episodes/2026-10-21.html",
-    "mp3": "episodes/2026-10-21.mp3",
-    "headlines": [
-      "◈ 今日数字",
-      "🎙 对话全文 · 大雨 × 小苇"
-    ],
-    "theme": "一个人用，还是一起用"
-  },
-  {
-    "date": "2026-10-20",
-    "dow": 2,
-    "topic": "Robotics",
-    "format": "新闻快报",
-    "title": "2026-10-20 今日快报",
-    "html": "episodes/2026-10-20.html",
-    "mp3": "episodes/2026-10-20.mp3",
-    "headlines": [],
-    "theme": "先让人在回路里，再慢慢撤出来"
   }
 ]

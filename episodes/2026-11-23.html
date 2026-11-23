@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-23 · AI 星期一">
+<meta property="og:description" content="黎曼猜想机器验证证明 · OpenAI 提议行业能力上限 · Dragos 诱饵提示词揭示推理服务商泄露 · GTA 6 与 AI 移植">
+<title>AI 星期一 · 2026-11-23 · Daily Builders Digest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · AI 星期一</div>
+  <div class="header-title">AI<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-23</span>
+    <span>🧭 AI 星期一</span>
+    <span>◇ 黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· AI 星期一 · 黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看</span>
+  </div>
+  <audio controls src="2026-11-23.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 证明、上限、泄露</div>
+    <div class="feature-show-name">RH<br>IN<br><span style="color:#dd1111">LEAN</span></div>
+    <div class="feature-ep-title">Anthropic 数学家和 Claude 发布黎曼猜想证明；<br>Lean 验证通过，人还没看懂</div>
+    <div class="feature-guest">Anthropic · Lean / Mathlib · OpenAI · Dragos · OpenRouter · 2026-11-20 / 11-22</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Levent Alpöge 发布约 <strong>1700 万行 Lean 代码</strong>，Lean 和 Mathlib 社区确认定理表述无误；数学家说几周后才知道里面有没有新思想。OpenAI 首席科学家提议各家约定<strong>能力上限</strong>。Dragos 用两百万条诱饵提示词发现三家推理服务商被黑、零数据保留被无视。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Riemann Hypothesis</span><span class="tag">Lean 4</span><span class="tag">Mathlib</span><span class="tag">Claude</span><span class="tag">Pachocki</span><span class="tag">Perplexity</span><span class="tag">Dragos</span><span class="tag">OpenRouter</span><span class="tag">ZDR</span><span class="tag">GTA 6</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">黎曼猜想 · 11/20</div><div class="stat-value">提出 167 年 · 证明约 1700 万行 Lean</div></div>
+      <div class="stat-item"><div class="stat-label">Lean / Mathlib · 11/21</div><div class="stat-value">定理表述与 Mathlib 一致，独立检查通过</div></div>
+      <div class="stat-item"><div class="stat-label">OpenAI · 11/22</div><div class="stat-value">提议以困惑度等指标设行业上限</div></div>
+      <div class="stat-item"><div class="stat-label">OpenRouter · 11/22</div><div class="stat-value">下线 3 家服务商 · 125 个接口移出 ZDR</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期一，AI 日，早上好。上周五我们讲了 Anthropic 上市。就在同一天晚上，出了一条更大的新闻，跟股票没有关系，跟数学有关。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">黎曼猜想？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。今天四段。第一，一位 Anthropic 的数学家说，他和 Claude 一起证明了黎曼猜想。第二，OpenAI 首席科学家提议，各家 AI 公司约定一条能力上限，到了就停。第三，一项安全研究发现，你通过一些平台发给 AI 的提示词，被别人看到了，甚至被偷了。第四，几条短消息。最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · 黎曼猜想：一份机器验证、但还没人看懂的证明</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 20 号周五，Anthropic 的数学家 Levent Alpöge 在自己网站上发了一份四页的说明。第一句是：「我相信我和 Claude 一起，找到了黎曼猜想的证明。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先说一下，黎曼猜想是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">1859 年黎曼提出来的，讲的是质数怎么分布。质数看起来在数轴上乱撒，黎曼猜想说，它们背后有一个规律，这个规律藏在一个叫 zeta 函数的东西里。它是克雷数学研究所七个千禧年难题之一，奖金 100 万美元。到现在 167 年，没人证出来。几百个数学结果是在「假设黎曼猜想成立」的前提下证明的。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这次的证明长什么样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他没有写传统论文。他发的是 Lean 代码。Lean 是一种证明助手，它会一步一步检查推理有没有错。帝国理工的数学家 Kevin Buzzard 对半岛电视台说，这份证明有 1700 万行 Lean 代码，可能相当于几万页数学。Alpöge 自己说，跟 Claude 一起写出来的非正式草稿超过 25 万页。他还写了一句：「快到终点的时候，Claude 远远跑在我前面。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那它到底对不对？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">分两层说。第一层，机器检查。11 月 21 号，Lean 和 Mathlib 社区发了联合声明：证明里的定理，跟 Mathlib 里早就写好的黎曼猜想表述一致，几个独立的检查程序都通过了。范围还包括广义黎曼猜想，也就是推广到狄利克雷 L 函数的那个版本。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二层呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二层，人能不能看懂。现在没有人看懂。Buzzard 的原话是：「我们甚至还不知道这个定理为什么成立。」现在世界各地有人在把这些代码一段一段翻译回英文。他估计几周之内会有更清楚的认识。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">数学家们怎么看？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">意见不一。据《自然》报道，Andrew Granville 说 Alpöge 发出来的东西「乱七八糟」。James Maynard 说他猜证明最后会被证实是对的，但代码很难读。伦敦玛丽女王大学的 Abhishek Saha 说，他原来以为离证明还有好几年，这份证明如果成立，「打碎了我对现实的认识」。另外，克雷研究所的网页上，黎曼猜想还写着「未解决」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">功劳算谁的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">也有争论。Saha 认为应该算 Alpöge 的，他说别人也有同样的模型和算力，没证出来，所以应该给 Alpöge 菲尔兹奖。但 Alpöge 自己的说法是，他定了方向，后面一些数学 Claude 走得比他远。建造者里，Claude Code 团队以前的 Thariq 发了一串推文，说跟模型合作推进前沿，本身就是一门很深的技术活，他担心人们太快把自己从这个过程里拿掉。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的问题是：如果一个证明机器能验证、人看不懂，这算我们「知道」了吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这正是数学家在吵的。Lean 能保证逻辑没错，但数学家要的不只是「对」，还要知道「为什么」。Buzzard 打了个比方，AI 像望远镜：以前天文学家只能用眼睛看天，现在多了个工具。但他也说，AI 目前还没有品味，你叫它做什么它就做什么。接下来几周要看的是：翻译出来以后，这里面有没有新的数学思想，还是只是把已有的东西拼对了。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked" target="_blank">Riemann hypothesis: Has the world's most famous maths problem been cracked? — Al Jazeera</a> · <a href="https://www.nature.com/articles/d41586-026-03812-7" target="_blank">Mathematicians astounded by AI and human-written proofs of iconic Riemann hypothesis — Nature</a> · <a href="https://www.washingtonpost.com/technology/2026/11/20/using-anthropic-ai-mathematician-claims-have-solved-riemann-hypothesis/" target="_blank">Using Anthropic AI, mathematician claims to have solved Riemann hypothesis — The Washington Post</a></span>
+</div>
+<div class="section-label">二 · OpenAI 首席科学家：各家约定一条上限，到了就停</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条。11 月 22 号周日，OpenAI 首席科学家 Jakub Pachocki 发了一篇博客，提议整个行业约定一条 AI 能力的上限。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">怎么约定？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他的原话，路透引用的是：「我进一步提议，基于困惑度和其他指标，设立共同的上限。开发者承诺不越过这条线，直到我们理解和监控 AI 行为的能力达到某个具体的里程碑。」</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">困惑度是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">perplexity，衡量模型预测下一个 token 准不准。数值越低，预测越准，一般说明模型越强。它的好处是各家都能算，可以拿来比。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他为什么现在提？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他说，最早 2027 年，AI 就可能推动 AI 训练方法本身的根本进步。也就是 AI 帮着造更强的 AI，速度可能超过安全和监控技术的进步。所以要先约定一条线。提案里还要有一个行业标准：定一个起始上限，再写清楚达到哪些里程碑之后，才能把上限往上调。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">OpenAI 内部什么态度？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Altman 在 X 上转发支持，说这篇是「OpenAI 很久以来发表的最重要的东西」。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">具体的线定在哪里？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">目前没有说。有一家媒体报了具体数字，但其他报道都说起始阈值和生效时间还没定，所以我们不报那个数。也还没看到其他实验室回应。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我的看法是，提案本身不难，难的是谁来查。每家都说自己没过线，外面的人怎么知道？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。而且时间点也值得注意：上周 OpenAI 自己发布 GPT-6.2 的时候说，这是它第一个在「AI 自我改进」上达到 High 级别的对外模型。周五 Anthropic 那边出了黎曼猜想。一周之内，两个信号都指向 AI 开始帮人做研究，然后 OpenAI 提出要设上限。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://thesun.my/news/openai-chief-scientist-calls-for-shared-limits-on-ai-development/" target="_blank">OpenAI chief scientist calls for shared limits on AI development — Reuters via The Sun</a> · <a href="https://www.bloomberg.com/news/articles/2026-11-22/openai-chief-scientist-urges-industry-limits-on-ai-development" target="_blank">OpenAI Chief Scientist Urges Industry Limits on AI Development — Bloomberg</a></span>
+</div>
+<div class="section-label">三 · 你的提示词去了哪里：两百万条诱饵的实验</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条跟每个用 AI 写代码、处理文件的人有关。安全公司 Dragos 的首席研究官 HD Moore，就是写 Metasploit 那位，11 月 19 号发了一份研究。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他们做了什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">从 7 月到 11 月，五个月，他们给各家 AI 服务发了大约两百万条提示词。每条里都藏了独一无二的诱饵：一个假网址、一个 AWS 密钥。这些东西只在那一条提示词里出现过。如果有人去访问那个网址、用那个密钥，就说明那条提示词被别人看到了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三个发现。第一，至少三家 AI 推理服务商被黑了，三家都不知道，直到 Dragos 去通知。最早一起是 7 月中。最大的一起，Dragos 埋的几百个 AWS 密钥全被偷了，有的几个小时内就被拿去试，之后被用了几万次 AWS 调用。其中两起里，被偷的请求带着「零数据保留」标记。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">零数据保留，就是承诺不存你的数据。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。Dragos 写的是：攻击者已经在里面了，隐私标记没用。第二个发现，一些 AI 路由市场上的卖家，把模型价格标得最低，打开请求日志，等着就行，就能看到客户的提示词。不需要任何漏洞。有人拿到提示词里的密码，手动一次次试着登录 SSH。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三个呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三个，隐私设置被无视。有一家中国 AI 实验室，7 月到 10 月发给它模型的提示词里，超过一半的诱饵网址被它的爬虫访问了，包括大约三分之二标了零数据保留的请求。几家美国服务商转售这家的模型，发给美国服务商的提示词，也触发了同一个爬虫。还有一条诱饵链接，24 天后出现在一个飞书群里，两分钟内在北京和上海被六台设备打开。美国大厂也有问题：有一家在一次搜索调用之后，两个多月还在爬那个网址。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">平台怎么反应？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">OpenRouter 11 月 22 号发了公告：下线了三家服务商，把 125 个接口移出零数据保留名单，通知了可能受影响的客户。它强调自己没被入侵，并说会把 Dragos 的测试方法变成常规检查。Together、Phala、Novita、Atlas Cloud 几家也发了说明。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那普通开发者该怎么办？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Dragos 给了几条建议。能自己部署就自己部署。不能的话，直接用一线厂商，一个合同、一份隐私政策。用路由要自己挑上游，别接受默认池子，离低价转售市场远一点。还有一条很简单：在你的代理和流水线里放一个假密钥，有人用了就当事故处理。它的原话是：隐私标记只约束第一跳；你不决定提示词去哪，最低价会替你决定。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟上周五银行那条对得上。银行说代理被黑你自己负责；这边是你发出去的提示词，中间每一跳都能看到。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。代理越能读你的文件和密钥，这个问题越大。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens" target="_blank">Three breaches, endless leaks: Your AI supply chain needs canaries — Dragos</a> · <a href="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/" target="_blank">Data Processing Incidents on Inference Providers — OpenRouter</a></span>
+</div>
+<div class="section-label">四 · 短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">两条短消息。第一，GTA 6 上周四在主机上发售，没有 PC 版。这个月初，前 Rockstar 技术总监 Obbe Vermeij 说，他如果是 Rockstar 会担心有人用 AI 把 PS5 版转成 PC 版，估计要花几万美元的 token，但「是 GTA 的话，肯定有人会试」。周末 Replit 的 Amjad Masad 发推说，已经有一个高中生在做这件事，用 GitHub issue 给一群 AI 代理分派任务。这条我们没有核实，只是他的说法。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">用 issue 管代理群，像一个开源项目，只是干活的大部分是代理。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二，OpenAI 这周末更新了 ChatGPT 和 Codex 的桌面应用。负责 Codex 的 Thibault Sottiaux 周六问用户：昨天的更新用得怎么样，还有哪些地方不行？他说团队已经在准备下一次大更新。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://wccftech.com/gta-6-tens-of-thousands-dollars-tokens-unofficial-pc-port/" target="_blank">GTA 6 Could Cost "Tens of Thousands Of Dollars" in Tokens To Develop Unofficial PC Port — Wccftech</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天推荐的节目是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">不是一期常规播客，是 3Blue1Brown 的 Grant Sanderson 11 月 22 号发的一个视频。他从去年中开始，采访数学家时一直问同一个问题：「如果有一个 AI 做出来的黎曼猜想证明，Lean 验证过，但长到人根本看不懂，你会怎么想？」周五这个假设成了真的，他就把这些采访剪在一起发了出来。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">正好接上第一段。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。推文有四条。第一条，Thibault Sottiaux，两千一百多赞，就是刚才说的桌面应用更新，他在问哪里还不好用。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Box 的 Aaron Levie，五百六十赞。他转了一篇文章，说应该认真对待黎曼猜想这个突破，不只是对数学。他引的一段是：这不是通常意义上的建立理论，而是更奇怪、更陌生的东西。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第三条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Replit 的 Amjad Masad，四百赞，就是 GTA 6 和代理群那条。他问：这会不会是开源的新模式？第四条是 Thariq，接近三百赞：模型越强，跟模型合作的能力越重要，他还没看到这项能力的回报在变小。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">也有人泼冷水吧？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">有。FirstMark 的 Matt Turck 发了一条，一百赞：「一门艺术：完全不知道黎曼猜想是什么，却兴奋地发推说 AI 解决了黎曼猜想。」</div></div>
+  <span class="source-inline">📎 来源: <a href="https://youtube.com/watch?v=zqzk43bSdDI" target="_blank">3Blue1Brown · What if AI solved the Riemann Hypothesis?</a></span>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天你最想让听众记住哪一点？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条。如果你在用 AI 路由或者便宜的第三方接口，去看一下你的请求实际发给了谁。别把密钥放进提示词里，可以的话自己放一个假密钥当报警器。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">黎曼猜想那边呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">等几周。看数学家把代码翻译成人话以后怎么说。明天是机器人，明天见。</div></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">3Blue1Brown · 2026-11-22</p>
+  <p class="pc-title">Since last year, we asked: "What if AI solved the Riemann Hypothesis?"</p>
+  <p class="pc-summary">Grant Sanderson 从 2025 年中开始，采访数学家时一直问同一个问题：如果有一份 AI 做出的黎曼猜想证明，Lean 验证过，但长到人看不懂，你会怎么想？11 月 20 日这个假设成了真的，他把这些采访剪成一期发布。适合配合今天第一段一起看。</p>
+  <a href="https://youtube.com/watch?v=zqzk43bSdDI" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TS</div>
+      <div>
+        <div class="builder-name">Thibault Sottiaux</div>
+        <div class="builder-handle">@thsottiaux · Codex & ChatGPT @OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「团队已经在准备下一次大更新了。昨天 ChatGPT / Codex 桌面应用的更新，大家用得怎么样？还有哪些地方需要处理、还不太行？」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2,158</span>
+      <a href="https://x.com/thsottiaux/status/2124322968499282388" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · Box CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「这篇文章说清楚了为什么我们应该认真对待黎曼猜想的突破，而且不只是在数学上。我们正在进入一个时代，解决问题的方式会和过去很不一样。「这不是通常意义上的建立理论，而是更奇怪、更陌生的东西。」」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 560</span>
+      <a href="https://x.com/levie/status/2124252844710887549" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · Replit CEO</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「一个高中生正在重新编译 GTA6，让它能在 PC 上运行。更有意思的是，他们用 GitHub issue 给一群 AI 代理分派任务。这会是开源的新模式吗？」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 401</span>
+      <a href="https://x.com/amasad/status/2124345037408686228" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">TQ</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · 前 Claude Code @AnthropicAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「是的，大部分技术工作是 Claude 做的。也许未来的模型能一次就「证明黎曼猜想」。但我认为，和模型合作推进前沿，本身就是一门很深的技术活。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 294</span>
+      <a href="https://x.com/trq212/status/2124239684536840682" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked" target="_blank"><span class="src-icon">LINK</span><span>Riemann hypothesis: Has the world's most famous maths problem been cracked? — Al Jazeera</span></a>
+  <a class="source-link" href="https://www.nature.com/articles/d41586-026-03812-7" target="_blank"><span class="src-icon">LINK</span><span>Mathematicians astounded by AI and human-written proofs of iconic Riemann hypothesis — Nature</span></a>
+  <a class="source-link" href="https://www.washingtonpost.com/technology/2026/11/20/using-anthropic-ai-mathematician-claims-have-solved-riemann-hypothesis/" target="_blank"><span class="src-icon">LINK</span><span>Using Anthropic AI, mathematician claims to have solved Riemann hypothesis — The Washington Post</span></a>
+  <a class="source-link" href="https://thesun.my/news/openai-chief-scientist-calls-for-shared-limits-on-ai-development/" target="_blank"><span class="src-icon">LINK</span><span>OpenAI chief scientist calls for shared limits on AI development — Reuters via The Sun</span></a>
+  <a class="source-link" href="https://www.bloomberg.com/news/articles/2026-11-22/openai-chief-scientist-urges-industry-limits-on-ai-development" target="_blank"><span class="src-icon">LINK</span><span>OpenAI Chief Scientist Urges Industry Limits on AI Development — Bloomberg</span></a>
+  <a class="source-link" href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens" target="_blank"><span class="src-icon">LINK</span><span>Three breaches, endless leaks: Your AI supply chain needs canaries — Dragos</span></a>
+  <a class="source-link" href="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/" target="_blank"><span class="src-icon">LINK</span><span>Data Processing Incidents on Inference Providers — OpenRouter</span></a>
+  <a class="source-link" href="https://wccftech.com/gta-6-tens-of-thousands-dollars-tokens-unofficial-pc-port/" target="_blank"><span class="src-icon">LINK</span><span>GTA 6 Could Cost "Tens of Thousands Of Dollars" in Tokens To Develop Unofficial PC Port — Wccftech</span></a>
+  <a class="source-link" href="https://youtube.com/watch?v=zqzk43bSdDI" target="_blank"><span class="src-icon">LINK</span><span>3Blue1Brown · What if AI solved the Riemann Hypothesis?</span></a>
+  <a class="source-link" href="https://x.com/thsottiaux/status/2124322968499282388" target="_blank"><span class="src-icon">X</span><span>Thibault Sottiaux · @thsottiaux</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2124252844710887549" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/amasad/status/2124345037408686228" target="_blank"><span class="src-icon">X</span><span>Amjad Masad · @amasad</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2124239684536840682" target="_blank"><span class="src-icon">X</span><span>Thariq · @trq212</span></a>
+</div>
+
+<div class="disclaimer">黎曼猜想证明目前只完成了机器验证，人工审读还没有结论；1700 万行、25 万页等数字分别来自 Kevin Buzzard 对半岛电视台的说法和 Alpöge 本人的说明。《自然》原文这次没有直接读到，Granville 和 Maynard 的说法转述自搜索摘要。Pachocki 提案依据路透稿（经 The Sun 转载），彭博原文未读到；提案的具体阈值尚未公布。Dragos 研究发表于 11 月 19 日，略早于 72 小时窗口，OpenRouter 的回应在 11 月 22 日。Amjad Masad 关于 GTA 6 移植的说法未经核实。</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-23 · AI 星期一</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

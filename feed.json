@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-23",
+    "dow": 1,
+    "topic": "AI",
+    "format": "新闻快报",
+    "title": "黎曼猜想：一份机器验证、但还没人看懂的证明 · OpenAI 首席科学家：各家约定一条上限，到了就停",
+    "html": "episodes/2026-11-23.html",
+    "mp3": "episodes/2026-11-23.mp3",
+    "headlines": [
+      "黎曼猜想：一份机器验证、但还没人看懂的证明",
+      "OpenAI 首席科学家：各家约定一条上限，到了就停",
+      "你的提示词去了哪里：两百万条诱饵的实验",
+      "短消息"
+    ],
+    "theme": "黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看"
+  },
+  {
     "date": "2026-11-22",
     "dow": 7,
     "topic": "Podcasts",
@@ -433,20 +449,5 @@
       "两条小消息"
     ],
     "theme": "AI 找漏洞，也替你找活"
-  },
-  {
-    "date": "2026-10-22",
-    "dow": 4,
-    "topic": "Health",
-    "format": "新闻快报",
-    "title": "The Drive #412：癌症这十五年变了什么 · Huberman Lab：Jared Diamond，89 岁还在学",
-    "html": "episodes/2026-10-22.html",
-    "mp3": "episodes/2026-10-22.mp3",
-    "headlines": [
-      "The Drive #412：癌症这十五年变了什么",
-      "Huberman Lab：Jared Diamond，89 岁还在学",
-      "Huberman Essentials：Neuralink 和脑机接口"
-    ],
-    "theme": "癌症这十五年变了什么"
   }
 ]

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-24",
+    "dow": 2,
+    "topic": "Robotics",
+    "format": "新闻快报",
+    "title": "Embo：先看视频，再在模型里练 · Figure 的机械臂背包",
+    "html": "episodes/2026-11-24.html",
+    "mp3": "episodes/2026-11-24.mp3",
+    "headlines": [
+      "Embo：先看视频，再在模型里练",
+      "Figure 的机械臂背包",
+      "coprod：让零件能直接拼起来",
+      "两条短消息"
+    ],
+    "theme": "机器人的本事从哪里来"
+  },
+  {
     "date": "2026-11-23",
     "dow": 1,
     "topic": "AI",
@@ -432,22 +448,5 @@
     "mp3": "episodes/2026-10-24.mp3",
     "headlines": [],
     "theme": "Hyperscale"
-  },
-  {
-    "date": "2026-10-23",
-    "dow": 5,
-    "topic": "AI",
-    "format": "新闻快报",
-    "title": "PHP2Shell：AI 帮忙找到的漏洞，全世界一起打补丁 · 微软：黑客组织用 AI 代理，三小时拿到云权限",
-    "html": "episodes/2026-10-23.html",
-    "mp3": "episodes/2026-10-23.mp3",
-    "headlines": [
-      "PHP2Shell：AI 帮忙找到的漏洞，全世界一起打补丁",
-      "微软：黑客组织用 AI 代理，三小时拿到云权限",
-      "Claude Duet：一个会主动找活的代理",
-      "沃尔玛给 AI 代理开门，亚马逊在关门",
-      "两条小消息"
-    ],
-    "theme": "AI 找漏洞，也替你找活"
   }
 ]

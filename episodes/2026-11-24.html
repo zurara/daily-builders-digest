@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-24 · 机器人星期二">
+<meta property="og:description" content="Embo 1.1 亿美元种子轮：先看视频再在模型里练 · Figure 专利：机械臂背包录人类动作，延迟 &lt;20ms · coprod 600 万美元：机器人零件即插即用 · 现代全资持有波士顿动力 · 小鹏 AI Day">
+<title>Daily Builders Digest · 2026-11-24 · 机器人星期二</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 机器人星期二</div>
+  <div class="header-title">ROBOTICS<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-24</span>
+    <span>🧭 机器人星期二</span>
+    <span>◇ 机器人的本事从哪里来</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Embo · 1.1 亿美元种子轮 · a16z 领投</span><span class="ticker-item"><span class="dot">●</span>Dreamer 团队 · 视频预训练世界模型 + 想象中强化学习</span><span class="ticker-item"><span class="dot">●</span>Figure · 专利申请 US 2026/0364774</span><span class="ticker-item"><span class="dot">●</span>机械臂背包 · 每臂 7 轴 · 遥控延迟 &lt;20ms</span><span class="ticker-item"><span class="dot">●</span>coprod · 600 万美元 pre-seed · 洛桑</span><span class="ticker-item"><span class="dot">●</span>定制机器人 · 每轮 $5k–25k · 几个月</span><span class="ticker-item"><span class="dot">●</span>现代 · 全资持有波士顿动力</span><span class="ticker-item"><span class="dot">●</span>小鹏 AI Day · 11/25 · IRON 76 自由度</span><span class="ticker-item"><span class="dot">●</span>Embo · 1.1 亿美元种子轮 · a16z 领投</span><span class="ticker-item"><span class="dot">●</span>Dreamer 团队 · 视频预训练世界模型 + 想象中强化学习</span><span class="ticker-item"><span class="dot">●</span>Figure · 专利申请 US 2026/0364774</span><span class="ticker-item"><span class="dot">●</span>机械臂背包 · 每臂 7 轴 · 遥控延迟 &lt;20ms</span><span class="ticker-item"><span class="dot">●</span>coprod · 600 万美元 pre-seed · 洛桑</span><span class="ticker-item"><span class="dot">●</span>定制机器人 · 每轮 $5k–25k · 几个月</span><span class="ticker-item"><span class="dot">●</span>现代 · 全资持有波士顿动力</span><span class="ticker-item"><span class="dot">●</span>小鹏 AI Day · 11/25 · IRON 76 自由度</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· 机器人星期二 · 看视频、背背包、换零件</span>
+  </div>
+  <audio controls src="2026-11-24.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 机器人的本事从哪里来</div>
+    <div class="feature-show-name">Embo<br>Figure<br><span style="color:#dd1111">coprod</span></div>
+    <div class="feature-ep-title">Embo 让机器人先看视频再在模型里练；<br>Figure 用机械臂背包录人怎么干活；coprod 让零件直接拼起来</div>
+    <div class="feature-guest">Embo · a16z · Figure AI · coprod · Hyundai · Boston Dynamics · XPeng · 2026-11-21 / 11-24</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      这几天的三条新闻，讲的是机器人技能的三个来源：<strong>视频和模拟</strong>（Embo）、<strong>人在现场的示范</strong>（Figure）、<strong>能快速造出来的身体</strong>（coprod）。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">Embo</span><span class="tag">Dreamer</span><span class="tag">World Model</span><span class="tag">a16z</span><span class="tag">Figure AI</span><span class="tag">Teleoperation</span><span class="tag">coprod</span><span class="tag">Boston Dynamics</span><span class="tag">XPeng IRON</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item"><div class="stat-label">Embo · 11/23</div><div class="stat-value">$1.1 亿种子轮 · a16z 领投</div></div>
+      <div class="stat-item"><div class="stat-label">Figure · 11/19 公开</div><div class="stat-value">背包遥控 · 延迟 &lt;20ms</div></div>
+      <div class="stat-item"><div class="stat-label">coprod · 11/23</div><div class="stat-value">$600 万 pre-seed</div></div>
+      <div class="stat-item"><div class="stat-label">现代 · 11/22</div><div class="stat-value">全资持有波士顿动力</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="section-label">开场</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">星期二，机器人日，早上好。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天讲几条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">三条主要的，都跟一个问题有关：机器人的本事从哪里来。第一，新公司 Embo 拿到 1.1 亿美元种子轮，a16z 领投，想让机器人先看互联网视频，再在模型里自己练。第二，Figure 公开了一份专利申请，是一个背在人身上的机械臂背包，用来记录人怎么干活。第三，瑞士一家小公司 coprod 融了 600 万美元，要让机器人零件能直接拼在一起用。后面两条短消息，最后是建造者动态。</div></div>
+</div>
+<div class="section-label">一 · Embo：先看视频，再在模型里练</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">11 月 23 号，Embo 宣布完成 1.1 亿美元种子轮。a16z 领投，Khosla、DST Global、英伟达的投资部门 NVentures 也投了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">种子轮 1.1 亿，这个数很大。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">很大，主要是因为团队。联合创始人里有 Danijar Hafner 和 Wilson Yan，Hafner 是 Dreamer 系列的作者。Dreamer 是一种&quot;世界模型&quot;方法：先学会预测世界接下来会怎样，再在这个预测出来的世界里训练智能体。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">能举个例子吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">去年 9 月他们发了 Dreamer 4 的论文。在《我的世界》里，智能体只用离线录好的视频数据，不跟游戏实际交互，就学会了挖到钻石。这要连续做两万多个鼠标键盘操作。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那放到机器人上是什么意思？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Embo 的计划分三步。第一步，用海量互联网视频预训练一个模型，让它懂物体怎么动、东西怎么碰撞、一件事一般怎么做完。第二步，用他们自己人形机器人队伍收集的数据来微调。第三步，让机器人在模型&quot;想象&quot;出来的场景里反复练，用强化学习，包括练怎么从失误里恢复。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟现在主流做法有什么不一样？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在很多公司靠人来示范，比如遥操作，人戴着设备控制机器人做一遍，机器人模仿。问题是示范的数据贵，而且机器人学到的东西换个厨房、换个光线、换个杯子就容易不灵。a16z 的说法是，要的是&quot;泛化&quot;和&quot;能恢复&quot;：在这个厨房学会的，到另一个厨房也能用；东西滑了、抽屉卡了，能自己处理。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">想象里练出来的，真机器人上能用吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这就是它最大的问题。报道最后也说了，Embo 要证明的是：从视频里学的物理常识、在模型里练的动作，能变成真机器人身上可靠的技能。这一步现在还没有公开结果。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以现在投的是团队和方向。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。还有一个细节：他们说团队做过在 7 万张 GPU 上训练多模态模型的基础设施。这条路要拼算力，a16z 也说这是一条&quot;能随算力扩展&quot;的路。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://www.unite.ai/robot-ai-startup-embo-secures-110m-seed-investment-led-by-a16z/" target="_blank">Robot AI Startup Embo Secures $110M Seed Investment Led by A16z — Unite.AI</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.a16z.news/p/investing-in-embo" target="_blank">Investing in Embo — a16z</a></span>
+</div>
+<div class="section-label">二 · Figure 的机械臂背包</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第二条正好是另一条路。11 月 19 号，美国专利局公开了 Figure 的一份专利申请，11 月 23 号 Robotics &amp; Automation News 报道了，最早是专利分析网站 Patentlyze 发现的。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">申请的是什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">一个背包式的架子，上面装两条机械臂，从人的肩膀上方伸出来，跟着人的胳膊动。每条臂在肩、肘、腕都有传感器，最多七个旋转轴，末端用类似手套的东西连到人手上。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">就是把人的动作原样记下来。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，有两个用途。一个是录数据，拿去训练机器人。另一个是实时遥控：人动，机器人跟着动，申请里写的端到端延迟不到 20 毫秒。人还可以戴头显，看机器人摄像头里的画面。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">20 毫秒，人基本感觉不到延迟。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还有个小设计叫&quot;离合&quot;。人停下来、不想让机器人跟着动的时候，可以断开。申请里还说，可以用机器学习自动判断人什么时候在停顿，自动断开。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么要做成背包？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">现在录动作数据，很多要在专门的动捕场地。背包的思路是：工人在工厂、仓库里正常干活，顺便就把数据录下来了。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟 Embo 正好是两个方向。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。Embo 想少靠人示范，多靠视频和模拟；Figure 想把人示范的成本压下来，让示范能大量地、在真实现场收集。不过要说清楚：这是专利申请，不是产品发布。报道也说了，这份申请不能证明 Figure 已经做出来、或者打算卖。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/11/23/figure-ai-patents-wearable-system-for-teaching-humanoid-robots-through-human-movement/107567/" target="_blank">Figure AI patents wearable system for teaching humanoid robots through human movement — Robotics &amp; Automation News</a></span>
+</div>
+<div class="section-label">三 · coprod：让零件能直接拼起来</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三条从软件转到硬件。11 月 23 号，瑞士洛桑的 coprod 宣布 600 万美元 pre-seed 轮，Founderful 和 Prototype 领投，General Catalyst 等也投了。天使投资人里有 Hugging Face 联合创始人 Thomas Wolf。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他们做什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">机器人的零部件，比如执行器、传感器、控制系统，再加一套软件接口，让这些零件之间说同一种&quot;话&quot;，插上就能用，同时保持实时性。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">现在零件不能直接拼吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">很难。供应商为了适配所有客户，一个零件支持好几种协议，结果是零件之间很少能直接配合。做机器人的公司要读一大堆数据手册，一个接口一个接口地测、调、验证。行业里管这个阶段叫&quot;集成地狱&quot;。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">要多久？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">coprod 的说法是：做一台专门干某件事的定制机器人，一般要两三年、几十个工程师。用他们的零件，一个小团队，每轮设计 5000 到 25000 美元，几个月就能做完。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这是公司自己说的数字。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，要打个折听。他们现在的零件已经用在瑞士的几台机器人上，包括苏黎世联邦理工学生做的第一台瑞士人形机器人，几周前刚迈出第一步。正式卖要等明年初。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">放在今天三条里看，这条是什么意思？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">前两条讲的是机器人的&quot;脑子&quot;怎么学，这条讲的是&quot;身体&quot;怎么造。模型再好，如果每做一种新机器人都要花两三年调硬件，能试的形态就很少。零件标准化了，才有更多种机器人可以拿来训练。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://roboticsandautomationnews.com/2026/11/23/coprod-raises-6-million-to-make-robot-hardware-as-easy-to-build-as-software/107544/" target="_blank">Coprod raises $6 million to make &#x27;robot hardware as easy to build as software&#x27; — Robotics &amp; Automation News</a></span>
+  <span class="source-inline">📎 来源: <a href="https://tech.eu/2026/11/23/swiss-startup-coprod-raises-6m-to-make-building-robot-hardware-as-simple-as-developing-software" target="_blank">Swiss startup coprod raises $6M — Tech.eu</a></span>
+</div>
+<div class="section-label">四 · 两条短消息</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第一条，现代汽车集团完成了对波士顿动力剩下 9.65% 股份的收购，波士顿动力现在是现代的全资子公司，软银彻底退出。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个之前不是说过吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">之前是软银在 7 月行使了卖出期权，这次是交割完成，消息来自一份季度文件。价格各家说法不一：早先的报道说是 3.25 亿美元，也有报道说最后这一笔没公布价格。我们没找到现代或软银自己发的公告，所以细节先存疑。方向是确定的：现代要把 Atlas 用到自己的工厂里。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">第二条？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">明天，11 月 25 号，小鹏在广州开 AI Day，会展示它的人形机器人 IRON。之前公开的参数是身高约 170 厘米，全身 76 个自由度，每只手 21 个。明天具体发什么，下周二我们再讲。</div></div>
+  <span class="source-inline">📎 来源: <a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-23-2026-agents-find-a-zero-day-on-their-own-metr-moves-the-horizon-mi4" target="_blank">AI Daily Digest November 23, 2026 — DEV Community</a></span>
+  <span class="source-inline">📎 来源: <a href="https://www.humanoidsdaily.com/news/hyundai-to-take-full-ownership-of-boston-dynamics-in-325-million-softbank-buyout" target="_blank">Hyundai to Take Full Ownership of Boston Dynamics in $325 Million SoftBank Buyout — Humanoids Daily</a></span>
+  <span class="source-inline">📎 来源: <a href="https://menafn.com/1112010045/Xpeng-To-Showcase-Humanoid-Robot-At-AI-Day-2026" target="_blank">Xpeng To Showcase Humanoid Robot At AI Day 2026 — MENAFN</a></span>
+</div>
+<div class="section-label">五 · 关注建造者</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">建造者这几天有什么跟机器人有关的？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">直接讲机器人的没有，讲的都是软件里的智能体。点赞最多的是 Sam Altman，1570 个赞。他提议各家前沿实验室一起定一套标准：怎么评估模型、怎么红队测试，再定一条共同的上限，比如用困惑度这类指标衡量，在能看懂和监控 AI 行为之前，大家都不越过这条线。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">昨天 AI 日讲过这个。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对，所以只提一句。第二条是 Box 的 CEO Aaron Levie。他说智能体越来越多地做长时间的项目，还会一群智能体并行做一件事，那它们之间怎么共享知识、怎么记任务、怎么跟人配合，都要重新设计。难点是权限：给多了不安全，给少了干不了活。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟机器人其实也有关系。以后一个仓库里几十台机器人，也是这个问题。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">是。第三条是 Replit 的 CEO Amjad Masad，他说桌面 AI 应用大多是安全和隐私的噩梦，Replit 跟微软一起给 Replit Desktop 做了一套安全模型。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">播客呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">选 Every 的播客 AI &amp; I，11 月 11 号那期，是 Dan Shipper 在他们大会上的闭幕演讲，题目是&quot;自动化之后，人的好工作是什么样&quot;。他说上周用一个 Claude 订阅，分析客户调查、做了一个小游戏、写了一个自己的 CRM 再去联系客户，按以前算是五个人的活。他的观点是：同样的数据丢给模型，谁都能拿到一个普通答案，区别在于你带进去的视角。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">跟今天也对得上。Figure 的背包，记的就是人怎么干活。</div></div>
+</div>
+<div class="section-label">结尾</div>
+<div class="script-container">
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">今天几条放一起看呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">都是在回答机器人的本事从哪里来。Embo 说从视频和模拟里来；Figure 说从人身上直接录；coprod 说先把身体造得便宜、快，才有东西可练。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">下次看到&quot;种子轮一个亿&quot;这种新闻，可以先问：它要证明的那一步是什么，现在有没有结果。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">好，这期就到这里。我是大雨。</div></div>
+  <div class="script-block "><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">我是小苇。明天产品日见。</div></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:08。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">AI &amp; I by Every · 2026-11-11</p>
+  <p class="pc-title">A New Vision for Human Work After Automation</p>
+  <p class="pc-summary">Every CEO Dan Shipper 的大会闭幕演讲。他用一个 Claude 订阅在一周里分析客户调查、做了游戏、写了 CRM 去联系客户，按以前算是五个人的活。他的结论：同样的数据丢给模型，谁都能拿到普通答案，好的工作取决于你带进去的视角。</p>
+  <a href="https://www.youtube.com/watch?v=WstNofgQF5Q" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · CEO @ OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「我认为前沿模型开发者应该共同建立评估这类模型、对其安全论证做红队测试的共同规范……我还提议设定共同的上限，以困惑度等指标衡量，在我们理解和监控 AI 行为的能力达到某个具体里程碑之前，各家承诺不越过。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 1,570</span>
+      <a href="https://x.com/sama/status/2124551883130114403" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO @ Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「随着智能体承担越来越多的长期项目工作，一群智能体并行朝一个目标干活，智能体的运行框架和编排架构必须演进。最大的变化之一是它们如何共享知识、跟踪任务、与人协作——既要拿到需要的资源，又不能暴露太多或太少。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 364</span>
+      <a href="https://x.com/levie/status/2124658150771188157" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AM</div>
+      <div>
+        <div class="builder-name">Amjad Masad</div>
+        <div class="builder-handle">@amasad · CEO @ Replit</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「桌面 AI 应用大多是安全和隐私的噩梦。我们和 Windows 合作，为 Replit Desktop 做了一套世界级的安全模型。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 201</span>
+      <a href="https://x.com/amasad/status/2124604574606795002" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.unite.ai/robot-ai-startup-embo-secures-110m-seed-investment-led-by-a16z/" target="_blank"><span class="src-icon">LINK</span><span>Robot AI Startup Embo Secures $110M Seed Investment Led by A16z — Unite.AI</span></a>
+  <a class="source-link" href="https://www.a16z.news/p/investing-in-embo" target="_blank"><span class="src-icon">LINK</span><span>Investing in Embo — a16z</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/11/23/figure-ai-patents-wearable-system-for-teaching-humanoid-robots-through-human-movement/107567/" target="_blank"><span class="src-icon">LINK</span><span>Figure AI patents wearable system for teaching humanoid robots through human movement — Robotics &amp; Automation News</span></a>
+  <a class="source-link" href="https://roboticsandautomationnews.com/2026/11/23/coprod-raises-6-million-to-make-robot-hardware-as-easy-to-build-as-software/107544/" target="_blank"><span class="src-icon">LINK</span><span>Coprod raises $6 million to make &#x27;robot hardware as easy to build as software&#x27; — Robotics &amp; Automation News</span></a>
+  <a class="source-link" href="https://tech.eu/2026/11/23/swiss-startup-coprod-raises-6m-to-make-building-robot-hardware-as-simple-as-developing-software" target="_blank"><span class="src-icon">LINK</span><span>Swiss startup coprod raises $6M — Tech.eu</span></a>
+  <a class="source-link" href="https://dev.to/hiroki-ii-ai/ai-daily-digest-november-23-2026-agents-find-a-zero-day-on-their-own-metr-moves-the-horizon-mi4" target="_blank"><span class="src-icon">LINK</span><span>AI Daily Digest November 23, 2026 — DEV Community</span></a>
+  <a class="source-link" href="https://www.humanoidsdaily.com/news/hyundai-to-take-full-ownership-of-boston-dynamics-in-325-million-softbank-buyout" target="_blank"><span class="src-icon">LINK</span><span>Hyundai to Take Full Ownership of Boston Dynamics in $325 Million SoftBank Buyout — Humanoids Daily</span></a>
+  <a class="source-link" href="https://menafn.com/1112010045/Xpeng-To-Showcase-Humanoid-Robot-At-AI-Day-2026" target="_blank"><span class="src-icon">LINK</span><span>Xpeng To Showcase Humanoid Robot At AI Day 2026 — MENAFN</span></a>
+  <a class="source-link" href="https://x.com/sama/status/2124551883130114403" target="_blank"><span class="src-icon">X</span><span>Sam Altman · @sama</span></a>
+  <a class="source-link" href="https://x.com/levie/status/2124658150771188157" target="_blank"><span class="src-icon">X</span><span>Aaron Levie · @levie</span></a>
+  <a class="source-link" href="https://x.com/amasad/status/2124604574606795002" target="_blank"><span class="src-icon">X</span><span>Amjad Masad · @amasad</span></a>
+  <a class="source-link" href="https://www.youtube.com/watch?v=WstNofgQF5Q" target="_blank"><span class="src-icon">LINK</span><span>A New Vision for Human Work After Automation — AI &amp; I by Every</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-24 · 机器人星期二</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-25",
+    "dow": 3,
+    "topic": "Product",
+    "format": "新闻快报",
+    "title": "01 · Claude Ship：代码谁来批准 · 02 · Claude 小工具装成桌面 app",
+    "html": "episodes/2026-11-25.html",
+    "mp3": "episodes/2026-11-25.mp3",
+    "headlines": [
+      "01 · Claude Ship：代码谁来批准",
+      "02 · Claude 小工具装成桌面 app",
+      "03 · Gemini：一个开关拆成两个",
+      "04 · 短消息：Claude 插件，入口合了，开关没合"
+    ],
+    "theme": "一个开关，拆成几个"
+  },
+  {
     "date": "2026-11-24",
     "dow": 2,
     "topic": "Robotics",
@@ -437,16 +453,5 @@
     "mp3": "episodes/2026-10-25.mp3",
     "headlines": [],
     "theme": "接下来十八个月，一半工程时间花在安全上"
-  },
-  {
-    "date": "2026-10-24",
-    "dow": 6,
-    "topic": "Books",
-    "format": "新闻快报",
-    "title": "2026-10-24 今日快报",
-    "html": "episodes/2026-10-24.html",
-    "mp3": "episodes/2026-10-24.mp3",
-    "headlines": [],
-    "theme": "Hyperscale"
   }
 ]

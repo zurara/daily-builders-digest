@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-26 · Health 星期四">
+<meta property="og:description" content="Eckhart Tolle 讲怎么让脑子安静 · Attia 重播冷疗的证据 · Rhonda Patrick 讲褪黑素和心衰、尼古丁和阿尔茨海默">
+<title>Health 星期四 · 安静、冷水和尼古丁 · 2026-11-26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
+  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
+  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
+  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu  { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .script-text strong { font-weight: 600; }
+  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
+  .source-inline a { color: var(--red); text-decoration: none; }
+  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
+  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
+  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
+  .spotlight p:last-child { margin-bottom: 0; }
+  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
+  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
+  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
+  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
+  .diary-col.hl { border-color: var(--red); color: var(--bg); }
+  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
+  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
+  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
+  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · Health 星期四</div>
+  <div class="header-title">HEALTH<br><span>DIGEST</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-26</span>
+    <span>🧭 Health 星期四</span>
+    <span>◇ 安静、冷水和尼古丁</span>
+    <span>大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>Eckhart Tolle × Huberman · 用感官把注意力拉回当下</span>
+    <span class="ticker-item"><span class="dot">●</span>Tolle 工具：「承认安静」——注意念头之间的空隙</span>
+    <span class="ticker-item"><span class="dot">●</span>冥想不设目标：用的那几分钟里，别去打分</span>
+    <span class="ticker-item"><span class="dot">●</span>Attia：靠激活棕色脂肪减肥「not a needle mover」</span>
+    <span class="ticker-item"><span class="dot">●</span>冷疗可能削弱力量训练带来的肌肉增长</span>
+    <span class="ticker-item"><span class="dot">●</span>冷水浸泡主观上比液氮冷冻舱更冷</span>
+    <span class="ticker-item"><span class="dot">●</span>长期褪黑素 vs 心衰：4.6% 对 2.7%（观察性研究）</span>
+    <span class="ticker-item"><span class="dot">●</span>非处方褪黑素不进病历，对照组可能有人在吃</span>
+    <span class="ticker-item"><span class="dot">●</span>尼古丁 + APOE4：认知好处要和心血管代价一起看</span>
+    <span class="ticker-item"><span class="dot">●</span>Huberman：戒烟最难的是第一周</span>
+    <span class="ticker-item"><span class="dot">●</span>Eckhart Tolle × Huberman · 用感官把注意力拉回当下</span>
+    <span class="ticker-item"><span class="dot">●</span>Tolle 工具：「承认安静」——注意念头之间的空隙</span>
+    <span class="ticker-item"><span class="dot">●</span>冥想不设目标：用的那几分钟里，别去打分</span>
+    <span class="ticker-item"><span class="dot">●</span>Attia：靠激活棕色脂肪减肥「not a needle mover」</span>
+    <span class="ticker-item"><span class="dot">●</span>冷疗可能削弱力量训练带来的肌肉增长</span>
+    <span class="ticker-item"><span class="dot">●</span>冷水浸泡主观上比液氮冷冻舱更冷</span>
+    <span class="ticker-item"><span class="dot">●</span>长期褪黑素 vs 心衰：4.6% 对 2.7%（观察性研究）</span>
+    <span class="ticker-item"><span class="dot">●</span>非处方褪黑素不进病历，对照组可能有人在吃</span>
+    <span class="ticker-item"><span class="dot">●</span>尼古丁 + APOE4：认知好处要和心血管代价一起看</span>
+    <span class="ticker-item"><span class="dot">●</span>Huberman：戒烟最难的是第一周</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">▶</span>
+    <strong>本期音频</strong>
+    <span>· Health 星期四 · 安静、冷水和尼古丁</span>
+  </div>
+  <audio controls src="2026-11-26.mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<section class="feature-hero">
+  <div class="feature-left">
+    <div class="feature-eyebrow">今日主线 · 安静、冷疗与两种常见物质</div>
+    <div class="feature-show-name">QUIET<br>&amp;<br><span style="color:#dd1111">COLD</span></div>
+    <div class="feature-ep-title">先看证据，<br>再决定要不要试</div>
+    <div class="feature-guest">Huberman Lab · The Peter Attia Drive · FoundMyFitness · 2026-11-19 / 11-23</div>
+  </div>
+  <div class="feature-right">
+    <div class="feature-lede">
+      Eckhart Tolle 在 Huberman Lab 当场演示让念头安静下来的工具。Peter Attia 重播 AMA #47：靠冷疗激活棕色脂肪减肥「不是能起明显作用的办法」，冷疗还可能削弱力量训练的肌肉增长。Rhonda Patrick 问答 #87 讲长期褪黑素和心衰的观察性研究（4.6% 对 2.7%），以及尼古丁能不能帮 APOE4 携带者预防痴呆；Huberman 的尼古丁精华版补上了心血管代价和戒断方法。
+    </div>
+    <div class="feature-tags">
+      <span class="tag">正念</span><span class="tag">心流</span><span class="tag">冷水浸泡</span><span class="tag">冷冻舱</span><span class="tag">棕色脂肪</span><span class="tag">肌肉增长</span><span class="tag">褪黑素</span><span class="tag">心衰</span><span class="tag">尼古丁</span><span class="tag">APOE4</span><span class="tag">戒烟</span>
+    </div>
+    <div class="feature-stats">
+      <div class="stat-item">
+        <div class="stat-label">Huberman Lab · 11/23</div>
+        <div class="stat-value">Eckhart Tolle · 感官觉察 · 承认安静 · 三角形类比 · 心流与高手 · 冥想不设目标 · 存在与追求（文字稿为会员内容，公开的是简介和目录）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">The Peter Attia Drive · AMA #47 重播 · 11/23</div>
+        <div class="stat-value">冷水浸泡 vs 全身冷冻舱 · 肌肉酸痛 · 情绪与抑郁 · 棕色脂肪 · 冷疗与肌肉增长 · 有没有抗衰老作用（完整笔记为会员内容）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">FoundMyFitness Q&amp;A #87 · 11/20 + Huberman Essentials · 11/19</div>
+        <div class="stat-value">褪黑素与心衰 · 尼古丁与 APOE4 · 尼古丁对多巴胺、心率、血压的作用 · 电子烟为什么更易上瘾 · 催眠、安非他酮、尼古丁替代（Q&amp;A 为会员节目）</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<div class="script-container">
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">健康星期四，早上好。今天美国是感恩节，这周三个节目都更新得比较轻。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">轻是什么意思？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Huberman 这周请的是 Eckhart Tolle，《当下的力量》的作者，不讲实验，讲怎么让脑子安静。Peter Attia 这周没有新嘉宾，重播了一期讲冷疗的 AMA。Rhonda Patrick 发的是一期会员问答，里面有两个问题我觉得值得单独拿出来：长期吃褪黑素，会不会增加心衰风险；尼古丁能不能预防阿尔茨海默。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">尼古丁？这听起来就不对。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">所以要说。而且巧的是，Huberman 上周四也正好发了一期尼古丁的精华版。我们放在第三节一起讲。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">女性健康呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周没有专门讲女性的内容。第四节我只说一点，很短。</div></div>
+  <div class="section-label">一 · Huberman Lab：Eckhart Tolle，怎么让脑子停下来</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Huberman Lab，11 月 23 号，两个小时出头。嘉宾 Eckhart Tolle，写过《当下的力量》和《新世界》。文字稿是会员内容，我们用的是官网简介和章节目录。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个神经科学家请一个灵性导师，他们聊什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">简介说得很直接：Tolle 讲一些实际的工具，用来<strong>让不停的念头安静下来</strong>，更多地待在当下，在日常里找到平静、创造力和跟人的连接。节目里他不只是讲，还当场带 Huberman 做。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">具体是什么工具？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">目录里标了三个「Tool」。第一个在节目一开始：<strong>用感官把注意力拉回当下</strong>——你现在听到什么、看到什么、身体有什么感觉，同时意识到「是我在觉察」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟正念冥想差不多。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">很接近。第二个叫<strong>「承认安静」</strong>。他的意思是，声音之间有安静，念头之间也有空隙，你去注意那个空隙。这一节放在讲高手和心流的地方：他们聊到大提琴家马友友、制作人 Rick Rubin、舞蹈家巴瑞什尼科夫，讨论顶尖表演者在最好的状态里，是不是脑子里反而没什么话。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个我有体会。真正做顺的时候，脑子里不会一直解说自己在干什么。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三个工具叫<strong>「三角形类比」</strong>，放在讲「极端和平衡」那一节。目录没写细节，我不猜。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那节目对我们这种要上班、要交付的人，有什么用？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">后半段专门讲这个：<strong>怎么把「存在」和「追求目标」合在一起</strong>。还有几节标题是：冥想不设目标；挑战是必要的；社交媒体和期待；不合理的期待、导师和完美主义。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「冥想不设目标」，可是大部分人冥想就是为了减压、为了睡好，本身就是目标。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这正是他想拆的地方。如果你坐下来的时候一直在检查「我放松了没有」，那还是在想。我自己的理解是：工具可以有目的，但用的那几分钟里，别去打分。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这期有科学证据吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这期不是讲研究的。要看证据，FoundMyFitness 这周正好有一期短节目，Aliquot 155，请的是威斯康星大学的 Richard Davidson，讲<strong>心理上的幸福感可以通过练习来加强</strong>。那是会员节目，我们只看到简介。可以把两期放在一起听：一个讲怎么做，一个讲研究怎么说。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.hubermanlab.com/episode/access-the-power-of-now-to-experience-life-more-fully-eckhart-tolle" target="_blank" style="color:var(--red);text-decoration:none;">📎 Access the Power of Now to Experience Life More Fully | Eckhart Tolle — Huberman Lab, 2026-11-23</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.foundmyfitness.com/episodes/aliquot-155-well-being" target="_blank" style="color:var(--red);text-decoration:none;">📎 Aliquot #155: How to Train Your Mind for Well-Being — FoundMyFitness, 2026-11-24</a></span></div>
+  <div class="section-label">二 · The Drive：冷疗到底有什么用（AMA #47 重播）</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The Peter Attia Drive，11 月 23 号，重播的是 AMA 第 47 期，原本是会员节目，这次公开。主题就一个：冷疗。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">冰浴、冷水澡那些？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。他先分两类。一类是<strong>冷水浸泡</strong>，研究里水温多在华氏 40 度到 60 多度，也就是大约 4 到 20 摄氏度。越冷时间越短：几度的水，泡两三分钟；十几度的水，有的研究泡到 30 分钟。另一类是<strong>全身冷冻舱</strong>，用液氮，温度零下一百多度，一般站三分钟左右。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">零下一百多度，人受得了？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为是气体，不是液体。气体带走热量的速度比水慢得多。所以 Attia 说，主观上冷水浸泡反而比冷冻舱更冷。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那好处呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他一项项看：缓解运动后的肌肉酸痛，对情绪和抑郁的影响，冷水澡和冷水浸泡比，激活棕色脂肪，在冷的环境里运动，还有冷疗会不会延缓衰老。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">哪个结论最直接？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目页面挑出来的那句话是关于棕色脂肪的：<strong>如果你是想靠激活棕色脂肪来解决成年人超重或肥胖，这不是一个能起明显作用的办法。</strong> 原话是「not a needle mover」。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">网上很多人冰浴就是为了这个。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还有一个更实际的提醒：节目里有一节专门讲冷疗的<strong>坏处</strong>——它可能<strong>削弱力量训练带来的肌肉增长</strong>。然后他们讨论这是不是因为冷压低了炎症反应。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以练完力量马上去泡冰水，可能白练了一部分？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是节目讨论的风险方向。具体多大、隔多久才不影响，在会员笔记里，我们没看到。另外他也说了研究本身的难处：这个领域很依赖荟萃分析，但各个研究的水温、时长、泡到哪儿都不一样，<strong>一堆质量参差的研究放在一起，也不会变成一个好结论。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他最后推荐冷疗吗？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目最后一节是「总结数据和 Peter 的看法」，还有一节讲有没有公认的有效方案。标题已经透露了：他问的是「有没有共识」，答案多半是没有。我不替他下结论。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://peterattiamd.com/coldtherapy/" target="_blank" style="color:var(--red);text-decoration:none;">📎 Cold therapy: pros, cons, and its impact on longevity (AMA #47 rebroadcast) — The Peter Attia Drive, 2026-11-23</a></span></div>
+  <div class="section-label">三 · FoundMyFitness Q&amp;A #87：褪黑素和心衰，尼古丁和阿尔茨海默</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">FoundMyFitness 问答第 87 期，11 月 20 号，会员节目，一个小时。问题很多：多肽、发酵食物和胃癌、虫草和藏红花、疲劳、蓝莓和尿酸。我挑两个。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先说褪黑素。很多人睡不着就吃一片。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Rhonda 引的研究，是 2025 年 11 月美国心脏协会年会上的一个摘要。研究用的是一个叫 TriNetX 的电子病历数据库，找的是<strong>有失眠、病历里记录吃褪黑素至少一年</strong>的成年人，跟没吃的人比。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">五年里，吃褪黑素的人有 <strong>4.6%</strong> 被诊断心衰，没吃的人是 <strong>2.7%</strong>，风险比大约 1.9。因心衰住院的比例，19% 对 6.6%。全因死亡，7.8% 对 4.3%。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">差了快一倍，这很吓人。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">但要看它是什么研究。第一，这是<strong>观察性研究</strong>，作者自己说了不能证明因果。第二，在美国褪黑素是非处方的，很多人在药店自己买，病历里不会记录，所以「没吃」那一组里，可能有不少人其实在吃。第三，病历里记着长期吃褪黑素的人，可能本来失眠就更严重，或者身体更差。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 Rhonda 怎么看？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她的具体判断在会员内容里。目录里能看到的是，她接着讲了一个问题：<strong>为什么不同的人对褪黑素反应不一样</strong>。我们能说的是：这个信号值得注意，但还不够让人恐慌。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">好，尼古丁。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">提问的人问：<strong>携带 APOE4 基因的人，补尼古丁有没有好处？</strong> APOE4 是阿尔茨海默最主要的遗传风险因素。这个问题她讲了十来分钟。后面还有一个问题是 α-GPC 和尼古丁怎么影响认知。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么会有人想到用尼古丁？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目页面的公开部分是这样说的：尼古丁作用在大脑里跟<strong>注意力、学习和记忆</strong>有关的系统上，所以有人好奇它能不能帮助认知下降的人，甚至预防痴呆。但页面同一段也说了：<strong>任何可能的认知好处，都要和长期用尼古丁的健康代价放在一起看。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">代价，Huberman 那期应该讲了。</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。Huberman Lab 11 月 19 号的精华版，35 分钟。他讲尼古丁会提高多巴胺、乙酰胆碱和去甲肾上腺素，所以人会更有动力、更专注、更清醒，也会压食欲。同时它会<strong>升高心率和血压，收缩血管</strong>。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他说尼古丁本身和抽烟要分开看？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他特别分开了：尼古丁是一回事，吸烟、电子烟、嚼烟、鼻烟这些<strong>摄入方式</strong>是另一回事，后者带来致癌物和对血管内皮的损伤。他还说电子烟特别容易上瘾，因为进入大脑的速度快，多巴胺来得快。另外，<strong>年轻人的大脑还在发育，风险更大。</strong></div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">想戒的人呢？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他给了几个有研究支持的办法：临床催眠，单次的催眠干预有研究；处方药安非他酮；尼古丁替代，贴片、口香糖、鼻喷剂。还有，<strong>最难的是第一周</strong>，熬过第一周复发率会降下来。他也提醒，喝酒容易让人复吸。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两期放在一起，结论是？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">尼古丁对认知的作用是真实存在的研究方向，但现在拿它来「预防痴呆」，证据还远远不够，而它对心血管的影响是确定的。如果你在考虑这件事，先找医生谈，不要自己从网上买尼古丁贴片开始试。</div></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.foundmyfitness.com/episodes/qa-87-dr-rhonda-patrick" target="_blank" style="color:var(--red);text-decoration:none;">📎 Q&amp;A #87: Can Nicotine Prevent Alzheimer&#x27;s?—Plus Melatonin and Heart Failure — FoundMyFitness, 2026-11-20</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.acc.org/Latest-in-Cardiology/Articles/2025/11/03/16/19/mon-melatonin-aha-2025" target="_blank" style="color:var(--red);text-decoration:none;">📎 Research Suggests Long-Term Melatonin Use For Insomnia Increases HF Risk — American College of Cardiology, 2025-11-03</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.healthday.com/healthpro-news/cardiovascular-diseases/aha-long-term-melatonin-use-for-insomnia-tied-to-higher-risk-for-heart-failure" target="_blank" style="color:var(--red);text-decoration:none;">📎 AHA: Long-Term Melatonin Use for Insomnia Tied to Higher Risk for Heart Failure — HealthDay</a></span></div>
+  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.hubermanlab.com/episode/essentials-nicotines-effects-on-the-brain-and-body-and-how-to-quit-smoking-or-vaping" target="_blank" style="color:var(--red);text-decoration:none;">📎 Essentials: Nicotine&#x27;s Effects on the Brain &amp; Body &amp; How to Quit Smoking or Vaping — Huberman Lab, 2026-11-19</a></span></div>
+  <div class="section-label">四 · 女性健康：一条备注</div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周三期节目都没有专门讲女性生理。只有一个小地方：Rhonda 问答的最后一个问题是<strong>「哺乳期能不能吃肌酸」</strong>。她的回答在会员内容里，我们没听到，所以不转述。</div></div>
+  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那提这个干什么？</div></div>
+  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为哺乳期吃补剂，是很多人会问、但很少有人认真回答的问题。如果你在哺乳期，正考虑肌酸或者任何补剂，先问产科医生或者哺乳顾问。下周如果有女性健康的内容，我们多讲。</div></div>
+</div>
+
+<div class="diary-box">
+  <div class="diary-label">◈ 六 · 今日健康行动</div>
+  <div class="diary-title">长期吃褪黑素的人，下次看医生提一句</div>
+  <div class="diary-sub">2026-11-26 · Health 星期四</div>
+  <div class="diary-cols">
+    <span class="diary-col hl">长期吃褪黑素：下次看医生提一句</span>
+    <span class="diary-col">睡前一分钟：只听声音和安静</span>
+    <span class="diary-col">刚练完力量，别马上泡冰水</span>
+  </div>
+  <div class="diary-note">
+    <strong>大雨：</strong>今天的行动：<strong>如果你每天晚上吃褪黑素，而且已经吃了一年以上，下次看医生的时候提一句。</strong> 不用今天就停，也不用害怕，只是让医生知道。<br><br><strong>小苇：</strong>不吃褪黑素的人呢？<br><br><strong>大雨：</strong>试一下 Tolle 的「承认安静」。今晚睡前关掉手机，躺下以后，<strong>花一分钟只听周围的声音，再注意声音和声音之间的安静。</strong> 一分钟就够。<br><br><strong>小苇：</strong>冷水澡呢？<br><br><strong>大雨：</strong>想试可以，但如果你今天刚练了力量，那就别马上去泡。<br><br><strong>小苇：</strong>好，今天就到这里。<br><br><strong>大雨：</strong>健康星期四，感恩节快乐，我们下周见。<br><br>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-label">◈ 今日五条要点</div>
+  <div class="insight-title">QUIET · COLD · CAUTION</div>
+  <div class="insight-item"><span class="insight-num">01</span><span>Eckhart Tolle：用感官把注意力拉回当下，注意声音和念头之间的安静；冥想的那几分钟里，不给自己打分。</span></div>
+  <div class="insight-item"><span class="insight-num">02</span><span>Attia：靠冷疗激活棕色脂肪来解决成年人超重，「不是能起明显作用的办法」；冷疗可能削弱力量训练带来的肌肉增长。</span></div>
+  <div class="insight-item"><span class="insight-num">03</span><span>长期褪黑素与心衰：五年 4.6% 对 2.7%，但这是观察性研究，非处方使用不进病历，不能证明因果。</span></div>
+  <div class="insight-item"><span class="insight-num">04</span><span>尼古丁作用于注意力和记忆相关的系统，但会升高心率和血压、收缩血管；用它预防痴呆，证据远远不够。</span></div>
+  <div class="insight-item"><span class="insight-num">05</span><span>Huberman：戒烟或戒电子烟最难的是第一周；催眠、安非他酮、尼古丁替代都有研究支持；喝酒容易让人复吸。</span></div>
+</div>
+
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09，本期信号来自 16 位建造者的推文，主要在聊 Claude Code 的 MCP skills、ChatGPT Business 和黄仁勋；播客源只有一期 AI 播客（Unsupervised Learning Ep 98），与健康无关，播客卡改用本周 Huberman Lab 最新一期。跟健康直接相关的推文没有，挑了三条跟学习、节奏和改变有关的。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Huberman Lab · 2026-11-23</p>
+  <p class="pc-title">Access the Power of Now to Experience Life More Fully | Eckhart Tolle</p>
+  <p class="pc-summary">Eckhart Tolle 当场带 Huberman 练习几种让不停的念头安静下来的方法：用感官把注意力拉回当下、注意声音和念头之间的安静。后半段讲怎么把「存在」和「追求目标」合在一起，以及冥想为什么不该设目标。</p>
+  <a href="https://www.hubermanlab.com/episode/access-the-power-of-now-to-experience-life-more-fully-eckhart-tolle" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">T</div>
+      <div>
+        <div class="builder-name">Thariq</div>
+        <div class="builder-handle">@trq212 · 前 Claude Code @Anthropic</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「你得先烂一阵子。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 2013</span>
+      <a href="https://x.com/trq212/status/2125156290494353663" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">PS</div>
+      <div>
+        <div class="builder-name">Peter Steinberger</div>
+        <div class="builder-handle">@steipete · 开源项目作者</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「这一年真是不容易！假期要好好回顾一下，写篇博客。我们在个人专业用户和企业里找到了位置。但做可靠、免费的开源软件真的非常难，每天早上醒来都面对一堆新问题……」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 590</span>
+      <a href="https://x.com/steipete/status/2125422797304549672" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">GT</div>
+      <div>
+        <div class="builder-name">Garry Tan</div>
+        <div class="builder-handle">@garrytan · President &amp; CEO @ycombinator</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「第二，社会吸收这项技术的能力碰到了上限。知识工作和业务流程能变多快，有天然的刹车：人不喜欢自己的奶酪被挪走。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 74</span>
+      <a href="https://x.com/garrytan/status/2125247972158193792" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  ⚠️ 本期内容基于各播客公开的节目页面、章节目录和笔记整理，属于科普性质的转述与讨论，<strong>不构成任何医疗建议、诊断或治疗方案</strong>。Huberman Lab 文字稿为会员内容，本文只使用官网简介和章节目录；The Drive AMA #47 完整笔记为会员内容，本文只使用公开简介和笔记预览；FoundMyFitness Q&amp;A #87 与 Aliquot #155 为会员节目，本文只使用公开简介、目录和页面公开段落。褪黑素研究的数字来自 2025 年美国心脏协会年会摘要的公开报道（ACC、HealthDay），不是 Rhonda Patrick 的原话。尼古丁有成瘾性，并影响心血管，使用前请咨询医生。哺乳期使用任何补剂前，请咨询医生。
+</div>
+
+<div class="sources">
+  <div class="sources-label">◈ 本期来源</div>
+  <a class="source-link" href="https://www.hubermanlab.com/episode/access-the-power-of-now-to-experience-life-more-fully-eckhart-tolle" target="_blank"><span class="src-icon">Huberman</span><span>Access the Power of Now to Experience Life More Fully | Eckhart Tolle — Huberman Lab, 2026-11-23</span></a>
+  <a class="source-link" href="https://www.foundmyfitness.com/episodes/aliquot-155-well-being" target="_blank"><span class="src-icon">FMF</span><span>Aliquot #155: How to Train Your Mind for Well-Being — FoundMyFitness, 2026-11-24</span></a>
+  <a class="source-link" href="https://peterattiamd.com/coldtherapy/" target="_blank"><span class="src-icon">The Drive</span><span>Cold therapy: pros, cons, and its impact on longevity (AMA #47 rebroadcast) — The Peter Attia Drive, 2026-11-23</span></a>
+  <a class="source-link" href="https://www.foundmyfitness.com/episodes/qa-87-dr-rhonda-patrick" target="_blank"><span class="src-icon">FMF</span><span>Q&amp;A #87: Can Nicotine Prevent Alzheimer&#x27;s?—Plus Melatonin and Heart Failure — FoundMyFitness, 2026-11-20</span></a>
+  <a class="source-link" href="https://www.acc.org/Latest-in-Cardiology/Articles/2025/11/03/16/19/mon-melatonin-aha-2025" target="_blank"><span class="src-icon">ACC</span><span>Research Suggests Long-Term Melatonin Use For Insomnia Increases HF Risk — American College of Cardiology, 2025-11-03</span></a>
+  <a class="source-link" href="https://www.healthday.com/healthpro-news/cardiovascular-diseases/aha-long-term-melatonin-use-for-insomnia-tied-to-higher-risk-for-heart-failure" target="_blank"><span class="src-icon">HealthDay</span><span>AHA: Long-Term Melatonin Use for Insomnia Tied to Higher Risk for Heart Failure — HealthDay</span></a>
+  <a class="source-link" href="https://www.hubermanlab.com/episode/essentials-nicotines-effects-on-the-brain-and-body-and-how-to-quit-smoking-or-vaping" target="_blank"><span class="src-icon">Huberman</span><span>Essentials: Nicotine&#x27;s Effects on the Brain &amp; Body &amp; How to Quit Smoking or Vaping — Huberman Lab, 2026-11-19</span></a>
+  <a class="source-link" href="https://x.com/trq212/status/2125156290494353663" target="_blank"><span class="src-icon">X</span><span>Thariq on X</span></a>
+  <a class="source-link" href="https://x.com/steipete/status/2125422797304549672" target="_blank"><span class="src-icon">X</span><span>Peter Steinberger on X</span></a>
+  <a class="source-link" href="https://x.com/garrytan/status/2125247972158193792" target="_blank"><span class="src-icon">X</span><span>Garry Tan on X</span></a>
+</div>
+
+<div class="footer">
+  <span>Daily Builders Digest · 2026-11-26 · Health 星期四</span>
+  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
+</div>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>

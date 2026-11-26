@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-26",
+    "dow": 4,
+    "topic": "Health",
+    "format": "新闻快报",
+    "title": "Huberman Lab：Eckhart Tolle，怎么让脑子停下来 · The Drive：冷疗到底有什么用（AMA #47 重播）",
+    "html": "episodes/2026-11-26.html",
+    "mp3": "episodes/2026-11-26.mp3",
+    "headlines": [
+      "Huberman Lab：Eckhart Tolle，怎么让脑子停下来",
+      "The Drive：冷疗到底有什么用（AMA #47 重播）",
+      "FoundMyFitness Q&amp;A #87：褪黑素和心衰，尼古丁和阿尔茨海默",
+      "女性健康：一条备注"
+    ],
+    "theme": "安静、冷水和尼古丁"
+  },
+  {
     "date": "2026-11-25",
     "dow": 3,
     "topic": "Product",
@@ -442,16 +458,5 @@
       "这周三：AI 的钱赚回来了吗"
     ],
     "theme": "把代理关在笼子里"
-  },
-  {
-    "date": "2026-10-25",
-    "dow": 7,
-    "topic": "Podcasts",
-    "format": "新闻快报",
-    "title": "2026-10-25 今日快报",
-    "html": "episodes/2026-10-25.html",
-    "mp3": "episodes/2026-10-25.mp3",
-    "headlines": [],
-    "theme": "接下来十八个月，一半工程时间花在安全上"
   }
 ]

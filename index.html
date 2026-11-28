@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0c0c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Daily Builders Digest · 2026-11-26 · Health 星期四">
-<meta property="og:description" content="Eckhart Tolle 讲怎么让脑子安静 · Attia 重播冷疗的证据 · Rhonda Patrick 讲褪黑素和心衰、尼古丁和阿尔茨海默">
-<title>Health 星期四 · 安静、冷水和尼古丁 · 2026-11-26</title>
+<meta property="og:title" content="Daily Builders Digest · 2026-11-28 · 周六书籍介绍">
+<meta property="og:description" content="The Telephone · James Gleick · 一部新的电话史">
+<title>The Telephone · 周六书籍介绍 · 2026-11-28</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -29,7 +29,7 @@
   @media (min-width: 600px) { body { padding: 0 24px 80px; } }
   .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
   .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
-  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 8vw, 88px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
   .header-title span { color: var(--red); }
   .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
@@ -43,64 +43,64 @@
   .audio-bar-top strong { color: var(--bg); }
   .audio-bar-top span { color: #666; }
   audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
-  .feature-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
-  @media (max-width: 600px) { .feature-hero { grid-template-columns: 1fr; } }
-  .feature-left { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-  .feature-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
-  .feature-show-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 50px); line-height: 1; color: var(--bg); margin-bottom: 6px; }
-  .feature-ep-title { font-size: 14px; line-height: 1.5; color: #aaa; margin-bottom: 20px; }
-  .feature-guest { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
-  .feature-right { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
-  .feature-lede { font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--ink); }
-  .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
+  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 4.6vw, 58px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
+  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
+  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
-  .feature-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
   .stat-item { display: flex; flex-direction: column; gap: 4px; }
   .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
   .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
   .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
   .script-container { margin-top: 32px; }
-  .script-block { margin-bottom: 28px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
   .script-block.lead-block { border-left-color: var(--red); }
   .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-  .speaker-dayu  { color: var(--red); }
+  .speaker-dayu { color: var(--red); }
   .speaker-xiaowei { color: #555; }
   .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
-  .script-text strong { font-weight: 600; }
-  .source-inline { display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 10px; color: var(--mid); }
-  .source-inline a { color: var(--red); text-decoration: none; }
-  .insight-box { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
-  .insight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-  .insight-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
-  .insight-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
-  .insight-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
-  .spotlight { border: 2px solid var(--red); padding: 32px 36px; margin: 44px 0; background: var(--card); }
-  .spotlight-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
-  .spotlight-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.05; margin-bottom: 18px; }
-  .spotlight p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; }
-  .spotlight p:last-child { margin-bottom: 0; }
-  .diary-box { background: var(--ink); color: var(--bg); padding: 28px 32px; margin: 40px 0; }
-  .diary-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
-  .diary-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; margin-bottom: 8px; color: var(--bg); }
-  .diary-sub { font-size: 13px; color: #999; margin-bottom: 20px; }
-  .diary-cols { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-  .diary-col { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 12px; border: 1px solid #333; color: #ddd; }
-  .diary-col.hl { border-color: var(--red); color: var(--bg); }
-  .diary-note { font-size: 13px; line-height: 1.65; color: #aaa; }
+  .inline-src { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; margin-top: 10px; }
+  .inline-src a { color: var(--red); text-decoration: none; }
+  .pull-quote { font-family: 'Inter', sans-serif; font-size: clamp(19px, 2.6vw, 26px); font-weight: 300; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--red); padding: 4px 0 4px 22px; margin: 36px 0; }
+  .pull-quote cite { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: 12px; }
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 36px 0; }
+  .pillar { background: var(--bg); padding: 22px 24px; }
+  .pillar-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--red); line-height: 1; margin-bottom: 8px; }
+  .pillar-name { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
+  .pillar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); margin-top: 10px; display: block; }
+  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
+  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
+  .angle-card { background: var(--bg); padding: 20px 24px; }
+  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
+  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
   .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
   .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-  .source-link { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); }
+  .sources-note { font-size: 12px; line-height: 1.7; color: var(--mid); margin-bottom: 16px; }
+  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
   .source-link:hover { color: var(--red); }
   .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
-  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 48px 0 0; }
   .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
   .builders-intro a { color: var(--red); text-decoration: none; }
-  .podcast-card { background: var(--card); border: 1px solid var(--light); padding: 24px 28px; margin-bottom: 24px; }
-  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--red); margin-bottom: 8px; }
-  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); margin-bottom: 4px; }
-  .podcast-card .pc-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.4; }
-  .podcast-card .pc-summary { font-size: 14px; line-height: 1.65; color: #444; margin-bottom: 14px; }
-  .podcast-card a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); text-decoration: none; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
   .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
   .builder-card { background: var(--bg); padding: 20px; }
   .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
@@ -111,189 +111,562 @@
   .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
   .builder-meta a { color: var(--red); text-decoration: none; }
   @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
-  .disclaimer { margin-top: 40px; padding: 18px 22px; border: 1px solid var(--light); background: var(--card); font-size: 12px; line-height: 1.7; color: #555; }
   .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  @media (max-width: 540px) { .feature-left { padding: 32px 24px; } .feature-right { padding: 28px 24px; } .insight-box, .spotlight, .diary-box { padding: 24px; } .header { padding: 28px 0 20px; } }
+  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
 </style>
 </head>
 <body>
+
 <header class="header">
-  <div class="header-eyebrow">Daily Builders Digest · Health 星期四</div>
-  <div class="header-title">HEALTH<br><span>DIGEST</span></div>
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">THE TELEPHONE<span> · 一部新的电话史</span></div>
   <div class="header-meta">
-    <span>📅 2026-11-26</span>
-    <span>🧭 Health 星期四</span>
-    <span>◇ 安静、冷水和尼古丁</span>
-    <span>大雨 × 小苇</span>
+    <span>📅 2026-11-28</span>
+    <span>📚 周六书单 第三十期</span>
+    <span>💬 技术史 · 电话 · 垄断 · 网络效应 · AI 的参照</span>
+    <span>🎙 大雨 × 小苇</span>
   </div>
 </header>
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot">●</span>Eckhart Tolle × Huberman · 用感官把注意力拉回当下</span>
-    <span class="ticker-item"><span class="dot">●</span>Tolle 工具：「承认安静」——注意念头之间的空隙</span>
-    <span class="ticker-item"><span class="dot">●</span>冥想不设目标：用的那几分钟里，别去打分</span>
-    <span class="ticker-item"><span class="dot">●</span>Attia：靠激活棕色脂肪减肥「not a needle mover」</span>
-    <span class="ticker-item"><span class="dot">●</span>冷疗可能削弱力量训练带来的肌肉增长</span>
-    <span class="ticker-item"><span class="dot">●</span>冷水浸泡主观上比液氮冷冻舱更冷</span>
-    <span class="ticker-item"><span class="dot">●</span>长期褪黑素 vs 心衰：4.6% 对 2.7%（观察性研究）</span>
-    <span class="ticker-item"><span class="dot">●</span>非处方褪黑素不进病历，对照组可能有人在吃</span>
-    <span class="ticker-item"><span class="dot">●</span>尼古丁 + APOE4：认知好处要和心血管代价一起看</span>
-    <span class="ticker-item"><span class="dot">●</span>Huberman：戒烟最难的是第一周</span>
-    <span class="ticker-item"><span class="dot">●</span>Eckhart Tolle × Huberman · 用感官把注意力拉回当下</span>
-    <span class="ticker-item"><span class="dot">●</span>Tolle 工具：「承认安静」——注意念头之间的空隙</span>
-    <span class="ticker-item"><span class="dot">●</span>冥想不设目标：用的那几分钟里，别去打分</span>
-    <span class="ticker-item"><span class="dot">●</span>Attia：靠激活棕色脂肪减肥「not a needle mover」</span>
-    <span class="ticker-item"><span class="dot">●</span>冷疗可能削弱力量训练带来的肌肉增长</span>
-    <span class="ticker-item"><span class="dot">●</span>冷水浸泡主观上比液氮冷冻舱更冷</span>
-    <span class="ticker-item"><span class="dot">●</span>长期褪黑素 vs 心衰：4.6% 对 2.7%（观察性研究）</span>
-    <span class="ticker-item"><span class="dot">●</span>非处方褪黑素不进病历，对照组可能有人在吃</span>
-    <span class="ticker-item"><span class="dot">●</span>尼古丁 + APOE4：认知好处要和心血管代价一起看</span>
-    <span class="ticker-item"><span class="dot">●</span>Huberman：戒烟最难的是第一周</span>
+    <span class="ticker-item"><span class="dot">●</span>2026-11-10 · Farrar, Straus and Giroux 出版</span>
+    <span class="ticker-item"><span class="dot">●</span>544 页 · 精装 35 美元</span>
+    <span class="ticker-item"><span class="dot">●</span>作者：《混沌》《信息简史》的 James Gleick</span>
+    <span class="ticker-item"><span class="dot">●</span>1975 年曼哈顿电话局大火</span>
+    <span class="ticker-item"><span class="dot">●</span>ahoy → hello</span>
+    <span class="ticker-item"><span class="dot">●</span>1876 年 2 月 14 日：贝尔与 Gray 同日到专利局</span>
+    <span class="ticker-item"><span class="dot">●</span>殡仪馆老板发明自动交换机</span>
+    <span class="ticker-item"><span class="dot">●</span>贝尔系统：近一百年的垄断</span>
+    <span class="ticker-item"><span class="dot">●</span>Kirkus 星级书评 · Book Marks 总评 Rave</span>
+    <span class="ticker-item"><span class="dot">●</span>2026-11-10 · Farrar, Straus and Giroux 出版</span>
+    <span class="ticker-item"><span class="dot">●</span>544 页 · 精装 35 美元</span>
+    <span class="ticker-item"><span class="dot">●</span>作者：《混沌》《信息简史》的 James Gleick</span>
+    <span class="ticker-item"><span class="dot">●</span>1975 年曼哈顿电话局大火</span>
+    <span class="ticker-item"><span class="dot">●</span>ahoy → hello</span>
+    <span class="ticker-item"><span class="dot">●</span>1876 年 2 月 14 日：贝尔与 Gray 同日到专利局</span>
+    <span class="ticker-item"><span class="dot">●</span>殡仪馆老板发明自动交换机</span>
+    <span class="ticker-item"><span class="dot">●</span>贝尔系统：近一百年的垄断</span>
+    <span class="ticker-item"><span class="dot">●</span>Kirkus 星级书评 · Book Marks 总评 Rave</span>
   </div>
 </div>
 
 <div class="audio-bar">
   <div class="audio-bar-top">
-    <span class="icon">▶</span>
-    <strong>本期音频</strong>
-    <span>· Health 星期四 · 安静、冷水和尼古丁</span>
+    <span class="icon">◉</span>
+    <strong>收听本期</strong>
+    <span>大雨 × 小苇 · 2026-11-28</span>
   </div>
-  <audio controls src="episodes/2026-11-26.mp3">
-    Your browser does not support the audio element.
-  </audio>
+  <audio controls src="episodes/2026-11-28.mp3"></audio>
 </div>
 
-<section class="feature-hero">
-  <div class="feature-left">
-    <div class="feature-eyebrow">今日主线 · 安静、冷疗与两种常见物质</div>
-    <div class="feature-show-name">QUIET<br>&amp;<br><span style="color:#dd1111">COLD</span></div>
-    <div class="feature-ep-title">先看证据，<br>再决定要不要试</div>
-    <div class="feature-guest">Huberman Lab · The Peter Attia Drive · FoundMyFitness · 2026-11-19 / 11-23</div>
+<section class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">◈ 本期书籍</div>
+    <div class="book-title-big">THE TELEPHONE</div>
+    <div class="book-subtitle">A New History<br>电话：一部新的历史</div>
+    <div class="book-author-line">JAMES GLEICK</div>
   </div>
-  <div class="feature-right">
-    <div class="feature-lede">
-      Eckhart Tolle 在 Huberman Lab 当场演示让念头安静下来的工具。Peter Attia 重播 AMA #47：靠冷疗激活棕色脂肪减肥「不是能起明显作用的办法」，冷疗还可能削弱力量训练的肌肉增长。Rhonda Patrick 问答 #87 讲长期褪黑素和心衰的观察性研究（4.6% 对 2.7%），以及尼古丁能不能帮 APOE4 携带者预防痴呆；Huberman 的尼古丁精华版补上了心血管代价和戒断方法。
+  <div class="book-meta-panel">
+    <p class="book-one-liner">《混沌》《信息简史》的作者写了三十多年的一本书：电话怎样被发明、被用户改造、被一家公司垄断近一百年，又怎样成为今天手机、互联网和社交网络的祖先。</p>
+    <div class="book-tags">
+      <span class="tag">非虚构</span>
+      <span class="tag">技术史</span>
+      <span class="tag">电话</span>
+      <span class="tag">AT&amp;T / 贝尔实验室</span>
+      <span class="tag">垄断</span>
+      <span class="tag">社会史</span>
     </div>
-    <div class="feature-tags">
-      <span class="tag">正念</span><span class="tag">心流</span><span class="tag">冷水浸泡</span><span class="tag">冷冻舱</span><span class="tag">棕色脂肪</span><span class="tag">肌肉增长</span><span class="tag">褪黑素</span><span class="tag">心衰</span><span class="tag">尼古丁</span><span class="tag">APOE4</span><span class="tag">戒烟</span>
-    </div>
-    <div class="feature-stats">
-      <div class="stat-item">
-        <div class="stat-label">Huberman Lab · 11/23</div>
-        <div class="stat-value">Eckhart Tolle · 感官觉察 · 承认安静 · 三角形类比 · 心流与高手 · 冥想不设目标 · 存在与追求（文字稿为会员内容，公开的是简介和目录）</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">The Peter Attia Drive · AMA #47 重播 · 11/23</div>
-        <div class="stat-value">冷水浸泡 vs 全身冷冻舱 · 肌肉酸痛 · 情绪与抑郁 · 棕色脂肪 · 冷疗与肌肉增长 · 有没有抗衰老作用（完整笔记为会员内容）</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-label">FoundMyFitness Q&amp;A #87 · 11/20 + Huberman Essentials · 11/19</div>
-        <div class="stat-value">褪黑素与心衰 · 尼古丁与 APOE4 · 尼古丁对多巴胺、心率、血压的作用 · 电子烟为什么更易上瘾 · 催眠、安非他酮、尼古丁替代（Q&amp;A 为会员节目）</div>
-      </div>
+    <div class="book-stats">
+      <div class="stat-item"><span class="stat-label">出版</span><span class="stat-value">FSG · 2026-11-10</span></div>
+      <div class="stat-item"><span class="stat-label">篇幅</span><span class="stat-value">544 页 · 精装 $35</span></div>
+      <div class="stat-item"><span class="stat-label">ISBN</span><span class="stat-value">9780374618940</span></div>
+      <div class="stat-item"><span class="stat-label">评价</span><span class="stat-value">Kirkus 星级 · NYT · Book Marks Rave</span></div>
     </div>
   </div>
 </section>
-<div class="section-label" style="margin-top:40px;">🎙 今日播报 · 大雨 × 小苇</div>
+<p class="section-label">◈ 开场 · 一部新的电话史</p>
 <div class="script-container">
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">健康星期四，早上好。今天美国是感恩节，这周三个节目都更新得比较轻。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">轻是什么意思？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Huberman 这周请的是 Eckhart Tolle，《当下的力量》的作者，不讲实验，讲怎么让脑子安静。Peter Attia 这周没有新嘉宾，重播了一期讲冷疗的 AMA。Rhonda Patrick 发的是一期会员问答，里面有两个问题我觉得值得单独拿出来：长期吃褪黑素，会不会增加心衰风险；尼古丁能不能预防阿尔茨海默。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">尼古丁？这听起来就不对。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">所以要说。而且巧的是，Huberman 上周四也正好发了一期尼古丁的精华版。我们放在第三节一起讲。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">女性健康呢？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周没有专门讲女性的内容。第四节我只说一点，很短。</div></div>
-  <div class="section-label">一 · Huberman Lab：Eckhart Tolle，怎么让脑子停下来</div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Huberman Lab，11 月 23 号，两个小时出头。嘉宾 Eckhart Tolle，写过《当下的力量》和《新世界》。文字稿是会员内容，我们用的是官网简介和章节目录。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">一个神经科学家请一个灵性导师，他们聊什么？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">简介说得很直接：Tolle 讲一些实际的工具，用来<strong>让不停的念头安静下来</strong>，更多地待在当下，在日常里找到平静、创造力和跟人的连接。节目里他不只是讲，还当场带 Huberman 做。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">具体是什么工具？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">目录里标了三个「Tool」。第一个在节目一开始：<strong>用感官把注意力拉回当下</strong>——你现在听到什么、看到什么、身体有什么感觉，同时意识到「是我在觉察」。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这跟正念冥想差不多。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">很接近。第二个叫<strong>「承认安静」</strong>。他的意思是，声音之间有安静，念头之间也有空隙，你去注意那个空隙。这一节放在讲高手和心流的地方：他们聊到大提琴家马友友、制作人 Rick Rubin、舞蹈家巴瑞什尼科夫，讨论顶尖表演者在最好的状态里，是不是脑子里反而没什么话。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这个我有体会。真正做顺的时候，脑子里不会一直解说自己在干什么。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">第三个工具叫<strong>「三角形类比」</strong>，放在讲「极端和平衡」那一节。目录没写细节，我不猜。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那节目对我们这种要上班、要交付的人，有什么用？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">后半段专门讲这个：<strong>怎么把「存在」和「追求目标」合在一起</strong>。还有几节标题是：冥想不设目标；挑战是必要的；社交媒体和期待；不合理的期待、导师和完美主义。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">「冥想不设目标」，可是大部分人冥想就是为了减压、为了睡好，本身就是目标。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这正是他想拆的地方。如果你坐下来的时候一直在检查「我放松了没有」，那还是在想。我自己的理解是：工具可以有目的，但用的那几分钟里，别去打分。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">这期有科学证据吗？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这期不是讲研究的。要看证据，FoundMyFitness 这周正好有一期短节目，Aliquot 155，请的是威斯康星大学的 Richard Davidson，讲<strong>心理上的幸福感可以通过练习来加强</strong>。那是会员节目，我们只看到简介。可以把两期放在一起听：一个讲怎么做，一个讲研究怎么说。</div></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.hubermanlab.com/episode/access-the-power-of-now-to-experience-life-more-fully-eckhart-tolle" target="_blank" style="color:var(--red);text-decoration:none;">📎 Access the Power of Now to Experience Life More Fully | Eckhart Tolle — Huberman Lab, 2026-11-23</a></span></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.foundmyfitness.com/episodes/aliquot-155-well-being" target="_blank" style="color:var(--red);text-decoration:none;">📎 Aliquot #155: How to Train Your Mind for Well-Being — FoundMyFitness, 2026-11-24</a></span></div>
-  <div class="section-label">二 · The Drive：冷疗到底有什么用（AMA #47 重播）</div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">The Peter Attia Drive，11 月 23 号，重播的是 AMA 第 47 期，原本是会员节目，这次公开。主题就一个：冷疗。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">冰浴、冷水澡那些？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。他先分两类。一类是<strong>冷水浸泡</strong>，研究里水温多在华氏 40 度到 60 多度，也就是大约 4 到 20 摄氏度。越冷时间越短：几度的水，泡两三分钟；十几度的水，有的研究泡到 30 分钟。另一类是<strong>全身冷冻舱</strong>，用液氮，温度零下一百多度，一般站三分钟左右。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">零下一百多度，人受得了？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为是气体，不是液体。气体带走热量的速度比水慢得多。所以 Attia 说，主观上冷水浸泡反而比冷冻舱更冷。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那好处呢？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他一项项看：缓解运动后的肌肉酸痛，对情绪和抑郁的影响，冷水澡和冷水浸泡比，激活棕色脂肪，在冷的环境里运动，还有冷疗会不会延缓衰老。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">哪个结论最直接？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目页面挑出来的那句话是关于棕色脂肪的：<strong>如果你是想靠激活棕色脂肪来解决成年人超重或肥胖，这不是一个能起明显作用的办法。</strong> 原话是「not a needle mover」。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">网上很多人冰浴就是为了这个。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">还有一个更实际的提醒：节目里有一节专门讲冷疗的<strong>坏处</strong>——它可能<strong>削弱力量训练带来的肌肉增长</strong>。然后他们讨论这是不是因为冷压低了炎症反应。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">所以练完力量马上去泡冰水，可能白练了一部分？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这是节目讨论的风险方向。具体多大、隔多久才不影响，在会员笔记里，我们没看到。另外他也说了研究本身的难处：这个领域很依赖荟萃分析，但各个研究的水温、时长、泡到哪儿都不一样，<strong>一堆质量参差的研究放在一起，也不会变成一个好结论。</strong></div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他最后推荐冷疗吗？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目最后一节是「总结数据和 Peter 的看法」，还有一节讲有没有公认的有效方案。标题已经透露了：他问的是「有没有共识」，答案多半是没有。我不替他下结论。</div></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://peterattiamd.com/coldtherapy/" target="_blank" style="color:var(--red);text-decoration:none;">📎 Cold therapy: pros, cons, and its impact on longevity (AMA #47 rebroadcast) — The Peter Attia Drive, 2026-11-23</a></span></div>
-  <div class="section-label">三 · FoundMyFitness Q&amp;A #87：褪黑素和心衰，尼古丁和阿尔茨海默</div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">FoundMyFitness 问答第 87 期，11 月 20 号，会员节目，一个小时。问题很多：多肽、发酵食物和胃癌、虫草和藏红花、疲劳、蓝莓和尿酸。我挑两个。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">先说褪黑素。很多人睡不着就吃一片。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">Rhonda 引的研究，是 2025 年 11 月美国心脏协会年会上的一个摘要。研究用的是一个叫 TriNetX 的电子病历数据库，找的是<strong>有失眠、病历里记录吃褪黑素至少一年</strong>的成年人，跟没吃的人比。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">结果呢？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">五年里，吃褪黑素的人有 <strong>4.6%</strong> 被诊断心衰，没吃的人是 <strong>2.7%</strong>，风险比大约 1.9。因心衰住院的比例，19% 对 6.6%。全因死亡，7.8% 对 4.3%。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">差了快一倍，这很吓人。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">但要看它是什么研究。第一，这是<strong>观察性研究</strong>，作者自己说了不能证明因果。第二，在美国褪黑素是非处方的，很多人在药店自己买，病历里不会记录，所以「没吃」那一组里，可能有不少人其实在吃。第三，病历里记着长期吃褪黑素的人，可能本来失眠就更严重，或者身体更差。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那 Rhonda 怎么看？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">她的具体判断在会员内容里。目录里能看到的是，她接着讲了一个问题：<strong>为什么不同的人对褪黑素反应不一样</strong>。我们能说的是：这个信号值得注意，但还不够让人恐慌。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">好，尼古丁。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">提问的人问：<strong>携带 APOE4 基因的人，补尼古丁有没有好处？</strong> APOE4 是阿尔茨海默最主要的遗传风险因素。这个问题她讲了十来分钟。后面还有一个问题是 α-GPC 和尼古丁怎么影响认知。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">为什么会有人想到用尼古丁？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">节目页面的公开部分是这样说的：尼古丁作用在大脑里跟<strong>注意力、学习和记忆</strong>有关的系统上，所以有人好奇它能不能帮助认知下降的人，甚至预防痴呆。但页面同一段也说了：<strong>任何可能的认知好处，都要和长期用尼古丁的健康代价放在一起看。</strong></div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">代价，Huberman 那期应该讲了。</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">对。Huberman Lab 11 月 19 号的精华版，35 分钟。他讲尼古丁会提高多巴胺、乙酰胆碱和去甲肾上腺素，所以人会更有动力、更专注、更清醒，也会压食欲。同时它会<strong>升高心率和血压，收缩血管</strong>。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">他说尼古丁本身和抽烟要分开看？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他特别分开了：尼古丁是一回事，吸烟、电子烟、嚼烟、鼻烟这些<strong>摄入方式</strong>是另一回事，后者带来致癌物和对血管内皮的损伤。他还说电子烟特别容易上瘾，因为进入大脑的速度快，多巴胺来得快。另外，<strong>年轻人的大脑还在发育，风险更大。</strong></div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">想戒的人呢？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">他给了几个有研究支持的办法：临床催眠，单次的催眠干预有研究；处方药安非他酮；尼古丁替代，贴片、口香糖、鼻喷剂。还有，<strong>最难的是第一周</strong>，熬过第一周复发率会降下来。他也提醒，喝酒容易让人复吸。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">两期放在一起，结论是？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">尼古丁对认知的作用是真实存在的研究方向，但现在拿它来「预防痴呆」，证据还远远不够，而它对心血管的影响是确定的。如果你在考虑这件事，先找医生谈，不要自己从网上买尼古丁贴片开始试。</div></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.foundmyfitness.com/episodes/qa-87-dr-rhonda-patrick" target="_blank" style="color:var(--red);text-decoration:none;">📎 Q&amp;A #87: Can Nicotine Prevent Alzheimer&#x27;s?—Plus Melatonin and Heart Failure — FoundMyFitness, 2026-11-20</a></span></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.acc.org/Latest-in-Cardiology/Articles/2025/11/03/16/19/mon-melatonin-aha-2025" target="_blank" style="color:var(--red);text-decoration:none;">📎 Research Suggests Long-Term Melatonin Use For Insomnia Increases HF Risk — American College of Cardiology, 2025-11-03</a></span></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.healthday.com/healthpro-news/cardiovascular-diseases/aha-long-term-melatonin-use-for-insomnia-tied-to-higher-risk-for-heart-failure" target="_blank" style="color:var(--red);text-decoration:none;">📎 AHA: Long-Term Melatonin Use for Insomnia Tied to Higher Risk for Heart Failure — HealthDay</a></span></div>
-  <div class="script-block" style="border-left-color:transparent;padding-left:20px;"><span class="source-inline"><a href="https://www.hubermanlab.com/episode/essentials-nicotines-effects-on-the-brain-and-body-and-how-to-quit-smoking-or-vaping" target="_blank" style="color:var(--red);text-decoration:none;">📎 Essentials: Nicotine&#x27;s Effects on the Brain &amp; Body &amp; How to Quit Smoking or Vaping — Huberman Lab, 2026-11-19</a></span></div>
-  <div class="section-label">四 · 女性健康：一条备注</div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">这周三期节目都没有专门讲女性生理。只有一个小地方：Rhonda 问答的最后一个问题是<strong>「哺乳期能不能吃肌酸」</strong>。她的回答在会员内容里，我们没听到，所以不转述。</div></div>
-  <div class="script-block"><div class="speaker-tag speaker-xiaowei">小苇</div><div class="script-text">那提这个干什么？</div></div>
-  <div class="script-block lead-block"><div class="speaker-tag speaker-dayu">大雨</div><div class="script-text">因为哺乳期吃补剂，是很多人会问、但很少有人认真回答的问题。如果你在哺乳期，正考虑肌酸或者任何补剂，先问产科医生或者哺乳顾问。下周如果有女性健康的内容，我们多讲。</div></div>
-</div>
-
-<div class="diary-box">
-  <div class="diary-label">◈ 六 · 今日健康行动</div>
-  <div class="diary-title">长期吃褪黑素的人，下次看医生提一句</div>
-  <div class="diary-sub">2026-11-26 · Health 星期四</div>
-  <div class="diary-cols">
-    <span class="diary-col hl">长期吃褪黑素：下次看医生提一句</span>
-    <span class="diary-col">睡前一分钟：只听声音和安静</span>
-    <span class="diary-col">刚练完力量，别马上泡冰水</span>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">周六好，欢迎回到《每日快报》的书籍时间。先讲一件事。1975 年 2 月 27 号，刚过午夜，纽约曼哈顿第二大道一栋老旧的电话交换楼着火了。下曼哈顿大约三百个街区断了电话，大约十七万部电话打不出也打不进。纽约大学、两家医院都联系不上外面。</p>
   </div>
-  <div class="diary-note">
-    <strong>大雨：</strong>今天的行动：<strong>如果你每天晚上吃褪黑素，而且已经吃了一年以上，下次看医生的时候提一句。</strong> 不用今天就停，也不用害怕，只是让医生知道。<br><br><strong>小苇：</strong>不吃褪黑素的人呢？<br><br><strong>大雨：</strong>试一下 Tolle 的「承认安静」。今晚睡前关掉手机，躺下以后，<strong>花一分钟只听周围的声音，再注意声音和声音之间的安静。</strong> 一分钟就够。<br><br><strong>小苇：</strong>冷水澡呢？<br><br><strong>大雨：</strong>想试可以，但如果你今天刚练了力量，那就别马上去泡。<br><br><strong>小苇：</strong>好，今天就到这里。<br><br><strong>大雨：</strong>健康星期四，感恩节快乐，我们下周见。<br><br>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">断了多久？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">报道说法不一样，哈佛公报说 23 天，《新共和》说六个星期。总之是好几个星期。后来有两个学者去调查附近的居民，问他们这几周怎么过的。人们去排公用电话，雇人送信，担心出了急事找不到人，犹豫要不要不打招呼直接去敲邻居的门，还有人给喜欢的人写起了情书。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这个调查是怎么做的？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">电话修好以后，用电话做的。今天这本书就是从这场火开始的。书名叫《The Telephone: A New History》，直译「电话：一部新的历史」。作者是 James Gleick。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick，上周好像提过这个名字。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。上周我们讲《Big Math》，封底推荐语里就有他。今天换他当作者。书是 Farrar, Straus and Giroux 出的，11 月 10 号上市，544 页，精装 35 美元。有声书由 Edoardo Ballerini 朗读。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">我们有全书吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">没有。今天的内容依据这几样东西：作者的三篇访谈，分别是 NPR 11 月 14 号的节目文字稿、《新共和》11 月 18 号的问答、Audible 11 月 10 号的问答；哈佛公报 11 月 9 号的介绍；还有五篇书评：Kirkus、《洛杉矶书评》、Reason、《The Week》的书评汇总，以及《American Heritage》一篇批评。凡是我说「书里写」，都来自这些材料的转述或引文。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">为什么选这本？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">书单这周还是空的，按规则我们自己选。理由是：前几个月我们讲了很多 AI 的书，都是在事情正在发生的时候写的，没人知道结局。电话是一项结局已经知道的技术。它从发明到普及、到被一家公司垄断、到被拆分、再到被手机取代，整个过程走完了。Gleick 自己在采访里也一直拿它跟今天的 AI 比。所以这本书可以当一个参照。</p><span class="inline-src">📎 来源: <a href="https://www.npr.org/2026/11/14/nx-s1-6037416/hello-james-gleicks-new-book-compares-the-history-of-the-telephone-to-the-modern-era" target="_blank">Hello? James Gleick&#x27;s new book compares the history of the telephone to the modern era — NPR</a></span><span class="inline-src">📎 来源: <a href="https://news.harvard.edu/gazette/story/2026/11/hello-how-the-telephone-transformed-human-connection-gleick-book/" target="_blank">Hello? How the telephone transformed human connection — Harvard Gazette</a></span>
   </div>
 </div>
-
-<div class="insight-box">
-  <div class="insight-label">◈ 今日五条要点</div>
-  <div class="insight-title">QUIET · COLD · CAUTION</div>
-  <div class="insight-item"><span class="insight-num">01</span><span>Eckhart Tolle：用感官把注意力拉回当下，注意声音和念头之间的安静；冥想的那几分钟里，不给自己打分。</span></div>
-  <div class="insight-item"><span class="insight-num">02</span><span>Attia：靠冷疗激活棕色脂肪来解决成年人超重，「不是能起明显作用的办法」；冷疗可能削弱力量训练带来的肌肉增长。</span></div>
-  <div class="insight-item"><span class="insight-num">03</span><span>长期褪黑素与心衰：五年 4.6% 对 2.7%，但这是观察性研究，非处方使用不进病历，不能证明因果。</span></div>
-  <div class="insight-item"><span class="insight-num">04</span><span>尼古丁作用于注意力和记忆相关的系统，但会升高心率和血压、收缩血管；用它预防痴呆，证据远远不够。</span></div>
-  <div class="insight-item"><span class="insight-num">05</span><span>Huberman：戒烟或戒电子烟最难的是第一周；催眠、安非他酮、尼古丁替代都有研究支持；喝酒容易让人复吸。</span></div>
+<p class="section-label">◈ 作者 · 一本写了三十多年的书</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick 是什么人？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">美国的科学作家，在纽约出生，1976 年从哈佛毕业，学的是英文和语言学，在校报《哈佛深红报》写稿。后来长期为《纽约时报》写科学报道。他 1987 年的第一本书叫《Chaos》，中文版叫《混沌》，讲非线性系统，进了普利策奖和美国国家图书奖的决选名单。后来写过物理学家费曼的传记《Genius》，写过牛顿传，写过《Faster》，讲生活怎样越来越快，还有 2011 年的《The Information》，中文版叫《信息简史》，2016 年的《Time Travel》。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这本电话的书是什么时候开始写的？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在《新共和》的采访里说，三十多年前就开始了。那时候还没有手机，也没有互联网，电话是家家都有、谁也不会多想的东西。他当时从 AT&amp;T 在新泽西的档案馆搬回来好几箱资料，那个档案馆现在已经没有了。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">后来为什么停了？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他原话是：然后一切都开始变了，我就想，这个题目好无聊。互联网来了，作为一个写科技的人，他对新东西更兴奋。一直到五六年前，他才回头重新拾起来。因为他发现，他最初写的那些东西，恰好是今天这个世界的地基。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他想回答什么问题？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">书里引了 1975 年那两位学者的问题：一项技术、一个发明、一台机器，怎样改变采用它的人？它能不能改变生活方式、重塑社会？Gleick 在 NPR 上说，他最初的想法是：电话这东西大家都习以为常，可它改变了社会、改变了人的心理，而没人意识到这一点。</p><span class="inline-src">📎 来源: <a href="https://newrepublic.com/article/218036/telephone-changed-world" target="_blank">How the Telephone Changed the World — The New Republic</a></span><span class="inline-src">📎 来源: <a href="https://lareviewofbooks.org/article/telephone-new-history-james-gleick-telegraph-pop-culture/" target="_blank">Hanging on the Telephone — Los Angeles Review of Books</a></span>
+  </div>
 </div>
-
+<p class="section-label">◈ 谁发明了电话 · 这本书没有主角</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">电话是贝尔发明的，这个大家都知道。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Gleick 在 NPR 上说，这个说法「有一点是真的」。在贝尔之前，德国有个叫 Philipp Reis 的人，1861 年就在法兰克福物理学会演示过一个叫「Telephon」的装置。Kirkus 的书评提到，书里有一句很有意思的话：1840 年莫尔斯拿到电报专利的时候，专利名义上叫「一项改进」。意思是技术总是从别的技术里长出来的。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那贝尔做了什么？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">1876 年 2 月 14 号，情人节那天，贝尔和另一个发明家 Elisha Gray，碰巧在同一天去了专利局。贝尔交的是专利申请，Gray 交的是一份「预告」，英文叫 caveat，是说我有一个发明快要完成了。贝尔拿到了专利，编号 174,465。后来这被叫做历史上最值钱的专利。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">书里怎么看这件事？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">哈佛公报的总结是：书里说，贝尔的律师有一些在道德上有问题的行为，他才拿到这个专利，而且他自己并不完全明白他申请的是什么。Reason 的书评转述得更直接：贝尔的支持者请了更好、可能也更腐败的律师，专利审查员被说动了，偏向贝尔，还不当地把 Gray 文件的内容透露了出去。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这听起来是在说贝尔偷了别人的东西。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这一点有争议，我们放到后面的批评部分讲。但 Gleick 在 NPR 上也给了贝尔很大的肯定。他说贝尔论电学不如对手懂，但贝尔有一个看法跟后来的世界完全吻合：每家每户都会有一部他的电话，每家都有一根线连到一个中心局，然后你就能接通你那一带的任何人。Gleick 原话是：「给这个人一点功劳吧。」</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">所以贝尔厉害的地方不是发明，是看到了网络。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。哈佛公报说得更直白：贝尔在造的是一个社交网络。《洛杉矶书评》引了书里一句话：每一个新用户，都给其他所有用户增加价值。这就是今天说的网络效应。书里还有一句：「也许电话与其说是被发明的，不如说是被发现的。」</p><span class="inline-src">📎 来源: <a href="https://www.kirkusreviews.com/book-reviews/james-gleick/the-telephone/" target="_blank">THE TELEPHONE — Kirkus Reviews</a></span><span class="inline-src">📎 来源: <a href="https://reason.com/2026/11/10/the-rise-and-fall-of-ma-bell/" target="_blank">The Rise and Fall of Ma Bell — Reason</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 用户说了算 · 「ahoy」是怎么变成「hello」的</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">电话刚出来的时候，大家知道它是干什么用的吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">不知道。这是书里反复讲的一点。Gleick 在《新共和》上说，几乎所有人都这样想：既然能把声音用电线送过去，那就在音乐厅放一部电话，家里放一部，在家听音乐会；或者在教堂放一部，星期天不用出门就能听布道。也就是说，大家以为它会是广播。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">结果没有。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">音质太差了，没人愿意拿着一个沉甸甸的东西听一整场歌剧。反过来，能直接开口说话、对方能听见，这件事本身让人非常着迷。《洛杉矶书评》提到，挪威早期确实有些电话是拿来听新闻、听天气的，像广播一样。但最后赢的是对话。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">「hello」那个故事是怎么回事？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">NPR 的主持人专门跑到 NPR 大楼食堂角落的一个电话亭里，给 Gleick 打了个电话。接通以后 Gleick 说：你说了 hello，这是第一条规矩。他说 hello 是一个电话词。电话出现之前，这个词并不常用。贝尔和助手 Watson 最早打电话的时候，说的是「ahoy, ahoy」。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">像水手打招呼。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。Gleick 说，几年之内，好像上帝发了一份通知，所有人都改说 hello 了。不只是英语，很多国家都说 hello 或者「allo」。主持人说他小时候被父母教着接电话要说「Schmitz 家，我是 Robert」，结果他总是忍不住说回 hello。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">父母没赢。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Gleick 说这正是他最喜欢电话的地方：这项技术像野火一样扩散，任何想控制它怎么用的努力都失败了。规矩是用户定的。他在《新共和》里也说，人们经常比设计者和厂商更聪明，用新技术去做他们没想到的事。今天也一样，发短信、用表情、听播客，都是用户自己发展出来的习惯。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">有没有猜对的人？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">有一个。Audible 的采访者提到，1870 年代伊利诺伊州有个报纸编辑预测：将来每个人床边都有一部电话，日日夜夜往外送新闻、八卦和娱乐。他写：「我们都将这样生活，所有神经都暴露在这个轰鸣世界最细微的震动之下。」Gleick 说，他读到这句话的时候，有一瞬间觉得自己遇到了一个时间旅行者。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这说的就是现在的手机。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。Gleick 的回答是：我们现在不就是这样生活的吗？是电话做到的。</p><span class="inline-src">📎 来源: <a href="https://www.audible.ca/blog/en/james-gleick-the-telephone-interview" target="_blank">How the telephone made the modern world — Audible</a></span><span class="inline-src">📎 来源: <a href="https://www.npr.org/2026/11/14/nx-s1-6037416/hello-james-gleicks-new-book-compares-the-history-of-the-telephone-to-the-modern-era" target="_blank">Hello? James Gleick&#x27;s new book compares the history of the telephone to the modern era — NPR</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 书里的人 · 殡仪馆老板和话务员</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">书里有什么具体的人物？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">波士顿环球报的书评说，书里写的是一大群做梦的人、有天分的业余爱好者和怪人。书评人说她最喜欢的、她猜 Gleick 也最喜欢的，是 Almon Strowger。他是堪萨斯城一个开殡仪馆的。1890 年代，他怀疑本地电话局的接线员把打给他的潜在客户转给了另一家殡仪馆。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那他怎么办？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他发明了第一台自动电话交换机，不用接线员了。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">为了抢生意，把接线员这个职业干掉了。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">后来是这样。说到接线员，哈佛公报讲了书里的一段：最早的接线员是十几岁的男孩，但很多男孩坐不住、不专心，电话公司就改招年轻女性。这是当时女性能做的少数几种职业之一。Gleick 说，大家普遍决定接线员都是女的，很大一部分原因是希望她们温顺。营销的人假设打电话的是男人，电话那头应该有一个女人为你服务。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">听起来像今天的语音助手。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">哈佛公报的作者也是这么写的，说她们是早期的 Siri。书里引了一个接线员的话，她说自己是「一张会说话的神秘电线网里的人形蜘蛛」。很多人下班的时候眼睛发直，感官过载。Kirkus 还提到，书里讲了电话行业里的种族问题：黑人女性要到二战期间才被雇为接线员，而且公司很不情愿。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">还有别的人吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">有几个名人。马克·吐温是最早在家里装电话的人之一，他吹嘘自己家连到《哈特福德新闻报》的那条线，是世界上第一条私人住宅电话线。他也说过，电话是「世界上最古怪的事——只有一头的对话」。萧伯纳年轻时在伦敦的爱迪生电话公司上过班，他很讨厌电话，说对着它把最私密的事喊得到处都是，就没有分寸可言了。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那时候就有人抱怨新技术。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Reason 的书评引了书里的一句话：有人觉得被赋予了力量，也有人觉得被骚扰、被催促、被逼着、心神不宁。Gleick 在 NPR 上说，当时的人写，我在加速，我是一种新的生物。</p><span class="inline-src">📎 来源: <a href="https://theweek.com/culture-life/books/book-reviews-the-telephone-a-new-history-and-look-at-me" target="_blank">Book reviews: ‘The Telephone: A New History’ — The Week（汇总纽约时报、波士顿环球报、彭博书评）</a></span><span class="inline-src">📎 来源: <a href="https://news.harvard.edu/gazette/story/2026/11/hello-how-the-telephone-transformed-human-connection-gleick-book/" target="_blank">Hello? How the telephone transformed human connection — Harvard Gazette</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 贝尔系统 · 一个统治了将近一百年的垄断</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">后来电话公司是怎么变成垄断的？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Reason 的书评作者是克莱姆森大学的经济学教授 Thomas Hazlett，他把这段讲得很细。贝尔的专利 1893 年前后到期，之后出现了很多独立电话公司，到 1907 年，独立公司的用户数已经追上了贝尔，在中西部和西部还领先。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那贝尔怎么又赢回来了？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">1907 年 AT&amp;T 新总裁 Theodore Vail 提出一个口号：「一个政策，一个系统，普遍服务。」然后是三步：各州给电话公司发独家经营权；1910 年的法律把电话公司交给一个管铁路的委员会去管；1913 年 AT&amp;T 跟司法部达成一个反垄断和解，承诺跟独立公司互联。但结果是独立公司陆续被收购，州的独家经营权挡住了新来的人。1934 年的《通信法》把这个格局固定了下来。一直到 1984 年，AT&amp;T 才被拆分。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick 怎么评价这个垄断？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在 Audible 的采访里说得很平衡。20 世纪大部分时间，贝尔系统是世界上最强大、最打不破的垄断。几乎每家都有一部贝尔的电话，别人不准造、不准卖，所有电话都差不多一个样。结果是，有一段时间美国的电话系统让全世界羡慕。大多数其他国家是政府管电话，管得很差。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">但是？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">但是垄断会变得笨重、自满、退化。贝尔建了世界上最好的企业研究所，可是在计算机出现、互联网的种子刚种下、最需要创新的时候，它没有创新。《洛杉矶书评》也提到，AT&amp;T 压住了传真、答录机，甚至可视电话。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">贝尔实验室不是出了很多东西吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">出了很多。Gleick 在《新共和》上说，任何关心科学的人看贝尔实验室的历史都得承认，不管你多反对垄断，他们基本上是为了科学在办这个实验室。实验室出了十几个诺贝尔奖，跟电话本身没直接关系。最重要的是晶体管，它很快就让全世界都能用了。Kirkus 提到书里一个小细节：贝尔实验室发明火箭筒的人，也发明了答录机。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">跟今天的大公司研究院比呢？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他说今天微软、谷歌也有自己的研究院，但非常看重利润。他还说，当年跟政府的约定里有一条：电话公司不准进入新兴的计算机行业。还没拆分以前，大家就看出来了，让电话公司把垄断延伸到这个新领域会是坏事。</p><span class="inline-src">📎 来源: <a href="https://reason.com/2026/11/10/the-rise-and-fall-of-ma-bell/" target="_blank">The Rise and Fall of Ma Bell — Reason</a></span><span class="inline-src">📎 来源: <a href="https://www.audible.ca/blog/en/james-gleick-the-telephone-interview" target="_blank">How the telephone made the modern world — Audible</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 关键洞察 · 拿电话看 AI</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他把这些跟 AI 联系起来了吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">联系得很直接。NPR 主持人说，你写的电话推广过程，发明人失去兴趣，合伙人向金融家投降，金融家又让位给更大的势力，地方官员想分钱，最后打知识产权官司。这听起来像美国资本主义里一个熟悉的章节，现在 AI 也在这样。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick 怎么回答？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他说，AI 已经被几家大公司牢牢控制住了，它们要么是垄断，要么想成为垄断。它们从贝尔系统学到的教训是：垄断对公司的主人非常方便。但他说，我们作为用户，有权利得出相反的教训：珍惜技术里那些让我们保留控制权的部分。他又回到 hello 那个话题：我们自己来定规矩，用这些技术来增强我们自己。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他对现在的 AI 公司是什么态度？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">在《新共和》的采访里说得更重。他说回头看贝尔垄断，人们可能戴着玫瑰色的眼镜。再看现在这些 AI 公司成立得这么快，完全不顾公共利益，几乎毫不掩饰地追求个人利润，为了 Sam Altman 和 Elon Musk 这样想当寡头的人。他说他觉得这「介于令人沮丧和令人恐惧之间」。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这是他个人的看法。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，这是作者在采访里的观点，不是书里的结论。还有一句也是他在采访里说的。他说，在这个通信无处不在的时代，我们确实比以前更紧密地连在一起。但他说，也许我是个天真的人文主义者，我仍然认为，你是在跟一个人说话还是在跟一个机器人说话，这件事很重要，尽管有一整个产业在让我们分不清，劝我们相信这些机器人有个性、在很多场合跟人一样好。他说他不相信，而且认为应该抵抗。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这跟我们一个月前讲的 Sherry Turkle 那本《Artificial Intimacy》是一个意思。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">是。Turkle 说聊天机器人的「原罪」是用第一人称。Gleick 是从另一头来的：电话本来就是为了让两个人连上。现在电话那头可能不是人了。</p><span class="inline-src">📎 来源: <a href="https://newrepublic.com/article/218036/telephone-changed-world" target="_blank">How the Telephone Changed the World — The New Republic</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 批评 · 贝尔到底偷没偷</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这本书有人批评吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">整体评价很高。书评聚合网站 Book Marks 统计了九篇书评，总评是最高一档的 Rave。《纽约时报》的 Alexandra Jacobs 说，这本书让电话这件老物件回到了它在历史上应有的位置，应该成为数字原住民的必读书。Kirkus 给了星级书评。但有三个批评值得讲。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第一个？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第一个最尖锐，来自《American Heritage》杂志的主编 Edwin Grosvenor。先说清楚他的身份：他写过一本贝尔的传记，而且他是贝尔的后代。他的文章标题叫「电话发明的真相」。他说，Gleick 在书里写，贝尔和 Watson 打第一通电话用的装置，「不是他们的，而是 Elisha Gray 的液体送话器，由一个腐败的专利审查员描述给贝尔」。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他怎么反驳？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">几点。第一，贝尔从 1873 年左右就在做各种用液体的送话器，水银、盐水、酸化的水都试过。第二，1875 年 4 月，美国专利局已经给过贝尔一个专利，编号 161,739，图上就画着水银杯，那是在 Gray 写那份预告的十个月之前。第三，说贝尔贿赂审查员的证据，是审查员 Zenas Wilber 1886 年签的最后一份宣誓书。在那之前他签过四份，都说专利局一切正常。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">1886 年发生了什么？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Grosvenor 说，那份宣誓书是在一桩丑闻里出来的。当时有一家叫 Pan-Electric 的公司想推翻贝尔的专利，给了司法部长 Augustus Garland 一成股份，司法部于是起诉要撤销贝尔专利。后来被报纸揭出来，成了克利夫兰政府最大的丑闻。Grosvenor 认为 Wilber 的那份宣誓书很可能是那家公司的律师替他写的，而且从来没有经过交叉质询。他还说，贝尔的专利打了大约六百场官司，一场没输过，包括最高法院。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那到底谁对？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我们判断不了，也没拿到书看 Gleick 具体怎么写、引了什么。能说的是两点。第一，这个争论很老了，2008 年 Seth Shulman 的《The Telephone Gambit》就提出过贝尔抄 Gray 的说法，Grosvenor 认为 Gleick 是在重复 Shulman。第二，Grosvenor 本人跟这件事有利害关系，他是贝尔的后代和传记作者。听的人要把这两方面都放在心里。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第二个批评呢？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">结尾太薄。《洛杉矶书评》的 Tim Riley 说，读到最后，你等着看大戏：乔布斯怎样把电话变成一台口袋里的信息机器。可是 Gleick 只用了几段话带过，乔布斯只出现了一次。他说这本书最后对眼前这个变化「耸了耸肩」。Reason 的 Hazlett 也说，书对 1984 年 AT&amp;T 拆分、对后来有线电视、卫星、无线带来的竞争着墨很少。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">可他明明一直在说电话跟今天有关。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这正是矛盾的地方。书里讲的主要是 1870 年代到 1980 年代。跟今天的联系，大部分是他在采访里讲的。第三个批评是 Riley 提的：这个故事大部分以前有人讲过，只是讲得没这么好。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他自己的回答呢？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在采访里的说法是：现在这一代人没有电话亭、忙音这些记忆，但今天的生活方式离不开这段历史，所以值得讲。</p><span class="inline-src">📎 来源: <a href="https://www.americanheritage.com/truth-about-telephone-invention" target="_blank">The Truth About the Telephone Invention — American Heritage</a></span><span class="inline-src">📎 来源: <a href="https://lareviewofbooks.org/article/telephone-new-history-james-gleick-telegraph-pop-culture/" target="_blank">Hanging on the Telephone — Los Angeles Review of Books</a></span><span class="inline-src">📎 来源: <a href="https://bookmarks.reviews/reviews/the-telephone-a-new-history/" target="_blank">Book Marks reviews of The Telephone</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 讨论角度 · 留给你的问题</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">我们自己怎么看？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我说三点。第一，「用户定规矩」这个说法要小心用。hello 是用户定的，但电话机长什么样、谁能造、多少钱，是贝尔系统定的，定了快一百年。用户赢了礼仪，公司赢了结构。今天的 AI 可能也是这样：大家自己摸索怎么用，但模型由谁训练、放在谁的服务器上，不是用户能决定的。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第二点？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第二，垄断的账要分开算。Gleick 自己就承认，贝尔垄断带来了全世界最好的电话网和贝尔实验室，也带来了几十年不创新。他担心 AI 公司学到的是前一半。但贝尔当年是受管制的垄断，价格有人管，还被禁止进入计算机行业。今天的 AI 公司没有这样一套约束。所以拿贝尔来类比，真正该问的可能是：今天谁来扮演当年那个管制者。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第三点？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第三，波士顿环球报的书评人最后写了一句，说她读完想的不是电话，而是 AI。她说她等着 Gleick 从 Anthropic 的 Claude 身上找出 Claude Shannon 的痕迹，再写一本书。Shannon 是信息论的创始人，在贝尔实验室工作，Gleick 的《信息简史》写过他。从电话到信息论到今天的语言模型，这确实是一条线。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">留几个问题给听众。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第一个：你接电话说的第一句话是什么？你从哪学的？第二个：你最近一次用一个新技术，用法跟它的设计者想的不一样，是什么时候？第三个：如果你所在的城市断网断电话三个星期，你会怎么联系你在乎的人？第四个：你在乎电话那头是人还是机器吗？如果在乎，你怎么分辨？</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">好，看看这几天建造者们在说什么。</p>
+  </div>
+</div>
+<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
+<div class="script-container">
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">数据截至北京时间今天下午一点。这周是美国感恩节，推文不多，挑了四条跟今天的书有关的。第一条是 Sam Altman，六千七百多个赞。他感谢一位叫 Ven 的同事，说 Ven 是最早相信可以用当时的模型去解千禧年大奖难题的人之一。他说聪明的人很多，但聪明又有放对地方的自信、敢在别人觉得不可能的事上一直推，这很少见。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">正好是 Gleick 批评的那家公司。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，放在一起听。第二条是 Box 的 CEO Aaron Levie，八百多个赞。他说现在是以智能代理为核心、从头建一家服务公司，或者改造老公司的好机会。广告、IT、咨询、金融这些行业，产出一直受员工速度限制，现在交付能力有十倍的放大。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">像接线员被自动交换机取代。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">有点像。第三条是投资人 Nikunj Kothari。他说去年感恩节，他担心忘了给这一年见过很多次的人发消息，然后 Claude 发现 iMessage 和 WhatsApp 的记录其实是电脑上的本地数据库。他就做了一组完全在本地运行、不用 AI 的脚本，帮你找出该联系的人。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">用技术提醒自己去跟人说话。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第四条只有三个赞，但跟今天的书最贴。OpenAI 做 Codex 的 Nan Yu 说：语音聊天就是聊天，发图片也是聊天，下一个指令拿回一个网站，也是聊天。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">「电话」这个词也是这样，一直在被装进新的东西。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">播客推荐是 Latent Space，11 月 25 号这一集，嘉宾是 Thariq Shihipar。他之前在 Anthropic，这一集录完当天宣布加入 OpenAI。他的主题是「工业革命和文艺复兴」：一边是 AI 让软件更便宜、能大规模生产，也产出很多粗糙的东西；另一边是做一个给自己用的、更个人化的东西也变得负担得起了。他说他这一年的一个错，是太想把人从代理的循环里拿出去。很多东西模型觉得做得很完美，但你根本不用，因为你在做的过程中从来没自己用过。他的建议是把人的反馈放回去。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这又回到 Gleick 说的，用法是用的人试出来的。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">好，今天就到这里。这周如果你只做一件事：给一个很久没联系的人打个电话，不发消息，打电话。听听对方第一句说的是不是 hello。下周六见。</p><span class="inline-src">📎 来源: <a href="https://www.youtube.com/watch?v=Qe9d9dWyED0" target="_blank">The Revolution vs The Renaissance — Thariq Shihipar, OpenAI — Latent Space</a></span>
+  </div>
+</div>
 <!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
 <hr class="rule-heavy">
 <p class="section-label">◈ Follow Builders · 今日建造者动态</p>
@@ -302,96 +675,110 @@
   「关注建造者，不要关注 influencer。」——
   以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
   每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
-  数据截至今日 UTC 05:09，本期信号来自 16 位建造者的推文，主要在聊 Claude Code 的 MCP skills、ChatGPT Business 和黄仁勋；播客源只有一期 AI 播客（Unsupervised Learning Ep 98），与健康无关，播客卡改用本周 Huberman Lab 最新一期。跟健康直接相关的推文没有，挑了三条跟学习、节奏和改变有关的。
+  数据截至今日 UTC 05:09。
 </p>
 
 <div class="podcast-card">
   <p class="pc-label">🎙 今日播客精选</p>
-  <p class="pc-show">Huberman Lab · 2026-11-23</p>
-  <p class="pc-title">Access the Power of Now to Experience Life More Fully | Eckhart Tolle</p>
-  <p class="pc-summary">Eckhart Tolle 当场带 Huberman 练习几种让不停的念头安静下来的方法：用感官把注意力拉回当下、注意声音和念头之间的安静。后半段讲怎么把「存在」和「追求目标」合在一起，以及冥想为什么不该设目标。</p>
-  <a href="https://www.hubermanlab.com/episode/access-the-power-of-now-to-experience-life-more-fully-eckhart-tolle" target="_blank">▶ 收听完整节目 →</a>
+  <p class="pc-show">Latent Space · 2026-11-25</p>
+  <p class="pc-title">The Revolution vs The Renaissance — Thariq Shihipar, OpenAI</p>
+  <p class="pc-summary">Thariq Shihipar 此前在 Anthropic，录音当天宣布加入 OpenAI。他说 AI 同时是一场工业革命（软件更便宜、可以大规模生产，也产出很多粗糙的东西）和一场文艺复兴（做个人化的东西变得负担得起）。他这一年的一个错，是太想把人从代理的循环里拿出去：很多东西模型觉得做得很完美，你却不用，因为你在做的过程中没自己用过。他的建议是把人的反馈放回去。</p>
+  <a href="https://www.youtube.com/watch?v=Qe9d9dWyED0" target="_blank">▶ 收听完整节目 →</a>
 </div>
 
 <div class="builders-grid">
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">T</div>
+      <div class="builder-avatar">SA</div>
       <div>
-        <div class="builder-name">Thariq</div>
-        <div class="builder-handle">@trq212 · 前 Claude Code @Anthropic</div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · CEO, OpenAI</div>
       </div>
     </div>
-    <p class="builder-tweet">「你得先烂一阵子。」</p>
+    <p class="builder-tweet">「Ven 是最早相信可以用我们当时的模型去解千禧年大奖难题的人之一。世界上聪明的人很多，但既聪明、又有放对地方的自信和勇气、在别人觉得不可能的事上一直推下去，这很宝贵，也相当少见。我很感激 OpenAI 有这么多人具备这种组合。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 2013</span>
-      <a href="https://x.com/trq212/status/2125156290494353663" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 6775</span>
+      <a href="https://x.com/sama/status/2125990371897557278" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">PS</div>
+      <div class="builder-avatar">AL</div>
       <div>
-        <div class="builder-name">Peter Steinberger</div>
-        <div class="builder-handle">@steipete · 开源项目作者</div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
       </div>
     </div>
-    <p class="builder-tweet">「这一年真是不容易！假期要好好回顾一下，写篇博客。我们在个人专业用户和企业里找到了位置。但做可靠、免费的开源软件真的非常难，每天早上醒来都面对一堆新问题……」</p>
+    <p class="builder-tweet">「现在是以智能代理为核心、从头建服务公司或改造现有服务公司的巨大机会。深厚的领域知识仍然重要，但交付项目的能力有了 10 倍的放大。广告、IT 转型、管理咨询、金融这些一直受员工速度限制的行业都会这样。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 590</span>
-      <a href="https://x.com/steipete/status/2125422797304549672" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 883</span>
+      <a href="https://x.com/levie/status/2125983542475894821" target="_blank">查看推文 →</a>
     </div>
   </div>
   <div class="builder-card">
     <div class="builder-header">
-      <div class="builder-avatar">GT</div>
+      <div class="builder-avatar">NK</div>
       <div>
-        <div class="builder-name">Garry Tan</div>
-        <div class="builder-handle">@garrytan · President &amp; CEO @ycombinator</div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner, FPV Ventures</div>
       </div>
     </div>
-    <p class="builder-tweet">「第二，社会吸收这项技术的能力碰到了上限。知识工作和业务流程能变多快，有天然的刹车：人不喜欢自己的奶酪被挪走。」</p>
+    <p class="builder-tweet">「去年感恩节，我有点担心忘了给这一年一起待过很久的人发消息……然后 Claude 发现 iMessage 和 WhatsApp 是电脑上的本地数据库。一件事接一件事，变成了一个意外有用的项目。如果你也一样担心，可以用这些本地脚本（不用 AI，完全本地）去给你见过的人发消息。」</p>
     <div class="builder-meta">
-      <span class="builder-likes">❤ 74</span>
-      <a href="https://x.com/garrytan/status/2125247972158193792" target="_blank">查看推文 →</a>
+      <span class="builder-likes">❤ 23</span>
+      <a href="https://x.com/nikunj/status/2126133563292803100" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NY</div>
+      <div>
+        <div class="builder-name">Nan Yu</div>
+        <div class="builder-handle">@thenanyu · Codex, OpenAI · 前 Linear</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「各位……语音聊天就是聊天。往聊天里发图片也是聊天。下指令、拿回一个网站，也是聊天。这些现在在 ChatGPT 里都能做。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3</span>
+      <a href="https://x.com/thenanyu/status/2126036677642928363" target="_blank">查看推文 →</a>
     </div>
   </div>
 </div>
 
-<div class="disclaimer">
-  ⚠️ 本期内容基于各播客公开的节目页面、章节目录和笔记整理，属于科普性质的转述与讨论，<strong>不构成任何医疗建议、诊断或治疗方案</strong>。Huberman Lab 文字稿为会员内容，本文只使用官网简介和章节目录；The Drive AMA #47 完整笔记为会员内容，本文只使用公开简介和笔记预览；FoundMyFitness Q&amp;A #87 与 Aliquot #155 为会员节目，本文只使用公开简介、目录和页面公开段落。褪黑素研究的数字来自 2025 年美国心脏协会年会摘要的公开报道（ACC、HealthDay），不是 Rhonda Patrick 的原话。尼古丁有成瘾性，并影响心血管，使用前请咨询医生。哺乳期使用任何补剂前，请咨询医生。
-</div>
+<section class="sources">
+  <div class="sources-label">◈ 来源与说明</div>
+  <p class="sources-note">
+    本期未拿到全书。书的内容依据作者在 NPR、《新共和》、Audible 的三篇访谈，哈佛公报的介绍，以及 Kirkus、《洛杉矶书评》、Reason、The Week 汇总和 American Heritage 的书评。NPR 原站无法直接打开，文字稿取自 NPR 成员台 Spokane Public Radio 的转载。1975 年大火断线时长各家说法不同（23 天到六周），节目中两种都说了。贝尔与 Gray 的专利争议，节目只转述双方说法，未作判断；批评者 Grosvenor 是贝尔的后代和传记作者。Gleick 对 AI 公司的评价来自采访，不是书中原话。本期为 Up Next 空缺时自行选定。
+  </p>
+  <a class="source-link" href="https://www.npr.org/2026/11/14/nx-s1-6037416/hello-james-gleicks-new-book-compares-the-history-of-the-telephone-to-the-modern-era" target="_blank"><span class="src-icon">INTERVIEW</span><span>Hello? James Gleick&#x27;s new book compares the history of the telephone to the modern era — NPR All Things Considered 文字稿，2026-11-14</span></a>
+  <a class="source-link" href="https://newrepublic.com/article/218036/telephone-changed-world" target="_blank"><span class="src-icon">INTERVIEW</span><span>How the Telephone Changed the World — The New Republic 问答，2026-11-18</span></a>
+  <a class="source-link" href="https://www.audible.ca/blog/en/james-gleick-the-telephone-interview" target="_blank"><span class="src-icon">INTERVIEW</span><span>How the telephone made the modern world — Audible 问答，2026-11-10</span></a>
+  <a class="source-link" href="https://news.harvard.edu/gazette/story/2026/11/hello-how-the-telephone-transformed-human-connection-gleick-book/" target="_blank"><span class="src-icon">FEATURE</span><span>Hello? How the telephone transformed human connection — Harvard Gazette，2026-11-09</span></a>
+  <a class="source-link" href="https://www.kirkusreviews.com/book-reviews/james-gleick/the-telephone/" target="_blank"><span class="src-icon">REVIEW</span><span>THE TELEPHONE — Kirkus Reviews（星级）</span></a>
+  <a class="source-link" href="https://lareviewofbooks.org/article/telephone-new-history-james-gleick-telegraph-pop-culture/" target="_blank"><span class="src-icon">REVIEW</span><span>Hanging on the Telephone — Los Angeles Review of Books，Tim Riley，2026-11-12</span></a>
+  <a class="source-link" href="https://reason.com/2026/11/10/the-rise-and-fall-of-ma-bell/" target="_blank"><span class="src-icon">REVIEW</span><span>The Rise and Fall of Ma Bell — Reason，Thomas W. Hazlett</span></a>
+  <a class="source-link" href="https://theweek.com/culture-life/books/book-reviews-the-telephone-a-new-history-and-look-at-me" target="_blank"><span class="src-icon">REVIEW</span><span>Book reviews — The Week（汇总彭博、纽约时报、波士顿环球报），2026-11-24</span></a>
+  <a class="source-link" href="https://www.americanheritage.com/truth-about-telephone-invention" target="_blank"><span class="src-icon">CRITIQUE</span><span>The Truth About the Telephone Invention — American Heritage，Edwin S. Grosvenor</span></a>
+  <a class="source-link" href="https://bookmarks.reviews/reviews/the-telephone-a-new-history/" target="_blank"><span class="src-icon">REVIEWS</span><span>Book Marks 书评汇总（9 篇，总评 Rave）</span></a>
+</section>
 
-<div class="sources">
-  <div class="sources-label">◈ 本期来源</div>
-  <a class="source-link" href="https://www.hubermanlab.com/episode/access-the-power-of-now-to-experience-life-more-fully-eckhart-tolle" target="_blank"><span class="src-icon">Huberman</span><span>Access the Power of Now to Experience Life More Fully | Eckhart Tolle — Huberman Lab, 2026-11-23</span></a>
-  <a class="source-link" href="https://www.foundmyfitness.com/episodes/aliquot-155-well-being" target="_blank"><span class="src-icon">FMF</span><span>Aliquot #155: How to Train Your Mind for Well-Being — FoundMyFitness, 2026-11-24</span></a>
-  <a class="source-link" href="https://peterattiamd.com/coldtherapy/" target="_blank"><span class="src-icon">The Drive</span><span>Cold therapy: pros, cons, and its impact on longevity (AMA #47 rebroadcast) — The Peter Attia Drive, 2026-11-23</span></a>
-  <a class="source-link" href="https://www.foundmyfitness.com/episodes/qa-87-dr-rhonda-patrick" target="_blank"><span class="src-icon">FMF</span><span>Q&amp;A #87: Can Nicotine Prevent Alzheimer&#x27;s?—Plus Melatonin and Heart Failure — FoundMyFitness, 2026-11-20</span></a>
-  <a class="source-link" href="https://www.acc.org/Latest-in-Cardiology/Articles/2025/11/03/16/19/mon-melatonin-aha-2025" target="_blank"><span class="src-icon">ACC</span><span>Research Suggests Long-Term Melatonin Use For Insomnia Increases HF Risk — American College of Cardiology, 2025-11-03</span></a>
-  <a class="source-link" href="https://www.healthday.com/healthpro-news/cardiovascular-diseases/aha-long-term-melatonin-use-for-insomnia-tied-to-higher-risk-for-heart-failure" target="_blank"><span class="src-icon">HealthDay</span><span>AHA: Long-Term Melatonin Use for Insomnia Tied to Higher Risk for Heart Failure — HealthDay</span></a>
-  <a class="source-link" href="https://www.hubermanlab.com/episode/essentials-nicotines-effects-on-the-brain-and-body-and-how-to-quit-smoking-or-vaping" target="_blank"><span class="src-icon">Huberman</span><span>Essentials: Nicotine&#x27;s Effects on the Brain &amp; Body &amp; How to Quit Smoking or Vaping — Huberman Lab, 2026-11-19</span></a>
-  <a class="source-link" href="https://x.com/trq212/status/2125156290494353663" target="_blank"><span class="src-icon">X</span><span>Thariq on X</span></a>
-  <a class="source-link" href="https://x.com/steipete/status/2125422797304549672" target="_blank"><span class="src-icon">X</span><span>Peter Steinberger on X</span></a>
-  <a class="source-link" href="https://x.com/garrytan/status/2125247972158193792" target="_blank"><span class="src-icon">X</span><span>Garry Tan on X</span></a>
-</div>
-
-<div class="footer">
-  <span>Daily Builders Digest · 2026-11-26 · Health 星期四</span>
-  <span>大雨 × 小苇 · 关注建造者，不要关注 influencer</span>
-</div>
+<footer class="footer">
+  <span>Daily Builders Digest · 2026-11-28</span>
+  <span>周六书籍介绍 · 第三十期</span>
+  <span>大雨 × 小苇</span>
+</footer>
 
 <!-- ── PAST EPISODES GRID ── -->
 <hr class="rule-heavy" style="margin-top:56px">
 <p class="section-label">◈ 往期回顾 · 近一个月节目</p>
 <div class="cal-card">
   <div class="cal-head">
-    <span class="cal-range">2026.10.26 — 2026.11.26</span>
-    <span class="cal-count">31 期</span>
+    <span class="cal-range">2026.10.28 — 2026.11.28</span>
+    <span class="cal-count">30 期</span>
   </div>
-  <div class="cal-grid"><span class="cal-wd">一</span><span class="cal-wd">二</span><span class="cal-wd">三</span><span class="cal-wd">四</span><span class="cal-wd">五</span><span class="cal-wd">六</span><span class="cal-wd">日</span><a class="cal-day has-ep" href="/episodes/2026-10-26.html" title="2026-10-26 · AI · 把代理关在笼子里" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">10月</span><span class="cal-topic">AI</span></span><span class="cal-theme">把代理关在笼子里</span></a><a class="cal-day has-ep" href="/episodes/2026-10-27.html" title="2026-10-27 · Robotics · 从一个仓库到很多个仓库" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">27</span><span class="cal-topic">机器人</span></span><span class="cal-theme">从一个仓库到很多个仓库</span></a><a class="cal-day has-ep" href="/episodes/2026-10-28.html" title="2026-10-28 · Product · agent 开始用电脑，人管什么" style="--c:#004488"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">产品</span></span><span class="cal-theme">agent 开始用电脑，人管什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-29.html" title="2026-10-29 · Health · 情绪是大脑做出来的预测" style="--c:#007744"><span class="cal-top"><span class="cal-num">29</span><span class="cal-topic">健康</span></span><span class="cal-theme">情绪是大脑做出来的预测</span></a><a class="cal-day has-ep" href="/episodes/2026-10-30.html" title="2026-10-30 · AI · 花钱的账单和写代码的人" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">30</span><span class="cal-topic">AI</span></span><span class="cal-theme">花钱的账单和写代码的人</span></a><a class="cal-day has-ep" href="/episodes/2026-10-31.html" title="2026-10-31 · Books · Artificial Intimacy" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">31</span><span class="cal-topic">书</span></span><span class="cal-theme">Artificial Intimacy</span></a><a class="cal-day has-ep" href="/episodes/2026-11-01.html" title="2026-11-01 · Podcasts · 智能体越强，企业给每个人的权限越紧" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">11月</span><span class="cal-topic">播客</span></span><span class="cal-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-day has-ep" href="/episodes/2026-11-02.html" title="2026-11-02 · AI · 额度、退出标记和两边都在用的代理" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">2</span><span class="cal-topic">AI</span></span><span class="cal-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-day has-ep" href="/episodes/2026-11-03.html" title="2026-11-03 · Robotics · 机器人要上市，也要上保险" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">3</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人要上市，也要上保险</span></a><a class="cal-day has-ep" href="/episodes/2026-11-04.html" title="2026-11-04 · Product · 默认值是谁定的" style="--c:#004488"><span class="cal-top"><span class="cal-num">4</span><span class="cal-topic">产品</span></span><span class="cal-theme">默认值是谁定的</span></a><a class="cal-day has-ep" href="/episodes/2026-11-05.html" title="2026-11-05 · Health · 练力量，受伤了也别全停" style="--c:#007744"><span class="cal-top"><span class="cal-num">5</span><span class="cal-topic">健康</span></span><span class="cal-theme">练力量，受伤了也别全停</span></a><a class="cal-day has-ep" href="/episodes/2026-11-06.html" title="2026-11-06 · AI · 找漏洞的模型、放代码的地方、建机房的条件" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">6</span><span class="cal-topic">AI</span></span><span class="cal-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-day has-ep" href="/episodes/2026-11-07.html" title="2026-11-07 · Books · Beautiful Particulars" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">7</span><span class="cal-topic">书</span></span><span class="cal-theme">Beautiful Particulars</span></a><a class="cal-day has-ep" href="/episodes/2026-11-08.html" title="2026-11-08 · Podcasts · 画地图 → 预测 → 指挥下一个实验" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">8</span><span class="cal-topic">播客</span></span><span class="cal-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-day has-ep" href="/episodes/2026-11-09.html" title="2026-11-09 · AI · 代理去攻，代理去守，融资变难" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">9</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-day has-ep" href="/episodes/2026-11-10.html" title="2026-11-10 · Robotics · 数据：人类视频、审查、财报" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">10</span><span class="cal-topic">机器人</span></span><span class="cal-theme">数据：人类视频、审查、财报</span></a><a class="cal-day has-ep" href="/episodes/2026-11-11.html" title="2026-11-11 · Product · 额度也是产品" style="--c:#004488"><span class="cal-top"><span class="cal-num">11</span><span class="cal-topic">产品</span></span><span class="cal-theme">额度也是产品</span></a><a class="cal-day has-ep" href="/episodes/2026-11-12.html" title="2026-11-12 · Health · 数字之外" style="--c:#007744"><span class="cal-top"><span class="cal-num">12</span><span class="cal-topic">健康</span></span><span class="cal-theme">数字之外</span></a><a class="cal-day has-ep" href="/episodes/2026-11-13.html" title="2026-11-13 · AI · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">13</span><span class="cal-topic">AI</span></span><span class="cal-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-day has-ep" href="/episodes/2026-11-14.html" title="2026-11-14 · Books · Big Math" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">书</span></span><span class="cal-theme">Big Math</span></a><a class="cal-day has-ep" href="/episodes/2026-11-15.html" title="2026-11-15 · Podcasts · 当买家先去问模型" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">播客</span></span><span class="cal-theme">当买家先去问模型</span></a><a class="cal-day has-ep" href="/episodes/2026-11-16.html" title="2026-11-16 · AI · 代理开始替你付钱，代理之间开始抢资源，这周看两场考试" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span></a><a class="cal-day has-ep" href="/episodes/2026-11-17.html" title="2026-11-17 · Robotics · 价值落在哪一层：模型、订阅、按小时付费" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">17</span><span class="cal-topic">机器人</span></span><span class="cal-theme">价值落在哪一层：模型、订阅、按小时付费</span></a><a class="cal-day has-ep" href="/episodes/2026-11-18.html" title="2026-11-18 · Product · 先在小范围上线" style="--c:#004488"><span class="cal-top"><span class="cal-num">18</span><span class="cal-topic">产品</span></span><span class="cal-theme">先在小范围上线</span></a><a class="cal-day has-ep" href="/episodes/2026-11-19.html" title="2026-11-19 · Health · 补剂和证据" style="--c:#007744"><span class="cal-top"><span class="cal-num">19</span><span class="cal-topic">健康</span></span><span class="cal-theme">补剂和证据</span></a><a class="cal-day has-ep" href="/episodes/2026-11-20.html" title="2026-11-20 · AI · Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">20</span><span class="cal-topic">AI</span></span><span class="cal-theme">Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责</span></a><span class="cal-day empty"><span class="cal-num">21</span></span><a class="cal-day has-ep" href="/episodes/2026-11-22.html" title="2026-11-22 · Podcasts · Linear 怎么做到一亿美元年收入" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">22</span><span class="cal-topic">播客</span></span><span class="cal-theme">Linear 怎么做到一亿美元年收入</span></a><a class="cal-day has-ep" href="/episodes/2026-11-23.html" title="2026-11-23 · AI · 黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">23</span><span class="cal-topic">AI</span></span><span class="cal-theme">黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看</span></a><a class="cal-day has-ep" href="/episodes/2026-11-24.html" title="2026-11-24 · Robotics · 机器人的本事从哪里来" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">24</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人的本事从哪里来</span></a><a class="cal-day has-ep" href="/episodes/2026-11-25.html" title="2026-11-25 · Product · 一个开关，拆成几个" style="--c:#004488"><span class="cal-top"><span class="cal-num">25</span><span class="cal-topic">产品</span></span><span class="cal-theme">一个开关，拆成几个</span></a><a class="cal-day has-ep is-today" href="/episodes/2026-11-26.html" title="2026-11-26 · Health · 安静、冷水和尼古丁" style="--c:#007744"><span class="cal-top"><span class="cal-num">26</span><span class="cal-topic">健康</span></span><span class="cal-theme">安静、冷水和尼古丁</span></a><span class="cal-day off"><span class="cal-num">27</span></span><span class="cal-day off"><span class="cal-num">28</span></span><span class="cal-day off"><span class="cal-num">29</span></span></div>
-  <div class="cal-legend"><span class="cal-leg"><i style="background:#007744"></i>健康</span><span class="cal-leg"><i style="background:#004488"></i>产品</span><span class="cal-leg"><i style="background:#cc5500"></i>机器人</span><span class="cal-leg"><i style="background:#dd1111"></i>AI</span><span class="cal-leg"><i style="background:#7700dd"></i>播客</span><span class="cal-leg"><i style="background:#0066cc"></i>书</span></div>
-  <div class="cal-list"><a class="cal-row" href="/episodes/2026-11-26.html" style="--c:#007744"><span class="cal-row-date">11/26</span><span class="cal-row-theme">安静、冷水和尼古丁</span></a><a class="cal-row" href="/episodes/2026-11-25.html" style="--c:#004488"><span class="cal-row-date">11/25</span><span class="cal-row-theme">一个开关，拆成几个</span></a><a class="cal-row" href="/episodes/2026-11-24.html" style="--c:#cc5500"><span class="cal-row-date">11/24</span><span class="cal-row-theme">机器人的本事从哪里来</span></a><a class="cal-row" href="/episodes/2026-11-23.html" style="--c:#dd1111"><span class="cal-row-date">11/23</span><span class="cal-row-theme">黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看</span></a><a class="cal-row" href="/episodes/2026-11-22.html" style="--c:#7700dd"><span class="cal-row-date">11/22</span><span class="cal-row-theme">Linear 怎么做到一亿美元年收入</span></a><a class="cal-row" href="/episodes/2026-11-20.html" style="--c:#dd1111"><span class="cal-row-date">11/20</span><span class="cal-row-theme">Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责</span></a><a class="cal-row" href="/episodes/2026-11-19.html" style="--c:#007744"><span class="cal-row-date">11/19</span><span class="cal-row-theme">补剂和证据</span></a><a class="cal-row" href="/episodes/2026-11-18.html" style="--c:#004488"><span class="cal-row-date">11/18</span><span class="cal-row-theme">先在小范围上线</span></a><a class="cal-row" href="/episodes/2026-11-17.html" style="--c:#cc5500"><span class="cal-row-date">11/17</span><span class="cal-row-theme">价值落在哪一层：模型、订阅、按小时付费</span></a><a class="cal-row" href="/episodes/2026-11-16.html" style="--c:#dd1111"><span class="cal-row-date">11/16</span><span class="cal-row-theme">代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span></a><a class="cal-row" href="/episodes/2026-11-15.html" style="--c:#7700dd"><span class="cal-row-date">11/15</span><span class="cal-row-theme">当买家先去问模型</span></a><a class="cal-row" href="/episodes/2026-11-14.html" style="--c:#0066cc"><span class="cal-row-date">11/14</span><span class="cal-row-theme">Big Math</span></a><a class="cal-row" href="/episodes/2026-11-13.html" style="--c:#dd1111"><span class="cal-row-date">11/13</span><span class="cal-row-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-row" href="/episodes/2026-11-12.html" style="--c:#007744"><span class="cal-row-date">11/12</span><span class="cal-row-theme">数字之外</span></a><a class="cal-row" href="/episodes/2026-11-11.html" style="--c:#004488"><span class="cal-row-date">11/11</span><span class="cal-row-theme">额度也是产品</span></a><a class="cal-row" href="/episodes/2026-11-10.html" style="--c:#cc5500"><span class="cal-row-date">11/10</span><span class="cal-row-theme">数据：人类视频、审查、财报</span></a><a class="cal-row" href="/episodes/2026-11-09.html" style="--c:#dd1111"><span class="cal-row-date">11/9</span><span class="cal-row-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-row" href="/episodes/2026-11-08.html" style="--c:#7700dd"><span class="cal-row-date">11/8</span><span class="cal-row-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-row" href="/episodes/2026-11-07.html" style="--c:#0066cc"><span class="cal-row-date">11/7</span><span class="cal-row-theme">Beautiful Particulars</span></a><a class="cal-row" href="/episodes/2026-11-06.html" style="--c:#dd1111"><span class="cal-row-date">11/6</span><span class="cal-row-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-row" href="/episodes/2026-11-05.html" style="--c:#007744"><span class="cal-row-date">11/5</span><span class="cal-row-theme">练力量，受伤了也别全停</span></a><a class="cal-row" href="/episodes/2026-11-04.html" style="--c:#004488"><span class="cal-row-date">11/4</span><span class="cal-row-theme">默认值是谁定的</span></a><a class="cal-row" href="/episodes/2026-11-03.html" style="--c:#cc5500"><span class="cal-row-date">11/3</span><span class="cal-row-theme">机器人要上市，也要上保险</span></a><a class="cal-row" href="/episodes/2026-11-02.html" style="--c:#dd1111"><span class="cal-row-date">11/2</span><span class="cal-row-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-row" href="/episodes/2026-11-01.html" style="--c:#7700dd"><span class="cal-row-date">11/1</span><span class="cal-row-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-row" href="/episodes/2026-10-31.html" style="--c:#0066cc"><span class="cal-row-date">10/31</span><span class="cal-row-theme">Artificial Intimacy</span></a><a class="cal-row" href="/episodes/2026-10-30.html" style="--c:#dd1111"><span class="cal-row-date">10/30</span><span class="cal-row-theme">花钱的账单和写代码的人</span></a><a class="cal-row" href="/episodes/2026-10-29.html" style="--c:#007744"><span class="cal-row-date">10/29</span><span class="cal-row-theme">情绪是大脑做出来的预测</span></a><a class="cal-row" href="/episodes/2026-10-28.html" style="--c:#004488"><span class="cal-row-date">10/28</span><span class="cal-row-theme">agent 开始用电脑，人管什么</span></a><a class="cal-row" href="/episodes/2026-10-27.html" style="--c:#cc5500"><span class="cal-row-date">10/27</span><span class="cal-row-theme">从一个仓库到很多个仓库</span></a><a class="cal-row" href="/episodes/2026-10-26.html" style="--c:#dd1111"><span class="cal-row-date">10/26</span><span class="cal-row-theme">把代理关在笼子里</span></a></div>
+  <div class="cal-grid"><span class="cal-wd">一</span><span class="cal-wd">二</span><span class="cal-wd">三</span><span class="cal-wd">四</span><span class="cal-wd">五</span><span class="cal-wd">六</span><span class="cal-wd">日</span><span class="cal-day off"><span class="cal-num">10月</span></span><span class="cal-day off"><span class="cal-num">27</span></span><a class="cal-day has-ep" href="/episodes/2026-10-28.html" title="2026-10-28 · Product · agent 开始用电脑，人管什么" style="--c:#004488"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">产品</span></span><span class="cal-theme">agent 开始用电脑，人管什么</span></a><a class="cal-day has-ep" href="/episodes/2026-10-29.html" title="2026-10-29 · Health · 情绪是大脑做出来的预测" style="--c:#007744"><span class="cal-top"><span class="cal-num">29</span><span class="cal-topic">健康</span></span><span class="cal-theme">情绪是大脑做出来的预测</span></a><a class="cal-day has-ep" href="/episodes/2026-10-30.html" title="2026-10-30 · AI · 花钱的账单和写代码的人" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">30</span><span class="cal-topic">AI</span></span><span class="cal-theme">花钱的账单和写代码的人</span></a><a class="cal-day has-ep" href="/episodes/2026-10-31.html" title="2026-10-31 · Books · Artificial Intimacy" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">31</span><span class="cal-topic">书</span></span><span class="cal-theme">Artificial Intimacy</span></a><a class="cal-day has-ep" href="/episodes/2026-11-01.html" title="2026-11-01 · Podcasts · 智能体越强，企业给每个人的权限越紧" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">11月</span><span class="cal-topic">播客</span></span><span class="cal-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-day has-ep" href="/episodes/2026-11-02.html" title="2026-11-02 · AI · 额度、退出标记和两边都在用的代理" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">2</span><span class="cal-topic">AI</span></span><span class="cal-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-day has-ep" href="/episodes/2026-11-03.html" title="2026-11-03 · Robotics · 机器人要上市，也要上保险" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">3</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人要上市，也要上保险</span></a><a class="cal-day has-ep" href="/episodes/2026-11-04.html" title="2026-11-04 · Product · 默认值是谁定的" style="--c:#004488"><span class="cal-top"><span class="cal-num">4</span><span class="cal-topic">产品</span></span><span class="cal-theme">默认值是谁定的</span></a><a class="cal-day has-ep" href="/episodes/2026-11-05.html" title="2026-11-05 · Health · 练力量，受伤了也别全停" style="--c:#007744"><span class="cal-top"><span class="cal-num">5</span><span class="cal-topic">健康</span></span><span class="cal-theme">练力量，受伤了也别全停</span></a><a class="cal-day has-ep" href="/episodes/2026-11-06.html" title="2026-11-06 · AI · 找漏洞的模型、放代码的地方、建机房的条件" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">6</span><span class="cal-topic">AI</span></span><span class="cal-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-day has-ep" href="/episodes/2026-11-07.html" title="2026-11-07 · Books · Beautiful Particulars" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">7</span><span class="cal-topic">书</span></span><span class="cal-theme">Beautiful Particulars</span></a><a class="cal-day has-ep" href="/episodes/2026-11-08.html" title="2026-11-08 · Podcasts · 画地图 → 预测 → 指挥下一个实验" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">8</span><span class="cal-topic">播客</span></span><span class="cal-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-day has-ep" href="/episodes/2026-11-09.html" title="2026-11-09 · AI · 代理去攻，代理去守，融资变难" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">9</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-day has-ep" href="/episodes/2026-11-10.html" title="2026-11-10 · Robotics · 数据：人类视频、审查、财报" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">10</span><span class="cal-topic">机器人</span></span><span class="cal-theme">数据：人类视频、审查、财报</span></a><a class="cal-day has-ep" href="/episodes/2026-11-11.html" title="2026-11-11 · Product · 额度也是产品" style="--c:#004488"><span class="cal-top"><span class="cal-num">11</span><span class="cal-topic">产品</span></span><span class="cal-theme">额度也是产品</span></a><a class="cal-day has-ep" href="/episodes/2026-11-12.html" title="2026-11-12 · Health · 数字之外" style="--c:#007744"><span class="cal-top"><span class="cal-num">12</span><span class="cal-topic">健康</span></span><span class="cal-theme">数字之外</span></a><a class="cal-day has-ep" href="/episodes/2026-11-13.html" title="2026-11-13 · AI · 英伟达换 CEO，谷歌换模型名，Anthropic 开始路演" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">13</span><span class="cal-topic">AI</span></span><span class="cal-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-day has-ep" href="/episodes/2026-11-14.html" title="2026-11-14 · Books · Big Math" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">14</span><span class="cal-topic">书</span></span><span class="cal-theme">Big Math</span></a><a class="cal-day has-ep" href="/episodes/2026-11-15.html" title="2026-11-15 · Podcasts · 当买家先去问模型" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">15</span><span class="cal-topic">播客</span></span><span class="cal-theme">当买家先去问模型</span></a><a class="cal-day has-ep" href="/episodes/2026-11-16.html" title="2026-11-16 · AI · 代理开始替你付钱，代理之间开始抢资源，这周看两场考试" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">16</span><span class="cal-topic">AI</span></span><span class="cal-theme">代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span></a><a class="cal-day has-ep" href="/episodes/2026-11-17.html" title="2026-11-17 · Robotics · 价值落在哪一层：模型、订阅、按小时付费" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">17</span><span class="cal-topic">机器人</span></span><span class="cal-theme">价值落在哪一层：模型、订阅、按小时付费</span></a><a class="cal-day has-ep" href="/episodes/2026-11-18.html" title="2026-11-18 · Product · 先在小范围上线" style="--c:#004488"><span class="cal-top"><span class="cal-num">18</span><span class="cal-topic">产品</span></span><span class="cal-theme">先在小范围上线</span></a><a class="cal-day has-ep" href="/episodes/2026-11-19.html" title="2026-11-19 · Health · 补剂和证据" style="--c:#007744"><span class="cal-top"><span class="cal-num">19</span><span class="cal-topic">健康</span></span><span class="cal-theme">补剂和证据</span></a><a class="cal-day has-ep" href="/episodes/2026-11-20.html" title="2026-11-20 · AI · Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">20</span><span class="cal-topic">AI</span></span><span class="cal-theme">Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责</span></a><span class="cal-day empty"><span class="cal-num">21</span></span><a class="cal-day has-ep" href="/episodes/2026-11-22.html" title="2026-11-22 · Podcasts · Linear 怎么做到一亿美元年收入" style="--c:#7700dd"><span class="cal-top"><span class="cal-num">22</span><span class="cal-topic">播客</span></span><span class="cal-theme">Linear 怎么做到一亿美元年收入</span></a><a class="cal-day has-ep" href="/episodes/2026-11-23.html" title="2026-11-23 · AI · 黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看" style="--c:#dd1111"><span class="cal-top"><span class="cal-num">23</span><span class="cal-topic">AI</span></span><span class="cal-theme">黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看</span></a><a class="cal-day has-ep" href="/episodes/2026-11-24.html" title="2026-11-24 · Robotics · 机器人的本事从哪里来" style="--c:#cc5500"><span class="cal-top"><span class="cal-num">24</span><span class="cal-topic">机器人</span></span><span class="cal-theme">机器人的本事从哪里来</span></a><a class="cal-day has-ep" href="/episodes/2026-11-25.html" title="2026-11-25 · Product · 一个开关，拆成几个" style="--c:#004488"><span class="cal-top"><span class="cal-num">25</span><span class="cal-topic">产品</span></span><span class="cal-theme">一个开关，拆成几个</span></a><a class="cal-day has-ep" href="/episodes/2026-11-26.html" title="2026-11-26 · Health · 安静、冷水和尼古丁" style="--c:#007744"><span class="cal-top"><span class="cal-num">26</span><span class="cal-topic">健康</span></span><span class="cal-theme">安静、冷水和尼古丁</span></a><span class="cal-day empty"><span class="cal-num">27</span></span><a class="cal-day has-ep is-today" href="/episodes/2026-11-28.html" title="2026-11-28 · Books · The Telephone" style="--c:#0066cc"><span class="cal-top"><span class="cal-num">28</span><span class="cal-topic">书</span></span><span class="cal-theme">The Telephone</span></a><span class="cal-day off"><span class="cal-num">29</span></span></div>
+  <div class="cal-legend"><span class="cal-leg"><i style="background:#0066cc"></i>书</span><span class="cal-leg"><i style="background:#007744"></i>健康</span><span class="cal-leg"><i style="background:#004488"></i>产品</span><span class="cal-leg"><i style="background:#cc5500"></i>机器人</span><span class="cal-leg"><i style="background:#dd1111"></i>AI</span><span class="cal-leg"><i style="background:#7700dd"></i>播客</span></div>
+  <div class="cal-list"><a class="cal-row" href="/episodes/2026-11-28.html" style="--c:#0066cc"><span class="cal-row-date">11/28</span><span class="cal-row-theme">The Telephone</span></a><a class="cal-row" href="/episodes/2026-11-26.html" style="--c:#007744"><span class="cal-row-date">11/26</span><span class="cal-row-theme">安静、冷水和尼古丁</span></a><a class="cal-row" href="/episodes/2026-11-25.html" style="--c:#004488"><span class="cal-row-date">11/25</span><span class="cal-row-theme">一个开关，拆成几个</span></a><a class="cal-row" href="/episodes/2026-11-24.html" style="--c:#cc5500"><span class="cal-row-date">11/24</span><span class="cal-row-theme">机器人的本事从哪里来</span></a><a class="cal-row" href="/episodes/2026-11-23.html" style="--c:#dd1111"><span class="cal-row-date">11/23</span><span class="cal-row-theme">黎曼猜想有了机器验证的证明，OpenAI 提议给 AI 设上限，你的提示词被人偷看</span></a><a class="cal-row" href="/episodes/2026-11-22.html" style="--c:#7700dd"><span class="cal-row-date">11/22</span><span class="cal-row-theme">Linear 怎么做到一亿美元年收入</span></a><a class="cal-row" href="/episodes/2026-11-20.html" style="--c:#dd1111"><span class="cal-row-date">11/20</span><span class="cal-row-theme">Anthropic 上市第一天，两家对手同一周发新模型，银行说代理出事你自己负责</span></a><a class="cal-row" href="/episodes/2026-11-19.html" style="--c:#007744"><span class="cal-row-date">11/19</span><span class="cal-row-theme">补剂和证据</span></a><a class="cal-row" href="/episodes/2026-11-18.html" style="--c:#004488"><span class="cal-row-date">11/18</span><span class="cal-row-theme">先在小范围上线</span></a><a class="cal-row" href="/episodes/2026-11-17.html" style="--c:#cc5500"><span class="cal-row-date">11/17</span><span class="cal-row-theme">价值落在哪一层：模型、订阅、按小时付费</span></a><a class="cal-row" href="/episodes/2026-11-16.html" style="--c:#dd1111"><span class="cal-row-date">11/16</span><span class="cal-row-theme">代理开始替你付钱，代理之间开始抢资源，这周看两场考试</span></a><a class="cal-row" href="/episodes/2026-11-15.html" style="--c:#7700dd"><span class="cal-row-date">11/15</span><span class="cal-row-theme">当买家先去问模型</span></a><a class="cal-row" href="/episodes/2026-11-14.html" style="--c:#0066cc"><span class="cal-row-date">11/14</span><span class="cal-row-theme">Big Math</span></a><a class="cal-row" href="/episodes/2026-11-13.html" style="--c:#dd1111"><span class="cal-row-date">11/13</span><span class="cal-row-theme">英伟达换 CEO，谷歌换模型名，Anthropic 开始路演</span></a><a class="cal-row" href="/episodes/2026-11-12.html" style="--c:#007744"><span class="cal-row-date">11/12</span><span class="cal-row-theme">数字之外</span></a><a class="cal-row" href="/episodes/2026-11-11.html" style="--c:#004488"><span class="cal-row-date">11/11</span><span class="cal-row-theme">额度也是产品</span></a><a class="cal-row" href="/episodes/2026-11-10.html" style="--c:#cc5500"><span class="cal-row-date">11/10</span><span class="cal-row-theme">数据：人类视频、审查、财报</span></a><a class="cal-row" href="/episodes/2026-11-09.html" style="--c:#dd1111"><span class="cal-row-date">11/9</span><span class="cal-row-theme">代理去攻，代理去守，融资变难</span></a><a class="cal-row" href="/episodes/2026-11-08.html" style="--c:#7700dd"><span class="cal-row-date">11/8</span><span class="cal-row-theme">画地图 → 预测 → 指挥下一个实验</span></a><a class="cal-row" href="/episodes/2026-11-07.html" style="--c:#0066cc"><span class="cal-row-date">11/7</span><span class="cal-row-theme">Beautiful Particulars</span></a><a class="cal-row" href="/episodes/2026-11-06.html" style="--c:#dd1111"><span class="cal-row-date">11/6</span><span class="cal-row-theme">找漏洞的模型、放代码的地方、建机房的条件</span></a><a class="cal-row" href="/episodes/2026-11-05.html" style="--c:#007744"><span class="cal-row-date">11/5</span><span class="cal-row-theme">练力量，受伤了也别全停</span></a><a class="cal-row" href="/episodes/2026-11-04.html" style="--c:#004488"><span class="cal-row-date">11/4</span><span class="cal-row-theme">默认值是谁定的</span></a><a class="cal-row" href="/episodes/2026-11-03.html" style="--c:#cc5500"><span class="cal-row-date">11/3</span><span class="cal-row-theme">机器人要上市，也要上保险</span></a><a class="cal-row" href="/episodes/2026-11-02.html" style="--c:#dd1111"><span class="cal-row-date">11/2</span><span class="cal-row-theme">额度、退出标记和两边都在用的代理</span></a><a class="cal-row" href="/episodes/2026-11-01.html" style="--c:#7700dd"><span class="cal-row-date">11/1</span><span class="cal-row-theme">智能体越强，企业给每个人的权限越紧</span></a><a class="cal-row" href="/episodes/2026-10-31.html" style="--c:#0066cc"><span class="cal-row-date">10/31</span><span class="cal-row-theme">Artificial Intimacy</span></a><a class="cal-row" href="/episodes/2026-10-30.html" style="--c:#dd1111"><span class="cal-row-date">10/30</span><span class="cal-row-theme">花钱的账单和写代码的人</span></a><a class="cal-row" href="/episodes/2026-10-29.html" style="--c:#007744"><span class="cal-row-date">10/29</span><span class="cal-row-theme">情绪是大脑做出来的预测</span></a><a class="cal-row" href="/episodes/2026-10-28.html" style="--c:#004488"><span class="cal-row-date">10/28</span><span class="cal-row-theme">agent 开始用电脑，人管什么</span></a></div>
 </div>
 <style>
 .cal-card{background:var(--card);border:1px solid var(--light);padding:20px;margin-bottom:48px;}

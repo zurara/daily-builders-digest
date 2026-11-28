@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-11-28",
+    "dow": 6,
+    "topic": "Books",
+    "format": "新闻快报",
+    "title": "2026-11-28 今日快报",
+    "html": "episodes/2026-11-28.html",
+    "mp3": "episodes/2026-11-28.mp3",
+    "headlines": [],
+    "theme": "The Telephone"
+  },
+  {
     "date": "2026-11-26",
     "dow": 4,
     "topic": "Health",
@@ -425,38 +436,5 @@
       "苹果「Pro and tell」：一周每天发一款"
     ],
     "theme": "agent 开始用电脑，人管什么"
-  },
-  {
-    "date": "2026-10-27",
-    "dow": 2,
-    "topic": "Robotics",
-    "format": "新闻快报",
-    "title": "GXO 和 Agility，从一个仓库到三个 · Bedrock 融资六亿美元，挖掘机自己干活",
-    "html": "episodes/2026-10-27.html",
-    "mp3": "episodes/2026-10-27.mp3",
-    "headlines": [
-      "GXO 和 Agility，从一个仓库到三个",
-      "Bedrock 融资六亿美元，挖掘机自己干活",
-      "舍弗勒太仓工厂，人形机器人装人形机器人",
-      "宇树股价七天涨六成多，公司自己提示风险",
-      "补充两条：看视频学动作，Optimus 早期生产"
-    ],
-    "theme": "从一个仓库到很多个仓库"
-  },
-  {
-    "date": "2026-10-26",
-    "dow": 1,
-    "topic": "AI",
-    "format": "新闻快报",
-    "title": "OpenAI：最强的模型，训练时不再连互联网 · 外部审计：OpenAI 的监控系统也有洞",
-    "html": "episodes/2026-10-26.html",
-    "mp3": "episodes/2026-10-26.mp3",
-    "headlines": [
-      "OpenAI：最强的模型，训练时不再连互联网",
-      "外部审计：OpenAI 的监控系统也有洞",
-      "Claude 自己去申请了佐治亚州的选票数据",
-      "这周三：AI 的钱赚回来了吗"
-    ],
-    "theme": "把代理关在笼子里"
   }
 ]

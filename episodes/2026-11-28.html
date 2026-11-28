@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="Daily Builders Digest · 2026-11-28 · 周六书籍介绍">
+<meta property="og:description" content="The Telephone · James Gleick · 一部新的电话史">
+<title>The Telephone · 周六书籍介绍 · 2026-11-28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:     #f2f0ea;
+    --ink:    #0c0c0c;
+    --red:    #dd1111;
+    --mid:    #888;
+    --light:  #d8d6d0;
+    --card:   #eceae4;
+  }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6; max-width: 1080px; margin: 0 auto;
+    padding: 0 16px 80px; padding-bottom: max(80px, env(safe-area-inset-bottom, 80px));
+  }
+  @media (min-width: 600px) { body { padding: 0 24px 80px; } }
+  .header { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .header-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 7vw, 80px); line-height: .95; letter-spacing: .02em; color: var(--ink); }
+  .header-title span { color: var(--red); }
+  .header-meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: .1em; }
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 9px 0; margin: 0; background: var(--ink); }
+  .ticker-track { display: inline-flex; white-space: nowrap; animation: ticker 40s linear infinite; }
+  .ticker-item { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: var(--bg); margin-right: 72px; text-transform: uppercase; }
+  .ticker-item .dot { color: var(--red); margin-right: 10px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .audio-bar { background: var(--ink); padding: 16px 20px 14px; position: sticky; top: 0; z-index: 50; border-bottom: 2px solid var(--red); }
+  .audio-bar-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .audio-bar-top .icon { color: var(--red); font-size: 16px; }
+  .audio-bar-top strong { color: var(--bg); }
+  .audio-bar-top span { color: #666; }
+  audio { width: 100%; height: 36px; accent-color: var(--red); display: block; }
+  .book-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--light); margin-top: 40px; }
+  @media (max-width: 600px) { .book-hero { grid-template-columns: 1fr; } }
+  .book-cover-panel { background: var(--ink); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .book-cover-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+  .book-title-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 4.6vw, 58px); line-height: 1; color: var(--bg); margin-bottom: 8px; }
+  .book-subtitle { font-family: 'Inter', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; line-height: 1.5; }
+  .book-author-line { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--red); letter-spacing: .06em; }
+  .book-meta-panel { padding: 40px; background: var(--card); display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .book-one-liner { font-size: 17px; font-weight: 500; line-height: 1.5; color: var(--ink); }
+  .book-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--light); color: var(--mid); background: var(--bg); }
+  .book-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+  .stat-value { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); padding: 28px 0 12px; border-bottom: 1px solid var(--light); margin-bottom: 24px; }
+  .script-container { margin-top: 32px; }
+  .script-block { margin-bottom: 32px; border-left: 3px solid var(--light); padding-left: 20px; }
+  .script-block.lead-block { border-left-color: var(--red); }
+  .speaker-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .speaker-dayu { color: var(--red); }
+  .speaker-xiaowei { color: #555; }
+  .script-text { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .inline-src { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .06em; margin-top: 10px; }
+  .inline-src a { color: var(--red); text-decoration: none; }
+  .pull-quote { font-family: 'Inter', sans-serif; font-size: clamp(19px, 2.6vw, 26px); font-weight: 300; line-height: 1.45; color: var(--ink); border-left: 3px solid var(--red); padding: 4px 0 4px 22px; margin: 36px 0; }
+  .pull-quote cite { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: 12px; }
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 36px 0; }
+  .pillar { background: var(--bg); padding: 22px 24px; }
+  .pillar-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--red); line-height: 1; margin-bottom: 8px; }
+  .pillar-name { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .pillar-body { font-size: 13px; line-height: 1.6; color: #444; }
+  .pillar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--mid); margin-top: 10px; display: block; }
+  .takeaways { background: var(--ink); color: var(--bg); padding: 32px 36px; margin: 40px 0; }
+  .takeaways-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+  .takeaways-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; margin-bottom: 20px; color: var(--bg); }
+  .takeaway-item { display: flex; gap: 14px; margin-bottom: 14px; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .takeaway-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--red); flex-shrink: 0; padding-top: 2px; }
+  .angles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--light); border: 1px solid var(--light); margin: 32px 0; }
+  @media (max-width: 540px) { .angles-grid { grid-template-columns: 1fr; } }
+  .angle-card { background: var(--bg); padding: 20px 24px; }
+  .angle-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: var(--light); font-weight: 600; margin-bottom: 8px; }
+  .angle-text { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  .sources { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--light); }
+  .sources-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+  .sources-note { font-size: 12px; line-height: 1.7; color: var(--mid); margin-bottom: 16px; }
+  .source-link { display: flex; font-size: 13px; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--light); gap: 10px; align-items: baseline; }
+  .source-link:hover { color: var(--red); }
+  .source-link .src-icon { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+  .builders-intro { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+  .builders-intro a { color: var(--red); text-decoration: none; }
+  .rule-heavy { border: none; border-top: 2px solid var(--ink); margin: 40px 0 0; }
+  .podcast-card { background: var(--ink); color: var(--bg); padding: 28px; margin-bottom: 2px; }
+  .podcast-card .pc-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .podcast-card .pc-show { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #aaa; margin-bottom: 4px; }
+  .podcast-card .pc-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 17px; line-height: 1.35; margin-bottom: 12px; }
+  .podcast-card .pc-summary { font-size: 13px; line-height: 1.7; color: #ccc; }
+  .podcast-card a { color: var(--red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; margin-top: 14px; display: inline-block; border-bottom: 1px solid var(--red); }
+  .builders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--light); border: 1px solid var(--light); }
+  .builder-card { background: var(--bg); padding: 20px; }
+  .builder-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .builder-avatar { width: 36px; height: 36px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--bg); flex-shrink: 0; }
+  .builder-name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .builder-handle { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); margin-top: 2px; }
+  .builder-tweet { font-size: 13px; line-height: 1.6; color: #333; border-left: 2px solid var(--light); padding-left: 10px; margin-bottom: 8px; }
+  .builder-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--mid); letter-spacing: .06em; display: flex; gap: 14px; }
+  .builder-meta a { color: var(--red); text-decoration: none; }
+  @media (max-width: 600px) { .builders-grid { grid-template-columns: 1fr !important; } }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--light); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--mid); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 540px) { .book-cover-panel { padding: 32px 24px; } .book-meta-panel { padding: 28px 24px; } .takeaways { padding: 24px; } .header { padding: 28px 0 20px; } }
+</style>
+<style id="ep-nav-css">
+#ep-nav-bar{position:fixed;bottom:0;left:0;right:0;background:#0c0c0c;border-top:2px solid #dd1111;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;z-index:200;font-family:'JetBrains Mono',monospace;font-size:11px;padding-bottom:max(10px,env(safe-area-inset-bottom,10px));gap:8px;}
+.epnav-home{color:#f2f0ea;text-decoration:none;letter-spacing:.08em;flex-shrink:0;}
+.epnav-home:hover{color:#dd1111;}
+.epnav-center{display:flex;align-items:center;gap:10px;}
+.epnav-btn{color:#666;text-decoration:none;letter-spacing:.06em;transition:color .15s;flex-shrink:0;}
+.epnav-btn:hover{color:#dd1111;}
+.epnav-btn.off{opacity:.25;pointer-events:none;}
+.epnav-sep{color:#333;flex-shrink:0;}
+.epnav-info{color:#555;font-size:10px;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:420px){.epnav-info{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-eyebrow">Daily Builders Digest · 周六书籍介绍</div>
+  <div class="header-title">THE TELEPHONE<span> · 一部新的电话史</span></div>
+  <div class="header-meta">
+    <span>📅 2026-11-28</span>
+    <span>📚 周六书单 第三十期</span>
+    <span>💬 技术史 · 电话 · 垄断 · 网络效应 · AI 的参照</span>
+    <span>🎙 大雨 × 小苇</span>
+  </div>
+</header>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot">●</span>2026-11-10 · Farrar, Straus and Giroux 出版</span>
+    <span class="ticker-item"><span class="dot">●</span>544 页 · 精装 35 美元</span>
+    <span class="ticker-item"><span class="dot">●</span>作者：《混沌》《信息简史》的 James Gleick</span>
+    <span class="ticker-item"><span class="dot">●</span>1975 年曼哈顿电话局大火</span>
+    <span class="ticker-item"><span class="dot">●</span>ahoy → hello</span>
+    <span class="ticker-item"><span class="dot">●</span>1876 年 2 月 14 日：贝尔与 Gray 同日到专利局</span>
+    <span class="ticker-item"><span class="dot">●</span>殡仪馆老板发明自动交换机</span>
+    <span class="ticker-item"><span class="dot">●</span>贝尔系统：近一百年的垄断</span>
+    <span class="ticker-item"><span class="dot">●</span>Kirkus 星级书评 · Book Marks 总评 Rave</span>
+    <span class="ticker-item"><span class="dot">●</span>2026-11-10 · Farrar, Straus and Giroux 出版</span>
+    <span class="ticker-item"><span class="dot">●</span>544 页 · 精装 35 美元</span>
+    <span class="ticker-item"><span class="dot">●</span>作者：《混沌》《信息简史》的 James Gleick</span>
+    <span class="ticker-item"><span class="dot">●</span>1975 年曼哈顿电话局大火</span>
+    <span class="ticker-item"><span class="dot">●</span>ahoy → hello</span>
+    <span class="ticker-item"><span class="dot">●</span>1876 年 2 月 14 日：贝尔与 Gray 同日到专利局</span>
+    <span class="ticker-item"><span class="dot">●</span>殡仪馆老板发明自动交换机</span>
+    <span class="ticker-item"><span class="dot">●</span>贝尔系统：近一百年的垄断</span>
+    <span class="ticker-item"><span class="dot">●</span>Kirkus 星级书评 · Book Marks 总评 Rave</span>
+  </div>
+</div>
+
+<div class="audio-bar">
+  <div class="audio-bar-top">
+    <span class="icon">◉</span>
+    <strong>收听本期</strong>
+    <span>大雨 × 小苇 · 2026-11-28</span>
+  </div>
+  <audio controls src="2026-11-28.mp3"></audio>
+</div>
+
+<section class="book-hero">
+  <div class="book-cover-panel">
+    <div class="book-cover-label">◈ 本期书籍</div>
+    <div class="book-title-big">THE TELEPHONE</div>
+    <div class="book-subtitle">A New History<br>电话：一部新的历史</div>
+    <div class="book-author-line">JAMES GLEICK</div>
+  </div>
+  <div class="book-meta-panel">
+    <p class="book-one-liner">《混沌》《信息简史》的作者写了三十多年的一本书：电话怎样被发明、被用户改造、被一家公司垄断近一百年，又怎样成为今天手机、互联网和社交网络的祖先。</p>
+    <div class="book-tags">
+      <span class="tag">非虚构</span>
+      <span class="tag">技术史</span>
+      <span class="tag">电话</span>
+      <span class="tag">AT&amp;T / 贝尔实验室</span>
+      <span class="tag">垄断</span>
+      <span class="tag">社会史</span>
+    </div>
+    <div class="book-stats">
+      <div class="stat-item"><span class="stat-label">出版</span><span class="stat-value">FSG · 2026-11-10</span></div>
+      <div class="stat-item"><span class="stat-label">篇幅</span><span class="stat-value">544 页 · 精装 $35</span></div>
+      <div class="stat-item"><span class="stat-label">ISBN</span><span class="stat-value">9780374618940</span></div>
+      <div class="stat-item"><span class="stat-label">评价</span><span class="stat-value">Kirkus 星级 · NYT · Book Marks Rave</span></div>
+    </div>
+  </div>
+</section>
+<p class="section-label">◈ 开场 · 一部新的电话史</p>
+<div class="script-container">
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">周六好，欢迎回到《每日快报》的书籍时间。先讲一件事。1975 年 2 月 27 号，刚过午夜，纽约曼哈顿第二大道一栋老旧的电话交换楼着火了。下曼哈顿大约三百个街区断了电话，大约十七万部电话打不出也打不进。纽约大学、两家医院都联系不上外面。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">断了多久？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">报道说法不一样，哈佛公报说 23 天，《新共和》说六个星期。总之是好几个星期。后来有两个学者去调查附近的居民，问他们这几周怎么过的。人们去排公用电话，雇人送信，担心出了急事找不到人，犹豫要不要不打招呼直接去敲邻居的门，还有人给喜欢的人写起了情书。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这个调查是怎么做的？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">电话修好以后，用电话做的。今天这本书就是从这场火开始的。书名叫《The Telephone: A New History》，直译「电话：一部新的历史」。作者是 James Gleick。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick，上周好像提过这个名字。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。上周我们讲《Big Math》，封底推荐语里就有他。今天换他当作者。书是 Farrar, Straus and Giroux 出的，11 月 10 号上市，544 页，精装 35 美元。有声书由 Edoardo Ballerini 朗读。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">我们有全书吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">没有。今天的内容依据这几样东西：作者的三篇访谈，分别是 NPR 11 月 14 号的节目文字稿、《新共和》11 月 18 号的问答、Audible 11 月 10 号的问答；哈佛公报 11 月 9 号的介绍；还有五篇书评：Kirkus、《洛杉矶书评》、Reason、《The Week》的书评汇总，以及《American Heritage》一篇批评。凡是我说「书里写」，都来自这些材料的转述或引文。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">为什么选这本？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">书单这周还是空的，按规则我们自己选。理由是：前几个月我们讲了很多 AI 的书，都是在事情正在发生的时候写的，没人知道结局。电话是一项结局已经知道的技术。它从发明到普及、到被一家公司垄断、到被拆分、再到被手机取代，整个过程走完了。Gleick 自己在采访里也一直拿它跟今天的 AI 比。所以这本书可以当一个参照。</p><span class="inline-src">📎 来源: <a href="https://www.npr.org/2026/11/14/nx-s1-6037416/hello-james-gleicks-new-book-compares-the-history-of-the-telephone-to-the-modern-era" target="_blank">Hello? James Gleick&#x27;s new book compares the history of the telephone to the modern era — NPR</a></span><span class="inline-src">📎 来源: <a href="https://news.harvard.edu/gazette/story/2026/11/hello-how-the-telephone-transformed-human-connection-gleick-book/" target="_blank">Hello? How the telephone transformed human connection — Harvard Gazette</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 作者 · 一本写了三十多年的书</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick 是什么人？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">美国的科学作家，在纽约出生，1976 年从哈佛毕业，学的是英文和语言学，在校报《哈佛深红报》写稿。后来长期为《纽约时报》写科学报道。他 1987 年的第一本书叫《Chaos》，中文版叫《混沌》，讲非线性系统，进了普利策奖和美国国家图书奖的决选名单。后来写过物理学家费曼的传记《Genius》，写过牛顿传，写过《Faster》，讲生活怎样越来越快，还有 2011 年的《The Information》，中文版叫《信息简史》，2016 年的《Time Travel》。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这本电话的书是什么时候开始写的？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在《新共和》的采访里说，三十多年前就开始了。那时候还没有手机，也没有互联网，电话是家家都有、谁也不会多想的东西。他当时从 AT&amp;T 在新泽西的档案馆搬回来好几箱资料，那个档案馆现在已经没有了。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">后来为什么停了？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他原话是：然后一切都开始变了，我就想，这个题目好无聊。互联网来了，作为一个写科技的人，他对新东西更兴奋。一直到五六年前，他才回头重新拾起来。因为他发现，他最初写的那些东西，恰好是今天这个世界的地基。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他想回答什么问题？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">书里引了 1975 年那两位学者的问题：一项技术、一个发明、一台机器，怎样改变采用它的人？它能不能改变生活方式、重塑社会？Gleick 在 NPR 上说，他最初的想法是：电话这东西大家都习以为常，可它改变了社会、改变了人的心理，而没人意识到这一点。</p><span class="inline-src">📎 来源: <a href="https://newrepublic.com/article/218036/telephone-changed-world" target="_blank">How the Telephone Changed the World — The New Republic</a></span><span class="inline-src">📎 来源: <a href="https://lareviewofbooks.org/article/telephone-new-history-james-gleick-telegraph-pop-culture/" target="_blank">Hanging on the Telephone — Los Angeles Review of Books</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 谁发明了电话 · 这本书没有主角</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">电话是贝尔发明的，这个大家都知道。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Gleick 在 NPR 上说，这个说法「有一点是真的」。在贝尔之前，德国有个叫 Philipp Reis 的人，1861 年就在法兰克福物理学会演示过一个叫「Telephon」的装置。Kirkus 的书评提到，书里有一句很有意思的话：1840 年莫尔斯拿到电报专利的时候，专利名义上叫「一项改进」。意思是技术总是从别的技术里长出来的。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那贝尔做了什么？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">1876 年 2 月 14 号，情人节那天，贝尔和另一个发明家 Elisha Gray，碰巧在同一天去了专利局。贝尔交的是专利申请，Gray 交的是一份「预告」，英文叫 caveat，是说我有一个发明快要完成了。贝尔拿到了专利，编号 174,465。后来这被叫做历史上最值钱的专利。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">书里怎么看这件事？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">哈佛公报的总结是：书里说，贝尔的律师有一些在道德上有问题的行为，他才拿到这个专利，而且他自己并不完全明白他申请的是什么。Reason 的书评转述得更直接：贝尔的支持者请了更好、可能也更腐败的律师，专利审查员被说动了，偏向贝尔，还不当地把 Gray 文件的内容透露了出去。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这听起来是在说贝尔偷了别人的东西。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这一点有争议，我们放到后面的批评部分讲。但 Gleick 在 NPR 上也给了贝尔很大的肯定。他说贝尔论电学不如对手懂，但贝尔有一个看法跟后来的世界完全吻合：每家每户都会有一部他的电话，每家都有一根线连到一个中心局，然后你就能接通你那一带的任何人。Gleick 原话是：「给这个人一点功劳吧。」</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">所以贝尔厉害的地方不是发明，是看到了网络。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。哈佛公报说得更直白：贝尔在造的是一个社交网络。《洛杉矶书评》引了书里一句话：每一个新用户，都给其他所有用户增加价值。这就是今天说的网络效应。书里还有一句：「也许电话与其说是被发明的，不如说是被发现的。」</p><span class="inline-src">📎 来源: <a href="https://www.kirkusreviews.com/book-reviews/james-gleick/the-telephone/" target="_blank">THE TELEPHONE — Kirkus Reviews</a></span><span class="inline-src">📎 来源: <a href="https://reason.com/2026/11/10/the-rise-and-fall-of-ma-bell/" target="_blank">The Rise and Fall of Ma Bell — Reason</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 用户说了算 · 「ahoy」是怎么变成「hello」的</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">电话刚出来的时候，大家知道它是干什么用的吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">不知道。这是书里反复讲的一点。Gleick 在《新共和》上说，几乎所有人都这样想：既然能把声音用电线送过去，那就在音乐厅放一部电话，家里放一部，在家听音乐会；或者在教堂放一部，星期天不用出门就能听布道。也就是说，大家以为它会是广播。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">结果没有。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">音质太差了，没人愿意拿着一个沉甸甸的东西听一整场歌剧。反过来，能直接开口说话、对方能听见，这件事本身让人非常着迷。《洛杉矶书评》提到，挪威早期确实有些电话是拿来听新闻、听天气的，像广播一样。但最后赢的是对话。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">「hello」那个故事是怎么回事？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">NPR 的主持人专门跑到 NPR 大楼食堂角落的一个电话亭里，给 Gleick 打了个电话。接通以后 Gleick 说：你说了 hello，这是第一条规矩。他说 hello 是一个电话词。电话出现之前，这个词并不常用。贝尔和助手 Watson 最早打电话的时候，说的是「ahoy, ahoy」。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">像水手打招呼。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。Gleick 说，几年之内，好像上帝发了一份通知，所有人都改说 hello 了。不只是英语，很多国家都说 hello 或者「allo」。主持人说他小时候被父母教着接电话要说「Schmitz 家，我是 Robert」，结果他总是忍不住说回 hello。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">父母没赢。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Gleick 说这正是他最喜欢电话的地方：这项技术像野火一样扩散，任何想控制它怎么用的努力都失败了。规矩是用户定的。他在《新共和》里也说，人们经常比设计者和厂商更聪明，用新技术去做他们没想到的事。今天也一样，发短信、用表情、听播客，都是用户自己发展出来的习惯。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">有没有猜对的人？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">有一个。Audible 的采访者提到，1870 年代伊利诺伊州有个报纸编辑预测：将来每个人床边都有一部电话，日日夜夜往外送新闻、八卦和娱乐。他写：「我们都将这样生活，所有神经都暴露在这个轰鸣世界最细微的震动之下。」Gleick 说，他读到这句话的时候，有一瞬间觉得自己遇到了一个时间旅行者。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这说的就是现在的手机。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对。Gleick 的回答是：我们现在不就是这样生活的吗？是电话做到的。</p><span class="inline-src">📎 来源: <a href="https://www.audible.ca/blog/en/james-gleick-the-telephone-interview" target="_blank">How the telephone made the modern world — Audible</a></span><span class="inline-src">📎 来源: <a href="https://www.npr.org/2026/11/14/nx-s1-6037416/hello-james-gleicks-new-book-compares-the-history-of-the-telephone-to-the-modern-era" target="_blank">Hello? James Gleick&#x27;s new book compares the history of the telephone to the modern era — NPR</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 书里的人 · 殡仪馆老板和话务员</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">书里有什么具体的人物？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">波士顿环球报的书评说，书里写的是一大群做梦的人、有天分的业余爱好者和怪人。书评人说她最喜欢的、她猜 Gleick 也最喜欢的，是 Almon Strowger。他是堪萨斯城一个开殡仪馆的。1890 年代，他怀疑本地电话局的接线员把打给他的潜在客户转给了另一家殡仪馆。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那他怎么办？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他发明了第一台自动电话交换机，不用接线员了。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">为了抢生意，把接线员这个职业干掉了。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">后来是这样。说到接线员，哈佛公报讲了书里的一段：最早的接线员是十几岁的男孩，但很多男孩坐不住、不专心，电话公司就改招年轻女性。这是当时女性能做的少数几种职业之一。Gleick 说，大家普遍决定接线员都是女的，很大一部分原因是希望她们温顺。营销的人假设打电话的是男人，电话那头应该有一个女人为你服务。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">听起来像今天的语音助手。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">哈佛公报的作者也是这么写的，说她们是早期的 Siri。书里引了一个接线员的话，她说自己是「一张会说话的神秘电线网里的人形蜘蛛」。很多人下班的时候眼睛发直，感官过载。Kirkus 还提到，书里讲了电话行业里的种族问题：黑人女性要到二战期间才被雇为接线员，而且公司很不情愿。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">还有别的人吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">有几个名人。马克·吐温是最早在家里装电话的人之一，他吹嘘自己家连到《哈特福德新闻报》的那条线，是世界上第一条私人住宅电话线。他也说过，电话是「世界上最古怪的事——只有一头的对话」。萧伯纳年轻时在伦敦的爱迪生电话公司上过班，他很讨厌电话，说对着它把最私密的事喊得到处都是，就没有分寸可言了。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那时候就有人抱怨新技术。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Reason 的书评引了书里的一句话：有人觉得被赋予了力量，也有人觉得被骚扰、被催促、被逼着、心神不宁。Gleick 在 NPR 上说，当时的人写，我在加速，我是一种新的生物。</p><span class="inline-src">📎 来源: <a href="https://theweek.com/culture-life/books/book-reviews-the-telephone-a-new-history-and-look-at-me" target="_blank">Book reviews: ‘The Telephone: A New History’ — The Week（汇总纽约时报、波士顿环球报、彭博书评）</a></span><span class="inline-src">📎 来源: <a href="https://news.harvard.edu/gazette/story/2026/11/hello-how-the-telephone-transformed-human-connection-gleick-book/" target="_blank">Hello? How the telephone transformed human connection — Harvard Gazette</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 贝尔系统 · 一个统治了将近一百年的垄断</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">后来电话公司是怎么变成垄断的？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Reason 的书评作者是克莱姆森大学的经济学教授 Thomas Hazlett，他把这段讲得很细。贝尔的专利 1893 年前后到期，之后出现了很多独立电话公司，到 1907 年，独立公司的用户数已经追上了贝尔，在中西部和西部还领先。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那贝尔怎么又赢回来了？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">1907 年 AT&amp;T 新总裁 Theodore Vail 提出一个口号：「一个政策，一个系统，普遍服务。」然后是三步：各州给电话公司发独家经营权；1910 年的法律把电话公司交给一个管铁路的委员会去管；1913 年 AT&amp;T 跟司法部达成一个反垄断和解，承诺跟独立公司互联。但结果是独立公司陆续被收购，州的独家经营权挡住了新来的人。1934 年的《通信法》把这个格局固定了下来。一直到 1984 年，AT&amp;T 才被拆分。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick 怎么评价这个垄断？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在 Audible 的采访里说得很平衡。20 世纪大部分时间，贝尔系统是世界上最强大、最打不破的垄断。几乎每家都有一部贝尔的电话，别人不准造、不准卖，所有电话都差不多一个样。结果是，有一段时间美国的电话系统让全世界羡慕。大多数其他国家是政府管电话，管得很差。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">但是？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">但是垄断会变得笨重、自满、退化。贝尔建了世界上最好的企业研究所，可是在计算机出现、互联网的种子刚种下、最需要创新的时候，它没有创新。《洛杉矶书评》也提到，AT&amp;T 压住了传真、答录机，甚至可视电话。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">贝尔实验室不是出了很多东西吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">出了很多。Gleick 在《新共和》上说，任何关心科学的人看贝尔实验室的历史都得承认，不管你多反对垄断，他们基本上是为了科学在办这个实验室。实验室出了十几个诺贝尔奖，跟电话本身没直接关系。最重要的是晶体管，它很快就让全世界都能用了。Kirkus 提到书里一个小细节：贝尔实验室发明火箭筒的人，也发明了答录机。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">跟今天的大公司研究院比呢？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他说今天微软、谷歌也有自己的研究院，但非常看重利润。他还说，当年跟政府的约定里有一条：电话公司不准进入新兴的计算机行业。还没拆分以前，大家就看出来了，让电话公司把垄断延伸到这个新领域会是坏事。</p><span class="inline-src">📎 来源: <a href="https://reason.com/2026/11/10/the-rise-and-fall-of-ma-bell/" target="_blank">The Rise and Fall of Ma Bell — Reason</a></span><span class="inline-src">📎 来源: <a href="https://www.audible.ca/blog/en/james-gleick-the-telephone-interview" target="_blank">How the telephone made the modern world — Audible</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 关键洞察 · 拿电话看 AI</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他把这些跟 AI 联系起来了吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">联系得很直接。NPR 主持人说，你写的电话推广过程，发明人失去兴趣，合伙人向金融家投降，金融家又让位给更大的势力，地方官员想分钱，最后打知识产权官司。这听起来像美国资本主义里一个熟悉的章节，现在 AI 也在这样。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">Gleick 怎么回答？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他说，AI 已经被几家大公司牢牢控制住了，它们要么是垄断，要么想成为垄断。它们从贝尔系统学到的教训是：垄断对公司的主人非常方便。但他说，我们作为用户，有权利得出相反的教训：珍惜技术里那些让我们保留控制权的部分。他又回到 hello 那个话题：我们自己来定规矩，用这些技术来增强我们自己。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他对现在的 AI 公司是什么态度？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">在《新共和》的采访里说得更重。他说回头看贝尔垄断，人们可能戴着玫瑰色的眼镜。再看现在这些 AI 公司成立得这么快，完全不顾公共利益，几乎毫不掩饰地追求个人利润，为了 Sam Altman 和 Elon Musk 这样想当寡头的人。他说他觉得这「介于令人沮丧和令人恐惧之间」。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这是他个人的看法。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，这是作者在采访里的观点，不是书里的结论。还有一句也是他在采访里说的。他说，在这个通信无处不在的时代，我们确实比以前更紧密地连在一起。但他说，也许我是个天真的人文主义者，我仍然认为，你是在跟一个人说话还是在跟一个机器人说话，这件事很重要，尽管有一整个产业在让我们分不清，劝我们相信这些机器人有个性、在很多场合跟人一样好。他说他不相信，而且认为应该抵抗。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这跟我们一个月前讲的 Sherry Turkle 那本《Artificial Intimacy》是一个意思。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">是。Turkle 说聊天机器人的「原罪」是用第一人称。Gleick 是从另一头来的：电话本来就是为了让两个人连上。现在电话那头可能不是人了。</p><span class="inline-src">📎 来源: <a href="https://newrepublic.com/article/218036/telephone-changed-world" target="_blank">How the Telephone Changed the World — The New Republic</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 批评 · 贝尔到底偷没偷</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这本书有人批评吗？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">整体评价很高。书评聚合网站 Book Marks 统计了九篇书评，总评是最高一档的 Rave。《纽约时报》的 Alexandra Jacobs 说，这本书让电话这件老物件回到了它在历史上应有的位置，应该成为数字原住民的必读书。Kirkus 给了星级书评。但有三个批评值得讲。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第一个？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第一个最尖锐，来自《American Heritage》杂志的主编 Edwin Grosvenor。先说清楚他的身份：他写过一本贝尔的传记，而且他是贝尔的后代。他的文章标题叫「电话发明的真相」。他说，Gleick 在书里写，贝尔和 Watson 打第一通电话用的装置，「不是他们的，而是 Elisha Gray 的液体送话器，由一个腐败的专利审查员描述给贝尔」。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他怎么反驳？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">几点。第一，贝尔从 1873 年左右就在做各种用液体的送话器，水银、盐水、酸化的水都试过。第二，1875 年 4 月，美国专利局已经给过贝尔一个专利，编号 161,739，图上就画着水银杯，那是在 Gray 写那份预告的十个月之前。第三，说贝尔贿赂审查员的证据，是审查员 Zenas Wilber 1886 年签的最后一份宣誓书。在那之前他签过四份，都说专利局一切正常。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">1886 年发生了什么？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">Grosvenor 说，那份宣誓书是在一桩丑闻里出来的。当时有一家叫 Pan-Electric 的公司想推翻贝尔的专利，给了司法部长 Augustus Garland 一成股份，司法部于是起诉要撤销贝尔专利。后来被报纸揭出来，成了克利夫兰政府最大的丑闻。Grosvenor 认为 Wilber 的那份宣誓书很可能是那家公司的律师替他写的，而且从来没有经过交叉质询。他还说，贝尔的专利打了大约六百场官司，一场没输过，包括最高法院。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">那到底谁对？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我们判断不了，也没拿到书看 Gleick 具体怎么写、引了什么。能说的是两点。第一，这个争论很老了，2008 年 Seth Shulman 的《The Telephone Gambit》就提出过贝尔抄 Gray 的说法，Grosvenor 认为 Gleick 是在重复 Shulman。第二，Grosvenor 本人跟这件事有利害关系，他是贝尔的后代和传记作者。听的人要把这两方面都放在心里。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第二个批评呢？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">结尾太薄。《洛杉矶书评》的 Tim Riley 说，读到最后，你等着看大戏：乔布斯怎样把电话变成一台口袋里的信息机器。可是 Gleick 只用了几段话带过，乔布斯只出现了一次。他说这本书最后对眼前这个变化「耸了耸肩」。Reason 的 Hazlett 也说，书对 1984 年 AT&amp;T 拆分、对后来有线电视、卫星、无线带来的竞争着墨很少。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">可他明明一直在说电话跟今天有关。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">这正是矛盾的地方。书里讲的主要是 1870 年代到 1980 年代。跟今天的联系，大部分是他在采访里讲的。第三个批评是 Riley 提的：这个故事大部分以前有人讲过，只是讲得没这么好。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">他自己的回答呢？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">他在采访里的说法是：现在这一代人没有电话亭、忙音这些记忆，但今天的生活方式离不开这段历史，所以值得讲。</p><span class="inline-src">📎 来源: <a href="https://www.americanheritage.com/truth-about-telephone-invention" target="_blank">The Truth About the Telephone Invention — American Heritage</a></span><span class="inline-src">📎 来源: <a href="https://lareviewofbooks.org/article/telephone-new-history-james-gleick-telegraph-pop-culture/" target="_blank">Hanging on the Telephone — Los Angeles Review of Books</a></span><span class="inline-src">📎 来源: <a href="https://bookmarks.reviews/reviews/the-telephone-a-new-history/" target="_blank">Book Marks reviews of The Telephone</a></span>
+  </div>
+</div>
+<p class="section-label">◈ 讨论角度 · 留给你的问题</p>
+<div class="script-container">
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">我们自己怎么看？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">我说三点。第一，「用户定规矩」这个说法要小心用。hello 是用户定的，但电话机长什么样、谁能造、多少钱，是贝尔系统定的，定了快一百年。用户赢了礼仪，公司赢了结构。今天的 AI 可能也是这样：大家自己摸索怎么用，但模型由谁训练、放在谁的服务器上，不是用户能决定的。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第二点？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第二，垄断的账要分开算。Gleick 自己就承认，贝尔垄断带来了全世界最好的电话网和贝尔实验室，也带来了几十年不创新。他担心 AI 公司学到的是前一半。但贝尔当年是受管制的垄断，价格有人管，还被禁止进入计算机行业。今天的 AI 公司没有这样一套约束。所以拿贝尔来类比，真正该问的可能是：今天谁来扮演当年那个管制者。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">第三点？</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第三，波士顿环球报的书评人最后写了一句，说她读完想的不是电话，而是 AI。她说她等着 Gleick 从 Anthropic 的 Claude 身上找出 Claude Shannon 的痕迹，再写一本书。Shannon 是信息论的创始人，在贝尔实验室工作，Gleick 的《信息简史》写过他。从电话到信息论到今天的语言模型，这确实是一条线。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">留几个问题给听众。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第一个：你接电话说的第一句话是什么？你从哪学的？第二个：你最近一次用一个新技术，用法跟它的设计者想的不一样，是什么时候？第三个：如果你所在的城市断网断电话三个星期，你会怎么联系你在乎的人？第四个：你在乎电话那头是人还是机器吗？如果在乎，你怎么分辨？</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">好，看看这几天建造者们在说什么。</p>
+  </div>
+</div>
+<p class="section-label">◈ 关注建造者 · 本周建造者在说什么</p>
+<div class="script-container">
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">数据截至北京时间今天下午一点。这周是美国感恩节，推文不多，挑了四条跟今天的书有关的。第一条是 Sam Altman，六千七百多个赞。他感谢一位叫 Ven 的同事，说 Ven 是最早相信可以用当时的模型去解千禧年大奖难题的人之一。他说聪明的人很多，但聪明又有放对地方的自信、敢在别人觉得不可能的事上一直推，这很少见。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">正好是 Gleick 批评的那家公司。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">对，放在一起听。第二条是 Box 的 CEO Aaron Levie，八百多个赞。他说现在是以智能代理为核心、从头建一家服务公司，或者改造老公司的好机会。广告、IT、咨询、金融这些行业，产出一直受员工速度限制，现在交付能力有十倍的放大。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">像接线员被自动交换机取代。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">有点像。第三条是投资人 Nikunj Kothari。他说去年感恩节，他担心忘了给这一年见过很多次的人发消息，然后 Claude 发现 iMessage 和 WhatsApp 的记录其实是电脑上的本地数据库。他就做了一组完全在本地运行、不用 AI 的脚本，帮你找出该联系的人。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">用技术提醒自己去跟人说话。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">第四条只有三个赞，但跟今天的书最贴。OpenAI 做 Codex 的 Nan Yu 说：语音聊天就是聊天，发图片也是聊天，下一个指令拿回一个网站，也是聊天。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">「电话」这个词也是这样，一直在被装进新的东西。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">播客推荐是 Latent Space，11 月 25 号这一集，嘉宾是 Thariq Shihipar。他之前在 Anthropic，这一集录完当天宣布加入 OpenAI。他的主题是「工业革命和文艺复兴」：一边是 AI 让软件更便宜、能大规模生产，也产出很多粗糙的东西；另一边是做一个给自己用的、更个人化的东西也变得负担得起了。他说他这一年的一个错，是太想把人从代理的循环里拿出去。很多东西模型觉得做得很完美，但你根本不用，因为你在做的过程中从来没自己用过。他的建议是把人的反馈放回去。</p>
+  </div>
+  <div class="script-block">
+    <div class="speaker-tag speaker-xiaowei">小苇</div>
+    <p class="script-text">这又回到 Gleick 说的，用法是用的人试出来的。</p>
+  </div>
+  <div class="script-block lead-block">
+    <div class="speaker-tag speaker-dayu">大雨</div>
+    <p class="script-text">好，今天就到这里。这周如果你只做一件事：给一个很久没联系的人打个电话，不发消息，打电话。听听对方第一句说的是不是 hello。下周六见。</p><span class="inline-src">📎 来源: <a href="https://www.youtube.com/watch?v=Qe9d9dWyED0" target="_blank">The Revolution vs The Renaissance — Thariq Shihipar, OpenAI — Latent Space</a></span>
+  </div>
+</div>
+<!-- ─────────────────── FOLLOW BUILDERS ─────────────────── -->
+<hr class="rule-heavy">
+<p class="section-label">◈ Follow Builders · 今日建造者动态</p>
+
+<p class="builders-intro">
+  「关注建造者，不要关注 influencer。」——
+  以下内容来自 <a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a> 项目，
+  每日自动抓取 25 位顶尖 AI 建造者在 X/Twitter 上的最新发言，以及精选播客摘要。
+  数据截至今日 UTC 05:09。
+</p>
+
+<div class="podcast-card">
+  <p class="pc-label">🎙 今日播客精选</p>
+  <p class="pc-show">Latent Space · 2026-11-25</p>
+  <p class="pc-title">The Revolution vs The Renaissance — Thariq Shihipar, OpenAI</p>
+  <p class="pc-summary">Thariq Shihipar 此前在 Anthropic，录音当天宣布加入 OpenAI。他说 AI 同时是一场工业革命（软件更便宜、可以大规模生产，也产出很多粗糙的东西）和一场文艺复兴（做个人化的东西变得负担得起）。他这一年的一个错，是太想把人从代理的循环里拿出去：很多东西模型觉得做得很完美，你却不用，因为你在做的过程中没自己用过。他的建议是把人的反馈放回去。</p>
+  <a href="https://www.youtube.com/watch?v=Qe9d9dWyED0" target="_blank">▶ 收听完整节目 →</a>
+</div>
+
+<div class="builders-grid">
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">SA</div>
+      <div>
+        <div class="builder-name">Sam Altman</div>
+        <div class="builder-handle">@sama · CEO, OpenAI</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「Ven 是最早相信可以用我们当时的模型去解千禧年大奖难题的人之一。世界上聪明的人很多，但既聪明、又有放对地方的自信和勇气、在别人觉得不可能的事上一直推下去，这很宝贵，也相当少见。我很感激 OpenAI 有这么多人具备这种组合。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 6775</span>
+      <a href="https://x.com/sama/status/2125990371897557278" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">AL</div>
+      <div>
+        <div class="builder-name">Aaron Levie</div>
+        <div class="builder-handle">@levie · CEO, Box</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「现在是以智能代理为核心、从头建服务公司或改造现有服务公司的巨大机会。深厚的领域知识仍然重要，但交付项目的能力有了 10 倍的放大。广告、IT 转型、管理咨询、金融这些一直受员工速度限制的行业都会这样。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 883</span>
+      <a href="https://x.com/levie/status/2125983542475894821" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NK</div>
+      <div>
+        <div class="builder-name">Nikunj Kothari</div>
+        <div class="builder-handle">@nikunj · Partner, FPV Ventures</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「去年感恩节，我有点担心忘了给这一年一起待过很久的人发消息……然后 Claude 发现 iMessage 和 WhatsApp 是电脑上的本地数据库。一件事接一件事，变成了一个意外有用的项目。如果你也一样担心，可以用这些本地脚本（不用 AI，完全本地）去给你见过的人发消息。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 23</span>
+      <a href="https://x.com/nikunj/status/2126133563292803100" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+  <div class="builder-card">
+    <div class="builder-header">
+      <div class="builder-avatar">NY</div>
+      <div>
+        <div class="builder-name">Nan Yu</div>
+        <div class="builder-handle">@thenanyu · Codex, OpenAI · 前 Linear</div>
+      </div>
+    </div>
+    <p class="builder-tweet">「各位……语音聊天就是聊天。往聊天里发图片也是聊天。下指令、拿回一个网站，也是聊天。这些现在在 ChatGPT 里都能做。」</p>
+    <div class="builder-meta">
+      <span class="builder-likes">❤ 3</span>
+      <a href="https://x.com/thenanyu/status/2126036677642928363" target="_blank">查看推文 →</a>
+    </div>
+  </div>
+</div>
+
+<section class="sources">
+  <div class="sources-label">◈ 来源与说明</div>
+  <p class="sources-note">
+    本期未拿到全书。书的内容依据作者在 NPR、《新共和》、Audible 的三篇访谈，哈佛公报的介绍，以及 Kirkus、《洛杉矶书评》、Reason、The Week 汇总和 American Heritage 的书评。NPR 原站无法直接打开，文字稿取自 NPR 成员台 Spokane Public Radio 的转载。1975 年大火断线时长各家说法不同（23 天到六周），节目中两种都说了。贝尔与 Gray 的专利争议，节目只转述双方说法，未作判断；批评者 Grosvenor 是贝尔的后代和传记作者。Gleick 对 AI 公司的评价来自采访，不是书中原话。本期为 Up Next 空缺时自行选定。
+  </p>
+  <a class="source-link" href="https://www.npr.org/2026/11/14/nx-s1-6037416/hello-james-gleicks-new-book-compares-the-history-of-the-telephone-to-the-modern-era" target="_blank"><span class="src-icon">INTERVIEW</span><span>Hello? James Gleick&#x27;s new book compares the history of the telephone to the modern era — NPR All Things Considered 文字稿，2026-11-14</span></a>
+  <a class="source-link" href="https://newrepublic.com/article/218036/telephone-changed-world" target="_blank"><span class="src-icon">INTERVIEW</span><span>How the Telephone Changed the World — The New Republic 问答，2026-11-18</span></a>
+  <a class="source-link" href="https://www.audible.ca/blog/en/james-gleick-the-telephone-interview" target="_blank"><span class="src-icon">INTERVIEW</span><span>How the telephone made the modern world — Audible 问答，2026-11-10</span></a>
+  <a class="source-link" href="https://news.harvard.edu/gazette/story/2026/11/hello-how-the-telephone-transformed-human-connection-gleick-book/" target="_blank"><span class="src-icon">FEATURE</span><span>Hello? How the telephone transformed human connection — Harvard Gazette，2026-11-09</span></a>
+  <a class="source-link" href="https://www.kirkusreviews.com/book-reviews/james-gleick/the-telephone/" target="_blank"><span class="src-icon">REVIEW</span><span>THE TELEPHONE — Kirkus Reviews（星级）</span></a>
+  <a class="source-link" href="https://lareviewofbooks.org/article/telephone-new-history-james-gleick-telegraph-pop-culture/" target="_blank"><span class="src-icon">REVIEW</span><span>Hanging on the Telephone — Los Angeles Review of Books，Tim Riley，2026-11-12</span></a>
+  <a class="source-link" href="https://reason.com/2026/11/10/the-rise-and-fall-of-ma-bell/" target="_blank"><span class="src-icon">REVIEW</span><span>The Rise and Fall of Ma Bell — Reason，Thomas W. Hazlett</span></a>
+  <a class="source-link" href="https://theweek.com/culture-life/books/book-reviews-the-telephone-a-new-history-and-look-at-me" target="_blank"><span class="src-icon">REVIEW</span><span>Book reviews — The Week（汇总彭博、纽约时报、波士顿环球报），2026-11-24</span></a>
+  <a class="source-link" href="https://www.americanheritage.com/truth-about-telephone-invention" target="_blank"><span class="src-icon">CRITIQUE</span><span>The Truth About the Telephone Invention — American Heritage，Edwin S. Grosvenor</span></a>
+  <a class="source-link" href="https://bookmarks.reviews/reviews/the-telephone-a-new-history/" target="_blank"><span class="src-icon">REVIEWS</span><span>Book Marks 书评汇总（9 篇，总评 Rave）</span></a>
+</section>
+
+<footer class="footer">
+  <span>Daily Builders Digest · 2026-11-28</span>
+  <span>周六书籍介绍 · 第三十期</span>
+  <span>大雨 × 小苇</span>
+</footer>
+
+<!-- ── EPISODE NAV ── -->
+<div id="ep-nav-bar">
+  <a href="/" class="epnav-home">← 首页</a>
+  <div class="epnav-center">
+    <a id="epnav-prev" href="#" class="epnav-btn off">‹ 上一期</a>
+    <span class="epnav-sep">·</span>
+    <span id="epnav-info" class="epnav-info"></span>
+    <span class="epnav-sep">·</span>
+    <a id="epnav-next" href="#" class="epnav-btn off">下一期 ›</a>
+  </div>
+</div>
+<script>
+(async()=>{try{
+  const f=await(await fetch('/feed.json')).json();
+  const m=document.title.match(/(\d{4}-\d{2}-\d{2})/);if(!m)return;
+  const idx=f.findIndex(e=>e.date===m[1]);if(idx<0)return;
+  const ep=f[idx],older=f[idx+1],newer=f[idx-1];
+  const i=document.getElementById('epnav-info'),p=document.getElementById('epnav-prev'),n=document.getElementById('epnav-next');
+  if(i)i.textContent=ep.date+(ep.topic?' · '+ep.topic:'');
+  if(p&&older){p.href='/'+older.html;p.classList.remove('off');}
+  if(n&&newer){n.href='/'+newer.html;n.classList.remove('off');}
+}catch(e){console.warn('nav',e);}})();
+</script>
+</body>
+</html>
